@@ -24,7 +24,7 @@
 
 ## 架构核心
 
-### Early fusion 的定义（焱拳口径）
+### Early fusion 的定义（本节口径）
 我们这里用三条硬标准判定是否 early-fusion，避免和\"natively multimodal\" 这类 marketing 词混淆：
 1. **单 backbone**：所有模态共享同一组 transformer 权重，**不是 frozen LLM + 旁挂 encoder**。
 2. **token-level 同序列**：非文本模态被离散化（VQ / RVQ / codec / patch token）后与 text token 拼成一条 sequence，attention 跨模态自由流动。
@@ -53,7 +53,7 @@
 ### Qwen2.5-Omni（开源 early-fusion 的第一个产品级）
 - **Thinker–Talker 架构**[^qomni25]：Thinker 是主 LLM（基于 Qwen2.5 7B），输入端把 image / video / audio 都 tokenize 后 concat 进同一序列；Talker 是一个**与 Thinker 共享 hidden state** 的轻量 decoder，专门生成 audio token（基于 Qwen 自家 codec），从而实现 streaming voice out。
 - **TMRoPE（Time-aligned Multimodal RoPE）**：处理 video+audio 时间同步问题——video 帧和 audio chunk 各自带绝对时间戳，RoPE 维度被切成 (time, height, width, text) 四段，让模型能对齐 \"第 3.2 秒说了什么\" 与 \"第 3.2 秒画面里发生了什么\"。这是 Qwen-Omni 区别于 GPT-4o / Gemini 的最关键公开技术点。
-- **真 end-to-end**：input 侧 vision encoder 仍存在（Qwen2.5-VL 的 ViT），但它的输出 feature 直接被当作 visual token 喂进 LLM、**在 pretrain 阶段联合训练**，不是 frozen + adapter。按我们前面的 early-fusion 三条标准，算满足条件 1（联合训练）+ 2（同序列）+ 3（pretrain 阶段就接），第 1 条\"完全同一组权重\" 部分例外（vision encoder 是独立小模块）。所以严格说 Qwen2.5-Omni 是 **\"deep-fusion\" 而不是像 Chameleon 那种 \"pure token-level early-fusion\"**。这条区别焱拳团队评测 omni 时要注意。
+- **真 end-to-end**：input 侧 vision encoder 仍存在（Qwen2.5-VL 的 ViT），但它的输出 feature 直接被当作 visual token 喂进 LLM、**在 pretrain 阶段联合训练**，不是 frozen + adapter。按我们前面的 early-fusion 三条标准，算满足条件 1（联合训练）+ 2（同序列）+ 3（pretrain 阶段就接），第 1 条\"完全同一组权重\" 部分例外（vision encoder 是独立小模块）。所以严格说 Qwen2.5-Omni 是 **\"deep-fusion\" 而不是像 Chameleon 那种 \"pure token-level early-fusion\"**。这条区别读者团队评测 omni 时要注意。
 - Output 侧 audio：Talker 输出 codec token，外接一个 streaming codec decoder（Qwen 自训）合成波形。延迟分摊到 chunk-level，可做到 ≤300ms 首音。
 
 ### Qwen3-Omni[^qomni3]
@@ -102,14 +102,14 @@
 - **Image generation**：GenEval, DPG-Bench, T2I-CompBench。GPT-4o image gen / Gemini 2.5 Flash Image / Qwen-Image 是当前 frontier，Chameleon / Anole 完全跟不上。
 - **Audio**：ASR 上 LibriSpeech / Common Voice WER；speech-to-speech 上还没有大家都认的 bench（一个公开的尝试是 [VoiceBench 2024](https://arxiv.org/abs/2410.17196)，Qwen-Omni 系列在它上面 SOTA open-weight）。
 - **Video**：Video-MME, MVBench, LongVideoBench。Gemini 1.5 / 2.5 是 closed-source 标杆，Qwen3-Omni 是开源标杆。
-- **Omni / cross-modal**：还没有 saturate-resistant 的统一 bench。OpenAI 在 4o blog 里给的\"M3Exam\" 之后没什么人用。**这是 omni 评测的真空地带**，焱拳要做 omni eval 是有空间的。
+- **Omni / cross-modal**：还没有 saturate-resistant 的统一 bench。OpenAI 在 4o blog 里给的\"M3Exam\" 之后没什么人用。**这是 omni 评测的真空地带**，读者要做 omni eval 是有空间的。
 - **Contamination / 复现疑点**：
   - Qwen-Omni 的 ASR 数字（LibriSpeech test-clean WER < 2%）和最强 ASR 专用模型接近，[推测] 训练里包含 LibriSpeech 同分布数据，但 Qwen 团队没确认。
   - Chameleon paper 自报的 image-text interleaved 能力没有第三方独立复测过（社区跑的是 Anole 版本）。
 
 ## 未知与争议
 
-- **\"native\" 这个词被 marketing 严重滥用**：OpenAI 用 native 指 GPT-4o（单模型），Google 用 native 指 Gemini（pretrain 起 joint），Meta 用 unified token 指 Chameleon。三家具体实现可能完全不同。焱拳遇到\"native multimodal\"四个字时务必追到一手 paper / blog 看实现是 \"union vocab + 单 softmax\" 还是 \"shared backbone + 独立 head\" 还是 \"shared backbone + frozen encoder\"。
+- **\"native\" 这个词被 marketing 严重滥用**：OpenAI 用 native 指 GPT-4o（单模型），Google 用 native 指 Gemini（pretrain 起 joint），Meta 用 unified token 指 Chameleon。三家具体实现可能完全不同。读者遇到\"native multimodal\"四个字时务必追到一手 paper / blog 看实现是 \"union vocab + 单 softmax\" 还是 \"shared backbone + 独立 head\" 还是 \"shared backbone + frozen encoder\"。
 - **早融合是否伤文本能力**：Chameleon 7B 文本 bench 明显落后同期 Llama 2 7B（paper 自己也承认）；Qwen3-Omni report 反驳称\"持平 Qwen3 30B-A3B 纯文本\"。**这是 omni 路线最大的开放问题**，[uncertain] 是数据 mix / scale 解决了，还是 bench 选择性披露。Sebastian Raschka 在 [2025-10 LLM 路线综述](https://magazine.sebastianraschka.com/) 里把这条列为\"open question\"。
 - **GPT-4o / GPT-5o 架构**：完全黑盒，没有 paper、没有 tech report，连参数量级都没披露过。所有 4o 相关\"架构图\" 都是第三方逆向。
 - **Image gen 是 AR token 还是 diffusion**：GPT-4o image gen 官方只说 \"natively multimodal\"。[Tang et al. 2025](https://arxiv.org/abs/2504.02782) [推测] 是 AR token + diffusion decoder hybrid，[Bytedance 团队 2025 BAGEL paper](https://arxiv.org/abs/2505.14683) 实现了类似结构并公开，可作旁证。Gemini 2.5 Flash Image [unknown]。

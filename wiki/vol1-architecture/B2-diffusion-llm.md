@@ -106,7 +106,7 @@ Inception Labs 没开源、tech report 也很简短（[arxiv:2506.17298](https:/
 
 来源：[LLaDA paper §5](https://arxiv.org/abs/2502.09992), [Mercury tech report Table 1](https://arxiv.org/abs/2506.17298)。
 
-要点（**给焱拳看的话**）：
+要点（**给评测 owner 看的话**）：
 - **LLaDA 8B 在所有通用 bench 上输给同尺寸 LLaMA3-8B 5-15 pt，输给 Qwen2.5-7B 更多**。Paper 自己承认"在 reasoning / math 上仍有 gap"。
 - **Mercury 的 HumanEval/MBPP 数字看起来漂亮，但 (a) 模型尺寸不披露，没法 FLOPs-match，(b) Copilot Arena 速度第二、质量未进前列，(c) HumanEval 早被认为过度优化、看 LiveCodeBench / SWE-Bench 更稳**。Inception 在 tech report 给了 LiveCodeBench / EvalPlus，分数中等。
 - **Gemini Diffusion** 只有 demo，没有公开 benchmark。Google I/O 演示主要是 throughput 和"实时 typing"视觉效果。

@@ -31,7 +31,7 @@ xAI 的差异化叙事就两条：**(1) 自建 Colossus 超大集群、用绝对
 - **多模态**：Grok 2 加 image in；Grok 4 加 voice mode（在 X iOS app）；视频理解 [uncertain — 没看到官方说]。**不是 native multimodal（与 Gemini 不同）**：[推测] 仍是 vision encoder + LM 的 late-fusion 套路，但 xAI 没说。
 - **位置编码 / attention 变种 / RoPE base / norm 位置**：**完全未披露**。Grok 1 开源是 RoPE + RMSNorm + GQA（8 KV heads），但 Grok 3/4 不一定保留。
 
-**结论**：如果焱拳团队想从架构角度复现 / 对比 Grok 4，**没有任何一手材料能依据**。只能拿 Grok 1 开源权重做\"远古 baseline\"，再加官方 marketing 倍数。
+**结论**：如果读者团队想从架构角度复现 / 对比 Grok 4，**没有任何一手材料能依据**。只能拿 Grok 1 开源权重做\"远古 baseline\"，再加官方 marketing 倍数。
 
 ## 训练方法核心
 
@@ -72,7 +72,7 @@ xAI 的差异化叙事就两条：**(1) 自建 Colossus 超大集群、用绝对
 | AIME 2025 | 91.7% (no tools) | 100% (with tools) | \"with tools\" = code execution |
 | USAMO 2025 | 37.5% | 61.9% | 数学竞赛 |
 | LiveCodeBench | 79.3% | 79.4% | |
-| SWE-Bench Verified | **未官方报告** | — | 这是焱拳要警觉的：xAI **躲过了 SWE-Bench** —— [推测] Grok 4 的 agentic coding 实际明显弱于 Claude / GPT-5 |
+| SWE-Bench Verified | **未官方报告** | — | 这是读者要警觉的：xAI **躲过了 SWE-Bench** —— [推测] Grok 4 的 agentic coding 实际明显弱于 Claude / GPT-5 |
 
 数字源：[Grok 4 launch blog](https://x.ai/news/grok-4) + [系统卡 PDF](https://x.ai/grok-4-model-card.pdf)。
 

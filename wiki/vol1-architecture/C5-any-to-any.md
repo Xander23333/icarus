@@ -66,7 +66,7 @@ Emu3 paper 第一节标题就是 \"Next-Token Prediction is All You Need\"。它
 
 工程实现：自训 image tokenizer（vocab 32768，downsample 8×），video 按帧 tokenize（temporal context 极长），训练 token 数未完整披露。**它的价值不在于 SOTA，而在于给后续工作一个干净的 baseline**——证明纯 AR 路线在 8B 规模可行。BAGEL / Janus 系列在 paper 里都会和 Emu3 对比。
 
-### Janus → Janus-Pro 的演化（最值得焱拳精读的一条线）
+### Janus → Janus-Pro 的演化（最值得精读的一条线）
 
 - **Janus (1.3B)**: 提出\"decoupled visual encoding\"。Understanding 用 SigLIP-L (~400M)，generation 用 LlamaGen-style VQ tokenizer。两侧 token / feature 都进同一个 1.3B LLM。Image gen 仍是 AR。
 - **JanusFlow (1.3B)**: 把 image 生成侧换成 rectified flow（连续 latent，不再 VQ），证明 decoupled encoder 思想和 flow matching 可结合
@@ -124,7 +124,7 @@ BAGEL 是字节 Seed 团队 2025-05 的 7B-A1.5B 模型，关键设计：
 
 ## 未知与争议
 
-- **离散 vs 连续 image token：路线之争未收敛**。Emu3 论\"离散+AR 就够\"，Transfusion / BAGEL 论\"连续+diffusion 才能上高分辨率\"。2026-05 看，连续路线在 image-gen 质量上**已经领先**，但离散路线在与 LLM stack 兼容性、video 长序列上仍有不可替代性。焱拳做评测时这两类不该混在一个榜上比
+- **离散 vs 连续 image token：路线之争未收敛**。Emu3 论\"离散+AR 就够\"，Transfusion / BAGEL 论\"连续+diffusion 才能上高分辨率\"。2026-05 看，连续路线在 image-gen 质量上**已经领先**，但离散路线在与 LLM stack 兼容性、video 长序列上仍有不可替代性。读者做评测时这两类不该混在一个榜上比
 - **\"Decoupled visual encoding\" 是否必要**：Janus 系的核心 claim。BAGEL 走了类似但不同的解耦（MoT vs 双 encoder）。Show-o / Emu3 不解耦也活得下来。**这是 2026 unified model 设计最大的开放设计点**，没有定论
 - **Understanding 侧为什么追不上专业 VLM**：unified model 在 MMMU / MMBench 上始终比同 size 专业 VLM 低 5-10 分。Janus-Pro paper §5 把原因归于\"image-gen 数据稀释了 understanding 训练\"，但没给精确 ablation。[uncertain] 是否可以通过更激进的 data curriculum 解决
 - **GPT-4o image gen 到底是哪类策略**：闭源黑盒。[Tang et al. 2025](https://arxiv.org/abs/2504.02782) 推测是 (C) 类（AR token + diffusion decoder），与 BAGEL 路线一致；这是\"BAGEL 是开源 4o image gen 的最佳近似\"这条 narrative 的依据

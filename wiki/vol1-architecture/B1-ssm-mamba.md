@@ -105,7 +105,7 @@ Qwen 团队 2025-09 的 Qwen3-Next 80B-A3B [严格说不是 Mamba 家族，是 l
 ### Post-train
 - **Jamba 1.5 Large** 做了 SFT + DPO，AI21 没披露具体配方。
 - **Granite 4.0** 走完整 instruct/RLHF 流程，IBM 重点是企业 tool-use / RAG 调优。
-- **R1-style RLVR on hybrid**：截至 2026-05 没有看到 hybrid 模型公开的 GRPO/RLVR 训练报告。Zamba2-Instruct、Jamba Reasoning 等都还是传统 SFT+DPO 路线。**这是一个明显的空白**——理论上 hybrid 不影响 RL 训练，但目前所有 RLVR 成功案例都是 dense/MoE transformer。焱拳团队如果要做 SSM agentic RL，先要解决 inference 框架（vLLM、SGLang 对 Mamba 支持是 2025-Q2 才进，对 hybrid 仍不完整）。
+- **R1-style RLVR on hybrid**：截至 2026-05 没有看到 hybrid 模型公开的 GRPO/RLVR 训练报告。Zamba2-Instruct、Jamba Reasoning 等都还是传统 SFT+DPO 路线。**这是一个明显的空白**——理论上 hybrid 不影响 RL 训练，但目前所有 RLVR 成功案例都是 dense/MoE transformer。读者团队如果要做 SSM agentic RL，先要解决 inference 框架（vLLM、SGLang 对 Mamba 支持是 2025-Q2 才进，对 hybrid 仍不完整）。
 
 ## 与 eval / benchmark 的接口
 

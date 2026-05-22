@@ -64,7 +64,7 @@ K2 的 backbone 在结构上**和 DeepSeek-V3 高度同源**（MLA + DeepSeekMoE
    - MoE expert 的 FFN weight 也用 Muon（每个 expert 独立 NS）。这部分通信代价 K2 paper §6 提到用了 **block-diagonal NS + 分布式 reduce-scatter** 的实现。
    - Memory：Muon 只存一阶 momentum（不需要 v），optimizer state 比 AdamW 省 ~33%。
 
-**对焱拳的意义**：如果 Qwen 想换优化器，MuonClip 是目前唯一在 frontier MoE 上 end-to-end 跑通的样本；Moonshot 把训练代码开源在 [github.com/MoonshotAI/Moonlight](https://github.com/MoonshotAI/Moonlight)（含 MuonClip 实现）。需要注意 NS 迭代对 grad scale 极敏感，bf16 grad + fp32 NS 是 Moonshot 实测最稳组合。
+**对读者的意义**：如果 Qwen 想换优化器，MuonClip 是目前唯一在 frontier MoE 上 end-to-end 跑通的样本；Moonshot 把训练代码开源在 [github.com/MoonshotAI/Moonlight](https://github.com/MoonshotAI/Moonlight)（含 MuonClip 实现）。需要注意 NS 迭代对 grad scale 极敏感，bf16 grad + fp32 NS 是 Moonshot 实测最稳组合。
 
 ### INT4 native QAT（K2-Thinking 起）
 

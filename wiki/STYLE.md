@@ -1,6 +1,6 @@
 # Writing style — vol1 Architecture chapters
 
-读者 = 焱拳（Qwen agentic coding 数据+评测 owner，benchmark 圈业内知名）。读者懂 transformer 基础和 RL 基础，不要科普 attention 是什么。
+读者 = 读者（Qwen agentic coding 数据+评测 owner，benchmark 圈业内知名）。读者懂 transformer 基础和 RL 基础，不要科普 attention 是什么。
 
 ## 硬规则
 1. **每条非常识结论必须带 source 链接**（arxiv id / 官方 tech report URL / 公司 blog URL / 录像 timestamp）。
