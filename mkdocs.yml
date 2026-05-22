@@ -1,0 +1,136 @@
+site_name: Icarus Wiki
+site_description: 当前所有模型的架构、可解释性与评测 — 三卷本研究报告
+site_url: https://xander23333.github.io/icarus/
+repo_url: https://github.com/Xander23333/icarus
+repo_name: Xander23333/icarus
+edit_uri: edit/main/wiki/
+
+docs_dir: wiki
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: 跟随系统
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到暗色
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到亮色
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - footnotes
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+nav:
+  - 首页: index.md
+  - 写作规范: STYLE.md
+  - 全卷大纲: OUTLINE.md
+  - 第一卷 · 架构:
+    - "OpenAI o-series 与 GPT-5（reasoning 家族）": vol1-architecture/A1-gpt5-o-series.md
+    - "Claude 4.x 家族（含 3.5 / 3.7 过渡）": vol1-architecture/A2-claude-4x.md
+    - "Gemini 2.5 / 3 家族（含 Deep Think）": vol1-architecture/A3-gemini.md
+    - "xAI Grok 家族（3 → 4 → 4 Heavy）": vol1-architecture/A4-grok.md
+    - "Llama 4 家族（Scout / Maverick / Behemoth）+ 4.5/5 传闻": vol1-architecture/A5-llama4.md
+    - "DeepSeek V2 → V3 → R1 → V3.1/V3.2 家族": vol1-architecture/A6-deepseek.md
+    - "Qwen3 家族（外部视角）": vol1-architecture/A7-qwen3.md
+    - "Kimi K1.5 → K2 → K2-Instruct / K2-Thinking 家族": vol1-architecture/A8-kimi-k2.md
+    - "Zhipu / Z.ai GLM-4.5 → GLM-4.5-Air → GLM-4.6 家族": vol1-architecture/A9-glm.md
+    - "边缘但仍活着的 LLM 家族（through 2026-05）": vol1-architecture/A10-edge-active.md
+    - "SSM / Mamba / Hybrid 家族": vol1-architecture/B1-ssm-mamba.md
+    - "Diffusion LLM（文本 token 上的扩散语言模型）": vol1-architecture/B2-diffusion-llm.md
+    - "B3 · B4 — Linear-attention 家族 与 Hybrid (Attention + SSM/Linear) 家族": vol1-architecture/B3-B4-linear-hybrid.md
+    - "Native / Early-Fusion Multimodal LLM": vol1-architecture/C1-native-multimodal.md
+    - "Adapter-based VLM 家族（2025-2026 active lines）": vol1-architecture/C2-adapter-vlm.md
+    - "视频生成家族（DiT 路线 frontier，截至 2026-05）": vol1-architecture/C3-video-gen.md
+    - "语音 / 音频 LLM 家族（speech-in / speech-out，截至 2026-05）": vol1-architecture/C4-audio-llm.md
+    - "Any-to-Any / Unified Understanding+Generation": vol1-architecture/C5-any-to-any.md
+    - "Physical Intelligence π-series（π0 / π0-FAST / π0.5 / π0.6）": vol1-architecture/D1-pi0.md
+    - "Figure Helix（System 1 / System 2 humanoid VLA）": vol1-architecture/D2-figure-helix.md
+    - "NVIDIA GR00T + Cosmos (Robotics Foundation Models)": vol1-architecture/D3-nvidia-groot.md
+    - "Gemini Robotics（Google DeepMind 机器人线）": vol1-architecture/D4-gemini-robotics.md
+    - "中国 embodied / humanoid VLA 群像（2024-2026.05）": vol1-architecture/D5-china-embodied.md
+    - "开源 VLA / 视觉运动策略基线（OpenVLA / RDT-1B / Diffusion Policy / Octo）": vol1-architecture/D6-vla-open-baselines.md
+    - "JEPA 家族（I-JEPA / V-JEPA / V-JEPA 2）": vol1-architecture/E1-jepa.md
+    - "Dreamer 家族与 latent world model for RL（DreamerV1–V3 / IRIS / TWM / STORM）": vol1-architecture/E2-dreamer.md
+    - "视频生成 = world model？（Sora / Cosmos / GAIA 路线，截至 2026-05）": vol1-architecture/E3-video-as-wm.md
+    - "交互式 / 游戏 World Model（GameNGen → Oasis → Genie 2/3 → Muse → Mirage 2）": vol1-architecture/E4-interactive-wm.md
+    - "空间 / 3D World Model（World Labs Marble · Odyssey · Wayve GAIA-2 · Niantic Spat...": vol1-architecture/E5-spatial-3d-wm.md
+    - "Brain-inspired / Neuromorphic / Predictive-coding": vol1-architecture/F-brain-inspired.md
+  - 第二卷 · 可解释性:
+    - "I1 — Mechanistic interpretability 主线（截至 2026-05）": vol2-interpretability/I1-mech-interp-mainline.md
+    - "I2 — Representation Engineering & Activation Steering（截至 2026-05）": vol2-interpretability/I2-repe-steering.md
+    - "I3 — Probing & Lens techniques（截至 2026-05）": vol2-interpretability/I3-probing-lens.md
+    - "I4-tooling": vol2-interpretability/I4-tooling.md
+    - "Multimodal / VLM Interpretability": vol2-interpretability/I5-multimodal-interp.md
+    - "Embodied / World-Model Interpretability": vol2-interpretability/I6-embodied-wm-interp.md
+    - "Reasoning / CoT Interpretability — faithfulness, hidden reasoning, steganogra...": vol2-interpretability/I7-reasoning-cot-interp.md
+    - "Safety-Relevant Interpretability": vol2-interpretability/I8-safety-interp.md
+  - 第三卷 · 评测:
+    - "Ev1 — 通用知识与推理评测（截至 2026-05）": vol3-evaluation/Ev1-general-reasoning.md
+    - "Ev2 — Math reasoning 评测（截至 2026-05）": vol3-evaluation/Ev2-math.md
+    - "Ev3 — 非 agentic 代码评测（截至 2026-05）": vol3-evaluation/Ev3-code.md
+    - "Ev4 — Agentic & tool-use 评测（截至 2026-05）": vol3-evaluation/Ev4-agentic.md
+    - "多模态评测 (Multimodal Benchmarks)": vol3-evaluation/Ev5-multimodal.md
+    - "Ev6-long-context": vol3-evaluation/Ev6-long-context.md
+    - "Ev7 Embodied / VLA 评测 — 没有 MMLU 的赛道，sim2real 的诚实账本": vol3-evaluation/Ev7-embodied.md
+    - "世界模型评测 (World Model Benchmarks)": vol3-evaluation/Ev8-world-model.md
+    - "Ev9 — Safety & dangerous-capability 评测（截至 2026-05）": vol3-evaluation/Ev9-safety.md
+    - "Ev10 评测的 meta 问题 — contamination / Goodhart / 判官偏差 / harness 漂移": vol3-evaluation/Ev10-meta-issues.md
+    - "Ev11 — 公共 leaderboard 全景（截至 2026-05）": vol3-evaluation/Ev11-leaderboards.md
+
