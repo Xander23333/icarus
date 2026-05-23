@@ -2,7 +2,7 @@
 
 ## 一、三角的诅咒
 
-二〇二六年春天，焱拳——Qwen 团队 agentic coding 评测的负责人——在一次内部分享会上画了一个三角形。三角形的三个顶点分别写着：**反作弊**（uncontaminable）、**可比**（comparable）、**真实**（ecologically valid）。他在三角的中心打了一个大大的红叉，然后说了一句后来在公司内部流传甚广的话：「这三样东西，你只能选两样。第三样，会在你睡觉的时候被人拿走。」
+二〇二六年春天，一位 frontier 模型公司 agentic coding 评测的负责人，在一次内部分享会上画了一个三角形。三角形的三个顶点分别写着：**反作弊**（uncontaminable）、**可比**（comparable）、**真实**（ecologically valid）。他在三角的中心打了一个大大的红叉，然后说了一句后来在公司内部流传甚广的话：「这三样东西，你只能选两样。第三样，会在你睡觉的时候被人拿走。」
 
 这并不是一句俏皮话。它是过去六年人工智能评测史的浓缩。从二〇二〇年的 MMLU，到二〇二一年的 HumanEval，到二〇二二年的 GSM8K 与 MATH，到二〇二三年的 SWE-bench，再到二〇二四年的 HLE（Humanity's Last Exam）和 LMArena——每一次新基准的诞生，都是对前一个基准死亡的悼词。而每一次死亡的死因，都可以被归纳到那个三角形的某一条边上。
 
@@ -48,22 +48,22 @@
 
 更悲哀的是，这个过程**不需要恶意**。没有人需要主动作弊，整个梯度下降的机制就会自动完成作弊。模型工程师只需要诚实地训练、诚实地评测、诚实地发布——而 benchmark 会在他们不知情的情况下死去。
 
-## 五、二〇二六：焱拳的绝望与共鸣
+## 五、二〇二六：评测者的绝望与共鸣
 
-回到本章开头的那个会议室。焱拳画完三角形之后，做了一件更让团队震动的事——他在三角形旁边写下了四个 benchmark 的名字：SWE-bench Verified、LiveCodeBench、TerminalBench、自研的 QwenCode-Hold-out，并在每一个名字旁边注上了「预计死亡时间」。最近的一个，是九个月。最远的一个，是十八个月。
+回到本章开头的那个会议室。那位负责人画完三角形之后，做了一件更让团队震动的事——他在三角形旁边写下了四个 benchmark 的名字：SWE-bench Verified、LiveCodeBench、TerminalBench、自研的 QwenCode-Hold-out，并在每一个名字旁边注上了「预计死亡时间」。最近的一个，是九个月。最远的一个，是十八个月。
 
 「我们不是在建评测，」他说，「我们是在建一座座墓碑，并提前刻好日期。」
 
-这种绝望不是 Qwen 团队独有的。OpenAI 的 evals 团队、Anthropic 的 model evaluation 组、DeepMind 的 capability eval 部门，都在二〇二五至二〇二六年间经历了同一种危机——**评测的半衰期，正在变得比模型迭代周期还短**。一个新 benchmark 从发布到饱和，曾经需要三年（MMLU），后来变成一年（HumanEval），现在只需要六个月（SWE-bench Verified）。在某些子领域（如数学奥赛、竞赛编程），半衰期已经短到了**单次模型发布周期内**——这意味着一个 benchmark 在它被首次报告分数的同一份技术报告里，就已经死亡。
+这种绝望不是任何一家实验室独有的。OpenAI 的 evals 团队、Anthropic 的 model evaluation 组、DeepMind 的 capability eval 部门，都在二〇二五至二〇二六年间经历了同一种危机——**评测的半衰期，正在变得比模型迭代周期还短**。一个新 benchmark 从发布到饱和，曾经需要三年（MMLU），后来变成一年（HumanEval），现在只需要六个月（SWE-bench Verified）。在某些子领域（如数学奥赛、竞赛编程），半衰期已经短到了**单次模型发布周期内**——这意味着一个 benchmark 在它被首次报告分数的同一份技术报告里，就已经死亡。
 
-焱拳团队的应对策略是「滚动式 hold-out + 私有验证集 + 多 scaffold 平均」，但他自己承认，这只是把死亡推后，不是阻止死亡。[uncertain] 他在那次分享的最后说了一句话，我无法确认原话，但大意是：「也许我们这一代评测人的工作，不是找到那个永恒的尺子，而是接受尺子会不断融化这件事——并学会在融化中继续测量。」
+他们团队的应对策略是「滚动式 hold-out + 私有验证集 + 多 scaffold 平均」，但他自己承认，这只是把死亡推后，不是阻止死亡。[uncertain] 他在那次分享的最后说了一句话，我无法确认原话，但大意是：「也许我们这一代评测人的工作，不是找到那个永恒的尺子，而是接受尺子会不断融化这件事——并学会在融化中继续测量。」
 
 这是一种 Harari 式的觉悟。在《人类简史》里，Harari 反复指出，人类历史上许多看似永恒的制度（货币、宗教、国家），其实是脆弱的「想象的共同体」，靠集体相信而存在。Benchmark 也是这样一种想象的共同体——它的有效性，不来自数学，而来自**所有人同意暂时相信它**。一旦相信瓦解，benchmark 就死了，无论它的题目还在不在。
 
 那个三角形之所以是不可能的，不是因为工程上做不到，而是因为它要求人类同时相信三件互相否定的事情：相信测量是客观的、相信比较是公平的、相信现实是可被还原的。我们能同时相信其中两件，从来没能同时相信三件。
 
-而二〇二六年的焱拳，和他在伯克利、在普林斯顿、在伦敦国王十字的同行们，正站在第三次相信即将瓦解的门槛上。门后面是什么，没人知道。但门前的那个三角形，仍然画在白板上，红叉仍然鲜艳。
+而二〇二六年的这位评测负责人，和他在伯克利、在普林斯顿、在伦敦国王十字的同行们，正站在第三次相信即将瓦解的门槛上。门后面是什么，没人知道。但门前的那个三角形，仍然画在白板上，红叉仍然鲜艳。
 
 ---
 
-*参考与出处：Hendrycks et al., "Measuring Massive Multitask Language Understanding" (2020); Chen et al., "Evaluating Large Language Models Trained on Code" / HumanEval (2021); Cobbe et al., "Training Verifiers to Solve Math Word Problems" / GSM8K (2021); Zhang et al., "A Careful Examination of Large Language Model Performance on Grade School Arithmetic" / GSM1K (Scale AI, 2024); Jimenez et al., "SWE-bench" (Princeton, 2023); Chiang et al., "Chatbot Arena" / LMArena (2024); Goodhart (1975). 关于焱拳团队的内部讨论细节为 [推测] 与叙事重构，用于呈现行业普遍困境。*
+*参考与出处：Hendrycks et al., "Measuring Massive Multitask Language Understanding" (2020); Chen et al., "Evaluating Large Language Models Trained on Code" / HumanEval (2021); Cobbe et al., "Training Verifiers to Solve Math Word Problems" / GSM8K (2021); Zhang et al., "A Careful Examination of Large Language Model Performance on Grade School Arithmetic" / GSM1K (Scale AI, 2024); Jimenez et al., "SWE-bench" (Princeton, 2023); Chiang et al., "Chatbot Arena" / LMArena (2024); Goodhart (1975). 关于该团队的内部讨论细节为 [推测] 与叙事重构，用于呈现行业普遍困境。*
