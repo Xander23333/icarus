@@ -81,6 +81,15 @@ nav:
   - 首页: index.md
   - 写作规范: STYLE.md
   - 全卷大纲: OUTLINE.md
+  - Thesis 候选样章:
+    - 总览: samples/README.md
+    - "A — 为什么没人能逃离 Transformer": samples/A-no-escape-from-transformer.md
+    - "B — scale 的三次危机与三次抢救": samples/B-three-crises-of-scale.md
+    - "C — frontier 的分裂：从一条路变成五条路": samples/C-frontier-fragmentation.md
+    - "D — benchmark 的不可能三角": samples/D-impossible-triangle.md
+    - "E — 从 capability eval 到 agentic eval 的迁移": samples/E-capability-to-agentic-eval.md
+    - "F — 从黑盒到神经科学的 60 年绕路": samples/F-60-years-to-neuroscience.md
+    - "G — 为什么 Anthropic 在可解释性上一家独大": samples/G-anthropic-monopoly.md
   - 第一卷 · 架构:
     - "OpenAI o-series 与 GPT-5（reasoning 家族）": vol1-architecture/A1-gpt5-o-series.md
     - "Claude 4.x 家族（含 3.5 / 3.7 过渡）": vol1-architecture/A2-claude-4x.md
