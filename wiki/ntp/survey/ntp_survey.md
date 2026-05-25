@@ -71,9 +71,9 @@
 > 每条都标注：(a) 候选理由，(b) 最强反论 / 已知反例，(c) 当前结论。
 
 ### C1. Architecture-bound reasoning depth horizon (Deterministic Horizon)
-- (a) 候选理由：Guo 2026 (2605.23024) 通过 residual-stream capacity invariant 论证存在仅由 (L, d) 决定的 H*，跨 12 架构实测 19–31；Zhang et al. 2026 (2605.19944) 经 OT/Wasserstein + Dyck-k → TC⁰ 复刻同型结论，且 width 不能换 depth。
+- (a) 候选理由：Guo 2026 (2605.23024) 通过 residual-stream capacity invariant 论证存在仅由 (L, d) 决定的 H*，跨 12 架构实测 19–31；Zhang et al. 2026 (2605.19944) 经 OT/Wasserstein + Dyck-k → TC⁰ 复刻同型结论，且 width 不能换 depth。**(2026-05-27 修订)** Lost in Tokenization (2605.22471) 进一步证明 tokenization 选择对同一函数诱导多项式级 depth gap，意味着 C1 的参数集应改写为 **(L, d, tokenization)**。
 - (b) 最强反论：Brösamle & Eckstein 2026 (2605.18079) 证明 softmax + 低精度 + log-grow depth 在加 CoT/summarized CoT 后 Turing-complete——即 H* 仅在 no-CoT / 固定输出长度下成立；CoT 把"深度"换成"token 时间"维度。
-- (c) 当前结论：**Conditional NTP-mech 候选**。只在 no-CoT / 单 forward pass 设定下成立；进入 CoT-augmented NTP 后退化为 NTP-cap 类的"长 horizon 估计代价 Ω(H)"问题。
+- (c) 当前结论：**Conditional NTP-mech 候选**。只在 no-CoT / 单 forward pass / 固定 tokenization 设定下成立；进入 CoT-augmented NTP 后退化为 NTP-cap 类的"长 horizon 估计代价 Ω(H)"问题。新轴 (tokenization) 暗示某些"模型机制级失败"可能是 BPE 工程选择导致的，可被换 tokenizer 缓解，进一步收紧"真正机制级"的范围。
 
 ### C2. SNR-limited factual recall / hallucination
 - (a) 候选理由：Smith et al. 2026 (2605.18732) 把 recall quality 拟合到 (log params, log topic freq) 上的 sigmoid，族内 R² 74–94%；Shannon Scaling Law (2605.23901) 给出 SNR 不足时 U-shape 的非单调退化。
@@ -87,6 +87,11 @@
 
 ### 已被今日证据弱化的候选论点
 - "CoT corruption 实验显示 LLM 不做真推理 → NTP 推理是表演"——被 2605.10799 的 readout 效应反例严重削弱，需重做。
+- **(2026-05-27)** "Causal fine-tune 失败 → NTP 学不到因果推理"——被 2605.05438 的 model collapse 反例削弱：纯 CE FT 在小模型上 100% collapse 但 accuracy 仍 73.9% 掩盖。任何基于 aggregate accuracy 的"NTP 学不会因果"论据都需补 per-class 漂移检查。
+- **(2026-05-27)** "NTP local objective ⇒ 无法做全局规划/属性控制"——被 2605.14004 (Conditional Attribute Transformers) 弱化为 readout/objective 工程问题，不构成机制级证据。
+
+### 跨证据浮现的 meta-pattern (2026-05-27)
+**Readout-side 主导假设**：本周累计 3 条 (2605.10799 / 2605.07120 / 2605.14004 / 2605.05438) 独立证据指向同一方向——大量被解读为"NTP 推理机制不足"的现象实际由 readout/format/objective/collapse 效应主导。下一阶段 NTP-mech 候选必须显式控制：(i) format confound, (ii) token-name readout dependency, (iii) collapse-by-CE, (iv) attribute-head 缺失。该 meta-pattern 比任何单一候选更具方法论意义。
 
 ---
 *Last revision: 2026-05-26 — populated by daily pipeline from formal_limits + scaling_limits + reasoning topics.*

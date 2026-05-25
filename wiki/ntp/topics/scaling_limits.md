@@ -10,6 +10,7 @@
 
 | 日期 | 论文 | 主要论点 | NTP 归类 (mech/cap/pseudo) | 链接 |
 |---|---|---|---|---|
+| 2026-05-16 | Language Acquisition Device (LAD-PPT) | MP-STRUCT (MERGE/AGREE/MOVE 编码) 在 500 步 PPT 即匹配 5k+ 步 k-Shuffle Dyck PPT，BLiMP 长程子集反超；prior 设计可显著缩短样本量 | cap | [2605.16758](../papers/paper_notes/2026-05-27-2605.16758-language-acquisition-device.md) |
 | 2026-05-22 | Shannon Scaling Law (Ouyang et al.) | LLM 训练 = noisy channel；SNR 不足时性能呈 U-shape；外推 12B/307B token 仍 R²=0.847 | cap | [2605.23901](../papers/paper_notes/2026-05-26-2605.23901-shannon-scaling-law.md) |
 | 2026-05-18 | Predictable Confabulations (Smith et al.) | factual recall 在 (log params, log topic freq) 上 sigmoid；族内 R²=74–94% | cap | [2605.18732](../papers/paper_notes/2026-05-26-2605.18732-predictable-confabulations.md) |
 | 2026-05-12 | Joint-KL AR Learning (Xu et al.) | approximation horizon-free；estimation 有 Ω(H) 信息论下界与 Õ(H) 上界匹配 | cap | [2605.12316](../papers/paper_notes/2026-05-26-2605.12316-joint-kl-autoregressive.md) |

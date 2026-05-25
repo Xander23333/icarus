@@ -4,6 +4,12 @@
 
 | 日期 | arXiv | 标题 | Topic | NTP 归类 |
 |---|---|---|---|---|
+| 2026-05-27 | [2605.22471](paper_notes/2026-05-27-2605.22471-graph-tokenization-tradeoffs.md) | Lost in Tokenization: Fundamental Trade-offs in Graph Tokenization for Transformers | formal_limits | NTP-mech |
+| 2026-05-27 | [2605.20271](paper_notes/2026-05-27-2605.20271-mha-as-nw-ensemble.md) | Multi-Head Attention as Ensemble Nadaraya-Watson Estimation | formal_limits | NTP-mech (soft) |
+| 2026-05-27 | [2605.16758](paper_notes/2026-05-27-2605.16758-language-acquisition-device.md) | Language Acquisition Device in Large Language Models | scaling_limits | NTP-cap |
+| 2026-05-27 | [2605.14004](paper_notes/2026-05-27-2605.14004-conditional-attribute-transformers.md) | Conditional Attribute Estimation with Autoregressive Sequence Models | reasoning | NTP-cap |
+| 2026-05-27 | [2605.07120](paper_notes/2026-05-27-2605.07120-fresh-symbol-classification.md) | When Symbol Names Should Not Matter: A Logistic Theory of Fresh-Symbol Classification | formal_limits | NTP-mech |
+| 2026-05-27 | [2605.05438](paper_notes/2026-05-27-2605.05438-semantic-loss-causal-collapse.md) | Semantic Loss Fine-Tuning Prevents Model Collapse in Causal Reasoning | reasoning | counter-evidence |
 | 2026-05-26 | [2605.10799](paper_notes/2026-05-26-2605.10799-cot-format-confound.md) | The Last Word Often Wins: A Format Confound in CoT Corruption Studies | reasoning | counter-evidence |
 | 2026-05-26 | [2605.12316](paper_notes/2026-05-26-2605.12316-joint-kl-autoregressive.md) | Autoregressive Learning in Joint KL: Sharp Oracle Bounds and Lower Bounds | scaling_limits | NTP-cap |
 | 2026-05-26 | [2605.18079](paper_notes/2026-05-26-2605.18079-lowprec-softmax-cot.md) | Expressive Power of Low Precision Softmax Transformers with (Summarized) CoT | formal_limits | counter-evidence |

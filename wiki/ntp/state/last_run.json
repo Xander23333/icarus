@@ -1,9 +1,13 @@
 {
-  "last_run_utc": "2026-05-25T20:22:20Z",
-  "last_run_status": "ok",
-  "date": "2026-05-26",
-  "papers_scanned": 192,
-  "papers_kept": 7,
-  "notes_written": 7,
-  "hard_dropped": 81
+  "last_run_utc": "2026-05-25T23:35:47Z",
+  "last_run_status": "ok_with_partial_harvest",
+  "date": "2026-05-27",
+  "papers_scanned": 81,
+  "papers_kept": 6,
+  "notes_written": 6,
+  "hard_dropped": 75,
+  "harvester_errors": [
+    "reasoning",
+    "grounding"
+  ]
 }
