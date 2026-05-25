@@ -1,0 +1,5 @@
+{
+  "schema": "v1",
+  "description": "已读 arXiv ID 集合，用于 dedup",
+  "ids": []
+}

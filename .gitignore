@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# NTP daily harvester raw output (large, regenerable, traceable via daily reports)
+wiki/ntp/state/harvest_*.json

@@ -142,4 +142,20 @@ nav:
     - "Ev9 — Safety & dangerous-capability 评测（截至 2026-05）": vol3-evaluation/Ev9-safety.md
     - "Ev10 评测的 meta 问题 — contamination / Goodhart / 判官偏差 / harness 漂移": vol3-evaluation/Ev10-meta-issues.md
     - "Ev11 — 公共 leaderboard 全景（截至 2026-05）": vol3-evaluation/Ev11-leaderboards.md
+  - "NTP · Non-Tokenizable Problems":
+    - "总览": ntp/README.md
+    - "Survey 主文档": ntp/survey/ntp_survey.md
+    - "Timeline": ntp/survey/timeline.md
+    - "Taxonomy": ntp/survey/taxonomy.md
+    - "Topics":
+      - "Formal limits": ntp/topics/formal_limits.md
+      - "Reasoning vs pattern matching": ntp/topics/reasoning.md
+      - "Grounding": ntp/topics/grounding.md
+      - "Causality": ntp/topics/causality.md
+      - "Embodiment": ntp/topics/embodiment.md
+      - "Online / continual learning": ntp/topics/online_learning.md
+      - "World model & planning": ntp/topics/world_model.md
+      - "Scaling & ICL limits": ntp/topics/scaling_limits.md
+    - "Paper notes": ntp/papers/README.md
+    - "Daily reports": ntp/daily_reports/README.md
 
