@@ -1,7 +1,9 @@
 {
-  "last_run_utc": null,
-  "last_run_status": "not_yet_run",
-  "papers_scanned": 0,
-  "papers_kept": 0,
-  "notes_written": 0
+  "last_run_utc": "2026-05-25T20:22:20Z",
+  "last_run_status": "ok",
+  "date": "2026-05-26",
+  "papers_scanned": 192,
+  "papers_kept": 7,
+  "notes_written": 7,
+  "hard_dropped": 81
 }

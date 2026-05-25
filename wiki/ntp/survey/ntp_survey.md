@@ -70,7 +70,27 @@
 
 > 每条都标注：(a) 候选理由，(b) 最强反论 / 已知反例，(c) 当前结论。
 
-(空 — 由 daily pipeline 累积)
+### C1. Architecture-bound reasoning depth horizon (Deterministic Horizon)
+- (a) 候选理由：Guo 2026 (2605.23024) 通过 residual-stream capacity invariant 论证存在仅由 (L, d) 决定的 H*，跨 12 架构实测 19–31；Zhang et al. 2026 (2605.19944) 经 OT/Wasserstein + Dyck-k → TC⁰ 复刻同型结论，且 width 不能换 depth。
+- (b) 最强反论：Brösamle & Eckstein 2026 (2605.18079) 证明 softmax + 低精度 + log-grow depth 在加 CoT/summarized CoT 后 Turing-complete——即 H* 仅在 no-CoT / 固定输出长度下成立；CoT 把"深度"换成"token 时间"维度。
+- (c) 当前结论：**Conditional NTP-mech 候选**。只在 no-CoT / 单 forward pass 设定下成立；进入 CoT-augmented NTP 后退化为 NTP-cap 类的"长 horizon 估计代价 Ω(H)"问题。
+
+### C2. SNR-limited factual recall / hallucination
+- (a) 候选理由：Smith et al. 2026 (2605.18732) 把 recall quality 拟合到 (log params, log topic freq) 上的 sigmoid，族内 R² 74–94%；Shannon Scaling Law (2605.23901) 给出 SNR 不足时 U-shape 的非单调退化。
+- (b) 最强反论：这只是 NTP-cap 类约束，不是机制级"做不到"——加 retrieval / 工具调用即可绕过。
+- (c) 当前结论：**不是 NTP-mech，归 NTP-cap**。但有助于澄清 hallucination 论据不是 NTP-mech 的好弹药。
+
+### C3. Long-horizon imitation 信息论 Ω(H) 下界
+- (a) 候选理由：Xu et al. 2026 (2605.12316) 在 joint KL 下给出 Ω(H) 的 estimation 信息论下界，对 decomposable 与 fully shared policy class 都成立。
+- (b) 最强反论：interactive RL / DAgger 可把误差曲线打平；这本质是 imitation framework 的代价，不是 next-token prediction 本身的代价（细分 NTP vs imitation 概念边界存疑）。
+- (c) 当前结论：**NTP-cap**，对"长 horizon imitation 训练"有实操意义；不构成机制级 impossibility。
+
+### 已被今日证据弱化的候选论点
+- "CoT corruption 实验显示 LLM 不做真推理 → NTP 推理是表演"——被 2605.10799 的 readout 效应反例严重削弱，需重做。
+
+---
+*Last revision: 2026-05-26 — populated by daily pipeline from formal_limits + scaling_limits + reasoning topics.*
+*See git log of this file.*
 
 ---
 *Last revision: see git log of this file.*
