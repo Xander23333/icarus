@@ -46,6 +46,15 @@
       ],
       "chars_added": 14266,
       "note": "Deepened online_learning topic from stub to full page (McCloskey1989 to Ibrahim2024 chronology, 16 papers incl. EWC/MEMIT/MemGPT/TTT-Linear/continual-backprop, C-CONT-1 cutoff-bottleneck and C-CONT-2 plasticity-stability mech candidates, cross-links to world_model/embodiment/causality/N1)."
+    },
+    {
+      "tick_utc": "2026-05-26T20:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/reasoning.md"
+      ],
+      "chars_added": 8062,
+      "note": "Deepened reasoning topic: 2022-01 Wei CoT → 2026-05 Anti-Collapse chronology (9 papers incl. Turpin/Lanham/Dziri/Reversal-Curse/R1/Anthropic-biology/Garcia), C-REAS-1/2/3 mech candidates with falsification conditions, 3 counter-examples (attribution-graph/R1-on-AIME/low-prec-CoT-Turing), 2026-05-27 judgment that empirical CoT-mech evidence shrank while theoretical (TC⁰ + Ω(H)) hardened, cross-links to formal_limits/causality/scaling_limits/N1."
     }
   ]
 }
