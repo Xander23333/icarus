@@ -55,6 +55,31 @@ NTP-cap 阵营的回击是：(a) 分布信号本身就包含大量被低估的 g
 - VLA / embodied 路线（π₀、OpenVLA、RT-2）是否真的把 token grounding 推进了一步，还是只是在"被 ground 过的 caption"上做 imitation？需要 closed-loop counterfactual 测试 (见 `embodiment.md`)。
 - distributional grounding 的上界：纯文本 LM 在哪些 modality 上能渐近达到 multimodal 模型？哪些根本达不到（候选：颜色 OK，3D 空间 OK 但慢，触觉/嗅觉 几乎不可能）？
 
+## 反例与近期突破 (2023–2026)
+
+把 grounding 当作\"text-only 永远不行\"的 mech 上界，是 2020–2022 那一波的共识。2023 年起，三条独立的证据线把这条上界压得越来越窄。
+
+**线 1：纯文本 LM 能学出非平凡 spatial / perceptual 结构。** Patel & Pavlick 2022 之外，Abdou 等人 \"Can Language Models Encode Perceptual Structure Without Grounding?\" ([arxiv:2109.06129](https://arxiv.org/abs/2109.06129)) 在 BERT / RoBERTa 上发现 color term 的内部表征与 CIELAB 颜色空间存在显著但非完美的同构（Pearson r ≈ 0.5–0.7，远高于 random baseline 但低于人类 ≈ 0.9）。Li 等 \"Implicit Representations of Meaning in Neural Language Models\" ([arxiv:2106.00737](https://arxiv.org/abs/2106.00737)) 在 Alchemy / TextWorld 上探针出 entity-state 表征。Søgaard 2023 *Grounding the Vector Space of an Octopus* (TACL, [arxiv:2305.02223](https://arxiv.org/abs/2305.02223) [unverified ID]) 直接反驳 Bender-Koller 章鱼论：在分布信号足够丰富的情况下，referent 集合可以在同构 *up to permutation* 的意义上被恢复。这些结果不构成 \"grounding solved\"，但**确实把强 mech 的可证伪 setting 从 \"任何 grounded structure\" 缩到 \"deictic / novel-object / first-person sensorimotor\" 这个更窄的子集**。
+
+**线 2：multimodal pretraining 在 referent 任务上的天花板比预想的低。** CLIP 之后五年，业界普遍假设 vision-language 模型已经把 referential grounding 解决了。2024 年的几个结果泼了冷水：Tong 等 \"Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs\" ([arxiv:2401.06209](https://arxiv.org/abs/2401.06209)) 构造的 MMVP benchmark 包含人类 95% 准确但 GPT-4V / Gemini Pro 仅 ~25% 的视觉对比题，多数失败模式是模型\"看见\"了 CLIP embedding 相近但语义相反的物体（朝左 vs 朝右、有 vs 无、开 vs 关）。Rahmanzadehgervi 等 \"Vision Language Models Are Blind\" ([arxiv:2407.06581](https://arxiv.org/abs/2407.06581)) 在七项小学几何任务（线段是否相交、圈是否重叠、字母计数）上 frontier VLM 全军溃败，准确率 20–60%。这条线说明：把 CLIP-style contrastive objective 扩到 10 亿规模并不能填上 grounding，contrastive loss 只学共现，不学 \"指称\"。从 NTP 视角看，VLM 的 next-token 目标在 vision token 上同样是分布信号——它继承了文本 NTP 的全部 grounding 局限，只是把模态换了一个。
+
+**线 3：VLA / embodied 路线提供了第一批 closed-loop counterfactual 数据。** Open X-Embodiment ([arxiv:2310.08864](https://arxiv.org/abs/2310.08864)) 的 60 个数据集 + RT-2 ([arxiv:2307.15818](https://arxiv.org/abs/2307.15818)) / OpenVLA ([arxiv:2406.09246](https://arxiv.org/abs/2406.09246)) / π₀ ([arxiv:2410.24164](https://arxiv.org/abs/2410.24164)) 把 \"语言 token → 动作 token\" 的链路第一次大规模 closed-loop 化。但 Kim 等 2024 的 OpenVLA evaluation 显示：在 *unseen object × unseen instruction* 组合上成功率从 in-distribution 的 70% 跌到 < 20%，且失败模式高度集中在 deictic 指令（\"把*那个*放到*这边*\"）。这恰好是强 mech 阵营预言的 grounding 残差。
+
+> **2026-05-27 判断**：grounding 这条战线上，2023–2026 的净进展不是\"text-only 不行\"被证否，也不是\"multimodal 解决了 grounding\"被证实，而是**可证伪 setting 被双向收窄**——一边把强 mech 推到 deictic / first-person 子集，一边把弱 cap 推到 contrastive 之外的 closed-loop interaction。这正好是 N5 (VLA bet) 与本 topic 的接合面。
+
+## NTP-mech 候选条目 (续)
+
+**C-GROUND-3 (deictic asymmetry)**：在 deictic / first-person 指令子集 D 上，纯文本 + image-caption multimodal 训练的模型成功率上界 ≤ 0.3，而加入 ≥ 10⁴ 小时 ego-centric 视频或 ≥ 10⁶ 步真实/仿真 closed-loop 交互的模型成功率 ≥ 0.6。
+
+- 反例条件 (falsifier)：任意 text-only 或 image-caption-only 模型在标准化 D 上 > 0.5；或任何 embodied 模型在 D 上 < 0.4。
+- 当前状态：D 的候选包括 RefCOCO 的 deictic 子集、Ego4D NLQ ([arxiv:2110.07058](https://arxiv.org/abs/2110.07058)) 的 first-person 指代部分、RoboVQA ([arxiv:2311.00899](https://arxiv.org/abs/2311.00899) [unverified ID]) 的 embodied QA。三者都没被刻意当作 grounding falsifier 设计，需要重切。该条目当前评估为 **medium**：方向清晰但 benchmark 不齐。
+- 与 C-GROUND-1 的区别：C-GROUND-1 押的是 \"任意反事实指称\"，已经被 Patel-Pavlick / Søgaard 削弱；C-GROUND-3 把战场限定到 deictic / first-person，理论上更难被纯分布信号攻陷。
+
+**C-GROUND-4 (contrastive ≠ referential)**：存在一个 benchmark 家族 B，使得 ∀ 只用 contrastive (CLIP-style) 或 captioning (BLIP-style) objective 训练的 VLM，pass@1(B) ≤ 0.3，而加入 region-level grounding loss (GLIP / Grounding-DINO 风格 [arxiv:2112.03857](https://arxiv.org/abs/2112.03857)) 或 spatial supervision 的同等规模模型 pass@1(B) ≥ 0.7。
+
+- 候选 B：MMVP ([arxiv:2401.06209](https://arxiv.org/abs/2401.06209)) 已经部分满足；BLINK ([arxiv:2404.12390](https://arxiv.org/abs/2404.12390)) 的 spatial relation / depth ordering 子集是更干净的候选。
+- 工程意义：如果 C-GROUND-4 成立，那么 \"把数据量再放大 10 倍\" 不是出路，必须改 objective。这与 NTP-cap 阵营的\"scale is all you need\" 直接对立。
+
 ## 与其他 topic 的交叉引用
 
 - `embodiment.md`：sensorimotor grounding 的 closed-loop 检验
@@ -64,4 +89,4 @@ NTP-cap 阵营的回击是：(a) 分布信号本身就包含大量被低估的 g
 
 ---
 
-*最后更新：2026-05-26 by NTP-Deepen cron tick (task type B).*
+*最后更新：2026-05-27 by NTP-Deepen cron tick (task type B).*

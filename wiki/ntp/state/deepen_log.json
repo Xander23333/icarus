@@ -173,6 +173,15 @@
       ],
       "chars_added": 5400,
       "note": "Started N5 sample chapter (Embodiment/VLA bet): §1 Moravec paradox + LeCun JEPA position + the explicit paradigm wager, 2 real arxiv IDs (2301.08243 I-JEPA, 2404.08471 V-JEPA, plus contextual mentions of 2212.06817/2307.15818/2406.09246/2405.12213 in TODO), explicit §2-§6 outline, frames the chapter as a falsifiable bet between LeCun and the VLA camp; rotates away from N2/N3/N4."
+    },
+    {
+      "tick_utc": "2026-05-27T03:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/grounding.md"
+      ],
+      "chars_added": 3850,
+      "note": "Deepened grounding topic: added '反例与近期突破 (2023–2026)' three-line evidence section (text-only perceptual structure Abdou 2109.06129 / Li 2106.00737 / Søgaard 2305.02223; multimodal ceiling MMVP 2401.06209 / VLM-Blind 2407.06581; VLA closed-loop OXE 2310.08864 / RT-2 2307.15818 / OpenVLA 2406.09246 / pi0 2410.24164), 2026-05-27 judgment on double-sided narrowing of falsifiable setting, two new mech candidates C-GROUND-3 (deictic asymmetry, references Ego4D 2110.07058 / RoboVQA 2311.00899) and C-GROUND-4 (contrastive != referential, references GLIP 2112.03857 / BLINK 2404.12390); rotates away from N2/N3/N4/N5 sample chapters."
     }
   ]
 }
