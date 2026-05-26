@@ -1,7 +1,7 @@
 # Transformer 的形式表达力——TC⁰ 之墙到底有多硬
 
 > NTP 候选样章 N2。作者：Xander Xu。
-> 状态：🔨 推进中（§1–§3 已写，约 2700 字 / 估计全文 4500 字）。
+> 状态：🔨 推进中（§1–§4 已写，约 3600 字 / 估计全文 4500 字）。
 
 ## 一、一堵从 1984 年就存在的墙
 
@@ -55,4 +55,29 @@ Hahn 2019 留下的是一个**存在性下界**：存在某些任务，固定参
 
 **判断**：Merrill–Sabharwal 三部曲的真正贡献不是"证明了 Transformer 弱"，而是**把"弱在哪里、靠什么翻墙"做成了一个有边界条件的工程问题**。今天任何一篇讲 reasoning model 的论文，如果它声称在某个 NTP-mech 上有所突破，都应该先回答：你的实验落在 $n$ 的哪一段？你的 CoT 长度增长是 $O(\log n)$ 还是 $O(n)$？如果作者答不出来，那就是在 TC⁰ 这堵墙的脚下原地打转。这一节为下一节的 CoT 翻墙代价分析（§4）和 Faith-and-Fate 的经验对照（§5）铺好了路。
 
-<!-- TODO: §4 CoT 如何翻墙以及代价是什么（Feng 2305.15408、Li-Liu-Sanford 等的精细化）；§5 Faith-and-Fate / Deterministic Horizon 的经验对照；§6 反例：summarized CoT、低精度 softmax、tokenization 的暗门；尾声：墙还在，但门也在。 -->
+## 四、CoT 如何翻墙，以及一张账单
+
+Merrill-Sabharwal 2023 那个\"加足够多 CoT 就能从 TC⁰ 爬到 P\"的结论看起来像免费午餐。但任何看起来像免费午餐的复杂度结果都附带一张账单。这一节把账单摊开。
+
+时间回到 2023 年 5 月，Guhao Jiang、Bohang Zhang、Tianle Cai、Yuandong Tian、Liwei Wang、Di He 的 *Towards Revealing the Mystery behind Chain of Thought: A Theoretical Perspective*（[arxiv:2305.15408](https://arxiv.org/abs/2305.15408)）和 Merrill-Sabharwal 几乎平行地给出了 CoT 的表达力刻画。他们走的路线略不同——Feng 等人是构造性证明：对任意可以被 $T(n)$ 步图灵机解决的问题，存在一个常数深度的 Transformer，只要允许它输出 $O(T(n))$ 个中间 token，就能模拟该图灵机。换句话说，**CoT 本质上是把\"算法的时间维\"展开到\"序列的空间维\"**，让本来要靠深度堆叠的递归被外化成 token 流。这和 Merrill-Sabharwal 的上界版本互为表里：一个给出 \"$\\leq$\"，一个给出 \"$\\geq$\"，把 CoT-augmented transformer 这个对象的复杂度边界夹住了。
+
+但账单写在论文的脚注里。三笔费用：
+
+**第一笔，token 数。** 若被模拟的算法是 $O(n^2)$（例如简单的多项式整除、长除法、Dyck-k 的栈模拟），CoT 长度也必须 $\\Omega(n^2)$。对 $n=1000$ 的输入，CoT 需要约 $10^6$ token——超过当前 frontier model 单次生成的实际上限两到三个数量级。Merrill-Sabharwal 的渐近翻墙在工程意义上对长输入是不可达的，对短输入又无人验证。
+
+**第二笔，位置编码与注意力精度。** Feng 等人构造里的 Transformer 需要能精确寻址 $\\Theta(n)$ 范围的位置——这对 RoPE / ALiBi / NoPE 在长 context 下的外推精度提出了非平凡要求。Anthony Chen、Anej Svete、David Chiang 等人 [unverified 具体引用] 在 2024 年的后续工作里指出，许多 \"理论上 CoT 能解\" 的任务在标准位置编码下学不出来，原因恰恰是位置寻址的有限精度让 step-$t$ 的 token 无法可靠地回看 step-$t-k$ 的中间结果。**复杂度类上的翻墙不等于训练动力学上的翻墙**——这是 §6 会重提的反例线。
+
+**第三笔，CoT 的可靠性。** Merrill-Sabharwal 与 Feng 的定理都默认 CoT 是\"忠实计算\"——模型输出的每一步中间 token 都被后续 step 真实使用。但 Miles Turpin 等人的 *Language Models Don't Always Say What They Think*（[arxiv:2305.04388](https://arxiv.org/abs/2305.04388)）和 Tamera Lanham 等人的 *Measuring Faithfulness in Chain-of-Thought Reasoning*（[arxiv:2307.13702](https://arxiv.org/abs/2307.13702)）经验地证明：今天的大模型 CoT 大量是事后合理化，模型即使写出\"step 1: 36×72 = ...\"也未必真把那一步当输入用。也就是说，**理论上的 CoT 翻墙假设了一个工程上几乎不成立的前提**——这一点 §5 讲 Faith-and-Fate 时会变成核心矛盾。
+
+把三笔加在一起，可以得到一张更诚实的对照表：
+
+| 维度 | 定理意义上 | 工程实际 |
+|---|---|---|
+| 复杂度类 | CoT 把 TC⁰ 扩展到 $\\mathsf{TIME}(t(n))$ | frontier model 实际 CoT $\\leq 10^4$ token |
+| 位置寻址 | 精确到 $\\Theta(n)$ | RoPE 外推后明显衰减 |
+| 忠实性 | 每一步 token 被后续使用 | Turpin/Lanham 显示大量是事后合理化 |
+| 翻墙代价 | 多写 token | 推理时间 × 显存 × KV cache 平方增长 |
+
+**判断**：CoT 是一根真梯子，但不是免费梯子。Merrill-Sabharwal 把墙的存在做严，Feng 等人把翻墙的可能做严，而 Turpin、Lanham、Chen-Svete-Chiang [unverified 后两人引用] 这一系列工作合起来在说：梯子在数学上够得着 P，但每一阶都收费，而且部分阶梯是纸糊的。2024–2026 年 reasoning model 的整条工程史——o1 把 CoT 拉到 $10^4$ 量级、R1 用 RL 学 long CoT、Claude 4 Extended Thinking 引入可计费的 thinking budget——本质都是在这张账单上做局部优化：要么压缩 token 数，要么提升忠实度，要么把寻址精度做高。没有人否认墙在那里，**他们都在为爬梯子付钱**。下一节回到经验侧，看 Dziri 的 *Faith and Fate* 怎么把这张账单画成 GPT-4 的实验曲线。
+
+<!-- TODO: §5 Faith-and-Fate / Deterministic Horizon 的经验对照；§6 反例：summarized CoT、低精度 softmax、tokenization 的暗门；尾声：墙还在，但门也在。 -->

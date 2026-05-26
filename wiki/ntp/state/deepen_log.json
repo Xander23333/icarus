@@ -133,6 +133,16 @@
       ],
       "chars_added": 7750,
       "note": "Started N4 sample chapter (Pearl ladder & LLM ceiling): §1 Pearl 2018 三层楼建构 + LeCun 互动史 + 观测等价数学事实, §2 Kıcıman 2305.00050 vs Zečević 2308.13067 因果鹦鹉之争 (~1700 substantive 字 across two sections), 3 real arxiv IDs (1801.04016, 2305.00050, 2308.13067), 三段判断 (Layer1 收敛 / Layer2 数据问题 / Layer3 悲观侧) 作为后续章节骨架, §3-§7 explicit TODO outline; rotates away from N2/N3."
+    },
+    {
+      "tick_utc": "2026-05-27T01:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 2900,
+      "note": "Continued N2 sample chapter §4 (CoT 翻墙的账单, ~900 substantive 字): Feng 2305.15408 构造性下界与 Merrill-Sabharwal 2310.07923 上界互为表里, 三笔费用 (token 数 Ω(n²) 工程不可达 / 位置编码精度 RoPE 外推衰减 / 忠实性 Turpin 2305.04388 Lanham 2307.13702 显示 CoT 大量是事后合理化), 定理-工程对照表, judgment that o1/R1/Claude-Extended-Thinking 都是在这张账单上做局部优化; rotates away from N4."
     }
   ]
 }
