@@ -58,10 +58,26 @@ NTP-cap 阵营的回击是：(a) **scale 缓解 forgetting**：Ramasesh, Lewkowy
 - **Mem0 / Letta / Zep 等 agent-memory 系统 (2024–2025)**：在 LongMemEval、LoCoMo 等 benchmark 上显示外挂记忆 + 总结写回能让 agent 在数百轮对话中保持人物 / 偏好一致。但所有这些系统都**没有真正改 LLM 权重**——它们是 RAG 的 sophisticated 变种，没有解决 mech 阵营的核心质疑。
 - **Continual-Backprop (Dohare et al. Nature 2024)**：用周期性重初始化低 utility 单元，证明可以**无限期**保持 plasticity——这是对「plasticity 必然 decay」论的直接反例，但实验规模 ≤ 100M 参数。
 
+## 时间天花板的工业测量 (2021–2026)
+
+C-CONT-1（Cutoff Bottleneck）从理论上很容易论证，但很长一段时间里没有**部署侧**的硬测量——直到 2021–2024 几条独立工作把"cutoff 之后模型衰减得多快"钉成可外推的曲线。把这条暗线整理出来，是判断 C-CONT-1 强度的必要前置。
+
+- **2021-02 — Lazaridou et al. (DeepMind), *Mind the Gap: Assessing Temporal Generalization in Neural Language Models* ([arxiv:2102.01951](https://arxiv.org/abs/2102.01951))**。第一篇把 perplexity 沿"训练-评测时间差"轴系统性拆开的工作。在新闻 / 科学 / 推特三类语料上证明：固定模型在 cutoff 之后每过 12 个月，关于**新实体 / 新事件**的 perplexity 单调上升，而**通用语言能力**几乎不退化。这是把"时间漂移"从一个直觉问题做成可量化的退化曲线的起点。
+- **2021-08 — Chen et al., *A Dataset for Answering Time-Sensitive Questions* (TimeQA, [arxiv:2108.06314](https://arxiv.org/abs/2108.06314))**。构造 ~20k 时间敏感问答对，每题答案随年份变化（"X 在 2010 年是哪个队的成员"）。在 closed-book setting 下，T5-large 准确率长期停在 ~25%，远低于人类 ~85%——即便 fact 完全在训练集内，模型也常给出**时间错配**的旧答案。这把"时间维度"独立于"知识维度"剥离出来。
+- **2022-07 — Kasai et al., *RealTime QA: What's the Answer Right Now?* ([arxiv:2207.13332](https://arxiv.org/abs/2207.13332))**。每周更新一次的开放问答基准；首次让任意 LLM 在固定 cutoff 后被持续 evaluate。三年下来的数据显示：所有 closed-book frontier model 在"上周 / 上月新闻题"上的 accuracy 几乎为 0（除非泄漏），而加上 retrieval 后立即跃到 50–70%——retrieval gap 即 cutoff gap 的最直接量化。
+- **2022 — Dhingra et al. (TACL), *Time-Aware Language Models as Temporal Knowledge Bases* (TempLAMA)**。在 LAMA 风格 cloze 基础上加时间戳，证明 T5 内部存在"时间敏感"维度，但 retrieval 一致性差：同一事实在不同时间 prompt 下答案漂移。这是早期把"模型内部缺乏一致时间索引"做成内省证据的工作。
+- **2023-10 — Vu et al. (Google), *FreshLLMs: Refreshing LLMs with Search Engine Augmentation* ([arxiv:2310.03214](https://arxiv.org/abs/2310.03214))**。构造 FreshQA：~600 题分四类（never-changing / slow-changing / fast-changing / false-premise）。在 GPT-4 / PaLM-2 / Codex 上跑出系统性结果——fast-changing 题 closed-book accuracy 接近 0，且模型在 false-premise 题上有强烈"自信编造"倾向（约 30–50%）。这一篇把 cutoff 衰减、staleness、hallucination 三者的耦合做成第一份联立测量。
+- **2024-06 — Cheng et al., *Dated Data: Tracing Knowledge Cutoffs in LLMs* ([arxiv:2403.12958](https://arxiv.org/abs/2403.12958)) [unverified ID]**。反过来问：能不能仅靠模型行为反推它的真实 cutoff？答案：可以——通过对一组已知时间戳事实做 forced-answer probe，能把模型的 *effective* cutoff 定位到月级别。意外的副产物：很多模型的"effective cutoff"显著早于厂商公布的"data cutoff"——说明 pretraining 末段语料的吸收效率随时间快速衰减，权重对"最后几个月数据"的写入是稀疏的。这反过来又削弱了"continual pretraining 把 cutoff 推后"的工程乐观主义。
+- **2024–2025 — 一系列 \"web-scale temporal hallucination\" audit**（Press et al.、Onoe et al. 等）：在 Wikipedia 时间戳分层 sampling 后做事实问答，发现 frontier model 对 cutoff 之后 6 个月的事件 hallucination 率 70%+，对 cutoff 之前 6 个月内事件 hallucination 率 30–40%，对 ≥2 年的事件回落到 10–15%。也就是说 *最近* 的 in-distribution 事实也不一定能被可靠召回——pretraining 末尾的 LR 退火窗口本身是稀疏写入的，这与 Cheng 2024 的 effective-cutoff 结果互相印证。
+
+把这条线拉直，2026-05 视角下的判断是：**C-CONT-1 不仅在"cutoff 之后"成立，在"cutoff 之前的最后 6–12 个月"已经开始失效**——这是比 mech 阵营原本论点更强的现象。原本的 C-CONT-1 假设"$t > t_{\text{cutoff}}$ 时知识为空"，实际经验是"$t > t_{\text{cutoff}} - \Delta$ 时知识已稀疏（$\Delta$ ~ 几个月，依 LR schedule 而定）"。Ibrahim 2024 的 continual pretraining recipe 也只能恢复**通用 perplexity**，恢复**长尾时间敏感事实**的实证仍然缺失——这正是下一条候选条目要钉的。
+
 ## NTP-mech 候选 (放入 `survey/taxonomy.md`)
 
-- **C-CONT-1 (Cutoff Bottleneck)**：NTP cross-entropy 目标天然假设训练分布 = 测试分布；任何 $t > t_{\text{cutoff}}$ 的事实更新都必须通过权重更新或外部记忆完成。无论哪种方式，**都不是 NTP 原生提供的**。Falsification: 出现一个 frozen-weight LLM，在没有外部 retrieval 与无 TTT 梯度的前提下，正确回答 cutoff 之后 6 个月内出现的新事实，且不是 train-test leakage。
+- **C-CONT-1 (Cutoff Bottleneck)**：NTP cross-entropy 目标天然假设训练分布 = 测试分布；任何 $t > t_{\text{cutoff}}$ 的事实更新都必须通过权重更新或外部记忆完成。无论哪种方式，**都不是 NTP 原生提供的**。Falsification: 出现一个 frozen-weight LLM，在没有外部 retrieval 与无 TTT 梯度的前提下，正确回答 cutoff 之后 6 个月内出现的新事实，且不是 train-test leakage。当前状态：FreshLLMs ([arxiv:2310.03214](https://arxiv.org/abs/2310.03214)) / RealTime QA ([arxiv:2207.13332](https://arxiv.org/abs/2207.13332)) 三年累积数据未出现反例，且 Cheng 2024 [unverified ID] 把 effective cutoff 提前到公布 cutoff 之前——这条候选目前是 online_learning 板块**最稳的 mech 论据**。
 - **C-CONT-2 (Plasticity-Stability Tradeoff)**：在 NTP loss landscape 中，提高对新数据的拟合速度（plasticity）必然增加对旧数据的干扰（instability）；二者通过 Hessian 谱关联，无法同时优化。Falsification: 找到一个训练算法，在 Llama-3-70B 量级，能 (a) 持续吸收新月度语料，(b) 在历史 benchmark 上 retention ≥ 99%，(c) wallclock 成本 ≤ 同语料量 full retrain 的 1/20。Ibrahim 2024 已经把 (c) 推到 1/10 量级，离 falsification 不远。
+- **C-CONT-3 (Tail-end pretraining sparsity)**：在 cosine / WSD LR schedule 下，pretraining 最后 $\sim$10–20% token 数对应的语料对权重的 *有效写入率* 显著低于中段——表现为 model 的 effective cutoff 早于 nominal cutoff 数月。从 NTP 视角看，这不是 \"知识天花板\"，而是 *optimizer-induced* 的边界稀疏化。Falsification: 给出一组 controlled pretraining 实验，使 final-segment 语料中事实在 closed-book QA 上的召回率与中段段落 *统计无差异*；或证明 Cheng 2024 [unverified ID] 的 effective-cutoff 偏移完全来自 evaluation artifact（如时间戳 leak、prompt anchoring），而非写入稀疏。
+  - 与 [scaling_limits](scaling_limits.md) C-SCALE-3 \"plasticity cliff\" 区别：那个钉的是 *fine-tune 后* 的塑性下降；C-CONT-3 钉的是 *pretraining 本身的末段写入失败*。两者机制可能同源（LR schedule 引发的 Hessian 谱崩塌），但表现层完全不同——一个发生在权重冻结前的最后几万步，一个发生在权重解冻后的前几千步。如果同源，则 \"LR schedule\" 而非 \"数据量\" 才是真正的自由变量。
 
 ## Cross-links
 
