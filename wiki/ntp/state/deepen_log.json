@@ -28,6 +28,15 @@
       ],
       "chars_added": 7674,
       "note": "Deepened world_model topic from stub to full page (3-way disambiguation, 10-paper chronology Ha2018→Wang2025, C-WM-1 closed-world bottleneck & C-WM-2 open-world dilution mech candidates, video-NTP & reasoning-trace counterexamples, cross-links)."
+    },
+    {
+      "tick_utc": "2026-05-26T19:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/embodiment.md"
+      ],
+      "chars_added": 10340,
+      "note": "Deepened embodiment topic from stub to full page (Brooks1991→π₀/GR00T2025 chronology, 11 papers incl. DAgger/RT-1/RT-2/PaLM-E/OpenVLA/Open-X-Embodiment, C-EMBOD-1 compounding-error-floor & C-EMBOD-2 morphology-gap mech candidates, cross-links to grounding/causality/world_model/online_learning)."
     }
   ]
 }
