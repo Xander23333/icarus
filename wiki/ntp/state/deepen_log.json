@@ -55,6 +55,15 @@
       ],
       "chars_added": 8062,
       "note": "Deepened reasoning topic: 2022-01 Wei CoT → 2026-05 Anti-Collapse chronology (9 papers incl. Turpin/Lanham/Dziri/Reversal-Curse/R1/Anthropic-biology/Garcia), C-REAS-1/2/3 mech candidates with falsification conditions, 3 counter-examples (attribution-graph/R1-on-AIME/low-prec-CoT-Turing), 2026-05-27 judgment that empirical CoT-mech evidence shrank while theoretical (TC⁰ + Ω(H)) hardened, cross-links to formal_limits/causality/scaling_limits/N1."
+    },
+    {
+      "tick_utc": "2026-05-26T21:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/scaling_limits.md"
+      ],
+      "chars_added": 5800,
+      "note": "Deepened scaling_limits topic from stub to full page (Kaplan2020→Chinchilla→Emergence/Mirage→Sorscher→Overtraining→Precision→Joint-KL/Shannon/Confab chronology with 10 papers, C-SCALE-1/2/3 cap candidates with falsification conditions, 3 counter-examples incl. data-pruning & summarized-CoT, 2026-05-27 judgment that scaling 上界 expanded from (N,D,C) to multi-axis manifold, cross-links to formal_limits/reasoning/world_model/online_learning/N1)."
     }
   ]
 }
