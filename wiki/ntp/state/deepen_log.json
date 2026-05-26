@@ -1,5 +1,15 @@
 {
   "schema": "v1",
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
-  "ticks": []
+  "ticks": [
+    {
+      "tick_utc": "2026-05-26T10:25:01Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 7271,
+      "note": "Deepened causality topic from stub to full page (Pearl hierarchy, 6 papers, mech candidate C-CAUSAL-1, cross-links)."
+    }
+  ]
 }
