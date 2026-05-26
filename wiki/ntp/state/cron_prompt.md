@@ -110,7 +110,9 @@ For each paper, append a row to the relevant `wiki/ntp/topics/<topic>.md` "Key p
    git commit -m "[NTP-Daily] $(date -u +%Y-%m-%d) update"
    git push
    ```
-4. **Send dingtalk daily report** via `send_message(target="dingtalk", message=...)`. The dingtalk message is a **distilled** version, ≤ 400 字, NOT the full report. Format:
+4. **Roll up past 24h of NTP-Deepen activity**. Read `wiki/ntp/state/deepen_log.json` and `git log --since="24 hours ago" --grep="\[NTP-Deepen\]" --oneline`. Summarize what the half-hourly deepen agent has been doing: which sample chapters advanced, which topics deepened, total chars added. Include this as section §9 in the daily report (`wiki/ntp/daily_reports/<DATE>.md`), titled "§9. 过去24h 深耕摘要 (NTP-Deepen rollup)".
+
+5. **Send dingtalk daily report** via `send_message(target="dingtalk", message=...)`. The dingtalk message is a **distilled** version, ≤ 500 字, NOT the full report. Format:
    ```
    📡 NTP Daily — YYYY-MM-DD
    
@@ -124,6 +126,10 @@ For each paper, append a row to the relevant `wiki/ntp/topics/<topic>.md` "Key p
    
    对 NTP 理论的影响:
    - …
+   
+   深耕 (过去24h, NTP-Deepen):
+   - 推进 N2 §1-3 (+1200字) / 深化 causality topic (+600字) / …
+   - 新增样章 / topic 链接: https://xander23333.github.io/icarus/ntp/samples/Nx-… (如有里程碑)
    
    Open question 浮现:
    - …

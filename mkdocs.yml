@@ -144,6 +144,9 @@ nav:
     - "Ev11 — 公共 leaderboard 全景（截至 2026-05）": vol3-evaluation/Ev11-leaderboards.md
   - "NTP · Non-Tokenizable Problems":
     - "总览": ntp/README.md
+    - "NTP 样章":
+      - "总览": ntp/samples/README.md
+      - "N1 — 这个问题为什么突然变重要了": ntp/samples/N1-the-ntp-question.md
     - "Survey 主文档": ntp/survey/ntp_survey.md
     - "Timeline": ntp/survey/timeline.md
     - "Taxonomy": ntp/survey/taxonomy.md

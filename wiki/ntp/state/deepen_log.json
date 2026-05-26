@@ -1,0 +1,5 @@
+{
+  "schema": "v1",
+  "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
+  "ticks": []
+}
