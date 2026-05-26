@@ -229,6 +229,15 @@
       ],
       "chars_added": 3100,
       "note": "Continued N3 sample chapter §5 (Reversal Curse, ~2400 substantive 字): Berglund 2309.12288 synthetic fictional-fact setup (Daphne Barrington/A Journey Through Time, Tom Cruise/Mary Lee Pfeiffer), Allen-Zhu Physics-of-LM Part 3.2 2404.05405 synthetic confirmation + reverse-order pretraining trick, Anthropic Scaling Monosemonicity mechanistic feature evidence, three mitigations (RAG / bidirectional pretraining UL2 2205.05131 + 2402.10171 / instruction-tuning) all conceding NTP loss never sees the reverse direction, judgment that Reversal Curse is the cleanest of the three pieces because capacity/data-distribution/architecture defenses are all eliminated by the synthetic design leaving only loss directionality; rotates away from topic pages (embodiment/causality/world_model/grounding) and N5."
+    },
+    {
+      "tick_utc": "2026-05-26T22:32:45Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/formal_limits.md"
+      ],
+      "chars_added": 2600,
+      "note": "Deepened formal_limits with new '经验验证线 — TC0 wall 的实测史' section: 8-entry chronology (Bhattamishra 2009.11264, Deletang 2207.02098, Anil 2207.04901, Ruoss 2305.16843, Zhou RASP-L 2310.16028, McLeish Abacus 2405.17399, Sanford k-hop 2402.09268 [unverified], Lost-in-Tokenization 2605.22471) bridging theory blood-line (1984-2023) and 2026-05 实测 evidence; judgment that TC0 wall holds only in (vanilla PE, no CoT, fixed depth) corner and has been pierced ≥4 times along each surrounding knob, so mech falsification must be local-conjoint not global; rotates away from N3/N5/embodiment/causality/world_model/grounding."
     }
   ]
 }

@@ -40,6 +40,21 @@ NTP-mech 阵营长期依赖 TC⁰ / constant-depth circuit 上界来论证"trans
 
 判断：从 1984 到 2023 这条线最值得记住的不是"transformer 弱"，而是 **它的表达力等级强依赖 (precision, attention saturation, CoT length, positional encoding) 这四个旋钮**。任何不指明四旋钮就谈 "TC⁰ 上界" 的论断都是 under-specified——这也是 2024 之后这一支文献被批评 *cherry-picking assumptions* 的根本原因。
 
+## 经验验证线 — TC⁰ 之墙的实测史 (chronological)
+
+上一节是 1984–2023 的**理论**血脉；本节追的是另一条更短但更脏的线：在真实 transformer / 真实数据集上**到底有没有看到那堵墙**。这条线的特点是几乎每一篇都既被 mech 派引用、又被 cap 派引用——因为同一组数字在两种 framing 下读出来意思完全相反。
+
+- **2020-09 — Bhattamishra–Ahuja–Goyal**，*On the Ability and Limitations of Transformers to Recognize Formal Languages* ([arxiv:2009.11264](https://arxiv.org/abs/2009.11264))。这是第一篇系统在 PARITY / Dyck-1 / Dyck-2 / Shuffle-Dyck 上 train + test 小 transformer 的工作。结论很硬：固定深度的 vanilla transformer 在 PARITY 上**根本学不会**（test accuracy 在长度外推时直接掉到 chance），Dyck-1 可以但 Dyck-2 边界处崩。Hahn 2019 的形式论断第一次在实验上拿到匹配信号。
+- **2022-07 — Delétang et al. (DeepMind)**，*Neural Networks and the Chomsky Hierarchy* ([arxiv:2207.02098](https://arxiv.org/abs/2207.02098))。把 Transformer / LSTM / Stack-RNN / Tape-RNN 同台跑 Chomsky 阶梯任务。结果：Transformer 在 *regular* (PARITY) 与 *context-free* (Dyck) 上长度外推都不行，而带显式 stack/tape 的 RNN 可以。这一对照是 \"架构归纳偏置\" 论的最强实验底座之一；mech 派把它当 TC⁰ wall 的实测，cap 派则反驳说\"没让模型用 CoT 就不公平\"。
+- **2022-07 — Anil et al. (Google)**，*Exploring Length Generalization in Large Language Models* ([arxiv:2207.04901](https://arxiv.org/abs/2207.04901))。在 ≤8B 规模 PaLM 上测加法 / parity / 变长 reasoning 的长度外推，证明 **scratchpad/CoT 即使配 fine-tune 也无法把 length-extrapolation 救到训练长度的 2× 以上**——这是\"光加 CoT 不够，还得加正确的 position encoding\"这一后续共识的起点。
+- **2023-05 — Ruoss et al. (DeepMind)**，*Randomized Positional Encodings Boost Length Generalization* ([arxiv:2305.16843](https://arxiv.org/abs/2305.16843))。证明只要把 position id 在训练时按某个 prior 随机化，多个 Chomsky-阶梯任务的长度外推可显著扩张。**这是对 Bhattamishra 2020 / Delétang 2022 的部分反例**：墙的位置高度依赖 positional encoding 的选择，所谓\"architecture-level 上界\"在不变 PE 下成立，换 PE 后斜率改变。
+- **2023-10 — Zhou et al.**，*What Algorithms Can Transformers Learn? A Study in Length Generalization* ([arxiv:2310.16028](https://arxiv.org/abs/2310.16028))。RASP-L 视角：能被短 RASP-L 程序刻画的任务族，transformer 一般能 length-generalize；不能被刻画的（如 PARITY）就外推不动。这条 RASP-L 假说至今没被严格证伪，是\"为什么有的任务过墙、有的不过\"目前唯一带预测力的经验法则。
+- **2024-02 — McLeish et al.**，*Transformers Can Do Arithmetic with the Right Embeddings* ([arxiv:2405.17399](https://arxiv.org/abs/2405.17399))。Abacus embedding：给每个数字 token 注入 position-within-number 信号，transformer 在 100-digit 加法上 length-extrapolation 大幅改善。又一例：墙的硬度由 tokenization × PE × 任务三者联合决定，不是单纯 depth 函数。
+- **2024-06 — Sanford et al.** *Transformers, Parallel Computation, and Logarithmic Depth* ([arxiv:2402.09268](https://arxiv.org/abs/2402.09268)) [unverified ID]。 把 *k-hop induction* 任务证明需要 Ω(log k) 层；与 Sanford–Hsu–Telgarsky 2023 的 task-family lower bound 配对，第一次给出\"任务难度 → 最小 depth\"的可计算映射。
+- **2026-05 — Lost in Tokenization** ([2605.22471](../papers/paper_notes/2026-05-27-2605.22471-graph-tokenization-tradeoffs.md))。在 graph 表达力上把 \"tokenization 旋钮\" 推到与 (L, d) 并列的位置——前面所有 PE 修正都可视为 tokenization 旋钮的特例。
+
+判断：把这条经验线和上一节理论线并排看，事实是 **TC⁰ wall 在 (vanilla PE, no CoT, fixed depth) 这个最严的角落里被反复实测到，但在它周围的每一个旋钮——PE 随机化 (Ruoss)、数字 embedding (McLeish)、CoT 长度 (Anil 推到 Merrill–Sabharwal 形式版本)、tokenization (2605.22471)——上都至少各被打开一次**。这意味着 NTP-mech 派若想守住\"TC⁰ wall 在工程上可证伪\"这一立场，必须把 falsification 条件写成\"四旋钮全部锁死\"的局部命题，而不是\"transformer 做不到 X\"的全局命题——后者经验上已经死了至少四次。
+
 ## 当前最强的 mech 候选
 
 | ID | 候选机制 | 形式陈述 | Falsification 条件 |
