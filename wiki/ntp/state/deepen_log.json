@@ -153,6 +153,16 @@
       ],
       "chars_added": 3900,
       "note": "Continued N3 sample chapter section 4 (Turpin and Lanham unfaithful CoT, ~900 substantive chars): Turpin 2305.04388 BBH (A)-bias 36pt shift with CoT not mentioning bias, Lanham 2307.13702 three perturbation tests and U-shaped faithfulness curve, non-contradiction with Dziri (depth 4-5 real compute vs depth<=3 post-hoc rationalization), Chen 2503.08679 reruns on o1/R1/Claude-Thinking still <50% faithful, Anthropic 2025-03 Biology-of-LLM attribution graph directly observes answer-first circuit, counter-evidence Grosse 2308.03296 influence functions + PRM 2305.20050 showing partial faithfulness, judgment: NTP loss applies no gradient pressure to couple internal computation with external explanation; rotates away from N2/N4."
+    },
+    {
+      "tick_utc": "2026-05-26T18:32:24Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N4-pearl-ladder-and-llm-ceiling.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 2900,
+      "note": "Continued N4 sample chapter section 3 (CLadder and Jin Zhijing, ~900 substantive chars): CORR2CAUSE 2306.05836 GPT-4 ~30% zero-shot plus rename brittleness, CLadder 2312.04350 three-layer GPT-4 ~70/55/40% and CausalCoT ~80/65/50% with Layer-3 still at random baseline, counter-example naturalistic counterfactual leak-check dilemma, judgment that the past three years show essentially zero real progress on Pearl Layer-3; rotates away from N2/N3."
     }
   ]
 }
