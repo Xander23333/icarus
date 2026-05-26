@@ -74,6 +74,15 @@
       ],
       "chars_added": 3874,
       "note": "Started N2 sample chapter (TC⁰ wall): opening §1 (~900 substantive 字) anchored on Furst-Saxe-Sipser 1984 → Hahn 2019 → Merrill-Sabharwal 2021/2022/2023 chronology with 5 real arxiv IDs, one-line roadmap to §6, explicit TODO outline for §2-§6; rotation away from topic pages back to a sample stub."
+    },
+    {
+      "tick_utc": "2026-05-26T22:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/formal_limits.md"
+      ],
+      "chars_added": 6564,
+      "note": "Deepened formal_limits topic: added long-view chronology (Furst-Saxe-Sipser 1984 → Hahn 1906.06755 → Merrill-Sabharwal 2106.16213/2207.00729/2310.07923 → Chiang-Cholak 2202.12172 → Liu 2210.10749 → Feng 2305.15408 → Sanford-Hsu-Telgarsky 2306.02896, 8 verified arxiv IDs), C-FORM-1/2/3 mech candidates with falsification conditions, 3 counter-examples (Chiang-Cholak/Brösamle-Eckstein/shortcuts), cross-links to reasoning/scaling_limits/world_model/N2."
     }
   ]
 }
