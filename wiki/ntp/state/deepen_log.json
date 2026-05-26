@@ -93,6 +93,16 @@
       ],
       "chars_added": 2950,
       "note": "Continued N2 sample chapter section 2 (Hahn 2019 deep-dive, ~900 substantive chars): two-theorem split (hard/soft attention), Lipschitz argument for PARITY, sociological reasons it was ignored in 2019, counter-argument that PARITY is a minimal aggregator (Dziri 2305.18654 as empirical analogue), judgment that Hahn's wall blocks parameter-scaling but not token-scaling, setting up section 4 Merrill-Sabharwal CoT upper bound."
+    },
+    {
+      "tick_utc": "2026-05-26T23:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N3-three-puzzle-pieces.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5666,
+      "note": "Started N3 sample chapter (three puzzle pieces): opening §1 thesis + §2 sociology of why Faith-and-Fate / Turpin-Lanham / Reversal-Curse were discussed separately, 8 real arxiv IDs (2305.18654, 2305.04388, 2309.12288, 2303.12712, 2310.17567, 2304.15004, 2307.13702, 2202.05262, 2210.07229, 2309.14402, 2404.05405), explicit §3-§6 roadmap; rotates away from N2/topics."
     }
   ]
 }
