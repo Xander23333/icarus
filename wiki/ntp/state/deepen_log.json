@@ -201,6 +201,15 @@
       ],
       "chars_added": 2700,
       "note": "Continued N5 sample chapter §2 (RT-1 → RT-2 → OpenVLA, ~2200 substantive 字): Brohan-Levine-Finn 三步赌注序列 with 4 verified arxiv IDs (2212.06817 / 2307.15818 / 2406.09246 / 2310.08864 + Octo 2405.12213 / Schaeffer 2304.15004 as counter-reference), 桌面短程 vs 长程操作的反论, emergent capability 统计弱点 Schaeffer mirage 适用, 2026-05 judgment that 强命题 'action 完全无法 tokenize' 已被证伪但弱命题 '样本效率指数恶化' 未被证伪——为 §3 Pi0 数据墙铺垫; rotates away from world_model/grounding topics."
+    },
+    {
+      "tick_utc": "2026-05-27T05:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 5200,
+      "note": "Deepened causality topic with standard 3-section block (关键证据线 chronological / 当前最强 mech 候选 / 反例与上界突破 / 2026-05-27 判断), 9-entry timeline with verified arxiv IDs (Pearl 1801.04016, Kıcıman 2305.00050, Lampinen 2305.16183, Zečević 2308.13067, CLadder 2312.04350, CORR2CAUSE 2306.05836 [unverified ID], Krishnamurthy 2403.15371, DeepSeek-R1 2501.12948, Anti-Collapse 2605.05438), expanded C-CAUSAL-1 + new C-CAUSAL-2 (Layer-3 阶梯 + #P-hard 锚点) + C-CAUSAL-3 (discovery≠inference 解耦), 三条 falsification 条件, judgment that 强命题已死 + 弱命题幸存 + agentic post-training 正在侵蚀 leak-check 护城河; rotates away from N2/N3/N4/N5/world_model/grounding."
     }
   ]
 }
