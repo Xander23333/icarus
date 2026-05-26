@@ -191,6 +191,16 @@
       ],
       "chars_added": 2900,
       "note": "Deepened world_model topic: added 'Video-NTP 这条暗线 (2024-2026)' timeline section with 8 anchored entries (GAIA-1 2309.17080 / Sora tech report / Genie 2402.15391 / LWM 2402.08268 / V-JEPA 2404.08471 / DIAMOND 2405.12399 / Cosmos [unverified] / VLA延伸 2406.09246 2410.24164 2307.15818), aligned to the three world-model definitions, judgment that video-NTP raised the stakes but still does not yield object-level long-horizon or counterfactual structure, proposes Othello-GPT-style probe on Genie 2 latent as next falsifiable test; rotates away from N2/N3/N4/N5 and grounding topic."
+    },
+    {
+      "tick_utc": "2026-05-27T04:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N5-embodiment-and-vla-bet.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 2700,
+      "note": "Continued N5 sample chapter §2 (RT-1 → RT-2 → OpenVLA, ~2200 substantive 字): Brohan-Levine-Finn 三步赌注序列 with 4 verified arxiv IDs (2212.06817 / 2307.15818 / 2406.09246 / 2310.08864 + Octo 2405.12213 / Schaeffer 2304.15004 as counter-reference), 桌面短程 vs 长程操作的反论, emergent capability 统计弱点 Schaeffer mirage 适用, 2026-05 judgment that 强命题 'action 完全无法 tokenize' 已被证伪但弱命题 '样本效率指数恶化' 未被证伪——为 §3 Pi0 数据墙铺垫; rotates away from world_model/grounding topics."
     }
   ]
 }
