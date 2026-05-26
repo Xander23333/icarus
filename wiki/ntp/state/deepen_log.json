@@ -123,6 +123,16 @@
       ],
       "chars_added": 2700,
       "note": "Continued N3 sample chapter §3 (Faith-and-Fate deep-dive, ~900 substantive 字): Dziri's depth曲线 (acc vs reasoning depth, GPT-4 4-digit mult 4%), CoT 把曲线右推 1-2 depth 但不改形状, Feng 2305.15408 形式化对应, Allen-Zhu 2404.05405 同构解释, 反例 PRM (2305.20050) 与 long-CoT RL (DeepSeek-R1 2501.12948) 用 token 买深度但经济上限仍在, judgment that Faith-and-Fate 真贡献是把 reasoning 退化变成可测连续量并与 §4/§5 同框."
+    },
+    {
+      "tick_utc": "2026-05-27T00:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N4-pearl-ladder-and-llm-ceiling.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 7750,
+      "note": "Started N4 sample chapter (Pearl ladder & LLM ceiling): §1 Pearl 2018 三层楼建构 + LeCun 互动史 + 观测等价数学事实, §2 Kıcıman 2305.00050 vs Zečević 2308.13067 因果鹦鹉之争 (~1700 substantive 字 across two sections), 3 real arxiv IDs (1801.04016, 2305.00050, 2308.13067), 三段判断 (Layer1 收敛 / Layer2 数据问题 / Layer3 悲观侧) 作为后续章节骨架, §3-§7 explicit TODO outline; rotates away from N2/N3."
     }
   ]
 }

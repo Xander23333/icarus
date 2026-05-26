@@ -19,7 +19,7 @@
 | N1 | [这个问题为什么突然变重要了](N1-the-ntp-question.md) | ✅ 首篇 (Xander 亲写) |
 | N2 | [Transformer 的形式表达力——TC⁰ 之墙到底有多硬](N2-the-tc0-wall.md) | 🔨 推进中（§1–§3 / 估计 4500字） |
 | N3 | [Reversal Curse / 不忠实 CoT / Faith-and-Fate——三块拼图](N3-three-puzzle-pieces.md) | 🔨 推进中（§1–§3 / 估计 4500字） |
-| N4 | Pearl 的因果阶梯与 LLM 的天花板 | 📝 待写 |
+| N4 | [Pearl 的因果阶梯与 LLM 的天花板](N4-pearl-ladder-and-llm-ceiling.md) | 🔨 推进中（§1–§2 / 估计 4500字） |
 | N5 | Embodiment 真的不可 tokenize 吗——VLA 路线的隐含赌注 | 📝 待写 |
 | N6 | World model = 视频生成？三个团队的三种答案 | 📝 待写 |
 | N7 | Continual learning：为什么 LLM 不会持续学习 | 📝 待写 |
