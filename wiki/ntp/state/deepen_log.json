@@ -103,6 +103,16 @@
       ],
       "chars_added": 5666,
       "note": "Started N3 sample chapter (three puzzle pieces): opening §1 thesis + §2 sociology of why Faith-and-Fate / Turpin-Lanham / Reversal-Curse were discussed separately, 8 real arxiv IDs (2305.18654, 2305.04388, 2309.12288, 2303.12712, 2310.17567, 2304.15004, 2307.13702, 2202.05262, 2210.07229, 2309.14402, 2404.05405), explicit §3-§6 roadmap; rotates away from N2/topics."
+    },
+    {
+      "tick_utc": "2026-05-26T23:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 2900,
+      "note": "Continued N2 sample chapter §3 (Merrill-Sabharwal trilogy, ~900 substantive 字): three-paper progression 2106.16213 saturated → 2207.00729 log-precision parallelism-tradeoff → 2310.07923 CoT upper bound, summary table of (assumption → complexity class), counter-evidence from Sanford-Hsu-Telgarsky 2306.02896 sparse-averaging strength + uniform/non-uniform caveat, judgment that the trilogy's value is turning the wall into an engineering question with explicit n-range and CoT-growth conditions; rotates away from N3."
     }
   ]
 }
