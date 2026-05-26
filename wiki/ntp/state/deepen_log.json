@@ -64,6 +64,16 @@
       ],
       "chars_added": 5800,
       "note": "Deepened scaling_limits topic from stub to full page (Kaplan2020→Chinchilla→Emergence/Mirage→Sorscher→Overtraining→Precision→Joint-KL/Shannon/Confab chronology with 10 papers, C-SCALE-1/2/3 cap candidates with falsification conditions, 3 counter-examples incl. data-pruning & summarized-CoT, 2026-05-27 judgment that scaling 上界 expanded from (N,D,C) to multi-axis manifold, cross-links to formal_limits/reasoning/world_model/online_learning/N1)."
+    },
+    {
+      "tick_utc": "2026-05-26T21:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3874,
+      "note": "Started N2 sample chapter (TC⁰ wall): opening §1 (~900 substantive 字) anchored on Furst-Saxe-Sipser 1984 → Hahn 2019 → Merrill-Sabharwal 2021/2022/2023 chronology with 5 real arxiv IDs, one-line roadmap to §6, explicit TODO outline for §2-§6; rotation away from topic pages back to a sample stub."
     }
   ]
 }
