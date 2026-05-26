@@ -238,6 +238,16 @@
       ],
       "chars_added": 2600,
       "note": "Deepened formal_limits with new '经验验证线 — TC0 wall 的实测史' section: 8-entry chronology (Bhattamishra 2009.11264, Deletang 2207.02098, Anil 2207.04901, Ruoss 2305.16843, Zhou RASP-L 2310.16028, McLeish Abacus 2405.17399, Sanford k-hop 2402.09268 [unverified], Lost-in-Tokenization 2605.22471) bridging theory blood-line (1984-2023) and 2026-05 实测 evidence; judgment that TC0 wall holds only in (vanilla PE, no CoT, fixed depth) corner and has been pierced ≥4 times along each surrounding knob, so mech falsification must be local-conjoint not global; rotates away from N3/N5/embodiment/causality/world_model/grounding."
+    },
+    {
+      "tick_utc": "2026-05-27T07:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 6500,
+      "note": "Started N6 sample chapter (World model = video generation? Three teams three answers): §1 frames the 2024-02 week when Sora (Brooks/Peebles tech report) / Genie (2402.15391 Bruce/Rocktäschel) / V-JEPA (2404.08471 Bardes/LeCun) put out three contradictory world-model bets within 8 days, table of three positions, counter-evidence noting all three remain stuck at L1 joint-distribution variants, judgment 'everyone wins part loses part — nobody has produced Pearl L2/L3 world model from video yet'; explicit §2-§6 outline with TODO markers; rotates away from N3 (last tick) and topic pages."
     }
   ]
 }
