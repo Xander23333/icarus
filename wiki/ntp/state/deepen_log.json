@@ -37,6 +37,15 @@
       ],
       "chars_added": 10340,
       "note": "Deepened embodiment topic from stub to full page (Brooks1991→π₀/GR00T2025 chronology, 11 papers incl. DAgger/RT-1/RT-2/PaLM-E/OpenVLA/Open-X-Embodiment, C-EMBOD-1 compounding-error-floor & C-EMBOD-2 morphology-gap mech candidates, cross-links to grounding/causality/world_model/online_learning)."
+    },
+    {
+      "tick_utc": "2026-05-26T12:02:56Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/online_learning.md"
+      ],
+      "chars_added": 14266,
+      "note": "Deepened online_learning topic from stub to full page (McCloskey1989 to Ibrahim2024 chronology, 16 papers incl. EWC/MEMIT/MemGPT/TTT-Linear/continual-backprop, C-CONT-1 cutoff-bottleneck and C-CONT-2 plasticity-stability mech candidates, cross-links to world_model/embodiment/causality/N1)."
     }
   ]
 }
