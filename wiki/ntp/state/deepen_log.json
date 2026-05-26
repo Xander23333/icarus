@@ -10,6 +10,15 @@
       ],
       "chars_added": 7271,
       "note": "Deepened causality topic from stub to full page (Pearl hierarchy, 6 papers, mech candidate C-CAUSAL-1, cross-links)."
+    },
+    {
+      "tick_utc": "2026-05-26T18:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/grounding.md"
+      ],
+      "chars_added": 7502,
+      "note": "Deepened grounding topic from stub to full page (Harnad→Bender→Mollo&Millière chronology, 7 papers, C-GROUND-1/2 mech candidates, cross-links to embodiment/causality/world_model)."
     }
   ]
 }
