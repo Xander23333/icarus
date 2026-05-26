@@ -163,6 +163,16 @@
       ],
       "chars_added": 2900,
       "note": "Continued N4 sample chapter section 3 (CLadder and Jin Zhijing, ~900 substantive chars): CORR2CAUSE 2306.05836 GPT-4 ~30% zero-shot plus rename brittleness, CLadder 2312.04350 three-layer GPT-4 ~70/55/40% and CausalCoT ~80/65/50% with Layer-3 still at random baseline, counter-example naturalistic counterfactual leak-check dilemma, judgment that the past three years show essentially zero real progress on Pearl Layer-3; rotates away from N2/N3."
+    },
+    {
+      "tick_utc": "2026-05-26T19:02:46Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N5-embodiment-and-vla-bet.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "Started N5 sample chapter (Embodiment/VLA bet): §1 Moravec paradox + LeCun JEPA position + the explicit paradigm wager, 2 real arxiv IDs (2301.08243 I-JEPA, 2404.08471 V-JEPA, plus contextual mentions of 2212.06817/2307.15818/2406.09246/2405.12213 in TODO), explicit §2-§6 outline, frames the chapter as a falsifiable bet between LeCun and the VLA camp; rotates away from N2/N3/N4."
     }
   ]
 }
