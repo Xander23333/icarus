@@ -52,4 +52,16 @@ Miles Turpin 2023 年 5 月那篇 [*Unfaithful Explanations in CoT*](https://arx
 
 我的判断：Turpin 与 Lanham 这条线测的不是模型“会不会撒谎”，测的是 **NTP 训练目标对“内部计算”和“外部解释”之间的耦合不施加任何梯度压力**——所以两者天然解耦是默认状态，耦合反而需要专门的训练信号（PRM、process supervision、CoT-faithfulness reward）去维持。这正是它和 §3 Dziri、§5 Reversal Curse 共享的根因：NTP 优化的是 token 流的边际分布，不优化任何关于“token 流背后机制”的性质。
 
-> §5 Reversal Curse：训练分布的方向性 / §6 三合一：NTP loss 几何的统一解释（TODO，待续写）
+## 五、Reversal Curse：训练分布的方向性，被一组合成 fictional facts 抓个正着
+
+Lukas Berglund 等人 2023 年 9 月那篇 [*The Reversal Curse*](https://arxiv.org/abs/2309.12288) 的实验设计在 ML 论文工业里属于"老派直接"。他们造了一批纯合成的 fictional fact：诸如 "Daphne Barrington 是电影 *A Journey Through Time* 的导演"，确保这些三元组在公网语料里**完全不存在**，避免任何泄漏。然后把这些事实写成两种自然语言模板：(A) "Daphne Barrington 是 *A Journey Through Time* 的导演"，(B) "*A Journey Through Time* 的导演是 Daphne Barrington"。只用模板 (A) 去 fine-tune GPT-3-350M / LLaMA-7B / LLaMA-30B，然后正向问 "Daphne Barrington 导演了哪部电影？"，模型几乎 100% 答对；反过来问 "*A Journey Through Time* 的导演是谁？"，正确率**接近 0%，几乎不可与瞎猜区分**（论文 Table 2，[arxiv:2309.12288](https://arxiv.org/abs/2309.12288)）。Berglund 还做了一个补做实验：在真实公开人物身上同样测——问 GPT-4 "Tom Cruise 的母亲是谁？"，它能答出 "Mary Lee Pfeiffer"；反过来问 "Mary Lee Pfeiffer 的儿子是谁？"，它答不出来。这个例子被 Owain Evans 发到 Twitter 上，被当成段子流传，但段子背后的结构是真的。
+
+这篇论文一开始被 knowledge-editing 圈接走了，被读作 "MEMIT/ROME 风格的事实注入不对称" 的又一案例——这是一种**降维处理**。真正的问题不在 fine-tune 算法上：Berglund 把 fact 直接以训练数据形式喂进去，不是用 hypernetwork 改权重，所以这是 NTP 损失本身的性质，不是某个编辑算法的 bug。Sanjeev Arora 与 Zeyuan Allen-Zhu 在 *Physics of Language Models* Part 3.2（[arxiv:2404.05405](https://arxiv.org/abs/2404.05405)）里把它做成了一个干净的合成实验：在一个完全可控的玩具语料上，他们证明 NTP 学到的 "A→B" 与 "B→A" 是**两个独立的关联**，模型不会自动把它们融合成一个双向的关系——除非训练数据里**显式**包含 B→A 方向的序列。Allen-Zhu 给的训练 trick 是 "reverse-order pretraining"——把语料按句子级反向再过一遍，可以显著抬高反向召回率。这个 trick 在工程上有效，恰恰说明问题的根子在数据方向性而不在架构。
+
+机制层面的解释，到 2024–2025 年已基本收敛在一个图像上。NTP 的损失是 $-\log p(x_t \mid x_{<t})$，所有梯度信号都沿着**从左到右**的因果方向传播。当模型在某个位置看到 "Daphne Barrington 是" 这个 prefix，正确续写是 "*A Journey Through Time* 的导演"——这条梯度信号训练的是 P(电影名 | 人名 prefix)。但训练语料里**从来没有**出现过 "*A Journey Through Time* 的导演是 ___" 这条 prefix，所以 P(人名 | 电影名 prefix) 这个条件分布完全没有被 NTP loss 触及。Anthropic interpretability team 2024 年 5 月在 [*Scaling Monosemanticity*](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html) 里在 Claude 3 Sonnet 里找到了对应的单义特征——某些 feature 在 A→B 的 token 流里被激活而在 B→A 流里完全沉默——这是 Reversal Curse 的机制证据，不是行为证据。把行为和机制两条线对上，结论很硬：**Reversal Curse 不是模型"忘了"反向，而是 NTP loss 从未要求它学过反向**。
+
+反例和缓解一并摆。第一，retrieval-augmented setting 下 Reversal Curse 显著减轻——RAG 把 "*A Journey Through Time* 的导演" 这段 prefix 在测试时拼回上下文，模型只需要做 in-context 的字符串匹配，不依赖参数化记忆。第二，bidirectional pretraining 的工作（BERT 风格 MLM、UL2 [arxiv:2205.05131]、以及最近的 [arxiv:2402.10171] 这类前向-反向混合目标）在小规模上能压住 Reversal Curse，但 scaling 到 100B 以上的代价目前看不到正面证据——主流的 decoder-only NTP 仍然是工业默认。第三，post-training stage 的 instruction tuning 与 RLHF 也能部分填洞，但代价是要在 instruction 数据里**显式构造**反向问答对——这又是在用人工标注补偿 NTP 的天然空缺，不是在改 NTP 自身。Berglund 在论文 §5 里诚实地承认了所有这些缓解路径，但他强调："对一个真正理解事实关系的 agent 来说，反向问答应该是 *为零代价* 的——而现在它的代价是显式构造反向数据。"
+
+我的判断：Reversal Curse 是三块碎片里**最干净的一块**，因为它的合成实验设计排除了所有解释空间，只剩 NTP 损失方向性这一个根因可归。Faith-and-Fate 还能被归结为 "capacity 不够"，Unfaithful CoT 还能被归结为 "training data 里事后解释占多数"——这两条都还留着辩论余地。但 Reversal Curse 的合成 setup 让 capacity / data-distribution / architecture 三个常见挡箭牌全部失效：模型有足够 capacity 去记忆正向 fact（100% 召回是证据），训练分布在你眼皮底下被构造出来（不存在污染辩护），架构和你日常用的 LLaMA 是同一份。剩下的唯一变量就是 **loss 只看一个方向**。这一点让 §5 在结构上扮演了 §3、§4 的对照实验——它是把 NTP 几何的方向性单独隔离出来的最干净证据，也是下一节把三块碎片拼回一张图时最稳的支点。
+
+> §6 三合一：NTP loss 几何的统一解释（TODO，待续写）

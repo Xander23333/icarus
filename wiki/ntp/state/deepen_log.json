@@ -219,6 +219,16 @@
       ],
       "chars_added": 5200,
       "note": "Deepened embodiment topic: added 'Key evidence line (chronological)' 9-entry timeline (Brooks 1986-91 subsumption, DAgger 1011.0686, Levine 1603.02199, RT-1 2212.06817, RT-2 2307.15818 + Schaeffer 2304.15004 counter, OXE 2310.08864, OpenVLA 2406.09246, Diffusion Policy 2303.04137 + pi0 2410.24164, 2025 humanoid bets) and 2026-05-27 judgment: strong claim (action 不可 tokenize) 已被 RT-2/OpenVLA 部分证伪, weak claim (long-horizon contact-rich >> token seq) 被 pi0/diffusion policy 工程退却侧面背书; introduced new C-EMBOD-3 (continuous action lower bound) with RoboMimic falsification criterion; (N,D,C,morphology,horizon,contact-mode) 六轴 scaling-manifold judgement aligned with scaling_limits §流形扩张; rotates away from causality/N5/world_model/grounding."
+    },
+    {
+      "tick_utc": "2026-05-27T06:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N3-three-puzzle-pieces.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3100,
+      "note": "Continued N3 sample chapter §5 (Reversal Curse, ~2400 substantive 字): Berglund 2309.12288 synthetic fictional-fact setup (Daphne Barrington/A Journey Through Time, Tom Cruise/Mary Lee Pfeiffer), Allen-Zhu Physics-of-LM Part 3.2 2404.05405 synthetic confirmation + reverse-order pretraining trick, Anthropic Scaling Monosemonicity mechanistic feature evidence, three mitigations (RAG / bidirectional pretraining UL2 2205.05131 + 2402.10171 / instruction-tuning) all conceding NTP loss never sees the reverse direction, judgment that Reversal Curse is the cleanest of the three pieces because capacity/data-distribution/architecture defenses are all eliminated by the synthetic design leaving only loss directionality; rotates away from topic pages (embodiment/causality/world_model/grounding) and N5."
     }
   ]
 }
