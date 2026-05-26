@@ -83,6 +83,16 @@
       ],
       "chars_added": 6564,
       "note": "Deepened formal_limits topic: added long-view chronology (Furst-Saxe-Sipser 1984 → Hahn 1906.06755 → Merrill-Sabharwal 2106.16213/2207.00729/2310.07923 → Chiang-Cholak 2202.12172 → Liu 2210.10749 → Feng 2305.15408 → Sanford-Hsu-Telgarsky 2306.02896, 8 verified arxiv IDs), C-FORM-1/2/3 mech candidates with falsification conditions, 3 counter-examples (Chiang-Cholak/Brösamle-Eckstein/shortcuts), cross-links to reasoning/scaling_limits/world_model/N2."
+    },
+    {
+      "tick_utc": "2026-05-26T14:32:34Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 2950,
+      "note": "Continued N2 sample chapter section 2 (Hahn 2019 deep-dive, ~900 substantive chars): two-theorem split (hard/soft attention), Lipschitz argument for PARITY, sociological reasons it was ignored in 2019, counter-argument that PARITY is a minimal aggregator (Dziri 2305.18654 as empirical analogue), judgment that Hahn's wall blocks parameter-scaling but not token-scaling, setting up section 4 Merrill-Sabharwal CoT upper bound."
     }
   ]
 }

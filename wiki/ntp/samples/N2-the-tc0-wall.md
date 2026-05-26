@@ -1,7 +1,7 @@
 # Transformer 的形式表达力——TC⁰ 之墙到底有多硬
 
 > NTP 候选样章 N2。作者：Xander Xu。
-> 状态：🔨 推进中（§1 已写，约 900 字 / 估计全文 4500 字）。
+> 状态：🔨 推进中（§1–§2 已写，约 1800 字 / 估计全文 4500 字）。
 
 ## 一、一堵从 1984 年就存在的墙
 
@@ -19,4 +19,18 @@
 
 下一节我们回到 Hahn 那篇 2019 论文的细节，看一个 Stanford 博士生是怎么用 6 页证明把整个领域将了一军，又是怎么在接下来的五年里被反复打脸又反复站起来的。
 
-<!-- TODO: §2 Hahn 2019 与"硬注意力"的代价；§3 Merrill–Sabharwal 三部曲与 TC⁰ 的精确刻画；§4 CoT 如何翻墙以及代价是什么；§5 Faith-and-Fate / Deterministic Horizon 的经验对照；§6 反例：summarized CoT、低精度 softmax、tokenization 的暗门；尾声：墙还在，但门也在。 -->
+## 二、Hahn 2019：一个博士生用 6 页证明把整个领域将了一军
+
+回到 2019 年 6 月。Michael Hahn 把 *Theoretical Limitations of Self-Attention in Neural Sequence Models* 挂上 arXiv（[arxiv:1906.06755](https://arxiv.org/abs/1906.06755)）的时候，NeurIPS 2019 还在筹备，BERT 刚发布大半年，GPT-2 因为 "too dangerous to release" 刷了一波热度。整个社区的注意力都在"还能加多少 head、能不能再 distill 一档"上。Hahn 的论文走的是相反方向：他想知道，这种架构*不能*学会什么。
+
+论文的核心定理可以拆成两条。第一条针对**硬注意力**（hard attention，即 attention 权重被 argmax 锐化成 one-hot）：对任意固定参数的硬注意力 Transformer，存在长度阈值 $n_0$，当输入长度 $n > n_0$ 时它在 PARITY 与 Dyck-2（仅含两类括号的 Dyck 语言）上的错误率必然不收敛到 0。证明的关键是一个 Lipschitz 风格的论证——硬注意力让整个网络对单 token 翻转的敏感度被 head 数和深度上界封死，而 PARITY 的定义恰恰要求"翻转任意一位都改变输出"。两件事互不相容。
+
+第二条针对**软注意力**（soft attention，标准 softmax），结论更微妙：在"输入足够长 + 数值精度有限"的联合极限下，软注意力的有效感受野会被 logits 间距挤压成几个高峰，行为退化到接近硬注意力。也就是说，软注意力**在渐近意义上没有真正逃出硬注意力的牢笼**——只是把失败推后到更大的 $n$。这一条后来被 Merrill-Sabharwal 沿 "log-precision" 这条线做严，但 2019 年的 Hahn 已经把直觉点透。
+
+这篇论文当时几乎没人读。Google Scholar 上 2020 年全年引用不到 30 次 [unverified 具体数]，对比 BERT 同期是四位数。理由有三：（1）实验只跑到长度几百，工程师不觉得是问题；（2）证明用了语言学社区的 Dyck 语言而不是大家熟的 NLP benchmark；（3）Hahn 本人是 Stanford 语言学系的博士生（导师 Chris Manning 方向 [unverified 具体导师]），不是"主流 ML 圈"。直到 2021 年 Merrill 把它接续起来，社区才意识到 Hahn 那 6 页是个起手式。
+
+也有反驳。一类常见反驳是"实践中我们从来不要求 100% PARITY，我们要的是分布上的下一 token"——这听上去合理，但 Hahn 反驳得很干脆：PARITY 不是 toy，它是任何"全局聚合"任务的最小代表（计数 / 投票 / 校验和 / 状态机奇偶相位）。如果一个架构在 PARITY 上有渐近硬下界，那么所有可约化到 PARITY 的下游任务都继承这条下界。后来 [arxiv:2305.18654](https://arxiv.org/abs/2305.18654)（Dziri et al., *Faith and Fate*）做的多位数乘法实验，本质就是把 Hahn 的渐近论证翻译成 GPT-4 上的可视化曲线。
+
+**判断**：Hahn 2019 的历史地位被严重低估。它是"NTP-mech 派"——主张 NTP 有架构级硬上界的人——的第一块基石；后面 Merrill、Chiang、Sanford、Feng 一系列工作都建立在它的论证骨架上。但它也有真正的脆弱点：定理假设的是"固定参数 + 长度 $n \to \infty$"，而工业界用的是"位置编码可外推 + 上下文窗口随版本翻倍 + CoT 当作运行时草稿纸"。这三项都没被 Hahn 的定理直接覆盖。也就是说，**这堵墙是真的，但它挡的是"参数翻墙"，不是"token 翻墙"**——这一点要等 §4 讲 Merrill-Sabharwal 2023 的 CoT 上界定理时才能说清楚。
+
+<!-- TODO: §3 Merrill–Sabharwal 三部曲与 TC⁰ 的精确刻画；§4 CoT 如何翻墙以及代价是什么；§5 Faith-and-Fate / Deterministic Horizon 的经验对照；§6 反例：summarized CoT、低精度 softmax、tokenization 的暗门；尾声：墙还在，但门也在。 -->
