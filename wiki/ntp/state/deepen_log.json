@@ -19,6 +19,15 @@
       ],
       "chars_added": 7502,
       "note": "Deepened grounding topic from stub to full page (Harnad→Bender→Mollo&Millière chronology, 7 papers, C-GROUND-1/2 mech candidates, cross-links to embodiment/causality/world_model)."
+    },
+    {
+      "tick_utc": "2026-05-26T19:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/world_model.md"
+      ],
+      "chars_added": 7674,
+      "note": "Deepened world_model topic from stub to full page (3-way disambiguation, 10-paper chronology Ha2018→Wang2025, C-WM-1 closed-world bottleneck & C-WM-2 open-world dilution mech candidates, video-NTP & reasoning-trace counterexamples, cross-links)."
     }
   ]
 }
