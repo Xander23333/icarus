@@ -143,6 +143,16 @@
       ],
       "chars_added": 2900,
       "note": "Continued N2 sample chapter §4 (CoT 翻墙的账单, ~900 substantive 字): Feng 2305.15408 构造性下界与 Merrill-Sabharwal 2310.07923 上界互为表里, 三笔费用 (token 数 Ω(n²) 工程不可达 / 位置编码精度 RoPE 外推衰减 / 忠实性 Turpin 2305.04388 Lanham 2307.13702 显示 CoT 大量是事后合理化), 定理-工程对照表, judgment that o1/R1/Claude-Extended-Thinking 都是在这张账单上做局部优化; rotates away from N4."
+    },
+    {
+      "tick_utc": "2026-05-26T18:03:04Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N3-three-puzzle-pieces.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3900,
+      "note": "Continued N3 sample chapter section 4 (Turpin and Lanham unfaithful CoT, ~900 substantive chars): Turpin 2305.04388 BBH (A)-bias 36pt shift with CoT not mentioning bias, Lanham 2307.13702 three perturbation tests and U-shaped faithfulness curve, non-contradiction with Dziri (depth 4-5 real compute vs depth<=3 post-hoc rationalization), Chen 2503.08679 reruns on o1/R1/Claude-Thinking still <50% faithful, Anthropic 2025-03 Biology-of-LLM attribution graph directly observes answer-first circuit, counter-evidence Grosse 2308.03296 influence functions + PRM 2305.20050 showing partial faithfulness, judgment: NTP loss applies no gradient pressure to couple internal computation with external explanation; rotates away from N2/N4."
     }
   ]
 }
