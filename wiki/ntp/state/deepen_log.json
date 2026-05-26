@@ -182,6 +182,15 @@
       ],
       "chars_added": 3850,
       "note": "Deepened grounding topic: added '反例与近期突破 (2023–2026)' three-line evidence section (text-only perceptual structure Abdou 2109.06129 / Li 2106.00737 / Søgaard 2305.02223; multimodal ceiling MMVP 2401.06209 / VLM-Blind 2407.06581; VLA closed-loop OXE 2310.08864 / RT-2 2307.15818 / OpenVLA 2406.09246 / pi0 2410.24164), 2026-05-27 judgment on double-sided narrowing of falsifiable setting, two new mech candidates C-GROUND-3 (deictic asymmetry, references Ego4D 2110.07058 / RoboVQA 2311.00899) and C-GROUND-4 (contrastive != referential, references GLIP 2112.03857 / BLINK 2404.12390); rotates away from N2/N3/N4/N5 sample chapters."
+    },
+    {
+      "tick_utc": "2026-05-27T04:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/world_model.md"
+      ],
+      "chars_added": 2900,
+      "note": "Deepened world_model topic: added 'Video-NTP 这条暗线 (2024-2026)' timeline section with 8 anchored entries (GAIA-1 2309.17080 / Sora tech report / Genie 2402.15391 / LWM 2402.08268 / V-JEPA 2404.08471 / DIAMOND 2405.12399 / Cosmos [unverified] / VLA延伸 2406.09246 2410.24164 2307.15818), aligned to the three world-model definitions, judgment that video-NTP raised the stakes but still does not yield object-level long-horizon or counterfactual structure, proposes Othello-GPT-style probe on Genie 2 latent as next falsifiable test; rotates away from N2/N3/N4/N5 and grounding topic."
     }
   ]
 }

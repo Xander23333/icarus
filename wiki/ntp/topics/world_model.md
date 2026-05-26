@@ -38,6 +38,23 @@ NTP 视角下，最值得问的不是 "LLM 有没有 world model"，而是 **"NT
 - **Genie 2 / Sora 类 video-NTP** 把"下一帧"当 token，挤出来的 latent dynamics 在短时间尺度上对刚体、流体、光照确实成立。这是 NTP 选第 1 类 world model 的最强证据，但目前的所有公开 demo 都在 10–20 秒后开始 *物体永恒性失败*（物体凭空消失/复制），说明压力够强地在帧级，不够强地在 object-level 长时序。
 - **Reasoning model 把状态外置** 是 C-WM-2 的 escape hatch：与其逼内部学 world model，不如让模型把当前状态显式写出来。R1 / o3 在 ARC-AGI、AIME 上的提升大半来自这条。代价是 inference cost 与 trace 可读性，以及对 "scratchpad 是否忠实反映内部计算" 的怀疑（见 Turpin et al. 2023, [arxiv:2305.04388](https://arxiv.org/abs/2305.04388)）。
 
+## Video-NTP 这条暗线 (2024–2026)
+
+text-NTP 的 world-model 证据基本上停在 Othello-GPT 与 chess-Transformer 这两个 closed-world 玩具上，开放域的同构性证据极弱（Vafa 2024, [arxiv:2406.03689](https://arxiv.org/abs/2406.03689)）。真正可能改写赌注的，是 2024 年起把 "下一帧 / 下一 latent 帧" 当作 token 的这一脉，下面按时间线收一遍。
+
+- **2023-09, Wayve, GAIA-1** ([arxiv:2309.17080](https://arxiv.org/abs/2309.17080))：9B 参数 video + action + text 的自回归世界模型，在驾驶场景上做未来帧预测。这是工业界第一次把 "video-NTP" 当作 world-model 的训练范式公开发表，但生成长度仍以秒计。
+- **2024-02, OpenAI, Sora** (technical report, 非 arxiv)：DiT-based latent video diffusion，不是严格自回归 NTP，但 OpenAI 在报告里明确把它列为 "world simulators"。社区里 LeCun 当周就在 Twitter 上反驳，列出物体永恒性失败、违反质量守恒的 cherry-pick 反例——这场争论本身就是 C-WM-2 的活样本。
+- **2024-02, DeepMind, Genie** ([arxiv:2402.15391](https://arxiv.org/abs/2402.15391)) → **Genie 2** (blog, 2024-12)：从 unlabeled 2D 平台游戏视频里 *无监督* 抽出 latent action codebook，再训 dynamics。Genie 2 把同一套思路扩到 3D，可生成数十秒可控环境，但 demo 全部在 10–20 秒尺度内出现物体凭空消失。
+- **2024-02, Liu et al., Large World Model (LWM)** ([arxiv:2402.08268](https://arxiv.org/abs/2402.08268))：1M context、video + text 自回归。论文宣称的是 long-context 能力而非 world-model 涌现，probe 类证据缺失。
+- **2024-04, Meta, V-JEPA** ([arxiv:2404.08471](https://arxiv.org/abs/2404.08471))：LeCun 阵营对 Sora 的回应——*不要* 在像素空间做 NTP，要在 latent 上做 masked prediction + energy-based。Something-Something-v2 / Kinetics-400 frozen-eval 优于 video-MAE，证据指向 "non-generative latent prediction" 在动作识别上确实更省样本，但尚未在 controllable simulation 上拿出 Genie 量级的演示。
+- **2024-05, Microsoft + EPFL, DIAMOND** ([arxiv:2405.12399](https://arxiv.org/abs/2405.12399))：把 diffusion 当 world model 在 Atari-100k 上训 RL，证明 *生成式* world model 在 sample-efficient RL 上能与 DreamerV3 同档。
+- **2025-01, NVIDIA, Cosmos** (whitepaper, [unverified arxiv ID])：把 video world model 当作 robotics foundation 公开，30+ 模型变体，强调 physical AI 的 pretrain → post-train pipeline。是否真有 object permanence 提升尚无独立复现。
+- **2025–2026** 的多模 VLA 论文（OpenVLA [arxiv:2406.09246](https://arxiv.org/abs/2406.09246)、pi0 [arxiv:2410.24164](https://arxiv.org/abs/2410.24164)、RT-2 [arxiv:2307.15818](https://arxiv.org/abs/2307.15818)）把 action 也丢进 next-token 序列，可视为 video-NTP 的延伸，但目前公开 eval 几乎不报 world-model 同构性，只报 task success rate——这是当前文献的一个系统性盲区。
+
+把这条暗线对齐到 §核心问题的三种 world model：video-NTP 在 *第 1 种*（行为规划/可玩环境）上有了 Genie/DIAMOND 这样的真实存在性证据，比 text-NTP 强一个数量级；在 *第 2 种*（表征同构）上仍然只有 frozen-probe 的弱信号，没人做出 video 版 Othello-GPT 那种 1.7% 错误率线性可解码的干净 demo；在 *第 3 种*（反事实/因果）上彻底空白——没有任何一篇 video world-model 论文做过 do-operator 干预下的预测一致性 eval。
+
+判断：video-NTP 把 "NTP 选不选 world model" 这道题的赌注真正抬高了，但 2024–2026 的证据告诉我们，**它选出来的仍然是行为级 / 帧级 dynamics**，object-level 长时序与因果结构依旧不来自 NTP 自发涌现。下一个能推动 discourse 的实验，不是再训一个更大的 Sora，而是在 Genie 2 / Cosmos 这类 latent-action 世界模型上做 Othello-GPT 风格的 probe——如果能在 latent 里线性可解码出物体身份、位置、速度，那 C-WM-1 的边界就从 closed-world 扩到了 mid-open-world；如果不能，那 video-NTP 也只是 text-NTP 的高维翻版。
+
 ## 诚实判断
 
 到 2026 年 5 月为止，三种 "world model" 的 NTP 兼容性大致是：第 2 种（表征同构）在 closed-world 上 *被证明存在*，在 open-world 上 *被证明稀疏且碎片化*；第 1 种（行为规划）目前最好的实例不是 LLM 而是 DreamerV3 与 MuZero 这类专用 model-based RL，video-NTP 是有希望的旁支；第 3 种（反事实/因果）几乎没有 NTP 自发挤出的证据，必须靠显式 reasoning trace 外接（见 [causality](causality.md) §C-CAUSAL-1）。
