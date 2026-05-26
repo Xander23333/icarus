@@ -54,6 +54,28 @@ NTP-cap 阵营的回击是：(a) 把动作 token 化（RT-2、OpenVLA），close
 - 反例条件：找到一个在 morphology A 上预训练的 VLA，zero-shot 或 few-shot 迁移到 morphology B 时 sample efficiency 不掉。
 - 当前状态：Open X-Embodiment 给出的 cross-embodiment transfer 数据是**正向**的（约 1.5–3× 提升），但远不到 \"morphology-agnostic\" 的程度。该条目当前评估为 **medium**。
 
+## 关键证据线 (chronological)
+
+把「NTP 能不能 cover embodied agent」这条线从 1986 拉到 2026，它至少经历了三次范式翻转。每一次翻转都不是某条算法刷新 SOTA，而是 **训练目标 / 数据来源 / 评测协议** 同时被换掉。
+
+- **1986–1991 — Rodney Brooks 的 subsumption 架构**。Brooks 在 MIT AI Lab 用 *Elephants Don't Play Chess* (1990, *Robotics and Autonomous Systems* 6(1-2)) 与 *Intelligence without representation* (1991, *Artificial Intelligence* 47) 系统反对当时 SHRDLU / Cyc 这一脉的符号 AI。核心论点：智能不来自中央表征，而来自分层 reactive controller 在物理世界里的累积选择压力。这条 prior 一直是 NTP-mech 阵营在 embodiment 上的远端思想锚——三十年后 LeCun 在 *A Path Towards Autonomous Machine Intelligence* (2022, OpenReview) 复用了几乎相同的论证骨架反对 LLM-only AGI。
+- **2010 — Ross, Gordon, Bagnell (AISTATS)**，*A Reduction of Imitation Learning to Structured Prediction* ([arxiv:1011.0686](https://arxiv.org/abs/1011.0686))。DAgger 论文第一次把 offline imitation 的 worst-case 上界形式化到 $O(T^2)$，并给出 online query 把它压回 $O(T)$ 的 reduction。这一篇是后来「为什么纯 NTP 不能做长 horizon control」这一类论证的形式根。任何 2024 之后的 VLA 论文谈 compounding error，引文链最终一定回到 1011.0686。
+- **2018 — Levine, Pastor, Krizhevsky et al.**, *Learning Hand-Eye Coordination for Robotic Grasping with Large-Scale Data Collection* (IJRR 37(4-5), [arxiv:1603.02199](https://arxiv.org/abs/1603.02199))。Sergey Levine 在 Google X 用 14 台机械臂跑 80 万次抓取，证明 deep policy 可以靠 self-supervised closed-loop 数据 scale——但成本是 4 个月、6 位数美元、单一桌面任务。这一篇定下了之后十年「机器人数据 vs 文本数据」成本比的下界 baseline。
+- **2022-12 — Brohan et al. (Google Robotics)**, *RT-1* ([arxiv:2212.06817](https://arxiv.org/abs/2212.06817))。13 万 episode、700 任务、35M 参数的 Transformer 把 action 离散成 256 个 bin 当 token 输出。这是 NTP 范式第一次明确写出「action 也是 token」并在真实机器人上做出 multi-task 收敛——之前的工作要么 simulator-only、要么 single-task。
+- **2023-07 — Brohan et al.**, *RT-2* ([arxiv:2307.15818](https://arxiv.org/abs/2307.15818))。RT-1 + PaLI-X / PaLM-E co-finetune，把 web-scale VL prior 直接迁到机器人 policy。论文最强的论据不是绝对 success rate，而是 *emergent capability*：在训练集里完全没出现的「把可乐罐推给泰勒·斯威夫特图标」类指令上，VLA 的 zero-shot 成功率显著高于纯机器人数据 baseline。NTP-mech 阵营对此最强的反驳是 **Schaeffer et al. 2023, *Are Emergent Abilities a Mirage?* ([arxiv:2304.15004](https://arxiv.org/abs/2304.15004))**——但该论文反的是 LLM 上的相变阶梯，是否能套到 VLA 的 OOD 指令理解，至今未被严肃复现。
+- **2023-10 — Open X-Embodiment Collaboration (21 机构)**, *RT-X* ([arxiv:2310.08864](https://arxiv.org/abs/2310.08864))。22 个机器人本体、527 技能、970k episode 的合并数据集。第一次让 *cross-embodiment transfer* 从思辨变成可测量——结果是正向但有限的（约 1.5–3× sample efficiency 提升），远不到「morphology-agnostic foundation model」的程度。这是 C-EMBOD-2 形态依赖论的最强经验背书。
+- **2024-06 — Kim, Pertsch et al. (Stanford / Berkeley / Google)**, *OpenVLA* ([arxiv:2406.09246](https://arxiv.org/abs/2406.09246))。开源 7B VLA 在 OXE 上训练后，多任务平均压过闭源 55B RT-2-X。这一篇把「VLA 是否需要 frontier-scale backbone」清晰地推到一边——答案是：在桌面 short-horizon 上不需要。但 OpenVLA 自己的 OOD section 同时给出反方向证据：novel object / novel scene / novel lighting 下 success rate 普遍掉 30–60%。
+- **2024 — Chi, Feng, Du et al. (Toyota Research)**, *Diffusion Policy* ([arxiv:2303.04137](https://arxiv.org/abs/2303.04137)) + **Physical Intelligence (Black, Levine et al.)**, *π₀* ([arxiv:2410.24164](https://arxiv.org/abs/2410.24164))。两条独立路线同时指出：离散 action token 在 contact-rich / 高频控制上分辨率不够。π₀ 选 flow matching、Diffusion Policy 选去噪生成——共同点是 **放弃 "action 就是 token" 这条 NTP 教条**。这是 VLA 范式在 embodiment 上第一次公开退却，也是 NTP-mech 阵营拿到的第一份 cap 侧自我承认的证据。
+- **2025 — Gemini Robotics / Helix (Figure AI) / GR00T (NVIDIA)**。三家都在赌 humanoid + foundation model + data flywheel 的组合，但截至 2026-05 没有任何一家公开过 *true zero-shot cross-task* 的 success rate 矩阵；公开 demo 全是 cherry-picked highlight reel。Tesla Optimus 在 2024-10 We, Robot 活动上的远程操控争议 [unverified 具体程度] 进一步表明：**所谓「已 deploy」的 humanoid policy 与 teleoperation 的界线在公开数据里几乎不可分辨**。
+
+## 2026-05-27 判断
+
+把上面这条线压成一句话：**embodiment 上 NTP-mech 派的强命题（"action 不可 tokenize"）已部分被 RT-2 / OpenVLA 证伪；但弱命题（"long-horizon contact-rich 控制 ≫ token 序列建模"）反而被 π₀ / Diffusion Policy 用工程退却侧面背书**。这与 [reasoning](reasoning.md) 上 2026-05 之后 mech 派经验论据缩水、理论论据反而加强的格局如出一辙——证据不是单调走向某一派，而是 **强命题被冲掉、弱命题被钉得更死**。
+
+具体到三条 mech 候选：(i) **C-EMBOD-1 (compounding error floor)** 仍未被证伪——目前所有公开 VLA demo 的 horizon 都落在 100–300 步量级，恰好处于 $T^{1.5}$ vs $T$ 差距未显著的盲区，等 horizon 上到 ≥1000 步才能开始检验。(ii) **C-EMBOD-2 (morphology gap)** 被 Open X-Embodiment 部分削弱，但 1.5–3× 的 transfer 提升远不到 LLM 上 web-prior transfer 的量级，弱命题幸存。(iii) 新增候选 **C-EMBOD-3 (continuous action lower bound)**：存在一类 contact dynamics 任务，使任何 K-bin 离散 action head 在 K → ∞ 之前都给出严格高于 continuous policy 的 task-completion error 下界。Falsification: 在 contact-rich benchmark (e.g. RoboMimic Square / Threading) 上证明存在 K\* < ∞ 使 K\*-bin token policy 与 flow matching policy 在 ±2% 内匹配；2024 末的 π₀ 论文已朝反方向给出经验证据，但未做完备 ablation。
+
+最容易被忽视的是评测协议层面的退却：所有 2024–2026 的 VLA 论文都默认 in-distribution 桌面环境，**没有一个 benchmark 在 horizon、contact、novel object、light shift 四轴同时给出 sweep**。所以「VLA scaling law」作为 LLM scaling law 的 robot 对应物，到 2026-05 为止仍是工程信念而非实证结论——这和 [scaling_limits](scaling_limits.md) §「流形扩张」里讲的 (N, D, C, precision, horizon) 多轴现象同源：embodiment 维度上至少要 (N, D, C, morphology, horizon, contact-mode) 六轴才能定义一条像样的 scaling 曲线。
+
 ## Open problems
 
 - **closed-loop NTP 的形式化**：当 environment 也是 transformer (world model) 时，agent-NTP + world-NTP 的联合训练是否等价于 model-based RL？理论上的 \"NTP-as-RL\" reduction（Cundy & Ermon 2023, GAIL 系列）在 frontier 规模下从未被系统验证。

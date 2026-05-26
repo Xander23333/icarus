@@ -210,6 +210,15 @@
       ],
       "chars_added": 5200,
       "note": "Deepened causality topic with standard 3-section block (关键证据线 chronological / 当前最强 mech 候选 / 反例与上界突破 / 2026-05-27 判断), 9-entry timeline with verified arxiv IDs (Pearl 1801.04016, Kıcıman 2305.00050, Lampinen 2305.16183, Zečević 2308.13067, CLadder 2312.04350, CORR2CAUSE 2306.05836 [unverified ID], Krishnamurthy 2403.15371, DeepSeek-R1 2501.12948, Anti-Collapse 2605.05438), expanded C-CAUSAL-1 + new C-CAUSAL-2 (Layer-3 阶梯 + #P-hard 锚点) + C-CAUSAL-3 (discovery≠inference 解耦), 三条 falsification 条件, judgment that 强命题已死 + 弱命题幸存 + agentic post-training 正在侵蚀 leak-check 护城河; rotates away from N2/N3/N4/N5/world_model/grounding."
+    },
+    {
+      "tick_utc": "2026-05-27T05:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/embodiment.md"
+      ],
+      "chars_added": 5200,
+      "note": "Deepened embodiment topic: added 'Key evidence line (chronological)' 9-entry timeline (Brooks 1986-91 subsumption, DAgger 1011.0686, Levine 1603.02199, RT-1 2212.06817, RT-2 2307.15818 + Schaeffer 2304.15004 counter, OXE 2310.08864, OpenVLA 2406.09246, Diffusion Policy 2303.04137 + pi0 2410.24164, 2025 humanoid bets) and 2026-05-27 judgment: strong claim (action 不可 tokenize) 已被 RT-2/OpenVLA 部分证伪, weak claim (long-horizon contact-rich >> token seq) 被 pi0/diffusion policy 工程退却侧面背书; introduced new C-EMBOD-3 (continuous action lower bound) with RoboMimic falsification criterion; (N,D,C,morphology,horizon,contact-mode) 六轴 scaling-manifold judgement aligned with scaling_limits §流形扩张; rotates away from causality/N5/world_model/grounding."
     }
   ]
 }
