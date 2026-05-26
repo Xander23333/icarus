@@ -4,6 +4,12 @@
 
 | 日期 | 类型 | 事件 | 来源 |
 |---|---|---|---|
+| 2026-05-28 | meta | "Readout-side 主导假设"再添 2 条直接证据 (probe 0.97 vs yes/no 0.5 的 Causal Tongue-Tie；frozen probe + GRPO masking 把 CoT theater 减 11–100% 的 ProFIL)；该假设的 *观察侧* 与 *干预侧* 形成闭环 | this report |
+| 2026-05-26 | 论文 | NITP：用浅层激活作下一 token 稠密 self-target，9B MoE MMLU-Pro +5.7%；NTP 几何欠约束属 objective-engineering 层，可被轻量 auxiliary 修掉 | [arXiv:2605.24956](../papers/paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md) |
+| 2026-05-26 | 论文 | Causal Tongue-Tie：anti-commonsense CLadder 上 probe 0.97 / yes-no 0.5；output-only causal benchmark 不能直读为 mechanism | [arXiv:2605.25891](../papers/paper_notes/2026-05-28-2605.25891-causal-tongue-tie.md) |
+| 2026-05-26 | 论文 | VLA capability+robustness IT bound：H(task) + adv channel cap 作总预算；OpenVLA encoder-specific 预算 ~31 nats | [arXiv:2605.25889](../papers/paper_notes/2026-05-28-2605.25889-vla-capability-robustness-bound.md) |
+| 2026-05-26 | 论文 | ProFIL：frozen-base probe + GRPO advantage masking 把 post-commitment CoT theater 减 11–100%，无 RL-obfuscation 退化 | [arXiv:2605.11467](../papers/paper_notes/2026-05-28-2605.11467-profil-probe-filtered-rl.md) |
+| 2026-05-26 | 论文 | Why World Models for AGI (LDI/Flux)：rule-defined latent-state RL agent 在 long-horizon 上系统性优于纯文本 LLM；提出 objective-level 错配主张（前提依赖 simulator-access） | [arXiv:2605.23972](../papers/paper_notes/2026-05-28-2605.23972-world-models-for-agi-ldi.md) |
 | 2026-05-27 | meta | "Readout-side 主导假设"成型：四篇独立工作 (2605.10799/2605.07120/2605.14004/2605.05438) 指向 readout/format/objective/collapse 主导多数被误读为机制级的 NTP 失败 | this report |
 | 2026-05-21 | 论文 | Lost in Tokenization：tokenization 选择对同一函数诱导多项式级 depth gap，C1 参数集应扩为 (L, d, tokenization) | [arXiv:2605.22471](../papers/paper_notes/2026-05-27-2605.22471-graph-tokenization-tradeoffs.md) |
 | 2026-05-18 | 论文 | MHA as NW Ensemble：MHA = H 个 NW 估计器结构化 ensemble；variance 由 head decorrelation 主导 | [arXiv:2605.20271](../papers/paper_notes/2026-05-27-2605.20271-mha-as-nw-ensemble.md) |

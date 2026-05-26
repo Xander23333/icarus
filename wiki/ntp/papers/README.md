@@ -4,6 +4,11 @@
 
 | 日期 | arXiv | 标题 | Topic | NTP 归类 |
 |---|---|---|---|---|
+| 2026-05-26 | [2605.24956](paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md) | NITP: Next Implicit Token Prediction for LLM Pre-training | formal_limits | counter-evidence |
+| 2026-05-26 | [2605.25891](paper_notes/2026-05-28-2605.25891-causal-tongue-tie.md) | Causal Tongue-Tie: LLMs Can Encode Causal Direction, But Their Yes/No Outputs Fail to Express | reasoning/causality | counter-evidence |
+| 2026-05-26 | [2605.23972](paper_notes/2026-05-28-2605.23972-world-models-for-agi-ldi.md) | Why We Need World Models for AGI: Where LLMs Fail and How World Models May Outperform | causality/world_model | NTP-mech (框架，弱) |
+| 2026-05-26 | [2605.25889](paper_notes/2026-05-28-2605.25889-vla-capability-robustness-bound.md) | Capability and Robustness Cannot Both Be Free: An IT Bound for VLA Models | embodiment | NTP-mech (VLA 子带) |
+| 2026-05-26 | [2605.11467](paper_notes/2026-05-28-2605.11467-profil-probe-filtered-rl.md) | Drop the Act: Probe-Filtered RL for Faithful Chain-of-Thought Reasoning | reasoning | counter-evidence |
 | 2026-05-27 | [2605.22471](paper_notes/2026-05-27-2605.22471-graph-tokenization-tradeoffs.md) | Lost in Tokenization: Fundamental Trade-offs in Graph Tokenization for Transformers | formal_limits | NTP-mech |
 | 2026-05-27 | [2605.20271](paper_notes/2026-05-27-2605.20271-mha-as-nw-ensemble.md) | Multi-Head Attention as Ensemble Nadaraya-Watson Estimation | formal_limits | NTP-mech (soft) |
 | 2026-05-27 | [2605.16758](paper_notes/2026-05-27-2605.16758-language-acquisition-device.md) | Language Acquisition Device in Large Language Models | scaling_limits | NTP-cap |

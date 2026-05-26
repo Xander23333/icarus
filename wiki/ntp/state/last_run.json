@@ -1,13 +1,11 @@
 {
-  "last_run_utc": "2026-05-25T23:35:47Z",
-  "last_run_status": "ok_with_partial_harvest",
-  "date": "2026-05-27",
-  "papers_scanned": 81,
-  "papers_kept": 6,
-  "notes_written": 6,
-  "hard_dropped": 75,
-  "harvester_errors": [
-    "reasoning",
-    "grounding"
-  ]
+  "last_run_utc": "2026-05-26T23:20:00Z",
+  "last_run_status": "ok",
+  "date": "2026-05-28",
+  "papers_scanned": 77,
+  "papers_kept": 5,
+  "notes_written": 5,
+  "hard_dropped": 72,
+  "harvester_errors": [],
+  "note": "harvest 经 2 次 cool-down 重试后第三次 0 errors / 8 queries 全成功"
 }

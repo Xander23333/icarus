@@ -10,6 +10,7 @@ NTP-mech 阵营长期依赖 TC⁰ / constant-depth circuit 上界来论证"trans
 
 | 日期 | 论文 | 主要论点 | NTP 归类 (mech/cap/pseudo) | 链接 |
 |---|---|---|---|---|
+| 2026-05-26 | NITP: Next Implicit Token Prediction | 在 NTP 之上叠加用浅层激活作下一 token 的稠密 self-supervised target；9B MoE MMLU-Pro +5.7%；论证 NTP one-hot 留下的 hidden-state 自由度可被 auxiliary 对潜空间的几何约束修掉，几何欠约束属 objective-engineering 层 | counter-evidence (削弱"NTP 表征几何不可救"mech 论调) | [2605.24956](../papers/paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md) |
 | 2026-05-21 | Lost in Tokenization (Graph Trade-offs) | 不同 tokenization (spectral/RW/adjacency) 对同一图函数诱导多项式级 depth gap；表达力 = (architecture, tokenization) 联合属性 | mech (extends C1) | [2605.22471](../papers/paper_notes/2026-05-27-2605.22471-graph-tokenization-tradeoffs.md) |
 | 2026-05-18 | MHA as NW Ensemble | MHA = H 个 NW kernel 估计器的结构化 ensemble；variance reduction 由 head decorrelation (principal angles) 主导 | mech (soft, framework) | [2605.20271](../papers/paper_notes/2026-05-27-2605.20271-mha-as-nw-ensemble.md) |
 | 2026-05-08 | Fresh-Symbol Classification (Logistic Theory) | 在 kernel logistic regime 下把 transformer 学到的 template 分类器分解为 ideal classifier + 词汇 overlap 扰动；NTP readout 强制 token-name 依赖使该分解失效 | mech (boundary clarification) | [2605.07120](../papers/paper_notes/2026-05-27-2605.07120-fresh-symbol-classification.md) |

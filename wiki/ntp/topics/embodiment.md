@@ -20,6 +20,7 @@ NTP-cap 阵营的回击是：(a) 把动作 token 化（RT-2、OpenVLA），close
 
 | 日期 | 论文 | 主要论点 | NTP 归类 (mech/cap/pseudo) | 链接 |
 |---|---|---|---|---|
+| 2026-05-26 | Capability and Robustness Cannot Both Be Free (VLA IT bound) | 任何 discrete-action VLA policy 上：capability MI + robustness MI ≤ H(task) + adversarial channel capacity；OpenVLA encoder-specific corollary 把预算压到 ~31 nats，policy 已吃满 | mech (VLA 子带；信息论硬上界) | [2605.25889](../papers/paper_notes/2026-05-28-2605.25889-vla-capability-robustness-bound.md) |
 | 1991 | Intelligence without representation (Brooks) | subsumption architecture；智能不需要中央符号表征 | mech (philosophical prior) | *Artificial Intelligence* 47, non-arxiv |
 | 2006 | How the Body Shapes the Way We Think (Pfeifer & Bongard) | morphological computation：身体本身承担算力 | mech (framework) | MIT Press, non-book |
 | 2010 | A Reduction of Imitation Learning to Structured Prediction (Ross, Gordon, Bagnell, AISTATS) | DAgger；offline imitation 的 $O(T^2)$ compounding error 上界 | mech (formal) | [arxiv:1011.0686](https://arxiv.org/abs/1011.0686) |

@@ -93,6 +93,21 @@
 ### 跨证据浮现的 meta-pattern (2026-05-27)
 **Readout-side 主导假设**：本周累计 3 条 (2605.10799 / 2605.07120 / 2605.14004 / 2605.05438) 独立证据指向同一方向——大量被解读为"NTP 推理机制不足"的现象实际由 readout/format/objective/collapse 效应主导。下一阶段 NTP-mech 候选必须显式控制：(i) format confound, (ii) token-name readout dependency, (iii) collapse-by-CE, (iv) attribute-head 缺失。该 meta-pattern 比任何单一候选更具方法论意义。
 
+### Readout-side 主导假设 — 闭环 (2026-05-28 update)
+新增两条直接证据，把该假设从 *观察侧* 推进到 *观察+干预闭环*：
+- **Causal Tongue-Tie ([2605.25891](../papers/paper_notes/2026-05-28-2605.25891-causal-tongue-tie.md))** — 在 anti-commonsense CLadder 上 linear probe 0.97 / yes-no 0.5；≈+0.47 gap 全部归因到 verbal readout 失败。任何基于 yes/no accuracy 的"LLM 缺 causal X"声称必须附 probe-vs-output 双轨证据。
+- **ProFIL ([2605.11467](../papers/paper_notes/2026-05-28-2605.11467-profil-probe-filtered-rl.md))** — frozen-base probe + GRPO advantage masking 在 GSM8K/LiveCodeBench/ToolUse/MMLU-Redux 上把 post-commitment CoT theater 减 11–100%，且 prior 预测的 RL-obfuscation 失败模式没出现 ⇒ "CoT theater = NTP 机制级缺陷"被工程修复反证。
+- **NITP ([2605.24956](../papers/paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md))** — 加一项浅层激活作下一 token 稠密 self-target，把 9B MoE MMLU-Pro 推高 5.7% 而无新数据/模态/架构改动 ⇒ "NTP 表征几何欠约束 → mech 缺陷"也被降级到 objective-engineering 层。
+
+**当前推论**：要立一条新的 NTP-mech 候选，必须显式同时排除：(i) format/answer-line confound, (ii) verbal-readout disexpression, (iii) CE-collapse 假阳性, (iv) attribute-head 缺失, (v) representation-geometry under-constraint。这五个工程 confound 同时排除后仍稳定的 mech 现象，目前只剩：C1 (Deterministic Horizon, no-CoT)、Reversal Curse 类方向不对称、以及 long-horizon Ω(H) 信息论下界。
+
+### C4 候选 (2026-05-28 新增, embodied 子带)
+**VLA capability+robustness 总预算上界**：对任何 discrete-action VLA policy，capability MI + robustness MI ≤ H(task) + adversarial channel capacity（2605.25889）。pixel-level bound 松（~10³ nats），但 encoder-specific corollary 在 OpenVLA 上把预算压到 ~31 nats，且 policy 已吃满——这是 *与 policy 无关* 的硬上界，符合 NTP-mech 候选形式要件。
+
+- (a) 候选理由：双 DPI + MI 非负的可形式化两行证明；encoder-specific corollary 给 actionable 数量级。
+- (b) 最强反论：adversarial channel capacity 在 white-box 下可放任意大；encoder-specific 假设"扰动局限在 encoder 子空间"对 white-box 攻击者并不必然成立。
+- (c) 当前结论：**Conditional NTP-mech 候选 (VLA 子带, discrete-action)**。不可直接升格为通用 NTP-mech。
+
 ---
 *Last revision: 2026-05-26 — populated by daily pipeline from formal_limits + scaling_limits + reasoning topics.*
 *See git log of this file.*
