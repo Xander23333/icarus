@@ -306,6 +306,16 @@
       ],
       "chars_added": 4200,
       "note": "Continued N3 sample chapter §6 '三合一：把三块碎片拼回 NTP loss 的几何' (~4.2k chars): formalized NTP loss into three orthogonal structural properties (逐 token 局部性 / 过程-结果同构惩罚 / 方向单向性) each mapping cleanly to one of the three puzzle pieces (Dziri depth curve / Turpin-Lanham unfaithful CoT / Berglund Reversal Curse); explicit anti-conflation move ('three orthogonal cross-sections of the same loss, NOT three faces of one root cause' — corrects what would have been narrative laziness); mitigation parity table (long-CoT RL+PRM / process supervision / reverse-order+UL2 2205.05131+RAG) with per-row real cost; Sutton counter-argument explicitly stated and accepted-in-half ('physical wall is wrong, economic wall remains'); three-layered final judgment with falsifiable 5-year bet (2027 对账); cites Feng 2305.15408, Allen-Zhu 2404.05405, Anthropic Biology-of-LLM 2025-03, Yanda Chen 2503.08679, o1/R1 2501.12948, Scaling Monosemanticity; bridges forward to N4 (Pearl ladder layer-2/3). Updated samples/README §1–§5 → §1–§6. Rotates away from N5/N2/N6/N4 samples and all recent topic pages."
+    },
+    {
+      "tick_utc": "2026-05-27T10:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3600,
+      "note": "Continued N6 sample chapter §2 'Sora 之后两年：从 world simulator 退到 video model 的措辞史' (~3.6k chars): traces OpenAI's official wording downgrade (2024-02 tech report 'world simulator' → 2025-02 system card footnote → 2025-09 Sora 2 release note 'improved physical realism' + mission statement edit [uncertain commit ts]); cites Kang-You 2411.02385 flat OOD-vs-scale curve as cleanest refutation of pixel-NTP scale-believer claim; PhyGenBench/VideoPhy 2406.03520 30–40% physical plausibility vs 80% visual realism scissor gap; WorldModelBench 2410.14572 [unverified ID] dimension split where Sora loses physical-law/3D-consistency to Genie/latent lines; explicit image-gen (DALL-E 3 → GPT-4o native image) counter-example showing the wall is *time* not pixels; closes with falsifiable 2026-27 PhyGenBench 60% threshold bet + meta-judgment that paradigm hypotheses usually die by silent replacement (Sora 3 absorbing latent state + action conditioning) rather than open refutation; bridges forward to §3 Genie's action-first loss geometry. Cleaned up duplicated §3 TODO line. Updated samples/README N6 status §1 → §1–§2. Rotates away from N2/N3/N4/N5 samples and all recent topic pages (taxonomy/online_learning/formal_limits)."
     }
   ]
 }
