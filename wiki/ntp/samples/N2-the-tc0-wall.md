@@ -80,4 +80,24 @@ Merrill-Sabharwal 2023 那个\"加足够多 CoT 就能从 TC⁰ 爬到 P\"的结
 
 **判断**：CoT 是一根真梯子，但不是免费梯子。Merrill-Sabharwal 把墙的存在做严，Feng 等人把翻墙的可能做严，而 Turpin、Lanham、Chen-Svete-Chiang [unverified 后两人引用] 这一系列工作合起来在说：梯子在数学上够得着 P，但每一阶都收费，而且部分阶梯是纸糊的。2024–2026 年 reasoning model 的整条工程史——o1 把 CoT 拉到 $10^4$ 量级、R1 用 RL 学 long CoT、Claude 4 Extended Thinking 引入可计费的 thinking budget——本质都是在这张账单上做局部优化：要么压缩 token 数，要么提升忠实度，要么把寻址精度做高。没有人否认墙在那里，**他们都在为爬梯子付钱**。下一节回到经验侧，看 Dziri 的 *Faith and Fate* 怎么把这张账单画成 GPT-4 的实验曲线。
 
-<!-- TODO: §5 Faith-and-Fate / Deterministic Horizon 的经验对照；§6 反例：summarized CoT、低精度 softmax、tokenization 的暗门；尾声：墙还在，但门也在。 -->
+## 五、Faith and Fate：把账单画成 GPT-4 的实验曲线
+
+理论那一侧的话讲到这里其实已经收尾——剩下的问题是：那条 TC⁰ 上界、那把 CoT 梯子、那张三笔费用的账单，在 GPT-4 这种已经放进生产环境的模型上**真的能看见**吗？2023 年 5 月 Nouha Dziri 等人在 NeurIPS 2023 spotlight 的 *Faith and Fate: Limits of Transformers on Compositionality*（[arxiv:2305.18654](https://arxiv.org/abs/2305.18654)）给出了一份接近实验室级别的答案。Dziri 当时在 Allen Institute for AI 的 Mosaic 团队，合作者包括 Faeze Brahman、Jena Hwang、Yejin Choi。这篇论文挑了三个 compositional 任务——**多位数乘法**（"3 位 × 3 位"到"5 位 × 5 位"）、**Einstein 风格逻辑谜题**（k 个属性、k 个对象的约束求解）、**动态规划**（最长递增子序列）——并且对每个任务系统地扫一个"难度参数"：乘法的位数 $d$、谜题的实体数 $k$、DP 的输入长度 $n$。
+
+结果是教科书式的。三个任务都呈现同一个形态：在某个临界难度之前 GPT-4 的 accuracy 几乎 100%，越过临界点后**断崖式跌**到接近 0，且**无论怎么 prompt、怎么 fine-tune、怎么加 CoT，曲线都只是平移，不会变形**。具体的数：4 位 × 4 位乘法 GPT-4 zero-shot ≈ 4%，CoT 推到 ≈ 30%，scratchpad fine-tune 也只能把 4×4 拉到 50% 左右，再到 5×5 全军覆没 [unverified 具体百分比 — 见原论文 Figure 2/3]。Einstein 谜题在 $k=4$ 还能 80%+，$k=5$ 跌到 30%，$k=6$ 接近随机猜。DP 长度 $n=6$ 还行，$n=8$ 起塌。
+
+最毒的一刀在论文 §5：Dziri 等人**显式做了 "在难度 $d$ 上 fine-tune 后能否外推到 $d+1$" 的实验**。答案是不能——in-distribution 准确率可以拉到 90%+，但 OOD（多一位）立刻掉到 10%。这把"模型只是没见够数据"这一最常见的辩护一次性堵死：见够了 $d$ 的数据并不构成对 $d+1$ 的任何先验。Dziri 把这种现象叫 *compositional gap*，并明确把它解读成"自回归 next-token 模型在 task graph 深度上的隐含天花板"。这恰好是 Hahn 2019 与 Merrill-Sabharwal 三部曲在经验侧的影子——一边渐近证明、一边经验测量，两条线在 GPT-4 上汇合。
+
+这一击对 NTP-mech 派的意义是：墙不再是数学纸面上的事。3 位乘法对人类小学生是小事，对 GPT-4 也是；4 位起人类要拿草稿纸了，GPT-4 也得 CoT；5 位人类必须严格按算法走，GPT-4 即使 CoT 也开始系统性漏进位；6 位双方都崩——只是人类崩在工作记忆，GPT-4 崩在 attention 寻址精度（这一对应不是巧合，§4 的"第二笔费用"正是位置寻址）。这是过去十年里第一次，一个**架构上界的渐近预测**和**前沿模型的经验曲线**在同一张图里几乎对齐。
+
+但 Faith and Fate 也有它的脆弱点，必须诚实写出来：
+
+1. **任务选择偏倚**。三个任务都是 compositional/algorithmic 风格，GPT-4 训练分布里这类样本相对稀疏。换成 retrieval-heavy 或 commonsense reasoning 任务，同样深度下崩塌点会显著推后。Dziri 在论文 §7 自己承认这一点。
+2. **CoT 协议局限**。论文里的 CoT 是 prompt-engineered scratchpad，不是 o1/R1 那种 RL-trained long CoT。2024-09 之后 reasoning model 在多位乘法上的成绩已经显著优于 GPT-4 base + CoT——但**仍未消除 compositional gap**，只是把临界点从 4 位推到 7-8 位 [uncertain 具体数据]。墙在退，没倒。
+3. **GPT-4 黑盒**。Dziri 团队没法看模型内部，所以"4 位是 attention 寻址崩溃 vs 是数据稀疏 vs 是 tokenization artifact（数字 tokenizer 把"1234"切成多少 token 直接影响成败）"这三个 confound 没有被分离。Singh & Strouse 2024 *Tokenization Counts*（[arxiv:2402.14903](https://arxiv.org/abs/2402.14903)）后来证明数字分词协议对算术准确率有 10–30 pp 的独立影响——这一项 Faith and Fate 当年没控住。
+
+**判断**：Faith and Fate 是 NTP-mech 派经验侧最干净的一发子弹，但它也是最容易被反驳模糊化的一发——因为它的实验设计同时混入了 compositional depth、tokenization、CoT 协议、训练分布四个变量。理论侧（Hahn / Merrill / Feng）说"墙存在且 CoT 是梯子"，经验侧（Dziri）说"在 GPT-4 上看得见且 fine-tune 不能外推"，但要把这两条线**严格对齐到同一个 mech 候选**——比如声称 "GPT-4 在 4 位乘法上的崩塌正是 log-precision TC⁰ 上界的体现"——目前还差一步可控实验。Allen-Zhu *Physics of Language Models Part 3.3*（[arxiv:2407.20311](https://arxiv.org/abs/2407.20311) [unverified 具体 part 编号]）这一系工作正在试图填上这一步：在完全合成的数据 + 受控架构下复现 Dziri 的曲线，并把崩塌点和 attention head 内部寻址误差关联起来。如果这条线能在 2026 内做严，那 Hahn-Merrill-Dziri 三人会在引用网络里被串成一条不可拆的因果链——TC⁰ 之墙就不再只是一个理论 corner case，而是 frontier model 的工程现实。
+
+下一节（§6）回到反例侧：summarized CoT、低精度 softmax+CoT 的 Turing-completeness、tokenization 暗门，这三条 2024–2026 的工作分别从哪些方向把墙的位置又推了一下。
+
+<!-- TODO: §6 反例：summarized CoT、低精度 softmax、tokenization 的暗门；尾声：墙还在，但门也在。 -->

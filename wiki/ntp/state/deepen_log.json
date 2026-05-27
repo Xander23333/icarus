@@ -267,6 +267,16 @@
       ],
       "chars_added": 5250,
       "note": "Continued N4 sample chapter §4 'Lampinen 的旁观者实验：第二层能不能蹭到' (~5.2k chars): Andrew Lampinen 2305.16183 passive-learning-of-active-causal-strategies setup with light+switch+confounder envs, two-sided result (intervention-marker present → 70-80% Layer-2 / marker removed → random), Richens-Everitt 2402.10877 robust-agents-learn-causal-world-models theoretical anchor with its 'all distribution shifts' caveat, judgment that Pearl 第二层 is a '语料墙' not absolute wall + agentic post-training implication bridging to §6; honest counter on synthetic-vs-naturalistic environment two-bind and leak-check impossibility for RCT papers in frontier training sets; updated samples/README §1–§3 → §1–§4; rotates away from online_learning topic and N6/N3."
+    },
+    {
+      "tick_utc": "2026-05-27T08:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3100,
+      "note": "Continued N2 sample chapter §5 'Faith and Fate：把账单画成 GPT-4 的实验曲线' (~3.0k chars): Dziri 2305.18654 NeurIPS 2023 spotlight three-task setup (multi-digit mult / Einstein puzzles / DP), fine-tune on d cannot extrapolate to d+1 (compositional gap), bridges Hahn-Merrill three-trilogy theoretical line to GPT-4 empirical curve, three honest caveats (task selection bias / CoT protocol limited to scratchpad pre-o1 / GPT-4 blackbox confounds), Singh-Strouse 2402.14903 tokenization counts as separable variable (10–30 pp independent effect), forward link to Allen-Zhu Physics-of-LM Part 3.3 2407.20311 [unverified part编号] as the bridging controlled-synthetic experiment; rotates away from N3/N4/N5/N6 samples and all recently-touched topic pages."
     }
   ]
 }
