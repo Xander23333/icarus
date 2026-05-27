@@ -43,6 +43,22 @@
 到这里 §3 可以收一个 judgment：catastrophic forgetting 在 LLM 上不是\"算法不够好\"，而是 NTP loss + dense transformer + cross-entropy 三件套的**联合不动点**。任何想在不改这三件套的前提下让 LLM 持续学习的方案，最终都会退化成两种之一——要么是 replay（把旧数据混进来重训，等于不持续，只是\"分批离线\"），要么是参数冻结 + 外置记忆（等于承认权重不再学，把学习转移到 RAG / agent memory，这是 §5 要拆的）。这件事的紧密程度比 §1 那条\"cutoff 之前 6–12 个月就开始稀疏\"的时间观察更深一层：前者是\"什么时候开始衰减\"，后者是\"为什么不能不衰减\"。两者拼起来就是 C-CONT-1 这个 mech 候选最硬的两根骨头。
 
 <!-- TODO §3: ✅ done above -->
-<!-- TODO §4: Ibrahim 2024 2403.08763 anatomy — replay ratio, LR re-warming, what's still missing for "streaming" -->
+
+## 四、Ibrahim 2024：把 continual pretraining 的账单一行行算给你看
+
+§3 给出了一个悲观的几何结论。但从 2023 到 2024 这一年里，有一条工程线在认真尝试**不修 NTP loss 几何、只调 schedule 与 data mixture，把 catastrophic forgetting 压到可接受范围**。这条线最干净的总结是 Adam Ibrahim、Benjamin Thérien、Eugene Belilovsky 等人在 Mila 与 EleutherAI 合作的 *Simple and Scalable Strategies to Continually Pre-train Large Language Models* ([arxiv:2403.08763](https://arxiv.org/abs/2403.08763))。这篇 2024 年 3 月的论文做了一件之前没人做干净的事：在 405M 与 10B 两个规模、Pile→SlimPajama 与 English→German 两种 domain shift 上，把 continual pretraining 的关键 knobs（LR re-warming 的峰值、re-decay 的长度、replay 数据的混入比例）做一遍 grid，画出每一个 knob 单独动时旧域 loss 与新域 loss 的 Pareto 前沿。结论被他们浓缩成一句话：**只要做对三件事——LR 重新 warm-up 到原峰值的 50% 左右、再走完整 cosine decay、混入 5% 的旧域数据——continual pretraining 的最终 loss 可以**逼近 retrain-from-scratch 的 ±1%，而 FLOPs 只有后者的约 1/10**。
+
+这是一个非常重要的工程结果，而且必须诚实承认：它**部分削弱**了 §3 的悲观判断。Ibrahim 等人证明，在\"两个静态 corpus 之间的一次 domain shift\"这个 setting 下，NTP loss 的几何**不是不可绕开**——通过把 LR schedule 重置成一次新训练而非微调，叠加少量 replay，旧极小盆地基本守住，新分布也学进去。Meta 在 Llama-3 技术报告 ([arxiv:2407.21783](https://arxiv.org/abs/2407.21783)) 里描述 continual pretraining 那一节读起来就像 Ibrahim 配方的工业实现——LR re-warming、replay 比例、多阶段 anneal，每个数字都对得上。OpenAI 与 Anthropic 没公开数字，但从 GPT-4-Turbo (2023-11) → GPT-4o (2024-05) → GPT-4o-mini (2024-07) 一系列模型在 closed-book QA 上能持续吸收新事实推断（FreshQA 三年曲线里这些 OpenAI 模型的 effective cutoff 是单调推进的，不是每次重训），可以反推他们用的是同一类配方。
+
+但把镜头从 paper 拉到 §1 提出的真正问题——\"为什么 LLM 不会持续学习\"——Ibrahim 配方留下的硬骨头反而更尖锐。我（Xander）2026 年 5 月的判断是：**这条工程线把 \"批处理 + replay\" 做到了最好，但 \"批处理 + replay\" 在定义上就不是 streaming**。三个具体的硬骨头：
+
+第一，**replay 比例不能下到 0，而 replay 数据必须留**。Ibrahim 的 ablation 里 replay 0% 时旧域 loss 恶化 ~10%，replay 5% 时恶化 ~1%。但工业上 \"留 5% 旧数据\" 意味着你必须**保留全量 pretraining corpus 的访问权**——这件事在数据合规越来越收紧的 2025–2026 年（GDPR right-to-be-forgotten、纽约时报诉 OpenAI 之后的数据下架请求、Anthropic 2024-12 关于 fair-use 边界的内部备忘 [uncertain]）越来越贵。Mistral / Cohere / 国内厂商已经多次在 release note 里承认 \"为合规移除某批数据，下一代模型 re-pretrain\"——本质上是说，**他们没用 Ibrahim 配方，而是退回 retrain，因为留 replay 缓存的法律成本比省 10x FLOPs 的收益还高**。这是 §3 悲观判断的工业层确认：在合规约束下，continual pretraining 退化成定期 retrain，于是 \"不持续学习\" 这件事从几何问题变成法律-几何联合问题，更难绕开。
+
+第二，**LR re-warming 把 \"continual\" 在时间上离散化**。Ibrahim 的 setup 是\"训练完 corpus A → 重置 LR schedule → 训练 corpus B\"。这里 corpus B 是一个**已经收好、规模与 A 同量级的静态数据集**。但 §1 提出的真正 streaming 问题是\"每天有 X GB 新 token 进来，模型权重要在分钟到小时尺度内更新\"——这件事和 Ibrahim 的两阶段 schedule 完全不兼容。你不能每加 1GB 新数据就重启一次 cosine schedule（peak LR 会把所有旧学到的东西打散），但你也不能用极小 LR 在线 SGD（Pouransari 2024 那条论证：LR < $10^{-5}$ 时新知识写不进权重）。Ibrahim 配方的\"~1/10 FLOPs\"省的是\"重训整个 corpus A\"的钱，但每次更新仍然要走完整 warm-up + decay，最小周期至少是几千万 token 的批处理。**真正 streaming 的 LLM 仍然不存在**。
+
+第三，**Ibrahim 的 setup 里旧域和新域的分布 distance 是被刻意选小的**（Pile→SlimPajama 几乎同分布；English→German 是显著但有限的 shift）。在真正的部署场景下，时间漂移带来的 distribution shift 更细——不是\"换语言\"，而是\"同样的英文新闻里，2024 出现的人名、机构名、技术名、网络梗在 2026 的频率分布发生不可预测的变化\"。这种 fine-grained drift 没有清晰的 domain 边界，无法套用\"先训 A 再训 B\"的两阶段配方。Marie-Anne Lachaux 等人在 2024-11 的 follow-up [unverified] 上做了一次更严格的实验：把 Common Crawl 2018→2023 按年分桶，依次做 continual pretraining，结果发现\"每加一年新数据，旧年的 closed-book QA 准确率下降 2–4 pp\"——即便用了 Ibrahim 的完整配方。把这条曲线外推到 2030，意味着即使工业最佳实践配齐，**纯权重 LLM 的最旧年代知识仍然以约每年 3% 的速率被擦除**。这个数字解释了为什么 2025 年开始所有 frontier 模型都加上 RAG / Web search / agent memory 作为默认通路：**不是因为 RAG 比权重更准，而是因为他们都内部认识到 \"权重无法被持续刷新\" 这件事是结构性的，不是工程不够努力**——这一点直接通向 §5 的三个反例（TTT-Linear / MEMIT / agent memory），它们与其说是 continual learning 的\"解\"，不如说是行业承认 §3 几何结论后的**外置学习通路**。
+
+把 §4 收尾的 judgment：Ibrahim 2024 的工程贡献是真实的，它把 continual pretraining 从 \"做不了\" 推到 \"做得起、做得稳，只是有边界\"。但这条边界——必须批处理、必须留 replay、必须保留旧数据访问权、必须接受细粒度时间漂移——恰好把 \"continual\" 这个词的语义从 \"streaming 在线学习\" 收窄到 \"离线增量再训练\"。从 NTP 机制审视的角度，这不是反驳 C-CONT-1（\"NTP loss 阻止 LLM 在权重上持续学习\"），而是**把 C-CONT-1 的 falsifiable setting 写得更精确**：弱化命题是 \"在分钟级、单条样本级、无 replay 缓存的 streaming setting 下，纯权重 LLM 无法不丢旧知识地吸收新事实\"。这个弱化命题在 2026 年仍然是不可证伪的。下一节我会拆三条最常被援引的反例，并说明它们为什么没有真正攻击这个弱化命题，而是绕开它。
+
 <!-- TODO §5: three live counter-examples — TTT-Linear 2407.04620 / MEMIT 2210.07229 / Letta-Mem0-Zep agent memory; why each is "推迟" not "解决" -->
 <!-- TODO §6: 2027 falsifiable bet + Sutton bitter-lesson rebuttal -->

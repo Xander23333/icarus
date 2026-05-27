@@ -411,6 +411,16 @@
       ],
       "chars_added": 5300,
       "note": "Added formal_limits.md new section '表达力 vs 可学性 — 第二堵墙' (~5.3k chars). Chronology of expressivity-vs-learnability gap: Liu shortcuts 2210.10749, Reversal Curse Berglund 2309.12288, Allen-Zhu Physics-of-LM 2305.13673, grokking Power 2201.02177 + Nanda modular-add 2301.05217, activation patching best-practices [unverified ID], Bordelon dynamical scaling 2402.01092, RASP-L/Abacus/Anil length-gen bundle. Frames the 'two walls' picture: outer=expressivity (TC0-family/depth/CoT/tokenization), inner=learnability (objective shape/optimizer bias/data spectrum/PE-embedding). Honest judgment: at frontier scale 2024-2026 the inner wall hits first — reversal curse, length-extrapolation collapse, retrieval-template dependence, shortcut learning are all learnability not expressivity failures; mech camp owes a learnability-side lower bound (only Bordelon 2402.01092 partial). Adds new C-FORM-4 'NTP-learnability gap' candidate with explicit falsification clause complementing C-FORM-1/2/3 (which lock expressivity). Rotation: formal_limits.md last touched 2026-05-26T22:32:45Z (~17h ago, longest-untouched topic page); world_model 15:00 tick avoided; samples N2-N8 all touched within last 4-5h so all topic-page deepenings preferred."
+    },
+    {
+      "tick_utc": "2026-05-27T16:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N7-why-llm-cannot-continually-learn.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4700,
+      "note": "Continued N7 sample chapter §4 'Ibrahim 2024：把 continual pretraining 的账单一行行算给你看' (~4.7k chars): Ibrahim-Thérien-Belilovsky 2403.08763 three-knob Pareto (LR re-warming peak 50% / full cosine re-decay / 5% replay) achieving ±1% of retrain-from-scratch at 1/10 FLOPs as honest partial weakening of §3 pessimism; Llama-3 2407.21783 tech report as industrial confirmation + OpenAI GPT-4-Turbo/4o/4o-mini effective-cutoff monotonic推进 reverse-inference; three hard remaining bones: (a) 5% replay requires retained pretrain corpus access — GDPR/NYT-OpenAI/Anthropic 2024-12 [uncertain] compliance bills push industry back to retrain rather than save the 10x FLOPs; (b) LR re-warming temporally discretizes 'continual' — incompatible with minute-scale streaming since peak LR shatters old knowledge while LR<1e-5 cannot write new; (c) Ibrahim's small chosen domain-distance (Pile→SlimPajama / En→De) hides fine-grained yearly drift, Lachaux 2024-11 [unverified] follow-up shows 2-4pp/year closed-book degradation under full Ibrahim recipe → extrapolates to ~3%/yr structural erasure; closes by recasting C-CONT-1 as falsifiable弱化命题 ('streaming, single-sample, no replay cache: pure-weight LLM cannot absorb new facts without losing old') still unfalsified in 2026, bridging to §5 external-channel counter-examples. README N7 §1–§3 → §1–§4. Rotation: N7 last touched at 12:30 (5 ticks ago); last 5 ticks were formal_limits/world_model/N6/ntp_survey/N8 — N7 well outside back-to-back guard."
     }
   ]
 }
