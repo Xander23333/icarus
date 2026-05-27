@@ -56,6 +56,26 @@
 
 但流形扩张并不削弱 cap 论据，只是让它更精细：C-SCALE-1/2/3 三条候选都把 "上界" 表述为 **某条轴上的不可避免代价**（horizon-linear sample、frequency-sigmoid confabulation、token-cliff plasticity），而不是 "做不到"。这与 [formal_limits](formal_limits.md) 的 mech 上界、[reasoning](reasoning.md) 的 CoT-faithfulness 争论形成互补：formal_limits 钉表达力天花板，scaling_limits 钉 finite-resource 可达边界，reasoning 钉中间过程是否可信。
 
+## Inference-time scaling: 第四轴 (2024–2026)
+
+到 2024 年下半年，"NTP 的 scaling 上界" 这条战线被强行加了一根轴：**inference-time compute**。从 Kaplan 到 Chinchilla 再到 over-training，前一代法则讨论的全部是 (N, D, C_train)；2024 年起，C_inference 成了与之等价、有时甚至可互换的预算变量。这条线必须独立写，因为它直接动摇了 "更大的 NTP 模型 = 更强 / 更小的 NTP 模型 = 更弱" 这个隐含背景假设。
+
+- **2024-07 — Brown et al., *Large Language Monkeys: Scaling Inference Compute with Repeated Sampling* ([arxiv:2407.21787](https://arxiv.org/abs/2407.21787))**。在 MATH、GSM8K、SWE-bench Lite 等任务上把 sampling 数量从 1 推到 10⁴，发现 coverage（pass@k 中至少一次正确）在 k 上呈近似幂律。结论：在可验证任务上，**用 10⁴× inference compute 把 Llama-3-8B 推到接近 GPT-4o 单样本水平**——这是 inference-time scaling 第一次被钉成对数线性曲线，而不是一个工程 trick。
+- **2024-08 — Snell et al., *Scaling LLM Test-Time Compute Optimally Can Be More Effective than Scaling Model Parameters* ([arxiv:2408.03314](https://arxiv.org/abs/2408.03314))**。Google DeepMind / UC Berkeley 联合，在 MATH 上系统比较 (i) best-of-N + reward model verification、(ii) revision-based sequential 修订、(iii) tree-search beam。给出 **compute-optimal 推理策略随任务难度自适应**，并在简单/中等任务上证明 **14× 推理 compute 可以替代 14× 预训练 compute**——这是 (N, D, C_train) 与 C_inference 第一次被写成可互换的预算单位。
+- **2024-09 — OpenAI o1 system card / blog**（非 arxiv）：首个产品化"思考时间 = 第二条 scaling 曲线"的 frontier model，公开图表显示 AIME accuracy 在 train-time compute 与 test-time compute 两轴上各自单调上升，且斜率相近。
+- **2025-01 — DeepSeek-R1 ([arxiv:2501.12948](https://arxiv.org/abs/2501.12948))**。RL-from-verifier 训出可观长度的 CoT；附录的 length-vs-accuracy 曲线在 AIME / MATH-500 上同样呈现 log-linear，且 R1-Distill-Qwen-7B 在数学任务上超过 GPT-4o (2024-05)——一个 7B NTP 模型靠 inference compute 抹平了约 50× 参数差距。
+- **2025-02 — Wu et al., *Inference Scaling Laws: An Empirical Analysis of Compute-Optimal Inference for LLM Problem-Solving* ([arxiv:2408.00724](https://arxiv.org/abs/2408.00724))**。在 MATH、GSM8K 上拟合 inference-compute 与 error rate 的幂律指数，给出 task-dependent 的 compute-optimal sampling 配比。重点结论：**inference-scaling 的幂律指数随任务可验证度变化** —— 可严格验证的任务（数学、代码）指数大，不可验证（开放写作、对话）几乎为 0。这把 inference-time scaling 限定到 "verifier-bounded" 子集。
+- **2025-08 — Sardana et al. / Beyond Chinchilla-Optimal ([arxiv:2401.00448](https://arxiv.org/abs/2401.00448) 的后续）**。在考虑 inference 总成本（部署期 token 数 × 单 token 推理 cost）后，optimal N/D 配比相对 Chinchilla **显著偏向小模型 + 更多训练 token**。这是 Chinchilla 法则被 "inference 占主导的真实部署" 第二次系统性修正——也是 C-SCALE-3 plasticity cliff 与 inference-time scaling 之间张力的源头。
+- **2025-12 — *s1: Simple test-time scaling* (Muennighoff et al., [arxiv:2501.19393](https://arxiv.org/abs/2501.19393)) [unverified ID]**。仅 1k 高质量推理样本 SFT + budget-forcing（强制延长或截断 thinking），在 AIME-24 上取得与 o1-preview 同档结果，证明 **inference-time scaling 的大部分收益不依赖大规模 RL，只需要让模型"愿意写长"**。这弱化了 R1-style RL 是 inference-scaling 必要条件的假设。
+
+把上述线收一遍可以看到：2024–2026 inference-scaling 的经验幂律已经具备 Kaplan-2020 那种 "斜率稳定、外推可用" 的成色，但 **作用域被严格限定在 verifier-rich 任务**。在没有 ground-truth 验证器的开放任务上（创意写作、长对话、agentic 多步任务的中间步骤），inference-compute 的边际收益快速消失——这恰好对应 C-WM-2 "open-world dilution" 在 inference 侧的对偶。
+
+新增候选条目：
+
+- **C-SCALE-4 — Inference-train compute equivalence within verifier-rich tasks**。在存在低噪声 verifier 的任务族 V 上，C_train 与 C_inference 在 error rate 上近似可互换：log error ≈ −α log C_train − β log C_inference + const，且 α/β 在同族内稳定。**Falsification**: 在 V 内找到一个任务，使 C_inference 增加 10× 后 error 不下降，且失败原因不能归到 verifier 噪声或 mode-collapse（即 coverage 已饱和）。**当前评估**: medium-strong——Brown / Snell / Wu 三条独立证据线方向一致，但 α/β 跨任务的稳定性还缺一个 Hoffmann-Chinchilla 量级的统一拟合。
+
+这一条与 C-SCALE-1 (horizon-linear estimation floor) 并不矛盾：Ω(H) 是 *训练样本* 的下界，inference scaling 把代价从训练样本搬到推理算力（每个 query 上重复采样 / 长 CoT），同一 horizon-linear 总代价并未消失，只是以 *per-query compute* 形式 amortize 到部署侧。
+
 ## Open problems
 
 - 把 Shannon SNR 视角与 superposition / knowledge capacity scaling 统一成一个 SNR-superposition 法则。
