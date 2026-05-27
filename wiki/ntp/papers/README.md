@@ -4,6 +4,11 @@
 
 | 日期 | arXiv | 标题 | Topic | NTP 归类 |
 |---|---|---|---|---|
+| 2026-05-26 | [2605.26379](paper_notes/2026-05-29-2605.26379-lejepa-world-model-identifiability.md) | When Does LeJEPA Learn a World Model? | world_model | NTP-mech (paradigm-replacement) |
+| 2026-05-26 | [2605.26362](paper_notes/2026-05-29-2605.26362-llm-hallucinate-structured.md) | Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis | grounding/reasoning | NTP-mech (FFN-grounding layer) |
+| 2026-05-26 | [2605.26733](paper_notes/2026-05-29-2605.26733-stars-looped-stability.md) | Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in LoopLMs | formal_limits/reasoning | counter-evidence |
+| 2026-05-26 | [2605.26820](paper_notes/2026-05-29-2605.26820-vla-real-world-continual.md) | Can VLA Models Learn from Real-World Data Continually without Forgetting? | embodiment/online_learning | NTP-mech (VLA C5 子带) |
+| 2026-05-26 | [2605.26655](paper_notes/2026-05-29-2605.26655-prompt-opt-causal-edit-analysis.md) | Why Prompt Optimization Works, and Why It Sometimes Doesn't: Causal-Inspired Edit-Level Analysis | reasoning | counter-evidence |
 | 2026-05-26 | [2605.24956](paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md) | NITP: Next Implicit Token Prediction for LLM Pre-training | formal_limits | counter-evidence |
 | 2026-05-26 | [2605.25891](paper_notes/2026-05-28-2605.25891-causal-tongue-tie.md) | Causal Tongue-Tie: LLMs Can Encode Causal Direction, But Their Yes/No Outputs Fail to Express | reasoning/causality | counter-evidence |
 | 2026-05-26 | [2605.23972](paper_notes/2026-05-28-2605.23972-world-models-for-agi-ldi.md) | Why We Need World Models for AGI: Where LLMs Fail and How World Models May Outperform | causality/world_model | NTP-mech (框架，弱) |

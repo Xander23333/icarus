@@ -121,7 +121,20 @@
 - **ProFIL ([2605.11467](../papers/paper_notes/2026-05-28-2605.11467-profil-probe-filtered-rl.md))** — frozen-base probe + GRPO advantage masking 在 GSM8K/LiveCodeBench/ToolUse/MMLU-Redux 上把 post-commitment CoT theater 减 11–100%，且 prior 预测的 RL-obfuscation 失败模式没出现 ⇒ "CoT theater = NTP 机制级缺陷"被工程修复反证。
 - **NITP ([2605.24956](../papers/paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md))** — 加一项浅层激活作下一 token 稠密 self-target，把 9B MoE MMLU-Pro 推高 5.7% 而无新数据/模态/架构改动 ⇒ "NTP 表征几何欠约束 → mech 缺陷"也被降级到 objective-engineering 层。
 
-**当前推论**：要立一条新的 NTP-mech 候选，必须显式同时排除：(i) format/answer-line confound, (ii) verbal-readout disexpression, (iii) CE-collapse 假阳性, (iv) attribute-head 缺失, (v) representation-geometry under-constraint。这五个工程 confound 同时排除后仍稳定的 mech 现象，目前只剩：C1 (Deterministic Horizon, no-CoT)、Reversal Curse 类方向不对称、以及 long-horizon Ω(H) 信息论下界。
+**当前推论**：要立一条新的 NTP-mech 候选，必须显式同时排除：(i) format/answer-line confound, (ii) verbal-readout disexpression, (iii) CE-collapse 假阳性, (iv) attribute-head 缺失, (v) representation-geometry under-constraint, **(vi) FFN-grounding bottleneck (2026-05-29 新增)**, **(vii) prompt edit-family × task-routing 交互 (2026-05-29 新增)**。前五项是 *结构/训练* 侧，后两项是 *接口/方法学* 侧。这七个工程 confound 同时排除后仍稳定的 mech 现象，目前只剩：C1 (Deterministic Horizon, no-CoT)、Reversal Curse 类方向不对称、以及 long-horizon Ω(H) 信息论下界。
+
+### confound 第六/七项 — 接口层补丁 (2026-05-29 update)
+- **第六项 FFN-grounding bottleneck**: Li et al. ([2605.26362](../papers/paper_notes/2026-05-29-2605.26362-llm-hallucinate-structured.md)) 在 single-hop / multi-hop / tabular 三种 linearized 结构知识上证明 hallucination 的 sufficient statistic 是 **FFN 未将提供的 context 事实写入 residual**，而 attention 分布的 *task-dependent* 集中只是次要 signal；跨 schema detector AUC>0.8。任何\"LLM 不会用 in-context 结构知识做推理\"的 mech 声称必须先排除 FFN-grounding 失败，否则属于接口缺陷而非推理机制缺陷。
+- **第七项 edit-family × task-routing**: Gong & Wen ([2605.26655](../papers/paper_notes/2026-05-29-2605.26655-prompt-opt-causal-edit-analysis.md)) 用 propensity-adjusted 多 representation 三角化证实 prompt-opt 跨任务不传递是 *edit family × task family* 系统性交互（complexity-increasing/meta-instructional vs step-by-step/meta-cognitive 在 math/multi-hop 与 logical/sequential 上方向相反）。任何\"prompt 改动暴露/掩盖 模型能力\"的声称必须报告 propensity-adjusted edit-family conditional effect，否则不可作为 mech 证据。
+
+### C1 在 trained-stable looped 模型上的参数化修订 (2026-05-29 update)
+STARS ([2605.26733](../papers/paper_notes/2026-05-29-2605.26733-stars-looped-stability.md)) 证明 LoopLM test-time depth 崩塌可由 Jacobian Spectral Radius Regularization 消除，深度提升单调饱和而非崩塌。这迫使 C1 的参数集从 (L, d, tokenization) 扩为 **(L, d, tokenization, convergence-mode)**：在 fixed-depth NTP 上 H* 紧致；在 trained-stable looped NTP 上应替换为 *converged loop depth*。STARS 同时为 objective-engineering 路线提供第 4 条修补 lever（在 NITP/ProFIL/Semantic-Loss/Conditional-Attr 之后）。
+
+### C6 candidate 在世界假设条件下获理论加固 (2026-05-29 update)
+Klindt-LeCun-Balestriero ([2605.26379](../papers/paper_notes/2026-05-29-2605.26379-lejepa-world-model-identifiability.md)) 双定理：在 stationary additive-noise 世界类下 LeJEPA 线性可辨识，且 Gaussian 是 *唯一* satisfying prior。该结果为 paradigm-replacement 路线提供条件性数学加固，但与 SPHERE-JEPA ([2605.26900], 球面流形 → hyperspherical uniform 才最优) 联读后只能定位为 \"**理想化世界下 LeJEPA 是优解**\"；并未否决 NTP 通用论点。对 C6 (video-NTP interventional rollout) 的影响是 *正面但有限*：LeJEPA-类 SSL 在 stationary 视频上具理论 identifiability，对长程 do(X)-consistency benchmark 是潜在 baseline。
+
+### C5 (continual streaming) 获首条真实-世界 anchor (2026-05-29 update)
+Zhu et al. ([2605.26820](../papers/paper_notes/2026-05-29-2605.26820-vla-real-world-continual.md)) 提供首条公开真实 VLA continual-learning benchmark（4 顺序任务 / rigid+contact+deformable / 多 replay 实现 ablation），把 C5 候选从模拟 anecdote 升级为 **可重复 reference**——之后任何 C5 否证声称需超过本文 best replay 数。
 
 ### C4 候选 (2026-05-28 新增, embodied 子带)
 **VLA capability+robustness 总预算上界**：对任何 discrete-action VLA policy，capability MI + robustness MI ≤ H(task) + adversarial channel capacity（2605.25889）。pixel-level bound 松（~10³ nats），但 encoder-specific corollary 在 OpenVLA 上把预算压到 ~31 nats，且 policy 已吃满——这是 *与 policy 无关* 的硬上界，符合 NTP-mech 候选形式要件。

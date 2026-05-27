@@ -26,6 +26,7 @@ NTP-cap 阵营的回击是：(a) **scale 缓解 forgetting**：Ramasesh, Lewkowy
 | 1989 | Catastrophic Interference in Connectionist Networks (McCloskey & Cohen) | 序列训练会抹除旧任务表征；问题随网络深度恶化 | mech (foundational) | *Psychology of Learning and Motivation* 24, non-arxiv |
 | 1999 | Lifelong Learning Algorithms (Thrun) | 把 continual learning 形式化为 task-stream meta-learning | mech (framework) | book chapter, non-arxiv |
 | 2017-03 | Overcoming Catastrophic Forgetting in Neural Networks (Kirkpatrick et al.) | EWC：用 Fisher 信息矩阵保护重要权重 | cap (algorithmic) | [arxiv:1612.00796](https://arxiv.org/abs/1612.00796) |
+| 2026-05-26 | Can VLA Models Learn Real-World Data Continually w/o Forgetting? (Zhu et al.) | 真实 VLA continual benchmark (4 任务 / rigid+contact+deformable)；显著 catastrophic forgetting；replay 实现因素地图首发 | mech (VLA 子带；C5 候选的首条公开真实 benchmark) | [2605.26820](../papers/paper_notes/2026-05-29-2605.26820-vla-real-world-continual.md) |
 | 2017-06 | Gradient Episodic Memory for Continual Learning (Lopez-Paz & Ranzato) | GEM/A-GEM：保留 episodic buffer，约束新梯度不增加旧 loss | cap | [arxiv:1706.08840](https://arxiv.org/abs/1706.08840) |
 | 2019-09 | Episodic Memory in Lifelong Language Learning (d'Autume et al.) | 首次把 episodic memory 应用到 LM continual learning，证明可显著减遗忘 | cap | [arxiv:1906.01076](https://arxiv.org/abs/1906.01076) |
 | 2020-02 | Generalization through Memorization: Nearest Neighbor LMs (Khandelwal et al.) | kNN-LM：不改权重，靠 datastore 实现 "无训练扩知识"；perplexity 下降但推理慢 | cap (non-parametric) | [arxiv:1911.00172](https://arxiv.org/abs/1911.00172) |

@@ -10,6 +10,7 @@ NTP-mech 阵营长期依赖 TC⁰ / constant-depth circuit 上界来论证"trans
 
 | 日期 | 论文 | 主要论点 | NTP 归类 (mech/cap/pseudo) | 链接 |
 |---|---|---|---|---|
+| 2026-05-26 | STARS — Stability-driven Recurrent Scaling (Yang et al.) | LoopLM 的 latent-reasoning 崩塌等价于 Jacobian 谱半径 >1；Jacobian Spectral Radius Regularization + 随机 loop 深度采样 ⇒ test-time depth 单调饱和而非崩塌；C1 (fixed-depth forward-pass) 在 trained-stable looped 模型上需替换为 *converged depth* | counter-evidence (扩 C1 而非否决) | [2605.26733](../papers/paper_notes/2026-05-29-2605.26733-stars-looped-stability.md) |
 | 2026-05-26 | NITP: Next Implicit Token Prediction | 在 NTP 之上叠加用浅层激活作下一 token 的稠密 self-supervised target；9B MoE MMLU-Pro +5.7%；论证 NTP one-hot 留下的 hidden-state 自由度可被 auxiliary 对潜空间的几何约束修掉，几何欠约束属 objective-engineering 层 | counter-evidence (削弱"NTP 表征几何不可救"mech 论调) | [2605.24956](../papers/paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md) |
 | 2026-05-21 | Lost in Tokenization (Graph Trade-offs) | 不同 tokenization (spectral/RW/adjacency) 对同一图函数诱导多项式级 depth gap；表达力 = (architecture, tokenization) 联合属性 | mech (extends C1) | [2605.22471](../papers/paper_notes/2026-05-27-2605.22471-graph-tokenization-tradeoffs.md) |
 | 2026-05-18 | MHA as NW Ensemble | MHA = H 个 NW kernel 估计器的结构化 ensemble；variance reduction 由 head decorrelation (principal angles) 主导 | mech (soft, framework) | [2605.20271](../papers/paper_notes/2026-05-27-2605.20271-mha-as-nw-ensemble.md) |

@@ -4,6 +4,12 @@
 
 | 日期 | 类型 | 事件 | 来源 |
 |---|---|---|---|
+| 2026-05-29 | meta | 浮现 **第六层 confound — FFN-as-grounding bottleneck**（Li et al. 2605.26362 的跨 schema mech 证据）；并把 **edit-family × task-routing** 写入方法论 confound 清单（Gong & Wen 2605.26655）；§10 招标书 confound 数从 5 升 7 | this report |
+| 2026-05-25 | 论文 | LeJEPA world-model 可辨识性双定理：alignment + Gaussian reg ⇒ linear identifiability，且 Gaussian 是 *唯一* satisfying prior（stationary additive-noise 世界类下） | [arXiv:2605.26379](../papers/paper_notes/2026-05-29-2605.26379-lejepa-world-model-identifiability.md) |
+| 2026-05-26 | 论文 | STARS：LoopLM 崩塌 = Jacobian 谱半径 >1；Spectral Radius Regularization 把 test-time depth 拉到单调饱和；C1 在 trained-stable looped 模型上需替换为 *converged depth* | [arXiv:2605.26733](../papers/paper_notes/2026-05-29-2605.26733-stars-looped-stability.md) |
+| 2026-05-26 | 论文 | 首个真实 VLA continual-learning benchmark：显著 catastrophic forgetting；C5 候选首获公开真实 reference | [arXiv:2605.26820](../papers/paper_notes/2026-05-29-2605.26820-vla-real-world-continual.md) |
+| 2026-05-25 | 论文 | LLM 在 linearized 结构知识上 hallucinate 的 sufficient statistic 是 **FFN grounding** 失败而非 attention 失焦；跨 graph/multi-hop/table 通用 | [arXiv:2605.26362](../papers/paper_notes/2026-05-29-2605.26362-llm-hallucinate-structured.md) |
+| 2026-05-26 | 方法论 | Prompt-opt edit-family × task-routing 交互被定量分离；prompt-only effect 不可作 mech 证据 | [arXiv:2605.26655](../papers/paper_notes/2026-05-29-2605.26655-prompt-opt-causal-edit-analysis.md) |
 | 2026-05-28 | meta | "Readout-side 主导假设"再添 2 条直接证据 (probe 0.97 vs yes/no 0.5 的 Causal Tongue-Tie；frozen probe + GRPO masking 把 CoT theater 减 11–100% 的 ProFIL)；该假设的 *观察侧* 与 *干预侧* 形成闭环 | this report |
 | 2026-05-26 | 论文 | NITP：用浅层激活作下一 token 稠密 self-target，9B MoE MMLU-Pro +5.7%；NTP 几何欠约束属 objective-engineering 层，可被轻量 auxiliary 修掉 | [arXiv:2605.24956](../papers/paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md) |
 | 2026-05-26 | 论文 | Causal Tongue-Tie：anti-commonsense CLadder 上 probe 0.97 / yes-no 0.5；output-only causal benchmark 不能直读为 mechanism | [arXiv:2605.25891](../papers/paper_notes/2026-05-28-2605.25891-causal-tongue-tie.md) |

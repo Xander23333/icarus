@@ -10,6 +10,8 @@
 
 | 日期 | 论文 | 主要论点 | NTP 归类 (mech/cap/pseudo) | 链接 |
 |---|---|---|---|---|
+| 2026-05-26 | STARS — Stability-driven Recurrent Scaling (Yang et al.) | LoopLM test-time 崩塌 = Jacobian 谱半径 >1；Spectral Radius Regularization 把 latent map 拉到 asymptotically stable fixed point；test-time depth 单调饱和而非崩塌 | counter-evidence (latent-reasoning 不稳定 ≠ NTP mech) | [2605.26733](../papers/paper_notes/2026-05-29-2605.26733-stars-looped-stability.md) |
+| 2026-05-26 | Why Prompt Optimization Works/Doesn't (Gong & Wen) | propensity-adjusted edit-level analysis：complexity-增加 / meta-instructional edits 对 math/multi-hop reasoning 负相关；step-by-step / meta-cognitive 对 logical 正相关；prompt-only effect 是 edit-family × task-routing 交互 | counter-evidence (新方法论 confound) | [2605.26655](../papers/paper_notes/2026-05-29-2605.26655-prompt-opt-causal-edit-analysis.md) |
 | 2026-05-26 | ProFIL: Probe-Filtered RL for Faithful CoT | frozen-base probe + GRPO advantage masking 把 post-commitment CoT theater 减 11–100%；prior 预测的 RL-obfuscation 失败模式没出现；CoT-theater 可被 readout-side 干预修掉 | counter-evidence | [2605.11467](../papers/paper_notes/2026-05-28-2605.11467-profil-probe-filtered-rl.md) |
 | 2026-05-26 | Causal Tongue-Tie | linear probe 在 anti-commonsense CLadder 上 0.97 准确，但 yes/no 输出 0.5；≈+0.5 gap 全部来自 verbal-readout 失败；output-only causal benchmark 的对/错都不可读为 mechanism 结论 | counter-evidence | [2605.25891](../papers/paper_notes/2026-05-28-2605.25891-causal-tongue-tie.md) |
 | 2026-05-13 | Conditional Attribute Transformers | NTP local objective 在序列级 attribute 估计上偏差大；联合训练 (p(token), E[attr]) 双 head 把方差和成本降一个数量级；说明部分"NTP 不会全局规划"是 head 设计问题 | cap (弱化 mech 论据) | [2605.14004](../papers/paper_notes/2026-05-27-2605.14004-conditional-attribute-transformers.md) |

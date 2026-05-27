@@ -1,11 +1,11 @@
 {
-  "last_run_utc": "2026-05-26T23:20:00Z",
+  "last_run_utc": "2026-05-27T23:30:00Z",
   "last_run_status": "ok",
-  "date": "2026-05-28",
-  "papers_scanned": 77,
+  "date": "2026-05-29",
+  "papers_scanned": 28,
   "papers_kept": 5,
   "notes_written": 5,
-  "hard_dropped": 72,
+  "hard_dropped": 23,
   "harvester_errors": [],
-  "note": "harvest 经 2 次 cool-down 重试后第三次 0 errors / 8 queries 全成功"
+  "note": "harvest 经 3 次 cool-down 重试后第 4 次 0 errors / 8 queries 全成功；confound 清单从 5 升 7（FFN-grounding、edit-family × task），C1 参数集添 convergence-mode；§10 +C5 anchor 升级 + C6 获 LeJEPA-identifiability 条件支撑"
 }

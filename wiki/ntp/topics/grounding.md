@@ -18,6 +18,10 @@ NTP-cap 阵营的回击是：(a) 分布信号本身就包含大量被低估的 g
 
 ## 关键论文 (chronological)
 
+| 日期 | 论文 | 主要论点 | NTP 归类 | 引用 |
+|---|---|---|---|---|
+| 2026-05-25 | Li, Han, Wang et al., *Why LLMs Hallucinate on Structured Knowledge* | 在 linearized graph/multi-hop/table context 上，hallucination 的 sufficient statistic 是 **FFN-as-grounding** 失败而非 attention 失焦；跨 schema 通用，detector AUC>0.8 | mech (FFN-grounding 层；新候选 confound) | [2605.26362](../papers/paper_notes/2026-05-29-2605.26362-llm-hallucinate-structured.md) |
+
 | 日期 | 论文 | 主要论点 | NTP 归类 (mech/cap/pseudo) | 链接 |
 |---|---|---|---|---|
 | 1990 | Symbol Grounding Problem (Harnad) | 纯符号系统无法 escape 字典循环，必须 anchor 到非符号表征 | mech (philosophical prior) | *Physica D* 42, non-arxiv |
