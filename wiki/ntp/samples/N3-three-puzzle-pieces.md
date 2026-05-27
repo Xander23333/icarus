@@ -92,3 +92,15 @@ Lukas Berglund 等人 2023 年 9 月那篇 [*The Reversal Curse*](https://arxiv.
 
 下一篇 N4 会把视角从 \"loss 的局部性质\" 抬到 \"loss 在 Pearl 因果阶梯上的位置\"——Reversal Curse 是 Layer 1 内部的对偶失败，更难的问题在 Layer 2/3 上，而那里 NTP 暴露的不是单条性质，而是整个层级被压扁。
 
+## 尾声：三条 2027 对账线，与一段方法论上的自我攻击
+
+把第六节的论证落到能被 2027 年回头打脸的具体赌注上，三块碎片各对应一条。
+
+**赌 1（对应 §3 Faith-and-Fate / 逐 token 局部性）**。到 2027-12 之前，会出现至少一个公开模型——非检索增强、非外接 verifier、单次 forward 加 ≤4k token 的 CoT 预算——在 Dziri 三任务的 depth ≥ 6 切片上达到 ≥ 70%。如果到点没有，bitter-lesson 阵营 "靠 token 买 depth 没有经济上限" 的乐观叙事就要交一次学费；如果到点有，**且**该模型在 PutnamBench（[arxiv:2407.11214](https://arxiv.org/abs/2407.11214)）这种结构上更深的 benchmark 上同步抬升 ≥ 20pp，那 §3 把 Dziri 曲线读作 "NTP loss 局部性的结构暴露" 的论证就要弱化为 "只是当前训练数据未覆盖深 depth 模式"——这是我承认会被打脸的最高频候选。
+
+**赌 2（对应 §4 Unfaithful CoT / 过程-结果同构惩罚）**。Yanda Chen 2025 ([arxiv:2503.08679](https://arxiv.org/abs/2503.08679)) 在 reasoning-model 一代上量到的 faithfulness 仍系统性 < 50%；ProFIL ([arxiv:2605.11467](https://arxiv.org/abs/2605.11467) [unverified ID]) 在 GSM8K/LiveCodeBench/ToolUse/MMLU-Redux 上把 post-commitment CoT theater 减 11–100%。两条线交叉外推：到 2027-12 之前，会出现一个公开复测把 frontier reasoning model 在 Turpin-类偏置 prompt 上的 faithfulness 抬过 70%，**且** Anthropic 类 attribution graph 在同一模型上观察不到 "answer-first, explanation-after" 主导回路。两条同时达成，则 §4 论点的强形式（"过程-结果脱钩是 NTP loss 的吸引子"）应降级为 "工程可控的 readout-side 副作用"——这与 [`../survey/taxonomy.md`](../survey/taxonomy.md) 2026-05-28 升降级日志里 ProFIL 触发的那条降级是一脉相承的。我倾向于赌降级会发生，但只到 NTP-cap 一级，不会进一步到 Pseudo-NTP——因为 Anthropic biology 那条 "answer-first" 回路即使被工程压制，loss 不施压的事实没有改变。
+
+**赌 3（对应 §5 Reversal Curse / 方向单向性）**。这条是三条里最稳的。到 2027-12 之前，"训练只看 A→B 模板、测试问 B→A、不许 in-context restatement、不许 RAG" 这个 Berglund 原始 setup 在公开报告里仍会显示 frontier decoder-only LLM（无论参数量）正向 ≥ 95% / 反向 < 20%。Allen-Zhu reverse-order pretraining 工程 trick 即便被工业采用，也只把 setup 改造为 "训练看两个方向"——这不是反例，是把 Reversal Curse 通过数据对称化绕开。真正反例长这样：一个 vanilla autoregressive NTP 模型，训练分布里完全无反向，但因 in-context generalization 在反向问答上 ≥ 50%。这种证据目前为零；如果 2027 年仍为零，§5 把 Reversal 读作 NTP loss 第三性质最干净显现的判断就保持稳固。如果出现，我整章的"三正交切面"框架要重写——不是因为 Reversal 被解，而是因为 NTP 内部存在某种我现在没识别到的对称化机制。
+
+最后给一段对自己的方法论攻击，这件事我欠读者。第六节那张三列对照表（现象 / loss 性质 / 缓解 / 代价）的最大方法论风险是**事后选择偏差**：我从 NTP loss 写出三条性质，再去三个文献圈各挑一个最契合的现象做映射。这种 "找配对" 做法在历史叙事里几乎一定能成功，因为 loss 性质足够基础、文献现象足够多。要把它从叙事升格为论点，需要一条**预言性的**反向证据——某个尚未被命名的现象，被本章的三条性质框架成功 *预测* 出来，再被独立实验确认。本章没有给出这样的预言，所以诚实地说，它的论证强度上限是 "对已观察到的三块碎片提供了一个统一的 loss-几何视角"，**不是** "证明了 NTP 必然显现这三块碎片"。把它推过这条线，得等下一章 N4 把视角抬到 Pearl 阶梯上以后回头补——那里有 CLadder ([arxiv:2312.04350](https://arxiv.org/abs/2312.04350)) 这种 leak-checked 的 Layer-2/3 benchmark 给的硬数据，能反过来检验本章三条性质中第一条（逐 token 局部性）和第三条（方向单向性）在更高阶因果层级上是否仍然预测正确的失败模式。如果 N4 §3 显示 frontier LLM 在 CLadder Layer-2 上的失败模式可被本章框架预先归类到 "局部性 + 方向性合流"，则本章升格为"有预测力的框架"；如果不行，本章仍只是"事后整理的叙事"。读者读到 N4 §3 时，请回到这一段对账。
+

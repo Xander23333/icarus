@@ -563,6 +563,16 @@
       ],
       "chars_added": 2900,
       "note": "Task C: filled survey §2 形式边界 (was 4-row empty-cell placeholder table) with a 9-row populated evidence table + 1-paragraph synthesis judgment (~2.9k chars). Table rows: TC0/log-precision wall (Hahn 1906.06755 / Merrill-Sabharwal 2106.16213 / 2207.00729), length-gen failures + PE/tokenization openings (Bhattamishra 2009.11264 / Deletang 2207.02098 / Ruoss 2305.16843 / McLeish 2405.17399), Chiang-Cholak 2202.12172 + Brosamle-Eckstein 2605.18079 counter-evidence, CoT complexity ladder (Feng 2305.15408 / Merrill-Sabharwal 2310.07923), Lost-in-Tokenization 2605.22471 + Singh-Strouse 2402.14903 third-axis, Deterministic Horizon Guo 2605.23024 + Zhang 2605.19944, q-sparse/k-hop Sanford 2306.02896 + 2402.09268 [unverified ID], Xu 2605.12316 Omega(H) imitation bound (cap not mech), and the 第二堵墙 NTP-learnability gap (Liu shortcuts 2210.10749 / Reversal Curse 2309.12288 / Allen-Zhu 2305.13673 / Bordelon 2402.01092). Synthesis: 两道墙图景 outer expressivity + inner learnability, frontier-scale evidence inner-first, NTP-mech 下一前线 in learnability side = C-FORM-4. Cross-links to formal_limits topic + N2 sample §6. Rotation: ntp_survey.md last touched 2026-05-27T13:30Z (~10h ago, last touch was §1 fill); last 2 ticks were world_model and N5 — well outside back-to-back guard. Picked Task C over A because survey §2-§8 stubs are biggest load-bearing missing content and §2 had cleanest source material (formal_limits.md fully populated)."
+    },
+    {
+      "tick_utc": "2026-05-27T16:04:05Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N3-three-puzzle-pieces.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 2400,
+      "note": "Wrote N3 尾声 '三条 2027 对账线，与一段方法论上的自我攻击' (~2.4k chars). Three falsifiable bets one per §3/§4/§5 puzzle piece: (赌1) Dziri depth>=6 >=70% no-RAG-no-verifier <=4k CoT by 2027-12 + PutnamBench 2407.11214 cross-check would downgrade local-token-locality reading; (赌2) Yanda Chen 2503.08679 + ProFIL 2605.11467 [unverified ID] cross-extrapolate to faithfulness>70% AND attribution-graph no answer-first dominance => §4 strong form downgrades to NTP-cap (consistent with taxonomy.md 2026-05-28 log); (赌3) Berglund original setup forward>=95%/reverse<20% expected to hold through 2027-12 for any vanilla decoder-only NTP, Allen-Zhu reverse-order trick not a counter-example since it changes training distribution. Closing methodological self-attack: chapter's three-properties x three-phenomena pairing has post-hoc selection bias risk; argument strength capped at 'unified loss-geometry view of observed pieces' not 'NTP must exhibit these'; promotion to 'predictive framework' requires N4 §3 CLadder 2312.04350 Layer-2/3 cross-check predicting failure modes from locality+directionality merger. Rotation: N3 last touched 2026-05-27T10:00Z (~14h ago); last tick was ntp_survey.md so rotation guard intact. Picked Task A continuation over Task B because all 8 topic pages touched within last 4-13h while N3 was longest-untouched sample with explicit no-尾声 TODO."
     }
   ]
 }
