@@ -20,7 +20,7 @@
 | N2 | [Transformer 的形式表达力——TC⁰ 之墙到底有多硬](N2-the-tc0-wall.md) | 🔨 推进中（§1–§6 + 尾声 / 估计 6000字） |
 | N3 | [Reversal Curse / 不忠实 CoT / Faith-and-Fate——三块拼图](N3-three-puzzle-pieces.md) | 🔨 推进中（§1–§6 + 尾声 / 估计 6500字） |
 | N4 | [Pearl 的因果阶梯与 LLM 的天花板](N4-pearl-ladder-and-llm-ceiling.md) | 🔨 推进中（§1–§6 + 尾声 / 估计 6000字） |
-| N5 | [Embodiment 真的不可 tokenize 吗——VLA 路线的隐含赌注](N5-embodiment-and-vla-bet.md) | 🔨 推进中（§1–§5 / 估计 5500字） |
+| N5 | [Embodiment 真的不可 tokenize 吗——VLA 路线的隐含赌注](N5-embodiment-and-vla-bet.md) | 🔨 推进中（§1–§6 + 尾声 / 估计 7000字） |
 | N6 | [World model = 视频生成？三个团队的三种答案](N6-world-model-three-answers.md) | 🔨 推进中（§1–§5 / 估计 5500字） |
 | N7 | [Continual learning：为什么 LLM 不会持续学习](N7-why-llm-cannot-continually-learn.md) | 🔨 推进中（§1–§5 + 尾声 / 估计 6500字） |
 | N8 | [Sutton 又赢一次？回顾被打脸的"机制墙"](N8-sutton-wins-again.md) | 🔨 推进中（§1–§5 / 估计 8500字） |
