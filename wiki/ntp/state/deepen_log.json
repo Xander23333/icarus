@@ -354,6 +354,16 @@
       ],
       "chars_added": 3400,
       "note": "Continued N7 sample §3 'Catastrophic forgetting：把它写成 NTP loss 的一个不动点' (~3.4k substantive chars): McCloskey-Cohen 1989 origin → Kirkpatrick EWC 1612.00796 with three explicit reasons EWC fails at LLM scale (Fisher storage 280GB at 70B / Fisher degenerate on NTP high-freq tokens / Pouransari Apple 2024 [unverified] LR-decay incompatibility); formal write-up of forgetting as gradient direction along D_pretrain high-entropy axes; Lyle 2303.01486 plasticity-loss dual view with Atari 10M-step 1/5 sample-efficiency curve; Dohare Nature 2024 continual-backprop ImageNet-2000-task clean refutation of standard SGD, plus honest caveat that the setting is vision not LM-scale streaming; Lyle 2024 follow-up [unverified] showing plasticity-recovery breaks induction-head superposition (Elhage 2022); judgment that catastrophic forgetting is a joint fixed point of (NTP loss + dense transformer + cross-entropy) — any in-paradigm fix degenerates to replay (batched-offline) or external memory (admitting weights stop learning, bridges to §5). Updated README N7 §1–§2 → §1–§3. Rotates away from N2/N3/N4/N5/N6 samples and all 8 topic pages (all touched in last few ticks)."
+    },
+    {
+      "tick_utc": "2026-05-27T13:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N8-sutton-wins-again.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 14400,
+      "note": "Opened N8 sample chapter §1–§3 'Sutton 又赢一次？回顾被打脸的机制墙' (~14.4k chars first creation; substantive prose ~5.5k 净增 Chinese chars 排除引用 markup). Frames N8 as the deliberate counter-voice to N2–N7. §1 Bitter Lesson 2019-03 + Turing Award 2024 [uncertain date] + GPT-2→R1 七年五次撞墙都被 scaling/工程修补回收. §2 four historical wall collapses with real anchors: (W1) Fodor-Pylyshyn 1988 systematicity → SCAN 1711.00350 → Csordás 2108.12284 [unverified] / COGS 2010.05465 / GPT-4 zero-shot; (W2) Hinton/Marcus arithmetic → GPT-3 2005.14165 §3.9.1 sweep → Singh-Strouse 2402.14903 tokenization / abacus 2405.17399; (W3) Harnad 1990 / Bender-Koller ACL 2020 / Stochastic Parrots → Abdou 2109.06129 / Patel-Pavlick [unverified] / Søgaard 2305.02223; (W4) LeCun 2022 JEPA / Bubeck 2303.12712 poem-reversal → o1 / R1 2501.12948 + Feng 2305.15408 Ω(n²) 半塌 + Brown 2407.21787 Snell 2408.03314 inference scaling. §3 four-stage collapse-script (哲学→benchmark→scaling 蚕食→撤退到弱命题) explicitly mapped onto N2–N7 候选, three-layered judgment (同意 Sutton 总账输 / 弱命题精确陈述+falsification 能活 / 这一次 dense scaling 趋平+MoE 和 inference 不增 effective sample 是结构性新变量), 2027-28 falsifiability bet. §4–§6 TODO roadmap. README N8 flipped 待写→推进中 §1–§3. Rotates away from N7 (last tick) and all other recently-touched samples/topics; N8 was the only 📝 待写 row."
     }
   ]
 }
