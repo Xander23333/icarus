@@ -23,7 +23,7 @@
 | N5 | [Embodiment 真的不可 tokenize 吗——VLA 路线的隐含赌注](N5-embodiment-and-vla-bet.md) | 🔨 推进中（§1–§4 / 估计 5500字） |
 | N6 | [World model = 视频生成？三个团队的三种答案](N6-world-model-three-answers.md) | 🔨 推进中（§1–§3 / 估计 4500字） |
 | N7 | [Continual learning：为什么 LLM 不会持续学习](N7-why-llm-cannot-continually-learn.md) | 🔨 推进中（§1–§4 / 估计 4500字） |
-| N8 | [Sutton 又赢一次？回顾被打脸的"机制墙"](N8-sutton-wins-again.md) | 🔨 推进中（§1–§3+§3-bis / 估计 5500字） |
+| N8 | [Sutton 又赢一次？回顾被打脸的"机制墙"](N8-sutton-wins-again.md) | 🔨 推进中（§1–§4 / 估计 7500字） |
 
 后续篇目由 **半小时 cron** (`ntp-deepen-30min`) 自动续写——每次只挑一篇 stub 推进 ≤800 字，或扩写 topic 页面。每日 07:00 daily cron 会在日报里 roll-up 过去 24h 的扩写记录。
 

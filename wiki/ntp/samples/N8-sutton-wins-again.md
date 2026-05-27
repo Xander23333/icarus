@@ -83,9 +83,24 @@ Stevan Harnad 1990 年的 [*Symbol Grounding Problem*](https://www.cs.ox.ac.uk/a
 
 判断：这三堵小墙的共同点是**塌方时间常数 ≈ 4–10 年**，并且每一次塌方都伴随"机制派从范式论点退到 robustness / 样本效率论点"的转写。把它叠到 §二的四大墙上，*Bitter Lesson* 的实证基线已经是 7 例，不是 4 例。这是 N2–N7 任何机制候选必须正视的先验：哪怕你写得再形式化、再 falsifiable，先验概率仍然偏向你的候选会塌——只是塌的方式不一定是"被证伪"，更常见的是"被绕过 + 没人再提"。把这一行写到本章最显眼的位置，是为了让 N2–N7 的读者在读完那六篇高 conviction 的 mech 叙事后，不要忘了 base rate。
 
+## 四、另一面：四堵到 2026 年仍然没有塌的墙
+
+把 §二 / §三-bis 七个塌方事件全部承认下来之后，下一个诚实的问题是——**有没有反例？有没有同样年份级、同样被反复挑战、但 scaling 没能推过去的墙？**有。下面四堵墙是我能找到的最干净的反例。它们的存在不是用来安慰 N2–N7 的 mech 派——它们是用来校准"*Bitter Lesson* 的适用域"的。
+
+**反墙 1：数学证明的形式化合成 (1956 → 2026 仍开)。** Newell-Simon 1956 *Logic Theorist* 启动了机器证明，70 年里这条线分裂成两条子线：(a) 交互式定理证明器 (Coq / Isabelle / Lean) 走的是"人写策略 + 机器检查"路线；(b) 自动定理证明 (E / Vampire / Z3) 走的是"完全自动 + 受限片段"路线。GPT-3 之后业界尝试把 LLM 接上去：GPT-f ([arxiv:2009.03393](https://arxiv.org/abs/2009.03393))、Lean-Gym、Magnushammer、Llemma ([arxiv:2310.10631](https://arxiv.org/abs/2310.10631))、DeepSeek-Prover ([arxiv:2405.14333](https://arxiv.org/abs/2405.14333))、AlphaProof (DeepMind 2024-07 IMO 银牌博客 [unverified arxiv])。到 2026 年战绩是这样的：miniF2F 高中竞赛集合上 SOTA 已被推到 70–80% 区间 (DeepSeek-Prover-V2 [unverified ID])，AlphaProof 在 2024 IMO 拿到 4/6 题 28/42 分；但 PutnamBench (Tsoukalas et al. [arxiv:2407.11214](https://arxiv.org/abs/2407.11214)) 公开 LLM 最佳通过率 **<10%**，且大部分通过题集中在低难度。**这堵墙没塌**：scaling + RL + verifier 把简单证明吃光了，但复杂证明的曲线**不像算术那样有明显斜率**。NTP 视角下的解释 (N3 §6 提过) 是"过程-结果同构惩罚"——证明对错由 Lean 检查 0/1 给出，**中间步骤的 NTP 损失提供不了梯度信号**，于是只能靠 RL，而 RL 在搜索空间组合爆炸时样本效率下降。这堵墙的形态符合 *Bitter Lesson* 的反例标准：算力已经堆了，方法已经换过两轮，曲线仍然平。
+
+**反墙 2：长程强化学习的样本效率 (1992 → 2026 仍开)。** Sutton 自己 1992 年 *Reinforcement Learning is direct adaptive optimal control* 之后就清楚这条墙的样子：tabular RL 在 state-action 空间稍大时样本复杂度爆炸。深度 RL 时代 DQN (Mnih 2013) → A3C → PPO → SAC 把 Atari / MuJoCo / Go 推到超人，但**每一个超人结果都伴随 10⁷–10⁹ 步交互**。Hafner 2020 *Dreamer* 系列 ([arxiv:2010.02193](https://arxiv.org/abs/2010.02193) → DreamerV3 [arxiv:2301.04104](https://arxiv.org/abs/2301.04104)) 用 world model 把 Atari-100k benchmark 的样本预算压到 10⁵，但 100k 步仍是"100k 帧 ≈ 27 分钟人类游戏"，且 score 远低于人类。EfficientZero ([arxiv:2111.00210](https://arxiv.org/abs/2111.00210)) 类似。到 2026 年 LLM-as-policy / VLA 路线 (N5) 把语言先验注入 RL，但 OpenVLA / π₀ 的 sample efficiency 仍然以 "数千 demo + 数万 rollout" 为单位，**没有出现"再加 10 倍算力"就能把样本效率改善一个数量级的现象**。Sutton 本人在 *The Alberta Plan* ([arxiv:2208.11173](https://arxiv.org/abs/2208.11173) [unverified ID]) 里承认 model-based / option / state-abstraction 这些"结构"在长程 RL 中不可避免——这是 *Bitter Lesson* 作者自己留的口子。
+
+**反墙 3：Physical embodiment 的 sim-to-real gap (1980s → 2026 仍开)。** Brooks 1991 *Intelligence Without Representation* 提出的"现实世界是它自己最好的模型"，到 2026 年仍然没有被"在 sim 里加 10 倍算力"打穿。OpenAI Rubik's cube (2019 [arxiv:1910.07113](https://arxiv.org/abs/1910.07113)) 用 domain randomization + LSTM 在仿真里训练，迁移到 Shadow Hand 真机；五年后 sim-to-real gap 仍然是 manipulation 论文的标配 caveat 章节。DeepMind robocat / RT-X ([arxiv:2310.08864](https://arxiv.org/abs/2310.08864)) / Physical Intelligence π₀ ([arxiv:2410.24164](https://arxiv.org/abs/2410.24164)) 全部走"真机数据为主、sim 仅辅助"路线，恰恰是因为 sim-trained policy 在真机上 zero-shot 仍然崩。LeCun 在 2024 多次访谈里把这条墙作为"world model 必须存在"的论据。N5 §3 的判断更精细：**强命题（action 不可 tokenize）已被 RT-2 / OpenVLA 部分证伪**，但**弱命题（sim → real 样本效率指数恶化）未被证伪**，因此这堵墙仍然算"半开"——它告诉我们 *Bitter Lesson* 的边界在哪里：当**输入分布**只能靠物理世界产生（不能像文本 / 棋盘那样合成），算力解锁失效。
+
+**反墙 4：Scientific discovery 的 novel-hypothesis 生成 (1965 → 2026 仍开)。** Dendral (Feigenbaum 1965) → BACON (Langley 1981) → Adam (Ross King 2009 *Science* 的酵母代谢机器人) 这条线在 2023 后被 LLM 接管：FunSearch (DeepMind 2024 *Nature* [unverified arxiv])、AI Scientist (Sakana 2024-08 [arxiv:2408.06292](https://arxiv.org/abs/2408.06292))、Coscientist (Boiko-Gomes 2023 *Nature*)、Google Co-Scientist (2025-02 blog)。它们能复述、能组合、能在 well-defined search space 内 (Cap-set / 蛋白质结构 / 分子优化) 真出现"新"结果——但**完全开放式的科学假设生成**没有可信报告：没有任何 LLM 系统在 2026 年之前**独立**提出过被同行评审接收的新生物学机制或新数学猜想。Ouyang et al. *Hallucinations in LLMs Hinder Scientific Inquiry* (2024 *Nature MI* 评论) 与 Cheng et al. 2024 [arxiv:2402.07207](https://arxiv.org/abs/2402.07207) [unverified ID] 都把瓶颈定位在"无法生成既新颖又可验证的假设"。这堵墙和反墙 1 同源——**verifier 稀缺 + reward sparse + 搜索空间组合爆炸**——但更彻底，因为连"什么算对"本身都是开放的。
+
+**判断（§四）**：把这四堵反例墙叠到 §三的剧本上，能精炼出 *Bitter Lesson* 的**适用条件**——它过去赢的每一次，都满足三个隐含前提：(i) 输入分布可合成 / 可大规模采集（文本、棋盘、图像、语音）；(ii) verifier 存在 (棋局规则、ASR ground-truth、image label、unit-test、math answer key)；(iii) 搜索/学习的单步信号密集 (NTP loss / TD error 每 step 给梯度)。**当这三个条件中任何一个垮掉，scaling 就停在弱命题的台阶上不再前进**。反墙 1 缺 (iii)、反墙 2 缺 (i)、反墙 3 缺 (i)、反墙 4 缺 (ii)+(iii)。这给 N2–N7 一个非常具体的诊断工具：**问任意 mech 候选——它打的是 (i)(ii)(iii) 三个条件中的哪一个？打中一个就有活路，三个都不打就是下一个塌方候选。**
+
+按这个工具回去看 N2–N7：N2 (TC⁰) + N3 (Reversal Curse / 不忠实 CoT) 主要打 (iii) 单步信号的方向性/同构性，活下来的概率最高；N4 (Pearl 第二/三层) 打 (ii) verifier 稀缺 (反事实没有 ground-truth)，第二层弱命题已被 Lampinen / agentic post-training 蚕食，第三层仍然干净；N7 (continual learning) 打 (i) streaming 输入分布的不可重采样，但工业界用 replay + RAG 绕过的成本越来越低；N5 (embodiment) 同时打 (i) 与 (ii)，是 N2–N7 里**最有可能写进"反墙"清单**的一个；N6 (world model) 取决于具体定义，video-NTP 子命题打 (ii)+(iii)，可能活；observational pixel-only 子命题三条都不打，是最像下一次塌方的。这给 §六的 N1–N7 元批注留了完整骨架。
+
 ---
 
-> **§4–§6 路线图**（后续 tick 续写）：
-> - §4：另一面——四条**没有塌**的墙（数学证明的形式化、强化学习的样本效率、physical embodiment 的 sim-to-real、scientific discovery 的 hypothesis generation），并讨论它们和 NTP 系列的关系
-> - §5：Sutton 自己的内部张力——*Bitter Lesson* 与 *The Alberta Plan* (2022) 之间，他本人也承认结构在某些场景下不可避免
-> - §6：给 N1–N7 的元批注——按本章四阶段剧本，逐一打分每一篇里的机制候选目前处在哪个阶段，并给出"被塌方"的最可能路径与时间窗口
+> **§5–§6 路线图**（后续 tick 续写）：
+> - §5：Sutton 自己的内部张力——*Bitter Lesson* 与 *The Alberta Plan* ([arxiv:2208.11173](https://arxiv.org/abs/2208.11173) [unverified ID]) 之间，他本人也承认结构在某些场景下不可避免；与 §四反墙 2 呼应
+> - §6：给 N1–N7 的元批注——按 §三的四阶段剧本与 §四的 (i)(ii)(iii) 三条件诊断工具，逐一打分每篇 mech 候选目前处在哪个阶段、打中哪几个条件，并给出"被塌方"的最可能路径与时间窗口

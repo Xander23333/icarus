@@ -451,6 +451,16 @@
       ],
       "chars_added": 9011,
       "note": "Continued N2 sample §6 '反例：墙的位置不是定死的——三道暗门' + 尾声 (~9k chars net): three escape doors framed against §3-§5 TC⁰ consensus — (1) latent/pause CoT (Goyal 2310.02226, Hao Coconut 2412.06769 [unverified ID]) breaks 'discrete token per step' assumption Merrill-Sabharwal §7 self-admitted; (2) Schuurmans-Dai-Zanini 2410.03170 [unverified ID] autoregressive-universal result reconciled with TC⁰ via single-forward vs unbounded-rollout distinction, linked back to Pérez 1901.03429 and N1 §3 Sutton-派 framing; (3) Singh-Strouse 2402.14903 + Allen-Zhu 2407.20311 tokenization 20-30pp swing showing 'input representation neutrality' is false hyperparameter. Counter-counter-example: Sanford-Hsu-Telgarsky 2402.04347 parallel-computation thesis closes the O(1)-depth+discrete+single-forward escape entirely. Closing §尾声 with three reader takeaways + explicit 2027 falsification clause (8-digit×8-digit, k=10 Einstein, n=20 LIS zero-shot 90%+ = mech-派 needs revision). README N2 §1-§5→§1-§6+尾声 4500→6000字. Rotation: N2 last touched 2026-05-27T08:30Z (~9h ago, longest-untouched sample bar none); last 5 ticks were N4/N5/N7/formal_limits/world_model — N2 well outside back-to-back guard."
+    },
+    {
+      "tick_utc": "2026-05-27T18:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N8-sutton-wins-again.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4900,
+      "note": "Continued N8 sample §4 '另一面：四堵到 2026 年仍然没有塌的墙' (~4.9k chars): four counter-walls with chronologies — (反墙 1) 数学证明形式化 1956 Logic Theorist → GPT-f 2009.03393 / Llemma 2310.10631 / DeepSeek-Prover 2405.14333 / AlphaProof 2024 IMO 28/42, miniF2F 70-80% but PutnamBench 2407.11214 <10%; (反墙 2) 长程 RL 样本效率 1992 Sutton → DQN/PPO/SAC 10⁷-10⁹ 步, Dreamer 2010.02193 / DreamerV3 2301.04104 100k 仍不及人类, EfficientZero 2111.00210, Alberta Plan 2208.11173 [unverified] 留口子; (反墙 3) sim-to-real Brooks 1991 → OpenAI Rubik's 1910.07113 → RT-X 2310.08864 / π₀ 2410.24164 真机为主; (反墙 4) novel-hypothesis Dendral 1965 → AI Scientist 2408.06292 / FunSearch / Coscientist 仍无独立同行评审通过. 抽出 Bitter Lesson (i)(ii)(iii) 三条件适用域诊断工具 (输入分布可合成 / verifier 存在 / 单步信号密集), 应用到 N2-N7 给出存活概率排序 (N2 N3 最稳, N5 最像下个塌方候选, N6 observational pixel-only 最脆). README N8 §1-§3+§3-bis→§1-§4 5500→7500字. Rotation: last 5 ticks N2/N4/N5/N7/N6 — N8 last touched 14:00 (4h ago, well outside back-to-back guard); all 8 topic pages also touched within last 5-12h; N8 §4 was the only TODO-marked next-section in any sample that wasn't recently touched."
     }
   ]
 }
