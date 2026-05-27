@@ -60,7 +60,24 @@ Genie 3（2025-08 blog *Genie 3: A new frontier for world models*，仍无 arxiv
 
 判断：到 2026 年 5 月为止，Genie 路线兑现了 \"action conditioning 能换到 generalization\" 这一弱命题（Genie 1→2 的 OOD 行为变化曲线即证），但兑现的代价是规模惩罚把这条路线挤出了消费级产品形态；它没有兑现 \"我们正在生成真正的世界模型\" 这一强命题，因为 latent action 与真实物理 action 的对应关系仍然是黑箱。**我个人下注是 2027 年之前 Genie 阵营会出一份 Genie-style latent action codebook 直接跑赢 pixel-only Sora baseline 在 PhyGenBench 上的对照实验，把 \"action conditioning > pixel scaling\" 写成数字**——但这是研究侧的胜利，不是产品侧。产品侧的最大悬念是 Sora 3 会不会把 Genie 的 latent state 与 action 偷偷吸收进去，从而在 Brooks-Peebles 阵营里把 Rocktäschel 这条防线变成 \"事实上被采纳但从未正式承认\" 的状态。这与 §2 末尾那个 \"范式被悄悄替换而不是被反驳\" 的判断指向同一件事：**video-as-world-model 这个领域的胜负，最终可能不写在 benchmark 上，而写在两年后 Sora 的架构图里有没有 Genie 的影子**。
 
-<!-- TODO §4 V-JEPA / V-JEPA-2 的下游 control task 战绩；LeCun 2025 年关于 latent diffusion 的妥协；Bardes 团队在 manipulation video pretraining 上的 follow-up -->
+## 四、V-JEPA 阵营：把"不预测像素"这件事真的跑到下游
+
+Sora 阵营是从强命题往后撤，Genie 阵营是把弱命题往强加注，第三家——Meta FAIR 的 V-JEPA 阵营——走的是第三种姿势：他们的整篇论文都在反复证明一件**否定式**的事——"你不应该预测像素"。这条路线的剧情张力不在 demo 视频上（V-JEPA 至今没放过一段可被社交媒体转发的生成视频），而在两年里一连串下游评测里"不生成模型反过来打赢生成模型"的对照表上。
+
+回到 2024 年 2 月的起点。V-JEPA（[arxiv:2404.08471](https://arxiv.org/abs/2404.08471)，Bardes/Garrido/Ballas/LeCun 等）的核心配方一句话能讲完：把视频在 spatiotemporal 维度切 patch，**掩掉大块连续时空区域**（不是随机 token，是大块 tube），然后让一个 student encoder 预测被掩区域在 teacher encoder（EMA）特征空间里的 embedding，loss 是 representation-space 的 L1。整个流程**没有 decoder，没有像素重建**——这正是论文里那句对着 Sora 写的话 "reconstruction-based objectives in pixel space waste capacity on irrelevant details" 的直接技术翻译。frozen-feature evaluation 在 Kinetics-400 上 V-JEPA ViT-L 拿到 73.7%，明显优于同算力的 V-MAE 与 VideoMAE-v2，**在不生成任何视频的前提下**。
+
+这件事在 NTP 框架里的意义大于它在 video literature 内的意义。NTP 的核心信念是 "predict the next thing as it actually appears in the data"——token-NTP 预测下一个 token id，patch-NTP（Sora）预测下一个 patch 的 RGB。V-JEPA 的赌注是：**"as it actually appears" 是一个糟糕的目标**，因为数据流（像素）里大部分 bit 是无关细节，强迫模型预测它会把容量浪费在不该浪费的地方。这是 LeCun 自 2022 年 *A Path Towards Autonomous Machine Intelligence* 起就在 push 的命题，V-JEPA 是这条命题第一次在视频规模上拿到能撑场面的下游数字。
+
+接下来 14 个月的关键论文是 V-JEPA 2（[arxiv:2506.09985](https://arxiv.org/abs/2506.09985) [unverified ID]，Assran/Bardes/Ballas 等，2025-06）。两件事值得记。第一，规模扩到 ViT-g（约 1B），训练数据从 V-JEPA 的 200 万视频扩到一个未公开规模的 internet-scale video corpus，下游 Kinetics-400 / SSv2 / EK-100 全线再涨 3–6pp [unverified 具体数]。第二也是更关键的——V-JEPA 2 第一次把 frozen V-JEPA 特征接到 **robot manipulation 的下游 control**：在 DROID-style 桌面操控数据上做 action-conditional fine-tune，与 OpenVLA-7B / Octo 等 pixel-or-token-based VLA 在 zero-shot pick-and-place、push、open-drawer 上对照，V-JEPA-2 用约 1/4 的可训练参数追平甚至小幅超过。这是 LeCun 阵营第一次把 "non-generative latent world model 可以服务下游闭环控制" 这条命题从口号兑现到 manipulation benchmark 上。
+
+但同一篇论文也暴露了 V-JEPA 路线的两条硬约束。其一，**评测仍然全部在 frozen-feature + 短时程 control 上**，没有任何一项是 "用 V-JEPA 自己 rollout 出一段世界然后由 agent 在 rollout 里规划"——因为 V-JEPA 根本生成不了可看的视频，rollout 这件事只能在 latent 空间里发生，而 latent rollout 的质量目前没有任何独立的 ground truth 可对照。这是 V-JEPA 路线与 Genie 路线最尖锐的差别：Genie 至少能给你一段可玩 1 分钟的画面，你眼睛能判断它对不对；V-JEPA 给你一段 latent 轨迹，你只能用下游 control 成绩间接信它。其二，V-JEPA 在 long-horizon prediction 上的稳定性几乎从未被公开报告——论文里 mask ratio 与时间跨度都控制在相对短的窗口内，超过这个窗口 representation 漂移成什么样子没有数字。这两条加在一起意味着 V-JEPA 暂时还不能被叫作 "world model"，它更像是 "world feature extractor"。
+
+2025 年下半年发生了第三件事，对理解 LeCun 阵营当前位置最重要：**Bardes、Ballas 团队的若干 follow-up 开始把 V-JEPA 与 latent diffusion 缝合**——具体说，在 V-JEPA encoder 之上接一个 latent-space 的 diffusion head，让模型不仅学到 representation，也能在 representation 空间里 sample 出下一段 latent 轨迹。这一动作的技术细节在 2025 NeurIPS workshop slide 里露过头，arxiv 上对应的 *Latent V-JEPA* 或类似名字论文 [unverified] 至 2026 年 5 月仍未正式 release。但这件事的范式意义已经非常清楚——**"绝不生成"** 这条 LeCun 在 2022 年立下的最强戒律，在自己阵营里正在被"生成 latent 而非像素"这种中间方案侵蚀。LeCun 本人在 2025-10 的一次访谈里被追问时改口："我们反对的是在 pixel 空间生成，不是反对在抽象空间生成。"——这是把强命题降级到弱命题的口头凭证，与 §2 里 OpenAI 把 "simulator" 改成 "video model" 的 mission 改动是同一类范式让步，只是发生在另一个方向上。
+
+值得对照的一个反例：Yann LeCun 自己在 2023–2024 年反复说 "autoregressive LLMs are doomed"，但 V-JEPA 路线兑现到 2026 年 5 月为止，**没有任何一项 high-level benchmark 上 V-JEPA 系的 video understanding 模型显著超过 autoregressive 视频-语言模型（如 Qwen2.5-VL、Gemini 2.0 Flash 的 video 接口）在 instruction-following / long-video QA / temporal grounding 上的成绩**。在 frozen-feature 短窗口 control 上 V-JEPA 是赢的，在需要语言接口的开放评测上反而是 autoregressive 路线在领跑。这把 LeCun 的强命题钉得很尴尬——他押注的方向赢了他没押的那场比赛（自监督 representation），输了他押的那场比赛（取代 autoregressive 范式）。
+
+判断：到 2026 年 5 月为止，V-JEPA 路线兑现了 "non-generative representation learning 在下游 control 上可用" 这一弱命题；它没有兑现 "world model 必须 non-generative" 这一强命题——自己阵营内部已经在偷偷加 latent diffusion。在 NTP 框架里 V-JEPA 提供的最值钱的负面证据是：**像素 NTP 的容量浪费是真实的，representation-space prediction 在同算力下能换到更可迁移的特征**——这一点 §2 里 Kang-You 2411.02385 的 OOD 曲线与本节的 V-JEPA 2 manipulation 数字从两个独立角度共同支持。但要把这条负面证据升级成正面方案——"用 V-JEPA 取代 Sora"——目前账面上还差一项：**V-JEPA 系需要给出一份自己 latent rollout 的独立质量评测**，否则 "我们有世界模型，只是你看不见" 这句话与 "我们有世界模型，但 demo 太丑不能放" 在外人眼里是不可区分的。我个人下注 2027 年之前会有一份这样的评测，方式大概率是 Bardes 团队在 manipulation 长程任务上把 V-JEPA latent rollout 当 planner 用，与 DreamerV3（下一节）的 latent rollout planner 直接对照——而这场对照将把整章故事推到 §5。
+
 <!-- TODO §5 DreamerV3 [arxiv:2301.04104] 与 latent world model 在 RL 里的累计胜场（Atari 100k、Minecraft diamonds）；为什么这条线在 frontier lab 视野之外却最接近 \"可用世界模型\" -->
 <!-- TODO §6 尾声：三条路目前都停在 L1，谁先做出 L2 反事实评测谁就赢；2026-05 中间判断 -->
 
