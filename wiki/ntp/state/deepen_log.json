@@ -402,6 +402,15 @@
       ],
       "chars_added": 5289,
       "note": "Added world_model.md new section on counterfactual/interventional eval methodological gap + new C-WM-3 candidate (~5.3k chars). Frames the do-operator gap in Pearl Layer-2 language; lists 4 partial precedents (Kiciman 2305.00050 text-only counterfactual protocol, Vafa 2406.03689 Myhill-Nerode as semi-interventional, Brinkmann 2402.11917 [unverified ID] activation patching as causal mediation, 2025 Phyworld/PhyGenBench/WorldSimBench [unverified] still-marginal observational); proposes simulator-backed counterfactual triplet benchmark on Brax/MuJoCo/Isaac with three-level ATE (marginal likelihood + latent state isomorphism + downstream physics) on Genie 3 / Cosmos / Sora 3 via black-box API; formalizes C-WM-3 with epsilon_do(M,X) ATE error definition + same-weight falsifier clause to block fine-tuned-head escape; explicit contrast with C-WM-1 (closed-world observational, Layer 1.5) and C-CAUSAL-1 (text-modality twin); judgment that C-WM-3 is the candidate most likely to be settled in 18 months because benchmark-bottlenecked not capability-bottlenecked. Updated Cross-links taxonomy pointer C-WM-1,C-WM-2 to also include C-WM-3. Rotation: world_model.md last touched at 2026-05-27T04:00 tick (~11h ago), well outside back-to-back; samples N2-N8 all touched within last 4-7h; topic pages causality/embodiment/reasoning/scaling_limits/formal_limits/grounding/online_learning all touched within last 4-12h - world_model was the longest-untouched topic with explicit TODO marker (do-operator eval gap flagged in prior video-NTP section)."
+    },
+    {
+      "tick_utc": "2026-05-27T15:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/formal_limits.md"
+      ],
+      "chars_added": 5300,
+      "note": "Added formal_limits.md new section '表达力 vs 可学性 — 第二堵墙' (~5.3k chars). Chronology of expressivity-vs-learnability gap: Liu shortcuts 2210.10749, Reversal Curse Berglund 2309.12288, Allen-Zhu Physics-of-LM 2305.13673, grokking Power 2201.02177 + Nanda modular-add 2301.05217, activation patching best-practices [unverified ID], Bordelon dynamical scaling 2402.01092, RASP-L/Abacus/Anil length-gen bundle. Frames the 'two walls' picture: outer=expressivity (TC0-family/depth/CoT/tokenization), inner=learnability (objective shape/optimizer bias/data spectrum/PE-embedding). Honest judgment: at frontier scale 2024-2026 the inner wall hits first — reversal curse, length-extrapolation collapse, retrieval-template dependence, shortcut learning are all learnability not expressivity failures; mech camp owes a learnability-side lower bound (only Bordelon 2402.01092 partial). Adds new C-FORM-4 'NTP-learnability gap' candidate with explicit falsification clause complementing C-FORM-1/2/3 (which lock expressivity). Rotation: formal_limits.md last touched 2026-05-26T22:32:45Z (~17h ago, longest-untouched topic page); world_model 15:00 tick avoided; samples N2-N8 all touched within last 4-5h so all topic-page deepenings preferred."
     }
   ]
 }
