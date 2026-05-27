@@ -277,6 +277,15 @@
       ],
       "chars_added": 3100,
       "note": "Continued N2 sample chapter §5 'Faith and Fate：把账单画成 GPT-4 的实验曲线' (~3.0k chars): Dziri 2305.18654 NeurIPS 2023 spotlight three-task setup (multi-digit mult / Einstein puzzles / DP), fine-tune on d cannot extrapolate to d+1 (compositional gap), bridges Hahn-Merrill three-trilogy theoretical line to GPT-4 empirical curve, three honest caveats (task selection bias / CoT protocol limited to scratchpad pre-o1 / GPT-4 blackbox confounds), Singh-Strouse 2402.14903 tokenization counts as separable variable (10–30 pp independent effect), forward link to Allen-Zhu Physics-of-LM Part 3.3 2407.20311 [unverified part编号] as the bridging controlled-synthetic experiment; rotates away from N3/N4/N5/N6 samples and all recently-touched topic pages."
+    },
+    {
+      "tick_utc": "2026-05-27T09:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 5200,
+      "note": "Task C: refined taxonomy.md from 33-line stub into a grading framework (~+5.2k chars): (1) 4-prong NTP-cap to NTP-mech upgrade criteria (lemma-style formal statement / non-trivial map to known complexity-info-algebra object / protocol-level falsification in <=1k GPU-h / explicit排除 five engineering confounds); (2) 3-trigger downgrade rule (A confound dissolved, B knob opened, C implicit-default exposed); (3) rolling升降级 log with 8 historical events cross-citing Garcia 2605.10799, Anti-Collapse 2605.05438, Conditional-Attribute 2605.14004, Causal Tongue-Tie 2605.25891, ProFIL 2605.11467, Ruoss 2305.16843 / McLeish 2405.17399 PE openings, plus C1/C4 conditional NTP-mech 升格; (4) current candidate snapshot table (C1 Det-Horizon / C2 hallucination-SNR / C3 Omega(H) / C4 VLA budget / Reversal Curse) cross-linked to topic pages with per-row falsification; (5) explicit '改三处同步' rule (topic + ntp_survey.md sec10 + this page). Judgment: 升级事件稀疏 (3y 只 C1/C4 真正达成 conditional NTP-mech)，降级密集 -> 默认假设新候选会被下一 confound 降级。Rotates away from all 6 recent samples and all 8 topic pages."
     }
   ]
 }
