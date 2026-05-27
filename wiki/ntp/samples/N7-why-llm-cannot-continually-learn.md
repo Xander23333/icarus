@@ -26,7 +26,23 @@
 
 如果读完这一章你只能记住一件事，请记住这个：**LLM 不持续学习这件事，不是"我们还没找到正确的算法"，而是 NTP loss 的几何形状本身禁止它**。这是一个比"reasoning 不够好"或"grounding 不够多模态"都要更深的论断，因为它说的是即便你把数据、算力、模态都拉满，只要 loss function 还是 $-\log p(x_t | x_{<t})$，部署后的模型就会以可预测的速率失去对世界的索引。下面我会尝试把这件事说成不只是"我觉得"。
 
-<!-- TODO §3: catastrophic forgetting as NTP loss fixed point — McCloskey 1989 → EWC 1612.00796 → Lyle 2303.01486 plasticity loss → Dohare Nature 2024 continual backprop -->
+## 三、Catastrophic forgetting：把它写成 NTP loss 的一个不动点
+
+要回答\"为什么不持续学习\"，先要回答\"持续学习失败的时候，几何上发生了什么\"。这条线最早不是从语言模型来的，而是 1989 年 Michael McCloskey 与 Neal Cohen 在 *Psychology of Learning and Motivation* 上的一篇章节，题目就叫 *Catastrophic Interference in Connectionist Networks*。两人在小型 MLP 上演示：先训练加法、再训练减法，模型在减法上学会的同时**会把加法忘到接近随机**——而且不是逐渐遗忘，是在前几个梯度步内塌掉的。这件事在 connectionist 社群里被讨论了二十年，主流解释是\"分布式表示共享权重，新任务的梯度会覆盖旧任务的几何\"。
+
+到 2017 年 3 月，James Kirkpatrick 等人在 DeepMind 提出 EWC ([arxiv:1612.00796](https://arxiv.org/abs/1612.00796))，用 Fisher 信息估计每个参数对旧任务的\"重要性\"，在新任务 loss 上加一个二次正则项把重要参数拉回去。在 MNIST 排列任务上 EWC 把 forgetting 从 80% 压到 20%，看起来像是问题被解决了。但九年之后回看，EWC 在 LLM 规模下从未被任何 frontier lab 当作 continual pretraining 的实际方案——原因有三个，每一个都来自把 EWC 放到 NTP loss 上的几何不兼容：
+
+第一，Fisher 矩阵在 70B-参数模型上没法存。完整 Fisher 是 $N^2$ 项，对角近似是 $N$ 项；70B 的对角 Fisher 就要 280 GB（fp32），等于把模型再存一份。Hugo Touvron 在 LLaMA-2 paper ([arxiv:2307.09288](https://arxiv.org/abs/2307.09288)) 里讨论过这件事，结论是\"我们没用，太贵\"。第二，NTP 的 Fisher 在文本上**几乎处处接近退化**——大部分 token 的预测分布熵很低（the / , / . 这种 token 的 Fisher 元素巨大但完全无信息），少数 token 上熵很高但又恰好是\"指称世界\"的 token——而那些正是 §1 里 Lazaridou 证明衰减最快的部分。Fisher 加权刚好把我们想保护的方向权重压最低。第三，更深的一刀来自 Hadi Pouransari 等人在 Apple 2024 年的 *Dataset Decomposition* 工作 [unverified ID]：他们发现 LLM pretraining 末期，**任何形式的二次正则都会和 LR-decay 几何冲突**——LR 已经在末段把更新幅度压到 $10^{-5}$ 量级，再加一层把参数往旧点拉的正则，等价于把有效学习率再除以 10，新知识写不进去。EWC 在 LLM 上要么没效果（正则太弱），要么把模型冻住（正则太强），中间没有窗口。
+
+把这件事写成 NTP loss 的几何就更清楚了。LLM 的全量 pretraining 解 $\theta^*$ 是 $\mathbb{E}_{x \sim D_{\text{pretrain}}}[-\log p_\theta(x_t | x_{<t})]$ 的一个**深而平的局部极小**（Hochreiter-Schmidhuber flat-minimum 论点经验上对 LLM 成立，见 Foret 2010.01412 SAM 工作的延伸讨论）。所谓 catastrophic forgetting，就是当我们用新数据 $D_{\text{new}}$ 继续做 NTP 时，损失曲面在 $\theta^*$ 附近沿着**$D_{\text{pretrain}}$ 上熵差最大的方向**有最大梯度，这些方向恰好是旧知识 token 的方向——于是模型沿着这些方向滑出旧极小盆地，等价于把旧知识擦掉。这是一个**结构性事实**，不是优化器的 bug：只要 loss 还是 token-level cross-entropy 且没有显式记忆通道，新分布的梯度就一定会在旧分布的高熵 token 上有最大幅度。
+
+2023 年 3 月 Clare Lyle 等人 ([arxiv:2303.01486](https://arxiv.org/abs/2303.01486)) 在 *Understanding Plasticity in Neural Networks* 里给了这件事一个对偶视角：连续训练下，网络会逐渐**失去可塑性**——dead ReLU 比例上升、Hessian 谱变窄、对新任务的有效学习率下降。这条曲线和\"忘旧\"是同一枚硬币的两面：参数空间在旧 loss 上越来越平、在新 loss 上越来越陡，最终模型既学不动新东西，也守不住旧东西。Lyle 的图最残酷的一张是 plasticity vs steps：在 Atari 持续学习设置下，10M 步之后无论何种正则化方案，**新任务的样本效率都掉到从零开始训练的 1/5 以下**。Shibhansh Dohare 等人 2024 年 8 月 *Nature* 上的 *Loss of Plasticity in Deep Continual Learning* ([Nature 2024](https://www.nature.com/articles/s41586-024-07711-7), 作者也包括 Richard Sutton) 把这件事做到了实验上最干净的版本：在 ImageNet 持续学习上跑 2000 个任务，标准 SGD 在 ~100 个任务后**完全停止学习**，他们提出的 continual backprop（周期性重新初始化最不活跃的 unit）把可塑性恢复到接近从头训练的水平。
+
+但 Dohare 这件事必须诚实地说一半坏话：continual backprop 的工作 setting 是**输入分布相对窄、任务边界明确**的 vision 流，从未在语言模型 pretraining 规模（>1T token、流式异质语料）上验证过。它告诉我们\"可塑性丧失是真实的几何现象\"，但没有告诉我们\"在 NTP loss 下重置 unit 能不能不破坏 in-context learning\"——后者依赖 transformer 中间层一些非常脆弱的 superposition 结构（Elhage 2022 *Toy Models of Superposition*），重新初始化这些 unit 的代价可能远比 vision 的 ReLU 重置大。Lyle 2024 后续工作 [unverified] 在小型 transformer LM 上看到 plasticity-recovery 方法会把 induction-head 类电路打散，**模型的可塑性恢复了，但 in-context 能力同步崩塌**——一种新的\"按下葫芦浮起瓢\"。
+
+到这里 §3 可以收一个 judgment：catastrophic forgetting 在 LLM 上不是\"算法不够好\"，而是 NTP loss + dense transformer + cross-entropy 三件套的**联合不动点**。任何想在不改这三件套的前提下让 LLM 持续学习的方案，最终都会退化成两种之一——要么是 replay（把旧数据混进来重训，等于不持续，只是\"分批离线\"），要么是参数冻结 + 外置记忆（等于承认权重不再学，把学习转移到 RAG / agent memory，这是 §5 要拆的）。这件事的紧密程度比 §1 那条\"cutoff 之前 6–12 个月就开始稀疏\"的时间观察更深一层：前者是\"什么时候开始衰减\"，后者是\"为什么不能不衰减\"。两者拼起来就是 C-CONT-1 这个 mech 候选最硬的两根骨头。
+
+<!-- TODO §3: ✅ done above -->
 <!-- TODO §4: Ibrahim 2024 2403.08763 anatomy — replay ratio, LR re-warming, what's still missing for "streaming" -->
 <!-- TODO §5: three live counter-examples — TTT-Linear 2407.04620 / MEMIT 2210.07229 / Letta-Mem0-Zep agent memory; why each is "推迟" not "解决" -->
 <!-- TODO §6: 2027 falsifiable bet + Sutton bitter-lesson rebuttal -->

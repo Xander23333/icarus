@@ -344,6 +344,16 @@
       ],
       "chars_added": 5300,
       "note": "Task B: deepened topics/scaling_limits.md with new section 'Inference-time scaling: 第四轴 (2024–2026)' (~5.3k chars) — adding the missing C_inference axis to the previously (N,D,C_train,precision,horizon,topic-freq)-only treatment. Six chronological datapoints: Brown 2407.21787 Large Language Monkeys (coverage power-law in repeated sampling, 10^4x inference compute pulls Llama-3-8B to ~GPT-4o on verifier-rich tasks); Snell 2408.03314 (compute-optimal test-time vs pretrain compute, ~14x inference can substitute ~14x pretrain on easy-to-medium MATH); OpenAI o1 (2024-09 system card — first product where test-time compute is publicly a second scaling curve); DeepSeek-R1 2501.12948 (length-vs-accuracy log-linear; R1-Distill-Qwen-7B beats GPT-4o on math via inference); Wu 2408.00724 inference-scaling-laws (power-law exponent varies with task verifiability — drops to ~0 on open-ended tasks, scoping the law to verifier-rich subset); Sardana 2401.00448 Beyond-Chinchilla (when inference cost dominates, optimal N/D shifts toward smaller N + more D — second systematic correction to Chinchilla); Muennighoff s1 2501.19393 [unverified ID] (1k SFT + budget-forcing matches o1-preview on AIME-24 — weakens claim that R1-style RL is necessary for inference-scaling). Introduces new candidate C-SCALE-4 (inference-train compute equivalence within verifier-rich tasks) with falsification criterion and explicit reconciliation with C-SCALE-1 Omega(H) — cost not eliminated, just amortized from training samples to per-query inference compute. Notes inference-scaling's edge collapses on non-verifier tasks (dual of C-WM-2 open-world dilution). Rotation: scaling_limits.md was the ONLY topic page not touched in last 20 deepen ticks, and was the smallest topic file (~11k chars before this tick). All N2–N7 sample chapters touched in last 5 ticks — avoided."
+    },
+    {
+      "tick_utc": "2026-05-27T12:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N7-why-llm-cannot-continually-learn.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3400,
+      "note": "Continued N7 sample §3 'Catastrophic forgetting：把它写成 NTP loss 的一个不动点' (~3.4k substantive chars): McCloskey-Cohen 1989 origin → Kirkpatrick EWC 1612.00796 with three explicit reasons EWC fails at LLM scale (Fisher storage 280GB at 70B / Fisher degenerate on NTP high-freq tokens / Pouransari Apple 2024 [unverified] LR-decay incompatibility); formal write-up of forgetting as gradient direction along D_pretrain high-entropy axes; Lyle 2303.01486 plasticity-loss dual view with Atari 10M-step 1/5 sample-efficiency curve; Dohare Nature 2024 continual-backprop ImageNet-2000-task clean refutation of standard SGD, plus honest caveat that the setting is vision not LM-scale streaming; Lyle 2024 follow-up [unverified] showing plasticity-recovery breaks induction-head superposition (Elhage 2022); judgment that catastrophic forgetting is a joint fixed point of (NTP loss + dense transformer + cross-entropy) — any in-paradigm fix degenerates to replay (batched-offline) or external memory (admitting weights stop learning, bridges to §5). Updated README N7 §1–§2 → §1–§3. Rotates away from N2/N3/N4/N5/N6 samples and all 8 topic pages (all touched in last few ticks)."
     }
   ]
 }
