@@ -535,6 +535,16 @@
       ],
       "chars_added": 8080,
       "note": "Wrote N4 §6 'agentic post-training' + 尾声 (~8.0k chars net). §6 argument: o1/R1-Zero reasoning-trace RL + Anthropic computer-use + OpenAI Operator (2024-09 to 2025-01) industrialize Lampinen 2305.16183's positive existence proof - they raise intervention-token density in training distribution from <0.1% in CommonCrawl to large fraction without modifying NTP loss. Anchored to Anthropic 2025-03 Biology of an LLM attribution graphs (plan-then-execute circuits in Claude 3.5 Haiku, structurally isomorphic to do-operation, absent in pre-agentic mech-interp reports). Three counter-examples: (a) no public paper has pushed reasoning models past 80% on CLadder Layer-2 (Jin 2024 follow-up stuck at ~75% with o1-preview, frontier model numbers [unknown]); (b) computer-use outcome signal is screen pixels not abstract SCM nodes; (c) Geiger DAS still has no published attempt to align do-operator as target node post-agentic-training. 尾声 splits Pearl walls into three distinct types: L1 = no wall, L2 = data wall + eval wall (falsifiable via CLadder L2 > 85% + DAS alignment), L3 = world-model wall (counterfactual immune to agentic post-training; bridges to N6 V-JEPA/DreamerV3/Sora). Self-attack: entire chapter judgment is CLadder-dependent; falsification door = any benchmark harder than CLadder with same leak-check rigor showing L3 > 50%. N4 last touched 2026-05-27T17:00Z (~4.5h ago), last tick was Task B on online_learning.md - no back-to-back violation. Closed both pending TODO markers in N4."
+    },
+    {
+      "tick_utc": "2026-05-27T22:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N5-embodiment-and-vla-bet.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4700,
+      "note": "Wrote N5 §5 Hierarchical tokenization (~4.7k chars). Three-step chronology RT-2 2307.15818 naive 256-bin per-joint -> pi0-FAST 2501.09747 Pertsch 2025-01-16 DCT+BPE 1024-token 5x training speedup parity with flow-matching pi0 -> 2025 latent action codebook line (OpenVLA-OFT 2502.19645 [unverified ID], LAPA/GR-2 VQ-VAE [uncertain IDs]). Core argument: hierarchical tokenization collapses VLA-vs-JEPA binary from §1 - a learned action tokenizer IS a learned latent predictor (DCT+BPE handcrafted, VQ-VAE learned), differing from JEPA only in downstream loss choice (NTP vs energy matching). Chelsea Finn 2025 talks concede FAST tokenizer engineering-friendly over flow-matching [unknown session]. Three counter-examples: (1) all schemes only validated ≤2s windows, long-horizon contact-rich still flow-matching territory; (2) codebook collapse on long-tail action distributions <30% utilization [uncertain source]; (3) most fundamental: tokenizer loss is NOT NTP (VQ-VAE recon+commit, DCT not learned), so victory partially externalizes the §1 question into which non-NTP loss makes the best tokenizer. Two falsifiable 2027 predictions: (a) pi0-FAST successor on 24h+ tasks not regressing to flow-matching; (b) end-to-end V-JEPA-2-as-tokenizer + NTP-policy beating both OpenVLA and V-JEPA-MPC on LIBERO/Open-X. Bridges to N6 §3 Genie action-conditional same-pattern split and N3 §6 dimensions not-in-loss judgment. Closed N5 TODO §5 marker. Rotation: N5 last touched 2026-05-27T16:30Z (~6h ago), last 2 sample edits N4/N6 - no back-to-back violation."
     }
   ]
 }
