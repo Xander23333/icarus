@@ -604,6 +604,15 @@
       ],
       "chars_added": 4200,
       "note": "Wrote N6 §5 Hafner DreamerV3 / latent world model RL 累计胜场 (~4.2k chars). Chronology Ha-Schmidhuber 1803.10122 -> PlaNet 1811.04551 -> Dreamer 1912.01603 -> DreamerV2 2010.02193 -> DreamerV3 2301.04104, plus IRIS 2209.00588 transformer move, DayDreamer 2206.14176 / TD-MPC2 2310.16828 / EfficientZero 2111.00210 / VPT 2206.11795. Thesis: DreamerV3 在 Sora 前 13 个月已是 latent world model 路线最完整兑现; frontier lab 忽视它有三个原因 (无视觉震撼力 / 依赖 reward / 停在小动作空间), 但 'world model 真被 agent 用来规划并把任务做完' 这判据下 Dreamer/IRIS 仍是唯一端到端胜场 (Sora 无 agent / Genie+SIMA 数十秒 / V-JEPA latent rollout 无独立评测). Mirror: Genie 把 RL latent-WM 搬到 large-scale 被动视频丢掉 verifier, Dreamer 保留 verifier 丢掉 internet-scale data. 三反例 (reward-free generalization 失败 / 50-200 步 compounding error / 3D 物理无 Minecraft-diamond 等价 signal). Bridges to N8 §4 Bitter Lesson 三条件 (verifier 在场 = Dreamer 赢) and N5 §5 VLA 长程 compounding 同源. Closes §5 TODO, 留 §6 尾声. README N6 §1-§4 -> §1-§5 4500->5500. Rotation: N6 last touched 2026-05-27T21:00Z (~4.5h ago); last 4 ticks C taxonomy / A N3 尾声 / A N7 §5 / C survey§2 — none of them N6. Picked A over B because all 8 topic pages touched within last 4-12h; N6 longest-untouched sample with explicit TODO marker."
+    },
+    {
+      "tick_utc": "2026-05-27T18:03:34Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/grounding.md"
+      ],
+      "chars_added": 7358,
+      "note": "Added new section Tool-use/action grounding (~7.4k chars) to grounding.md, introducing 第六类 grounding 与 C-GROUND-5 (action-execution gap) 候选. Chronology Toolformer 2302.04761 -> ReAct 2210.03629 / AgentBench 2308.03688 -> Gorilla 2305.15334 + BFCL -> SWE-bench 2310.06770 + SWE-Bench+ 2410.06992 污染问题 -> tau-Bench 2406.12045 / OSWorld 2404.07972 多轮 state-tracking 失败 -> 2026-05 readout-confound 在 agentic setting 的方法学债. C-GROUND-5 形式陈述: 单步 action-token 语法合法率 >=0.9 但 pass^k(k>=4) <=0.4, gap 对 N 在 7B-400B 不敏感; 反例条件: gap<0.1 且 benchmark 无 SWE-Bench+ 等级污染, 或 gap 随 N 单调收敛 0. 与 C-GROUND-3/4 (名词类 referent) 互补, 与 C-WM-1 共享 state-tracking confound. 工程意义诚实判断: 解释 2024-2026 frontier 投资从 base-scale 转向 execution-RL + 外部 memory store 的两路分流. 下一步实验: 在 agent trajectory 上做 probe-vs-readout 拆分 (类比 Causal Tongue-Tie) + 跨 7B/70B/400B 拟合 gap-vs-N 曲线. Rotation: grounding.md 上次触碰 2026-05-27T18:32Z (~7.5h+ ago); 最近 4 ticks 为 A N3 尾声 / A N6 §5 / B online_learning / C taxonomy+survey, 无一动 grounding. Picked B over A 因 N1-N8 全部样章都在 4500-7500 字推进中且最近 8h 内均被触, 而 grounding 是 8 topics 中唯一未写出 action/tool-use 一类的, 概念缺口比样章续写更影响 taxonomy 完整性."
     }
   ]
 }
