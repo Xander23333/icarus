@@ -53,6 +53,18 @@ NTP-mech 派必须直面的三个反例：
 2. **DeepSeek-R1 / o1 在 AIME 2024、IMO 几何子集上的 pass@1**[unverified 具体数字 — 见原报告] 已超过 90 分位 IMO 选手。即便其中部分是 trace pollution / 训练集污染，剩余部分仍远超 2023 年任何人对"NTP-only 模型能做到的数学"的预测。这构成 NTP-cap 边界的事后修正。
 3. **Low-Prec Softmax + Summarized CoT** ([arxiv:2605.18079](https://arxiv.org/abs/2605.18079))：即使在 fp8 / int4 + 对数生长 depth 下，softmax-attn + summarized CoT 仍 Turing-complete。这意味着任何"架构 + 精度"组合下的硬 mech 上界都会被一个足够长且 summarized 的 CoT 抹掉。
 
+## Reversal Curse 修复尝试线 (2023–2026)
+
+C-REAS-1 在三条 mech 候选里是唯一一条**同时**满足 (i) controlled synthetic data 可复现、(ii) 与 NTP 的左到右因果掩码直接耦合、(iii) 有明确可执行的 falsifier (\"换 prefix-LM / 双向训练 / reverse-order 数据后效应若消失则降级\")。正因为这三条同时满足，2023–2026 围绕它的修复尝试也最密集，值得单独抽出一条时间线——因为每一次失败的修复都进一步**收窄** C-REAS-1 的可证伪 setting，而每一次成功的修复都在向 \"NTP-cap 而非 NTP-mech\" 的方向推。
+
+- **2023-09 — Berglund 等原文附录 D ([arxiv:2309.12288](https://arxiv.org/abs/2309.12288))**。作者本人尝试用 GPT-3 175B + bidirectional fine-tune（在同一对 \"A is B\" / \"B is A\" 同时出现的小数据集上微调）测试是否消解。结果：accuracy 提升但仍远低于 forward direction。这是修复线的第一个数据点：**简单地把双向看到一遍不够**，要么需要更深结构变化，要么 Reversal Curse 并非纯掩码 artifact。
+- **2024-03 — Golovneva 等，*Reverse Training to Nurse the Reversal Curse* ([arxiv:2403.13799](https://arxiv.org/abs/2403.13799))**。Meta 的 Sainbayar Sukhbaatar 组提出在预训练阶段同时喂 forward 序列与 token-reversed 序列（entity-preserving word-level reverse），1.4B 规模复现实验显示在 Berglund 原任务上 reverse accuracy 从 ~0 拉到 ~80%；但 standard benchmarks (MMLU, HellaSwag) 的 perplexity 也有轻微退化。这是第一个 *在预训练目标层面* 给出实质改善的工作——但代价是 token budget 翻倍且通用能力非零成本。
+- **2023-09 — Allen-Zhu & Li, *Physics of Language Models 3.2: Knowledge Manipulation* ([arxiv:2309.14402](https://arxiv.org/abs/2309.14402))**。在 fully-controlled biography 合成数据上证明：单纯 inverse 检索 (B→A) 在 NTP 训练下接近 0%，与 Berglund 原观察吻合；但加入 \"知识在多个语境/句式下被重复见到\" (knowledge augmentation) 后 inverse accuracy 显著提升。这等于把 C-REAS-1 的边界从 \"NTP 学不到 B→A\" 改写为 \"NTP 在 single-context exposure 下学不到 B→A\"——一个更弱、但仍然非平凡的命题。
+- **2024 中—2025 — 工程派 workaround**。RAG + entity-canonical id + symmetric relation extraction（典型如 Letta/Mem0 这类 memory store 的双向边设计）几乎完全绕过 Reversal Curse，但代价是把推理转成显式查询，本质是\"承认 NTP 学不到，所以外接\"——这恰好与 N6 / N7 提到的 \"把状态外置\" 是同一模式。从 mech 论据角度看，这条修复路线 *并不* 反驳 C-REAS-1，反而加强它。
+- **2025 — 反向证据缺口**。截至 2026-05，公开文献里**没有**在 ≥7B 规模、纯 prefix-LM 或 UL2 ([arxiv:2205.05131](https://arxiv.org/abs/2205.05131)) 预训练目标下对 Reversal Curse 做的干净复现实验。Golovneva 的 reverse-training 是 *augmentation* 不是 *objective change*；DeepSeek-R1 / o1 这类 reasoning model 虽在某些反向问答上经 long-CoT 间接答出，但无法分离 \"模型学会了反向关系\" 与 \"模型在 inference time 显式 enumerate 候选\" 两种解释。这正是 open problems 第五条留下的真正空白。
+
+**对 C-REAS-1 的净影响**：三年修复尝试下来，Reversal Curse 的可证伪 setting 已从 \"任何 NTP 模型在任何规模下都学不到反向\" 收窄到 \"在 standard left-to-right NTP objective、single-context exposure、≥7B 规模下，反向检索 accuracy 显著低于正向\"。这一限定窗口比 2023 年小得多，但**仍未被证伪**——这是它在 2026-05 仍然是 mech 候选第一名的原因。下一步实质性进展只能来自两个方向之一：(a) 在 ≥7B 规模训一个纯 prefix-LM / UL2-mix base model 并复现 Berglund 协议，若效应消失则 C-REAS-1 降级为 NTP-cap (\"标准 NTP 的工程 artifact\")；(b) 在 mech-interp 层面（Anthropic attribution graph 风格）直接定位 \"forward A→B\" 与 \"reverse B→A\" 在 circuit 上的不对称结构。两条路线都未见公开尝试。
+
 ## 判断 (2026-05-27)
 
 我目前的立场：**"CoT faithfulness" 作为一个二值问题已经走到死路**。Garcia 2026 的 format-confound + Anti-Collapse 2026 的 output-distribution confound 一起说明：过去三年大约一半"CoT 不忠"和近一半"NTP 学不到 X"的论文，**effect size 都需要打折重做**。但这不构成对 NTP 派的胜利——它只是把球踢回原点：唯一存活的强 mech 证据是 Reversal Curse 类的方向不对称、Ω(H) 信息论下界，以及 no-CoT setting 下的 TC⁰ depth 上界。
