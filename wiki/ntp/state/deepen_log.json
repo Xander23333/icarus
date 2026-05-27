@@ -623,6 +623,16 @@
       ],
       "chars_added": 4900,
       "note": "Wrote N8 §5 Sutton internal-tension Bitter-Lesson-vs-Alberta-Plan (~4.9k chars). Thesis: Sutton 2022 Alberta Plan (2208.11173) 12 research questions 全是 structure (model-based RL / option discovery / state abstraction / GVF 1112.1133 [unverified ID]); 与 Bitter Lesson 字面矛盾的化解 — Sutton 反对的是 hand-engineered 特定先验, 不是 structure 本身; CNN/attention 是 generic structure 不算反例. Mech 派活路从 'find scaling-proof wall' 收窄成 'find structure that must be explicit and cannot be auto-learned by generic method' — Sutton 自己承认 option discovery 是 1999 SMDP 之后 20+ 年悬案 (与 §四反墙 2 同源, 从 Sutton 这边看见). Sutton 2024-25 podcast (Dwarkesh / TalkRL / Cohere [all unverified dates]) 反复说 LLM 走错方向 'mimicry not understanding' [unverified 原话] — pretraining-only NTP 是 Bitter Lesson 半成品, 缺 search + reward; o1/R1/agentic post-training 是回归正轨但只到冰山一角. 补出 (iv) objective-verifier alignment 隐藏条件 — RLHF/PRM/RLVR 整个分支存在的原因 = objective (token CE) 与 target task (helpful/agent action) 失配; 反墙 4 (scientific discovery) 最彻底因为 (iv) 整个崩. 关闭 §5 TODO marker, 留 §6 N1–N7 元批注. README N8 §1-§4 -> §1-§5 7500->8500. Rotation: N8 last touched 2026-05-27T18:00Z (~8.5h ago); 最近 4 ticks 为 A N7 / C taxonomy+survey / A N6 / B grounding — 无一动 N8. Picked A over B/C 因 N8 是仅剩有 explicit TODO 路线图标记的样章, 且 §5 必须先于 §6 落地否则 §6 元批注缺 (iv) 条件支撑."
+    },
+    {
+      "tick_utc": "2026-05-27T19:03:27Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N7-why-llm-cannot-continually-learn.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3400,
+      "note": "Wrote N7 §6 尾声 (~3.4k chars): 2027-05-31 falsifiable bet 操作化 C-CONT-1 弱化命题成 5 条 AND (a backbone-weight inference-path update + b no cross-session replay + c RealTime QA 新事实吸收 >=70% + d 旧事实保留 >=95% + e <=10x inference cost), 估计先验 <15% 不被达成. 第二部分给 Sutton 回信: Dohare 2024 Nature (continual backprop in vision RL) 是 §3 论证证据不是反证, Sutton 2024-25 podcast (Dwarkesh/TalkRL [unverified dates]) 'LLMs not the path' 与 Lazaridou 2102.01951 曲线指同一件事, 这章不是反 Sutton 是把 Sutton 哲学陈述翻译成 NTP 几何不动点. 关闭 §6 TODO marker. README N7 §1-§5 -> §1-§5 + 尾声 5500->6500. Rotation: N7 last touched 2026-05-27T16:32Z (~2.5h ago), 最近 5 ticks 为 B online_learning / A N5 / C survey / A N6 / A N8 — 最近无 N7. Picked A over B/C/D 因 N7 仅剩的 explicit TODO 是 §6 falsifiable bet, 跟 §3 §4 §5 几何论证整章封口紧密相关, 不写则 N7 缺 NTP 样章不成文契约 (每章必给 12-24 月可证伪 bet). 所有论证全程不引入 fabricated arxiv ID; Karpathy talk / Sutton podcast / Lachaux follow-up 全部 [unverified] 标记."
     }
   ]
 }

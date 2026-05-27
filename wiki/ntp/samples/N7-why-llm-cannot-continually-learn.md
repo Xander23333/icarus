@@ -72,4 +72,14 @@
 
 把三条反例并起来看，会浮出一个更紧的判断：它们各自攻击的是**不同的稻草人**。TTT 攻击的是"LLM 在 inference 时完全不更新任何参数"——这个稻草人 2024 年之后已不成立，但它不等价于 C-CONT-1。MEMIT 攻击的是"LLM 的事实必须靠重训才能修改"——这个稻草人 2022 年之后已不成立，但事实补丁不等于持续学习。Agent memory 攻击的是"LLM 系统无法跨 session 保留信息"——这个稻草人 2023 年之后已不成立，但外存补 LLM 不等于 LLM 自身在学。C-CONT-1 弱化命题的精确表述要求三个条件同时满足——**(a) 更新发生在 backbone 权重上、(b) streaming 单样本无 replay、(c) 不丢旧知识**——三条反例分别在 (a)、(c)、(a) 上让步，没有任何一条同时守住三条。我（Xander）2026 年 5 月的判断是：这三条反例的存在不削弱 C-CONT-1，反而是 C-CONT-1 之所以站得住的间接证据——如果几何上可解，frontier lab 不会集体绕开权重端去外存。
 
-<!-- TODO §6: 2027 falsifiable bet + Sutton bitter-lesson rebuttal -->
+## 六、尾声：2027 年的可证伪 bet，以及给 Sutton 的一封迟到回信
+
+写到这里这一章的主线已经说完。但 NTP 系列样章的不成文契约是：每一篇都必须给一个**可在 12–24 个月内被现实证伪的具体 bet**，否则就是一篇好看的散文，不是一篇可被钉在墙上挨打的判断。这一节交账。
+
+**我（Xander）的 2027-05-31 bet（C-CONT-1 弱化命题的操作化）**：到 2027 年 5 月 31 日为止，公开可访问的任何 frontier 系列（OpenAI / Anthropic / Google DeepMind / Meta / xAI / DeepSeek / Qwen / Mistral / Cohere），不会出现一个**同时满足以下五条**的产品级 LLM：(a) backbone 权重在 inference path 上被按单条用户交互的尺度更新；(b) 每条更新的训练样本不超过当条交互本身（即无 cross-session replay 缓存）；(c) 在 RealTime QA 持续 12 个月的 weekly 评测上，新事实吸收率 ≥ 70%；(d) 在 RealTime QA 同时段的**旧事实保留率** ≥ 95%（用一年前 freeze 的子集做对照）；(e) 更新代价不超过同尺寸模型一次完整 inference 的 10×。
+
+这五条里 (a)+(b) 是\"streaming\"的最小定义，(c)+(d) 是\"持续学习\"的最小定义（吸收新 ∧ 不丢旧），(e) 是\"工程上可部署\"的最小定义。我赌这五条的 AND 在 2027-05-31 前不会被任何一个 frontier 产品达成。被证伪的方式很具体：随便一个厂商在 release note 里写 \"我们的 model 现在在 inference 时更新 backbone 权重，单条 interaction 一步 SGD，无 replay 缓存\"，并且第三方在 RealTime QA 上跑出 (c)+(d) 的数字，这一章 §3–§5 的判断就全错。这个 bet 不依赖任何\"AGI 哲学\"，只依赖 §3 的几何论断 + §4 的工程边界 + §5 的反例分类同时全部走样——三件事同时垮的先验概率我估计 < 15%。
+
+**对 Sutton 的回信**：N8 (`N8-sutton-wins-again.md`) §5 把 Sutton 2022 *Alberta Plan* ([arxiv:2208.11173](https://arxiv.org/abs/2208.11173)) 的内部张力梳理清楚之后，一个自然的反问是——continual learning 不正是 Sutton 一辈子坚持的核心吗，他的方法（GVF、option discovery、continual backprop）会不会就是 C-CONT-1 的反例？我（Xander）的回答是：Sutton 自己 2024 年 8 月那篇 *Nature* ([Dohare et al. 2024](https://www.nature.com/articles/s41586-024-07711-7)) 是 §3 论证里最重的一根证据，不是反证。Sutton 团队在 vision RL 上证明的恰好是 \"标准 deep learning 在持续设置下必然丢失可塑性\"，他们的 continual backprop 是一种**几何级修复**——周期性重置死单元——而不是\"NTP loss 本身能 streaming\"的存在性证明。把这条线外推到 LLM，Sutton 本人在 2024–25 多个 podcast（Dwarkesh / TalkRL [unverified 日期]）里反复强调的判断是 \"current LLMs are not the path, because they don't learn from their own experience\"——他和 §1 那条 Lazaridou 曲线指的是同一件事，只是从 RL 那一侧描述。所以这一章不是反 Sutton，而是把 Sutton 的论断从\"哲学陈述\"翻译成 NTP 几何里的具体不动点。如果 2027 bet 被证伪，被打脸的不只是我，也包括 Dohare-Sutton 这条线——而那将是 Bitter Lesson 派与 mech 派少见的一次**同步翻车**，值得另写一章。
+
+**最后一段，给读者**：这一章如果只能记住一件事，请记住§3 那个判断的精确形状——LLM 不持续学习不是\"我们还没找到正确的算法\"，而是 NTP loss + dense transformer + cross-entropy 三件套的联合不动点。这个判断的力气全部押在 \"几何\" 上，所以它的证伪也只能从几何上来——换 loss、换记忆通路、换参数化都可以，但只要这三件套还在，部署后的模型就会以可预测的速率失去对世界的索引。RAG / agent memory / 周期性 retrain 都是承认这件事之后的外置补救，不是反驳。下一篇 N8 会把这条 mech 派的悲观判断和 Sutton 的 Bitter Lesson 拼起来，看 2026 年这场关于\"什么才是 frontier 真正的瓶颈\"的争论已经收敛到哪里。
