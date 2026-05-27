@@ -76,6 +76,33 @@
 
 这一条与 C-SCALE-1 (horizon-linear estimation floor) 并不矛盾：Ω(H) 是 *训练样本* 的下界，inference scaling 把代价从训练样本搬到推理算力（每个 query 上重复采样 / 长 CoT），同一 horizon-linear 总代价并未消失，只是以 *per-query compute* 形式 amortize 到部署侧。
 
+## Knowledge-capacity scaling: 第五轴 — 比特 / 参数 (2024–2026)
+
+把 (N, D, C_train, C_inference) 之外再加一根轴是 **knowledge bits per parameter**——单位参数能稳定存储多少可被精确召回的事实。这条轴和 SNR / sigmoid confabulation 同源，但操作化更硬：它给出可测量的容量常数，并且和 superposition 的几何解释直接挂钩。
+
+- **2024-04 — Allen-Zhu & Li, *Physics of Language Models: Part 3.3, Knowledge Capacity Scaling Laws* ([arxiv:2404.05405](https://arxiv.org/abs/2404.05405))**。在合成 biography 数据集上系统拟合 transformer 的事实存储容量，得到 **≈2 bits/parameter** 的上界（GPT-2 架构、bf16 训练、充分曝光 1000 次）；INT8 量化基本无损，INT4 把容量降到约 0.7 bits/param。这一常数在 N 横跨两个数量级内稳定。Allen-Zhu 的写法是 *physics*——固定一切其他变量，只让一根轴变——所以拟合给出的不是相关性，而是 \"在该 regime 下不可越过的天花板\"。
+- **2024-05 — Elhage et al. (Anthropic) follow-up to *Toy Models of Superposition* ([arxiv:2209.10652](https://arxiv.org/abs/2209.10652))**。给出 superposition 几何解释：在 d 维残差流里可线性近似存储 ≫ d 个稀疏特征，干扰随特征数 sub-linear 增长。把这条几何上界换算到 \"事实数 / 参数\"，量级与 Allen-Zhu 的 2 bits/param 一致——两条独立证据（合成 biography 拟合 + 玩具模型几何）指向同一常数。
+- **2024-10 — Lu et al., *Scaling Laws for Precision* ([arxiv:2411.04330](https://arxiv.org/abs/2411.04330))**（与前文同一篇）。把 \"effective parameter count\" 写成 precision 的函数，**INT4 训练下 effective N 缩到约 1/3**——这恰好预测 INT4 capacity ≈ 0.7 bits/param，与 Allen-Zhu Part 3.3 的独立测量一致到二次小数。两篇用完全不同方法学（容量 vs loss-scaling）相互交叉验证，是 2024 年 scaling 论里少见的硬约束。
+- **2026-05 — Predictable Confabulations (Smith et al., [2605.18732](../papers/paper_notes/2026-05-26-2605.18732-predictable-confabulations.md))**。从下游侧给出对偶证据：hallucination 率沿 (log params, log topic freq) 呈 sigmoid，sigmoid 拐点位置随 params 线性下移——把这条对应关系 inverse 回 capacity，得到的 bits/param 数量级与 Allen-Zhu 估计一致 [unverified, 需 controlled re-fit]。也就是说 **\"模型记得多少\" 与 \"模型在多低频时开始编造\" 是同一个容量常数的两面**。
+
+把这一束证据收紧，可以提一条新候选：
+
+- **C-SCALE-5 — Bits-per-parameter ceiling under NTP**。在标准 NTP 训练 + 充分曝光下，事实存储密度被钉在 O(1) bits/param 量级（bf16 ≈ 2, INT4 ≈ 0.7），且该常数对 N 在合理范围内不敏感。**Falsification**: 找到一个非压缩、非检索增强的 NTP 训练协议，把同等架构下的 bits/param 推到 ≥ 5（即 ≥ 2.5× Allen-Zhu 常数），且不靠改 tokenizer 或外挂存储。**当前评估**: strong——两条独立方法学（synthetic capacity fit + superposition geometry）+ precision-scaling cross-check + confabulation 对偶 共四条线一致。
+
+C-SCALE-5 与前四条候选的张力点：它把 hallucination / long-tail recall 的 cap 论据从 \"数据频率不足\" 推到 \"参数容量不足\" 一侧——这两者在经验上常常无法分离（低频事实同时是 SNR 低 + 占用容量小）。要拆开需要 controlled corpus（人工恒定 frequency × 改变 fact 数量），目前公开数据里只有 Allen-Zhu Part 3.3 做到了。
+
+### 反例 / 边界条件
+
+- **Retrieval-augmented bypass**：RAG / tool-use 显然不在 C-SCALE-5 的作用域内——它们把容量从参数迁移到外部 KV store，bits/param 趋向 0 而能力不降。这意味着 C-SCALE-5 只钉 *parametric* NTP，不钉 NTP-as-controller。
+- **MoE 的 routing-side 容量**：Mixtral / DeepSeek-V3 这类 sparse-activation 模型，bits per *active* param 是否仍受 ≈2 上界还是按 *total* param 算，2024–2026 文献尚未给出 controlled 测量；Allen-Zhu Part 3.3 仅覆盖 dense 架构。若 MoE 的容量按 total param 线性增长但 active param 不变，则 C-SCALE-5 需要按 \"effective dense-equivalent\" 重写。
+- **多模态 token 的容量贬值** [unknown]：vision / audio token 通常熵更高，单 token 平均信息量与文本不可比，对应到 bits/param 时分母变形——目前没有 controlled 跨模态 capacity 测量。
+
+### 2026-05-27 判断
+
+C-SCALE-5 是 scaling-limits 五条候选里 **最接近 \"物理常数\" 形态** 的一条：它有 (i) 两条独立测量方法一致、(ii) precision-scaling 的二次交叉验证、(iii) 下游 confabulation 对偶——满足 \"三条独立证据线\" 的 mech-strength 门槛。但 *应用域* 比看起来窄：仅覆盖 dense / parametric / 单模态 NTP，把 RAG、MoE active-param、多模态都剔出去后，frontier system 里被它直接约束的部分其实不到一半。
+
+这恰好是 scaling-limits 与 [formal_limits](formal_limits.md) 的分工互文：formal_limits 钉 \"无论多少参数都做不到\" 的硬墙，scaling_limits 钉 \"每单位参数能装多少\" 的容量常数。两者在 RAG 面前都退化——前者因为外部存储不属于 transformer 表达力域，后者因为容量分母改变。换言之，**\"NTP scaling 上界\"** 这个说法在 retrieval 时代必须重新限定作用域，否则会和 NTP-as-controller 的能力混读。
+
 ## Open problems
 
 - 把 Shannon SNR 视角与 superposition / knowledge capacity scaling 统一成一个 SNR-superposition 法则。
