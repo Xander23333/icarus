@@ -99,8 +99,23 @@ Stevan Harnad 1990 年的 [*Symbol Grounding Problem*](https://www.cs.ox.ac.uk/a
 
 按这个工具回去看 N2–N7：N2 (TC⁰) + N3 (Reversal Curse / 不忠实 CoT) 主要打 (iii) 单步信号的方向性/同构性，活下来的概率最高；N4 (Pearl 第二/三层) 打 (ii) verifier 稀缺 (反事实没有 ground-truth)，第二层弱命题已被 Lampinen / agentic post-training 蚕食，第三层仍然干净；N7 (continual learning) 打 (i) streaming 输入分布的不可重采样，但工业界用 replay + RAG 绕过的成本越来越低；N5 (embodiment) 同时打 (i) 与 (ii)，是 N2–N7 里**最有可能写进"反墙"清单**的一个；N6 (world model) 取决于具体定义，video-NTP 子命题打 (ii)+(iii)，可能活；observational pixel-only 子命题三条都不打，是最像下一次塌方的。这给 §六的 N1–N7 元批注留了完整骨架。
 
+## 五、Sutton 自己的内部张力——*Bitter Lesson* 与 *Alberta Plan* 不是同一个 Sutton
+
+把 *Bitter Lesson* 当作教条之前，先要正视一件让两边都不舒服的事：**Sutton 自己在 2022 年之后写的东西，并不是 *Bitter Lesson* 的延长线**。如果只读 2019 年那篇千字短文、不读后面这些，得到的会是一个被简化得太干净的 Sutton——一个把所有问题都归到"算力 + 通用方法"的 Sutton。真实的 Sutton 比这个稻草人复杂得多，而这种复杂在 N8 上下文里非常重要：它直接决定了 *Bitter Lesson* 的**适用域**比拥护者通常承认的窄，比反对者通常想象的宽。
+
+2022 年 8 月，Sutton 与 Michael Bowling、Patrick Pilarski 联名挂出了 *The Alberta Plan for AI Research* ([arxiv:2208.11173](https://arxiv.org/abs/2208.11173))，一份四十多页的研究纲领。这是 Sutton 1985 年博士论文以来最长、最具体的一次"我接下来要做什么"陈述。文档把目标定为构造一个能在持续 (continual)、嵌入式 (embodied)、有限算力 (resource-bounded) 条件下学习的 agent，并列出十二个核心研究问题。**没有一个问题是"把模型放大十倍会不会解决"**。十二个问题里有 model-based RL、option discovery、state abstraction、meta-learning step-size、average-reward formulation、planning with learned models、knowledge representation by predictions (GVF / Horde 谱系，最早可回溯到 Sutton-Modayil-Delp [arxiv:1112.1133](https://arxiv.org/abs/1112.1133) [unverified ID])——清一色是"结构"。Sutton 在文档摘要里写了一句几乎要被忽略的话：*"intelligence requires architecture, not just scale"* [unverified 原话措辞]——这句话与 *Bitter Lesson* 的字面立场存在公开张力，但作者本人显然不觉得这是矛盾。
+
+要解释这种"自我矛盾"，必须回到 *Bitter Lesson* 的原文措辞。Sutton 反对的从来不是"任何结构"，而是"**编码人类对问题怎么思考的特定先验**"。CNN 不是反例（它编码的是平移不变性，是关于**世界**的先验，不是关于"人怎么识别物体"的先验）；attention 也不是反例（编码的是"任意距离的 pair-wise 交互"，同样是关于序列结构的弱先验）。*Bitter Lesson* 攻击的是 SHRDLU 那种 hand-engineered 语法树、是国际象棋开局库、是 SIFT 那种基于人类视觉理论的特征。**search 与 learning 这两件"通用方法"本身就是结构**——只是 Sutton 把它们叫做"通用结构"而把另一类叫做"特定结构"。这条切割线在 *Alberta Plan* 里被显式承认：model-based RL 的 world model 是结构、option 是结构、state abstraction 是结构，但它们是"通用的、可被学习而非被手写的"结构。Sutton 反对的是**手写**，不是**结构本身**。
+
+这条切割线对 N2–N7 至关重要，因为它意味着 mech 派的活路并不在于"举出一堵 scaling 推不过去的墙"——那是反方陈词最弱的一面，N8 §二已经枚举了七堵塌方墙、§四只能找到四堵半开墙。mech 派真正的活路是**举出一类无法被"通用方法"自动学到的结构**，并证明它必须以某种形式被显式构建。Sutton 自己在 *Alberta Plan* 里就给了模板：option discovery 这件事，他承认到 2022 年（论文挂出时）仍然没有任何端到端 self-supervised 方法能稳定从原始经验里发现有用的 temporal abstraction——这是 Sutton-Precup-Singh 1999 *Between MDPs and semi-MDPs* 之后二十多年的悬案。他给的回应不是"再加 10 倍算力"，而是"我们需要新的算法原语"。**Sutton 本人在 2022 年同意：算力解决不了 option discovery**。这与 §四反墙 2 (长程 RL 样本效率) 是同一个口子，只是从 Sutton 这边看见。
+
+更进一步，2024–2025 间 Sutton 在多次访谈与 podcast (Dwarkesh Patel 2023-09 [unverified date]、Pieter Abbeel TalkRL 2024 [unverified date]、Cohere For AI 2025-02 [unverified date]) 里反复表达一个判断：**LLM 走在错的方向上**。原话大意是 "prediction of human-generated text is not the right objective"、"there is no goal"、"this is mimicry, not understanding" [unverified 原话措辞]。注意这不是 mech 派的话，是 Sutton 的话。它的内部一致性是这样的：*Bitter Lesson* 说赢家是"通用 learning + search"；NTP on internet text 是"通用 learning"但**完全没有 search、也没有 reward**——后两者在 Sutton 的语境里和前者同样不可省略。从他的视角看，pretraining-only LLM 是 *Bitter Lesson* 的**半成品**，不是它的胜利。他赞同的下一步是把 search 和 reward 真正接回来——这恰好就是 2024 之后 o1 / R1 / agentic post-training 走的方向，但 Sutton 显然认为目前的接法（PRM + outcome reward 在 verifiable domain）只是冰山一角。
+
+由此可以厘清 §三那张"四阶段塌方剧本"的一个潜在误读。剧本里说 scaling 总能吞掉机制派，但**剧本的隐含假设是"objective 和 verifier 已经对齐到目标任务"**。国际象棋有胜负、ASR 有 ground-truth、image classification 有 label——都是 verifier 与 objective 对齐的清洁场景。NTP-only LLM 的 objective (token cross-entropy) 与目标任务 (helpful / honest / reasoning / agent action) 之间存在著名的失配——这是 RLHF / RLAIF / RLVR / process reward 整个分支存在的原因。Sutton 在 *Alberta Plan* 与 podcast 里反复指向的，正是这个失配：当 objective 与 verifier 不对齐时，"再加 10 倍算力"会加快收敛到错的极值。这给 §四 (i)(ii)(iii) 三条件诊断工具补了第四条隐藏条件：**(iv) objective 与 verifier 在目标任务上对齐**。N8 §四的反墙 4 (scientific discovery) 最彻底的原因正是 (iv) 整个崩掉——"什么算新颖且正确的科学假设" 本身没有 verifier。
+
+**判断（§五）**：把 *Bitter Lesson* 与 *Alberta Plan* 并置之后，N8 的反方陈词应当**收窄**而不是被放弃。收窄的版本是这样的：在 (i) 数据可大规模采集、(ii) verifier 存在且廉价、(iii) 单步信号密集、(iv) objective 与 verifier 对齐 四条件同时成立的子领域里，"机制墙"几乎一定会被"通用 learning + search"推平，N2–N7 不应在这种场景下押注 mech；而在四条件**任意一条**不成立的子领域里，scaling 会停在弱命题的台阶上，mech 候选有真正的活路——但只有当它打的是"通用结构"（可被学习、可被推广），而不是"特定结构"（手写、不可外推）时才有活路。这一节其实是把 §四的诊断工具从"反方自我修正"升级成"Sutton 本人都同意的边界条件"，这让 N1–N7 的元批注（§六）可以站在一个更稳的基线上展开——不再是"mech 派 vs Sutton"，而是"哪些 mech 候选符合 Sutton 自己留下的口子"。
+
 ---
 
-> **§5–§6 路线图**（后续 tick 续写）：
-> - §5：Sutton 自己的内部张力——*Bitter Lesson* 与 *The Alberta Plan* ([arxiv:2208.11173](https://arxiv.org/abs/2208.11173) [unverified ID]) 之间，他本人也承认结构在某些场景下不可避免；与 §四反墙 2 呼应
-> - §6：给 N1–N7 的元批注——按 §三的四阶段剧本与 §四的 (i)(ii)(iii) 三条件诊断工具，逐一打分每篇 mech 候选目前处在哪个阶段、打中哪几个条件，并给出"被塌方"的最可能路径与时间窗口
+> **§6 路线图**（后续 tick 续写）：
+> - §6：给 N1–N7 的元批注——按 §三的四阶段剧本、§四的 (i)(ii)(iii) 三条件、§五补出的 (iv) objective-verifier 对齐条件，逐一打分每篇 mech 候选目前处在哪个阶段、打中哪几个条件，并给出"被塌方"的最可能路径与时间窗口。重点回应 N5 (embodiment 同时打 (i)(ii))、N4 (Pearl 第三层打 (ii))、N6 (observational pixel-only world model 三条全不打)、N7 (continual learning 打 (i))。
