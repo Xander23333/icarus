@@ -55,6 +55,28 @@ text-NTP 的 world-model 证据基本上停在 Othello-GPT 与 chess-Transformer
 
 判断：video-NTP 把 "NTP 选不选 world model" 这道题的赌注真正抬高了，但 2024–2026 的证据告诉我们，**它选出来的仍然是行为级 / 帧级 dynamics**，object-level 长时序与因果结构依旧不来自 NTP 自发涌现。下一个能推动 discourse 的实验，不是再训一个更大的 Sora，而是在 Genie 2 / Cosmos 这类 latent-action 世界模型上做 Othello-GPT 风格的 probe——如果能在 latent 里线性可解码出物体身份、位置、速度，那 C-WM-1 的边界就从 closed-world 扩到了 mid-open-world；如果不能，那 video-NTP 也只是 text-NTP 的高维翻版。
 
+## Object permanence 这把更细的尺子 (2018–2026)
+
+§视频暗线 末尾那句\"10–20 秒后开始物体永恒性失败\"值得展开，因为这恰好是把 video-NTP world-model 讨论从\"看起来真不真\"拽回到\"可量化的世界变量是否被编码\"的最干净抓手。Object permanence——Piaget 1954 用来描述 8–12 月龄婴儿习得的\"物体被遮挡后仍存在\"能力——在视觉认知里有一条相对独立、可数字化的 benchmark 演化史，2024 之后才被 video-NTP 社区重新拾起，但很多人没意识到这条线在 LLM 时代之前已经走了将近十年。
+
+- **2018-03, Riochet et al., IntPhys** ([arxiv:1803.07616](https://arxiv.org/abs/1803.07616))。第一个把 *violation-of-expectation* 范式（婴儿心理学经典做法）搬到 video model eval：构造一对 plausible / impossible 视频（物体应在 vs 凭空消失），让模型对二者输出 likelihood，看是否 plausible > impossible。当年最强 baseline 在 occluder 场景上只比 chance 高 ~5 个点。这条 protocol 是后续所有 object-permanence eval 的母本。
+- **2019-08, Bakhtin et al., PHYRE** ([arxiv:1908.05656](https://arxiv.org/abs/1908.05656))。Facebook AI 的 2D 物理 puzzle benchmark，强调 *one-shot* 物理推理（放一个红球解决目标）。虽然不是纯 object permanence，但首次把\"物体在时间上的连续轨迹\"作为 success criterion 显式写进 eval；当年最佳 model-based agent solved ≈37% [uncertain 具体数字]，纯 model-free 更差。
+- **2021-06, Bear et al., Physion** ([arxiv:2106.08261](https://arxiv.org/abs/2106.08261))。MIT/Stanford 联合的 8-scenario 物理预测 benchmark（drop / collide / dominoes / containment 等），首次把人类参与者打分作为 ceiling 与模型 head-to-head 对比。结果：当时最好的 visual dynamics model（GNS、SlotFormer 之类）整体 ~55%，人类 ~80%；containment / occlusion 上的 gap 最大——这正是 object permanence 直接相关的子集。
+- **2022-11, Smith et al., Physion++** ([unverified ID])。在 Physion 基础上加 *latent property inference*（质量、摩擦），把任务从\"看得见的物理\"推到\"看不见的物理\"——object permanence 在 occluder 后的 *身份保持* 是其中一个特例。结果：所有 vision model 在 latent property 上系统性回退到 chance。
+- **2024-06, Motamed et al., Phyworld** ([arxiv:2406.03520](https://arxiv.org/abs/2406.03520) [unverified ID])。第一个公开针对 *generative* video model（Sora 类 + Stable Video Diffusion 类）的物理一致性 benchmark，明确把\"物体凭空出现/消失\"作为可计数 failure mode。报告里 Sora-class 模型在 ≥10s 视频上 object-vanish 率仍高于 30% [数字 uncertain，依赖具体版本]。
+- **2024-10, Meng et al., PhyGenBench / PhyGenEval** ([unverified IDs])。把 Phyworld 思路扩展到 force / energy / motion 四个维度，并引入 VLM-judge + 人类对照的 hybrid scoring；同期 Kang et al. 复现报告：state-of-the-art 闭源 video model 在 \"long-occluder + multi-object\" 子集上 *没有* 显著优于 2022 baseline，提升主要来自纹理/光照而非世界变量。
+- **2024-12, DeepMind Genie 2** (blog, 非 arxiv)。官方 demo reel 自承\"world consistency over long horizons remains a challenge\"，是工业界第一次在产品材料里把 object-permanence 局限明文承认。
+- **2025 — V-JEPA-2** ([unverified arxiv ID])。LeCun 阵营给出在 EgoSchema / Something-Something-v2 上的 frozen-eval 提升，并附 small-scale 物理直觉 probe；但*没有*在 IntPhys / Physion 系列上公开 head-to-head——这一缺席本身就是判据：JEPA 路线若真在 object-level 上比 video-NTP 强，最该报的就是这组 benchmark。
+
+把上述时间线压成一句话：**object permanence eval 在 2018–2022 期间是 model-based vision community 的内部度量，2024 之后才被 generative video / NTP 社区认领；而认领之后的所有公开数字都告诉我们，frame-level photorealism 与 object-level 持久性的提升速度不在同一个数量级**。这与 §视频暗线 末尾的判断完全对齐，但量化粒度更细：不是\"10–20 秒后失败\"这种轶事描述，而是\"在 IntPhys violation-of-expectation 上 plausibility margin 仍 <0.1 nats\"这种可逐版本追踪的数字（前提是有人愿意报）。
+
+反例与可能突破：
+- **3D-aware video diffusion** (Stable Video 3D, CAT3D 系列, 2024) 把显式 NeRF / Gaussian splat 几何先验注入 latent，部分场景下 object identity 持久性显著好转——但这相当于把 world-model 一半的负担外置给几何模块，不再是\"纯 video-NTP 自发涌现\"的证据。
+- **Causal Transformer + slot attention** 路线 (Slot-Diffusion, OCVP 系列 [unverified IDs]) 在 Physion-style 任务上接近 human ceiling，但 slot 数与 object 数强耦合，open-world 上未验证。
+- **真正的可证伪窗口**：如果 2026–2027 出现一个未注入显式几何 / slot 先验的 pure video-NTP 模型，在 IntPhys 全集 + Physion containment 子集上同时超过 2022 SlotFormer baseline 5 个百分点以上，则\"NTP 自发挤出 object-level 持久性\"这一假说就拿到了第一份强证据；反之每多一年 nothing happens，C-WM-2 (open-world dilution) 的强度就加深一档。
+
+判断：object permanence 是当前唯一一把*同时被 cognitive-science / model-based vision / generative video* 三个社区公认有意义的尺子，把它接到 C-WM-3 的 interventional benchmark 上不需要任何新理论——只需要把 IntPhys / Physion 改造成 counterfactual triplet 形式（同一 prefix + 仅在 occluder 出现时刻 do-intervene 物体身份），即可一次性把 §视频暗线 + §反事实空洞 两节的开题问题落到一组可重复实验上。这也是 N6 (embodiment-and-vla-bet) §3 之后的最自然延伸点。
+
 ## 反事实 / 干预 eval：当前最大的方法论空洞
 
 把上一节末尾那句"没有任何一篇 video world-model 论文做过 do-operator 干预下的预测一致性 eval"翻成 Pearl 的语言：当前所有公开 world-model benchmark 几乎全部停留在 Layer 1（observational）—— 给 prefix 预测续帧或下一动作 —— 而真正能区分"模型有 world model"vs"模型在做高阶 n-gram"的关键证据，是 Layer 2（interventional）的预测一致性。这一空洞不是"还没人想到"，而是工程上比 observational eval 难一个数量级，目前只有零散候选：
