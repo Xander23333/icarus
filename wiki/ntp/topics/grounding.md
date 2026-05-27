@@ -80,6 +80,18 @@ NTP-cap 阵营的回击是：(a) 分布信号本身就包含大量被低估的 g
 - 候选 B：MMVP ([arxiv:2401.06209](https://arxiv.org/abs/2401.06209)) 已经部分满足；BLINK ([arxiv:2404.12390](https://arxiv.org/abs/2404.12390)) 的 spatial relation / depth ordering 子集是更干净的候选。
 - 工程意义：如果 C-GROUND-4 成立，那么 \"把数据量再放大 10 倍\" 不是出路，必须改 objective。这与 NTP-cap 阵营的\"scale is all you need\" 直接对立。
 
+## 经验测量线 — probe / activation patching / counterfactual 三代探测史 (2018–2026)
+
+Grounding 这条战线在 2020 年之前几乎全是哲学论战，2020 年之后逐渐变成一个 *方法学* 问题：我们到底用什么测量手段判定一个 LM 内部"接地了"？这条线大致分三代，每一代都修正了上一代的最大方法学漏洞。
+
+**第一代：linear / MLP probe (2018–2021)。** Conneau 等 *What you can cram into a single vector* ([arxiv:1805.01070](https://arxiv.org/abs/1805.01070)) 用 10 个 sentence-level 任务 probe BiLSTM/Transformer 句向量，开启 "训一个 classifier 就能宣称模型 encode 了 X" 的范式。Hewitt & Manning 2019 *A Structural Probe for Finding Syntax in Word Representations* (NAACL) 在 BERT 上拿出树结构 probe distance correlation ≈ 0.85，被广泛误读为 "BERT 学了语法"。问题在 Hewitt & Liang 2019 *Designing and Interpreting Probes with Control Tasks* (EMNLP, [arxiv:1909.03368](https://arxiv.org/abs/1909.03368)) 当场捅破：用同样大小的 probe 去拟合 *随机标签*（control task）能达到 selectivity-defined baseline 的 50–80%，意味着 probe 自身的拟合能力被严重低估为 "模型自带的结构"。这条批评对 grounding 文献的杀伤被 *系统性低估* 了——Abdou 2021 / Patel & Pavlick 2022 的结果若不附 control task，仅能说明 probe 能学映射，不能直接断言模型 ground 了 color/direction。
+
+**第二代：activation patching / causal mediation (2022–2024)。** 为绕开第一代的拟合幻觉，Vig 等 *Causal Mediation Analysis for Interpreting Neural NLP* ([arxiv:2004.12265](https://arxiv.org/abs/2004.12265)) 把 Pearl mediation 框架第一次搬进 transformer。Meng 等 ROME ([arxiv:2202.05262](https://arxiv.org/abs/2202.05262)) 用 causal tracing 在 GPT-J 上定位 "Eiffel Tower → Paris" 事实的中层 MLP，并通过 rank-one 编辑成功改写事实——这是**第一次** grounding-style 表征被 *干预测试* 而非仅 *观察相关*。Geva 等 *Dissecting Recall of Factual Associations* ([arxiv:2304.14767](https://arxiv.org/abs/2304.14767)) 在 GPT-2 / Pythia 上把事实回忆拆成 subject enrichment → relation propagation → object readout 三阶段。同期 Geiger DAS ([arxiv:2303.02536](https://arxiv.org/abs/2303.02536)) / Conmy ACDC ([arxiv:2304.14997](https://arxiv.org/abs/2304.14997)) 提供了端到端自动定位 grounding 子电路的工具。这一代把 "模型表征是否 ground" 从相关性升级到 *干预等价类*，但 grounding 社区采纳得极慢——MMVP / VLM-Blind 之类 2024 年的 grounding-failure 论文几乎没用 activation patching。
+
+**第三代：counterfactual + cross-modal causal probe (2024–2026)。** 第二代仍主要在文本-only 单模态内做，对 grounding 的核心问题 "token 是否 *指向* 外部世界" 力度不够。三个 2024–2026 方向把闸门往前推：(i) Vafa 等 *Evaluating the World Model Implicit in a Generative Model* ([arxiv:2406.03689](https://arxiv.org/abs/2406.03689)) 用 Myhill-Nerode 半干预测试在 Othello/纽约出租车数据上同时检测 *相关* 与 *因果* world-model 强度，揭示 next-token-low-loss + world-model-incorrect 的常见组合；(ii) Brinkmann 等 multimodal activation patching ([arxiv:2402.11917](https://arxiv.org/abs/2402.11917) [unverified ID]) 在 LLaVA 上做 cross-modal causal mediation，定位 vision token 在哪一层真正进入 "semantic" 残差流——结果是大多数 vision token 直到 layer 18+ 才被语义化，前层只走拷贝路径，部分解释了 MMVP 失败；(iii) Causal Tongue-Tie ([arxiv:2605.25891](https://arxiv.org/abs/2605.25891)) 在 anti-commonsense CLadder 上 linear probe 0.97 vs yes/no readout 0.5 — 直接证明 *内部表征* 与 *外部行为* 在 grounding-相关任务上能解耦 0.47 个 accuracy 单位，迫使任何 grounding 声称必须附 probe + readout 双轨证据。
+
+> **2026-05-27 判断**：grounding 文献在概念层面发达，在测量层面落后两代——大量被引用的 "LM 学到/没学到 grounded structure" 结论实际只用了第一代 probe，未控制 Hewitt-Liang selectivity，也未做 Vig-Meng 风格干预。这意味着 grounding 的 *经验* 共识比表面上脆弱得多：把现有结果按 "probe-only / patched / counterfactual-validated" 三档重新分箱，2026 年能进入第三档的论文不超过 5 篇。这也是 C-GROUND-1/3/4 三个候选条目至今没人能严格 falsify 的*方法学*原因，而非 *机制* 原因——我们没有合格的测尺。下一步行动：把 MMVP / VLM-Blind 上失败的 ~30 个最干净 minimal-pair 用 activation patching 重测一遍 vision token 是否真的进入 semantic 残差流，是 18 个月内最可能产出 grounding mech-vs-cap 判决的实验。
+
 ## 与其他 topic 的交叉引用
 
 - `embodiment.md`：sensorimotor grounding 的 closed-loop 检验

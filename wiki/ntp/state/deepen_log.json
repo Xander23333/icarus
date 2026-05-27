@@ -453,6 +453,15 @@
       "note": "Continued N2 sample §6 '反例：墙的位置不是定死的——三道暗门' + 尾声 (~9k chars net): three escape doors framed against §3-§5 TC⁰ consensus — (1) latent/pause CoT (Goyal 2310.02226, Hao Coconut 2412.06769 [unverified ID]) breaks 'discrete token per step' assumption Merrill-Sabharwal §7 self-admitted; (2) Schuurmans-Dai-Zanini 2410.03170 [unverified ID] autoregressive-universal result reconciled with TC⁰ via single-forward vs unbounded-rollout distinction, linked back to Pérez 1901.03429 and N1 §3 Sutton-派 framing; (3) Singh-Strouse 2402.14903 + Allen-Zhu 2407.20311 tokenization 20-30pp swing showing 'input representation neutrality' is false hyperparameter. Counter-counter-example: Sanford-Hsu-Telgarsky 2402.04347 parallel-computation thesis closes the O(1)-depth+discrete+single-forward escape entirely. Closing §尾声 with three reader takeaways + explicit 2027 falsification clause (8-digit×8-digit, k=10 Einstein, n=20 LIS zero-shot 90%+ = mech-派 needs revision). README N2 §1-§5→§1-§6+尾声 4500→6000字. Rotation: N2 last touched 2026-05-27T08:30Z (~9h ago, longest-untouched sample bar none); last 5 ticks were N4/N5/N7/formal_limits/world_model — N2 well outside back-to-back guard."
     },
     {
+      "tick_utc": "2026-05-27T18:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/grounding.md"
+      ],
+      "chars_added": 3300,
+      "note": "Deepened grounding topic with new '经验测量线 — probe / activation patching / counterfactual 三代探测史 (2018–2026)' section (~3.3k chars). Three generations of measurement methodology: Gen1 linear/MLP probe (Conneau 1805.01070 / Hewitt-Manning 2019 / Hewitt-Liang 1909.03368 selectivity critique systematically under-applied to grounding lit Abdou/Patel-Pavlick); Gen2 activation patching / causal mediation (Vig 2004.12265 / ROME 2202.05262 / Geva 2304.14767 / DAS 2303.02536 / ACDC 2304.14997 — first time grounding-style reps got intervention not just correlation, but adoption by grounding community lagged); Gen3 counterfactual + cross-modal causal probe (Vafa 2406.03689 Myhill-Nerode / Brinkmann 2402.11917 [unverified] cross-modal patching on LLaVA showing vision tokens semantic-onset at layer 18+ / Causal Tongue-Tie 2605.25891 probe-vs-readout 0.97 vs 0.5 0.47-acc decoupling). 2026-05-27 judgment: grounding lit measurement-side lags two generations, <5 papers reach Gen3, C-GROUND-1/3/4 unfalsified for methodological not mechanistic reasons; concrete next experiment proposed (activation-patch MMVP/VLM-Blind minimal pairs). Closes the Hewitt-Liang selectivity thread from Open problems §. Rotation: last 5 ticks were N8/N2/N4/N5/N7 samples — grounding.md last touched 2026-05-27T03:30Z (~15h ago), longest-untouched topic in the rotation; samples N2-N8 all touched within 4-6h."
+    },
+    {
       "tick_utc": "2026-05-27T18:00:00Z",
       "task_type": "A",
       "files": [
