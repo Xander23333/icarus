@@ -364,6 +364,15 @@
       ],
       "chars_added": 14400,
       "note": "Opened N8 sample chapter §1–§3 'Sutton 又赢一次？回顾被打脸的机制墙' (~14.4k chars first creation; substantive prose ~5.5k 净增 Chinese chars 排除引用 markup). Frames N8 as the deliberate counter-voice to N2–N7. §1 Bitter Lesson 2019-03 + Turing Award 2024 [uncertain date] + GPT-2→R1 七年五次撞墙都被 scaling/工程修补回收. §2 four historical wall collapses with real anchors: (W1) Fodor-Pylyshyn 1988 systematicity → SCAN 1711.00350 → Csordás 2108.12284 [unverified] / COGS 2010.05465 / GPT-4 zero-shot; (W2) Hinton/Marcus arithmetic → GPT-3 2005.14165 §3.9.1 sweep → Singh-Strouse 2402.14903 tokenization / abacus 2405.17399; (W3) Harnad 1990 / Bender-Koller ACL 2020 / Stochastic Parrots → Abdou 2109.06129 / Patel-Pavlick [unverified] / Søgaard 2305.02223; (W4) LeCun 2022 JEPA / Bubeck 2303.12712 poem-reversal → o1 / R1 2501.12948 + Feng 2305.15408 Ω(n²) 半塌 + Brown 2407.21787 Snell 2408.03314 inference scaling. §3 four-stage collapse-script (哲学→benchmark→scaling 蚕食→撤退到弱命题) explicitly mapped onto N2–N7 候选, three-layered judgment (同意 Sutton 总账输 / 弱命题精确陈述+falsification 能活 / 这一次 dense scaling 趋平+MoE 和 inference 不增 effective sample 是结构性新变量), 2027-28 falsifiability bet. §4–§6 TODO roadmap. README N8 flipped 待写→推进中 §1–§3. Rotates away from N7 (last tick) and all other recently-touched samples/topics; N8 was the only 📝 待写 row."
+    },
+    {
+      "tick_utc": "2026-05-27T13:30:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md"
+      ],
+      "chars_added": 2400,
+      "note": "Filled survey §1 历史脉络 (was placeholder bullets) with a chronological narrative 1990→2026: Harnad symbol grounding, Bengio NPLM 2003, word2vec 1301.3781, Transformer/Scale (Vaswani 1706.03762, GPT-3 2005.14165, Kaplan 2001.08361), 2020-23 skeptic revival (Marcus 1801.00631, Bender-Koller, Stochastic Parrots, Chomsky 2023 NYT), Chinchilla 2203.15556 + MoE (Mixtral 2401.04088, DeepSeek-V3 2412.19437) + reasoning (R1 2501.12948) era, and 2024-26 Readout-side 主导假设 convergence citing the 5-paper stack already in §10. Closes with explicit Sutton-vs-mech tension framing that links to N8 §2 and §9 Q1. Rotates away from N8 (last tick), all 8 topic pages and N2-N7 (touched within ~4h). ntp_survey.md had not been touched in any of the 38 logged ticks."
     }
   ]
 }

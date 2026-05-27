@@ -11,12 +11,25 @@
 - (b) 在 NTP 三分法中能被定位；
 - (c) 与已有论点的关系被明确写出（支持 / 反驳 / 正交 / 细化）。
 
-## 1. 历史脉络 (placeholder — 待累积)
+## 1. 历史脉络
 
-- **符号主义 vs 联结主义** 的老分歧如何在 LLM 时代复活
-- **Searle 中文屋** → **Harnad 符号 grounding 问题** → 现代 multimodal grounding 实证
-- **Marcus / Bender / Chomsky** 对 LLM "理解" 的怀疑论
-- **Sutton "苦涩教训"** vs **机制级不可能性** 论点的张力
+"NTP 能不能通向 AGI" 这道题不是 2023 年才出现的——它是一条贯穿整个深度学习史的暗线，只是名字换过几次。把这条线压成一段编年史最干净：
+
+**1990 — Symbol Grounding (Harnad, *Physica D* 42)**：Stevan Harnad 在 *Minds and Machines* 上提出"封闭符号系统无法 escape 字典循环"，把"语言模型理解什么"这道题第一次定形。三十多年后，Bender & Koller 2020 ACL "Climbing towards NLU" 的章鱼实验几乎是这篇论文的字面翻版——只是把"中文字典"换成了"trillion-token web corpus"。
+
+**2003 — Bengio NPLM (*JMLR* 3)**：Yoshua Bengio 等 *A Neural Probabilistic Language Model* 把 next-word prediction 第一次系统化为一个 distributed representation 学习目标。当时 perplexity 比 n-gram 仅好 10–20%，没人把它当成 AGI 路线。这篇论文重要的不是数字，而是它把 NTP 从"语音识别的辅助任务"升格为"表征学习的主目标"。
+
+**2013 — word2vec ([arxiv:1301.3781](https://arxiv.org/abs/1301.3781))**：Mikolov 把同一目标降到极简，得到\"king − man + woman ≈ queen\"。这是分布主义经验主义的第一次大胜，也是 Pavlick 2023 *Symbols and grounding in LLMs* 里说的"distributional signal 比 Harnad 想象的多得多"的最早证据。
+
+**2017–2020 — Transformer + Scale (Vaswani [arxiv:1706.03762](https://arxiv.org/abs/1706.03762) → Radford GPT-2 → Brown GPT-3 [arxiv:2005.14165])**：Kaplan scaling laws ([arxiv:2001.08361](https://arxiv.org/abs/2001.08361)) 把 NTP loss 与参数/数据/算力的幂律关系量化，第一次让"放大就行"成为可定量预测的工程假设。这一阶段 Sutton 2019 的 *Bitter Lesson* 被反复引用，几乎所有"机制级不可能"声称都在 2020–2023 被 scale 推翻过一轮（见 N8 §2 的 W1–W4 撞墙史）。
+
+**2020–2023 — 怀疑论的复活与重铸**：Marcus 2018 *Deep Learning: A Critical Appraisal* ([arxiv:1801.00631](https://arxiv.org/abs/1801.00631))、Bender & Koller 2020、Bender et al. 2021 *Stochastic Parrots*、Chomsky 2023 *NYT op-ed*。这一波的特点是：哲学论点强，benchmark 上的可证伪 setting 弱。结果是几乎每条"LLM 必然不能 X"的命题（算术、systematicity、常识、推理）都在 2023–2025 被前沿模型部分翻案，但翻案方式（CoT、reasoning trace、tool use、scratchpad）又恰好满足了怀疑论者关于"必须外接计算"的预言——双方都觉得自己赢了。
+
+**2022–2024 — Chinchilla & dense scaling 趋平 (Hoffmann [arxiv:2203.15556])**：data-optimal scaling 重写训练预算分配；GPT-4 → GPT-4.5 的能力跃迁显著小于 GPT-3 → GPT-4，标志 dense NTP 单纯放大的曲线开始疲软。补救来自两个方向：MoE (Mixtral [arxiv:2401.04088]、DeepSeek-V3 [arxiv:2412.19437]) 把激活/总参数比降到 5% 以下；test-time compute (o1 2024-09、R1 [arxiv:2501.12948]) 把算力从训练侧搬到推理侧。两者都没动 Transformer 骨架，但都改变了"NTP-mech 应该在什么 setting 下被评估"这个问题本身。
+
+**2024–2026 — Readout-side 主导假设浮现**：本仓库 §10 累积的至少 5 条独立证据 (2605.10799/2605.07120/2605.14004/2605.05438/2605.25891) 指向同一方向：大量被解读为"NTP 机制不足"的现象，实际由 readout/format/objective/collapse confound 主导。这构成了 2024 年以来这条战线上**唯一一次方法论层面的系统性收敛**——它既不站强 mech 也不站强 cap，而是迫使两边都要先排除五个工程 confound 再谈机制。这也是本综述区别于 2020–2023 那一波讨论的最重要 stance。
+
+**Sutton vs 机制级不可能性的张力**仍然是这条历史的主轴。Sutton 路线 6/6 全胜（W1–W4 加 reasoning、加 multimodal）的事实，并不直接证明它会赢第七次；但要立一条"这次不同"的论证，必须能定量预测 dense scaling 趋平 + MoE/inference 不增 effective sample 的**结构性新变量**，而不是重复 1988/1990/2020 的哲学结构。这是 N8 sample 章节展开的核心赌注，也是本综述 §9 第 (1) 题的核心。
 
 ## 2. 形式边界 (formal limits)
 
