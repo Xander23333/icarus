@@ -488,6 +488,15 @@
       ],
       "chars_added": 2700,
       "note": "Deepened causality topic with new 'Layer-3 硬度的三个互补下界' synthesis section (~2.7k chars). Three independent, mutually-reinforcing lower-bound arguments for why C-CAUSAL-2 is NTP-mech's strongest position: (i) complexity-side — Shpitser-Pearl 2006 ID algorithm #P-hard subset, two complexity classes above Sanford-Hsu-Telgarsky 2402.04347 TC⁰; Merrill-Sabharwal 2310.02309 CoT-to-P only covers small instances; (ii) data-distribution-side — counterfactual rendering density in CommonCrawl/arXiv estimated <10⁻⁴ token-level [unverified], Lampinen 2305.16183 'passive learner of active strategies' route blocked because demonstrators cannot perform counterfactuals by definition; (iii) evaluation-side — CLadder 2312.04350 Layer-3 three years no counter-example, CRASS LREC2022 GPT-4 ~90% disqualified by leak risk, Zečević 2308.13067 variable-rename only n<50 SCMs and only Layer-2 — no >=1000-SCM UUID-rename+leak-check Layer-3 benchmark exists. Honest judgment: 'cannot be falsified' is a methodological gap not a victory. Escape requires breaking three different walls simultaneously (Goyal 2310.02226/Hao 2412.06769 latent-CoT for arch, synthetic counterfactual corpus for data, new UUID-rename protocol for eval). Bridges to formal_limits TC0 + N4 sample finale. Rotation: causality.md last touched 2026-05-27T05:00Z (~14.5h ago, longest-untouched topic); last 4 ticks were embodiment/grounding/N8/N2 — well outside guard."
+    },
+    {
+      "tick_utc": "2026-05-27T20:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/reasoning.md"
+      ],
+      "chars_added": 3850,
+      "note": "Deepened reasoning topic with new 'Latent / pause / continuous CoT — readout-主导假设的实验性裂缝 (2024–2026)' section (~3.85k chars). Five-point chronology Goyal 2310.02226 pause-token → Hao Coconut 2412.06769 [unverified ID] continuous-latent feedback → Pfau-Merrill-Bowman 2404.15758 dot-by-dot filler (dense-supervision limit) → Zelikman Quiet-STaR 2403.09629 latent-rationale marginalize → 2026 reconciliation with N2 §6 三道暗门 + Schuurmans-Dai-Zanini 2410.03170 [unverified] universality breaking Merrill-Sabharwal 2310.02309 'discrete token per step' assumption. Honest middle-ground judgment: readout-dominated thesis (Garcia/ProFIL/Causal Tongue-Tie) is strong on verbal-CoT but cannot account for pause/latent effects without verbal carrier. Two specific falsifiable predictions for next 12-18mo: (i) latent-CoT >=7B on Faith-and-Fate compositional depth — if failure disappears, C-REAS-2 mech->cap; (ii) latent-CoT on controlled reverse-retrieval — if Reversal Curse persists without verbal readout, C-REAS-1 strength becomes independent of readout confound. Both experiments not publicly done — explicitly state this is Open problems #3 current real state. Bridges reasoning<->N2 §6<->formal_limits TC0 wall as same-family escape route. Rotation: reasoning.md last touched 2026-05-27T11:30Z (~8.5h ago); last 5 ticks were causality/embodiment/grounding/N8/N2 — well outside back-to-back guard."
     }
   ]
 }

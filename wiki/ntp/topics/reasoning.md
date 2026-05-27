@@ -65,6 +65,23 @@ C-REAS-1 在三条 mech 候选里是唯一一条**同时**满足 (i) controlled 
 
 **对 C-REAS-1 的净影响**：三年修复尝试下来，Reversal Curse 的可证伪 setting 已从 \"任何 NTP 模型在任何规模下都学不到反向\" 收窄到 \"在 standard left-to-right NTP objective、single-context exposure、≥7B 规模下，反向检索 accuracy 显著低于正向\"。这一限定窗口比 2023 年小得多，但**仍未被证伪**——这是它在 2026-05 仍然是 mech 候选第一名的原因。下一步实质性进展只能来自两个方向之一：(a) 在 ≥7B 规模训一个纯 prefix-LM / UL2-mix base model 并复现 Berglund 协议，若效应消失则 C-REAS-1 降级为 NTP-cap (\"标准 NTP 的工程 artifact\")；(b) 在 mech-interp 层面（Anthropic attribution graph 风格）直接定位 \"forward A→B\" 与 \"reverse B→A\" 在 circuit 上的不对称结构。两条路线都未见公开尝试。
 
+## Latent / pause / continuous CoT — readout-主导假设的实验性裂缝 (2024–2026)
+
+Garcia 2026 / ProFIL 2026 / Causal Tongue-Tie 2026 这一波清洗工作的共同结论是：当前 mech-vs-pattern-matching 辩论里大约一半的"经验论据"是 verbal-readout 伪影。一个干净的后续问题是：**如果把"verbal readout"这个环节本身去掉，剩下的还是不是 reasoning？** 2024–2026 围绕 latent / pause / continuous-token CoT 的几条工作线，就是这个问题的 *实验性* 答案，也是 Open problems 第三条的现状盘点。
+
+- **2023-10 — Goyal et al., *Think Before You Speak* ([arxiv:2310.02226](https://arxiv.org/abs/2310.02226))**。在 1B 规模 pre-training 阶段插入可学习的 `<pause>` token，模型在 commonsense reasoning / SQuAD 上 zero-shot 提升 ~1–5pp。关键不是数字，而是 **pause token 不携带任何 verbal content**——按 readout-主导假设，它本不该有 effect。该论文是后续 latent-CoT 路线的实验起点。
+- **2024-12 — Hao et al., *Coconut: Training Large Language Models to Reason in a Continuous Latent Space* ([arxiv:2412.06769](https://arxiv.org/abs/2412.06769))** [unverified ID]。Meta FAIR 的 Shibo Hao 把 CoT 中间步骤替换为 last-hidden-state 直接 feedback（不解码、不 verbal），在 ProsQA / GSM8k 子集上达到与显式 CoT 接近的 accuracy，但 token 预算减半。**对 readout 假设的伤害是直接的**：如果中间 step 完全不经过 vocab projection 而 accuracy 仍立得住，那 Garcia 2026 测出的 format confound 至少在 latent setting 下不构成上界。
+- **2024-04 — Pfau, Merrill, Bowman, *Let's Think Dot by Dot* ([arxiv:2404.15758](https://arxiv.org/abs/2404.15758))**。NYU 一组在合成 3SUM / 2SUM 任务上把 CoT 替换为无意义的 `.....` filler token，发现 filler 在某些任务上也能达到 CoT-equivalent accuracy——但他们同时给出关键限定：**只在 dense supervision (per-step parallel labels) 下成立**，pre-trained model 不能 zero-shot 从 filler 中受益。这把 Goyal 2310.02226 的 pause-token 效应往下推了一层：filler 本身不是 reasoning carrier，它只是给计算腾时间。
+- **2025 — Quiet-STaR / latent reasoning 后续**。Eric Zelikman 等 ([arxiv:2403.09629](https://arxiv.org/abs/2403.09629)) 把每一个 token 后强制采样多条 latent rationale 再 marginalize，在 GSM8k 上 zero-shot 提升非平凡（数字 [unverified]）；这条线与 Coconut 不同的是 latent 仍然解码到 vocab，但只在 inference time 边缘化掉。对 readout 假设的判定是 *中间地带*：rationale 仍走 vocab，但训练目标不再奖励"被人读懂"。
+- **2026-05 — N2 §6 三道暗门 / Schuurmans-Dai-Zanini 2410.03170 [unverified ID] universality 结果**。把 latent-CoT 与 TC⁰ 之墙的关系第一次明确：Merrill-Sabharwal ([arxiv:2310.02309](https://arxiv.org/abs/2310.02309)) 上界的 "discrete token per step" 假设在 latent / continuous setting 下 *不成立*，所以 latent CoT 同时 escape (i) readout confound、(ii) TC⁰ depth 上界。两条线在 2026 才被同时识别为同一道"门"。
+
+**对 mech vs pattern matching 辩论的净影响**：把这五个数据点放在一起，2026-05 后的合理立场是——readout-主导假设是 **verbal CoT setting 下**的强解释，但在 latent / continuous-token setting 下需要重新测量。这给两派各留了一道窗：
+
+- mech 派必须接受：Garcia / Causal Tongue-Tie / ProFIL 的清洗结果在 verbal CoT 上几乎没有可争辩空间，C-REAS-1 / C-REAS-2 / C-REAS-3 的 verbal-CoT 部分证据都要重做。
+- pattern-matching 派必须接受：Goyal 2310.02226 + Coconut 2412.06769 [unverified] 的 pause / latent 效应在 *没有任何 verbal carrier* 的前提下仍存在；如果坚持"reasoning = verbal readout artifact"则无法解释这部分 accuracy。
+
+**判断 (2026-05-28)**：latent-CoT 这条裂缝是未来 12–18 个月 mech 辩论真正会移动的位置。具体可证伪预测：(i) 若在 ≥7B 规模、纯 latent-CoT (Coconut-style) 设置下，C-REAS-2 的 Faith-and-Fate compositional depth 失败模式 *消失*，则 NTP-mech 的"depth 上界 → 实际能力上界"链条被打开（路径同 N2 §6 三道暗门 (1)）；(ii) 若 latent-CoT 在 controlled synthetic reverse-retrieval 上同样表现 Reversal Curse，则 C-REAS-1 的强度不依赖 verbal readout——这会是 mech 派 2026 后最重要的正面证据。两个实验 *都没有公开做过*。这是 Open problems 第三条目前的真实状态：不是没人想到，是没人做。
+
 ## 判断 (2026-05-27)
 
 我目前的立场：**"CoT faithfulness" 作为一个二值问题已经走到死路**。Garcia 2026 的 format-confound + Anti-Collapse 2026 的 output-distribution confound 一起说明：过去三年大约一半"CoT 不忠"和近一半"NTP 学不到 X"的论文，**effect size 都需要打折重做**。但这不构成对 NTP 派的胜利——它只是把球踢回原点：唯一存活的强 mech 证据是 Reversal Curse 类的方向不对称、Ω(H) 信息论下界，以及 no-CoT setting 下的 TC⁰ depth 上界。
