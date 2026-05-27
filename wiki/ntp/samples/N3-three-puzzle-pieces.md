@@ -64,4 +64,31 @@ Lukas Berglund 等人 2023 年 9 月那篇 [*The Reversal Curse*](https://arxiv.
 
 我的判断：Reversal Curse 是三块碎片里**最干净的一块**，因为它的合成实验设计排除了所有解释空间，只剩 NTP 损失方向性这一个根因可归。Faith-and-Fate 还能被归结为 "capacity 不够"，Unfaithful CoT 还能被归结为 "training data 里事后解释占多数"——这两条都还留着辩论余地。但 Reversal Curse 的合成 setup 让 capacity / data-distribution / architecture 三个常见挡箭牌全部失效：模型有足够 capacity 去记忆正向 fact（100% 召回是证据），训练分布在你眼皮底下被构造出来（不存在污染辩护），架构和你日常用的 LLaMA 是同一份。剩下的唯一变量就是 **loss 只看一个方向**。这一点让 §5 在结构上扮演了 §3、§4 的对照实验——它是把 NTP 几何的方向性单独隔离出来的最干净证据，也是下一节把三块碎片拼回一张图时最稳的支点。
 
-> §6 三合一：NTP loss 几何的统一解释（TODO，待续写）
+## 六、三合一：把三块碎片拼回 NTP loss 的几何
+
+前面五节，每一节都给出一个被独立观测、独立命名、独立辩论的现象。这一节要做的事很简单：把它们放在同一张坐标纸上，看看是不是真的同一张图。
+
+先把三件事归约成同一种语法。NTP 的训练目标是 $\mathcal{L} = -\mathbb{E}_{x \sim D}\sum_{t} \log p_\theta(x_t \mid x_{<t})$。这个损失有三条**结构性性质**，与三块碎片一一对应：
+
+1. **逐 token 局部性**——梯度只关心位置 $t$ 处的边际，不关心 $x_t$ 与远处 $x_{t+k}$ 在某条隐式计算图上的组合关系。$\Rightarrow$ Dziri 的 depth 曲线：当任务被压成一个长度为 $k$ 的依赖链时，loss 没有任何项把这条链当作一个整体来优化，所以一旦 $k$ 超过模型在一次 forward 里能并行解开的深度，accuracy 就指数衰减。CoT 把 $k$ 转成 token 数把这个深度部分外化，但**外化的代价仍然是 token 预算**——Feng 的 P/poly 定理（[arxiv:2305.15408](https://arxiv.org/abs/2305.15408)）正是这件事的形式化。
+2. **过程-结果同构惩罚**——loss 对 \"$x_t$ 是真实计算路径上的下一步\" 和 \"$x_t$ 是事后合理化中的下一步\" 给出**完全相同**的惩罚，只要边际分布对就行。$\Rightarrow$ Turpin 与 Lanham 的 unfaithful CoT：模型在 forward pass 内部把答案算出来再 unroll 一段 plausible 的解释，与真正先写 scratchpad 再得答案，在 NTP loss 上无法区分。Anthropic 2025 年 3 月的 [*Biology of an LLM*](https://transformer-circuits.pub/2025/attribution-graphs/biology.html) 在 Claude 3.5 Haiku 里把这条 \"answer-first, explanation-after\" 的回路直接画了出来——它不是 bug，它是 loss 不施压的自然吸引子。
+3. **方向单向性**——梯度沿 $x_{<t} \to x_t$ 这一个方向传播，关系 $(A, B)$ 在训练流里以 $A \to B$ 出现，被学到的就只是 $P(B \mid A\text{-prefix})$，$P(A \mid B\text{-prefix})$ 这条**对偶条件分布从未进入 loss**。$\Rightarrow$ Berglund 的 Reversal Curse，Allen-Zhu *Physics of LM* Part 3.2（[arxiv:2404.05405](https://arxiv.org/abs/2404.05405)）的合成复现，Scaling Monosemanticity 在 Claude 3 Sonnet 里找到的方向性 feature。Reversal 是三条性质里最干净的一条，因为它只调用了第三条，其他变量全部被合成 setup 锁死。
+
+把这三条并列写下来后，可以看出一件容易被忽略的事：**三个现象是 NTP loss 三条独立性质各自的最干净显现**，并不是同一条根因的三种表象。它们是同一损失函数的**三种正交切面**。Reversal 不能解释 Faith-and-Fate（前者关于方向，后者关于深度），Faith-and-Fate 不能解释 Unfaithful CoT（前者是模型算不出来，后者是模型算出来了但不告诉你怎么算的）。把它们说成 \"同一根因\" 是一种叙事上的偷懒；准确的说法是 \"同一损失函数的三条不同性质各自的暴露窗口\"。这种区分在工程上很重要——因为缓解手段是**不可互换**的。
+
+让我把缓解路径也并表对齐一次：
+
+| 现象 | 对应 loss 性质 | 当前已知缓解 | 缓解付出的真实代价 |
+|---|---|---|---|
+| Faith-and-Fate depth 衰减 | 逐 token 局部性 | long-CoT RL（o1 / R1，[arxiv:2501.12948](https://arxiv.org/abs/2501.12948)）、PRM | 推理 token 预算 10–100× 增长，deploy 成本线性 |
+| Unfaithful CoT | 过程-结果同构惩罚 | process supervision、CoT-faithfulness reward、Anthropic 的 attribution graph 监督 | 需要专门的中间监督信号，标注昂贵 |
+| Reversal Curse | 方向单向性 | reverse-order pretraining、bidirectional objective（UL2 [arxiv:2205.05131]）、RAG | reverse-order 在 100B+ 规模的 scaling 证据缺失；RAG 把问题外推到检索系统 |
+
+三种缓解都**没有改 NTP loss 本身**——它们或者在 inference 时加 token（CoT/RAG），或者在 training 时加额外监督信号（PRM、faithfulness reward），或者在数据上做对称化扩增（reverse-order）。这说明三块碎片揭示的不是某个可以被算法 patch 掉的小毛病，而是 NTP 这个**目标函数族**的结构边界。要真正越过去，需要的不是更长的 CoT 也不是更大的模型，而是一个**不同形态的 loss**——比如 joint-distribution 目标（diffusion-LM 一类）、bidirectional objective、或者带显式 latent computation graph 的 variational 目标。这些方向在 2024–2025 都有零星工作，但都还没有在 scaling 上跑出能与 decoder-only NTP 正面对抗的曲线。
+
+反例必须再摆一次，因为本节的论点已经强到需要被攻击。最有力的反对意见是 Sutton 式的：\"这三条性质都已被 token / 算力 / RL 部分缓解，按 bitter lesson 的历史归纳，剩下的也会被缓解，所谓 NTP 几何边界只是当前工程曲线上的拐点，不是绝对墙。\" 这个反对我接受一半——三种缓解确实都在推进，o1/R1 把 depth 推到了 Dziri 当年曲线之外，Yanda Chen 2025 年初的复测（[arxiv:2503.08679](https://arxiv.org/abs/2503.08679)）显示 long-CoT RL 时代 faithfulness 在抬头，reverse-order pretraining 在 7B 规模已能压住 Reversal Curse。所以 \"墙\" 这个词在物理意义上是错的。但**经济意义**上的墙仍在：三种缓解都把推理或训练成本提高了 $10\\times$ 以上数量级，而 NTP 在原始形态下的算力效率仍未被任何替代 loss 在 100B+ 规模上超越。在 \"算力价格不再每 18 个月减半\" 成立之前，这种经济墙就是真实约束。
+
+我的总结判断分三层。第一层（最不诱惑、最稳）：三块碎片是 NTP loss 三条独立结构性质的最干净暴露，把它们说成 \"同一现象\" 是叙事偷懒。第二层（中等强度）：三条性质的缓解手段不可互换，且都**不改 loss 本身**——这意味着 NTP 不是 \"reasoning 没做好\"，而是 \"reasoning 的某些维度根本不在 loss 的优化目标里\"。第三层（最强、最容易错）：如果未来 5 年我们没看到一个能在 100B+ scaling 上正面挑战 decoder-only NTP 的替代 loss 出现，那么这三条性质就会**继续**以越来越精细的形态在前沿模型上复现——只是被更厚的 CoT、更多的 PRM、更长的 context 临时遮住。Reversal Curse 这种最赤裸的版本可能消失，但它的同构变体会在 multi-hop QA、长程因果推断、跨文档事实融合上反复出现。这是我愿意打的一个赌；2027 年回来对账。
+
+下一篇 N4 会把视角从 \"loss 的局部性质\" 抬到 \"loss 在 Pearl 因果阶梯上的位置\"——Reversal Curse 是 Layer 1 内部的对偶失败，更难的问题在 Layer 2/3 上，而那里 NTP 暴露的不是单条性质，而是整个层级被压扁。
+
