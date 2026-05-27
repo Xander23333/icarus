@@ -286,6 +286,16 @@
       ],
       "chars_added": 5200,
       "note": "Task C: refined taxonomy.md from 33-line stub into a grading framework (~+5.2k chars): (1) 4-prong NTP-cap to NTP-mech upgrade criteria (lemma-style formal statement / non-trivial map to known complexity-info-algebra object / protocol-level falsification in <=1k GPU-h / explicit排除 five engineering confounds); (2) 3-trigger downgrade rule (A confound dissolved, B knob opened, C implicit-default exposed); (3) rolling升降级 log with 8 historical events cross-citing Garcia 2605.10799, Anti-Collapse 2605.05438, Conditional-Attribute 2605.14004, Causal Tongue-Tie 2605.25891, ProFIL 2605.11467, Ruoss 2305.16843 / McLeish 2405.17399 PE openings, plus C1/C4 conditional NTP-mech 升格; (4) current candidate snapshot table (C1 Det-Horizon / C2 hallucination-SNR / C3 Omega(H) / C4 VLA budget / Reversal Curse) cross-linked to topic pages with per-row falsification; (5) explicit '改三处同步' rule (topic + ntp_survey.md sec10 + this page). Judgment: 升级事件稀疏 (3y 只 C1/C4 真正达成 conditional NTP-mech)，降级密集 -> 默认假设新候选会被下一 confound 降级。Rotates away from all 6 recent samples and all 8 topic pages."
+    },
+    {
+      "tick_utc": "2026-05-27T09:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N5-embodiment-and-vla-bet.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3200,
+      "note": "Continued N5 sample chapter §3 'Pi0 与 Physical Intelligence：把数据墙画在 PPT 上的那一年' (~3.2k chars): Levine/Finn/Hausman 2024-03 founding of PI as capital-doubled VLA bet; π0 2410.24164 三项范式增量 (PaliGemma+flow-matching action expert, 10k hours mixed-morphology, 5-10min long-horizon contact-rich demos); 数据墙量化 with DROID 2403.12945 anchor and Finn RSS 2024-12 'thousandth of internet' quote [uncertain]; π0.5 异质数据妥协意味着 VLA 阵营自己承认 robot-only D 不够; Octo 2405.12213 zero-shot <30% / fine-tune 60-80% star-marked cross-embodiment; judgment: 强命题 §2 已被证伪 / 弱命题 §3 被 PI 路线图自我证实 / 2027-28 π0 部署曲线决定 NTP 是否吞下身体; rotates away from N2/N4/N6 samples and all recent topic pages (taxonomy/online_learning/formal_limits)."
     }
   ]
 }
