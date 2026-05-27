@@ -573,6 +573,16 @@
       ],
       "chars_added": 2400,
       "note": "Wrote N3 尾声 '三条 2027 对账线，与一段方法论上的自我攻击' (~2.4k chars). Three falsifiable bets one per §3/§4/§5 puzzle piece: (赌1) Dziri depth>=6 >=70% no-RAG-no-verifier <=4k CoT by 2027-12 + PutnamBench 2407.11214 cross-check would downgrade local-token-locality reading; (赌2) Yanda Chen 2503.08679 + ProFIL 2605.11467 [unverified ID] cross-extrapolate to faithfulness>70% AND attribution-graph no answer-first dominance => §4 strong form downgrades to NTP-cap (consistent with taxonomy.md 2026-05-28 log); (赌3) Berglund original setup forward>=95%/reverse<20% expected to hold through 2027-12 for any vanilla decoder-only NTP, Allen-Zhu reverse-order trick not a counter-example since it changes training distribution. Closing methodological self-attack: chapter's three-properties x three-phenomena pairing has post-hoc selection bias risk; argument strength capped at 'unified loss-geometry view of observed pieces' not 'NTP must exhibit these'; promotion to 'predictive framework' requires N4 §3 CLadder 2312.04350 Layer-2/3 cross-check predicting failure modes from locality+directionality merger. Rotation: N3 last touched 2026-05-27T10:00Z (~14h ago); last tick was ntp_survey.md so rotation guard intact. Picked Task A continuation over Task B because all 8 topic pages touched within last 4-13h while N3 was longest-untouched sample with explicit no-尾声 TODO."
+    },
+    {
+      "tick_utc": "2026-05-27T16:32:42Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N7-why-llm-cannot-continually-learn.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4200,
+      "note": "Wrote N7 §5 三条仍然站着的反例 (TTT-Linear 2407.04620 / MEMIT 2210.07229 + ROME 2202.05262 + Hase 2301.04213 + Cohen ripple 2307.12976 + MQuAKE 2305.14795 / Agent memory MemGPT 2310.08560 + Letta/Mem0/Zep) ~4.2k chars. Thesis: 三条反例攻击的是 C-CONT-1 弱化命题之外的更窄祖先稻草人 — TTT 更新 hidden-state MLP 不是 backbone 权重且 session 重置; MEMIT 改字面 token 但 ripple 在 2-hop 崩 (Cohen/MQuAKE); agent memory 是冻结 LLM + 外存 (Karpathy 2024-11 [uncertain ID]); 三条分别在 (a)/(c)/(a) 让步, 无一同时守住 backbone-update + streaming-no-replay + 不丢旧知识三条件. 反例存在反而是 C-CONT-1 间接证据 — 若几何可解 frontier lab 不会集体绕开权重去外存. Closed §5 TODO marker, 留 §6 for 2027 bet + Sutton bitter-lesson rebuttal. Rotation: N7 last touched 2026-05-27T16:00Z (~8h+ ago); last 3 ticks were C survey / A N5 / B online_learning — no back-to-back violation. Picked A over B because N7 had explicit TODO §5 marker and was longest-untouched sample with pending structured sections."
     }
   ]
 }
