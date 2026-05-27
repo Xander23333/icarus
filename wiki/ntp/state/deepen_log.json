@@ -257,6 +257,16 @@
       ],
       "chars_added": 4500,
       "note": "Deepened online_learning topic: added '时间天花板的工业测量 (2021–2026)' 6-entry chronology (Lazaridou Mind-the-Gap 2102.01951, Chen TimeQA 2108.06314, Kasai RealTime QA 2207.13332, Dhingra TempLAMA, Vu FreshLLMs 2310.03214, Cheng Dated-Data 2403.12958 [unverified], 2024-25 temporal hallucination audits); judgment that C-CONT-1 holds and now extends pre-cutoff by 6-12mo (Δ before nominal cutoff already sparse); introduced new C-CONT-3 (tail-end pretraining sparsity) with falsification + explicit distinction from scaling_limits C-SCALE-3 plasticity cliff; strengthened C-CONT-1 with current-state line citing FreshQA/RealTimeQA 3-year non-falsification. Rotates away from N6/N3 samples and recent topic pages."
+    },
+    {
+      "tick_utc": "2026-05-27T08:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N4-pearl-ladder-and-llm-ceiling.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5250,
+      "note": "Continued N4 sample chapter §4 'Lampinen 的旁观者实验：第二层能不能蹭到' (~5.2k chars): Andrew Lampinen 2305.16183 passive-learning-of-active-causal-strategies setup with light+switch+confounder envs, two-sided result (intervention-marker present → 70-80% Layer-2 / marker removed → random), Richens-Everitt 2402.10877 robust-agents-learn-causal-world-models theoretical anchor with its 'all distribution shifts' caveat, judgment that Pearl 第二层 is a '语料墙' not absolute wall + agentic post-training implication bridging to §6; honest counter on synthetic-vs-naturalistic environment two-bind and leak-check impossibility for RCT papers in frontier training sets; updated samples/README §1–§3 → §1–§4; rotates away from online_learning topic and N6/N3."
     }
   ]
 }

@@ -50,7 +50,24 @@ GPT-4 在 CLadder 上的结果是这一章最值得记住的一组数字：Layer
 
 我自己读完这条线的判断是：CLadder 不是终结性证据，但它是目前**唯一一个把 Pearl 三层楼变成可比数字、且严格控制 leak** 的公开 benchmark。如果你想反驳\"LLM 撞在第二层天花板\"这个论点，最低门槛是先在一个比 CLadder 更难、且 leak-check 同样严格的数据集上把 Layer-3 显著推过 50%。到 2026 年 5 月为止，我没有看到任何一篇公开论文跨过这道门槛。这件事本身比任何具体数字都重要——它说明，过去三年里**针对 Pearl 第三层的真正进步几乎为零**，所有看似进步的报告都可以被 leak / 表面 pattern 这两个原因之一解释掉。
 
-<!-- TODO §4 Lampinen 2305.16183：被动观测一个会 intervention 的 demonstrator，能继承多少第二层能力 -->
+## 四、Lampinen 的旁观者实验：第二层能不能"蹭"到？
+
+CLadder 把 Pearl 第三层钉死之后，剩下一个更尖锐的问题：第二层呢？如果 LLM 自己不能做 do-operation，那它**观摩**别人做 do-operation 的语料够不够多，多到能在统计意义上继承一些第二层能力？这个问题听上去像在钻空子，其实是 Pearl 整套 do-calculus 里被讨论最少、却对 LLM 路线最关键的一个角落——因为人类小孩学因果的过程，绝大部分时间也是"看着大人做实验"，而不是亲自跑 RCT。
+
+正面攻这个问题的是 Andrew Lampinen。他 2017 年 Stanford 心理学博士毕业，之后去 DeepMind 做 cognitive science of LLMs，长期关注一件事：人在哪些任务上做的"推理"是真推理、哪些只是 affordance pattern 的复用。2023 年 5 月他和 Stephanie Chan、Ishita Dasgupta、Andrew Saxe、Felix Hill 一起放出 *Passive Learning of Active Causal Strategies in Agents and Language Models* ([arxiv:2305.16183](https://arxiv.org/abs/2305.16183))，标题就把命题说得很清楚：被动学习能不能拿到主动因果策略？
+
+实验框架是这样的：构造一个含混杂因子的小环境（典型设定是若干 light + switch 的因果图，外加一个 confounder 会同时影响 switch 选择与 light 状态），然后给 agent / LLM 看一段 **expert demonstration**——专家本人是会 intervention 的，比如会显式地"先固定 confounder 再切换 switch"。被动学习者本身**从不被允许动手**，只能读 demonstration trace。测试阶段问的是 Layer-2 问题："如果**你**现在把 switch X 设成 on，light Y 会亮吗？"
+
+Lampinen 的结果有两半，必须一起读才不会被单独引用断章。第一半是**正面**的：当 demonstration 里**显式包含 intervention 标记**（比如自然语言里出现 "I will now set X to on regardless of what it was"），LLM（论文里测的是 Chinchilla 量级与 Flan-PaLM）能在被动训练后，在 held-out 因果图上把 Layer-2 准确率从随机基线推到 70–80%。换句话说，**只要语料里有"我在做 do-operation"这种元标记**，模型能学到一些把 observation 与 intervention 区分对待的策略。这是 Pearl 第二层墙第一次被一个 NTP-only 模型在 controlled setting 下从外侧蹭过去。
+
+第二半是**反面**的，也是被引用得少得多的那一半：一旦把 demonstration 里的 intervention 元标记去掉，只留下"专家选了 X、然后看到 Y"这种纯 observational trace，被动学习者的 Layer-2 准确率立刻塌回随机。也就是说，模型继承的不是 do-operator 这个抽象**操作**，而是"intervention"这个**词**所标记的条件分布偏移。这条结论非常 Pearl——它正好对应 do-calculus rule 2（observation = intervention 的充分条件是 backdoor criterion 满足），LLM 学到的只是"看见 intervention 这个词，就切换到另一组 conditional"，而不是去检查 backdoor。
+
+这一篇出来之后，2024 年 Richens & Everitt（DeepMind / Causal Incentives）在 *Robust Agents Learn Causal World Models* ([arxiv:2402.10877](https://arxiv.org/abs/2402.10877)) 把这条线推到一个相反方向的极限：他们证明任何在分布漂移下保持 regret 上界的 agent，**必须**在内部隐式表征一个近似的因果世界模型。换句话说，只要训练 setup 里有足够多样的"分布漂移"，被动学习的压力本身会逼出一个第二层近似——这给 Lampinen 的正面结果提供了一个理论锚点。但 Richens-Everitt 的定理要求 "robust to all distribution shifts"，frontier LLM 训练显然达不到这个条件；这道定理给的是**可能性**，不是**实然**。
+
+把这一段拼起来，得到一个比 §3 更精细的判断：**Pearl 第二层不是一堵"绝对墙"，它是一堵"语料墙"。** 只要训练语料里**显式标记**了 intervention（医学 RCT 报告、A/B test writeup、"假设我们做以下手术"式的科普），被动 NTP 能继承到一部分第二层能力——CLadder Layer-2 准确率最高能推到 65–70%，与 Lampinen 实验一致。但**自动从纯观测数据里发现 do-operator 这个抽象**，目前没有证据。这个区分对 NTP 路线判断有直接后果：如果第二层主要靠"语料里有没有 intervention 标记"决定，那 agentic post-training（让模型自己产生带有 intervention 标记的轨迹）就是补这一层最便宜的办法，而**不必动 NTP loss 本身**。这条线就接到 §6 要讲的 o-series / R1-Zero / computer-use 轨迹回流。
+
+反例与诚实判断：Lampinen 2023 的 environment 是程序化的（典型 4–6 节点因果图），跟 CLadder 一样有"合成—自然"的两难。被动学习从医学教科书里继承第二层的真实 effect size，到 2026 年 5 月仍然没有干净的数字，因为没人能对 frontier LLM 的训练集做严格 RCT-paper leak-check。我个人的判断：Lampinen 给的是一个**存在性证明**（被动 NTP 可以继承第二层），不是**充分性证明**（被动 NTP 足以达到任意第二层能力）。前者打破了 Pearl 强命题"第一层永远进不了第二层"，后者仍未被反驳。这是 §3 CLadder 数字与 §5、§6 要讨论的内部机制之间的关键桥梁。
+
 <!-- TODO §5 Geiger interchange intervention：能否在 LLM 内部"找到"do-operator circuit -->
 <!-- TODO §6 agentic post-training (o-series / R1-Zero / computer-use 轨迹回流) 是不是把第二层"补"进训练分布 -->
 <!-- TODO §7 尾声：Pearl 的墙到底是架构墙还是数据墙；以及为什么这个区分对 NTP 路线判断至关重要 -->
