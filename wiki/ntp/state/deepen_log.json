@@ -583,6 +583,17 @@
       ],
       "chars_added": 4200,
       "note": "Wrote N7 §5 三条仍然站着的反例 (TTT-Linear 2407.04620 / MEMIT 2210.07229 + ROME 2202.05262 + Hase 2301.04213 + Cohen ripple 2307.12976 + MQuAKE 2305.14795 / Agent memory MemGPT 2310.08560 + Letta/Mem0/Zep) ~4.2k chars. Thesis: 三条反例攻击的是 C-CONT-1 弱化命题之外的更窄祖先稻草人 — TTT 更新 hidden-state MLP 不是 backbone 权重且 session 重置; MEMIT 改字面 token 但 ripple 在 2-hop 崩 (Cohen/MQuAKE); agent memory 是冻结 LLM + 外存 (Karpathy 2024-11 [uncertain ID]); 三条分别在 (a)/(c)/(a) 让步, 无一同时守住 backbone-update + streaming-no-replay + 不丢旧知识三条件. 反例存在反而是 C-CONT-1 间接证据 — 若几何可解 frontier lab 不会集体绕开权重去外存. Closed §5 TODO marker, 留 §6 for 2027 bet + Sutton bitter-lesson rebuttal. Rotation: N7 last touched 2026-05-27T16:00Z (~8h+ ago); last 3 ticks were C survey / A N5 / B online_learning — no back-to-back violation. Picked A over B because N7 had explicit TODO §5 marker and was longest-untouched sample with pending structured sections."
+    },
+    {
+      "tick_utc": "2026-05-27T17:06:50Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/taxonomy.md",
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/topics/online_learning.md"
+      ],
+      "chars_added": 7200,
+      "note": "Registered C5 (NTP continual-learning streaming-setting Conditional NTP-mech 候选) across taxonomy + ntp_survey §10 + online_learning, satisfying taxonomy.md 三处不同步 rule. taxonomy: added C5 row to candidate snapshot, +升降级日志 row (2026-05-28), and new 升降级判例 走 4 升级条件 worked example (≈3.5k chars) showing C5 = ✅✅✅❌ — (iv)(v) confound 未排除. ntp_survey §10: full C5 entry (候选理由 + 最强反论 + 当前结论 + falsification protocol 1B OLMo/Pythia 24h streaming + RealTime-QA probe). online_learning: added 2026-05-28 注 pointer above C-CONT-1 列表，使三页同步. Synthesizes N7 §3–§5 (Lazaridou 2102.01951 + Kirkpatrick 1612.00796 + Lyle 2303.01486 + Dohare 2024 Nature + Ibrahim 2403.08763) + 2026-05 readout-confound cluster (NITP 2605.24956, Conditional Attribute Transformers 2605.14004) as outstanding confounds. Rotation: taxonomy.md last touched 2026-05-27T09:00Z (~16h ago, oldest among substantive files); ntp_survey last touched 23:30Z prev day; online_learning last touched 21:30Z prev day. None back-to-back with previous tick (A on N7 at 16:32Z). Picked Task C because (1) gap between N7 sample-side mech argument and taxonomy snapshot was the single most visible inconsistency, (2) taxonomy own rule mandates 3-page sync on any升降级—done in one tick, (3) provides the missing worked example readers can use to instantiate the otherwise abstract 升降级 rubric."
     }
   ]
 }

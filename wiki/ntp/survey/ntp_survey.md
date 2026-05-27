@@ -130,6 +130,11 @@
 - (b) 最强反论：adversarial channel capacity 在 white-box 下可放任意大；encoder-specific 假设"扰动局限在 encoder 子空间"对 white-box 攻击者并不必然成立。
 - (c) 当前结论：**Conditional NTP-mech 候选 (VLA 子带, discrete-action)**。不可直接升格为通用 NTP-mech。
 
+### C5. NTP-loss continual-learning 不动点 (2026-05-28 新增, streaming 子带)
+- (a) 候选理由：N7 §3–§5 综合论证。Lazaridou 2102.01951 给出每年关于新实体/事件的 perplexity 单调上升曲线；Kirkpatrick EWC 2017 (1612.00796) 在 LLM 规模上退化（70B 对角 Fisher = 280 GB；LR-decay 几何冲突）；Lyle 2303.01486 与 Dohare 2024 *Nature* (continual-backprop) 给 plasticity loss 的对偶视角；Ibrahim 2403.08763 把工程上限做到 \"retrain ±1%，FLOPs 1/10\"，但仍要求 batch=几千万 token / replay ≥ 5%——把 \"continual\" 在时间/空间上离散化。三条证据合并成弱化命题：**在 batch=1, replay=0, vanilla CE backbone update 的 streaming setting 下，旧域 KL 退化是 NTP-loss + dense transformer + CE 的联合不动点**。
+- (b) 最强反论：(i) Ibrahim 2403.08763 把同一几何下的工程边界推到非常宽，弱化 \"几何不可绕开\" 的强读法；(ii) NITP (2605.24956) 在 9B MoE 上证明加一项浅层激活 self-target 可在不改架构下推 MMLU-Pro +5.7%，提示 \"NTP 几何欠约束\" 可能在 streaming 通道下提供未测的 plasticity 恢复机制——该 confound 尚未排除；(iii) Agent memory / RAG 路线已被工业界默认采纳，三条 N7 §5 反例 (TTT-Linear / MEMIT / MemGPT) 各自在 backbone-update / streaming / 不丢旧 三条件之一让步，但合起来说明 frontier lab 集体绕开权重端学习——这是 C5 间接支持证据而非反例。
+- (c) 当前结论：**Conditional NTP-mech 候选 (streaming 子带)**。升降级判例已写入 [taxonomy.md §升降级判例](taxonomy.md) — 四升级条件目前 ✅✅✅❌，差 confound (iv) attribute-head 与 (v) representation-geometry 在 streaming setting 下的复现。可证伪 protocol：1B OLMo/Pythia base + 24h 单 GPU streaming + RealTime-QA-style 旧域 probe，漂移 ≤2pp/day 即降级。
+
 ---
 *Last revision: 2026-05-26 — populated by daily pipeline from formal_limits + scaling_limits + reasoning topics.*
 *See git log of this file.*
