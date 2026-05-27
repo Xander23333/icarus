@@ -698,6 +698,15 @@
       ],
       "chars_added": 3800,
       "note": "Task B: scaling_limits.md 新增 §Data-quality scaling 第六轴 (~3.8k chars) — 把 (N,D,C_train,C_inference,bits/param) 之后第六根轴 (单位 token 教学价值/数据质量乘子) 钉成 C-SCALE-6 候选条目. 7 篇时间线论文 (Phi-1 2306.11644 + phi-1.5 2309.05463 + phi-3 2404.14219 + DoReMi 2305.10429 + Rephrase the Web 2401.16380 + FineWeb-Edu 2406.17557 + Model Collapse 2305.17493 Nature 版 + RegMix 2407.01492[unverified ID]) + Joint-KL 2605.12316 KL-radius 常数项 信息论挂钩. C-SCALE-6 写成闭区间(下界=raw web,上界=Shumailov tau model collapse)而非半直线,falsification 显式锁两条 (decontaminated benchmark 同 D_eff 仍劣 / phi gain 全部 contamination 解释). 三反例: decontamination 软肋 + specialization 收窄 (phi-3 broad knowledge 落后 Llama-3-8B) + collapse tau 一次性 vs 多代递归二分. 与 C-SCALE-3 plasticity cliff 张力点显式 open ([unknown] 因为 Liu 2503.19206 未 vary data quality). Rotation: scaling_limits 上次触碰 2026-05-27T20:32 (~10h 前 = 最近 8 个 topic files 中第二老), 最近 5 ticks 全部为 A/C (N5 sample + taxonomy C6 + embodiment/causality/reasoning/formal_limits/grounding B) -- scaling_limits 跨过 rotation guard. 所有 arxiv ID 公开可查, [unverified ID] / [unknown] 全部标注, 未编造数字日期."
+    },
+    {
+      "tick_utc": "2026-05-28T07:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/online_learning.md"
+      ],
+      "chars_added": 4600,
+      "note": "Task B: online_learning.md 新增 §Knowledge edit ripple-effect 暗线 (~4.6k chars), 7 篇时间线 ROME 2202.05262 → MEMIT 2210.07229 → MQuAKE 2305.14795 → RippleEdits 2307.12976 → SpecEdit 2305.17553 → Gekhman 2405.05904 → ripple-aware editor wave (MELO/PMET/AlphaEdit [unverified IDs]) + Yao 2305.13172 survey + Hase localization-vs-editing 争论. 三年曲线压成判决: ROME/MEMIT 反例只击中单跳召回弱命题, 多跳/ripple/locality 联合 eval 反过来加固 C-CONT-2 plasticity-stability tradeoff. 提出候选 C-CONT-4 (Ripple closure failure): 任何 frozen-weight 局部 edit 方法在 (MQuAKE 3-hop + RippleEdits composition + SpecEdit locality) 三联指标下无法同时达成 (80/90/60), falsification = 公开复现达三阈值. 显式标注 C-CONT-4 当前定位为 C-CONT-2 corollary 而非 independent mech, 12 个月观察期决定升降级. cross-link N3 reversal curse + N4 §6 mech-interp 因果链脆弱性. 反例对待: 显式承认 ROME/MEMIT 在单跳上确实证伪强 mech 命题. Rotation: online_learning.md 上次内容触碰 2026-05-27T17:06 (~14h 前, 当时只挂 C5 元数据指针未加新内容), 最近 5 ticks 全部为 B scaling_limits / A N5 / C taxonomy / B embodiment / B causality -- online_learning 跨过 rotation guard. Picked B over A 因 N1-N8 八章过去 24h 全部推进过, 而 online_learning 自 C5 登记以来 ripple-effect 这条文档内 §共识(弱) 提到却始终未展开的暗线是当前 topic 页最大的内部 inconsistency. 所有 arxiv ID 公开可查, [unverified IDs] 标在多篇 ripple-aware editor 一波, 未编造数字/日期/标题."
     }
   ]
 }
