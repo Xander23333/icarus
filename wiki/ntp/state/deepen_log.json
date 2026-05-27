@@ -431,6 +431,16 @@
       ],
       "chars_added": 4400,
       "note": "Continued N5 sample §4 'JEPA 阵营的真实战绩——以及 LeCun 自己悄悄迁移的两步' (~4.4k chars): three-step JEPA chronology I-JEPA 2301.08243 → V-JEPA 2404.08471 → V-JEPA 2 2506.09985 [unverified] with explicit publication-asymmetry framing (JEPA ships linear-probe/k-NN, VLA ships end-to-end success rate); LeCun's two retreats (V-JEPA 2 MPC decode contradicting anti-generative position, Meta Chameleon 2405.09818 unified-tokenization vs Movie Gen 2410.13720 latent-diffusion both internal to FAIR); honest counter-evidence Garrido 2403.00504 latent-prediction OOD robustness as JEPA's only solid weak-claim win (against pixel-NTP Sora line not against VLA); 2026-05 odds judgment 6:4 toward VLA with explicit 2027-28 V-JEPA-2 planning-sample-efficiency falsification clause; bridges to N6 §JEPA-vs-Sora distinction. Updated README N5 §1–§3→§1–§4 4500→5500字. Rotation: N7 was last tick; N2/N4/N6/N8 all touched within last 4-6h; topic pages (formal_limits/world_model/scaling_limits/reasoning/embodiment/causality/grounding/online_learning) all touched within last 5-12h; N5 last touched at 09:30 tick (7h ago, well outside back-to-back guard) and was the sample with the cleanest TODO-marked next-section that wasn't a recently-touched file."
+    },
+    {
+      "tick_utc": "2026-05-27T17:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N4-pearl-ladder-and-llm-ceiling.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "Continued N4 sample §5 'Geiger interchange intervention：能不能在 LLM 内部找到 do-operator' (~5.4k chars): Geiger 2020 interchange intervention 2004.14623 → 2021 IIT 2112.00826 → 2023 DAS 2303.02536 → 2024 ICML causal-abstraction theory 2301.04709, framed as Pearl intervention 概念搬进 transformer 残差流的四年线; explicit three-step program for testing whether LLM internally represents do-operator (Lampinen-style env + DAS subspace alignment + distribution-shift check); honest gap-naming: Wu 2305.08809 推 DAS 到 7B Alpaca 但 target node 都是 Layer-1/2 简单代数, 公开论文里没人把 do-operator 设为 SCM target 跑 DAS; rooted in Lampinen-Geiger 工程鸡生蛋 (要内部 circuit 探针需要先有外部行为 baseline); counter-evidence Makelov-Lange-Nanda 2311.17030 illusion-of-alignment 攻击 + Geiger 2024 回应 2403.13952 [unverified ID]; closes by merging §3 CLadder 外部行为 + §4 Lampinen 训练分布消融 + §5 Geiger 内部 circuit 探针 三层证据校准框架, 判断三个条件目前前两个各自有部分证据第三个完全没有公开报告. README N4 §1–§4 → §1–§5. Rotation: N4 last touched 2026-05-27T02:30Z (~14.5h ago, longest-untouched sample); last 5 ticks were N5/N7/formal_limits/world_model/N6 — N4 well outside back-to-back guard; chose Task A over topic-page (all 8 topics touched within 5-12h)."
     }
   ]
 }
