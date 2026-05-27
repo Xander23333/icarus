@@ -77,6 +77,24 @@ NTP-cap 阵营的回击是：(a) 把动作 token 化（RT-2、OpenVLA），close
 
 最容易被忽视的是评测协议层面的退却：所有 2024–2026 的 VLA 论文都默认 in-distribution 桌面环境，**没有一个 benchmark 在 horizon、contact、novel object、light shift 四轴同时给出 sweep**。所以「VLA scaling law」作为 LLM scaling law 的 robot 对应物，到 2026-05 为止仍是工程信念而非实证结论——这和 [scaling_limits](scaling_limits.md) §「流形扩张」里讲的 (N, D, C, precision, horizon) 多轴现象同源：embodiment 维度上至少要 (N, D, C, morphology, horizon, contact-mode) 六轴才能定义一条像样的 scaling 曲线。
 
+## 评测协议的退却线 (2022–2026)
+
+上面的 mech / cap 辩论之所以一直没有收敛，一个被反复掩盖的原因是：**支撑这场辩论的 benchmark 本身在系统性退却**。把 VLA / embodied 评测协议这条暗线按时间排开，可以看出每次 \"VLA 又解决了一类任务\" 的叙事更新，对应的几乎都是评测难度的悄悄下调，而不是 capability 的边界外推。
+
+- **2022-09 — CALVIN (Mees et al., [arxiv:2112.03227](https://arxiv.org/abs/2112.03227))**。Freiburg 组提出的 long-horizon language-conditioned manipulation benchmark，34 任务、4 环境、24 小时演示数据。CALVIN 的设计初衷是 \"语言-action 长程组合\" 的硬指标——D→D in-distribution 任务链长可达 5 步，A→B / A→D 环境切换则是 OOD 测试。但 2023-2024 业界主流 VLA 报告几乎只汇报 D→D 平均长度，A→D 数字普遍被淡化。这是 VLA 评测**第一次悄悄缩水**。
+- **2023-06 — LIBERO (Liu et al., [arxiv:2306.03310](https://arxiv.org/abs/2306.03310))**。UT-Austin 的 Yifeng Zhu 等人提出 lifelong-learning manipulation benchmark，130 任务分 4 个 suite (LIBERO-Spatial / Object / Goal / Long)。LIBERO-Long 设计 10 步序列、最长 horizon ~500 步，本应是 C-EMBOD-1 compounding error 的直接 testbed。但 2024 年大部分 OpenVLA-class 论文只跑 LIBERO-Spatial / Object 这两个最短的 suite，并把 4-suite 平均 success rate 当主指标——LIBERO-Long 的单独数字被埋在附录或干脆不报。
+- **2024-05 — SimplerEnv (Li et al., [arxiv:2405.10310](https://arxiv.org/abs/2405.10310))**。Berkeley / Stanford 联合提出的 \"sim-to-real 一致性\" 评测：在仿真环境里复现 Bridge / Fractal 真机分布，让真机 success rate 与仿真 success rate 的 Spearman 相关性成为评测核心。这本来是个好工具——它第一次让 \"VLA 性能\" 与 \"仿真分布与真机分布的距离\" 可以分开测量。但 SimplerEnv 上线一年内，论文里 SimplerEnv 数字普遍**比同模型 LIBERO 数字低 20-40pp**，且作者自己承认 visual-matching / variant-aggregation 设置下评测对 lighting / texture 的微小扰动极其敏感。这暴露的不是 SimplerEnv 不准，是**之前 LIBERO 上的高分本身被环境 reproducibility 掩盖**。
+- **2024-2025 — RoboArena / RoboCasa / MimicGen 等\"任务工厂\"线**。承认现有 benchmark 不够，于是改为 procedural 生成大量任务。RoboCasa (Nasiriany et al., [arxiv:2406.02523](https://arxiv.org/abs/2406.02523)) 在 AI2-THOR + MuJoCo 里生成 100 厨房 × 100 任务的 10k 配对，给 VLA 留下 \"训练分布刚好涵盖测试分布\" 的几乎一切空间。这条线在工程上有价值，但**几乎没有 OOD 信号**——procedural 生成保证了 distribution shift 在 test time 仍在 training manifold 内部。
+- **2026-05 — Capability-Robustness IT-bound ([2605.25889](../papers/paper_notes/2026-05-28-2605.25889-vla-capability-robustness-bound.md))**。第一次把 \"VLA 在 clean input 上 95%+ 但 $16/255$ PGD 攻击下跌到 5% 以下\" 这个 OpenVLA-7B / LIBERO 的经验现象，写进信息论上界：任何离散 action VLA policy 上，capability MI + robustness MI ≤ H(task) + adversarial channel capacity，OpenVLA encoder-specific corollary 把预算压到 ~31 nats，policy 已吃满。这一击直接给出 evaluation 退却线的形式化解释——LIBERO / SimplerEnv 上的高分**必然**伴随对抗鲁棒性的低分，二者之和被 task entropy + channel capacity 钉死，所以 \"加新数据 + 加新任务\" 不可能同时推动两端。
+
+把这条线压一句：**VLA 评测的几乎所有正面叙事都在 in-distribution + visual-matching 的窄带内**。一旦切到 SimplerEnv 的 variant-aggregation、LIBERO-Long、或加上 16/255 量级的对抗扰动，2024-2026 任何一篇 VLA 论文的 \"主指标\" 都会重新进入 mech 派可信范围。这与 [scaling_limits](scaling_limits.md) §流形扩张 / [reasoning](reasoning.md) §Garcia format-confound 同源：**评测协议本身是隐藏的 confound 来源**。
+
+新增候选条目：
+
+- **C-EMBOD-4 — Capability-robustness Pareto 不可同时撑满**。在固定 action-discretization 与固定 visual encoder 的条件下，VLA policy 的 capability MI（clean success rate 取 log）与 adversarial-robustness MI（PGD-perturbed success rate 取 log）之和被 H(task) + channel capacity 上界钉死；OpenVLA-7B 在 LIBERO 上的 31 nats budget 已饱和。**Falsification**: 找到一个 OpenVLA-class 模型（同 visual encoder、同 action token 化方案），在 LIBERO clean ≥ 95% 同时 $16/255$ PGD success ≥ 50%，且改动不引入额外 adversarial training（后者等价于扩大 channel capacity 而非突破上界）。**当前评估**: strong——2605.25889 给的是 IT 硬上界，不是经验拟合；OpenVLA 已实证撞顶。但只对 *离散 action* 适用；π₀ 等 continuous-action policy 的同型上界尚未推出，这是 C-EMBOD-4 的最大可能逃生通道。
+
+C-EMBOD-4 与 C-EMBOD-3 (continuous action lower bound) 互为对偶：前者钉离散 action 的 capability-robustness 上界，后者钉离散 action 的 task-completion 下界。两条候选同时指向同一个工程结论——**\"action as token\" 这条 NTP 教条在 contact-rich + adversarial robustness 双轴上正在被信息论与工程同时挤压**。
+
 ## Open problems
 
 - **closed-loop NTP 的形式化**：当 environment 也是 transformer (world model) 时，agent-NTP + world-NTP 的联合训练是否等价于 model-based RL？理论上的 \"NTP-as-RL\" reduction（Cundy & Ermon 2023, GAIL 系列）在 frontier 规模下从未被系统验证。
