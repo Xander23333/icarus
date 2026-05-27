@@ -594,6 +594,16 @@
       ],
       "chars_added": 7200,
       "note": "Registered C5 (NTP continual-learning streaming-setting Conditional NTP-mech 候选) across taxonomy + ntp_survey §10 + online_learning, satisfying taxonomy.md 三处不同步 rule. taxonomy: added C5 row to candidate snapshot, +升降级日志 row (2026-05-28), and new 升降级判例 走 4 升级条件 worked example (≈3.5k chars) showing C5 = ✅✅✅❌ — (iv)(v) confound 未排除. ntp_survey §10: full C5 entry (候选理由 + 最强反论 + 当前结论 + falsification protocol 1B OLMo/Pythia 24h streaming + RealTime-QA probe). online_learning: added 2026-05-28 注 pointer above C-CONT-1 列表，使三页同步. Synthesizes N7 §3–§5 (Lazaridou 2102.01951 + Kirkpatrick 1612.00796 + Lyle 2303.01486 + Dohare 2024 Nature + Ibrahim 2403.08763) + 2026-05 readout-confound cluster (NITP 2605.24956, Conditional Attribute Transformers 2605.14004) as outstanding confounds. Rotation: taxonomy.md last touched 2026-05-27T09:00Z (~16h ago, oldest among substantive files); ntp_survey last touched 23:30Z prev day; online_learning last touched 21:30Z prev day. None back-to-back with previous tick (A on N7 at 16:32Z). Picked Task C because (1) gap between N7 sample-side mech argument and taxonomy snapshot was the single most visible inconsistency, (2) taxonomy own rule mandates 3-page sync on any升降级—done in one tick, (3) provides the missing worked example readers can use to instantiate the otherwise abstract 升降级 rubric."
+    },
+    {
+      "tick_utc": "2026-05-27T17:34:59Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4200,
+      "note": "Wrote N6 §5 Hafner DreamerV3 / latent world model RL 累计胜场 (~4.2k chars). Chronology Ha-Schmidhuber 1803.10122 -> PlaNet 1811.04551 -> Dreamer 1912.01603 -> DreamerV2 2010.02193 -> DreamerV3 2301.04104, plus IRIS 2209.00588 transformer move, DayDreamer 2206.14176 / TD-MPC2 2310.16828 / EfficientZero 2111.00210 / VPT 2206.11795. Thesis: DreamerV3 在 Sora 前 13 个月已是 latent world model 路线最完整兑现; frontier lab 忽视它有三个原因 (无视觉震撼力 / 依赖 reward / 停在小动作空间), 但 'world model 真被 agent 用来规划并把任务做完' 这判据下 Dreamer/IRIS 仍是唯一端到端胜场 (Sora 无 agent / Genie+SIMA 数十秒 / V-JEPA latent rollout 无独立评测). Mirror: Genie 把 RL latent-WM 搬到 large-scale 被动视频丢掉 verifier, Dreamer 保留 verifier 丢掉 internet-scale data. 三反例 (reward-free generalization 失败 / 50-200 步 compounding error / 3D 物理无 Minecraft-diamond 等价 signal). Bridges to N8 §4 Bitter Lesson 三条件 (verifier 在场 = Dreamer 赢) and N5 §5 VLA 长程 compounding 同源. Closes §5 TODO, 留 §6 尾声. README N6 §1-§4 -> §1-§5 4500->5500. Rotation: N6 last touched 2026-05-27T21:00Z (~4.5h ago); last 4 ticks C taxonomy / A N3 尾声 / A N7 §5 / C survey§2 — none of them N6. Picked A over B because all 8 topic pages touched within last 4-12h; N6 longest-untouched sample with explicit TODO marker."
     }
   ]
 }
