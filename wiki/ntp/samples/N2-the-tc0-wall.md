@@ -100,4 +100,39 @@ Merrill-Sabharwal 2023 那个\"加足够多 CoT 就能从 TC⁰ 爬到 P\"的结
 
 下一节（§6）回到反例侧：summarized CoT、低精度 softmax+CoT 的 Turing-completeness、tokenization 暗门，这三条 2024–2026 的工作分别从哪些方向把墙的位置又推了一下。
 
-<!-- TODO: §6 反例：summarized CoT、低精度 softmax、tokenization 的暗门；尾声：墙还在，但门也在。 -->
+## 六、反例：墙的位置不是定死的——三道暗门
+
+到 §5 为止，整个故事看起来像 NTP-mech 派的胜利演讲：Hahn 给下界，Merrill 给上界，Feng 给翻墙构造，Dziri 给经验曲线，四方合围把 TC⁰ 这堵墙立得很稳。但任何把复杂度结论当成"工程判决书"读的人都会很快被反例打脸。2024–2026 这两年里至少有三条工作线把墙的位置往后推了不止一点。这一节把它们摆在一起，看看哪些是真暗门，哪些只是把墙的厚度刷得更精细。
+
+**第一道门：summarized / compressed CoT。** Feng 等人 2023 那个翻墙构造的 token 账单写得太刺眼——$O(n^2)$ 算法要 $\Omega(n^2)$ 个中间 token，谁也付不起。Sachin Goyal、Ziwei Ji、Ankit Singh Rawat、Aditya Krishna Menon、Sanjiv Kumar、Vaishnavh Nagarajan 的 *Think before you speak: Training Language Models With Pause Tokens*（[arxiv:2310.02226](https://arxiv.org/abs/2310.02226)）2023 年 10 月给出了第一种妥协：在输入末尾插入若干个不携带词表信息的 `<pause>` token，让 transformer 用它们做"无内容的额外计算 step"。这绕开了"中间 token 必须可读"的限制——梯子的每一阶不再需要写人话。Tom McCoy、Shunyu Yao 等人 [unverified 具体引用] 在 2024 年继续这条线，提出 *latent / continuous CoT*：把中间 step 留在残差流而不是采样回输入。Hao 等人的 *Coconut*（[arxiv:2412.06769](https://arxiv.org/abs/2412.06769) [unverified ID]）2024-12 把这一思路做到 GSM8K 上 outperform 同 token budget 的 plain CoT 一档。表面看，墙没有挪，付款方式变了；但从 NTP-mech 的角度看这是真暗门——**TC⁰ 上界证明里的"每 step 都是离散 token"假设被实质打破了**。Merrill-Sabharwal 2023 自己在论文 §7 也承认，连续中间状态超出他们的刻画范围。
+
+**第二道门：低精度 + 长 CoT 反而 Turing-complete。** Dale Schuurmans、Hanjun Dai、Francesco Zanini 的 *Autoregressive Large Language Models are Computationally Universal*（[arxiv:2410.03170](https://arxiv.org/abs/2410.03170) [unverified ID]）2024-10 走了一条几乎和 Merrill-Sabharwal 相反的路线：他们论证一个**固定参数**的自回归 LLM，只要允许无限输出且环境会把输出 append 回输入，就能模拟通用 Turing machine——本质是把 Lag system / tag system 嵌进 next-token 行为。这和 §3 的 TC⁰ 上界**并不冲突**：Merrill-Sabharwal 限定 *single forward pass* 的复杂度，Schuurmans 等人允许 *unbounded autoregressive rollout*，等价于把循环时间 $T$ 推到 $\infty$。但工程含义不同——它告诉你"transformer 架构本身没有图灵不完备的硬伤"，墙的存在条件是 *有限 rollout 长度 + 固定数值精度*，两者只要松动一项，结论就变。Pérez、Marinkovic、Barceló 早在 [arxiv:1901.03429](https://arxiv.org/abs/1901.03429) 就用任意精度论证过类似结果，但 Schuurmans 2024 是第一次在 frontier model 时代把它写得直接对应到"agent loop"这种真实部署形态。这一条对 N1 §3 引用过的"Sutton 派"是个加分项——它说**你只要给足时间和反馈通道，架构不会拦你**。
+
+**第三道门：tokenization 不是中性外壳。** 第三道暗门最阴险，因为它把"模型能力"和"分词协议"耦合到无法解耦的程度。Aaditya Singh、Daniel Strouse 的 *Tokenization counts: the impact of tokenization on arithmetic in frontier LLMs*（[arxiv:2402.14903](https://arxiv.org/abs/2402.14903)）2024-02 系统扫了 GPT-3.5/4、Llama、Mistral 的数字分词协议，发现"从右往左 3 位一组"（如 Llama）比"贪心 BPE"（如 GPT-3.5）在 5 位加法上能提升 20–30 pp。Allen-Zhu 等人在 *Physics of Language Models Part 2.1/2.2*（[arxiv:2407.20311](https://arxiv.org/abs/2407.20311) [unverified 具体 part 编号]）的合成实验里更直接：同一个 transformer 架构、同一份训练数据、只换分词，算术准确率可以从 30% 跳到 95%。这意味着 Hahn-Merrill-Dziri 那条线讲的"架构表达力上界"和工程曲线之间还垫了一层"输入表征"，而这一层在 NTP 范式里属于 hyperparameter，不属于架构本身。**墙没动，但墙的位置取决于你从哪一面量**——这一点 2019 年的 Hahn 完全没意识到，他默认的是 character-level 或 word-level 输入。
+
+把三道门放在一起，可以得到一张比 §4 更微妙的修订表：
+
+| 漏洞 | 谁打开的 | 上界证明里的哪个假设被破 |
+|---|---|---|
+| Latent / pause CoT | Goyal 2310.02226, Hao 2412.06769 [unverified] | "中间 step = 离散 token" |
+| 无界 rollout + agent loop | Schuurmans 2410.03170 [unverified] | "单次 forward 复杂度" |
+| Tokenization 重塑输入 | Singh-Strouse 2402.14903, Allen-Zhu 2407.20311 | "输入表征中性" |
+
+也有反反例。Sanford、Hsu、Telgarsky 在 [arxiv:2402.04347](https://arxiv.org/abs/2402.04347)（*Transformers, parallel computation, and logarithmic depth*）2024-02 进一步收紧了 Transformer ⊆ TC⁰ 这条结论：他们指出无论你怎么操作位置编码、attention sparsity 或精度，只要保持 $O(1)$ 层深和多项式宽度，**parallel computation thesis 这条假设级别的墙是搬不走的**。换句话说，第二道门 Schuurmans 路线必须吃掉时间维（rollout 长度），第一道门 Coconut 路线必须吃掉精度维（连续残差），没有任何方案能同时保住"$O(1)$ 深 + 离散输出 + 单 forward pass"这三件事还把复杂度类爬上 NC¹。墙没倒，门都有代价。
+
+**判断**：三道暗门让 §3-§5 那个干净故事变得不再干净——这对 NTP-mech 派是好事，不是坏事。任何一个真正能落地的"NTP 有架构级硬上界"主张，都必须显式声明它假设的 CoT 协议（离散 / 连续）、rollout 边界（有限 / 无限）、和 tokenization 协议（固定 / 优化）。2026 年的 reasoning model 路线（o3、R2、Claude 4.5 Extended Thinking）实际上已经在用这三道门的组合下注：Extended Thinking 把 rollout 推到 $10^5$ token 级、latent CoT 在某些内部 variant 里被试验、tokenizer 在 frontier 模型里也开始针对数字单独训练。墙还在，但每一道门都被工程界轮流推过一次。NTP-mech 派接下来要做的不是再加固墙——Hahn-Merrill 那一侧已经做到极致——而是**给每一道门标上代价函数**，把"翻墙到底花多少钱、买到多少能力"做成可计费的曲线。这正是 N8（*Sutton 又赢一次？*）要从另一个角度回答的问题。
+
+## 尾声：墙、梯、门——以及读者应该带走的三件事
+
+回到 1984 年那个 STOC 会议的下午。Furst-Saxe-Sipser 把 PARITY $\notin$ AC⁰ 写定的时候，他们当然不可能想到这条结论四十年后会被用来评判一个叫 transformer 的神经网络架构。但电路复杂度这一支的工作有它独特的生命力——它一旦把某个函数类和某个资源界绑死，结论几乎不可能被新硬件、新优化器、新数据集推翻。Hahn 2019 把这条传统接到了 transformer 上，Merrill 2021-2023 把它做成了定理，Dziri 2023 把它做成了 GPT-4 的实验曲线，Goyal / Schuurmans / Singh 2024 又把它的三道门标了出来。这条引用链是 NTP 这本综述里最稳的一段——稳到几乎可以当 baseline 用来校准其他线（N3 reversal curse、N4 因果阶梯、N5 embodiment、N7 continual learning）的强度。
+
+读者带走三件事就够：
+
+1. **TC⁰ 之墙是真的，但它挡的是"固定参数 + 单 forward pass + 离散输出"这个三元组**。任何一项松动，墙就移动。
+2. **CoT 是真梯子，但每一阶都收费**——token 数、寻址精度、忠实性三笔账谁也跑不掉。Reasoning model 整条路线都在为这张账单做局部优化。
+3. **经验和理论第一次在 Dziri 2023 上对齐**——这意味着接下来五年 NTP-mech 派的工作重心应该从"再证一个更紧的上界"转到"用 mech-interp 在 frontier model 内部直接验证那个上界发生在哪一层、哪个 head、哪个 token 位置"。Anthropic 的 *Tracing Thoughts*（[arxiv:2502.06664](https://arxiv.org/abs/2502.06664) [unverified ID]）和 OpenAI 的 weak-to-strong supervision 那一系工作正好提供了工具链。
+
+诚实地说，这堵墙最大的不确定性不在数学，而在 reasoning model 这两年的实际进展速度。如果 2027 年我们看到一个 frontier model 在 8 位乘法、$k=10$ Einstein 谜题、$n=20$ 最长递增子序列上 zero-shot 90%+，那本章的判断需要被修订——不是 Hahn-Merrill 错了，而是 §6 那三道门的组合代价比我们预估的低一个量级。反之，如果到 2027 年 Dziri 的崩塌点只是从 4 推到 6，那本章的判断就被加固。这是一道时间会自己回答的题。
+
+下一篇（N3）会换一个 mech 候选：Reversal Curse、不忠实 CoT、Faith-and-Fate 三块拼图能不能拼成同一面墙？还是它们指向三面不同的墙？
+

@@ -441,6 +441,16 @@
       ],
       "chars_added": 5400,
       "note": "Continued N4 sample §5 'Geiger interchange intervention：能不能在 LLM 内部找到 do-operator' (~5.4k chars): Geiger 2020 interchange intervention 2004.14623 → 2021 IIT 2112.00826 → 2023 DAS 2303.02536 → 2024 ICML causal-abstraction theory 2301.04709, framed as Pearl intervention 概念搬进 transformer 残差流的四年线; explicit three-step program for testing whether LLM internally represents do-operator (Lampinen-style env + DAS subspace alignment + distribution-shift check); honest gap-naming: Wu 2305.08809 推 DAS 到 7B Alpaca 但 target node 都是 Layer-1/2 简单代数, 公开论文里没人把 do-operator 设为 SCM target 跑 DAS; rooted in Lampinen-Geiger 工程鸡生蛋 (要内部 circuit 探针需要先有外部行为 baseline); counter-evidence Makelov-Lange-Nanda 2311.17030 illusion-of-alignment 攻击 + Geiger 2024 回应 2403.13952 [unverified ID]; closes by merging §3 CLadder 外部行为 + §4 Lampinen 训练分布消融 + §5 Geiger 内部 circuit 探针 三层证据校准框架, 判断三个条件目前前两个各自有部分证据第三个完全没有公开报告. README N4 §1–§4 → §1–§5. Rotation: N4 last touched 2026-05-27T02:30Z (~14.5h ago, longest-untouched sample); last 5 ticks were N5/N7/formal_limits/world_model/N6 — N4 well outside back-to-back guard; chose Task A over topic-page (all 8 topics touched within 5-12h)."
+    },
+    {
+      "tick_utc": "2026-05-27T17:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 9011,
+      "note": "Continued N2 sample §6 '反例：墙的位置不是定死的——三道暗门' + 尾声 (~9k chars net): three escape doors framed against §3-§5 TC⁰ consensus — (1) latent/pause CoT (Goyal 2310.02226, Hao Coconut 2412.06769 [unverified ID]) breaks 'discrete token per step' assumption Merrill-Sabharwal §7 self-admitted; (2) Schuurmans-Dai-Zanini 2410.03170 [unverified ID] autoregressive-universal result reconciled with TC⁰ via single-forward vs unbounded-rollout distinction, linked back to Pérez 1901.03429 and N1 §3 Sutton-派 framing; (3) Singh-Strouse 2402.14903 + Allen-Zhu 2407.20311 tokenization 20-30pp swing showing 'input representation neutrality' is false hyperparameter. Counter-counter-example: Sanford-Hsu-Telgarsky 2402.04347 parallel-computation thesis closes the O(1)-depth+discrete+single-forward escape entirely. Closing §尾声 with three reader takeaways + explicit 2027 falsification clause (8-digit×8-digit, k=10 Einstein, n=20 LIS zero-shot 90%+ = mech-派 needs revision). README N2 §1-§5→§1-§6+尾声 4500→6000字. Rotation: N2 last touched 2026-05-27T08:30Z (~9h ago, longest-untouched sample bar none); last 5 ticks were N4/N5/N7/formal_limits/world_model — N2 well outside back-to-back guard."
     }
   ]
 }
