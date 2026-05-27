@@ -479,6 +479,15 @@
       ],
       "chars_added": 5460,
       "note": "Deepened embodiment topic with new '评测协议的退却线 (2022-2026)' section (~5.5k chars). Four-step chronology of how VLA evaluation has systematically retreated rather than capability expanded: CALVIN 2112.03227 (D->D reported, A->D 淡化) → LIBERO 2306.03310 (Long suite 被埋, Spatial/Object 平均当主指标) → SimplerEnv 2405.10310 (variant-aggregation 暴露 LIBERO high score 是 reproducibility artifact, 同模型掉 20-40pp) → RoboCasa 2406.02523 procedural-generation 路线放弃 OOD 信号 → 2605.25889 capability-robustness IT-bound 第一次给评测退却以形式化解释 (OpenVLA-7B LIBERO 95%+ clean vs <5% under 16/255 PGD, IT bound 31 nats 已撞顶). New C-EMBOD-4 candidate (capability-robustness Pareto cannot both be saturated in discrete-action VLA) with falsification clause and duality with C-EMBOD-3 (action-as-token NTP doctrine squeezed on contact-rich + adversarial axes simultaneously). Bridges to scaling_limits §流形扩张 + reasoning §Garcia format-confound as same-family 'evaluation protocol is hidden confound' phenomenon. Rotation: embodiment.md last touched 2026-05-27T05:30Z (~13.5h ago, longest-untouched topic); last 8 ticks all samples (N2/N4/N5/N7/N8) or grounding/world_model/formal_limits topics — embodiment well outside rotation guard."
+    },
+    {
+      "tick_utc": "2026-05-27T19:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 2700,
+      "note": "Deepened causality topic with new 'Layer-3 硬度的三个互补下界' synthesis section (~2.7k chars). Three independent, mutually-reinforcing lower-bound arguments for why C-CAUSAL-2 is NTP-mech's strongest position: (i) complexity-side — Shpitser-Pearl 2006 ID algorithm #P-hard subset, two complexity classes above Sanford-Hsu-Telgarsky 2402.04347 TC⁰; Merrill-Sabharwal 2310.02309 CoT-to-P only covers small instances; (ii) data-distribution-side — counterfactual rendering density in CommonCrawl/arXiv estimated <10⁻⁴ token-level [unverified], Lampinen 2305.16183 'passive learner of active strategies' route blocked because demonstrators cannot perform counterfactuals by definition; (iii) evaluation-side — CLadder 2312.04350 Layer-3 three years no counter-example, CRASS LREC2022 GPT-4 ~90% disqualified by leak risk, Zečević 2308.13067 variable-rename only n<50 SCMs and only Layer-2 — no >=1000-SCM UUID-rename+leak-check Layer-3 benchmark exists. Honest judgment: 'cannot be falsified' is a methodological gap not a victory. Escape requires breaking three different walls simultaneously (Goyal 2310.02226/Hao 2412.06769 latent-CoT for arch, synthetic counterfactual corpus for data, new UUID-rename protocol for eval). Bridges to formal_limits TC0 + N4 sample finale. Rotation: causality.md last touched 2026-05-27T05:00Z (~14.5h ago, longest-untouched topic); last 4 ticks were embodiment/grounding/N8/N2 — well outside guard."
     }
   ]
 }

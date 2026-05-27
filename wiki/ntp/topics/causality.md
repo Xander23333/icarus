@@ -96,6 +96,20 @@ Geiger 等人从 [arxiv:2106.02997](https://arxiv.org/abs/2106.02997) 起把 *in
 
 诚实判断：mechanistic 侧目前给 causality topic 提供的是 *方法论承诺* 而非 *证据*——它说 \"如果 do-circuit 存在我们能找到\"，但还没说 \"我们找到了\" 或 \"我们证明找不到\"。这与 formal_limits topic 的状况（有定理、缺紧上界）形成对比：causality 这边是 *有方法、缺结果*。
 
+## Layer-3 硬度的三个互补下界 (2026-05 综合)
+
+C-CAUSAL-2 之所以是 NTP-mech 派最硬的阵地，并不是因为某一篇论文证明了它，而是因为三条**互不依赖、互相补强**的下界论证恰好同时指向 Layer-3。把这三条单独看都不致命，叠在一起就形成了目前没有哪条 escape hatch 能一次性绕开的 wall。
+
+- **下界 (i) — 复杂性侧**：Shpitser & Pearl 2006 *Identification of Conditional Interventional Distributions* (UAI) 证明 ID algorithm 对一般 SCM 的 counterfactual identifiability 判定本身是 #P-hard 子集（NP-hard 的 counting 版本），而第三层 query 求值在 identifiable 子集内仍需 SCM-level exact inference。这条线把 Layer-3 钉在了 Sanford-Hsu-Telgarsky [arxiv:2402.04347](https://arxiv.org/abs/2402.04347) 的 TC⁰ 上界**之上整整两个复杂性类**——单 forward pass 的 transformer 在 worst case 上做不到，不是经验问题而是 circuit-complexity 问题（详见 [formal_limits.md](formal_limits.md) §TC⁰ 下界一节）。Merrill & Sabharwal [arxiv:2310.02309](https://arxiv.org/abs/2310.02309) 把 CoT 的 polynomial-step rollout 推到 P 类，理论上能盖住 #P 子集的小实例，但常数与步数都没有 closed-form 界。
+
+- **下界 (ii) — 数据分布侧**：Pearl 1801.04016 的"被动观测"论证在 NTP 上的具体形态是：counterfactual query \"if X had been x' instead of its observed value, would Y have been y?\" 的**自然语料密度近乎零**。CommonCrawl / arXiv / 教科书里出现的因果叙述压倒性是 associational（"X 导致 Y"）或 interventional（医学 RCT 报告 "doing X led to Y"），而显式 counterfactual rendering 只在法律判例 (but-for causation)、历史反事实小说、少量哲学文本里成规模出现，估计 < 10⁻⁴ token-level 频率 [unverified]。Lampinen [arxiv:2305.16183](https://arxiv.org/abs/2305.16183) 那条 "passive learner of active strategies" 的活路在 Layer-3 上几乎走不通——它要求训练分布里有 demonstrator 在做相应操作的轨迹，而 *做反事实* 本身是 demonstrator 做不到的（反事实定义上需要回到已发生历史的分叉点）。这一条独立于架构，纯是数据物理。
+
+- **下界 (iii) — 评测协议侧**：CLadder [arxiv:2312.04350](https://arxiv.org/abs/2312.04350) Layer-3 三年没有出现公开 counter-example，但更关键的是 2024–2026 没有任何新 counterfactual benchmark 通过严格 leak-check 报告 frontier model 显著高于随机的结果。Frohberg & Binder *CRASS* (LREC 2022) 在公开 leaderboard 上 GPT-4 报告 ≈ 90%，但 CRASS 题干高度结构化（"if X had not happened, would Y..."）且公开多年，n-gram leak 风险极高，不能作为反例。Zečević *Causal Parrots* [arxiv:2308.13067](https://arxiv.org/abs/2308.13067) variable-rename 协议规模 < 50 SCM 也只测 Layer-2。**没有一个 ≥ 1000-SCM、UUID-rename + 严格 n-gram leak-check 的 Layer-3 benchmark 存在**——这既是 C-CAUSAL-2 的最大方法论缺口，也是它"无法被证伪"的真正原因。
+
+诚实判断：把这三条下界放一起，Layer-3 的难度*不是*一个干净的 \"NTP 永远学不到\" 命题，而是 \"在 (i) 单 forward pass 内做不到 + (ii) 自然数据里几乎不存在示范 + (iii) 测出来也没人信\" 的三重夹击。任何想冲掉 C-CAUSAL-2 的工作必须同时回应三条：架构侧需要 unbounded CoT / pause-token / latent-reasoning（Goyal [arxiv:2310.02226](https://arxiv.org/abs/2310.02226) / Hao Coconut [arxiv:2412.06769](https://arxiv.org/abs/2412.06769) [unverified ID]），数据侧需要 synthetic counterfactual corpus 注入（目前公开工作罕见），评测侧需要 UUID-rename + leak-check 的新协议。三者缺一，Layer-3 的所谓 "突破" 都会被前面三条之一吃掉。
+
+这也是为什么 N4 sample (*Pearl Ladder and the LLM Ceiling*) 的尾声把 Layer-3 标为 "NTP-mech 派最后一块阵地"——不是因为这块阵地特别大，而是因为绕过它需要同时打破三堵性质不同的墙。
+
 ## 与其他 topic 的交叉
 
 - ↔ `formal_limits.md`：Layer-3 失败是否对应 TC⁰ 类 depth 下界？counterfactual 推理在 SCM 上的计算复杂度（Shpitser-Pearl ID algorithm 是 #P-hard 的子集）远超 TC⁰，这给"架构上限"提供了一个 complexity-theoretic 锚点。
