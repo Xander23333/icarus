@@ -660,6 +660,15 @@
       ],
       "chars_added": 3300,
       "note": "Deepened causality.md with new §'RL-from-environment 在 Layer-2 上的 controlled comparison: 现有边角与未填的洞 (2024-2026)' (~3.3k chars). 把 §agentic-RL 节反复出现的 'no public controlled comparison' 缺口从直觉判断升格为五条证据枚举: (a) R1 paper 2501.12948 自带 R1-Zero/SFT/final ablation 但未测 causal benchmark, (b) CLadder 原论文 2312.04350 跨模型横扫但不能解耦 RL 强度, (c) reasoning-RL 在 LogiQA/ReClor 间接信号 [unverified pp] 但与 do-calculus 任务分布不重叠 (引 Pearl 2009 第1章 entail vs do 区分), (d) tau-Bench 2406.12045 / OSWorld 2404.07972 agentic trajectory 物理含 do(.) 但端到端 success 不能反推 do-circuit, (e) Boundless DAS 2305.08809 在 CLadder Layer-2 上未被组合. 提 3 个 <1 GPU-week 实验补洞 (R1-Zero/SFT/final x CLadder; Qwen/Llama-RL-vs-SFT x Zecevic UUID-rename; DAS 跑 do-circuit), 诚实归因为何无人做: 正向被 mech 派质疑 leak, 负向被 cap 派质疑 base, 发表回报为负 -- 社会学不可证伪而非技术不可证伪, 标 meta-候选可入 taxonomy 备注. Rotation: causality.md 在最近 20+ ticks log 中未被显式触, 最近 5 ticks 为 B reasoning / B formal_limits / A N7 / A N8 / B grounding -- 无一动 causality. Picked B over A 因 N1-N8 八章过去 24h 全部推进, 而 causality 缺口被多页引用却未 audit. 所有 arxiv ID 公开可查; 数字/pp 不定处 [unverified] 标."
+    },
+    {
+      "tick_utc": "2026-05-28T05:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/embodiment.md"
+      ],
+      "chars_added": 5300,
+      "note": "Deepened embodiment.md with new §'Robot-data scaling: episode-to-token 等效换算的当前状况 (2023-2026)' (~5.3k chars). Five chronological data points: OXE 2310.08864 (970k episode = 1e9-1e10 token, ~C4/100-1000), OpenVLA 2406.09246 (8.5B effective token, token-count != information-content), Lin 2410.18647 imitation scaling fit alpha 0.13-0.25 vs text 0.34 Hoffmann 2022, 2025 pi0/GR00T internal teleop 1e10-1e11 step [unverified bundle] frontier labs won't publish alpha, 2026-05 Capability-Robustness IT-bound 2605.25889 forces task-entropy-sliced conversion. Cross-aligns with scaling_limits.md five C-SCALE candidates: inherits C-SCALE-1 horizon-linear + C-SCALE-4 verifier-rich exchange, violates C-SCALE-5 bits/param because visual+action token entropy density < text. Introduces C-EMBOD-5 (effective-token deflation in vision+action streams): bits/token coefficient 0.05-0.2x text baseline, ceiling ~0.5x; falsifier = visual encoder + action tokenizer reaching >=1.5 bits/token effective on OXE w/o LIBERO/SimplerEnv regression. C-EMBOD-5 与 C-EMBOD-4 互补 (train side vs eval side). Updated Open problems #3 pointer. Rotation: embodiment.md last touched 2026-05-26 (~2 days ago); last 5 ticks were B causality / B reasoning / B formal_limits / A N7 / A N8 -- no embodiment. Picked B over A because N1-N8 all advanced within 24h, embodiment Open-problem #3 was longest-standing topic-page placeholder, directly linked to newest 2605.25889 IT-bound paper note. All arxiv IDs public; numeric/alpha/coefficient uncertain points marked [unverified]. No fabricated IDs."
     }
   ]
 }

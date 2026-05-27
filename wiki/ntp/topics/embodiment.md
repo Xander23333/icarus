@@ -95,11 +95,29 @@ NTP-cap 阵营的回击是：(a) 把动作 token 化（RT-2、OpenVLA），close
 
 C-EMBOD-4 与 C-EMBOD-3 (continuous action lower bound) 互为对偶：前者钉离散 action 的 capability-robustness 上界，后者钉离散 action 的 task-completion 下界。两条候选同时指向同一个工程结论——**\"action as token\" 这条 NTP 教条在 contact-rich + adversarial robustness 双轴上正在被信息论与工程同时挤压**。
 
+## Robot-data scaling: episode-to-token 等效换算的当前状况 (2023–2026)
+
+§Open problems 第三条「embodied scaling law / robot data 的 effective-token 等价物」长期是这页最大的占位符。这条线在 2023–2026 已经有了零散数据点，可以收一遍——不是为了得出一条系数，而是为了说明这个换算系数为什么至今没人敢公开拍板。
+
+- **2023-10 — Open X-Embodiment (RT-X, [arxiv:2310.08864](https://arxiv.org/abs/2310.08864))**。970k episode、22 个本体、527 技能，是当时最大的合并 robot 数据集。如果按 RT-1 / OpenVLA 的 tokenization（每步约 ~10 个 action token + 视觉 patch token）粗算，一个 average episode（~50 步）对应大约 $10^3$–$10^4$ token，与一篇短博客同量级。整个 OXE 折合 ~$10^9$–$10^{10}$ token，相当于 **C4 的 1/100–1/1000**——这是 robot-side foundation pretraining 的 token 量级首次和 LLM-side 落到同一表里。
+- **2024-06 — OpenVLA ([arxiv:2406.09246](https://arxiv.org/abs/2406.09246))**。论文表 6 把 OXE 训练时的 effective token throughput 与 LLM SFT 对齐，给出 visual + action token 合计 ≈ 8.5B tokens 的 effective pretrain 量。但 OpenVLA 自己也承认这个数字与 *information-content* 等价物相差几个量级——一帧 224×224 图的 token 数远多于其因果相关位数，C-SCALE-5 (bits/param) 在视觉 token 上分母会塌。这是 episode-to-token 换算的第一个公开数字，但 **token 计数 ≠ 信息量** 的提醒同样来自这一篇。
+- **2024-10 — Lin et al., *Data Scaling Laws in Imitation Learning for Robotic Manipulation* ([arxiv:2410.18647](https://arxiv.org/abs/2410.18647))**。CMU + Berkeley 在桌面 manipulation 上系统拟合 success rate vs (number of demos, number of objects, number of environments)，给出近似幂律 success ≈ $1 - C \cdot N_{\text{demo}}^{-\alpha}$，$\alpha \approx 0.13$–$0.25$，远小于 LLM loss-scaling 的 $\alpha \approx 0.34$（Hoffmann 2022）。这是 robot-data scaling 首次被钉成 Kaplan-style 曲线——但其 $\alpha$ 比文本侧 **小 2–3×**，意味着在 imitation 这一目标下，每加一个 demo 的边际信息量低于每加一篇文本。
+- **2025 — Physical Intelligence π₀ follow-ups / GR00T 数据卡** [unverified bundle]。多家工业方在 2025 公开声明其内部数据集已达 $10^5$–$10^6$ 小时 teleop——按 30 Hz 控制率粗算约 $10^{10}$–$10^{11}$ action step。这一规模在原始 step 计数上已超过 LLaMA-2 的 2T pretrain token，但 success-scaling 曲线的拐点未公开，**没人愿意把自己的 $\alpha$ 系数披露给社区**——这本身就是该领域当前的最大方法学债。
+- **2026-05 — Capability-Robustness IT-bound ([2605.25889](../papers/paper_notes/2026-05-28-2605.25889-vla-capability-robustness-bound.md))**。从另一侧把换算系数钉死：OpenVLA-7B 上的 31 nats budget 已饱和意味着 *再加多少 token 都不会让 capability + robustness 之和上升*。换算系数因此必须按 task-entropy 切片定义：在已饱和的子任务上，effective-token 边际为零；只有在未饱和子任务上，episode-to-token 换算系数才有定义。这把 §Open problems 第三条从「找一个常数」改写为「找一族随 task-entropy 漂移的常数」。
+
+把这五个数据点对齐到 [scaling_limits](scaling_limits.md) 的五条候选：robot-data scaling 同时 *继承* C-SCALE-1 (horizon-linear) 与 C-SCALE-4 (verifier-rich 任务的 train/inference 互换)，但 *违反* C-SCALE-5 (bits/param) 因为视觉 + action token 的 entropy 密度远低于文本——同等 token count 下的 effective bits 系统性偏小。这恰好解释了为什么 frontier lab 用 ≥$10^{10}$ step teleop 仍未复现 LLM-scale 的 capability scaling：分母不对。
+
+新增候选条目：
+
+- **C-EMBOD-5 — Effective-token deflation in vision+action streams**。在固定 NTP 训练协议下，robot episode 折算的 effective bit/token 系数显著小于文本（粗估 0.05–0.2× 文本基线），且该折减系数随 visual encoder 容量上升而部分缓解但不能跨越 ~0.5× 上界。**Falsification**: 找到一个 visual encoder + action tokenizer 组合，使其在 OXE 上的 bits/token 与文本 C4 同档（即 ≥1.5 bits/token effective），同时保持 LIBERO/SimplerEnv 任务 success 不退化。**当前评估**: medium——Allen-Zhu Part 3.3 在文本侧给出 ~2 bits/param 锚点，OpenVLA 7B 在同等 param 下记得的事实数据量级显著偏低 [unverified controlled fit]，但目前没有 video / VLA 版本的 Allen-Zhu 严格 capacity 实验。该条目是 robot-data 何以不能 1:1 套用 LLM scaling-law 的最简洁形式化。
+
+C-EMBOD-5 与 C-EMBOD-4 (capability-robustness IT 上界) 互补：前者钉 *训练侧* 信息量分母塌陷，后者钉 *评测侧* capability+robustness 之和上界。两条同时成立则解释了 robot data flywheel 的根本困难——不是采集速度不够，而是 *每单位采集的 effective information* 系统性低于文本，且 capability/robustness 任一端的边际收益都受 task-entropy 切片上界约束。
+
 ## Open problems
 
 - **closed-loop NTP 的形式化**：当 environment 也是 transformer (world model) 时，agent-NTP + world-NTP 的联合训练是否等价于 model-based RL？理论上的 \"NTP-as-RL\" reduction（Cundy & Ermon 2023, GAIL 系列）在 frontier 规模下从未被系统验证。
 - **action 表征的下界**：离散 token bin 在哪些任务上**根本不够**？flow matching (π₀) / diffusion policy (Chi et al. 2023 [arxiv:2303.04137](https://arxiv.org/abs/2303.04137)) / continuous-action head 三者之间缺一个统一的 benchmark。
-- **embodied scaling law**：LLM 有 Chinchilla / Hoffmann 2022，VLA 没有。robot data 的 \"effective token\" 等价物是什么？一个 episode = 多少 text token？这个换算系数尚无公开严肃测算。
+- **embodied scaling law**：LLM 有 Chinchilla / Hoffmann 2022，VLA 没有。robot data 的 \"effective token\" 等价物是什么？一个 episode = 多少 text token？这个换算系数尚无公开严肃测算（部分进展见上文 §Robot-data scaling）。
 - **embodied evaluation**：当前所有 VLA benchmark (SimplerEnv、LIBERO、CALVIN) 都偏 short-horizon、低接触；缺一个 \"embodied MMLU\" 级别的评测。
 - **从 video 学 policy 的上界**：Sora / Veo 级别的 video generator 是否能作为 implicit world model 提供 counterfactual rollout？这条线在 2025 年很热但证据稀薄——Yang et al. 2024 \"Video as the New Language for Real-World Decision Making\" [arxiv:2402.17139](https://arxiv.org/abs/2402.17139) 是 position paper，不是 evidence。
 
