@@ -71,10 +71,21 @@ Stevan Harnad 1990 年的 [*Symbol Grounding Problem*](https://www.cs.ox.ac.uk/a
 
 但请注意"可能"二字。这一段是**预测，不是结论**。Sutton 已经赢过四次。如果到 2028 年 Reversal Curse 被某个 reverse-pretraining + RAG + agentic post-training 的组合干净修掉、Faith-and-Fate 曲线被 inference scaling 平推到任意深度、Pearl 第二层被 agentic RCT post-training (N4 §4 已埋伏笔) 攻破，那这一章就成为 N8 的反面教材——又一个被 *Bitter Lesson* 吞掉的"机制墙清单"。
 
+## 三-bis、被遗忘的三堵小墙
+
+§二里那四堵墙都是写进教科书的大墙。下面三堵小一些，但它们的塌方过程更短、更干净，因此更适合用来校准"机制墙塌方"的典型时间常数。
+
+**小墙 A：常识需要显式 knowledge graph (1984 → 2020)。** 1984 年 Doug Lenat 启动 Cyc 项目，假设是"机器若想拥有常识，必须把人类常识手工编码成 ≥10⁶ 条逻辑公理"。Cyc 在 30 多年里累积到约 2400 万断言 (Lenat & Marcus 2023 [*Getting from Generative AI to Trustworthy AI*](https://arxiv.org/abs/2308.04445) 自己给的数字)。同一时期 ConceptNet (Speer et al.)、ATOMIC ([arxiv:1811.00146](https://arxiv.org/abs/1811.00146)) 走同样的路线——区别只在于是否众包。2019-04 Sap 等的 *ATOMIC* 论文里还明确写：large-scale neural language models do not exhibit the kind of if-then commonsense reasoning that humans take for granted. 到 2020-05 GPT-3 发布、2022-11 ChatGPT 上线，常识 QA (CommonsenseQA, PIQA, HellaSwag, WinoGrande) 的 SOTA 全部被 NTP 模型零样本拿走，几乎没人再训练 ConceptNet-augmented 模型。Cyc 没有公开倒下的时刻，但 Lenat 2023-08-31 去世后这条路线在工业界事实上结束 [uncertain Cycorp 后续状态]。机制派的强命题"常识必须显式编码"**死了**；弱命题"LLM 的常识在长尾、组合场景下脆"还活着，但已经退化成 robustness 论文，不是范式论文。
+
+**小墙 B：multi-hop QA 必须显式 reasoning module (2018 → 2022)。** HotpotQA ([arxiv:1809.09600](https://arxiv.org/abs/1809.09600)) 与 2WikiMultiHopQA ([arxiv:2011.01060](https://arxiv.org/abs/2011.01060)) 发布时，公认观点是"end-to-end Transformer 在 multi-hop 上必须显式拼接 graph reasoning / decomposition"，这一时期产出了大量 PathNet / GraphRetriever / DecompRC 的变种。2022-01 Wei 等 *Chain-of-Thought Prompting* ([arxiv:2201.11903](https://arxiv.org/abs/2201.11903)) 一篇 prompt-only paper 把 GSM8K / MultiArith / multi-hop QA 的 SOTA 一并刷新——**模块没了，只剩一行提示词**。再往后 self-consistency ([arxiv:2203.11171](https://arxiv.org/abs/2203.11171))、Tree-of-Thoughts ([arxiv:2305.10601](https://arxiv.org/abs/2305.10601))、PRM800K (Lightman et al. [arxiv:2305.20050](https://arxiv.org/abs/2305.20050))、o1 / R1 完全沿着"把 reasoning 留在 token 序列里"的路线推进。强命题"必须显式 module"**死了**；弱命题"CoT 是不忠实的、是 post-hoc rationalization" (Turpin 2023 [arxiv:2305.04388](https://arxiv.org/abs/2305.04388)) 活着，但它已经是 N3 §3 的核心议题，不再是反 NTP 的范式论点。
+
+**小墙 C：Transformer 不能 symbolic variable binding (2019 → 2023)。** 这堵墙比墙 2 更窄、更早：一系列"Transformer 学不到 systematic variable binding"的实验给出过一个版本的预言——Transformer 拿到 `x=3, y=5, x+y=?` 时会失败，因为它缺 *register* 机制。GPT-3 早期确实失败。Anthropic 2022 *In-context Learning and Induction Heads* ([arxiv:2209.11895](https://arxiv.org/abs/2209.11895)) 把 induction head 命名为"分布式 register 的一种实现"；Allen-Zhu 等 Physics of LM 系列 ([arxiv:2305.13673](https://arxiv.org/abs/2305.13673) [unverified Part 编号]) 在受控合成数据上做出 attention head 实现 binding 操作的 mech 解读。到 2024-2025 的 reasoning model 上，已经没人再把 variable binding 当 Transformer 的硬墙了。这一堵塌得最安静，几乎没有讣告——这本身就是 *Bitter Lesson* 剧本里最常见的结尾方式：墙塌时不会有人开新闻发布会。
+
+判断：这三堵小墙的共同点是**塌方时间常数 ≈ 4–10 年**，并且每一次塌方都伴随"机制派从范式论点退到 robustness / 样本效率论点"的转写。把它叠到 §二的四大墙上，*Bitter Lesson* 的实证基线已经是 7 例，不是 4 例。这是 N2–N7 任何机制候选必须正视的先验：哪怕你写得再形式化、再 falsifiable，先验概率仍然偏向你的候选会塌——只是塌的方式不一定是"被证伪"，更常见的是"被绕过 + 没人再提"。把这一行写到本章最显眼的位置，是为了让 N2–N7 的读者在读完那六篇高 conviction 的 mech 叙事后，不要忘了 base rate。
+
 ---
 
-> **§3–§6 路线图**（后续 tick 续写）：
-> - §3：被遗忘的塌方——三条小一些但同样有教育意义的墙（symbol manipulation by Transformer / commonsense knowledge graph 必要性 / multi-hop QA 需要显式 reasoning）
+> **§4–§6 路线图**（后续 tick 续写）：
 > - §4：另一面——四条**没有塌**的墙（数学证明的形式化、强化学习的样本效率、physical embodiment 的 sim-to-real、scientific discovery 的 hypothesis generation），并讨论它们和 NTP 系列的关系
 > - §5：Sutton 自己的内部张力——*Bitter Lesson* 与 *The Alberta Plan* (2022) 之间，他本人也承认结构在某些场景下不可避免
 > - §6：给 N1–N7 的元批注——按本章四阶段剧本，逐一打分每一篇里的机制候选目前处在哪个阶段，并给出"被塌方"的最可能路径与时间窗口
