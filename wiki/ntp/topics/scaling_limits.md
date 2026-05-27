@@ -103,6 +103,30 @@ C-SCALE-5 是 scaling-limits 五条候选里 **最接近 \"物理常数\" 形态
 
 这恰好是 scaling-limits 与 [formal_limits](formal_limits.md) 的分工互文：formal_limits 钉 \"无论多少参数都做不到\" 的硬墙，scaling_limits 钉 \"每单位参数能装多少\" 的容量常数。两者在 RAG 面前都退化——前者因为外部存储不属于 transformer 表达力域，后者因为容量分母改变。换言之，**\"NTP scaling 上界\"** 这个说法在 retrieval 时代必须重新限定作用域，否则会和 NTP-as-controller 的能力混读。
 
+## Data-quality scaling: 第六轴 — 单位 token 的 \"教学价值\" (2023–2026)
+
+(N, D, C_train, C_inference, bits/param) 之外还剩一根经常被忽略但工程上最先被踩到的轴：**单位 token 的有效信息密度**。同样 D，换一份语料，loss 曲线整体平移；换一份 *合成* 语料，平移幅度有时大到把 N×10 的差距抹平。这条轴 2023 年起被 Phi 系列 + 一系列 data-mixture / data-pruning 论文反复钉，到 2026-05 已经具备写成候选条目的成色。
+
+- **2023-06 — Gunasekar et al., *Textbooks Are All You Need* ([arxiv:2306.11644](https://arxiv.org/abs/2306.11644))**。Microsoft 用 6B 高质量 \"教科书风\" 合成数据训出 phi-1 (1.3B)，HumanEval pass@1 50.6%，与当时 StarCoder-16B 同档。第一次把 \"数据质量\" 从 motherhood claim 变成可对照的容量替代品。后续 phi-1.5 ([arxiv:2309.05463](https://arxiv.org/abs/2309.05463))、phi-3 ([arxiv:2404.14219](https://arxiv.org/abs/2404.14219)) 把同一论点推到 3.8B 跨多任务，但也开始暴露 benchmark-contamination 嫌疑——data-quality 收益与 eval-leak 难以纯净分离，这也是 phi 路线最大的方法学软肋。
+- **2023-05 — Xie et al., *DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining* ([arxiv:2305.10429](https://arxiv.org/abs/2305.10429))**。把 \"data mixture 权重\" 当成一个可被 group-DRO 优化的对象，在 The Pile 上把固定 compute 下的下游平均提升 6.5%。data-quality 第一次被写成可优化的连续变量而非 manual recipe。
+- **2024-01 — Maini et al., *Rephrasing the Web* ([arxiv:2401.16380](https://arxiv.org/abs/2401.16380))**。用中等模型把网页改写成 \"教学风\" 再喂给主训练，端到端 1.3B 模型可在 3× 更少 token 上匹配原始 web 训练。把 \"合成\" 从 phi 的 from-scratch 推广到 \"原始网页就地升级\"，工程上更可复制。
+- **2024-07 — Penedo et al., *FineWeb-Edu* ([arxiv:2406.17557](https://arxiv.org/abs/2406.17557))**。开放 1.3T token 教育子集 + 训练 classifier 自动打分；同算力下 MMLU 显著优于 RefinedWeb / C4。第一次把 \"教育性\" 量化成可复用 filter，外部团队可独立复现 Phi 风味的收益。
+- **2023-05 — Shumailov et al., *The Curse of Recursion: Model Collapse* ([arxiv:2305.17493](https://arxiv.org/abs/2305.17493))** 与 **2024-07 Nature 版**。给出反向边界：当训练语料中 LLM 生成内容占比超过某阈值后，方差先塌、尾部分布消失、最终 loss 反弹。data-quality 这根轴不是单调向上——往 \"高质量合成\" 一侧走过头会触发 mode collapse，这把 C-SCALE-6 的可行域钉成一段闭区间而非半直线。
+- **2024-06 — Xie et al., *RegMix* ([arxiv:2407.01492](https://arxiv.org/abs/2407.01492)) [unverified ID]**。把 DoReMi 的思路推到自动 mixture 搜索 + 小模型外推预测大模型最优配比，验证 \"data-mixture optimum 在小模型上拟合可外推\" 假设，把 mixture 搜索成本压到原来的几十分之一。
+- **2026-05 — Joint-KL AR Learning (Xu et al., [2605.12316](../papers/paper_notes/2026-05-26-2605.12316-joint-kl-autoregressive.md))** 的 estimation Ω(H) 下界里有一个常被略读的细节：常数项依赖 *source distribution 的 KL-radius*。换句话说，\"data 越规整、KL-radius 越小，常数前因子越小\"——这给 data-quality 轴提供了第一条信息论意义上的合法名分，而不只是经验现象。
+
+新增候选：
+
+- **C-SCALE-6 — Data-quality multiplier (闭区间)**。在固定 (N, C_train) 下，把训练语料从 raw web 替换为 high-edu / 合成增强 mix，loss 等价缩短到 D_eff ≈ D / k 的曲线上，k 经验上 2–10×（FineWeb-Edu / Rephrase / Phi），且 k 在合理范围内对 N 不敏感。**作用域**: 合成占比低于 model-collapse 阈值 τ（Shumailov 区间）。**Falsification**: 找到一个公开 benchmark（且做了 decontamination），在 D_eff = D/k 的高质量训练下 loss / 下游 仍劣于 raw-web 同 D 训练；或证明所观察的 k 全部由 eval contamination 解释（phi 路线遭遇的指控）。**当前评估**: medium——FineWeb-Edu 与 Rephrase the Web 两条独立证据线方向一致，但 (i) k 的稳定外推未经 Chinchilla 量级拟合、(ii) contamination confound 尚未被任何一篇彻底排除、(iii) 闭区间上界 τ 仍是定性而非定量。
+
+C-SCALE-6 与前五条候选的张力：它在 *training data 侧* 给出 plasticity 之外的另一个 \"非 (N, D) 轴\"，并与 C-SCALE-3 (plasticity cliff) 形成奇怪的耦合——over-training 与 high-quality 数据组合时，cliff 出现得更早还是更晚，目前 [unknown]，Liu et al. 2503.19206 的实验并未 vary 数据质量。这是 2026 下半年最值得做的一个 controlled study。
+
+### 反例 / 边界
+
+- **Decontamination 软肋**：Phi 路线的多数 gain 在严格 decontamination 下会被打折多少，公开数据仍有争议。引用 C-SCALE-6 时必须先验证 benchmark 不在合成 prompt 的覆盖域内，否则 k 会被严重高估。
+- **Specialization 收窄**：高 k 经常伴随 distribution narrowing——phi-3 在 reasoning / coding 上接近 Llama-3-8B，但在 broad world-knowledge / 多语种长尾上落后。data-quality 这根轴最好读作 *任务族条件* 上的乘子，不要读作普适。
+- **Model collapse 边界**：Shumailov 的 τ 在 1-pass 训练 vs 多代递归生成下不同——一次性混入 30% 合成尚未触发，多代自回归则 5% 就开始塌。C-SCALE-6 的作用域要按 *合成内容是否参与下一代训练* 二分。
+
 ## Open problems
 
 - 把 Shannon SNR 视角与 superposition / knowledge capacity scaling 统一成一个 SNR-superposition 法则。

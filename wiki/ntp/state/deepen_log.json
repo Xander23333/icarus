@@ -689,6 +689,15 @@
       ],
       "chars_added": 5200,
       "note": "N5 §6 尾声 (~5.2k chars): 把前五节赌局压成 2026 年中间判决 + 三个可证伪 bet (Bet-N5-1 VLA 长程兑现 2027-12 / Bet-N5-2 JEPA 策略兑现 2027-12 / Bet-N5-3 缝合线胜出 2028-06), 每个 bet 写反向条件. 三段式判决: (a) 强命题 (动作无法 tokenize) 已被 RT-2/OpenVLA/π0 证伪; (b) 弱命题 (长程样本效率指数恶化) 被 PI 自家工程动作 π0-FAST + π0.5 异质数据混入含蓄承认; (c) hierarchical tokenization 缝合 VLA/JEPA 二元对立. 显式 cross-link N1 §objective-alignment 暗门 + N3 §6 三块拼图 + N6 §3 Genie action-conditional 分工. 最坏/最有可能两种 outcome 给赔率 (<2:8 vs 6:4). 元评论留硬件可靠性 confound 锚: Tesla Optimus / Figure 02 / 1X Neo / Unitree H1 MTBF 数字 [unknown], 警告 2027-28 若长程任务塌方必先排除硬件本体问题再回头讨论 §1 算法判决. 反 confirmation-bias. Rotation: N5 上次触碰 2026-05-27 22:30 (~7.5h 前), 最近 5 ticks 全部 B/C (embodiment/causality/reasoning/formal_limits/grounding + C taxonomy) -- 无 sample A. Picked A over B 因 N5 是 N1-N8 八章里唯一仍带显式 TODO 注释 (§6 尾声 placeholder) 的章节, 推完即关一个长期 open marker. 所有 arxiv ID 公开可查; [unverified pp] / [unknown] / [uncertain] 全部标注, 未编造数字或日期. README.md 状态从 §1-§5/5500字 更新到 §1-§6+尾声/7000字."
+    },
+    {
+      "tick_utc": "2026-05-28T06:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/scaling_limits.md"
+      ],
+      "chars_added": 3800,
+      "note": "Task B: scaling_limits.md 新增 §Data-quality scaling 第六轴 (~3.8k chars) — 把 (N,D,C_train,C_inference,bits/param) 之后第六根轴 (单位 token 教学价值/数据质量乘子) 钉成 C-SCALE-6 候选条目. 7 篇时间线论文 (Phi-1 2306.11644 + phi-1.5 2309.05463 + phi-3 2404.14219 + DoReMi 2305.10429 + Rephrase the Web 2401.16380 + FineWeb-Edu 2406.17557 + Model Collapse 2305.17493 Nature 版 + RegMix 2407.01492[unverified ID]) + Joint-KL 2605.12316 KL-radius 常数项 信息论挂钩. C-SCALE-6 写成闭区间(下界=raw web,上界=Shumailov tau model collapse)而非半直线,falsification 显式锁两条 (decontaminated benchmark 同 D_eff 仍劣 / phi gain 全部 contamination 解释). 三反例: decontamination 软肋 + specialization 收窄 (phi-3 broad knowledge 落后 Llama-3-8B) + collapse tau 一次性 vs 多代递归二分. 与 C-SCALE-3 plasticity cliff 张力点显式 open ([unknown] 因为 Liu 2503.19206 未 vary data quality). Rotation: scaling_limits 上次触碰 2026-05-27T20:32 (~10h 前 = 最近 8 个 topic files 中第二老), 最近 5 ticks 全部为 A/C (N5 sample + taxonomy C6 + embodiment/causality/reasoning/formal_limits/grounding B) -- scaling_limits 跨过 rotation guard. 所有 arxiv ID 公开可查, [unverified ID] / [unknown] 全部标注, 未编造数字日期."
     }
   ]
 }
