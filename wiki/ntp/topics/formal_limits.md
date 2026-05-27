@@ -104,9 +104,35 @@ C-FORM-4 与 C-FORM-1/2 互补：前三个候选锁 expressivity 上界，C-FORM
 - → [world_model](world_model.md)：C-FORM-3 的 tokenization 旋钮直接影响 world_model 页 C-WM-1（closed-world bottleneck）的有效 horizon。
 - → 样章 [N2-the-tc0-wall](../samples/N2-the-tc0-wall.md)：本 topic 的 chronology §1984→2023 即 N2 §1-§2 的素材底；N2 负责把它叙事化。
 
+## MoE / 动态 depth / early-exit — "per-token compute" 假设的当代裂缝 (2022–2026)
+
+上文所有 TC⁰ 风格 lower bound——Hahn 2019、Merrill–Sabharwal 2106.16213 / 2207.00729、Sanford 2402.09268——都共享一条隐藏假设：**每个 output token 的计算量是 (L · d²) 这一个常数**。在 dense decoder-only transformer 上这一假设几乎默认成立；但 2022 之后 frontier model 的实际架构早已不在这一假设的舒适区。把这一道裂缝单独抽出来，因为它直接决定上一节 C-FORM-1 / C-FORM-2 在 2026 frontier scale 下的"现实射程"。
+
+- **2022-01 — Du et al. (GLaM) ([arxiv:2112.06905](https://arxiv.org/abs/2112.06905))**。1.2T 参数 MoE，每个 token 只激活 ~96.6B。这是第一次在 production scale 上把 \\\"sparsely-activated transformer\\\" 形式塞进 NTP pipeline——但形式上**激活 expert 数 k 是一个 input-dependent 离散变量**，使得 \\\"per-token compute = const\\\" 在 token 级不再成立。Merrill–Sabharwal 风格的 TC⁰ 嵌入需要重新做：threshold gate 的 fan-in 在 MoE-router 路径下与 expert 数线性挂钩。
+- **2024-03 — Fedus / Switch / MoE 综述 + DeepSeek-MoE ([arxiv:2401.06066](https://arxiv.org/abs/2401.06066))**。Fine-grained expert (256 experts top-8) 把 routing decision 的离散熵推到 log₂(C(256,8)) ≈ 38 bits/token——一个不可忽略的 input-conditioned bit budget。若把 router 视为 *额外的 attention layer*，C-FORM-1 的 (L, d) 参数应扩为 (L, d, log E) 三元组。**形式工作的现状：没有公开论文把 MoE-augmented transformer 的 expressivity class 形式刻画过**；mech 派与 cap 派都默认沿用 dense bound，这是 2026-05 文献里一条公开的赤字。
+- **2022-07 — Schuster et al. (CALM) ([arxiv:2207.07061](https://arxiv.org/abs/2207.07061))**。confidence-based early-exit：per-token layer 数 L(t) 是 input-conditioned。Merrill–Sabharwal 的 "fixed L" 假设在 CALM-style 推理里不成立——形式上等价于把 depth 从常数升为 *bounded random variable*。但**注意一个反方向的事实**：若 L(t) 的期望 E[L] = L₀ 仍是 input-size n 的常数，则 TC⁰ 嵌入论证只需在 worst-case L 上做，结论几乎不变。早退在 *渐近表达力* 上并不打开新的类——它只影响常数因子（即 wall-clock）。
+- **2023-07 — Giannou et al. *Looped Transformers as Programmable Computers* ([arxiv:2301.13196](https://arxiv.org/abs/2301.13196))**。把同一个 fixed-depth transformer block 在推理时循环 T(n) 次，证明可模拟 RAM 程序。这是把 "动态 depth" 这一旋钮**推到极端**：T(n) 任意增长则上界直接到 P/poly，与 CoT-augmented bound (Merrill–Sabharwal 2310.07923) 平行。从形式角度看，looped transformer / Universal Transformer ([arxiv:1807.03819](https://arxiv.org/abs/1807.03819)) 与 CoT 是**同一道暗门的两个变种**：都允许"per-token compute"随 n 增长。
+- **2024 — MoD (Mixture-of-Depths) ([arxiv:2404.02258](https://arxiv.org/abs/2404.02258)) [unverified ID]**。Google DeepMind 让每个 token 可选择跳过若干 layer，等于把 early-exit 推广为 per-token 双向。形式后果与 CALM 同源——E[L] 仍可视为常数，故 worst-case TC⁰ 嵌入不变。
+- **2025 — MoR / Recursive-MoE 系列 [unverified bundle]**。把 looped 与 sparse 两条路线合并：fixed-depth backbone + per-token 选择性递归。**这条线在 2025-2026 才开始出现，形式表达力分析完全空白**。
+
+**对 C-FORM-1 / C-FORM-2 的净影响**：把上述四类架构变体拆成两组：
+
+1. **不打开新表达力类**的：CALM (Schuster 2207.07061)、MoD (2404.02258)、dense MoE (GLaM 2112.06905 / DeepSeek-MoE 2401.06066) ——形式上仍嵌入 TC⁰ / log-precision TC⁰，只是常数（router bits、平均 depth）变化。C-FORM-1 几乎不动；C-FORM-2 的 k(n) 等级表不动。
+2. **真打开新类**的：looped / Universal Transformer (2301.13196 / 1807.03819) ——T(n) 随 n 增长则等价于 CoT-augmented bound。这一组与 C-FORM-2 同源，不是新墙也不是新门。
+
+**判断 (2026-05-28)**：上一节 Open-problem 第 2 条的诚实答案是——\\\"per-token compute = const\\\" 假设在 MoE / early-exit / MoD 下**仍紧**（worst-case argument 仍能 carry），但 router 的 input-conditioned bit budget 让"const"这一表述在量化常数因子时变得 misleading。**真正的形式空白不在 MoE 也不在 early-exit，而在 looped-x-sparse 复合架构**——MoR 类工作尚未被 formal-limits 文献覆盖。这是 C-FORM-1 / C-FORM-2 在 2026 frontier scale 下需要补的下一道形式工作。一句话总结：MoE 不破墙，loop 才破墙；2024 后大部分 frontier 改架构改的是 MoE 这一组，所以 TC⁰ 论证在工程意义上**比批评者以为的更耐久**。
+
+新增候选机制：
+
+| ID | 候选机制 | 形式陈述 | Falsification 条件 |
+|---|---|---|---|
+| C-FORM-5 | router-bit budget | MoE / MoD 的 input-conditioned routing 在每 token 引入 b(n) = O(log E) 额外 bit 计算预算，使 dense-TC⁰ 嵌入的常数因子按 expert 数对数增长，但渐近类不变 | 找到一个任务族 F，使 (L, d, E) MoE 严格 ⊃ (L · k, d) dense 在同 FLOPs 下的可学子集（即 routing 不仅省 FLOPs 还打开 expressivity） |
+
+C-FORM-5 是对 C-FORM-1 的常数修正而非升级；它存在的价值是**显式拒绝**"MoE 突破 TC⁰"这一在 2024-2026 多次被非形式化重复的说法。
+
 ## Open problems
 
 - 把 Deterministic Horizon (2605.23024) 与 summarized CoT expressivity 放在同一坐标系下重新推导联合 bound。
-- TC⁰ 下界的"per-token compute"假设在 MoE / 动态 depth / early-exit 架构下是否仍紧。
+- TC⁰ 下界的"per-token compute"假设在 MoE / 动态 depth / early-exit 架构下是否仍紧。（部分回答见上节；looped-x-sparse 复合架构仍空白。）
 - 是否存在"width 真的能换 depth"的非 trivial 任务类（Barron 空间外）。
 - Sanford–Hsu–Telgarsky 2306.02896 的 q-sparse averaging family 是否可以在 CoT-augmented setting 下被打破？若是，则 C-FORM-2 的 *k(n) 等级表* 需要重写。

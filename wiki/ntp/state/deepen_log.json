@@ -633,6 +633,15 @@
       ],
       "chars_added": 3400,
       "note": "Wrote N7 §6 尾声 (~3.4k chars): 2027-05-31 falsifiable bet 操作化 C-CONT-1 弱化命题成 5 条 AND (a backbone-weight inference-path update + b no cross-session replay + c RealTime QA 新事实吸收 >=70% + d 旧事实保留 >=95% + e <=10x inference cost), 估计先验 <15% 不被达成. 第二部分给 Sutton 回信: Dohare 2024 Nature (continual backprop in vision RL) 是 §3 论证证据不是反证, Sutton 2024-25 podcast (Dwarkesh/TalkRL [unverified dates]) 'LLMs not the path' 与 Lazaridou 2102.01951 曲线指同一件事, 这章不是反 Sutton 是把 Sutton 哲学陈述翻译成 NTP 几何不动点. 关闭 §6 TODO marker. README N7 §1-§5 -> §1-§5 + 尾声 5500->6500. Rotation: N7 last touched 2026-05-27T16:32Z (~2.5h ago), 最近 5 ticks 为 B online_learning / A N5 / C survey / A N6 / A N8 — 最近无 N7. Picked A over B/C/D 因 N7 仅剩的 explicit TODO 是 §6 falsifiable bet, 跟 §3 §4 §5 几何论证整章封口紧密相关, 不写则 N7 缺 NTP 样章不成文契约 (每章必给 12-24 月可证伪 bet). 所有论证全程不引入 fabricated arxiv ID; Karpathy talk / Sutton podcast / Lachaux follow-up 全部 [unverified] 标记."
+    },
+    {
+      "tick_utc": "2026-05-27T19:33:11Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/formal_limits.md"
+      ],
+      "chars_added": 4200,
+      "note": "Deepened formal_limits.md with new section 'MoE/动态depth/early-exit: per-token compute 假设的当代裂缝 (2022-2026)' (~4.2k chars 净增). Lined up GLaM 2112.06905, DeepSeek-MoE 2401.06066, CALM Schuster 2207.07061, Looped Transformers Giannou 2301.13196, Universal Transformer 1807.03819, MoD 2404.02258 [unverified ID], MoR 2025 [unverified bundle]. Key thesis: 把 4 类架构变体拆成两组——CALM/MoD/dense MoE 都仍嵌入 TC⁰ (worst-case E[L]=const, router 只动常数因子); 只有 looped/Universal Transformer 真打开新表达力类, 且与 CoT-augmented bound 同源. 直接回应原 Open-problem 第 2 条 (MoE 是否破墙) 给出诚实判断: MoE 不破墙, loop 才破墙; 2024 后 frontier 改架构改的是 MoE 一组, 故 TC⁰ 论证在工程意义上比批评者以为的更耐久. 新增 C-FORM-5 (router-bit budget) 作为对 C-FORM-1 的常数修正候选, falsifier 明确写出 (要求 MoE 严格 ⊃ FLOPs-equiv dense), 存在价值是显式拒绝 'MoE 突破 TC⁰' 非形式说法. 指出 looped-x-sparse 复合架构 (MoR 类) 是真正的形式空白. 所有公开 arxiv ID 可验证; MoD/MoR 标 [unverified]. Rotation: formal_limits.md 在最近 15 ticks log 中未被触, 最近 4 ticks 为 A N7 / A N8 / B grounding / A N6 — 无一动 formal_limits. Picked B over A 因 N1-N8 全部样章过去 8h 内均已推进, 而 formal_limits 是 8 topics 中表达力主轴核心页, MoE/depth-dynamics 形式分析缺口与 N2 §6 三道暗门叙事直接挂钩 (没补则 N2 缺 topic-page 形式底)."
     }
   ]
 }
