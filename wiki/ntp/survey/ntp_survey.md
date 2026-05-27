@@ -51,9 +51,21 @@
 
 ## 3. Grounding & 语义
 
-- **核心论点 A**：纯文本训练系统对物理世界 referent 的把握必然受限。
-- **核心论点 B**：multimodal 训练能缓解但不消除（因仍是被动观察，缺 intervention）。
-- **反论**：足够大规模的多模态 + 工具调用可以让 grounding 成为 emergent 工程问题，而非机制问题。
+把 symbol grounding 这条线从 1990 拉到 2026，骨架不是 "纯文本到底能不能 ground"，而是 **可证伪 setting 被双向收窄**——一边强 mech 阵营被迫从 "any grounded structure" 退到 *deictic / first-person / novel-object* 子集；另一边弱 cap 阵营被迫承认 contrastive (CLIP-style) objective 不够，必须补 closed-loop interaction 或 region-level supervision。下表汇集本仓库 [`../topics/grounding.md`](../topics/grounding.md) 与 [`../topics/embodiment.md`](../topics/embodiment.md) 里筛出来的最强证据，并标各自当前 NTP 三分法定位：
+
+| 论点 | 状态 (mech / cap / open) | 关键文献 |
+|---|---|---|
+| 纯符号系统无法 escape 字典循环 (symbol grounding problem) | **mech, philosophical prior** | Harnad 1990 (*Physica D* 42, non-arxiv) · Bisk-Holtzman-Thomason *Experience Grounds Language* 2020 ([2004.10151](https://arxiv.org/abs/2004.10151)) |
+| 章鱼论证: 分布信号无法恢复 meaning 的 *communicative intent* 分量 | **mech, 已被 Søgaard 2023 部分翻案 (恢复 up to permutation)** | Bender-Koller 2020 (ACL anthology) · Søgaard *Grounding the Vector Space of an Octopus* 2023 ([2305.02223](https://arxiv.org/abs/2305.02223) [unverified ID]) |
+| 纯文本 LM 在 color / spatial / perceptual 子空间能学非平凡同构 | **counter-evidence to strong mech, 削弱"any grounded structure 不可" 读法** | Abdou 2021 ([2109.06129](https://arxiv.org/abs/2109.06129)) · Li *Implicit Representations* 2021 ([2106.00737](https://arxiv.org/abs/2106.00737)) · Patel-Pavlick ICLR 2022 [unverified ID] |
+| CLIP-style contrastive objective 学共现而非指称——VLM-blind / MMVP 系统失败 | **mech, 把战场从 "multimodal solved" 推回 "需要 region-level supervision"** | Tong et al. MMVP 2024 ([2401.06209](https://arxiv.org/abs/2401.06209)) · Rahmanzadehgervi *VLMs Are Blind* 2024 ([2407.06581](https://arxiv.org/abs/2407.06581)) · Vector Grounding (Mollo-Millière 2023, [2304.01481](https://arxiv.org/abs/2304.01481)) |
+| RLHF 作为稀疏 token↔world-state 监督；base→RLHF 在 TruthfulQA/SimpleQA 的 gap 中有多少是 grounding | **open, 文献几乎未与 instruction-following 分离** | Mollo-Millière 2023 §RLHF / Pavlick *Phil Trans R Soc B* 2023 (non-arxiv) |
+| VLA / OpenVLA 在 *unseen object × unseen instruction* deictic 子集成功率从 ~70% 跌到 <20% | **conditional mech (deictic asymmetry, C-GROUND-3)** | OpenVLA Kim et al. 2024 ([2406.09246](https://arxiv.org/abs/2406.09246)) · Open X-Embodiment 2023 ([2310.08864](https://arxiv.org/abs/2310.08864)) · RT-2 2023 ([2307.15818](https://arxiv.org/abs/2307.15818)) |
+| FFN-as-grounding bottleneck: linearized 结构知识 hallucination 的 sufficient statistic 是 FFN 未把 context 写入 residual, 跨 schema 通用 detector AUC>0.8 | **mech (interface-layer; 第六项 confound)** | Li et al. 2026 ([2605.26362](https://arxiv.org/abs/2605.26362)) |
+| Action-execution gap: 多轮 tool-use 单步语法合法率 ≥0.9 但 pass^k(k≥4) ≤0.4, 跨 7B–400B N 不显著 | **medium-strong conditional mech (C-GROUND-5, agentic 子带)** | τ-Bench Yao 2024 ([2406.12045](https://arxiv.org/abs/2406.12045)) · OSWorld Xie 2024 ([2404.07972](https://arxiv.org/abs/2404.07972)) · SWE-bench Jimenez 2023 ([2310.06770](https://arxiv.org/abs/2310.06770)) · SWE-Bench+ Aleithan 2024 ([2410.06992](https://arxiv.org/abs/2410.06992)) · BFCL / Gorilla Patil 2023 ([2305.15334](https://arxiv.org/abs/2305.15334)) |
+| Probe 测量代际偏差: 多数 grounding 文献仍停留在 Hewitt-Manning 第一代 probe, 未控 selectivity, 也未做 Vig-Meng / Geiger DAS 干预 | **方法学债, 直接影响上面 4 行 effect-size** | Hewitt-Liang EMNLP 2019 ([1909.03368](https://arxiv.org/abs/1909.03368)) · Vig CMA 2020 ([2004.12265](https://arxiv.org/abs/2004.12265)) · Meng ROME 2022 ([2202.05262](https://arxiv.org/abs/2202.05262)) · Geiger DAS 2023 ([2303.02536](https://arxiv.org/abs/2303.02536)) · Brinkmann multimodal AP 2024 ([2402.11917](https://arxiv.org/abs/2402.11917) [unverified ID]) |
+
+判断：到 2026-05 这条线最值得记住的不是 "text-only 不能 ground" 也不是 "multimodal 解决了 grounding"，而是 **三个独立局部 mech 候选取代了一条全局 mech 主张**——C-GROUND-3 (deictic / first-person asymmetry)、C-GROUND-4 (contrastive ≠ referential)、C-GROUND-5 (action-execution gap)。三者落到不同 token 类型 (deictic 名词 / 一般名词 / 动词)、不同模态接口 (vision encoder / VLA closed-loop / tool-use trajectory)，且都自带可证伪 protocol。这种 "全局 mech → 多个 conditional mech" 的拆分与 §2 形式边界的 "expressivity 单一上界 → 四旋钮联合上界" 拆分同构——是 2024-26 NTP 调研在 mech 层最具结构性的方法学进步。但代价是：任何 grounding-style mech 论证此后必须显式同时控制至少七项 confound (format / readout / collapse / attribute-head / representation-geometry / FFN-grounding / prompt-edit-routing) 才能进入证据栈，2026 年能进入第三代 (counterfactual + cross-modal causal probe) 的 grounding-mech 工作不超过 5 篇——这是 *证伪难度* 而非 *现象不存在* 把战线拖在原地的主因。详细叙事见 [`../topics/grounding.md`](../topics/grounding.md) §第三代 probe 与 §Tool-use / action grounding；embodied 子带与 sensorimotor closed-loop 检验见 [`../topics/embodiment.md`](../topics/embodiment.md)；与 N5 (VLA bet) §3-§5 的对接是当前最活跃的 mech-vs-cap 交火带。
 
 ## 4. 因果
 

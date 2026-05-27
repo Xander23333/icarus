@@ -707,6 +707,15 @@
       ],
       "chars_added": 4600,
       "note": "Task B: online_learning.md 新增 §Knowledge edit ripple-effect 暗线 (~4.6k chars), 7 篇时间线 ROME 2202.05262 → MEMIT 2210.07229 → MQuAKE 2305.14795 → RippleEdits 2307.12976 → SpecEdit 2305.17553 → Gekhman 2405.05904 → ripple-aware editor wave (MELO/PMET/AlphaEdit [unverified IDs]) + Yao 2305.13172 survey + Hase localization-vs-editing 争论. 三年曲线压成判决: ROME/MEMIT 反例只击中单跳召回弱命题, 多跳/ripple/locality 联合 eval 反过来加固 C-CONT-2 plasticity-stability tradeoff. 提出候选 C-CONT-4 (Ripple closure failure): 任何 frozen-weight 局部 edit 方法在 (MQuAKE 3-hop + RippleEdits composition + SpecEdit locality) 三联指标下无法同时达成 (80/90/60), falsification = 公开复现达三阈值. 显式标注 C-CONT-4 当前定位为 C-CONT-2 corollary 而非 independent mech, 12 个月观察期决定升降级. cross-link N3 reversal curse + N4 §6 mech-interp 因果链脆弱性. 反例对待: 显式承认 ROME/MEMIT 在单跳上确实证伪强 mech 命题. Rotation: online_learning.md 上次内容触碰 2026-05-27T17:06 (~14h 前, 当时只挂 C5 元数据指针未加新内容), 最近 5 ticks 全部为 B scaling_limits / A N5 / C taxonomy / B embodiment / B causality -- online_learning 跨过 rotation guard. Picked B over A 因 N1-N8 八章过去 24h 全部推进过, 而 online_learning 自 C5 登记以来 ripple-effect 这条文档内 §共识(弱) 提到却始终未展开的暗线是当前 topic 页最大的内部 inconsistency. 所有 arxiv ID 公开可查, [unverified IDs] 标在多篇 ripple-aware editor 一波, 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T07:30:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md"
+      ],
+      "chars_added": 4500,
+      "note": "Task C: survey §3 Grounding 从 3 行 stub 填成 9 行 evidence table + judgment, 镜像 §2 形式边界结构. 引用 Harnad 1990 / Bender-Koller 2020 / Søgaard 2305.02223 [unverified ID] / Abdou 2109.06129 / Li 2106.00737 / Patel-Pavlick 2022 [unverified ID] / MMVP 2401.06209 / VLM-Blind 2407.06581 / Mollo-Millière 2304.01481 / Open-X 2310.08864 / RT-2 2307.15818 / OpenVLA 2406.09246 / FFN-grounding 2605.26362 / τ-Bench 2406.12045 / OSWorld 2404.07972 / SWE-bench 2310.06770 / SWE-Bench+ 2410.06992 / Gorilla 2305.15334 / Hewitt-Liang 1909.03368 / Vig CMA 2004.12265 / ROME 2202.05262 / Geiger DAS 2303.02536 / Brinkmann 2402.11917 [unverified ID]. 判决: '全局 mech 主张 → 三个 conditional mech (C-GROUND-3/4/5)' 拆分与 §2 形式边界 '单一上界 → 四旋钮联合' 同构, 是 2024-26 NTP 调研 mech 层最具结构性方法学进步; 代价是 7 项 confound 同时控制, 第三代 probe-validated 工作不超过 5 篇. 反例方向显式承认: Søgaard 2023 up-to-permutation + Patel-Pavlick conceptual space 削弱强 mech. Rotation: ntp_survey.md 上次内容触碰 2026-05-27T23:30 (§2 形式边界, ~8h 前); 最近 5 ticks 全部为 B/C topic deepens, ntp_survey 跨过 rotation guard. Picked C over B/A 因 (i) survey §3-§8 多数仍 stub, §3 是 topic 页 (grounding.md 26k chars + C-GROUND-5 + 三代 probe) 与 survey 反射最不一致点; (ii) C-GROUND-5 刚于 02:00 入 topic 但 survey §10 候选只到 C6, 需在 §3 显式展示闭环. 所有 arxiv ID 公开可查, [unverified ID] 三处标注, 未编造数字/日期/标题."
     }
   ]
 }
