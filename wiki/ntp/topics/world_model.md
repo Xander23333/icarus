@@ -55,6 +55,32 @@ text-NTP 的 world-model 证据基本上停在 Othello-GPT 与 chess-Transformer
 
 判断：video-NTP 把 "NTP 选不选 world model" 这道题的赌注真正抬高了，但 2024–2026 的证据告诉我们，**它选出来的仍然是行为级 / 帧级 dynamics**，object-level 长时序与因果结构依旧不来自 NTP 自发涌现。下一个能推动 discourse 的实验，不是再训一个更大的 Sora，而是在 Genie 2 / Cosmos 这类 latent-action 世界模型上做 Othello-GPT 风格的 probe——如果能在 latent 里线性可解码出物体身份、位置、速度，那 C-WM-1 的边界就从 closed-world 扩到了 mid-open-world；如果不能，那 video-NTP 也只是 text-NTP 的高维翻版。
 
+## 反事实 / 干预 eval：当前最大的方法论空洞
+
+把上一节末尾那句"没有任何一篇 video world-model 论文做过 do-operator 干预下的预测一致性 eval"翻成 Pearl 的语言：当前所有公开 world-model benchmark 几乎全部停留在 Layer 1（observational）—— 给 prefix 预测续帧或下一动作 —— 而真正能区分"模型有 world model"vs"模型在做高阶 n-gram"的关键证据，是 Layer 2（interventional）的预测一致性。这一空洞不是"还没人想到"，而是工程上比 observational eval 难一个数量级，目前只有零散候选：
+
+- **2023-11，Kıcıman et al., *Causal Reasoning and Large Language Models: Opening a New Frontier for Causality*** ([arxiv:2305.00050](https://arxiv.org/abs/2305.00050))。在 *text* 上系统测 LLM 的 counterfactual reasoning，结论是 GPT-4 在 pair-wise causal direction 上达到 SOTA 但在 counterfactual generation 上系统性 fail。这一结果是 text-NTP 的，但提供了 video-NTP 应该照搬的 protocol 模板。
+- **2024-02，Vafa et al.** ([arxiv:2406.03689](https://arxiv.org/abs/2406.03689))。其 Myhill–Nerode 度量本质上是 *intra-model state equivalence* 的等价类检验，可以视为"半-interventional"——它问的不是 do(X) 后的 rollout，而是 internal state 在等价输入上是否被识别为同一类。这是目前最接近 Layer-2 的 NTP world-model eval。
+- **2024-06，Brinkmann et al., *A Mechanistic Analysis of a Transformer Trained on a Symbolic Multi-Step Reasoning Task*** ([arxiv:2402.11917](https://arxiv.org/abs/2402.11917) [unverified ID])。在小规模 transformer 上用 activation patching 做 *causal mediation analysis*——这是 mech-interp 社区把 do-operator 真正落地到神经网络内部的标准做法，但还没人把同一套 patching scheme 搬到 video world model 上。
+- **2025 — Phyworld / PhyGenBench / WorldSimBench 等物理 video benchmark**（[unverified] 多篇 2025 工作）：开始报"违反物理"率，但仍是 marginal observational metric，不构造 *counterfactual pair*（同一 prefix + 仅在某一物理参数上 do-intervene 的两段视频）。
+
+把这些拼起来，可以勾勒出一个**还没有人做过、但 2026–2027 完全可做**的实验设计：取 Genie 3 / Cosmos / Sora 3 类 latent-action 世界模型，构造一个 counterfactual triplet benchmark $\{(s, a, s'), (s, \text{do}(a'), s'')\}$，其中 $a, a'$ 仅在某一物理可控变量（速度/方向/重力/碰撞）上不同；衡量模型 rollout 在 (a) 边际似然、(b) latent state 同构、(c) downstream 物理一致性三个层面的 ATE。**如果 video-NTP 真的学到了 world model，这三个量必须 *联合* 与 ground-truth simulator 一致；如果只学到了 frame-level dynamics，则 (a) 可对、(b)(c) 必然脱钩**。这是把 §视频暗线 的"行为级 vs 表征级 vs 因果级"三分法在单一 benchmark 上落地的最干净路径。
+
+## C-WM-3：interventional consistency 作为强 mech 判据
+
+**C-WM-3 (interventional rollout consistency)**：存在一个 simulator-backed counterfactual benchmark $\mathcal{B}_{\text{do}}$，对任意 video-NTP world model $M$ 与人为可控物理变量 $X \in \{v, \theta, g, \mu\}$，定义 ATE 误差
+
+$$\varepsilon_{\text{do}}(M, X) = \mathbb{E}_{s,a}\bigl\|\mathbb{E}_M[s'\mid s,\text{do}(X{=}x)] - \mathbb{E}_{\text{sim}}[s'\mid s,\text{do}(X{=}x)]\bigr\|.$$
+
+强 mech 假设：**∀ 仅在像素 / latent frame 上做 NTP 训练（无 simulator-backed counterfactual supervision）的 $M$，$\varepsilon_{\text{do}}(M, X) \gg 0$ 且不随训练 token 数衰减**。
+
+- **可证伪条件**：找到一个 video-NTP $M$，在某个非平凡 $X$ 上 $\varepsilon_{\text{do}}(M, X) \to 0$，且与 observational eval 上的 $M$ *同一权重*——后一条件排除"换一个 fine-tuned 头"的 escape。
+- **与 C-WM-1 的区别**：C-WM-1 是 *closed-world observational*（Othello/chess 上 NTP 自然挤出状态），C-WM-3 是 *open-world interventional*（video 上 NTP 是否能挤出 *因果* 状态而不只是 *关联* 状态）。从 Pearl 阶梯看，C-WM-1 在 Layer 1.5，C-WM-3 在 Layer 2。
+- **与 [causality](causality.md) C-CAUSAL-1 的关系**：C-CAUSAL-1 押的是 text-NTP 在反事实问答上的失败；C-WM-3 把同一假设搬到 video 模态。两者若同时被证伪，则"NTP 选不出因果结构"这一 mech 命题需要整体重写。
+- **当前状态**：simulator-backed counterfactual triplet benchmark *尚不存在*；最接近的资源是 Brax / MuJoCo / Isaac Sim 这些可程序化生成 counterfactual 的 simulator + Phyworld 类 observational eval 的拼接。该条目当前评估为 **medium**：理论清晰、benchmark 缺位、工程可行。
+
+判断：C-WM-3 是当前 NTP-world-model 讨论里**最有可能在 18 个月内一锤定音**的候选——既不像 C-WM-2 那样依赖整个开放语料的统计论证（不可证伪），也不像 C-WM-1 那样停留在玩具 closed-world（可证伪但已被证实，没有新信息量）。Genie 3 / Cosmos 这一代模型权重不公开但 API 可调，足够做 counterfactual triplet 的 black-box ATE 估计；real bottleneck 在 benchmark 设计者，不在模型能力。
+
 ## 诚实判断
 
 到 2026 年 5 月为止，三种 "world model" 的 NTP 兼容性大致是：第 2 种（表征同构）在 closed-world 上 *被证明存在*，在 open-world 上 *被证明稀疏且碎片化*；第 1 种（行为规划）目前最好的实例不是 LLM 而是 DreamerV3 与 MuZero 这类专用 model-based RL，video-NTP 是有希望的旁支；第 3 种（反事实/因果）几乎没有 NTP 自发挤出的证据，必须靠显式 reasoning trace 外接（见 [causality](causality.md) §C-CAUSAL-1）。
@@ -67,4 +93,4 @@ text-NTP 的 world-model 证据基本上停在 Othello-GPT 与 chess-Transformer
 - [grounding](grounding.md) — world model 需不需要 sensorimotor 接地
 - [embodiment](embodiment.md) — Genie / robotics 路线
 - [reasoning](reasoning.md) — reasoning trace 作为外置 world model
-- 候选 mech 入口：`survey/taxonomy.md` C-WM-1, C-WM-2
+- 候选 mech 入口：`survey/taxonomy.md` C-WM-1, C-WM-2, C-WM-3

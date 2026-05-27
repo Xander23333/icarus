@@ -393,6 +393,15 @@
       ],
       "chars_added": 5400,
       "note": "Continued N6 sample chapter §3 'Genie 1 → 2 → 3：action-conditional 这一假设的真实账单' (~5.4k chars): three-generation chronology with Bruce/Dennis/Edwards/Rocktäschel Genie 1 2402.15391 (8-dim latent action codebook / 30万小时 2D platformer / 11B / 1s 可玩) → Genie 2 2024-12 blog (3D / 1min / object permanence 10s) → Genie 3 2025-08 blog (720p / 数分钟 / promptable world events); engineering ledger of codebook扩展/数据混杂/TPU-pod 推理 against Sora pixel-only baseline; SIMA 2404.10179 闭环实验作为 action-conditional NTP 的可证伪 anchor; honest counter on 'latent action 抽的是物理还是 game engine 内部 API' open problem (2D engine-backed vs 3D internet videos disambiguation); 2026-05 judgment: 弱命题(action conditioning 换 generalization) 已兑现 / 强命题(真世界模型) 未兑现 / 2027 PhyGenBench latent-action vs pixel-only 对照实验是关键 falsification; ties back to §2 '范式被悄悄替换' 论点 (Sora 3 是否吸收 Genie latent state). README N6 §1-§2 → §1-§3. Rotation: N6 last touched at 10:30 tick (4h ago, not back-to-back); N3/N8 touched at 14:00/13:30 — avoided; topic pages all touched within last 5h."
+    },
+    {
+      "tick_utc": "2026-05-27T15:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/world_model.md"
+      ],
+      "chars_added": 5289,
+      "note": "Added world_model.md new section on counterfactual/interventional eval methodological gap + new C-WM-3 candidate (~5.3k chars). Frames the do-operator gap in Pearl Layer-2 language; lists 4 partial precedents (Kiciman 2305.00050 text-only counterfactual protocol, Vafa 2406.03689 Myhill-Nerode as semi-interventional, Brinkmann 2402.11917 [unverified ID] activation patching as causal mediation, 2025 Phyworld/PhyGenBench/WorldSimBench [unverified] still-marginal observational); proposes simulator-backed counterfactual triplet benchmark on Brax/MuJoCo/Isaac with three-level ATE (marginal likelihood + latent state isomorphism + downstream physics) on Genie 3 / Cosmos / Sora 3 via black-box API; formalizes C-WM-3 with epsilon_do(M,X) ATE error definition + same-weight falsifier clause to block fine-tuned-head escape; explicit contrast with C-WM-1 (closed-world observational, Layer 1.5) and C-CAUSAL-1 (text-modality twin); judgment that C-WM-3 is the candidate most likely to be settled in 18 months because benchmark-bottlenecked not capability-bottlenecked. Updated Cross-links taxonomy pointer C-WM-1,C-WM-2 to also include C-WM-3. Rotation: world_model.md last touched at 2026-05-27T04:00 tick (~11h ago), well outside back-to-back; samples N2-N8 all touched within last 4-7h; topic pages causality/embodiment/reasoning/scaling_limits/formal_limits/grounding/online_learning all touched within last 4-12h - world_model was the longest-untouched topic with explicit TODO marker (do-operator eval gap flagged in prior video-NTP section)."
     }
   ]
 }
