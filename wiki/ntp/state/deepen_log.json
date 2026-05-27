@@ -669,6 +669,16 @@
       ],
       "chars_added": 5300,
       "note": "Deepened embodiment.md with new §'Robot-data scaling: episode-to-token 等效换算的当前状况 (2023-2026)' (~5.3k chars). Five chronological data points: OXE 2310.08864 (970k episode = 1e9-1e10 token, ~C4/100-1000), OpenVLA 2406.09246 (8.5B effective token, token-count != information-content), Lin 2410.18647 imitation scaling fit alpha 0.13-0.25 vs text 0.34 Hoffmann 2022, 2025 pi0/GR00T internal teleop 1e10-1e11 step [unverified bundle] frontier labs won't publish alpha, 2026-05 Capability-Robustness IT-bound 2605.25889 forces task-entropy-sliced conversion. Cross-aligns with scaling_limits.md five C-SCALE candidates: inherits C-SCALE-1 horizon-linear + C-SCALE-4 verifier-rich exchange, violates C-SCALE-5 bits/param because visual+action token entropy density < text. Introduces C-EMBOD-5 (effective-token deflation in vision+action streams): bits/token coefficient 0.05-0.2x text baseline, ceiling ~0.5x; falsifier = visual encoder + action tokenizer reaching >=1.5 bits/token effective on OXE w/o LIBERO/SimplerEnv regression. C-EMBOD-5 与 C-EMBOD-4 互补 (train side vs eval side). Updated Open problems #3 pointer. Rotation: embodiment.md last touched 2026-05-26 (~2 days ago); last 5 ticks were B causality / B reasoning / B formal_limits / A N7 / A N8 -- no embodiment. Picked B over A because N1-N8 all advanced within 24h, embodiment Open-problem #3 was longest-standing topic-page placeholder, directly linked to newest 2605.25889 IT-bound paper note. All arxiv IDs public; numeric/alpha/coefficient uncertain points marked [unverified]. No fabricated IDs."
+    },
+    {
+      "tick_utc": "2026-05-28T05:30:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/taxonomy.md",
+        "wiki/ntp/survey/ntp_survey.md"
+      ],
+      "chars_added": 8400,
+      "note": "Task C taxonomy/survey refinement: 把 world_model.md §C-WM-3 (video-NTP interventional rollout consistency) 正式注册为 candidate C6, 三处同步 (taxonomy 升降级历史表新增 2026-05-28 行 + candidate snapshot 新增 C6 行 + ntp_survey §10 新增 C6 条目), 并写 §升降级判例 — C6 走一遍四条升级条件 worked example (~6k chars), 与既有 C5 判例并列. 形式陈述锁三参数 (pixel/latent NTP objective + same-weight ATE measurement + non-trivial physical X), 映射到 Pearl Layer 1→2 鸿沟 + Bareinboim-Pearl 2016 identifiability + Zecevic 2308.13067 Causal Parrots meta-SCM 论证 (显式承认这条映射比 C1↔TC⁰ 弱一个量级——只到 definitional embedding 没到 formal unreachability proof, 正是 C6 卡在升级条件 2 部分达标的根因, 标注 ✅⚠✅⚠). Protocol falsifier: Brax/MuJoCo/Isaac Sim 可程序化 simulator + N≈1e4 counterfactual triplet + black-box API, ≤200 H100·h. 五 confound 显式拆解 (i-iii) 已排除 vs (iv) attribute-head 缺失 (2605.14004 在 text 上证明可修但 video 域无人复现) + (v) representation-geometry under-constraint (2605.24956 NITP-style 在 video 文献空白). 升级路径三步明示, 与 causality.md C-CAUSAL-1 cross-modal joint falsifier 设计挂钩. 三处文档同步符合 taxonomy 末段 'commit 应同时改三处, 三处不同步即视为 incomplete' 规则. Rotation: survey/taxonomy.md 在最近 20+ ticks 中仅 2026-05-27T17:06 被 C 触 (~12h 前); ntp_survey.md 在 2026-05-27T23:30 被 C 触 (~6h 前); 最近 5 ticks 全部为 B (embodiment/causality/reasoning/formal_limits/grounding) 无 C. Picked C over A 因 N1-N8 八章过去 24h 全部推进过, 而 C6 候选已在 world_model.md 写成但未登记到 candidate snapshot — taxonomy 表与 topic 页脱钩本身就是 incomplete 状态, 优先级高于继续推 sample. 所有 arxiv ID 公开可查; 不确定 ID/数字处全部 [unverified] 标记, 未编造."
     }
   ]
 }
