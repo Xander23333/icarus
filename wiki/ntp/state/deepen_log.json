@@ -383,6 +383,16 @@
       ],
       "chars_added": 2800,
       "note": "Continued N8 sample with new §3-bis 被遗忘的三堵小墙 (~2.8k chars). Three smaller mech-wall collapses with chronologies: (A) Cyc / ConceptNet / ATOMIC 1984-2020 — commonsense-must-be-explicit-KG strong claim died after GPT-3/ChatGPT zeroshot CommonsenseQA/PIQA/HellaSwag/WinoGrande, citing Lenat-Marcus 2308.04445 and Sap ATOMIC 1811.00146; (B) HotpotQA 1809.09600 / 2WikiMultiHopQA 2011.01060 multi-hop-needs-explicit-module collapsed 2022-01 by Wei CoT 2201.11903 + self-consistency 2203.11171 + ToT 2305.10601 + PRM800K 2305.20050 + Turpin 2305.04388 unfaithfulness as the remaining weak claim; (C) Transformer-cannot-symbolic-variable-binding collapsed quietly 2022-23 by Anthropic induction-head 2209.11895 + Allen-Zhu Physics-of-LM 2305.13673 [unverified Part编号]. Adds judgment: collapse time-constant ~4-10y, raises Bitter-Lesson empirical base rate from 4 to 7, explicit base-rate warning to N2-N7 readers. Updates README N8 §1-§2 → §1-§3+§3-bis 5000→5500字. Rotation: N8 last touched 60min ago at 13:00 tick but ntp_survey.md was the 13:30 tick so N8 is not back-to-back; all other samples (N2-N7) touched within last 4h, all 8 topic pages touched within last few ticks — N8 §3-bis was the only TODO-marked next-section that fits the per-tick budget cleanly."
+    },
+    {
+      "tick_utc": "2026-05-27T14:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "Continued N6 sample chapter §3 'Genie 1 → 2 → 3：action-conditional 这一假设的真实账单' (~5.4k chars): three-generation chronology with Bruce/Dennis/Edwards/Rocktäschel Genie 1 2402.15391 (8-dim latent action codebook / 30万小时 2D platformer / 11B / 1s 可玩) → Genie 2 2024-12 blog (3D / 1min / object permanence 10s) → Genie 3 2025-08 blog (720p / 数分钟 / promptable world events); engineering ledger of codebook扩展/数据混杂/TPU-pod 推理 against Sora pixel-only baseline; SIMA 2404.10179 闭环实验作为 action-conditional NTP 的可证伪 anchor; honest counter on 'latent action 抽的是物理还是 game engine 内部 API' open problem (2D engine-backed vs 3D internet videos disambiguation); 2026-05 judgment: 弱命题(action conditioning 换 generalization) 已兑现 / 强命题(真世界模型) 未兑现 / 2027 PhyGenBench latent-action vs pixel-only 对照实验是关键 falsification; ties back to §2 '范式被悄悄替换' 论点 (Sora 3 是否吸收 Genie latent state). README N6 §1-§2 → §1-§3. Rotation: N6 last touched at 10:30 tick (4h ago, not back-to-back); N3/N8 touched at 14:00/13:30 — avoided; topic pages all touched within last 5h."
     }
   ]
 }
