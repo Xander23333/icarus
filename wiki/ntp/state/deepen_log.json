@@ -651,6 +651,15 @@
       ],
       "chars_added": 5500,
       "note": "在 reasoning.md 新增 §PRM/RLVR/过程奖励 (~5.5k chars 净增): 五个数据点 Lightman 2305.20050 / Math-Shepherd 2312.08935 / Setlur 2406.14532 [unverified 月份] / R1 2501.12948 / VinePPO 2410.01679 [unverified 作者] / RLVR reward-hacking 2025-26 [unverified bundle], 抽出 C-REAS-4 (NTP loss geometry vs reasoning utility 的 layer-wise misalignment), 给出 falsifier (math/code/formal-proof domain 上 base-best-of-N+verifier vs RLVR-tuned-greedy gap <=2pp 则弱化). 关键论点: PRM 是 NTP loss 几何 fingerprint 的最小修正而非脱离, R1 用 outcome verifier 绕过 PRM 是 PRM 路线第一个退场点 (仅 verifier-free domain 仍需 PRM), VinePPO 蒙卡 rollout 与 latent-CoT 对偶 (一个绕 verbal readout, 一个绕 value readout). 反例三条: pure-RL-from-scratch 不可行 (R1-Zero 崩坏证明 backbone 仍必要), Min 2202.12837 in-context demo 是 C-REAS-4 inference-time 预演, verifier-free domain 退化为 ORM. 新增 2 条 open problem (跨 domain controlled gap + reward-hacking 层级衰减率). Rotation: reasoning.md 最近 15 ticks 中仅在 2026-05-27T20:00Z 被触 (~8h 前), 之间已被 N5/N6/N7/N8/N3/formal_limits/grounding/online_learning/scaling_limits/survey 隔开. Picked B over A 因 N1-N8 八章过去 24h 全部推进过, 而 reasoning.md 是 8 个 topic 页里最薄 (21k), 且 PRM/RLVR 分析缺口与 N1 §objective-alignment 暗门 / N3 三块拼图直接挂钩. 所有公开 arxiv ID 可查; 数字/作者顺序/月份不确定处全部 [unverified] 标记, 未编造."
+    },
+    {
+      "tick_utc": "2026-05-27T20:33:16Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 3300,
+      "note": "Deepened causality.md with new §'RL-from-environment 在 Layer-2 上的 controlled comparison: 现有边角与未填的洞 (2024-2026)' (~3.3k chars). 把 §agentic-RL 节反复出现的 'no public controlled comparison' 缺口从直觉判断升格为五条证据枚举: (a) R1 paper 2501.12948 自带 R1-Zero/SFT/final ablation 但未测 causal benchmark, (b) CLadder 原论文 2312.04350 跨模型横扫但不能解耦 RL 强度, (c) reasoning-RL 在 LogiQA/ReClor 间接信号 [unverified pp] 但与 do-calculus 任务分布不重叠 (引 Pearl 2009 第1章 entail vs do 区分), (d) tau-Bench 2406.12045 / OSWorld 2404.07972 agentic trajectory 物理含 do(.) 但端到端 success 不能反推 do-circuit, (e) Boundless DAS 2305.08809 在 CLadder Layer-2 上未被组合. 提 3 个 <1 GPU-week 实验补洞 (R1-Zero/SFT/final x CLadder; Qwen/Llama-RL-vs-SFT x Zecevic UUID-rename; DAS 跑 do-circuit), 诚实归因为何无人做: 正向被 mech 派质疑 leak, 负向被 cap 派质疑 base, 发表回报为负 -- 社会学不可证伪而非技术不可证伪, 标 meta-候选可入 taxonomy 备注. Rotation: causality.md 在最近 20+ ticks log 中未被显式触, 最近 5 ticks 为 B reasoning / B formal_limits / A N7 / A N8 / B grounding -- 无一动 causality. Picked B over A 因 N1-N8 八章过去 24h 全部推进, 而 causality 缺口被多页引用却未 audit. 所有 arxiv ID 公开可查; 数字/pp 不定处 [unverified] 标."
     }
   ]
 }
