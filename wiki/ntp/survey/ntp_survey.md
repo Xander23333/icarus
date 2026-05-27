@@ -33,12 +33,21 @@
 
 ## 2. 形式边界 (formal limits)
 
-| 论点 | 状态 | 关键文献 (待填) |
+把 TC⁰ wall 这条线从 1984 拉到 2026，最干净的一段叙事不是 "transformer 不能算 PARITY"，而是 **\"表达力上界的位置随四个旋钮 (precision, attention saturation, CoT length, positional encoding/tokenization) 联合移动\"**。任何把这四个变量隐式固定再宣称\"架构级不可能\"的论证，事后都被打开过至少一次。下表汇集本仓库 [`../topics/formal_limits.md`](../topics/formal_limits.md) 里筛出来的最强证据，并补上各自当前的 NTP 三分法定位：
+
+| 论点 | 状态 (mech / cap / open) | 关键文献 |
 |---|---|---|
-| Transformer 表达力上限 (TC⁰, log-precision) | — | — |
-| 固定深度 Transformer 不能解某些 inherently sequential 问题 | — | — |
-| In-context learning 的统计/信息论上限 | — | — |
-| CoT 扩展计算预算后能等价多大复杂度类 | — | — |
+| Transformer 表达力上界 (uniform TC⁰, log-precision, fixed depth) | **mech, 但需四旋钮全部锁死** | Hahn 2019 ([1906.06755](https://arxiv.org/abs/1906.06755)) · Merrill-Sabharwal-Smith 2021 ([2106.16213](https://arxiv.org/abs/2106.16213)) · Merrill-Sabharwal 2022 ([2207.00729](https://arxiv.org/abs/2207.00729)) |
+| 固定深度 transformer 无法 length-generalize 某些 regular / context-free 语言 | **mech, 已被 PE / tokenization 旋钮多次部分翻案** | Bhattamishra 2020 ([2009.11264](https://arxiv.org/abs/2009.11264)) · Delétang 2022 ([2207.02098](https://arxiv.org/abs/2207.02098)) · Ruoss 2023 ([2305.16843](https://arxiv.org/abs/2305.16843)) · McLeish Abacus 2024 ([2405.17399](https://arxiv.org/abs/2405.17399)) |
+| Chiang-Cholak / Brösamle-Eckstein 反例: PARITY 在合适 PE 下可学；低精度 softmax + log-grow depth 仍 Turing-complete | **counter-evidence, 削弱\"depth 上界\"实操杀伤力** | Chiang-Cholak 2022 ([2202.12172](https://arxiv.org/abs/2202.12172)) · Brösamle-Eckstein 2026 ([2605.18079](https://arxiv.org/abs/2605.18079)) |
+| CoT 扩展计算预算后能等价的复杂度类 (k(n) log CoT ⇒ L, poly CoT ⇒ P) | **mech-conditional, 给出了等级表而非 wall** | Feng 2023 ([2305.15408](https://arxiv.org/abs/2305.15408)) · Merrill-Sabharwal 2023 ([2310.07923](https://arxiv.org/abs/2310.07923)) |
+| Tokenization 是与 (L, d) 并列的第三个 depth 决定因素 | **mech (extends C-FORM-1)** | Lost in Tokenization 2026 ([2605.22471](https://arxiv.org/abs/2605.22471)) · Singh-Strouse 2024 ([2402.14903](https://arxiv.org/abs/2402.14903)) |
+| Deterministic Horizon: 由 (L, d, tokenization) 决定的推理深度上界 H* ∈ [19, 31]，跨 12 架构实测 | **conditional NTP-mech (no-CoT, 单 forward pass)** | Guo 2026 ([2605.23024](https://arxiv.org/abs/2605.23024)) · Zhang 2026 ([2605.19944](https://arxiv.org/abs/2605.19944)) |
+| In-context learning 的统计/信息论上界 (q-sparse averaging, k-hop induction) | **task-family lower bound, 仍 open 是否在 CoT-augmented 下成立** | Sanford-Hsu-Telgarsky 2023 ([2306.02896](https://arxiv.org/abs/2306.02896)) · Sanford k-hop 2024 ([2402.09268](https://arxiv.org/abs/2402.09268)) [unverified ID] |
+| Long-horizon imitation 联合 KL 下界 Ω(H) | **cap, 不构成机制级 impossibility (interactive RL 可绕过)** | Xu 2026 ([2605.12316](https://arxiv.org/abs/2605.12316)) |
+| **第二堵墙: NTP-learnability gap** — 表达力可达 ⊆ NTP 训练能学到 (严格真子集) | **mech, frontier 实测此墙先撞** | Liu shortcuts ([2210.10749](https://arxiv.org/abs/2210.10749)) · Reversal Curse ([2309.12288](https://arxiv.org/abs/2309.12288)) · Allen-Zhu Physics-of-LM ([2305.13673](https://arxiv.org/abs/2305.13673)) · Bordelon 2024 ([2402.01092](https://arxiv.org/abs/2402.01092)) |
+
+判断：到 2026-05 这条线最值得记住的不是任何单条上界，而是 **两道墙的图景**——外圈 expressivity 上界由 (depth, precision, CoT, tokenization) 联合决定；内圈 learnability 上界由 (objective shape, optimizer bias, data spectrum, PE/embedding) 决定；frontier scale 的真实瓶颈 2024-26 几乎所有实测证据指向**内圈先撞** (Reversal Curse / length-extrapolation 崩塌 / knowledge retrieval template 依赖 / shortcut learning 没有一个是\"transformer 表达不了\")。NTP-mech 阵营若要论证\"架构级天花板\"，下一阶段的真正前线在 *learnability* 而非 *expressivity*——目前仅有 Bordelon 2402.01092 的 dynamical model 给了部分图像，没有任何一份在 NTP loss + SGD/AdamW + i.i.d. 通道下的形式 lower bound 存在。这正是 [`../topics/formal_limits.md`](../topics/formal_limits.md) §表达力 vs 可学性 引入的 C-FORM-4 候选所要追的位置；也是 N2 sample 章节 §6 三道暗门论证的形式骨架。详细叙事见 [N2-the-tc0-wall](../samples/N2-the-tc0-wall.md)。
 
 ## 3. Grounding & 语义
 
