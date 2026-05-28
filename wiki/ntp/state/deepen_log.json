@@ -819,6 +819,15 @@
       "note": "Task C: ntp_survey.md §8 Reasoning vs pattern matching 从 3-bullet stub 升级为 9-row mech-candidate 表 + 判决段 (~7.4k 净增), 镜像 §2/§3/§4/§5/§6/§7 已完成 sections 的结构. 9 行覆盖 C-REAS-1/2/3/4/5 + Anthropic attribution-graph 反例 + Garcia format confound + Causal Tongue-Tie/ProFIL 双轨闭环 + latent-CoT open window + STARS objective-engineering 第 4 lever. 所有 arxiv ID 复用 topics/reasoning.md 已有锚 (2309.12288/2309.14402/2403.13799/2205.05131/2305.18654/2305.15408/2605.12316/2305.20050/2312.08935/2406.14532/2501.12948/2410.01679/2407.21787/2408.03314/2408.00724/2310.02226/2412.06769/2404.15758/2403.09629/2410.03170/2310.02309) + 5 paper notes (2605.10799/2605.25891/2605.11467/2605.26733/2605.26362). 判决段三轴框架 (capacity × geometry × budget) 首次在 survey 主线写死, 把 \"reasoning topic 七项 readout/objective/stability confound\" 与 §10 候选列表的同条直接对齐. 显式标 \"工程上可做、社会学上不做\" 第五块 (3 项 reasoning 实验), 与 §4/§5/§6/§7 已有四块加起来 13 项实验形成 2024-2026 NTP mech 调研下游路线图. 跨节互链: §2 formal limits via C-REAS-2 ↔ C-FORM-1 双轨, §4 causality via Semantic-Loss / Conditional-Attr 同时扣两条 mech 论据, §7 world model via reasoning trace 外置弱 cap 共享 scratchpad faithfulness. Rotation: ntp_survey.md 上次内容触碰 2026-05-28T12:30 (§7 World model, ~1h 前) 但中间穿插 B causality (13:00), §8 是 survey 主线中倒数第二个仍 stub 的 section (§9 open problems / §10 candidate list 已 substantive), 文档级最大残留 inconsistency 优先级覆盖 rotation guard. Picked C over A (单 tick 一节 sample 上限 + N1-N8 24h 全部推过) over B (上 tick 刚 B causality, 连续 B 边际净增低). 所有 arxiv ID 公开可查, [unverified] 标注 4 处 (2412.06769/2410.03170/2406.14532 月份/2408.00724 ID + RLVR reward-hacking bundle), 未编造数字/日期/标题."
     },
     {
+      "tick_utc": "2026-05-28T14:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md"
+      ],
+      "chars_added": 5500,
+      "note": "Task C: ntp_survey.md §9 Open problems 从 3-bullet stub 升级为 4 节正文 (~5.5k 净增). 引言段把 §2-§8 判决里共出现 5 次的'工程上可做、社会学上不做' 13 项实验线索升格为 §9 的组织骨架, 要求每条 open problem (i) 映射到 §10 candidate, (ii) 写出已有部分证据 + 未填的洞, (iii) 给 <2 GPU-week 可执行判定实验. 四子节: (1) Bitter Lesson lower bound: 显式拆出 4 个隐藏前提 (合成输入/dense verifier/单步密集信号/objective-verifier 对齐), 锁 C-REAS-1 + C-CAUSAL-2 两候选作为 12 个月内可走完 taxonomy 四升级条件的候选; (2) embodiment-free LLM 缺项证明: 复用 C6 simulator-backed counterfactual triplet 协议的 text 版本作为可执行实验, 诚实承认不能区分表达力 vs 训练分布; (3) interactive vs passive 等价性: 把焦点收窄到 agentic post-training 是否在样本量维度追上 RL, 复用 N4 §6 R1-Zero/SFT/final × CLadder Layer-2 3-cell 表; (4) 新增第四问题: 七项 confound 同时排除后剩下三 mech 候选是真信号还是暂时残量, base rate 论据 + meta-protocol 判定+ ~40% [uncertain] prior. 引用全部公开 arxiv (2205.05131/2109.06129/2106.00737/2406.03689/2312.04350/2410.03170/2305.16183/2605.12316), [unverified ID] 标 Schuurmans-Dai-Zanini, [uncertain] 标 40% prior, 未编造数字/日期/标题. Rotation: ntp_survey.md 上次内容触碰 13:30 (§8 Reasoning, ~25min 前但中间穿插 B causality), §9 是 survey 主线最后一个仍 stub 的 substantive section (§10 已在持续筛选中), 三处不同步 rule 不触发因仅改 survey 文件无 topic/taxonomy 同步必要. Picked C over B (8 topic files 均已 27k+ 字) over A (N1-N8 24h 内全部推过 + 单 tick 一节 sample 上限)."
+    },
+    {
       "tick_utc": "2026-05-28T13:00:00Z",
       "task_type": "B",
       "files": [

@@ -161,9 +161,23 @@ VLA / robotics FM 给出的 "non-text" 信号能否被 token-predict 化（VQ to
 
 ## 9. Open problems / 争议点
 
-- (1) **Bitter lesson 反例存在吗**？目前所有"机制级不可能"声称都被后续 scale 推翻过；要找出**结构性、不会被推翻**的 lower bound。
-- (2) **如何在不诉诸 embodiment 的前提下，证明纯 LLM 必然缺某项能力**？
-- (3) **interactive feedback** 与 **passive prediction** 在 RL 收敛性意义下是否真正等价？
+§2–§8 的判决段都收敛到同一句方法学话："工程上可做、社会学上不做" 的 13 项实验。这一节把这条线索升格为本综述的开放问题清单——每条问题都必须 (i) 能映射到 §10 的某个 candidate, (ii) 写明当前已有部分证据的边角与未填的洞, (iii) 给出在 <2 GPU-week 量级、不需要 frontier-lab 内部数据即可执行的判定实验。这样组织的目的是：把"AGI 是不是 NTP 的事"这种过大问题，拆成 frontier 圈外的研究者也能在 12-18 个月内逼出判决的可执行子问题。
+
+### (1) Bitter Lesson 的反例存在吗 — 结构性、不会被 scale 推翻的 lower bound
+
+历史上每一条"NTP 不能 X"的强 mech 声称都在 4-10 年窗口内被 scale + 工程退路推翻 (N8 §2 W1-W4 + §3-bis A/B/C 共 7 次撞墙)。但 Bitter Lesson 不是恒真——它的三 (现在是四) 个隐藏前提是：(i) 输入分布可合成 (text/image/video 可批量爬, 物理控制 not), (ii) 存在 dense verifier (math/code/formal-proof yes, open-ended science writing no), (iii) 单步信号密集 (NTP yes, long-horizon RL no), (iv) **objective-verifier 对齐** (CE on token vs helpful agent action — RLHF/PRM/RLVR 整个分支的存在原因)。在四条件至少一条失效的子带寻找 lower bound 才是 mech 阵营有胜算的赌注。当前已写下形式陈述且 falsification protocol <2 GPU-week 可跑的两个候选: C-REAS-1 (Reversal Curse, ≥7B prefix-LM/UL2 [arxiv:2205.05131](https://arxiv.org/abs/2205.05131) 干净复现至今无公开尝试) 与 C-CAUSAL-2 (Pearl Layer-3 三互补下界 #P-hard + counterfactual <10⁻⁴ + ≥1000-SCM UUID-rename benchmark 三者同时未破)。判定实验: 把 [`taxonomy.md`](taxonomy.md) §升降级判例 的四升级条件强制施加到 §10 每条 candidate, 12 个月后保留 ≥1 条 ✅✅✅✅ 全勾的 candidate 即 Bitter Lesson 出现第一条结构性反例; 否则维持 Sutton 7/7 总账。
+
+### (2) 不诉诸 embodiment 的前提下证明纯 LLM 必然缺某项能力
+
+这是 §3 grounding / §5 embodiment / §7 world model 三章联合留下的 hard 版本。当前已有的纯文本侧弱反例 (Abdou [arxiv:2109.06129](https://arxiv.org/abs/2109.06129) color, Li [arxiv:2106.00737](https://arxiv.org/abs/2106.00737) Othello, Vafa [arxiv:2406.03689](https://arxiv.org/abs/2406.03689) Myhill-Nerode) 全都做到了 "学到了某种同构" 但卡在 "学到的同构不蕴含 do-operator"——也就是说 *存在感* 已被证明, *推理用途* 没被证明。最干净的可执行判定实验是 §4 §7 共享的 simulator-backed counterfactual triplet benchmark $\\mathcal{B}_{\\text{do}}$ ([§10 C6](#c6-video-ntp-interventional-rollout-consistency-2026-05-28-新增-video-子带)) 的 *text 版本*: 在 Brax / MuJoCo 滚 1k-10k counterfactual triplet, 转成结构化文本 (state, action, do(X), s') 输入到 closed-book 7B+ base LLM, 测 ATE 误差 $\\varepsilon_{\\text{do}}$。若 text-only LLM 在 same-token-budget 下能匹配 video world model 的 $\\varepsilon_{\\text{do}}$, 则 embodiment 不是必要; 若不能, 则给出 "embodiment 必要性" 的第一份 *量化* 证据。注意此实验诚实承认: 它不能区分 "纯文本表达力不够" 与 "纯文本训练分布不够", 但能把这道哲学题转成一道 protocol-rigid 实证题——这本身就是进步。
+
+### (3) Interactive feedback 与 passive prediction 在 RL 收敛性意义下是否真正等价
+
+passive NTP (CE on next token) 与 interactive RL (policy gradient on environment reward) 在 *expressivity* 上是否等价已经形式部分有答案 (任何 RL 策略可被 NTP 模仿, Schuurmans-Dai-Zanini [arxiv:2410.03170](https://arxiv.org/abs/2410.03170) [unverified ID] universality), 但在 *learnability + sample complexity* 上等价命题被 §6 online/continual + §2 §6 §8 中 imitation Ω(H) 下界 ([arxiv:2605.12316](https://arxiv.org/abs/2605.12316)) + Lampinen passive-of-active causal strategies ([arxiv:2305.16183](https://arxiv.org/abs/2305.16183)) 三方面反例联合否决。当前真正未决的是: agentic post-training (o1/R1/computer-use/Operator) 把 *intervention-token 训练密度* 从 CommonCrawl <0.1% 推到大比例后, NTP 是否能在 *样本数量* 而非 *样本质量* 维度上追上 RL。最具诊断价值的判定实验是 N4 §6 描述的 R1-Zero / SFT / final 三栏 × CLadder Layer-2 ([arxiv:2312.04350](https://arxiv.org/abs/2312.04350)) 表格 (3 × 1 = 3 cell, <1 GPU-week)——同样属于"工程上可做、社会学上不做"列表 (§4 因果第一项), 三年无人做的原因是 mech 派质疑 leak、cap 派质疑 base, 发表回报为负。这条 meta-观察本身是开放问题: 当判定实验的 sociological cost > scientific value, 整个领域是否进入 *结构性 unfalsifiability* 状态——这是 §4 已点出但 §9 第一次明写的 meta-候选。
+
+### (4) 七项 confound 同时排除后 mech 候选会否塌方 (2026-05-29 新增)
+
+§10 readout-side 主导假设 (i)-(vii) 七项 confound 同时排除后稳定的 mech 候选目前只剩三条 (C1 no-CoT / Reversal Curse 方向不对称 / Ω(H) imitation 下界)。开放问题: 这三条是 *机制级真信号* 还是 *尚未被发现 confound 的暂时残量*？历史 base rate 不乐观——N8 §3-bis A/B/C 三堵 "被遗忘的小墙" 都是在 4-10 年后才被新 confound 解释掉的。判定实验非单一可跑, 而是一个 12 个月 *meta-protocol*: 每发表一条新 confound (第 viii 项及之后), 把 §10 候选表重跑升降级判例; 若 12 个月内三条 mech 候选至少一条降级, 则 readout-side 假设的 *泛化版本* 成立, NTP 调研需把"先排除 confound 再谈机制" 升格为强制方法学。当前先验估计 ~40% — 不是 trivial 数字, 但需要诚实标 [uncertain]。
 
 ## 10. 候选 NTP-mech 列表 (持续筛选 → 反复挑战)
 
