@@ -884,6 +884,16 @@
       ],
       "chars_added": 3800,
       "note": "Task B: embodiment.md 新增 §远程操控/autonomy模糊带/demo可信度 (2023-2026) 整节 (~3.8k 净增). 时间线 5 个数据点 (Tesla Optimus 2024-10 We-Robot 事件 / Figure 01→02 demo 与 OpenAI 分手 / 1X NEO + Unitree G1 + Apptronik Apollo highlight-reel 退路 / π₀ task-level retry 公开 / 2605.25889 + 2605.26820 硬测量回拉), 推出新候选 C-EMBOD-6 (Demo-credibility prior: 缺 N-trial+intervention+OOD 三元组的 demo 视频 Bayes factor ≤ 1, 与 reasoning format-confound '零证据' 同型, 是评测协议 confound 框架在 embodiment 维度的对偶), 钉 C-EMBOD-6 ↔ C-EMBOD-4 评测层 vs 形式层对偶. 元判断: humanoid 资本叙事与可验证 capability 的 gap 在 2026 已被 demo 端 + 硬 IT 端同时压紧, 没有方法学退路. Rotation: embodiment.md 最近 15 ticks 未触, 严格 rotation guard 通过. Picked B over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over C (上 tick 已 C corollary 同步, 切回 B 避免连续 C 边际递减; C-EMBOD-6 的 candidate snapshot 同步债务延到下 tick). 远程操控比例 / Helix 论文状态 标 [unverified], 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T17:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 4400,
+      "note": "Task C: 把上 tick (16:30Z) embodiment.md 新写的 C-EMBOD-6 (Demo-credibility prior corollary) 同步到 survey §10 与 taxonomy 升降级历史 — 解决上 tick 显式 deferred 的 candidate snapshot 同步债务. survey §10 新增完整 corollary 段 (a/b/c 三段 + 编号说明: C-EMBOD-1..5 已被 embodiment.md 占用 6 顺位避让) + 把末段 C7/C-WM-6 双 corollary 同步说明 升级为 C7/C-WM-6/C-EMBOD-6 三 corollary 同步说明 (新增 C-WM-6 ↔ C-EMBOD-6 跨阵营对照 ↔ 单 demo evidence-bar 镜像 + 显式化 readout-side 假设 (vi)(vii) 接口层补丁的隐藏前提 假设 evidence 已被诚实采集与披露). taxonomy 升降级历史新增 1 行 (附 corollary 决策与 C-WM-6/C-EMBOD-4 双对偶说明 + [unverified: 远程操控具体比例 / Helix arxiv 状态] 注明). 元意义段把 工程上可做、社会学上不做 列表从 14 项推到 15 项 (embodied demo 三元组披露), 并把 C-EMBOD-6 钉成 §9(4) 七项 confound 问题在 evidence-supply 侧的对偶. 引用全部公开 (2605.25889 / 2605.26820) + 5 起公开事件 (Tesla Optimus 2024-10 We-Robot / Figure 01→02 OpenAI 分手 2025-02 / 1X NEO / Unitree G1 / Apptronik Apollo / π₀ task-level retry), 未编造数字/日期/标题. Rotation: 上 tick (16:30Z) B embodiment.md → 本 tick C 同步 survey + taxonomy, 与 taxonomy 末段 三处不同步即视为 incomplete 强制规则一致 — embodiment.md 本 tick 不再触 (满足三处规则 + rotation guard). Picked C over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限 + corollary 同步是上 tick 显式 deferred 债务) over B (连续 B 边际净增低 + 同步债务优先, 与 C-WM-6 同步 (08:04Z tick) 处理同型)."
     }
   ]
 }
