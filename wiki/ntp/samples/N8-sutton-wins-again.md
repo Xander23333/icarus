@@ -117,5 +117,30 @@ Stevan Harnad 1990 年的 [*Symbol Grounding Problem*](https://www.cs.ox.ac.uk/a
 
 ---
 
-> **§6 路线图**（后续 tick 续写）：
-> - §6：给 N1–N7 的元批注——按 §三的四阶段剧本、§四的 (i)(ii)(iii) 三条件、§五补出的 (iv) objective-verifier 对齐条件，逐一打分每篇 mech 候选目前处在哪个阶段、打中哪几个条件，并给出"被塌方"的最可能路径与时间窗口。重点回应 N5 (embodiment 同时打 (i)(ii))、N4 (Pearl 第三层打 (ii))、N6 (observational pixel-only world model 三条全不打)、N7 (continual learning 打 (i))。
+## 六、给 N1–N7 的元批注：把这一章的诊断工具回退到前七篇
+
+写完 §二—§五之后剩下的工作其实只有一件：把 §三总结出的"四阶段塌方剧本"、§四的 (i)(ii)(iii) 三条件、§五补出的 (iv) objective-verifier 对齐条件，逐一拍回 N2–N7 六个 mech 候选上，看每一个目前处在哪个阶段、打中四条件中的哪几个、距离\"被塌方\"还有多远。这一节刻意写得短而结构化，因为它的功能是\"对账表\"而不是新论证——所有支撑性细节都在被引用的章里。
+
+**N2（TC⁰ 之墙 / Faith-and-Fate）。** 塌方阶段：3（scaling 蚕食中）。打中的条件：主要是 (iii) 单步信号的方向性 / 同构性——CoT 把 TC⁰ 墙翻过去要付 Ω(n²) token 代价 ([Feng 2305.15408](https://arxiv.org/abs/2305.15408))，付得起的领域早就翻过去了，付不起的领域（高深度 PutnamBench、跨段跨文档多跳）至今平。Singh-Strouse [2402.14903](https://arxiv.org/abs/2402.14903) + abacus PE ([2405.17399](https://arxiv.org/abs/2405.17399)) 是 §二墙 2 的延长线——它们把强命题打塌后，弱命题（tokenization + PE 组合是工程级难度墙）反而被正式化。最可能的塌方路径：MoR / Looped Transformer 类\"通用结构\"（按 §五标准合格——可学不可手写）若在 PutnamBench 类指标上做出 zero-shot 翻倍，N2 §6 三道暗门里的 looped 那道就走通。时间窗口：2027 末。判断：N2 的强 mech 命题（深度受限 + log-prec → TC⁰）形式上不可证伪，但工程意义会持续被蚕食，类似 §二墙 2 的弱命题幸存方式。
+
+**N3（Reversal Curse / 不忠实 CoT / 三块拼图）。** 塌方阶段：2 晚期—3 早期。打中的条件：(iii) 单步信号的同构性。Reversal Curse (Berglund [2309.12288](https://arxiv.org/abs/2309.12288)) 三年来未被任何 ≥7B 标准 NTP 干净修掉——Allen-Zhu [2305.13673](https://arxiv.org/abs/2305.13673) 的 reverse-order trick 改了训练分布不算反例（N3 §6 已说明）。不忠实 CoT (Turpin [2305.04388](https://arxiv.org/abs/2305.04388), Lanham [2307.13702](https://arxiv.org/abs/2307.13702))→Anthropic 2025 attribution-graph 这条线是 §二墙 4 半塌剧本的镜像：CoT 能 plan，但 plan 不一定来自 CoT。最可能塌方：reverse pretraining + RAG + agentic post-training 的组合若把 NaturalQuestions-Reverse 风格指标干净修到 forward-parity。时间窗口：2028 中。判断：N3 的三块拼图相互独立但同源（NTP loss 几何），如果哪天**三块同时**被同一个工程修补绕过，那才是\"被塌方\"；目前任一块单独被绕过都只是 §三剧本的第 3 阶段进度。
+
+**N4（Pearl 的因果阶梯）。** 塌方阶段：2（Layer 2）/ 1 晚期（Layer 3）。打中的条件：(ii) verifier 稀缺——反事实陈述没有 ground-truth，连 benchmark 化都很别扭（CLadder [2312.04350](https://arxiv.org/abs/2312.04350) 是难得的尝试，但 Layer 3 题目本质上要求 model 对未发生事实做出经得起 Pearl 形式检查的回答）。Layer 2 的弱命题已经被 Lampinen 等 mech-interp 工作 + agentic RCT post-training 路线（N4 §4 埋的伏笔）开始蚕食。Layer 3 干净。最可能塌方：若 agentic post-training 能在 simulator-RCT 上把 CLadder Layer 2 指标推过 70%，N4 §3 的 Layer 2 部分会进入 §三剧本第 3 阶段。时间窗口：Layer 2 2027 末 / Layer 3 ≥2030。判断：N4 是 N2–N7 里 verifier 稀缺最严重、(ii) 条件最干净不满足的一篇——按 §四诊断这是最可能活下来的 mech 候选之一，但活下来的方式很可能是哲学化退守而不是工程化胜利。
+
+**N5（Embodiment 与 VLA 赌注）。** 塌方阶段：1 晚期—2 早期，但**有概率走 §四反墙路线**而不走 §三塌方剧本。打中的条件：(i) 输入分布不可大规模合成（真机数据是物理世界产物）+ (ii) verifier 在长程操作上稀缺。这是 N2–N7 里**唯一一篇同时打中两个条件**的，按 §四诊断结构性活路最大。强命题（动作不可 tokenize）已被 RT-2 ([2307.15818](https://arxiv.org/abs/2307.15818)) / OpenVLA ([2406.09246](https://arxiv.org/abs/2406.09246)) / π₀ ([2410.24164](https://arxiv.org/abs/2410.24164)) 证伪，但 N5 §6 的两条弱命题（长程样本效率指数恶化 / sim-to-real gap）严格对齐 §四反墙 3。最可能塌方：若 2027–28 出现 ≥10⁵ 真机 episode 公开数据集 + 异质本体 zero-shot transfer >50%，弱命题会被蚕食。但即便如此 §四反墙 3 本身也只塌一半。时间窗口：2028 后。判断：N5 是 N2–N7 里**最像 §四反墙、最不像 §三塌方候选**的一篇——这一章不应被 N8 的反方陈词降级，应被它升级。
+
+**N6（World model = 视频生成？）。** 塌方阶段：依子命题而定，**这是 N2–N7 里内部分裂最严重的一章**。Sora 路线下的 observational pixel-only 子命题：打中条件 0（合成数据有的是 + benchmark 化容易 + 单步 token CE 信号密集 + objective 与 perception target 对齐）——按 §四诊断**三条全不打**，是 N2–N7 里最像\"下一个塌方候选\"的子命题，§六结尾留的判断与 N6 §1 自己写的判断一致。Genie 路线 (action-conditional video) 打中 (iii) 部分——action 标签稀疏给信号密度打了折，且 (ii) verifier 通过 simulator/RL 可恢复，活路比 Sora 大。V-JEPA / latent rollout 路线打中 (ii) 部分——latent counterfactual 没有 ground-truth (世界唯一)，对齐 §四反墙 1 的形式。Dreamer 路线打中 (ii) + (iii)，但在 Minecraft / Atari 之外的复杂物理上 verifier 仍稀缺。最可能塌方：Sora 路线最早，可能 2027 内就被\"video diffusion + 3D-aware prior\"重新分类为 graphics 任务而不再被声称\"world model\"；Genie / V-JEPA / Dreamer 路线活到 2028 以后。判断：N6 的三个答案应当被**分别评级**而不是打成一个总分；N8 §四诊断给了一把刀，但 N6 自己需要在新增 tick 里把这把刀真正切下去。
+
+**N7（Continual learning）。** 塌方阶段：2 晚期（弱命题阶段）。打中的条件：(i) streaming 输入分布不可重采样，且 §五新补的 (iv) ——continual learning 的 verifier (旧任务保留率 + 新任务吸收率) 与训练 objective (NTP loss) 之间存在结构失配，N7 §6 的 5 条 AND falsification 操作化恰好就是这个失配的工程化陈述。最可能塌方：若某个 frontier lab 用 replay + MoE expert routing + RAG 三件套把 RealTime-QA 风格指标稳定推过 §6 五条 AND，C-CONT-1 的弱命题被绕过——但请注意按 §五的 (iv) 条件，绕过的方式不会是\"修 NTP 本身\"，而是\"在 NTP 外面套结构\"，这恰好是 Sutton *Alberta Plan* 里同意的口子，所以\"塌\"在分类学意义上是\"机制派败给通用结构派\"，不是\"机制派败给 scaling\"。时间窗口：2028 中。判断：N7 是七篇里**最容易被误读为 §三塌方候选、实际更像 §四反墙\u30022\u30003 同源**的一篇——它的活路不在于守住\"NTP backbone 不能更新\"这条强命题，而在于守住\"NTP 单目标无法兼顾 plasticity-stability\"这条由 (iv) 条件支撑的弱命题。
+
+把这六篇拼回去看，N2–N7 在 §四诊断工具下的分布是这样的：**N6 (observational 子命题) 单独站在\"三条全不打\"的塌方区**；**N2 / N3 站在 (iii) 单条件区**（活但持续被蚕食）；**N4 / N7 站在 (ii)+(iv) 复合条件区**（活路偏哲学化 / 工程化）；**N5 站在 (i)+(ii) 复合条件区**（最像 §四反墙）。这张分布图本身是这一章给整个 NTP 系列最重要的一笔贡献——它把\"NTP 机制墙\" 这个本来模糊的统称拆成五个有不同先验和不同时间窗口的子命题，每一个都可以独立打赌、独立校准。
+
+## 尾声：押一个不算豪赌的赌
+
+如果必须从 §六的对账表里挑一个 12–24 个月窗口、单条可证伪的判决式赌注作为这一章（也作为 N1–N8 整个系列）的结尾，我押这一条：
+
+> **2027-12-31 前，N2–N7 六个 mech 候选里至少 1 个、至多 3 个会发生 §三剧本意义上的\"强命题塌方 + 弱命题幸存\"。具体来说：N6 observational pixel-only 子命题塌方概率 >60%；N3 Reversal Curse 塌方概率 ≈25%；N2 / N4 / N5 / N7 单个塌方概率均 <20%；六个全部站住的联合概率 ≈25%；六个全部塌方的联合概率 <5%。**
+
+这个赌注的形状本身就是 §三 / §四 / §五 三条诊断工具的合成：先承认 *Bitter Lesson* 的 base rate（七堵塌方对四堵反墙，先验偏向塌方），再用四条件做 candidate-by-candidate 调整（(i)(ii)(iii)(iv) 越少满足越易塌），最后把判断写成一个**可被 2027 年底单点查证的数字**。如果到时候六个一起站住或一起塌掉，本章给的诊断工具就是错的，N8 应当被整篇重写；如果分布大致落在 1–3 个塌方区间，那就说明 *Bitter Lesson* 仍然在赢——但赢得有边界、有节奏，而不是 N2–N7 写得太悲观或 §二历史写得太乐观所暗示的极端形态。这恰好是 Sutton 本人在 *Alberta Plan* 与 podcast 里反复传达的态度：算力还会赢，但赢得不像 2019 那篇千字短文读起来那么干脆。
+
+> **元评论**：这一章从开篇就是 NTP 系列的反方陈词，所以最容易犯的错误是\"为了反方而反方\"——把所有塌方都写得过于干净、把所有反墙都写得过于稳固。我尽量避免，但读者应当默认这一章带 confirmation bias，最该警惕的两处具体是：(a) §二的七堵塌方墙我刻意选了\"被论文反驳\"的事件而避开了\"被静悄悄绕过\"的事件——后者数量更多但不容易写得有据可查，纳入会让 *Bitter Lesson* 的 base rate 显得更强；(b) §四的四堵反墙里反墙 4 (scientific discovery) 的判定依赖\"什么算独立提出新假设\"这一仍在哲学辩论中的标准，把它写成反墙是我个人判断不是社区共识。读者完全可以把反墙 4 降级为半墙——那样的话 §六结尾的塌方概率分布会整体右移 10–20 pp，但定性结论（N6 observational 最危、N5 最稳）不变。最后一条诚实声明：本章引的 Sutton podcast 与 *Alberta Plan* 部分措辞标 [unverified]，是因为我没有逐字核对录音 / 论文原文；论点框架（Sutton 反对的是 hand-engineered 而非 structure 本身）在 *Alberta Plan* 摘要、*Bitter Lesson* 原文、与 2024–25 podcast 中三方互证，框架不会因措辞细节失真而崩，但具体引语请读者自行核对再使用。

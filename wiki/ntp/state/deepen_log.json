@@ -735,6 +735,16 @@
       ],
       "chars_added": 4800,
       "note": "Task A: N6 §6 尾声 (+~4.8k chars), 把 §1-§5 四条路线 (Sora/Genie/V-JEPA/Dreamer) 钉在 Pearl L1, 论证下一阶段胜负手是 video L2 反事实标准评测. 引用 Pearl 1801.04016 + CLadder 2312.04350 + Genie3 2503.20020[unverified ID] + Bear counterfactual probing 2025[unverified ID]; 三条 falsification 协议 (intervention prediction / counterfactual separability / sample-efficiency curve) 显式写死. 2027-28 押注分三层带数字概率 [uncertain]: Sora<15% 兑现强命题 / Genie ~40% 拿下 L2 子集 / Hybrid 方案最可能赢全集. 三反例: L2 benchmark 不存在前提依赖性 + Dreamer 被强拉进 video 对峙的勉强 + video token != physical state 这一更根本反对 (cross-link N5 §2). 收尾把 N4/N5/N6/N7 四章判决统一到 'NTP 真正卡的不是 scale/data/arch 而是 evaluation' 这条整套系列的内部一致诊断. cross-link: N8 §3 Bitter Lesson 三条件 + N5 §6 VLA 长程 + N4 §3 LLM L2 + N7 ripple-effect. Rotation: N6 上次触碰 2026-05-28T01:34 (~7h 前), 最近 5 ticks 全部为 B/C (world_model/ntp_survey/online_learning/scaling_limits) + A N5 -- N6 跨过 rotation guard. Picked A 因 §6 是 N6 唯一仍带显式 <!-- TODO --> 的 placeholder, 推完即关闭一个长期 open marker, 与 24h 前关 N5 §6 同款做法. README.md 从 §1-§5/5500 字 更新到 §1-§6+尾声/6500 字. 所有 arxiv ID 公开可查, [unverified ID]/[uncertain] 全部标注, 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T09:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N8-sutton-wins-again.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 6500,
+      "note": "Task A: 关 N8 §6 元批注 + 尾声 (+~6.5k chars), 把 §三 四阶段塌方剧本 + §四 (i)(ii)(iii) 三条件 + §五 (iv) objective-verifier 对齐条件 拍回 N2-N7 六个 mech 候选, 每篇给塌方阶段/打中条件/最可能塌方路径/时间窗口/判断. 分布图: N6 observational 站三条全不打塌方区 / N2-N3 站 (iii) 单条件区 / N4-N7 站 (ii)+(iv) 复合区 / N5 站 (i)+(ii) 复合区像反墙. 尾声押单条 2027-12-31 可证伪赌: N2-N7 中至少1至多3塌方, N6 observational>60%, N3 ~25%, 其余<20%, 全部站住 ~25%, 全塌<5%. 元评论两条 confirmation bias 自承 (只挑被论文反驳事件 / 反墙4 判定依赖哲学标准) + 一条 Sutton podcast 引语 [unverified] 诚实声明. 引用 Feng 2305.15408 / Singh-Strouse 2402.14903 / abacus 2405.17399 / Berglund 2309.12288 / Allen-Zhu 2305.13673 / Turpin 2305.04388 / Lanham 2307.13702 / CLadder 2312.04350 / RT-2 2307.15818 / OpenVLA 2406.09246 / pi0 2410.24164 全部公开可查. 关闭 N8 §6 长期 TODO marker, README §1-§5/8500 字 -> §1-§6+尾声/11000 字. Rotation: N8 上次触碰 2026-05-27T18:34 (~14h 前), 最近 5 ticks 全部 B/C (world_model/ntp_survey/online_learning/scaling_limits) + A N6 -- N8 跨过 rotation guard, 与昨 24h 内关 N5/N6 §6 同款 closing-TODO 操作连续完成系列三个 sample 收尾."
     }
   ]
 }
