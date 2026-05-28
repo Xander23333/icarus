@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T17:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 5400,
+      "note": "Task C 同步债务清算 — 上 tick (16:30Z B online_learning.md) 末段明写 '下一 tick C 把 frontier-disclosure 第三支柱写入 survey §10 C-CONT-2 行 evidence 列'. 本 tick: (1) ntp_survey.md §10 新增 ### C-CONT-2 evidence-base 第三支柱 sync — frontier-disclosure 选择函数 段 (插在原 C-CONT-2 falsification 四元组细化段之后, C-GROUND-7 sub-candidate sync 段之前): 六家 frontier 材料钉到 falsifier (a)(b)(c)(d) 四元组对照表 + negative-signal 推断方向但弱强度 + 第三支柱与第二支柱方法论不独立警示 (只能作一致性检查不能独立证据求乘) + 推 §9 (4) 列表 17→18 项. (2) §6 表 C-CONT-2 evidence 列尾追加三支柱 evidence-base 链回 §10 新段 + 四篇 frontier 报告 arxiv ID (2407.21783 / 2412.19437 / 2501.12948 / 2412.15115). (3) taxonomy.md §升降级历史 在 C-WM-7 与 C-CAUSAL-2 evidence-base refinement 行之间插入 C-CONT-2 evidence-base 第三支柱补入行 (同五列 schema). 编号避让全局一致, 无新 mech 命题, 不污染主 snapshot 表 (C1–C7 + Reversal Curse). 旋转规则: 上 tick B (online_learning.md), 本 tick 回 C (survey + taxonomy), 与上次 C tick (16:00Z survey + taxonomy) 文件相同但插入位置 + 内容不重叠, 视为合法债务清算而非重复 touch."
+    },
+    {
       "tick_utc": "2026-05-29T16:30:00Z",
       "task_type": "B",
       "files": [
