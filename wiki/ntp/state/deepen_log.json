@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T17:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N7-why-llm-cannot-continually-learn.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "Task A 样章续写 — N7 新增 ### 七、2026 年 5 月补遗：annealing 阶段是否已经偷偷做了一次工业级 CPT 一节, 把上 tick (17:00Z C survey §10 C-CONT-2 第三支柱 sync) + 上上 tick (16:30Z B online_learning.md frontier-disclosure 六条) 的同一条暗线回贴到 N7 样章面: 六条 frontier 钉子时间线 (Llama 3 2407.21783 annealing 三段 + DeepSeek V3 2412.19437 1.5M instance + R1 2501.12948 6.4B token + Qwen2.5 2412.15115 SFT forgetting 自承 + Claude 4 系统卡 [unverified] + GPT-5/Gemini 2.x [unverified]), C-CONT-2 falsifier 四元组对照 (a/b/c 部分达成或回避披露 / (d) 全部缺位), 三条诚实判断 §7-1 披露选择函数被 plasticity-stability tradeoff 形塑 (与 survey §10 第三支柱 sync 段同型, 一致性弱信号不可独立求乘) §7-2 §5 三反例分类仍站 §7-3 2027 bet 五条 AND 不需改写, 末尾元评论给未来 Xander 留 2027-11 回检锚. 旋转规则: 最近三 tick C→B→C (survey/online_learning/survey), 本 tick 回 A (samples), N7 距上次 touch 已超 3 天 (上次在 deepen_log 早期), 与 N5/N6/N8 均不冲突. README 状态 §1–§5+尾声 6500字 → §1–§6+§7 2026-05 补遗 7500字 同步更新. 净增 ~5400 字 (file 31305→36722). 不污染 §3–§6 论证骨架, 只作时间戳补遗."
+    },
+    {
       "tick_utc": "2026-05-29T17:00:00Z",
       "task_type": "C",
       "files": [
