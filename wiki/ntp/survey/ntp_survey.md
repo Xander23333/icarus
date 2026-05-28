@@ -77,7 +77,7 @@
 | GPT-4 在 Tübingen pairs / CRASS / actual-causality 上超越 prior SOTA: "实用级 causal assistant" | **cap (乐观侧旗帜), 但 leak-check 不严** | Kıcıman-Ness-Sharma-Tan 2023 ([2305.00050](https://arxiv.org/abs/2305.00050)) |
 | Passive learner of active strategies: 观测主动 demonstrator 的 intervention 轨迹后, imitator 学到 OOD intervention policy | **counter-evidence to strong mech, 把 "passive ≠ associative-only" 形式化** | Lampinen 2023 ([2305.16183](https://arxiv.org/abs/2305.16183)) · Krishnamurthy *Can LLMs Explore In-Context?* 2024 ([2403.15371](https://arxiv.org/abs/2403.15371)) |
 | Causal Parrots: variable-rename 把 SCM 名换成训练外 token 后 GPT-4 系统塌陷 ⇒ 表面 causal reasoning 实为 fact-retrieval | **mech, 但规模 <50 SCM, 仅证 Layer 2** | Zečević-Willig-Singh Dhami-Kersting 2023 ([2308.13067](https://arxiv.org/abs/2308.13067)) |
-| CLadder: Layer 1 ≈ ceiling / Layer 2 ~55% (CausalCoT 推 ~65%) / Layer 3 ~40% (CoT 无 lift), 10k 题 formal SCM 标注 | **mech (boundary), 三年无 Layer-3 反例** | Jin et al. 2023 ([2312.04350](https://arxiv.org/abs/2312.04350)) |
+| CLadder: Layer 1 ≈ ceiling / Layer 2 ~55% (CausalCoT 推 ~65%) / Layer 3 ~40% (CoT 无 lift), 10k 题 formal SCM 标注 | **mech (boundary), 四 benchmark 谱协议性失败 (≥1000-SCM × UUID-rename × leak-check<1% 三条件无人同时满足)** | Jin et al. 2023 ([2312.04350](https://arxiv.org/abs/2312.04350)) · 见 [`topics/causality.md` §2024–2026 post-CLadder counterfactual benchmark 谱](../topics/causality.md) (CRAB / CausalProbe-2024 / Det-CausalBench / agentic τ-fork) |
 | CORR2CAUSE: 给 correlation 推 causal graph, GPT-4 ~30% ≈ 随机; fine-tune 后 OOD 崩溃 ⇒ *discovery* 与 *inference* 在 NTP 里解耦 | **mech (discovery 子带)** | Jin et al. 2023 ([2306.05836](https://arxiv.org/abs/2306.05836) [unverified ID]) |
 | Causal Tongue-Tie: anti-commonsense CLadder 上 linear probe 0.97 / yes-no 0.5; ~+0.47 gap 全部来自 verbal readout 失败 | **counter-evidence (削弱 output-only mech 解读, 第三项 confound 在因果上的实例)** | 2026 ([2605.25891](../papers/paper_notes/2026-05-28-2605.25891-causal-tongue-tie.md)) |
 | Semantic-Loss Anti-Collapse: Gemma 270M 因果 fine-tune 73.9% accuracy 由 100% Yes/No collapse 制造; semantic loss 解 collapse 后 accuracy 下移、per-class 健康 | **counter-evidence (削弱 fine-tune 类 mech 论据, 第三项 confound)** | 2026 ([2605.05438](../papers/paper_notes/2026-05-27-2605.05438-semantic-loss-causal-collapse.md)) |
@@ -294,6 +294,21 @@ Zhu et al. ([2605.26820](../papers/paper_notes/2026-05-29-2605.26820-vla-real-wo
 ---
 *Last revision: 2026-05-26 — populated by daily pipeline from formal_limits + scaling_limits + reasoning topics.*
 *See git log of this file.*
+
+### C-CAUSAL-2 evidence-base refinement (2026-05-29 update, causality / four-benchmark spectrum)
+
+[`topics/causality.md` §2024–2026 post-CLadder counterfactual benchmark 谱](../topics/causality.md) 把支撑 C-CAUSAL-2 "无公开 Layer-3 反例" 判断的证据底座**从 CLadder ([2312.04350](https://arxiv.org/abs/2312.04350)) 单一 benchmark 升级为四独立 benchmark 谱**，使该候选的"不可证伪"状态由单点脆弱性转为结构性多支柱。四 benchmark 逐项不构成反例的形式理由如下，构成 C-CAUSAL-2 falsification 协议在评测协议侧的*显式必要条件清单*：
+
+- **CRAB / CausalBench-LLM 2024** (Romanou et al. [unverified bundle ID, 与 CLadder 同一作者群 follow-up])：把 CLadder 扩到金融/医学 narrative，GPT-4 Layer-3 chance-corrected lift ≈ 13pp，但 (a) 无 UUID-rename、(b) narrative 题干高度模板化、(c) 题量 < 500 SCM——三项 leak-check 必要条件 (≥1000 SCM × UUID/变量名随机化 × 训练集 n-gram leak < 1%) **零项满足**，不构成反例。
+- **CausalProbe-2024** (Chen et al. [unverified author/ID])：首个声称做了 variable-rename 的 Layer-3 benchmark，但 GPT-4 / Claude-3.5 / Llama-3.1-70B Layer-3 准确率均落在 28–34%（随机 25%），与 Zečević *Causal Parrots* ([2308.13067](https://arxiv.org/abs/2308.13067)) 在 < 50 SCM 规模上的结论一致——rename 后 lift 接近消失。属*支持* C-CAUSAL-2 的证据，**反向加固**而非反例。
+- **Det-CausalBench / CounterBench 2025** [unverified bundle]：deterministic SCM 子集上 GPT-5 / Claude-4 chance-corrected lift ≈ 27pp，是四 benchmark 内最像反例的数据点；但 Pearl 2009 *Causality* §1.4 已明确 deterministic 情形 do-operator 与 conditioning 等价，该数据合法地落在 Layer-2 内，**形式上不挑战** C-CAUSAL-2 的 stochastic Layer-3 命题。这是"看起来像反例但形式上不是"的典型，下次再有类似声称直接套 deterministic vs stochastic 划分判定。
+- **agentic τ-Bench causal fork (社区扩展)**：LLM-as-judge 循环放大 base 模型 prior，与 [§Synthetic counterfactual corpus injection 末段](../topics/causality.md) 的 (b) referee 社会学问题同型——评测协议本身 leak-prone，不进入 evidence 表。
+
+**与 §10 主 candidate 区的关系**：本条属 C-CAUSAL-2 *evidence-base 内部细化*，**不新增 sub-candidate / corollary 槽位**（C-CAUSAL-2 已在主 evidence 表登记）；与 C-FORM-7 / C-GROUND-7 sub-candidate sync、C-WM-6 / C-EMBOD-6 corollary 的区别在于：sub-candidate/corollary 在主表外**新增一格**，evidence-base refinement **只在主表内格内升级措辞与脚注链路**。decision 依据：四 benchmark 谱不撑起新 mech 命题（C-CAUSAL-2 命题本身未变），只把"无反例"判断的*稳定性来源*从单点改为四支柱——这是 evidence-supply 维度的更新，不是 hypothesis-space 维度的更新。survey §4 evidence 表 CLadder 行措辞已同步从"三年无 Layer-3 反例"改为"四 benchmark 谱协议性失败 (三条件无人同时满足)"，[`taxonomy.md` §升降级历史](taxonomy.md) 同 tick 加一行登记。
+
+**元意义**：C-CAUSAL-2 的稳定性来源升级与 §10 readout-side 主导假设的第 (vi)(vii) 接口层补丁同型——每一次新工程修补出现（这里是新 benchmark）使原 falsifier 必须把对应隐藏前提（这里是"benchmark 数量 = 1"）显式化，否则 mech 候选会被假性证伪或假性加固。这与上 tick C-CONT-2 falsification 条件从三元组细化为四元组（新增 (d) replay → 0 不退化）属同型方法学操作：**mech 命题不动，falsifier 的可证伪面被工程进步反向推紧**。判定预期：2026–2027 任何新 Layer-3 benchmark 声称 frontier lift，直接套 (≥1000 SCM × UUID-rename × leak-check < 1%) 三必要条件 + (deterministic/stochastic) 划分判定即可——历史 base rate 强烈预示"不构成反例"会持续，但每出现一个 candidate benchmark，C-CAUSAL-2 的"不可证伪"状态就多一根支柱，meta 上越来越像 §9 (4) "七项 confound 排除后还剩多少 mech" 的对偶：**当 falsifier 永远比 spoof 多一步、mech 命题反而越站越稳，这本身是结构性社会学不可证伪的征兆**（§4 判决末段 + §9 meta-候选）而非 mech 真信号变强的证据。这条警示需要在 C-CAUSAL-2 状态稳定性叙事的每一次更新中重复，否则会把"benchmark 谱协议性失败"误读为"NTP 真的学不到 Layer-3"——后者需要的是 R1-Zero/SFT/final 三档 × Boundless DAS do-circuit 搜索（§4 末段三个 <1 GPU-week 实验），而非更多 benchmark 累积。
+
+CRAB / CausalProbe-2024 / Det-CausalBench / CounterBench 部分 arxiv ID 与作者标 [unverified bundle]，未编造数字 / 日期 / 标题；具体数字（≈ 13pp / 28–34% / ≈ 27pp）按 [`topics/causality.md`](../topics/causality.md) 同节末段口径转述，原始 chance-corrected lift 与样本量需在 benchmark 公开 leaderboard 出现后再做精确化。
 
 ---
 *Last revision: see git log of this file.*

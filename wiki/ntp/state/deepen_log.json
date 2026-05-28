@@ -969,6 +969,16 @@
       ],
       "chars_added": 2996,
       "note": "Task B: causality.md 新增 §2024–2026 post-CLadder counterfactual benchmark 谱 整节 (~3k 净增, 插在 §Synthetic counterfactual corpus injection 末段跨链之后, §与其他 topic 的交叉 之前). 把 C-CAUSAL-2 '无公开 Layer-3 反例' 的判断从挂在 CLadder 单点升级到四个独立 benchmark 协议性失败的稳定结构: CRAB/CausalBench-LLM 2024 (漏 UUID-rename + <500 SCM) / CausalProbe-2024 [unverified ID] (做了 rename 反而印证 cap 派, 28–34% 落在随机 25% 附近) / Det-CausalBench/CounterBench 2025 [unverified bundle] (deterministic 子集 ≈ 60% 但 Pearl 2009 §1.4 deterministic do=conditioning, 形式上落回 Layer-2 不是反例) / agentic τ-Bench fork 社区扩展 (LLM-as-judge 循环, 与 §Synthetic corpus injection 擦边 (b) 同型). 引入 三项 leak-check 必要条件 (≥1000 SCM + UUID/变量名随机化 + 训练集 n-gram leak <1%) 作为 2026+ 新 benchmark 判定模板. 元判断: C-CAUSAL-2 状态稳定性来源已从单点变成第四个独立支柱 (前三个是 §Synthetic corpus injection 末段双向 referee 社会学), 命题更硬但发表回报继续为负——与 reasoning.md §C-REAS-5 verifier-free 切片末段 '工程界一步步逼近同一根上界' 同型. 跨链: 让 §agentic RL 是否补 Layer-2 数据 与 §Layer-3 硬度三下界 (iii) 评测协议侧形成形式闭环. Rotation: causality.md 最近 16 ticks 未触 (13:00Z 最后, gap ~8h), 上 tick 20:30Z B reasoning.md → 本 tick B causality.md 切 (B 内不同文件不违反 rotation). Picked B over C (上 tick reasoning B 内部 mech 细化 C-REAS-5 已在 survey §10 登记, 无新 sub-candidate 同步债务) over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over D (无明显错误待修). 同步债务: 本节末段建议把 taxonomy C-CAUSAL-2 备注从 'CLadder 三年无反例' 改为 '四 benchmark 谱协议性失败', 触发下 tick C 同步债务 (candidate 内 evidence 表述更新, 非 sub-candidate sync). CRAB/CausalProbe-2024/Det-CausalBench/CounterBench 部分 arxiv ID 与作者标 [unverified bundle], 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T21:30:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 4677,
+      "note": "Task C: 同步债务清算 (上 tick B causality.md 末段挂的 taxonomy + survey 同步债). §4 evidence 表 CLadder 行措辞从 '三年无 Layer-3 反例' 改为 '四 benchmark 谱协议性失败 (≥1000 SCM × UUID-rename × leak-check<1% 三条件无人同时满足)' + 链回 topics/causality.md §2024–2026 post-CLadder counterfactual benchmark 谱; §10 末段新增 'C-CAUSAL-2 evidence-base refinement' 整段, 把上 tick causality.md 四 benchmark 谱 (CRAB / CausalProbe-2024 / Det-CausalBench / agentic τ-fork) 逐项不构成反例理由 + 三必要条件清单 + 与 C-FORM-7/C-GROUND-7 sub-candidate sync 的区别 (sub-candidate 主表外新增格, evidence-base refinement 只在主表内升级措辞 - 决策协议级区分) + 与 C-CONT-2 三→四元组 falsifier 收紧的同型方法学操作类比 (mech 命题不动, falsifier 可证伪面被工程进步反向推紧) 显式登记; taxonomy.md §升降级历史 加一行登记 evidence-base 稳定性来源从单点→四支柱 (非级别升降). 元意义警示段强调: 'benchmark 谱协议性失败' ≠ 'NTP 真的学不到 Layer-3', 后者仍需 R1-Zero/SFT/final × Boundless DAS do-circuit 搜索, 否则属 §9 meta-候选结构性社会学不可证伪征兆而非 mech 真信号变强证据 — 这条诚实判断在每次更新中必须重复, 否则会把不可证伪误读为加强. Rotation: causality.md 上 tick 21:00Z 已触, 本 tick 走 C (survey + taxonomy) 不重复 topic 文件, 三处同步规则 (topic + survey §10 + taxonomy 升降级历史) 闭环. Picked C over B (上 tick causality.md 末段明写 '触发下 tick C 同步债务: candidate 内 evidence 表述更新, 非 sub-candidate sync' — 同步债务有期限优先级高于新 B) over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over D (无明显错误待修). CRAB/CausalProbe-2024/Det-CausalBench/CounterBench 部分 arxiv ID 与作者及具体数字 (≈13pp/28–34%/≈27pp lift) 按 causality.md §post-CLadder 节口径转述并标 [unverified bundle], 未编造数字/日期/标题."
     }
   ]
 }
