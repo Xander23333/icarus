@@ -81,6 +81,8 @@ nav:
   - 首页: index.md
   - 写作规范: STYLE.md
   - 全卷大纲: OUTLINE.md
+  - 论文翻译:
+    - "ARC-AGI-3：前沿智能体智能的新挑战 (arXiv:2603.24621)": translations/arc-agi-3-zh.md
   - Thesis 候选样章:
     - 总览: samples/README.md
     - "A — 为什么没人能逃离 Transformer": samples/A-no-escape-from-transformer.md
