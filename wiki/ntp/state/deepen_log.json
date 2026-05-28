@@ -979,6 +979,15 @@
       ],
       "chars_added": 4677,
       "note": "Task C: 同步债务清算 (上 tick B causality.md 末段挂的 taxonomy + survey 同步债). §4 evidence 表 CLadder 行措辞从 '三年无 Layer-3 反例' 改为 '四 benchmark 谱协议性失败 (≥1000 SCM × UUID-rename × leak-check<1% 三条件无人同时满足)' + 链回 topics/causality.md §2024–2026 post-CLadder counterfactual benchmark 谱; §10 末段新增 'C-CAUSAL-2 evidence-base refinement' 整段, 把上 tick causality.md 四 benchmark 谱 (CRAB / CausalProbe-2024 / Det-CausalBench / agentic τ-fork) 逐项不构成反例理由 + 三必要条件清单 + 与 C-FORM-7/C-GROUND-7 sub-candidate sync 的区别 (sub-candidate 主表外新增格, evidence-base refinement 只在主表内升级措辞 - 决策协议级区分) + 与 C-CONT-2 三→四元组 falsifier 收紧的同型方法学操作类比 (mech 命题不动, falsifier 可证伪面被工程进步反向推紧) 显式登记; taxonomy.md §升降级历史 加一行登记 evidence-base 稳定性来源从单点→四支柱 (非级别升降). 元意义警示段强调: 'benchmark 谱协议性失败' ≠ 'NTP 真的学不到 Layer-3', 后者仍需 R1-Zero/SFT/final × Boundless DAS do-circuit 搜索, 否则属 §9 meta-候选结构性社会学不可证伪征兆而非 mech 真信号变强证据 — 这条诚实判断在每次更新中必须重复, 否则会把不可证伪误读为加强. Rotation: causality.md 上 tick 21:00Z 已触, 本 tick 走 C (survey + taxonomy) 不重复 topic 文件, 三处同步规则 (topic + survey §10 + taxonomy 升降级历史) 闭环. Picked C over B (上 tick causality.md 末段明写 '触发下 tick C 同步债务: candidate 内 evidence 表述更新, 非 sub-candidate sync' — 同步债务有期限优先级高于新 B) over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over D (无明显错误待修). CRAB/CausalProbe-2024/Det-CausalBench/CounterBench 部分 arxiv ID 与作者及具体数字 (≈13pp/28–34%/≈27pp lift) 按 causality.md §post-CLadder 节口径转述并标 [unverified bundle], 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T22:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/embodiment.md"
+      ],
+      "chars_added": 3400,
+      "note": "Task B: 新增 §Cross-embodiment transfer (2023–2026) — 把 cross-embodiment 三层分裂 (表示层迁移成立 / 策略层迁移失败 / 形态层迁移近零) 从 §Robot-data scaling 与 §远程操控 末段隐含命题升到独立节. 五数据点 RT-X 2023-10 ([arxiv:2310.08864] 表 4 unseen morphology 仅 single-digit pp [unverified pp]) / OpenVLA 2024-06 ([arxiv:2406.09246] §5.3 LoRA 10–150 demo 可迁但 zero-shot 新 gripper ≈0) / CrossFormer 2024-10 ([arxiv:2408.11812] [unverified ID] 三形态 unseen chance 水平) / π₀ 2025 ([arxiv:2410.24164] §4.2 new embodiment 仍需百-量级 demo) / humanoid 2025–2026 (1X/Figure/Apptronik 无任何跨厂迁移曲线公开). 新增 C-EMBOD-7 morphology-layer transfer 近零下界 (zero-shot success ≤ baseline+5pp 绝对值, falsification: 严格 zero-shot 协议 +15pp 且 ≥3 任务一致), 与 C-EMBOD-5 effective-token deflation 互补 → 把 VLA scaling 叙事拆成 representation/policy/morphology 三独立 budget. 跨链至 §Open problems 第二条 action 表征下界 (表示层→形态层) + §远程操控 evidence-bar. 诚实判断段强调本节非新机制只命名 gap. Rotation: embodiment.md 最近 ~5.5h 未触 (16:30Z 最后), 上 tick 21:30Z C survey/taxonomy → 本 tick B embodiment 切. 同步债务: C-EMBOD-7 sub-candidate 需在下 tick C 同步至 survey §10 + taxonomy. CrossFormer arxiv ID 与 RT-X §6 pp 数字按 [unverified ID]/[unverified pp] 标注, 未编造标题/作者/数字."
     }
   ]
 }
