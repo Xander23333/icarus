@@ -875,6 +875,15 @@
       ],
       "chars_added": 4200,
       "note": "Task C: 把上 tick (15:30Z) 在 world_model.md 写好的 C-WM-4 (head-to-head paradigm benchmark deficit) corollary 候选正式三处同步, 并解决编号冲突 — survey §7 mech-table 已用 C-WM-4 标 object-permanence floor + C-WM-5 标 JEPA identifiability 局部翻盘, topic file 新增 corollary 与之碰撞 — 本 tick 把 corollary 重编号为 C-WM-6, 同步 topic file 4 处 (corollary 段标题 + §Open problems 引言 §C-WM-1/2/3/6 列举 + OP-WM-4 \"即 C-WM-6 的实验落地\" + Cross-links 末段候选 mech 入口) + survey §10 新增完整 corollary 段 (a/b/c 三段 + 编号说明 + C7/C-WM-6 双 corollary 同步说明 分隔块) + taxonomy 升降级历史新增 1 行 (附编号避让说明 + 注明只入升降级历史与 §10 corollary 段, 不入 candidate snapshot 主表, 与 C-SCALE-6 sibling-cap 处理同型). 元意义段落把 C-WM-6 与 C-WM-3 钉成 benchmark 缺失双对偶 (前者卡跨阵营对照 / 后者卡跨 Pearl-layer 对照), 与 §5 §4 §6 §8 已有的 \"工程上可做、社会学上不做\" 列表 (13 项) 增到 14 项, 并把 OP-WM-4 显式解读为 sociological deadlock — 是 §9 (4) 七项 confound mech 真信号问题在方法学维度的对偶 (mech 真信号问题对偶: \"如果真信号在, 谁有动机去测\"). 引用全部公开 arxiv (2301.08243 / 2404.08471 / 2312.14125 / 2605.26379 / 2605.26900 / 2408.03314) + 1 非 arxiv (Sora 技术报告), 未编造数字/日期/标题. Rotation: 上 tick (15:30Z) B world_model.md → 本 tick C 同步, 与 taxonomy 末段 \"三处不同步即视为 incomplete\" 强制规则一致 (与 C5/C6/C7 candidate 同步操作同型 — corollary 类候选首次走完此规则). Picked C over A (单 tick 一节 sample 上限 + N1-N8 24h 全推过 + corollary 同步是上 tick 显式 deferred 的债务) over B (上 tick 已 B, 连续 B 边际净增低 + 同步债务优先)."
+    },
+    {
+      "tick_utc": "2026-05-28T16:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/embodiment.md"
+      ],
+      "chars_added": 3800,
+      "note": "Task B: embodiment.md 新增 §远程操控/autonomy模糊带/demo可信度 (2023-2026) 整节 (~3.8k 净增). 时间线 5 个数据点 (Tesla Optimus 2024-10 We-Robot 事件 / Figure 01→02 demo 与 OpenAI 分手 / 1X NEO + Unitree G1 + Apptronik Apollo highlight-reel 退路 / π₀ task-level retry 公开 / 2605.25889 + 2605.26820 硬测量回拉), 推出新候选 C-EMBOD-6 (Demo-credibility prior: 缺 N-trial+intervention+OOD 三元组的 demo 视频 Bayes factor ≤ 1, 与 reasoning format-confound '零证据' 同型, 是评测协议 confound 框架在 embodiment 维度的对偶), 钉 C-EMBOD-6 ↔ C-EMBOD-4 评测层 vs 形式层对偶. 元判断: humanoid 资本叙事与可验证 capability 的 gap 在 2026 已被 demo 端 + 硬 IT 端同时压紧, 没有方法学退路. Rotation: embodiment.md 最近 15 ticks 未触, 严格 rotation guard 通过. Picked B over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over C (上 tick 已 C corollary 同步, 切回 B 避免连续 C 边际递减; C-EMBOD-6 的 candidate snapshot 同步债务延到下 tick). 远程操控比例 / Helix 论文状态 标 [unverified], 未编造数字/日期/标题."
     }
   ]
 }

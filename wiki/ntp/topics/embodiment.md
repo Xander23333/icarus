@@ -114,6 +114,24 @@ C-EMBOD-4 与 C-EMBOD-3 (continuous action lower bound) 互为对偶：前者钉
 
 C-EMBOD-5 与 C-EMBOD-4 (capability-robustness IT 上界) 互补：前者钉 *训练侧* 信息量分母塌陷，后者钉 *评测侧* capability+robustness 之和上界。两条同时成立则解释了 robot data flywheel 的根本困难——不是采集速度不够，而是 *每单位采集的 effective information* 系统性低于文本，且 capability/robustness 任一端的边际收益都受 task-entropy 切片上界约束。
 
+## 远程操控、autonomy 模糊带与 demo 可信度问题 (2023–2026)
+
+VLA 论文与 humanoid demo 在公开传播层面共享一个被刻意虚化的边界：**给定一段任务执行视频，我们无法仅凭外观区分 (a) full-autonomous policy rollout、(b) teleoperated demonstration、(c) hybrid (高层 VLA + 低层 human-shared control)、(d) cherry-picked seed 中的最优 take**。这条暗线在 2023–2026 已经积累了足够多的具体事件，可以单独成节。
+
+- **2024-10 — Tesla *We, Robot* event (Optimus)**。多位现场参与者（Robert Scoble、Marques Brownlee 等）赛后报告 Optimus 与观众互动的对话与动作大概率由远程操作员介入；Tesla 官方未明确否认。具体远程操控比例至今 [unverified]，但这一事件让 "humanoid 已 deploy" 的叙事第一次在主流媒体层面崩塌。
+- **2024-2025 — Figure 01 → Figure 02 demo 序列 (Figure AI, Brett Adcock)**。早期 Figure 01 与 OpenAI 合作的 coffee-maker / dish-rack demo 论文级文档缺失，所有数据点来自 X 上的剪辑视频；Figure 在 2025-02 切换到自研 Helix 模型时同步停止与 OpenAI 合作。Helix 论文 [unverified, 截至 2026-05 未见公开 arxiv preprint] 公布前，外部无法验证 Figure demo 的 autonomy 比例。
+- **2024–2025 — 1X NEO / Unitree G1 / Apptronik Apollo**。三家在 2024 年的 demo 视频几乎全是 30 秒以下的 highlight reel + 慢速桌面任务。1X 在 2025-Q1 与 EQT 完成融资轮后第一次公开 NEO 在家用环境的 fully-autonomous tea-making 视频，长度 90 秒、单次成功，**未给出 N 次尝试中的 success rate**——这是 robot demo 评测的标准退路。
+- **2025 — Physical Intelligence π₀ / π₀-FAST 公开 demo**。π₀ 在 laundry-folding 上的长视频引发讨论：长程任务 (~10 min) 内是否有 reset / 人为介入。Black 等在 follow-up blog 中明确披露使用了 "task-level retry" 但不承认 step-level intervention；这是 humanoid / VLA 厂商中**第一家显式公开 retry 协议**的，仍远未到完整 success-curve 公开。
+- **2026-05 — Capability-Robustness IT-bound ([2605.25889](../papers/paper_notes/2026-05-28-2605.25889-vla-capability-robustness-bound.md))** 与 LIBERO continual benchmark ([2605.26820](../papers/paper_notes/2026-05-29-2605.26820-vla-real-world-continual.md))。这两条第一次提供了 *无视 demo 的硬测量*——前者用 PGD 攻击下的 success collapse 量化 capability/robustness 之和上界，后者用真实-世界 4-task continual 给出 catastrophic forgetting 显著大于模拟 anecdote 的具体百分点。两条共同效果：**让 "demo 好看" 不再等价于 "policy 强"，把评测重新拉回数字。**
+
+这条线的方法论意义远超 humanoid 营销讨论本身。它对应 NTP-mech 阵营在 embodiment 上的一条之前没正式登记过的元命题：**embodied 系统的 capability 主张如果不附带 (N 次尝试 success rate + intervention 协议 + OOD scope)，在认识论上等价于零证据**。这与 [scaling_limits](scaling_limits.md) §流形扩张里讲的 "VLA scaling law 至少需 (N, D, C, morphology, horizon, contact-mode) 六轴" 同源——前者钉单一 demo 的可信度上界，后者钉跨 demo 的曲线维数下界。两者合起来解释了为什么 2024–2026 humanoid 资本叙事与可验证 capability 之间的 gap 持续扩大。
+
+新增候选条目：
+
+- **C-EMBOD-6 — Demo-credibility prior**。在缺少 (N-trial success rate, intervention protocol, OOD scope) 三元组披露的情况下，任何 VLA / humanoid demo 视频对 capability claim 的 Bayes factor ≤ 1 （即应当被视作零证据）。**Falsification**: 找到一段公开 demo 视频，其在三元组缺失下被独立第三方复现至 ±10% success rate 一致，证明视觉一致性足以推断 capability。**当前评估**: medium-strong——形式上是 epistemic 而非物理命题，但 Optimus / Figure / 1X 三起独立的 demo-vs-真测试断裂事件已构成强经验后验。该条目与 reasoning §C-REAS-* 中 "format-confound 不可控的 reasoning 评测应被视作零证据" 形式同型，是评测协议 confound 框架在 embodiment 维度的对偶。
+
+C-EMBOD-6 与 C-EMBOD-4 (capability-robustness IT 上界) 互为 *评测层* 与 *形式层* 对偶：前者钉 "demo 视频" 这一最弱评测协议的可信度上界，后者钉 "clean+adversarial success" 这一最强评测协议下 capability 总量的信息论上界。两条同时成立 → embodied capability claim 在 2026 的 evidence-bar 已被从 demo 端与硬 IT 端同时压紧，humanoid 资本叙事与可验证 capability 之间的 gap 没有方法学退路。
+
 ## Open problems
 
 - **closed-loop NTP 的形式化**：当 environment 也是 transformer (world model) 时，agent-NTP + world-NTP 的联合训练是否等价于 model-based RL？理论上的 \"NTP-as-RL\" reduction（Cundy & Ermon 2023, GAIL 系列）在 frontier 规模下从未被系统验证。
