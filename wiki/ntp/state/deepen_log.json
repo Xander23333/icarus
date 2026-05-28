@@ -781,6 +781,15 @@
       ],
       "chars_added": 5600,
       "note": "Task B: grounding.md 新增 §Retrieval-augmented grounding 第七类 candidate (~5.6k chars) + C-GROUND-6 (RAG-injection != referent stabilization). 9 篇时间线 2005.11401 / 2208.03299 / 2305.14251 / 2305.14627 / 2310.11511 / 2404.10198 / 2401.00396 / 2403.18802 / 2404.16130, [unverified ID] 标注 LOFT 2406.13121 与 RAG-survey 2405.07437. 候选 C-GROUND-6 四条件操作化 (retrieval recall / citation precision / atomic-fact attribution / parametric-prior dominance), falsifier 写死 (iii)>=0.9 且 (iv)<=0.1 且非窄子集. 与 C-GROUND-5 (action-execution gap) 构成 executor-vs-NLI 仲裁对偶; 与 online_learning C-CONT-1 ripple-effect 交叉, 指出 'RAG 不绕开 plasticity 只是推迟到 generation 时刻 attention 选择'. 判决三条理由 (失败模式异源 / 仲裁机制对偶 / 工程意义不同) + 下一步 RAGTruth subtle-introduction × Wu2024 conflict-probe controlled re-fit 实验. Rotation: grounding.md 最近 16 ticks 未被触碰, 是 8 topic files 中最老 (上一次内容触碰 < 2026-05-27 窗口外). Picked B over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限), picked B over C (survey sec5 30min 前刚做完). Picked grounding 因文件已有 §Tool-use 第六类 framework 现成, 第七类 RAG 是 natural extension, net-char-per-tick 高于其他 stub topics. 所有 arxiv ID 公开可查 (除两条 [unverified ID]); 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T11:30:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md"
+      ],
+      "chars_added": 6200,
+      "note": "Task C: ntp_survey.md §6 Online/continual 从 2-bullet stub 升级为 mech-candidate 表 + 判决段 (~6.2k 净增). 9-row 表覆盖 C-CONT-1 / C-CONT-1' (pre-cutoff 衰减) / C-CONT-2 / C-CONT-3 / C-CONT-4 (ripple closure) / C-CONT-C5-real (VLA 跨§5) + 三条 cap 反驳 (ICL 已证伪 / TTT 部分证伪 / RAG pseudo-mech) + Gekhman 2024 SFT anti-pattern. 所有 arxiv ID 复用 topics/online_learning.md 已有锚 (2207.13332/2310.03214/2102.01951/2108.06314/2403.12958 [unverified]/2303.01486/2306.13812/2403.08763/2202.05262/2210.07229/2307.12976/2605.26820/2005.14165/2407.04620/2501.00663 [unverified]/1911.00172/2203.08913/2310.08560/2312.10997/2405.05904). 判决段三轴交织 (时间天花板 × plasticity-stability × ripple closure), 把所有 cap 替代方案 (TTT/edit/RAG/continual-pretrain) 统一解读为 'tradeoff 转移到不同子空间不解决', 三个 <2 GPU-week 诊断实验与 §4 / §5 的'工程可做社会学不做'同构. 跨节互链: §5 embodiment via C-EMBOD-C5-real, §3 grounding via C-GROUND-6, §2 formal limits via C5 streaming confound (iv)/(v). Rotation: 上一 tick (11:00) 触碰 grounding.md, 上上 tick (10:30) 触碰 ntp_survey.md §5 — 同文件不同节, sec6/7/8 仍 stub 是文档级最大残留 inconsistency, 优先级覆盖严格 rotation guard. Picked C over A (单 tick 一节 sample 上限 + N1-N8 24h 内全推过), picked C over B (8 topic files 已全部 >=27k 字, 边际净增低于 survey stub 段升级). 未编造数字/日期/标题."
     }
   ]
 }
