@@ -941,6 +941,16 @@
       ],
       "chars_added": 9722,
       "note": "Task B: grounding.md 新增 §Epistemic grounding — 第八类 candidate 整节 (~9.7k 净增, 34047->43769 bytes), 显式部分回答 Open problems 第 1 条 'epistemic grounding 缺标准评测' 挂账. 时间线 7 数据点 (Kadavath 2207.05221 / SelfAware 2305.18153 / Tian 2305.14975 / R-Tuning 2311.09677 / SimpleQA non-arxiv / SelfCheckGPT 2303.08896 / Burns CCS 2212.03827 + Marks 2310.06824 + MacDiarmid non-arxiv / Li 2605.26362). 新增 C-GROUND-7 (internal-belief vs output-confidence asymmetry), 四条独立 mech-interp 证据线 + SimpleQA 宏观对应; falsifier 双门槛 (probe AUC >= 0.8 且 rho >= 0.85). 与 reasoning topic Causal Tongue-Tie/ProFIL readout-主导假设构成镜像 (方向相反: epistemic 上 verbal readout 反更准), 与 C-GROUND-5/6 三连组合钉 action/fact/belief 三类 token 接地缺口. 元判断: 第八类 grounding 单列依据 = Mollo-Millière 失败模式不同源标准. Open problems 第 1 条收紧为 'probe-vs-readout 双轨 epistemic benchmark'. Rotation: grounding.md 最近 17 ticks 未触 (11:00Z 最后, gap 8.5h), 上 tick 19:00Z C survey+taxonomy → 本 tick B grounding.md 切换. Picked B over C (上 tick 已 C + 同步债务已落 18:00Z/19:00Z 两次) over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over D (无明显错误待修). SimpleQA non-arxiv / MacDiarmid blog / Coconut 2412.06769 部分 ID 标 [unverified], 未编造数字/日期/标题. 同步债务: C-GROUND-7 需在下 tick 同步到 survey §10 + taxonomy 升降级历史 (与 C-FORM-7/C-WM-6/C-EMBOD-6 sub-candidate sync 同型, 三处同步规则触发)."
+    },
+    {
+      "tick_utc": "2026-05-28T20:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 5800,
+      "note": "Task C: 把上 tick (19:30Z) grounding.md Epistemic grounding 新登记 C-GROUND-7 (internal-belief vs output-confidence asymmetry) 同步到 survey 10 + taxonomy 升降级历史, 解决 taxonomy 末段 三处不同步即视为 incomplete 强制规则触发的同步债务 (上 tick note 已显式列出). survey 10 新增 C-GROUND-7 sub-candidate sync 段 (插在 C-CONT-2 falsification 四元组细化之后, C7 主 candidate 之前): 七点证据线 (Kadavath 2207.05221 / SelfAware 2305.18153 / Tian 2305.14975 / R-Tuning 2311.09677 / SimpleQA non-arxiv / SelfCheckGPT 2303.08896 / Burns 2212.03827 + Marks 2310.06824 + MacDiarmid blog + Li 2605.26362) + 与 10 主 candidate 区关系 (sub-candidate, 不入 snapshot 主表, 决策同 C-FORM-7/C-WM-6/C-EMBOD-6) + 镜像方向反转 reasoning readout-side 假设 (Tian RLHF 后 verbal>logit) 作为不能被吸入单一条目的形式理由 + 元意义 (与 C-GROUND-5/6 三连钉 action/fact/belief, 把 Mollo-Milliere 五分类扩八类). 末段新增 C-FORM-7/C-GROUND-7 sub-candidate 二次同步说明 (统一后续 sub-candidate 处理协议). taxonomy 升降级历史新增 1 行 (插在 C-FORM-7 后, C-CONT-2 前), 注明决策依据与 C-FORM-7/C-SCALE-6/C-WM-6/C-EMBOD-6 同型 + 镜像方向反转 reasoning + 关闭 grounding Open problems 第 1 条挂账的一半. snapshot 主表 (C1-C7 + Reversal Curse) 不动 (C-GROUND-7 不入主表, 与 C-FORM-7/C-SCALE-6 sibling-cap 备查同型). Rotation: 上 tick (19:30Z) B grounding.md -> 本 tick C survey+taxonomy, grounding.md 本 tick 不再触 (满足三处同步规则 + rotation guard). Picked C over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over B (上 tick 已 B + 同步债务优先, 与 17:00Z C-EMBOD-6 / 18:00Z C-CONT-2 / 19:00Z C-FORM-7 / 08:04Z C-WM-6 四次 sync 处理同型) over D (无明显错误待修). SimpleQA non-arxiv / MacDiarmid 2024 blog non-arxiv 部分来源标 [unverified], 未编造数字/日期/标题."
     }
   ]
 }
