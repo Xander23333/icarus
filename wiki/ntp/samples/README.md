@@ -17,7 +17,7 @@
 | 编号 | 标题 | 状态 |
 |---|---|---|
 | N1 | [这个问题为什么突然变重要了](N1-the-ntp-question.md) | ✅ 首篇 (Xander 亲写) |
-| N2 | [Transformer 的形式表达力——TC⁰ 之墙到底有多硬](N2-the-tc0-wall.md) | 🔨 推进中（§1–§6 + 尾声 / 估计 6000字） |
+| N2 | [Transformer 的形式表达力——TC⁰ 之墙到底有多硬](N2-the-tc0-wall.md) | 🔨 推进中（§1–§6 + 尾声 + §7 2026-05 补遗 / 估计 7000字） |
 | N3 | [Reversal Curse / 不忠实 CoT / Faith-and-Fate——三块拼图](N3-three-puzzle-pieces.md) | 🔨 推进中（§1–§6 + 尾声 / 估计 6500字） |
 | N4 | [Pearl 的因果阶梯与 LLM 的天花板](N4-pearl-ladder-and-llm-ceiling.md) | 🔨 推进中（§1–§6 + 尾声 / 估计 6000字） |
 | N5 | [Embodiment 真的不可 tokenize 吗——VLA 路线的隐含赌注](N5-embodiment-and-vla-bet.md) | 🔨 推进中（§1–§6 + §7 2026-05 补遗 / 估计 8500字） |

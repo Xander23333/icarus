@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T21:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 6251,
+      "note": "Task A 样章续写 — N2 新增 ### 七、2026 年 5 月补遗：墙的位置在过去半年又被推过两次 一节, 把过去几日 topic-page 三条新证据贴回 N2 §3–§6 主线: (1) formal_limits.md §第二堵墙 + C-FORM-4 NTP-learnability gap 整合 (Liu 2210.10749 / Berglund 2309.12288 / Allen-Zhu 2305.13673 / Power 2201.02177+Nanda 2301.05217 / Bordelon 2402.01092) → 推 §3–§5 主线 caveat 化, Dziri 4位崩塌 = TC⁰ 上界 vs learnability bias 未分离 confound, §5 末段'对齐'降格为'数值对齐 ≠ 机制对齐'; (2) Brösamle-Eckstein 2605.18079 低精度+log-grow depth Turing-complete → §6 修订表里'单 forward pass'假设被实质打开, §4 翻墙账单从三笔扩到四笔; (3) inference-time scaling cluster (Brown 2407.21787 / Snell 2408.03314 / R1 2501.12948 / s1 2501.19393 [unverified ID] / Wu 2408.00724 power-law verifier-rich 限定) → §6 第二道门成 frontier 产品曲线, 与 N8 §4 Bitter Lesson 三条件同构. 末尾判断三层 (a)(b)(c) + 留 2027-12 回检锚: C-FORM-4 仍无形式 lower bound + reasoning model 仍崩则本章退到 'expressivity 正确但无关' 的尴尬位. README N2 状态 §1-§6+尾声 6000字 → §1-§6+尾声+§7 2026-05 补遗 7000字 同步. 旋转规则: 最近 tick A (N5 18:30Z), 上 B (causality 18:00Z), 上上 A (N7 17:30Z), 上上上 C (survey 17:00Z); 本 tick 仍 A 但换 N2 文件, N2 距上次 touch 2026-05-27T17:32+0800 (~28h前) 已远超 rotation guard; 与最近 5 ticks 文件无重叠. 净增 ~6251 bytes (30839→37090) ≈ 2k 净增中文字. 不动 §1–§6 论证骨架, 只作 §7 时间戳补遗, 同型于 N5 §7 / N7 §7 已建立的'sample ↔ taxonomy 双向同步'纪律."
+    },
+    {
       "tick_utc": "2026-05-29T18:30:00Z",
       "task_type": "A",
       "files": [
