@@ -133,10 +133,40 @@ $$\varepsilon_{\text{do}}(M, X) = \mathbb{E}_{s,a}\bigl\|\mathbb{E}_M[s'\mid s,\
 
 把这三件事混着说 "LLM 有/没有 world model" 是当前 discourse 最大的浪费。下一个真正能推进的实验是：在一个 *中等复杂度* 的 open-world 子集（比如 NetHack、Minecraft 文本子集、或可验证的城市路径数据）上，同时跑 NTP-only、NTP + Dreamer-style latent loss、NTP + 显式 state annotation 三个 setup，比较 probe accuracy 与 OOD 规划性能。已有零散工作但还没有公认 benchmark。
 
+## NTP-vs-JEPA head-to-head benchmark 真空 (2023–2026)
+
+§JEPA 可辨识性 那一节把 paradigm-replacement 路线推到了「条件性数学定理」阶段，但有一件事整个 2023–2026 文献都在系统性回避：**没有一篇公开论文把 NTP-style 与 JEPA-style 目标放在 *同一数据集、同一参数量、同一 token 预算、同一 downstream eval* 下做 head-to-head 比较**。这是判断「JEPA 是否真比 NTP 多挤出 world model」的最小必要实验，至今未做。把这条缺席整理出来，本身就是 §诚实判断 末尾「公认 benchmark 缺失」的具体化。
+
+- **2023-01 I-JEPA ([arxiv:2301.08243](https://arxiv.org/abs/2301.08243))** 的 baseline 是 MAE / data2vec / iBOT 这一族 masked-image SSL，**不是** 像素级 next-frame NTP。LeCun 在 podcasts 里反复说「autoregressive 已经被证伪」，但论文 eval 表里没有任何一个 cell 是 *同等算力下* 跑了 video-NTP baseline 的。
+- **2024-04 V-JEPA ([arxiv:2404.08471](https://arxiv.org/abs/2404.08471))** 的对照组是 video-MAE 与 OmniMAE，仍然回避 video-NTP。论文附录承认「a fair comparison to autoregressive video models is left for future work」——这个 future work 到 2026-05 没有出现。
+- **2024-02 Sora 技术报告**（非 arxiv）反方向同样回避：把自己定位为 «world simulator» 但没和 V-JEPA 在任何 frozen-probe benchmark 上 head-to-head；OpenAI 公布的 eval 集中在 video quality（FVD / 主观打分）而非世界变量的 probe accuracy。
+- **2024–2025 一波 video foundation model**（VideoPoet [arxiv:2312.14125](https://arxiv.org/abs/2312.14125)、Cosmos whitepaper [unverified ID]、Open-Sora 各 fork）几乎全部只报 generation quality，没人报 IntPhys / Physion / SlotFormer 上的 head-to-head probe——这正是 §object permanence 一节列的那把尺子的应用空缺。
+- **2026-05 LeJEPA ([arxiv:2605.26379](https://arxiv.org/abs/2605.26379))** 给了 JEPA 一族第一条 identifiability 定理，但实证部分仍是 pixel robotics control 上的 latent planning，**没有** 与同 backbone 的 video-NTP 对照。SPHERE-JEPA ([arxiv:2605.26900](https://arxiv.org/abs/2605.26900)) 同月，同样缺席。
+
+把这条缺席压一句：**「JEPA 比 NTP 更适合学 world model」目前是 *理论 + 局部经验* 的双重间接论据，没有任何一个公开实验在 controlled head-to-head setup 下直接量化二者差距**。这与 [reasoning](reasoning.md) §Garcia format-confound、[embodiment](embodiment.md) §评测协议退却线、[scaling_limits](scaling_limits.md) §流形扩张 一脉相承——都是同一种「缺失 confound 控制的 benchmark 真空」在不同 topic 上的化身。
+
+新增候选 (corollary，不升主表)：
+
+- **C-WM-4 — Head-to-head paradigm benchmark deficit**：在 fixed (backbone arch, param count, training token budget, downstream probe set) 四元约束下，video-NTP 与 V-JEPA-class objective 的 world-model probe 差距未被任何公开实验测量。**Falsification**：出现一篇 (a) 两条 objective 共享同一 backbone 与 token 预算、(b) downstream eval 同时包含 IntPhys / Physion / counterfactual triplet 三类、(c) 报告每类指标 ±2pp 置信区间的论文。**当前评估**: 不是 mech 命题本身，而是 *元-方法论命题*——下一次 C 任务时建议在 §10 survey 候选列表中以 corollary 形式登记（不进 taxonomy 主表），与 C-WM-3 的 benchmark 缺失互为镜像。
+
+## Open problems
+
+把上文 §C-WM-1 / §C-WM-2 / §C-WM-3 / §C-WM-4 与 §object permanence / §JEPA 可辨识性 / §反事实 eval 三条暗线交叉后，2026-05 视角下 world-model 议题剩下五个**已被清晰提问、但公开文献尚无收敛答案**的硬开题。每条都附最小可证伪实验与最近一次公开尝试，避免落入「open problem 罗列」的占位陷阱。
+
+- **OP-WM-1 — open-world Othello**：是否存在一个 *中等开放* 的序列生成任务（候选：NetHack 子集、Minecraft chat+action 子集、可验证城市路径数据），在该任务上 NTP-only training 能让 linear probe 以 ≥95% 准确率恢复 *非平凡* 世界状态？目前最接近的资源是 Vafa 2024 ([arxiv:2406.03689](https://arxiv.org/abs/2406.03689)) 的纽约出租车 setup，但其结论是 *probe accuracy 高 + state graph 不同构*——这恰恰是开题，不是答案。**Falsification window**: 6–12 个月，需一个公开 backbone + 公开 probe 协议。
+- **OP-WM-2 — video Othello-GPT**：在 Genie 2 / Cosmos / Sora-class latent-action 模型上做 Hazineh 2023 ([arxiv:2309.07815](https://arxiv.org/abs/2309.07815)) 风格的线性可解码 probe，目标变量是 object identity / position / velocity。如果能拿到 1.7% 错误率档的可解码性，C-WM-1 的边界就从 closed-world 外推到 mid-open-world。**当前距离**: 工程上完全可做（API black-box probe 足够），社会学上无人有动机做——闭源厂商不愿暴露 latent，开源团队没有 Genie 量级模型。
+- **OP-WM-3 — counterfactual triplet benchmark**：把 IntPhys / Physion 改造成 $\{(s,a,s'),(s,\text{do}(a'),s'')\}$ 形式，让 video world model 在 *同一权重* 下报告 observational 与 interventional 两个分数。这是 §C-WM-3 的最小工程实例。**Falsification window**: 12–18 个月，bottleneck 在 benchmark 设计者而非模型能力；如果到 2027-Q4 仍无此 benchmark 公开，则 video-NTP world-model 的因果维度将继续停留在 §反事实 eval 末尾描述的方法论空洞中。
+- **OP-WM-4 — fair JEPA-vs-NTP comparison**：即 C-WM-4 的实验落地。最小可行版本：在 Something-Something-v2 上用同一 ViT-L backbone、同一 token 预算分别跑 V-JEPA loss 与 next-frame patch NTP loss，下游用 frozen-probe + IntPhys violation-of-expectation。**当前距离**: 已具备所有条件（V-JEPA 代码开源、video-NTP baseline 多家可复现），只缺一个无 paradigm 立场的中立团队做这件事。FAIR 与 OpenAI 都有结构性利益不做。
+- **OP-WM-5 — reasoning trace 是否真在外接 world model**：reasoning-model（R1、o3）把状态写到 scratchpad 上，但 Turpin 2023 ([arxiv:2305.04388](https://arxiv.org/abs/2305.04388)) 已证 CoT 与内部计算可不一致。开放问题：是否存在一组任务，使 (a) 模型给出正确答案、(b) scratchpad 显式列出关键中间状态、(c) activation patching 显示该中间状态 *不存在* 于内部表征？这是把 §反例与上界突破 末尾的 Turpin 怀疑推到 mech-interp 可测层面的最小协议。**Falsification window**: 6–12 个月，mech-interp 社区已具备 activation patching 标准工具（Brinkmann 2024 [arxiv:2402.11917](https://arxiv.org/abs/2402.11917) [unverified ID]），只需把 protocol 跨过 closed-world toy 到 frontier reasoning model 这一跳——后者闭源是主要 friction。
+
+把这五条压成一个元判断：**world-model 议题的 2026 瓶颈不在新模型 / 新理论，而在 benchmark 设计与跨阵营对照实验的缺失**。OP-WM-2 / OP-WM-3 / OP-WM-4 都是工程 <1 GPU-week 的实验，但每一个都因「报告方向不利于自己阵营」而无人愿做——这与 [causality](causality.md) §RL-from-environment 三个 <1 GPU-week 实验缺失 / [reasoning](reasoning.md) §C-REAS-5 双段相变测量缺失同型。下一次 NTP-deepen 在 world_model.md 上的实质性更新，最有可能来自这五条 open problem 中任意一条被外部团队做掉——而不是又一篇 Sora-class 模型发布。
+
 ## Cross-links
 
-- [causality](causality.md) — 第 3 种 world model 与 Pearl Layer 2/3
+- [causality](causality.md) — 第 3 种 world model 与 Pearl Layer 2/3；C-WM-3 与 C-CAUSAL-1 共享反事实失败的根
 - [grounding](grounding.md) — world model 需不需要 sensorimotor 接地
-- [embodiment](embodiment.md) — Genie / robotics 路线
-- [reasoning](reasoning.md) — reasoning trace 作为外置 world model
-- 候选 mech 入口：`survey/taxonomy.md` C-WM-1, C-WM-2, C-WM-3
+- [embodiment](embodiment.md) — Genie / robotics 路线；§评测协议退却线 与 §object permanence 同型
+- [reasoning](reasoning.md) — reasoning trace 作为外置 world model；OP-WM-5 是这条桥的 mech-interp 检验
+- [scaling_limits](scaling_limits.md) — §流形扩张 与 §JEPA 可辨识性 在「benchmark confound 控制不足」上同型
+- [online_learning](online_learning.md) — world model 的时间维度更新失败即 §online_learning 的 cutoff bottleneck
+- 候选 mech 入口：`survey/taxonomy.md` C-WM-1, C-WM-2, C-WM-3；C-WM-4 仅在 §10 候选列表登记为 corollary
