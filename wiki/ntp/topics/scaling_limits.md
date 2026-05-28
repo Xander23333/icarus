@@ -129,6 +129,8 @@ C-SCALE-6 与前五条候选的张力：它在 *training data 侧* 给出 plasti
 
 ## Post-training compute: 第七轴 — RL / verifier-driven scaling (2022–2026)
 
+> **(2026-05-28 同步注)** 本节 C-SCALE-7 已正式登记为 [`survey/taxonomy.md`](../survey/taxonomy.md) candidate snapshot 第 C7 行 (边界 NTP-mech 候选, taxonomy 级争议) 与 [`survey/ntp_survey.md`](../survey/ntp_survey.md) §10 C7 条目；同表新增 C-SCALE-6 (data-quality multiplier) 作为 NTP-cap sibling 入升降级历史日志但不入主候选表。三处同步符合 taxonomy 末段规则。
+
 (N, D, C_train_pretrain, C_inference, bits/param, data-quality) 之外，2024 年起被 frontier lab 普遍承认的第七根轴是 **post-training compute**——具体是 RLHF / RLAIF / RLVR / process-reward 这些 *non-NTP objective* 在 base model 之上消耗的额外算力。这条轴和前六轴最大的不同：它的 \"NTP-ness\" 是被打折的——objective 已经不是纯 next-token，而是 next-token under verifier-shaped reward。因此能不能算作 \"NTP scaling 的第七轴\" 本身就是 taxonomy 级争议。
 
 - **2022-03 — Ouyang et al., *Training Language Models to Follow Instructions with Human Feedback* (InstructGPT, [arxiv:2203.02155](https://arxiv.org/abs/2203.02155))**。首次给出 \"post-training compute 远小于 pretrain 但下游收益超线性\" 的硬数字：175B base + ~1.3% 额外 compute 的 RLHF，TruthfulQA / 指令遵循上把同 base 拉到接近 GPT-4-era prompt-tuned 水平。重点不是 absolute gain，而是 *compute ratio 的奇怪不对称*——pretrain ↔ posttrain 之间不存在 Chinchilla 式的 compute-optimal 配比拟合。

@@ -63,6 +63,8 @@ NTP (Non-Tokenizable Problems)
 | 2026-05-28 | "VLA capability+robustness 总预算" (discrete-action) | 未分类 | 条件 NTP-mech (encoder-specific) | 2605.25889 [unverified ID] |
 | 2026-05-28 | C5: NTP continual-learning 不动点 (streaming, no-replay, backbone) | 未登记 | Conditional NTP-mech 候选 (4 升级条件 ✅✅✅❌ — (iv)(v) confound 未排除) | N7 §3–§5 综合 (Lazaridou 2102.01951 + Kirkpatrick 1612.00796 + Lyle 2303.01486 + Dohare 2024 *Nature* + Ibrahim 2403.08763) |
 | 2026-05-28 | C6: Video-NTP interventional rollout consistency (open-world Layer-2) | 未登记 | Conditional NTP-mech 候选 (4 升级条件 ✅⚠✅⚠ — 映射 non-trivial 度中等, confound (v) representation-geometry 未排除) | world_model.md §C-WM-3 综合 (Vafa 2406.03689 + Brinkmann 2402.11917 + Phyworld 2406.03520 + Kıcıman 2305.00050 + IntPhys 1803.07616) |
+| 2026-05-28 | C7: Post-training compute scaling 是闭区间 + 非 NTP 子轴 (verifier-rich subset) | 未登记 | 边界 NTP-mech 候选 (taxonomy-level 争议: \"算不算 NTP\" 本身未定 — 4 升级条件 ⚠⚠✅✅, formal 化在 reward-hacking 区拐点未严格化, 与 C-SCALE-6 DPO 边界纠缠) | scaling_limits.md §C-SCALE-7 综合 (Ouyang InstructGPT 2203.02155 + Bai Constitutional AI 2212.08073 + Rafailov DPO 2305.18290 + Gao RM-overoptim 2210.10760 + DeepSeek-R1 2501.12948 + RLVR reward-hacking bundle [unverified]) |
+| 2026-05-28 | C-SCALE-6 (data-quality multiplier): 单位 token 教学价值是 (raw web → tau model collapse) 闭区间 | 未登记 | NTP-cap (sub-mech) | scaling_limits.md §Data-quality scaling 综合 (Phi-1 2306.11644 + DoReMi 2305.10429 + Rephrase the Web 2401.16380 + FineWeb-Edu 2406.17557 + Model Collapse 2305.17493 + Joint-KL 2605.12316) — 决策: 不入 candidate snapshot 主表 (机制级强度不足, 与 C-SCALE-7 DPO setup 部分重叠), 仅入历史日志作 sibling-cap 备查 |
 
 判断：本表的形状给出一个非常硬的经验观察——**升级事件极少（近三年实质只有 C1 Deterministic Horizon 与 C4 VLA 预算上界两个真正达到 conditional NTP-mech），降级事件密集**。任何还没经历过至少一次"被认真挑战、并把可证伪条件改写至少两遍"的候选，目前的默认假设应当是它会在下一个 confound 被识别后降级，而不是相反。这是 [`ntp_survey.md`](ntp_survey.md) §10 维护节奏的方法论依据。
 
@@ -76,6 +78,7 @@ NTP (Non-Tokenizable Problems)
 | C4 | VLA capability+robustness MI ≤ H(task)+adv | Conditional NTP-mech (discrete VLA) | encoder 子空间假设在 white-box 下失效 | [embodiment](../topics/embodiment.md) |
 | C5 | NTP-loss continual-learning 不动点 (streaming, no-replay, backbone-weight) | Conditional NTP-mech 候选 (streaming setting) | 在 ≤1 步/样本、replay=0、backbone-weight 更新下无旧域 loss 退化的训练器 | [online_learning](../topics/online_learning.md) / [N7 §3–§5](../samples/N7-why-llm-cannot-continually-learn.md) |
 | C6 | Video-NTP interventional rollout consistency (open-world Pearl-Layer-2) | Conditional NTP-mech 候选 (video subband) | 存在 simulator-backed counterfactual triplet $\mathcal{B}_{\text{do}}$ 使某 video-NTP 模型同权重下 $\varepsilon_{\text{do}}(M,X)\to 0$ | [world_model §C-WM-3](../topics/world_model.md) |
+| C7 | Post-training compute scaling 闭区间 (verifier-rich subset only) | 边界 NTP-mech 候选 (taxonomy 级争议) | 找到 RLVR setting 使 10× C_post 与 holdout 真实 utility 同步线性, 无 reward-hacking decoupling | [scaling_limits §C-SCALE-7](../topics/scaling_limits.md) |
 | — | Reversal Curse 方向不对称 | NTP-mech 候选 (待 ≥7B prefix-LM 复现) | 7B+ prefix-LM 训练消解该效应 | [reasoning §C-REAS-1](../topics/reasoning.md) |
 
 C1 与 C4 是当前唯二写出"形式陈述 + 非平凡映射 + protocol 级 falsification + 排除五 confound"全套的候选；C5 是 2026-05-28 新登记的 streaming-setting 条件 mech 候选，形式陈述齐但 falsification protocol 中第 (iv)(v) 两条 confound 尚未排除（详见下节判例）；其余仍处于 NTP-cap 或待形式化阶段。

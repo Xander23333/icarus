@@ -844,6 +844,17 @@
       ],
       "chars_added": 7100,
       "note": "Task B: scaling_limits.md 新增 §Post-training compute: 第七轴 (~7.1k 净增). 把 2022 InstructGPT → 2026 RLVR reward-hacking bundle 五条证据线串成 candidate C-SCALE-7 (post-train compute scaling 是闭区间 + 非 NTP 子轴): log utility ≈ γ log C_post − δ (C_post − C*)² 在 reward-hacking 区反弹, 作用域限定 verifier-rich subset, falsification 写明 10× C_post + holdout 真实 utility 同步线性上升. 引用 2203.02155 / 2212.08073 / 2305.18290 / 2305.20050 / 2501.12948 / 2210.10760 + [unverified ID] Gao 2025 follow-up + 2605.26733 RLVR reward-hacking bundle. 4 条反例 / 边界 (DPO 与 C-SCALE-6 重叠 / verifier capacity ceiling / process-reward 增量 [uncertain] / R1-Distill self-play 路径). 判决段两层: (i) 第七轴是 frontier lab 公开承认但 NTP-mech 派回避的 taxonomy 级断点; (ii) 元判决 — C-SCALE-4 (inference-time) 与 C-SCALE-7 (post-train) 共享同一 verifier-rich subset 作用域, 五轴里三轴在 open-ended 任务上 γ → 0, NTP 真正 scaling 的子域圈定到 verifier 存在的子集. Open problems 新增 2 条 (C-SCALE-7 vs C-SCALE-6 清洁分界 + policy 反超 verifier 后 self-play 闭环). Rotation: scaling_limits.md 上次内容触碰 2026-05-28T06:32 (~8h 前), 8 topic files 中最老; 最近 3 ticks 全部为 C ntp_survey -- scaling_limits 跨过 rotation guard. Picked B over A (N1-N8 24h 内全部推过 + 单 tick 一节 sample 上限) over C (连续 3 个 C ntp_survey §8/§9 后切回 B 避免边际净增递减). 所有 arxiv ID 公开可查, [unverified ID] 2 处, [uncertain]/[unknown] 3 处, 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T15:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/taxonomy.md",
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/topics/scaling_limits.md"
+      ],
+      "chars_added": 4900,
+      "note": "Task C: 把上 tick (14:30Z) 在 scaling_limits.md 写好的 C-SCALE-7 候选正式注册到 candidate snapshot, 三处同步 (taxonomy 升降级历史新增 2 行 C7 + C-SCALE-6 sibling + candidate snapshot 主表新增 C7 行 + ntp_survey §10 完整 C7 条目 (a/b/c) + scaling_limits 顶部同步注). C-SCALE-7 标定为 边界 NTP-mech 候选 (taxonomy 级争议, 4 升级条件 mixed, formal 化在 reward-hacking 拐点未严格化 + 与 C-SCALE-6 DPO setup 部分重叠), C-SCALE-6 (data-quality multiplier) 仅入历史日志不入主表 (机制级强度不足). ntp_survey §10 C7 条目 (a) 引用 2203.02155 / 2212.08073 / 2305.18290 / 2305.20050 / 2501.12948 / 2210.10760 五条证据线 (b) 写三条最强反论 (taxonomy 定义争议 / γ-δ-C* 跨任务族未做 Hoffmann 拟合 / verifier capacity ceiling 在 frontier model 上递减) (c) 元意义: C7 是 §10 第一个 '找 NTP 做得到的事被限制在哪个子域' 而非 '找 NTP 做不到的事' 的候选, 与 §9 (4) 七项 confound 同时排除 对偶, 与 C-SCALE-4 共享 verifier-rich subset 作用域. Rotation: 上 tick (14:30Z) B scaling_limits → 本 tick C 同步 (taxonomy 末段 '三处不同步即视为 incomplete' 规则强制覆盖严格 rotation guard; 与 C5/C6 candidate 当时的同步操作同型). Picked C over A (N1-N8 24h 内全部推过 + 单 tick 一节 sample 上限) over B (上 tick 已 B). 所有 arxiv ID 公开可查; 未编造数字/日期/标题."
     }
   ]
 }
