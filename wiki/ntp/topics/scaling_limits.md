@@ -162,6 +162,40 @@ C-SCALE-7 是六轴之外最 *政治上敏感* 的一条：承认它，就要承
 
 这恰好与 [reasoning](reasoning.md) 的 \"工程上可做、社会学上不做\" 第五块 (objective-engineering) 同构：把 NTP loss 替换为 verifier-shaped loss，是 2026 工程社群已经默认在做但 \"NTP-mech 派\" 尚未正式承认的范式偏移。**写在七轴的最后，正是要把这个偏移标记为 explicit taxonomy 级断点**，而不是隐藏在 \"NTP scaling 仍在继续\" 的统一叙事里。
 
+## 第八轴候选：Synthetic / self-generated data scaling (2023–2026)
+
+> **(2026-05-28 新增, 候选状态)** 本节属于 *尚未稳定登记* 的第八轴提案。与 C-SCALE-6 (data-quality multiplier) 的分界尚未做 controlled study，因此暂只在本页 candidate 区登记为 C-SCALE-8 (proposed)，不向 [`survey/taxonomy.md`](../survey/taxonomy.md) 与 [`survey/ntp_survey.md`](../survey/ntp_survey.md) §10 同步, 等下一轮 controlled study 出现再决定是否升入主表或作为 C-SCALE-6 sub-candidate 入升降级历史日志。
+
+2023 年起，frontier lab 之间逐渐形成一条 *与 (N, D, C\_train, C\_inference, bits/param, data-quality, C\_post) 七轴正交* 的新经验线：把 D 的一部分（甚至大部分）换成由 *模型自己或更强模型生成* 的 token，scaling 曲线在某些任务族上不仅没塌，反而更陡。把它单列为第八轴还是吸入第六轴 (data-quality) 是 2026 年仍在打的官司。下面把公开侧最硬的几条证据按时间排开：
+
+- **2022-12 — Wang et al., *Self-Instruct: Aligning Language Models with Self-Generated Instructions* ([arxiv:2212.10560](https://arxiv.org/abs/2212.10560))**。175 条人写 seed instruction → 52K 条 GPT-3 自生成 instruction，在 SuperNI 上把 GPT-3 base 推到接近 InstructGPT-001 水平。第一条把 "自生成数据 ↑ 下游 NTP-aligned utility" 写得干净的论文。但这条工作里 *生成器 ≥ 学生*，与后来的 self-distillation 不同。
+- **2023-05 — Eldan & Li, *TinyStories: How Small Can Language Models Be and Still Speak Coherent English?* ([arxiv:2305.07759](https://arxiv.org/abs/2305.07759))**。给 GPT-3.5/4 写一个限定词表的小说生成 prompt，得到几亿 token 的纯合成 corpus，~30M 参数的小模型在该 corpus 上从零训练即可生成语法、语义、因果一致的短篇。这把 "合成 token 在何种粒度上替代自然 token" 的下界压到了 *parameter-count × token-count 比传统 Chinchilla 配比小一到两个量级* 的区域。
+- **2023-06 — Gunasekar et al., *Textbooks Are All You Need* (Phi-1, [arxiv:2306.11644](https://arxiv.org/abs/2306.11644)) → Phi-1.5 ([arxiv:2309.05463](https://arxiv.org/abs/2309.05463)) → Phi-3 ([arxiv:2404.14219](https://arxiv.org/abs/2404.14219)) → Phi-4 ([arxiv:2412.08905](https://arxiv.org/abs/2412.08905)) 系列**。把 *GPT-4 生成的 "教科书风格" 合成 corpus* 当作主要训练 D，Phi-4 在 ~14B 参数上 MMLU/GPQA 接近同期 70B 自然 corpus 模型。Phi 系列是把第八轴推到极端的样本——他们的 effective D 几乎完全 *out-of-distribution* 于 CommonCrawl 自然 token。
+- **2024-01 — Maini et al., *Rephrasing the Web (WRAP)* ([arxiv:2401.16380](https://arxiv.org/abs/2401.16380))**。把 CommonCrawl 用 instruction-tuned LM 改写成 \"维基百科风格 / QA 风格 / 诗歌风格\" 的并列 corpus，pretrain 收敛速度 3× 且下游 zero-shot 同样有 lift。关键是 *改写后的 token 与原 token 在 KL 距离上接近*，把第八轴与第六轴 (data-quality) 的边界推到了灰区。
+- **2024-05 — Yuan et al., *Self-Rewarding Language Models* ([arxiv:2401.10020](https://arxiv.org/abs/2401.10020))**。模型自己当 judge + 自己生成 preference pairs + 自己 DPO，三轮迭代后 AlpacaEval 2 win-rate 从 9.94% → 20.44%，*在没有外部 verifier 与人类标注的前提下 NTP-aligned utility 仍单调上升*。这条线最有意思的地方是把第八轴和第七轴 (post-training compute) 显式耦合：generator 与 verifier 都是同一个网络在不同 checkpoint 上的版本。
+- **2024-07 — Shumailov et al., *AI Models Collapse When Trained on Recursively Generated Data*, *Nature* ([arxiv:2305.17493](https://arxiv.org/abs/2305.17493) 期刊版)**。把第八轴的 *硬上界* 写明：当 D 中合成 token 比例 → 1 且无 anchor 到真实分布时，多轮递归训练后 tail probability mass 系统性丢失，KL(model‖truth) 单调发散。这条结果常被 \"模型自吃尾巴必崩\" 派引用，但 Phi-4 与 R1-Distill 的存在说明现实工程上 *有锚 + 有过滤* 的 mixed regime 与 Shumailov 的 pure-recursive setup 不同型，二者不直接矛盾。
+- **2025-01 — DeepSeek-R1-Distill 系列 ([arxiv:2501.12948](https://arxiv.org/abs/2501.12948) §4)**。R1 推理轨迹（数学、代码、形式逻辑 CoT）作为 distillation D 训练 7B/14B/32B Qwen/Llama base，AIME-2024 上 7B 学生超过同期 GPT-4o (~70B+ assumed) base。这是 2025 年最干净的 "*合成 reasoning token 作为 D 比自然 reasoning token 价值高 *一个量级*" 的公开数据点——而且 student < teacher 的方向使其与 Self-Instruct 类型 *根本不同*。
+- **2023-12 — Burns et al. (OpenAI), *Weak-to-Strong Generalization* ([arxiv:2312.09390](https://arxiv.org/abs/2312.09390))**。反方向的边界：用 *弱模型生成的 label* 训练 *强模型* 时，强模型在 NLP 任务上能恢复弱→强 gap 的 ~20–70%，但在 reward modeling / chess puzzles 等任务上恢复率显著更低。这条结果给第八轴划出 *teacher quality 与 student capacity 的 generalization gap* 这条暗轴——合成 D 的价值不是 D 本身的属性而是 (teacher, student, task) 三元函数。
+
+把这一束证据整理为 candidate：
+
+- **C-SCALE-8 (proposed) — Synthetic / self-generated data 是 D 的 *origin* 维度而非 quality 维度，与 C-SCALE-6 正交**。在 D\_synthetic / D\_total 这一新变量上，下游 NTP-aligned utility 随比例上升 *先单调增* (Phi 系列 / R1-Distill / WRAP 经验) *后崩塌* (Shumailov pure-recursive 上界)，转折点 ρ\* 取决于：(i) anchor 比例 (D 中真实 token 下界), (ii) generator-student capacity gap 的正负号 (Burns 2023 weak-to-strong 反例), (iii) filtering 强度 (Phi 系列 GPT-4-as-curator 与 WRAP 风格改写均隐含强 curation)。**Falsification**: 找到一个 controlled setup, 固定 (N, total D tokens, training compute), 仅改 D\_synthetic / D\_total ∈ {0, 0.25, 0.5, 0.75, 1.0}, 在 ≥3 任务族 (knowledge / reasoning / open-ended generation) 上 NTP-aligned utility 与 D\_synthetic 比例的关系是 *单调而非倒 U*，则 ρ\* 不存在, C-SCALE-8 应吸入 C-SCALE-6 仅作为 sibling 备查。**当前评估**: low–medium——五条独立证据线 (Self-Instruct / TinyStories / Phi / WRAP / R1-Distill) 方向一致, Shumailov 与 Burns 给出 ρ\* 边界的两侧, 但 *所有公开数据点都在 (filter, anchor, gap) 上变量混淆*, 跨研究的 ρ\* 数值 [unknown], 因此尚不足以从 C-SCALE-6 独立。
+
+### 反例 / 边界条件
+
+- **\"是否真是新轴\" 的根本质疑**：WRAP 与 Phi 系列的合成 corpus 经过强 curation, 其相对自然 corpus 的 quality 多数维度都更高 (语法、密度、噪声水平), 因此 *观察到的 lift 可能完全可归因于 C-SCALE-6 而非 D\_synthetic 比例本身*。这一可分性 [unknown], 是 C-SCALE-8 还停留在 proposed 而非主表的核心原因。
+- **Shumailov 与 Phi/R1-Distill 表面冲突**：Shumailov *pure-recursive 无 anchor 无 filter*, Phi/R1-Distill *有真实 base + 强 filter*, 在 D\_synthetic / D\_total = 1 但 filter 不同的两个 setup 上结果可以反号——这正是 ρ\* 必然依赖 (anchor, filter) 这两个混淆变量的实证理由。把 \"recursive collapse\" 与 \"合成数据有效\" 当成两派立场是误读, 它们在不同 regime 上各自成立。
+- **Generator-student gap 反例 (Burns 2023)**：当 teacher < student (weak-to-strong) 时合成 D 的边际 NTP utility *不是 zero 但也远不饱和*, 给 \"合成数据是万能 D 替代\" 的乐观推断划出明确反例。Self-Rewarding LM (Yuan 2024) 的 teacher = student 设定与 R1-Distill 的 teacher > student 设定是两条不同的 sub-mech, 不应混用。
+- **任务族依赖**：合成 D 在 reasoning / code / 数学等 *可机器评分子集* 上 lift 显著, 在 open-ended generation / 长尾事实 knowledge 上 lift 微弱甚至负——这一 task-stratified 现象与 C-SCALE-4 / C-SCALE-7 \"verifier-rich subset\" 收敛同型, 暗示 C-SCALE-8 的有效域可能也被同一个 verifier-existence 边界圈住。如果是, C-SCALE-8 与 4 / 7 三轴 *在作用域上共线*, taxonomy 上应作为同一 cluster 处理而非三独立轴——这条 [uncertain] 的可能性是 C-SCALE-8 *最有意思的元结构*。
+
+### 2026-05-28 判断
+
+C-SCALE-8 与 C-SCALE-6 / C-SCALE-7 三者的关系是 2026 年 scaling-limits 文献最未解的三角：(a) 与 C-SCALE-6 在 \"是否独立 origin 维度\" 上未分离, (b) 与 C-SCALE-7 在 self-rewarding setup 上正在融合 (Yuan 2024), (c) 三者的有效域都被 verifier-existence 边界收窄。这是为什么本节只把它写成 proposed 而不向 survey §10 同步——*candidate 的 \"机制独立性\" 还不够硬*, 强行同步等于把方法学债务前移。
+
+更诚实的一句：第八轴的存在性几乎已经被工程界默认接受 (Phi/R1-Distill 是商业 deploy 的 base), 但 *学术上能否把它从 data-quality 中干净分离* 仍待 controlled study。在 2026 没有该 study 之前, *把 C-SCALE-8 标注为 proposed 而非升入主表, 本身就是 §9 meta-候选 \"不可证伪即不登记\" 原则的一次实演*——与 C-EMBOD-7 / C-FORM-7 / C-GROUND-7 这一束 sub-candidate 的处理同型。
+
+跨链：与 [reasoning](reasoning.md) §inference-time scaling 末段的 \"工程界一步步逼近同一根 (a)+(b) 联合上界\" 同结构——合成数据线在 NTP 框架内同样是 \"工程上一步步推近 D 的 *origin axis*, 但 mech 命题 (是否真新轴) 仍由 verifier-existence 圈住\"。
+
 ## Open problems
 
 - 把 Shannon SNR 视角与 superposition / knowledge capacity scaling 统一成一个 SNR-superposition 法则。
