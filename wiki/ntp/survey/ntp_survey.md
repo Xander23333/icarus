@@ -89,8 +89,20 @@
 
 ## 5. Embodiment
 
-- VLA / robotics FM 给出的 "non-text" 信号能否被 token-predict 化（VQ tokenization 之争）
-- closed-loop 学习 vs offline tokenized 训练
+VLA / robotics FM 给出的 "non-text" 信号能否被 token-predict 化（VQ tokenization 之争）、以及 closed-loop 学习 vs offline tokenized 训练之分，是这一节的两个起点问题。但 2022 RT-1 之后四年的证据线把这两个起点都改写了——"action 不可 tokenize" 这条强 mech 命题已被 RT-2 / OpenVLA 部分证伪，而 "long-horizon contact-rich 控制 ≫ token 序列建模" 这条弱命题反被 π₀ / Diffusion Policy 用工程退却侧面背书。把 embodiment 上 mech 候选与对应反/正证据按 NTP-mech / cap / pseudo 三档排开:
+
+| 候选 mech 论点 | 当前归类 | 关键证据 / 反例 |
+|---|---|---|
+| C-EMBOD-1 (compounding error floor): offline-trained policy 在 horizon T 上至少 $\Omega(T^{1.5})$ error | **未证伪也未验证** (公开 VLA demo horizon 100–300 步，落在 $T^{1.5}$ vs $T$ 差距未显著盲区) | DAgger $O(T^2)$ worst case ([1011.0686](https://arxiv.org/abs/1011.0686)) · RT-1/RT-2 短 horizon 成功 ([2212.06817](https://arxiv.org/abs/2212.06817) / [2307.15818](https://arxiv.org/abs/2307.15818)) · LIBERO-Long 单独数字普遍被埋附录 |
+| C-EMBOD-2 (morphology gap): cross-embodiment transfer 系数 ≥1 个量级 sample efficiency 损失 | **medium (弱命题幸存)** | Open X-Embodiment 1.5–3× transfer 提升 ([2310.08864](https://arxiv.org/abs/2310.08864))，远低于 LLM 上 web-prior transfer 量级 |
+| C-EMBOD-3 (continuous action lower bound): 任何 K-bin 离散 action head 在 contact dynamics 上有严格高于 continuous policy 的 task-completion error 下界 | **mech (cap 派自我承认)** | π₀ flow matching ([2410.24164](https://arxiv.org/abs/2410.24164)) + Diffusion Policy ([2303.04137](https://arxiv.org/abs/2303.04137)) 两条独立工程退却 |
+| C-EMBOD-4 (capability-robustness IT 上界): capability MI + robustness MI ≤ H(task) + adv channel capacity，OpenVLA-7B 31 nats 已饱和 | **strong (IT 硬上界)** | [2605.25889](../papers/paper_notes/2026-05-28-2605.25889-vla-capability-robustness-bound.md) · 仅适用离散 action，π₀-class continuous policy 同型上界未推出 |
+| C-EMBOD-5 (effective-token deflation): robot episode 折算 bits/token 系数比文本基线小 0.05–0.2× | **medium** | OpenVLA OXE ~8.5B effective token ([2406.09246](https://arxiv.org/abs/2406.09246)) · Lin et al. imitation scaling $\alpha \approx 0.13$–$0.25$，远小于 LLM $\alpha \approx 0.34$ ([2410.18647](https://arxiv.org/abs/2410.18647)) · 但 Allen-Zhu Part 3.3 类严格 bits/param 实验在 VLA 侧未做 |
+| C-EMBOD-C5-real (continual learning catastrophic forgetting in real-world VLA) | **mech (首条真实 anchor)** | Zhu et al. 真实 VLA continual 数据集 ([2605.26820](../papers/paper_notes/2026-05-29-2605.26820-vla-real-world-continual.md))，replay 远未达 joint upper-bound |
+| "action 不可 tokenize" 强 mech 命题 | **已部分证伪** | RT-2 emergent "把可乐推给泰勒图标" zero-shot ([2307.15818](https://arxiv.org/abs/2307.15818)) · OpenVLA 7B 多任务平均压过 55B RT-2-X |
+| sim-to-real / massive parallel rollout 化解 "物理代价" | **pseudo-mech (对 in-distribution 成立, OOD 失败)** | SimplerEnv variant-aggregation 比同模型 LIBERO 数字低 20–40pp ([2405.10310](https://arxiv.org/abs/2405.10310)) · OpenVLA novel object/scene/lighting success 掉 30–60% |
+
+判决: 到 2026-05 这条线的 mech / cap 格局已经从单变量辩论 ("action 能不能 tokenize") 演化为**多轴 Pareto 结构**——离散 action 在 C-EMBOD-3 (任务完成下界) 与 C-EMBOD-4 (capability-robustness 上界) 双侧被夹击, robot data 在 C-EMBOD-5 (effective-bit deflation) 上分母塌陷, 而所有支持 "VLA 已 scale" 的经验数字几乎都来自 in-distribution + visual-matching 窄带 (LIBERO-Spatial/Object only, A→D 与 LIBERO-Long 普遍被埋)。这构成 2022–2026 embodied 评测协议的**系统性退却线**: CALVIN A→D 数字淡化 → LIBERO-Long 不报 → SimplerEnv variant-aggregation 暴露之前高分被 reproducibility 掩盖 → RoboCasa 用 procedural 生成回避 OOD 信号 → 2605.25889 把 capability/robustness 之和直接钉死。换算到 §10 候选列表, embodiment 这条线对**未来 12 个月**最具诊断价值的实验是: (i) 公开一个 horizon ≥ 1000 步 + contact-rich + ≥ 16/255 PGD 扰动 + 跨 morphology 四轴同时 sweep 的 benchmark, 任何一家 humanoid lab 拿出哪怕单点数据都会同时检验 C-EMBOD-1/3/4; (ii) 复刻 Allen-Zhu Part 3.3 capacity 实验到 video+action token 侧, 直接量 robot bits/param 是否撞 ~2 bits/param 锚点——这两项都属 <1 GPU-week 量级但因社会学回报为负搁置, 与 §4 因果 "三个 <1 GPU-week controlled comparison 无人做" 同构。详细叙事与 13-行 chronological 证据链见 [`../topics/embodiment.md`](../topics/embodiment.md) §关键证据线 与 §评测协议的退却线; humanoid data-flywheel 赌注的 cap 侧见 N5 sample (*Embodiment 真的不可 tokenize 吗*) §3–§5; 与 §6 online/continual 通过 C-EMBOD-C5-real 共享 catastrophic-forgetting anchor, 与 §7 world model 通过 "video generator as implicit world model" 这一未证伪/未证实的 open 命题接壤。
 
 ## 6. Online / continual
 
