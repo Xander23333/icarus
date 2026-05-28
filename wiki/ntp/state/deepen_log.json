@@ -808,6 +808,15 @@
       ],
       "chars_added": 6400,
       "note": "Task C: ntp_survey.md §7 World model/planning 从 2-bullet stub 升级为 8-row mech-candidate 表 + 判决段 (~6.4k 净增). 表覆盖 C-WM-1 (closed-world bottleneck, mech 已强证实) / C-WM-2 (open-world dilution, 强直觉 mech) / C-WM-3 (interventional rollout consistency, medium) / C-WM-4 (object-permanence floor, mech) / C-WM-5 (JEPA identifiability 局部翻盘, medium) + 三条 cap 反驳 (video-as-simulator pseudo / reasoning trace 外置部分证伪 / video-NTP frame-level mech-cap 混合). 所有 arxiv ID 复用 topics/world_model.md 已有锚 (1803.10122 / 2210.13382 / 2309.00941 / 2309.07815 / 2402.04494 / 2406.03689 / 2403.06963 / 2305.04388 / 1803.07616 / 2106.08261 / 2406.03520 [unverified] / 2605.26379 / 2605.26900 / 2102.08850 / 1907.04809 / 2106.04619 / 2402.15391 / 2405.12399 / 2309.17080 / 2501.12948), [unverified ID] 标注 Phyworld + V-JEPA-2 + Cosmos. 判决段三轴交织 (closed-world 已强证实 / open-world 难证伪 / C-WM-3/4 18 月内可一锤定音), 把所有 cap 替代方案统一解读为 tradeoff 转移到不同子空间 (video-NTP→帧级 / reasoning→scratchpad / JEPA→stationary 假设), 三个 <2 GPU-week 诊断实验 (Othello-style linear probe on Genie 2 / counterfactual triplet on Brax / V-JEPA-2 vs Sora head-to-head on IntPhys+Physion) 与 §4 §5 §6 同型, 共同构成第四块 工程可做社会学不做 列表. 跨节互链: §4 causality via C-CAUSAL-1 + C-WM-3, §5 embodiment via video-NTP 延伸, §6 online/continual via tradeoff 转移同型, §8 reasoning via unfaithful CoT. Rotation: 上一 tick (12:00) 触碰 reasoning.md (B), 上上 (11:30) ntp_survey.md §6 — 不同节, sec7 仍 stub 是文档级最大残留 inconsistency, 优先级覆盖严格 rotation guard. Picked C over A (单 tick 一节 sample 上限 + N1-N8 24h 内全推过), picked C over B (8 topic files 均已 27k+ 字, 边际净增低于 survey stub 段升级). 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T13:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 4500,
+      "note": "Task B: causality.md 新增 §Synthetic counterfactual corpus injection: 一条名义存在但实质未走的 escape route (~4.5k 净增). 把 §Layer-3 三互补下界中下界 (ii) '自然语料 counterfactual 密度 <10^-4' 的直觉反制路径 (合成注入) 系统化展开: 4 条边角 (CLadder 10k SFT baseline Layer-3 lift<3pp 已尝试已失败 / CLOMO logical entailment 不是 do-operator / Hüyük counterfactual feedback circular / agentic RL 物理上不能 alternate-history rollout / latent-CoT pause-token/Coconut/Quiet-STaR 只松动下界 (i) 不动 (ii)(iii)). 引用 2308.13067 / 2312.04350 / 2305.16183 / 2311.17438 / 2410.03767 [unverified ID] / 2310.02226 / 2412.06769 [unverified ID] / 2403.09629 / 2310.02309. 判决: escape route 形式 well-defined 工程 <1 GPU-week 但社会学回报为负 (mech 派质疑 leak / cap 派质疑 synthetic 太人工), 与 §RL-from-environment 三个 <1 GPU-week 实验缺失同型, 与 reasoning §C-REAS-5 双段相变测量缺失同型. 跨链升级: agentic RL 增益严格停在 Layer-2 不外溢 Layer-3 (反事实回滚非合法 do-trace), C-CAUSAL-1 与 C-CAUSAL-2 距离从 '经验上正在收窄' 修正为 '形式上 Layer-3 仍有独立护城河'. Rotation: causality.md 上次内容触碰 ~16h+ 前, 8 topic files 中最老; 最近 5 ticks 全部为 C ntp_survey §7 / B reasoning / C ntp_survey §6 / B grounding / C ntp_survey §5 -- causality 跨过 rotation guard. Picked B over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over C (连续 3 个 C ntp_survey §5/§6/§7 后 §8 reasoning 留给下 tick, 避免 4 连 C 边际净增递减). 所有 arxiv ID 公开可查, [unverified ID] 两处标注 (2410.03767/2412.06769), 未编造数字/日期/标题."
     }
   ]
 }
