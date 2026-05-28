@@ -79,6 +79,28 @@ text-NTP 的 world-model 证据基本上停在 Othello-GPT 与 chess-Transformer
 
 判断：object permanence 是当前唯一一把*同时被 cognitive-science / model-based vision / generative video* 三个社区公认有意义的尺子，把它接到 C-WM-3 的 interventional benchmark 上不需要任何新理论——只需要把 IntPhys / Physion 改造成 counterfactual triplet 形式（同一 prefix + 仅在 occluder 出现时刻 do-intervene 物体身份），即可一次性把 §视频暗线 + §反事实空洞 两节的开题问题落到一组可重复实验上。这也是 N6 (embodiment-and-vla-bet) §3 之后的最自然延伸点。
 
+## JEPA 可辨识性这一条理论暗线 (2019–2026)
+
+§object permanence 把度量推到 *变量级*，但还有一条更底层的问题没被本页系统化：**如果某个 SSL/NTP 目标真的学到了 world model，它在数学意义上"学到了"什么？**——这就是 representation identifiability 这一脉。它和 NTP 讨论的相关性是：identifiability 定理给出 \"在某类世界假设下，某目标 → latent 可被线性恢复\" 的 *条件性正面* 结果；只要把 NTP 与 JEPA-类 SSL 放到同一坐标下，就能定位 \"NTP 在哪一类世界上 *能* 被证明挤出 world model、在哪一类 *不能*\"。该问题原本是 ICA / nonlinear ICA 社区的内部话题，2023 之后才与 SSL / world-model 讨论合流。
+
+- **2019-07，Khemakhem et al., *Variational Autoencoders and Nonlinear ICA: A Unifying Framework*** ([arxiv:1907.04809](https://arxiv.org/abs/1907.04809))：iVAE，证明在 *auxiliary variable* (类标 / 时间索引 / domain id) 条件下指数族 prior 的非线性 ICA 可被 identifiability 到 affine 变换。这是把 \"nonlinear ICA 不可识别\"（Hyvärinen–Pajunen 1999 不可能性定理）局部翻盘的第一个干净结果，奠定后来所有 SSL identifiability 工作的模板。
+- **2021-02，Zimmermann et al., *Contrastive Learning Inverts the Data Generating Process*** ([arxiv:2102.08850](https://arxiv.org/abs/2102.08850))：InfoNCE 在球面均匀 latent + von Mises–Fisher 条件下可识别到正交变换。这是 *contrastive* SSL 的第一条 identifiability 定理，也是后续 SPHERE-JEPA 的直接精神先驱（同样把球面流形当作 first-class 几何假设）。
+- **2022-04，von Kügelgen et al., *Self-Supervised Learning with Data Augmentations Provably Isolates Content from Style*** ([arxiv:2106.04619](https://arxiv.org/abs/2106.04619))：augmentation 设计被形式化为 *content/style partition*，并给出 block-identifiability 定理。该结果第一次把 "augmentation 是不是必要" 这种工程直觉抬升到 mech 命题，是 V-JEPA / I-JEPA 选择 masking-as-augmentation 的理论支撑之一。
+- **2023-01，Assran et al., *I-JEPA*** ([arxiv:2301.08243](https://arxiv.org/abs/2301.08243))：LeCun 阵营给出 image 上的 joint-embedding predictive 实证，无 augmentation、无 contrastive、只做 masked latent prediction。论文本身 *不* 包含 identifiability 定理，只给经验下游性能；这一空白被 2026 年的 LeJEPA 补上。
+- **2024-04，Meta, V-JEPA** ([arxiv:2404.08471](https://arxiv.org/abs/2404.08471))：video 模态延伸，frozen-eval 优于 video-MAE，但同样停在经验层。
+- **2025–2026 一系列 JEPA-变体**（V-JEPA-2 [unverified arxiv ID]、Hierarchical-JEPA、Action-JEPA [unverified IDs]）：扩 modality、扩 scale；几乎全部仍是经验论文，未触及 identifiability。
+- **2026-05-25，Klindt–LeCun–Balestriero, *When Does LeJEPA Learn a World Model?*** ([arxiv:2605.26379](https://arxiv.org/abs/2605.26379))：JEPA 一族 *首条条件性数学定理*。alignment + Gaussian regularization 在 *stationary additive-noise* 世界类下使 latent 被 linearly identifiable；并反向证 Gaussian 是 *唯一* 满足该 guarantee 的 latent prior（Euclidean 嵌入空间下）。
+- **2026-05-27，SPHERE-JEPA** ([arxiv:2605.26900](https://arxiv.org/abs/2605.26900))：紧接着把 LeJEPA 的 Euclidean 假设打破——在 *球面流形* 上 Gaussian 不再最优，必须改为 hyperspherical uniform（与 Zimmermann 2021 的 vMF 结果遥相呼应）。两文联读，把 JEPA 路线从 \"统一 SSL 目标\" 推入 \"**latent 几何先验依生成假设而定**\" 的精细化阶段。
+
+把这条暗线压成判断：到 2026 年 5 月为止，**identifiability 定理在 SSL 子社区是 \"哪类目标 → 哪类 latent 可被线性恢复\" 的精细分类，但在 NTP 主流讨论里几乎隐形**。这是 NTP 调研一个真实的方法论缺口——同期 text-NTP 这边可拿出的 identifiability 结果几乎为零（Vafa 2406.03689 的 Myhill–Nerode 等价类是 *state equivalence* 而非 *latent identifiability*；Othello-GPT 的线性可解码是 *存在性*经验证据而非 *识别性* 定理）。
+
+反例与待证伪点：
+- **identifiability 定理是 *条件性* 的，不能跨假设外推**。LeJEPA 双定理在 \"stationary additive-noise + Euclidean 嵌入\" 下成立，SPHERE-JEPA 已展示 (Euclidean) 失效；任何真实 embodied 世界（非平稳、状态相关噪声、流形结构混合）目前都不被任一已知定理覆盖。把 LeJEPA 当作 \"JEPA 通用优于 NTP\" 的证据是过度外推。
+- **未被识别的 latent ≠ 没学到 world model**。Othello-GPT、chess-Transformer 都没有 identifiability 定理护航，但 probe 证据强；反过来 identifiability 定理也只是 *充分条件*。
+- **真正的可证伪窗口**：找到一个 NTP-only（纯像素/帧 next-token，无 JEPA 风格 latent target）的训练目标，在 LeJEPA 同一类世界假设下被证明 latent linearly identifiable——这将直接把 paradigm-replacement 路线击穿。目前 NTP-side 没有这样的定理，但也没有 *不可能性* 证明，这是开放问题。
+
+判断：JEPA-identifiability 这条线值得每月追踪两到三篇，是 N6 §3 \"world-model 三家答卷\" 在 2026 下半年写作时唯一接近 *形式可证* 的子带。但要诚实标注：identifiability 定理给的 \"学到 world model\" 是非常 *狭义* 的——只是 latent 与真实潜变量之间存在 affine/orthogonal 对应，并不蕴含因果结构（这又把球扔回 §C-WM-3 反事实 eval）。把这两条线 *分开* 报告比合起来吹更负责任。
+
 ## 反事实 / 干预 eval：当前最大的方法论空洞
 
 把上一节末尾那句"没有任何一篇 video world-model 论文做过 do-operator 干预下的预测一致性 eval"翻成 Pearl 的语言：当前所有公开 world-model benchmark 几乎全部停留在 Layer 1（observational）—— 给 prefix 预测续帧或下一动作 —— 而真正能区分"模型有 world model"vs"模型在做高阶 n-gram"的关键证据，是 Layer 2（interventional）的预测一致性。这一空洞不是"还没人想到"，而是工程上比 observational eval 难一个数量级，目前只有零散候选：
