@@ -913,6 +913,15 @@
       ],
       "chars_added": 3500,
       "note": "Task C: 把上 tick (17:30Z) online_learning.md §Continual pretraining recipe 边界 显式 deferred 的 C-CONT-2 / C5 falsification 四元组细化债务同步落到 survey §10 + taxonomy. survey §10 新增完整 C-CONT-2 falsification 四元组细化段 (前置 §C7 之前): 三年 CPT 曲线 (Gupta 2308.04014 / Ibrahim 2403.08763 / Parmar 2407.07263 [unverified] / Hägele 2405.18392 / Roberts Gemini blog [unverified title] / Çağatan 2402.17400) 压成 (a) ≤1pp 接近达标 + (b) 卡 95-98% + (c) 1/30 击穿 1/20 + replay→0 退化为 fine-tune 灾难性遗忘硬常数; 推出 (d) 新增条件; 元意义=C-CONT-2 是 §10 候选表第一个被工程曲线主动推近 falsifier 而迫使 falsifier 自身收紧 的条目 (与 Dohare 2306.13812 continual-backprop 扩张 hypothesis class 路线对照); 与 readout-side 假设 (vi)(vii) 接口层补丁同型. taxonomy 升降级历史新增 1 行 (注明 falsifier 收紧而非级别升降, C5 ✅✅✅❌ 状态不变); snapshot 表 C5 行 falsification 列同步从 '在 ≤1 步/样本、replay=0、backbone-weight 更新下无旧域 loss 退化的训练器' 收紧为四元组显式列出 (防 LoRA-merge / merging-based streaming-CPT [unverified IDs] spoof). 三处同步: online_learning.md (上 tick 已写) + survey §10 (本 tick) + taxonomy 升降级历史 + snapshot 表 (本 tick) 完整. Rotation: 上 tick B online_learning.md → 本 tick C survey+taxonomy, online_learning.md 本 tick 不再触. Picked C over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over B (上 tick 已 B + 同步债务优先, 与 17:00Z C-EMBOD-6 / 08:04Z C-WM-6 同步处理同型). Parmar arxiv ID / Roberts title / LoRA-merge streaming-CPT IDs 标 [unverified], 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T18:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/formal_limits.md"
+      ],
+      "chars_added": 4766,
+      "note": "Task B: formal_limits.md 新增 §Looped × Sparse 复合架构 整节 (~4.8k 净增, 33898->38664 bytes), 显式填补上节 Open-problem 第 2 条 'looped-x-sparse 复合架构仍空白' 挂账. 时间线 5 个数据点 (Dehghani UT 1807.03819 / Giannou looped 2301.13196 / Fan&Yang looped length-gen [unverified IDs] / MoR 2025 [unverified bundle] / MoD 2404.02258 对照). 新增 C-FORM-7 候选 (looped-sparse depth-gating), 形式陈述把 T_max 渐近行为作为唯一打开新表达力类的旋钮: T_max=O(1) 塌回 MoE-only (C-FORM-5), T_max=Ω(log n) 升到 CoT-bound (Merrill-Sabharwal 2310.07923). 关键论点: 工程射程内 MoR 几乎全限 T_max≤8 → 与 MoE 形式等价, 所有声称 MoR>MoE 的经验结果需重审 router-bit/CoT 混淆. 与 C-FORM-1/2/5/6 联合地图: MoR ⊆ MoE+loop, 不破墙除非 loop 那一支自由. Open-problem 第 2 条同步改为 '部分回答' + 收紧为 'selective-SSM × loop 复合的形式陈述' 这一剩余空白. 元判断: 'MoE 不破墙, loop 才破墙, SSM 连墙都摸不到, looped-sparse 复合也不破墙除非 loop 自由' 补成对偶完整态. Rotation: formal_limits.md 最近 14 ticks 未触 (10:00Z 最后, gap 8.5h), 上 tick 18:00Z C survey+taxonomy → 本 tick B formal_limits 切换. Picked B over C (同步债务已落地三次) over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over D (无明显错误待修). Fan/Yang/MoR/MoD 部分 ID 标 [unverified], 未编造数字/日期/标题."
     }
   ]
 }
