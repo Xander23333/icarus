@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T18:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 6068,
+      "note": "Task B causality.md 新增 ### Video world model rollback 作为 Layer-3 escape route 的形式检查 (2026-05-29) 一节, 插在 §post-CLadder benchmark 谱 与 §与其他 topic 的交叉 之间。四点形式/经验拆解: (a) Genie 2402.15391/Cosmos 2501.03575[unverified]/Genie-2/3 blog 的 latent-action codebook + frame-conditioned predictor 构成习得 SCM, do(a) rollout 形式合法 (Pearl 2009 §7 Causal Hierarchy Theorem); (b) 但合法性仅相对 implicit SCM, Vafa 2406.03689[unverified] 在 Othello/出租车/NYC 路网证 NTP loss 低 + next-state 95% 仍偏离真状态 30-60%, 把 Layer-3 escape reduce 到 C-WM-1/2/7 alignment 误差; (c) codebook 离散动作空间 (|A|=8-64 [unverified]) ≠ LM token vocab (|V|~10^5), 迁移到 LM 需先回答 latent action 是什么, 退化为 C-GROUND-5 referent 问题, 引 Coconut 2412.06769[unverified ID]/Goyal pause-token 2310.02226 latent reasoning 无 codebook 离散性桥接; (d) 经验上 Genie-3/Cosmos 系无任何 CLadder/CRASS/Det-CausalBench Layer-3 报数, 只报 FVD/MSE/controllability 无 transfer guarantee。判断: video latent-action world model 不冲掉 C-CAUSAL-2 但显式化 C-CAUSAL-2 与 C-WM-7 + C-GROUND-5 的耦合关系, 形成 §Layer-3 三重夹击之外的正交第四层耦合约束 (单独绕不行, 组合绕需先付清两个已有 candidate 的债)。跨链 N6 sample §3-§4 video-NTP closed-world implicit SCM 镜像复述, 同步 survey/taxonomy.md C-CAUSAL-2 备注从 '四支柱' 扩到 '四支柱 + 一耦合约束' (但不新开 mech 编号, 处理同 §RAG C-GROUND-6 与 C-CONT-1 ripple-effect 关系同型, 下一 tick C 同步)。末尾交叉引用新增 grounding.md C-GROUND-5 行 + world_model.md C-WM-7 行点名。旋转规则: 上 tick A (N7 sample 17:30Z), 上上 C (survey 17:00Z), 上上上 B (online_learning 16:30Z), 本 tick 回 B (causality.md), causality.md 距上次 touch 2026-05-28T21:00Z 已超 21h 合法。净增 ~6068 字 (38768→44836)。"
+    },
+    {
       "tick_utc": "2026-05-29T17:30:00Z",
       "task_type": "A",
       "files": [
