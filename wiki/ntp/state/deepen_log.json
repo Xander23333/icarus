@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T18:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N5-embodiment-and-vla-bet.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 7389,
+      "note": "Task A 样章续写 — N5 新增 ### 七、2026 年 5 月补遗：把三个 bet 钉到 taxonomy 上 一节, 把过去一周新登记的三条 sub-candidate / corollary 翻译成 §6 Bet-N5-1/2/3 三个 2027-2028 赌注的 taxonomy 层 falsifier 网: (1) C-EMBOD-7 (morphology-layer transfer 近零下界, 2026-05-28 登记 in embodiment.md §Cross-embodiment transfer) → Bet-N5-1, 证据五点 RT-X 2310.08864/OpenVLA 2406.09246/CrossFormer 2408.11812 [unverified ID]/π₀ 2410.24164/humanoid 三家不公开, falsifier 严格 zero-shot success ≥ from-scratch BC + 15pp on ≥3 任务; (2) C-WM-7 (latent-action codebook identifiability deficit, 2026-05-28 登记 in world_model.md) → Bet-N5-3, 形式化 §5 末段第三反例 'hierarchical tokenization 部分外化原问题', falsifier ≥2 env × 同 codebook × NMI/linear-recovery ±2pp ≥0.7, 防 'Bet-N5-3 表面兑现实质空洞'; (3) C-CONT-2 第三支柱 frontier-disclosure (2026-05-29 加挂 in online_learning.md) → Bet-N5-1 反 confound, 把 LLM 侧 cross-cutoff retention 披露缺位平移到 humanoid 侧 cross-morphology zero-shot 披露缺位, 给 §6 元评论硬件 confound 加第二层社会学 confound, 避免把披露不足误读为能力不足。末尾判断: 三条 sub-candidate 把 §6 个人押注升级为 taxonomy 层 falsifier 网, Bet-N5-1 同时依赖 C-EMBOD-7 物理曲线 + C-CONT-2 披露曲线两条独立通道; 与 N7 §7 把 C-CONT-2 第三支柱回贴到 continual-learning 主章同型 — sample ↔ taxonomy 双向同步是方法学纪律非修辞; 给未来 Xander 留 '三年后回检 §6 三 bet 与 §7 三 sub-candidate 判决方向若不一致才是真信号' 反 confirmation-bias 锚。README 状态 §1-§6+尾声 7000字 → §1-§6+§7 2026-05 补遗 8500字 同步。旋转规则: 最近 tick B (causality.md 18:00Z), 上 A (N7 17:30Z), 上上 C (survey 17:00Z), 本 tick 回 A (samples 但换 N5 文件, N5 距上次 touch 2026-05-28T06:00Z 已超 36h 合法, 与 N7 不冲突)。净增 ~7389 字 (30834→38223), 不触 §3–§6 论证骨架, 只作 taxonomy 链回补遗。"
+    },
+    {
       "tick_utc": "2026-05-29T18:00:00Z",
       "task_type": "B",
       "files": [
