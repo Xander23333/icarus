@@ -772,6 +772,15 @@
       ],
       "chars_added": 5500,
       "note": "Task C: ntp_survey.md sec5 Embodiment upgraded from 2-bullet stub to mech-candidate table + verdict (~5.5k chars). Aggregates topics/embodiment.md C-EMBOD-1..5 + C-EMBOD-C5-real + two pseudo/falsified claims into 8-row mech/cap/pseudo table; all citations reuse existing arxiv IDs (1011.0686 / 2212.06817 / 2307.15818 / 2410.24164 / 2303.04137 / 2310.08864 / 2406.09246 / 2410.18647 / 2405.10310 + 2605.25889 / 2605.26820 paper notes). Verdict paragraph nails the 2022-2026 embodied eval-protocol systematic retreat line (CALVIN A->D faded -> LIBERO-Long unreported -> SimplerEnv variant-aggregation exposed -> RoboCasa procedural -> 2605.25889 IT ceiling) and surfaces two <1 GPU-week diagnostic experiments (4-axis sweep horizon>=1000 + contact + PGD + cross-morphology; Allen-Zhu Part 3.3 replicated on video+action stream) -- isomorphic to sec4 causality three unrun controlled comparisons (sociological unfalsifiability mirror). Rotation: ntp_survey.md last content touch at 2026-05-28T09:30 (sec4 Causality, ~1h ago) but interleaved B formal_limits broke run; sec5/6/7/8 all being 2-bullet stubs is current largest document-level inconsistency (vs topic files 26-33k chars), priority overrides rotation guard. Picked C over A because N1-N8 all pushed within 24h; picked sec5 over sec6/7/8 because embodiment topic has the most mech candidates ready (5 + 1 real anchor + 2 pseudo) so single merge yields best net-char-per-tick. All arxiv IDs publicly verifiable; no fabricated numbers/dates/titles; 23 citations all backed by existing topic/paper_note internal links."
+    },
+    {
+      "tick_utc": "2026-05-28T11:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/grounding.md"
+      ],
+      "chars_added": 5600,
+      "note": "Task B: grounding.md 新增 §Retrieval-augmented grounding 第七类 candidate (~5.6k chars) + C-GROUND-6 (RAG-injection != referent stabilization). 9 篇时间线 2005.11401 / 2208.03299 / 2305.14251 / 2305.14627 / 2310.11511 / 2404.10198 / 2401.00396 / 2403.18802 / 2404.16130, [unverified ID] 标注 LOFT 2406.13121 与 RAG-survey 2405.07437. 候选 C-GROUND-6 四条件操作化 (retrieval recall / citation precision / atomic-fact attribution / parametric-prior dominance), falsifier 写死 (iii)>=0.9 且 (iv)<=0.1 且非窄子集. 与 C-GROUND-5 (action-execution gap) 构成 executor-vs-NLI 仲裁对偶; 与 online_learning C-CONT-1 ripple-effect 交叉, 指出 'RAG 不绕开 plasticity 只是推迟到 generation 时刻 attention 选择'. 判决三条理由 (失败模式异源 / 仲裁机制对偶 / 工程意义不同) + 下一步 RAGTruth subtle-introduction × Wu2024 conflict-probe controlled re-fit 实验. Rotation: grounding.md 最近 16 ticks 未被触碰, 是 8 topic files 中最老 (上一次内容触碰 < 2026-05-27 窗口外). Picked B over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限), picked B over C (survey sec5 30min 前刚做完). Picked grounding 因文件已有 §Tool-use 第六类 framework 现成, 第七类 RAG 是 natural extension, net-char-per-tick 高于其他 stub topics. 所有 arxiv ID 公开可查 (除两条 [unverified ID]); 未编造数字/日期/标题."
     }
   ]
 }

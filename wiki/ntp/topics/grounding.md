@@ -118,13 +118,40 @@ Mollo & Millière 2023 的五分类（referential / sensorimotor / relational / 
 
 > **2026-05-28 判断**：把 action / tool-use grounding 从 sensorimotor + referential 两类的边缘地带拎出来作为独立第六类，不是 taxonomy 洁癖，而是因为它对应的失败模式（参数幻觉、跨步 state 漂移、执行器仲裁 vs LLM-judge 落差）在 2024–2026 已经成为 frontier deployment 主要瓶颈，且其 *证据链已比 C-GROUND-1 当年完整*：四个独立 benchmark 一致、与 N3 / N4 / N6 已有 mech 候选可对接、有清晰 falsifier。下一步关键不在再做一个 agent eval，而在 (i) 在某个公开 agent trajectory 上做 readout-vs-probe 拆分实验，看 action-token 出口前的 hidden state 是否已经包含正确动作（类似 Causal Tongue-Tie 在 yes/no 上做的事）；(ii) 把 SWE-bench+ 污染量级稳定后，跨 7B / 70B / 400B 三档拟合 (i)−(ii) gap 随 N 的曲线，给 C-GROUND-5 一个 Allen-Zhu Part 3.3 级别的硬约束。两项实验都不需要新数据，只需要现有 model + 现有 benchmark 重测。
 
+## Retrieval-augmented grounding — 第七类 candidate (2020–2026)
+
+把 RAG 单拎为一类 grounding，乍看像凑数：检索系统从 1990s IR 一路延续，BM25 + 大模型在工程上是把 retrieval 当 *context-injection*，与 grounding 哲学讨论似乎隔行。但 2023 年起，关于 RAG 究竟"接地了什么"的争论日益尖锐，且与 Mollo & Millière 五分类、与上文 §Tool-use 第六类都有清晰分界，所以单列。
+
+核心问题：当 LM 在 generation 时把外部文档 *拼进 context* 并据此输出 token，这套机制提供的 grounding 与 (i) RLHF 注入的稀疏 referent 信号、(ii) multimodal pretraining 提供的 cross-modal 共现、(iii) tool-execution 提供的 truth-conditional 仲裁，分属什么层级？
+
+- **2020-05 — Lewis et al., *Retrieval-Augmented Generation for Knowledge-Intensive NLP* ([arxiv:2005.11401](https://arxiv.org/abs/2005.11401))**。RAG 原始定义：一个 dense retriever + 一个 seq2seq generator，end-to-end 训练。彼时 framing 是 "把 parametric memory 与 non-parametric memory 解耦"，未触及 grounding。
+- **2022-08 — Izacard et al., *Atlas* ([arxiv:2208.03299](https://arxiv.org/abs/2208.03299))**。few-shot KILT / Natural Questions 上 11B Atlas 接近 540B PaLM——表面上是参数效率胜利，潜台词是：当 retrieval 命中时，generator 不需要把事实 *存* 进权重，只需要 *搬运*。从 grounding 视角，这是把 referent → 权重内部联想链 解耦为 referent → 检索证据 → 输出 的可审计链路。
+- **2023-05 — Min et al., *FActScore* ([arxiv:2305.14251](https://arxiv.org/abs/2305.14251))** 与 **Gao et al., *ALCE: Enabling LLMs to Generate Text with Citations* ([arxiv:2305.14627](https://arxiv.org/abs/2305.14627))**。第一次把 "输出的每个原子事实是否被引用文档支持" 操作化为 atomic-fact-level metric。结果令人沮丧：ChatGPT-RAG 在 ALCE 上 citation precision/recall 60–70%、原子事实 attributable 比例 ~60%；纯参数 ChatGPT 在 FActScore 上传记类原子事实正确率 58%——RAG 注入的 "grounding" 在 atom 级别远比 leaderboard 数字脆弱。
+- **2023-10 — Asai et al., *Self-RAG* ([arxiv:2310.11511](https://arxiv.org/abs/2310.11511))**。在 generation 时插入 self-reflection token（[Retrieve]、[IsRel]、[IsSup]、[IsUse]）让模型自我判断检索必要性与支持度。把 grounding 决策内部化的尝试，但 Wu et al. 2024 *How faithful are RAG models?* ([arxiv:2404.10198](https://arxiv.org/abs/2404.10198)) 后续实验显示：当 retrieved context 与 parametric memory 冲突时，frontier LLM 倾向 *选权重内的答案*，且这种 confirmation-bias 随模型规模轻微 *上升* 而非下降——RAG 没有自动覆盖 parametric prior。
+- **2024-01 — Niu et al., *RAGTruth* ([arxiv:2401.00396](https://arxiv.org/abs/2401.00396))**。把 RAG hallucination 分成 *evident conflict / subtle conflict / evident introduction / subtle introduction* 四类，标了 18k human-annotated spans。frontier model 在 *subtle introduction*（在 context 没说的地方编一个合理的额外细节）类别上 hallucination rate 仍 8–20%，且 retrieval 召回率提升不能消除——这是 grounding-as-injection 范式的 *内禀* 失败模式，不是召回工程问题。
+- **2024-04 — Lee et al., *Long-Context vs RAG* on LOFT ([arxiv:2406.13121](https://arxiv.org/abs/2406.13121) [unverified ID])** 与 **Gemini 1.5 1M-token 一类长上下文模型的兴起**。当 context window 涨到 1M token，RAG 的 chunk-retrieve-rerank pipeline 在多个 benchmark 被 native long-context 反超——这逼出一个新问题：long-context attention 内部对 retrieved span 的处理，和 RAG-injection 是否本质同构？还是注意力分配模式不同导致 grounding 效果不同？目前没有 controlled 拆解。
+- **2024-10 — Wei et al., *Long-form factuality in LLMs* (SAFE, [arxiv:2403.18802](https://arxiv.org/abs/2403.18802))** 把 atomic-fact 评估自动化（LLM-judge + 在线搜索），F1 与人类标注 ~72%。但 LLM-judge 本身的 grounding 缺陷使这套 metric 自身有 ~10% 系统偏差，构成 grounding 评估的"测量者悖论"。
+- **2025–2026 — Agentic RAG / GraphRAG / multi-hop retrieval**（如 Edge et al. *GraphRAG* [arxiv:2404.16130](https://arxiv.org/abs/2404.16130)）。把检索从 single-shot 推到 iterative + structured，但 Yu et al. 2025 *Evaluation of RAG: a Survey* ([arxiv:2405.07437](https://arxiv.org/abs/2405.07437) [unverified ID]) 综合 30+ benchmark 显示：multi-hop QA 的 RAG 收益相对 single-hop 显著下降，且 *retrieval-induced hallucination*（错误检索导致的下游错误）超过单纯参数 hallucination——更多检索 ≠ 更多 grounding。
+
+新增候选条目：
+
+**C-GROUND-6 (RAG-injection ≠ referent stabilization)**：对任意纯 NTP 训练的 LM，在标准 RAG pipeline（top-k retrieval + context concatenation + greedy/sample generation）下，存在一类 atomic-fact 评估族 F，使得 (i) retrieval recall@5 ≥ 0.9，(ii) generator output 的 citation precision ≥ 0.8，但 (iii) atomic-fact attribution rate ≤ 0.75 且 (iv) 在 context 与 parametric prior 显式冲突的 subset 上 ≥ 30% 概率选择 parametric 答案。
+
+- 反例条件 (falsifier)：在 F 上某模型同时达到 (iii) ≥ 0.9 且 (iv) ≤ 0.1，且 F 不限定到 "高 retrieval recall + 简单 single-hop" 的窄子集。
+- 当前评估：**strong**。ALCE / FActScore / RAGTruth / Wu 2024 / SAFE 五条独立测量在数量级一致；frontier model 2023–2026 进步主要在 (i)(ii) 工程层，(iii)(iv) 的 internal-prior-vs-context 张力没有可衡量收敛。
+- 与 C-GROUND-5 (action-execution gap) 的对偶：C-GROUND-5 押 action token 的执行真值 gap，C-GROUND-6 押 fact token 的支持文档 gap；前者由外部 executor 仲裁，后者由 atom-level NLI / human 仲裁；两者都揭示 *NTP loss 低 + grounding 失败* 的常见组合（与 N6 §Vafa world-model 实验同构）。
+- 与 [online_learning](online_learning.md) C-CONT-1 知识编辑 ripple-effect 的耦合：RAG 被工程界推为 "不用改权重就能更新知识" 的方案，但 (iv) 揭示 parametric prior 在冲突时仍占优——这意味着 RAG 不能真正绕开 online-learning 的 plasticity 问题，只是把它推迟到 generation 时刻的 attention 选择上。
+
+> **2026-05-28 判断**：把 RAG / retrieval-augmented context 单列为第七类 grounding 而非 *referential grounding 的工程实现*，理由有三：(a) 它的失败模式（subtle introduction、parametric-prior dominance、retrieval-induced cascading hallucination）与纯 referential 的失败模式（章鱼论、deictic asymmetry）不同源——前者是 *有 grounding 信号但不被采纳*，后者是 *grounding 信号缺失*；(b) 它与 C-GROUND-5 (action) 在仲裁机制上构成对偶（executor vs attribution-NLI），与 C-GROUND-3 (deictic) 在符号-感觉接口上无重叠，三者切的是 grounding 这条战线上 *被忽视的不同维度*；(c) 工程意义不一样——若 C-GROUND-6 成立，则 "retrieval-augmented frontier LM 就是 grounded LM" 的产品级说辞是 *测量不足导致的乐观*，真实接地度需要 atom-level 而非 leaderboard-level 评估。下一步关键实验：把 RAGTruth 的 subtle-introduction 子集与 Wu 2024 的 context-parametric conflict probe 合并，跨 7B / 70B / 400B / RAG-tuned-vs-vanilla 四档拟合 (iv) 随 N、随 RAG-训练量的曲线，给 C-GROUND-6 同样 Allen-Zhu Part 3.3 级别的硬约束——此实验同样不需要新数据，只需 controlled re-fit。
+
 ## 与其他 topic 的交叉引用
 
 - `embodiment.md`：sensorimotor grounding 的 closed-loop 检验
 - `causality.md`：referential grounding 是 Pearl 因果阶梯 L1 (observation) 的必要前置——如果 token 不指向稳定 referent，干预 do(X) 在 token 空间里就无意义
 - `formal_limits.md`：grounding 与 TC⁰ 上界正交——增加 modality 不改变 depth，但改变 readout label space
 - `world_model.md`：world model 需要 grounded token 作为状态变量；否则只是 textual rollout
+- `online_learning.md`：RAG 被吹捧为权重外的知识更新通道，但 C-GROUND-6 (iv) parametric-prior dominance 把 plasticity 问题推迟而非消除——见 C-CONT-1 ripple-effect 暗线
 
 ---
 
-*最后更新：2026-05-28 by NTP-Deepen cron tick (task type B) — 新增 §Tool-use / action grounding + C-GROUND-5.*
+*最后更新：2026-05-28 by NTP-Deepen cron tick (task type B) — 新增 §Retrieval-augmented grounding + C-GROUND-6.*
