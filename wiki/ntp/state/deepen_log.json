@@ -790,6 +790,15 @@
       ],
       "chars_added": 6200,
       "note": "Task C: ntp_survey.md §6 Online/continual 从 2-bullet stub 升级为 mech-candidate 表 + 判决段 (~6.2k 净增). 9-row 表覆盖 C-CONT-1 / C-CONT-1' (pre-cutoff 衰减) / C-CONT-2 / C-CONT-3 / C-CONT-4 (ripple closure) / C-CONT-C5-real (VLA 跨§5) + 三条 cap 反驳 (ICL 已证伪 / TTT 部分证伪 / RAG pseudo-mech) + Gekhman 2024 SFT anti-pattern. 所有 arxiv ID 复用 topics/online_learning.md 已有锚 (2207.13332/2310.03214/2102.01951/2108.06314/2403.12958 [unverified]/2303.01486/2306.13812/2403.08763/2202.05262/2210.07229/2307.12976/2605.26820/2005.14165/2407.04620/2501.00663 [unverified]/1911.00172/2203.08913/2310.08560/2312.10997/2405.05904). 判决段三轴交织 (时间天花板 × plasticity-stability × ripple closure), 把所有 cap 替代方案 (TTT/edit/RAG/continual-pretrain) 统一解读为 'tradeoff 转移到不同子空间不解决', 三个 <2 GPU-week 诊断实验与 §4 / §5 的'工程可做社会学不做'同构. 跨节互链: §5 embodiment via C-EMBOD-C5-real, §3 grounding via C-GROUND-6, §2 formal limits via C5 streaming confound (iv)/(v). Rotation: 上一 tick (11:00) 触碰 grounding.md, 上上 tick (10:30) 触碰 ntp_survey.md §5 — 同文件不同节, sec6/7/8 仍 stub 是文档级最大残留 inconsistency, 优先级覆盖严格 rotation guard. Picked C over A (单 tick 一节 sample 上限 + N1-N8 24h 内全推过), picked C over B (8 topic files 已全部 >=27k 字, 边际净增低于 survey stub 段升级). 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T12:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/reasoning.md"
+      ],
+      "chars_added": 5400,
+      "note": "Task B: reasoning.md 新增 §Inference-time compute scaling (~5.4k chars), 把 Brown 2407.21787 Large Language Monkeys + Snell 2408.03314 test-time-compute-optimal + Wu 2408.00724 [unverified ID/月份] + o1/R1 long-CoT 内化 + 2025-下半年退场证据 五个数据点钉成 C-REAS-4 的 inference-time 对偶修补线. 新候选 C-REAS-5 (Support-coverage decomposition): pass@k(log k) 双段相变 = coverage-limited (base NTP support 决定) + selection-limited (verifier 决定), falsifier 写死跨 5 domain × inference budget × verifier quality 二维 sweep 不出现相变. 关键差分: inference-time scaling 不能救 C-REAS-1 (Reversal Curse 反向 support 缺失) 是反向加固; 部分救 C-REAS-2 (Dziri compositional collapse 指数衰减); 把 C-REAS-4 从定性 gap 升格为 budget-dependent 可测 gap. 与 scaling_limits §C-SCALE-4 (verifier-rich exchange) 判决一致: inference compute 不是新轴, 是 training compute 的 fungible substitute. Open problem 加 C-REAS-5 双段相变测量条目. Rotation: reasoning.md 上次内容触碰 2026-05-27T20:32 (~15h 前), 是 8 topic files 中最老; 最近 5 ticks 全部为 C ntp_survey §6 / B grounding / C ntp_survey §5 / B formal_limits / C ntp_survey §4 -- reasoning 跨过 rotation guard. Picked B over A (N1-N8 24h 全推) over C (上 tick 刚 C survey §6, 连续 C 边际净增低). 所有 arxiv ID 公开可查 (2407.21787 / 2408.03314 / 2305.20050 / 2312.08935 / 2406.14532 / 2501.12948 / 2410.01679 / 2305.18654), [unverified ID/月份] 标注 Wu 2408.00724, [unverified bundle] 标注 2025-下半年 long-CoT 退场 case study, 未编造数字/日期/标题."
     }
   ]
 }
