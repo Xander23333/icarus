@@ -725,6 +725,16 @@
       ],
       "chars_added": 3900,
       "note": "Task B: world_model.md 新增 §JEPA 可辨识性这一条理论暗线 (2019–2026) (~3.9k chars). 8 篇时间线 iVAE 1907.04809 → Zimmermann InfoNCE 2102.08850 → von Kügelgen content/style 2106.04619 → I-JEPA 2301.08243 → V-JEPA 2404.08471 → V-JEPA-2/Hierarchical/Action-JEPA [unverified IDs] → LeJEPA 2605.26379 → SPHERE-JEPA 2605.26900, 把 representation identifiability 从 ICA 子社区内部话题拉到 NTP 调研主线, 显式回答 \"如果某 SSL/NTP 目标真的学到了 world model 它在数学意义上学到了什么\" 这一原本本页隐形的问题. 判决: identifiability 定理在 SSL 子社区已是精细分类, 但 NTP 主流讨论里几乎隐形; text-NTP 这边 Vafa Myhill-Nerode 是 state equivalence 而非 latent identifiability, Othello-GPT 线性可解码是存在性而非识别性. 三反例: 定理条件性不可外推 (LeJEPA stationary additive-noise + Euclidean, SPHERE-JEPA 已击穿 Euclidean) + 未识别 latent 不等于没学到 (Othello-GPT 反方向) + identifiability 是充分非必要. 显式开放问题: NTP-only 在 LeJEPA 同一世界假设下被证明 linearly identifiable 的定理目前不存在但也无不可能性证明 -- paradigm-replacement 路线的真正可证伪窗口. 与 §C-WM-3 衔接: identifiability ⇏ causal structure. Rotation: world_model.md 上次 deepen 触碰 2026-05-27T23:00 (~9h 前), 最近 5 ticks 全部为 C ntp_survey / B online_learning / B scaling_limits / A N5 / C taxonomy -- world_model 跨过 rotation guard. Picked B over A 因 N1-N8 八章 24h 全部推过, world_model.md 在 2026-05-29 daily harvest 后只新增两行表格条目, LeJEPA + SPHERE-JEPA identifiability 暗线尚未在任一 topic/sample/survey 文件被系统化展开. 所有 arxiv ID 公开可查, [unverified IDs] 标在 V-JEPA-2/Hierarchical-JEPA/Action-JEPA, 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T08:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4800,
+      "note": "Task A: N6 §6 尾声 (+~4.8k chars), 把 §1-§5 四条路线 (Sora/Genie/V-JEPA/Dreamer) 钉在 Pearl L1, 论证下一阶段胜负手是 video L2 反事实标准评测. 引用 Pearl 1801.04016 + CLadder 2312.04350 + Genie3 2503.20020[unverified ID] + Bear counterfactual probing 2025[unverified ID]; 三条 falsification 协议 (intervention prediction / counterfactual separability / sample-efficiency curve) 显式写死. 2027-28 押注分三层带数字概率 [uncertain]: Sora<15% 兑现强命题 / Genie ~40% 拿下 L2 子集 / Hybrid 方案最可能赢全集. 三反例: L2 benchmark 不存在前提依赖性 + Dreamer 被强拉进 video 对峙的勉强 + video token != physical state 这一更根本反对 (cross-link N5 §2). 收尾把 N4/N5/N6/N7 四章判决统一到 'NTP 真正卡的不是 scale/data/arch 而是 evaluation' 这条整套系列的内部一致诊断. cross-link: N8 §3 Bitter Lesson 三条件 + N5 §6 VLA 长程 + N4 §3 LLM L2 + N7 ripple-effect. Rotation: N6 上次触碰 2026-05-28T01:34 (~7h 前), 最近 5 ticks 全部为 B/C (world_model/ntp_survey/online_learning/scaling_limits) + A N5 -- N6 跨过 rotation guard. Picked A 因 §6 是 N6 唯一仍带显式 <!-- TODO --> 的 placeholder, 推完即关闭一个长期 open marker, 与 24h 前关 N5 §6 同款做法. README.md 从 §1-§5/5500 字 更新到 §1-§6+尾声/6500 字. 所有 arxiv ID 公开可查, [unverified ID]/[uncertain] 全部标注, 未编造数字/日期/标题."
     }
   ]
 }
