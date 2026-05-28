@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T16:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 4900,
+      "note": "Task C 同步债务清算 — 上 tick (2026-05-28T23:30Z B world_model.md §Latent-action codebook 可辨识性) 末段明写 'C-WM-7 corollary, 下一 tick C 同步至 survey §10 + taxonomy 升降级历史 (与 C-EMBOD-7 同型处理)'. 本 tick: (1) ntp_survey.md §10 新增 ### C-WM-7 corollary sync 段 (证据线 Genie 2402.15391 + Genie-2/3 blog non-arxiv + Cosmos 2501.03575 [unverified] + 1X blog 四点; falsifier ≥2env × 同 codebook × NMI/linear-recovery ±2pp ≥0.7; 与 §10 主区关系 corollary 不入主表 + 编号避让 §7 表 C-WM-4/5/6 已占用; 与 C-EMBOD-7 latent-control ↔ morphology 通道镜像; 元意义 world-model 域 sub/corollary 至 2 条, §7 主候选 + §7 表 + corollary 合计 7 条 单域最密集, §9 (4) 工程上可做社会学上不做 列表 16→17 项). (2) taxonomy.md §升降级历史 在 C-EMBOD-7 与 C-CAUSAL-2 行之间插入 C-WM-7 行 (同五列 schema). 编号避让全局一致, 无新 mech 命题, 不污染主 snapshot 表 (C1–C7 + Reversal Curse)."
+    },
+    {
       "tick_utc": "2026-05-26T10:25:01Z",
       "task_type": "B",
       "files": [
