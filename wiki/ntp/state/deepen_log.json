@@ -864,6 +864,17 @@
       ],
       "chars_added": 8087,
       "note": "Task B: world_model.md 新增 §NTP-vs-JEPA head-to-head benchmark 真空 + §Open problems (~8.1k 净增). 第一节系统列 2023-2026 五篇 paradigm-replacement 论文 (I-JEPA 2301.08243 / V-JEPA 2404.08471 / Sora 技术报告 / VideoPoet 2312.14125 / LeJEPA 2605.26379 / SPHERE-JEPA 2605.26900) 全部回避与 video-NTP head-to-head 对照, 落到候选 C-WM-4 (元-方法论命题, corollary, 不升 taxonomy 主表). 第二节首次给 world_model.md 补 §Open problems (此前是 topic 板块中唯一缺这节的页) — 5 条 OP-WM-1..5 (open-world Othello / video Othello-GPT / counterfactual triplet benchmark / fair JEPA-vs-NTP / reasoning trace mech-interp 检验), 每条附 falsification window 与最近一次公开尝试, 避免 open-problem 罗列占位陷阱. 元判断: world-model 议题 2026 瓶颈不在新模型/新理论, 在 benchmark 设计与跨阵营对照实验缺失; OP-WM-2/3/4 都是 <1 GPU-week 实验但因报告方向不利于自己阵营而无人愿做, 与 causality §RL-from-environment 三个 <1 GPU-week 缺失 / reasoning §C-REAS-5 双段相变测量缺失同型. Cross-links 同步扩 6 条 (新增 scaling_limits §流形扩张 与 §JEPA 可辨识性 同型 / online_learning cutoff bottleneck 桥接). Rotation: world_model.md 上次内容触碰 2026-05-28T08:03 (~7.5h 前), 8 topic files 中最老 (除 embodiment/online_learning 07:31 但本 cron 跳过避免 24h 内二次触碰). 最近 5 ticks: C taxonomy/ntp_survey/scaling_limits sync → B scaling_limits → B causality → C ntp_survey §9 → C ntp_survey §8 — world_model 跨过 rotation guard. Picked B over A (N1-N8 24h 内全部推过 + 单 tick 一节 sample 上限) over C (上 tick 14:30→15:00 已连续 C, 切回 B 避免边际净增递减; C-WM-4 corollary 登记延到下 tick 同步避免本 tick 触三处文件). 所有 arxiv ID 公开可查 ([unverified ID] 2 处: Cosmos whitepaper / Brinkmann 2402.11917), 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T08:04:30Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/topics/world_model.md",
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 4200,
+      "note": "Task C: 把上 tick (15:30Z) 在 world_model.md 写好的 C-WM-4 (head-to-head paradigm benchmark deficit) corollary 候选正式三处同步, 并解决编号冲突 — survey §7 mech-table 已用 C-WM-4 标 object-permanence floor + C-WM-5 标 JEPA identifiability 局部翻盘, topic file 新增 corollary 与之碰撞 — 本 tick 把 corollary 重编号为 C-WM-6, 同步 topic file 4 处 (corollary 段标题 + §Open problems 引言 §C-WM-1/2/3/6 列举 + OP-WM-4 \"即 C-WM-6 的实验落地\" + Cross-links 末段候选 mech 入口) + survey §10 新增完整 corollary 段 (a/b/c 三段 + 编号说明 + C7/C-WM-6 双 corollary 同步说明 分隔块) + taxonomy 升降级历史新增 1 行 (附编号避让说明 + 注明只入升降级历史与 §10 corollary 段, 不入 candidate snapshot 主表, 与 C-SCALE-6 sibling-cap 处理同型). 元意义段落把 C-WM-6 与 C-WM-3 钉成 benchmark 缺失双对偶 (前者卡跨阵营对照 / 后者卡跨 Pearl-layer 对照), 与 §5 §4 §6 §8 已有的 \"工程上可做、社会学上不做\" 列表 (13 项) 增到 14 项, 并把 OP-WM-4 显式解读为 sociological deadlock — 是 §9 (4) 七项 confound mech 真信号问题在方法学维度的对偶 (mech 真信号问题对偶: \"如果真信号在, 谁有动机去测\"). 引用全部公开 arxiv (2301.08243 / 2404.08471 / 2312.14125 / 2605.26379 / 2605.26900 / 2408.03314) + 1 非 arxiv (Sora 技术报告), 未编造数字/日期/标题. Rotation: 上 tick (15:30Z) B world_model.md → 本 tick C 同步, 与 taxonomy 末段 \"三处不同步即视为 incomplete\" 强制规则一致 (与 C5/C6/C7 candidate 同步操作同型 — corollary 类候选首次走完此规则). Picked C over A (单 tick 一节 sample 上限 + N1-N8 24h 全推过 + corollary 同步是上 tick 显式 deferred 的债务) over B (上 tick 已 B, 连续 B 边际净增低 + 同步债务优先)."
     }
   ]
 }
