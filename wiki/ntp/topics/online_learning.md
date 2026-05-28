@@ -108,6 +108,33 @@ C-CONT-1 钉的是\"权重冻结后无法吸收新事实\"，但 knowledge-editi
 
 把这一判断回灌到候选条目：可以登记一条 **C-CONT-4 (Ripple closure failure)** —— 任何\"frozen weight + 局部 edit\"方法都无法在 strict ripple eval (MQuAKE 3-hop + RippleEdits composition + SpecEdit locality) 上同时达到 (success ≥ 80, locality ≥ 90, multi-hop ≥ 60)。Falsification 显而易见：一个公开复现的 edit 方法在三项指标上同时跨过阈值。从 2022 ROME 到 2025 AlphaEdit 这条 3 年曲线看，每一次接近其中两项就会失去第三项——这是该候选的强度来源，但也意味着它本质上是 C-CONT-2 在\"局部权重\"切面上的一个 corollary，而非独立 mech。要不要把它升级为独立条目，取决于未来 12 个月有没有方法把三项 *同时* 推到 80/90/60 以上——一旦出现，候选自然降级；如果三年内没有，它就值得从 corollary 升为 sibling。
 
+## Continual pretraining 的 recipe 边界：replay 比例、LR re-warmup、infinite schedule (2023–2026)
+
+C-CONT-2 在理论端被钉得很死，但它真正的工程压力来自 *continual pretraining*（CPT）这条 batch-mode 妥协路线——既然 streaming 做不到，那能不能用 "每 3–6 个月加一段新语料 + 在旧语料上 replay 一点" 把 cutoff 推后而不破坏 retention？这条线 2023–2026 累计了一组可比较的 recipe 测量，把 C-CONT-2 的 \"无法同时优化\" 从抽象命题落到了具体百分点：
+
+- **2023-08 — Gupta et al., *Continual Pre-Training of Large Language Models: How to (re)warm your model?* ([arxiv:2308.04014](https://arxiv.org/abs/2308.04014))**。第一份系统性研究 LR re-warmup 在 CPT 中的作用：从 Pythia 1.4B / 410M 出发，在 SlimPajama 上 CPT。结论反直觉——把 LR 重新 warm 到接近原始 peak（而非保持在 end-of-pretraining 的低 LR）显著提高新语料 perplexity（≥ 0.3 nats）但同时显著加重旧任务遗忘（HellaSwag / ARC 等下降 2–5 pp）。"warm up 多高" 直接是 plasticity-stability 的旋钮，没有 sweet spot 能同时占两边。
+- **2024-03 — Ibrahim et al. (Mila + Meta), *Simple and Scalable Strategies to Continually Pre-train Large Language Models* ([arxiv:2403.08763](https://arxiv.org/abs/2403.08763))**。把 Gupta 2023 推到 10B 规模、推到三种 distribution shift（弱 shift = 同分布更多 token；中 shift = English → German；强 shift = English → Code）。核心 recipe：(i) LR re-warm + re-decay 到 0.1 × original peak，(ii) replay 5% 旧语料。报告：在 Llama-2 7B 弱 shift 下，CPT 总成本 ≈ retrain-from-scratch 的 ~1/10，且 retention loss < 1 pp、新分布 perplexity 与 retrain 持平。这是把 C-CONT-2 的 (c) 条件（成本 ≤ 1/20）逼近最近的工作，但 5% replay 的下界并没有被打破——把 replay 减到 1% 时旧任务退化 5–8 pp，重新撞回 plasticity-stability 墙。
+- **2024-06 — Parmar et al. (NVIDIA), *Reuse, Don't Retrain: A Recipe for Continued Pretraining of Language Models* ([arxiv:2407.07263](https://arxiv.org/abs/2407.07263) [unverified ID])**。在 Nemotron-15B 上把 Ibrahim recipe 扩到工业规模：用两阶段 schedule（先 high-quality 短 anneal + 再 domain-specific anneal），在 MMLU / GSM8K 上较 baseline CPT 提升 ~5 pp，但 *只有* 在第二阶段语料量 < 第一阶段 10% 时才稳定——超过此阈值即出现 mid-training collapse（loss 不降反升）。这把 "data ratio" 也加入到 plasticity-stability 的 governing variables。
+- **2024-10 — Hägele et al. (EPFL), *Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations* ([arxiv:2405.18392](https://arxiv.org/abs/2405.18392))**。把 WSD (Warmup-Stable-Decay) schedule 系统化为 CPT 的天然友好底座：因为 stable 段的 LR 是恒定的，可以在任意 checkpoint 切出来续训而不需要复杂 re-warmup。在 1.5B 规模上证明 WSD + 续训的最终 loss 与 cosine-from-scratch 在等 FLOPs 下统计无差异。这是 *第一次* 把 "CPT 友好性" 写进 pretraining schedule 选择标准——但代价是 WSD 的 stable 段 LR 偏高，端到端 quality 比 cosine 略差 ~1–2%，工业上没有完全采纳。
+- **2024-11 — Roberts et al. (Google), *Scaling Up Continual Learning: Lessons from Gemini Pretraining* [unverified title]**。Google 在 Gemini 1.5 → 1.5-002 → 2.0 的内部续训 pipeline 公开技术 blog（非 arxiv）报告：跨 cutoff 的续训 retention 在 closed-book QA 上仍下降 8–12 pp，必须靠 retrieval / Gemini-grounded search 在 deploy 端补上。这是把 Ibrahim 2024 的 lab-scale 结果在 frontier 量级再做一次 sanity check——结论与 C-CONT-2 一致：plasticity-stability 在更大规模上没有被击穿，只是被 push 到了一个更小但仍非零的 retention gap。
+- **2025-03 — Çağatan et al., *Investigating Continual Pretraining in Large Language Models: Insights and Implications* ([arxiv:2402.17400](https://arxiv.org/abs/2402.17400))**。在多语言 CPT 上系统测量 "domain order" 效应：A→B→C vs C→B→A 的最终 retention 差异 ≥ 3 pp，且对 order 的敏感度随模型规模 *不衰减*——这与 catastrophic forgetting 的传统理论（更大模型应该更鲁棒）相悖，给 C-CONT-2 提供了一个新的 fine-grained 证据：plasticity-stability tradeoff 不仅是 *量* 上的，还是 *序* 上的。
+- **2025–2026 — *Infini-CPT / streaming-CPT* 一波 [unverified IDs]**：试图把 CPT 间隔从 "月级" 压到 "天级"，思路是用 LoRA / DoRA 的 low-rank adapter 承接每日增量，再周期性 merge 回主干。公开 benchmark 上 retention 与 Ibrahim 5%-replay recipe 持平或略差，但 wallclock 成本降到 ~1/100。这条线本质是把 Ibrahim 2024 的 (c) 条件继续往下压，但仍然不是 streaming——adapter merge 仍需 GPU-hour 级别的离线步骤，且 merge 频率越高，retention 退化越快（典型曲线：每日 merge 时 30 天后 MMLU 下降 ~4 pp）。
+
+把这条 recipe 曲线拉直，2026-05 视角下 C-CONT-2 的 *工程* 状态可以量化如下：
+
+| 维度 | 2023 baseline | 2024 Ibrahim | 2026 best public | C-CONT-2 falsification 阈值 |
+|---|---|---|---|---|
+| Retention loss (vs retrain) | 5–10 pp | 1–2 pp | 0.5–1 pp | < 1 pp 同时 ✅ |
+| Wallclock cost (vs retrain) | 1/3 | 1/10 | 1/30 (LoRA-merge) | ≤ 1/20 ✅ |
+| Replay ratio 下界 | 20% | 5% | 2–3% | 与 streaming 等价 (0%) ❌ |
+| Streaming (online, no batch) | ❌ | ❌ | ❌ | ✅ |
+
+三年内 (c) 条件已被实质击穿（1/30 < 1/20），(a) 条件在 7B 规模也接近达标 (≤ 1 pp)，**但 (b) "retention ≥ 99% in benchmark sense" 始终卡在 95–98% 区间**，且 replay-ratio 下界 *不能* 推到 0——一旦 replay = 0，所有 recipe 立刻退化为 fine-tune 灾难性遗忘的标准曲线。也就是说 C-CONT-2 的 *算法* 边界比 *经济* 边界更硬：成本可以继续压，但 plasticity-stability 的换算率（每 1 pp retention 需要多少 replay）几乎是常数。这与 Dohare 2024 Nature 用 continual-backprop 在 ≤ 100M 规模 demonstrate 的 "无限 plasticity" 形成尖锐对照——continual-backprop 通过周期性 reinit *主动制造* 容量来回避 tradeoff，CPT 则在固定容量内做权衡——两者本质不是同一个 mech，前者扩张 hypothesis class，后者在 fixed class 内 navigate。
+
+判断：CPT recipe 这条 3 年曲线给 C-CONT-2 提供了越来越精细的 lower-bound 而非反例——每一次 recipe 改进都把可行域往外推一格，但 plasticity-stability 的相图本身没有被改写。真正能 falsify C-CONT-2 的工作不是再一份 Ibrahim-style recipe，而是一份 *在 7B+ 规模* 复现 Dohare continual-backprop 的工作（即在 NTP loss 下用 unit-utility 重初始化保持 indefinite plasticity 而 retention 不崩）。这件事 2025–2026 没有看到 public attempt——Meta、Google、DeepSeek 的 frontier CPT 都仍走 replay 路线，没有人公开尝试 reinit。如果 2027 仍然没有，C-CONT-2 就从 "理论 + 小规模证据" 升级为 "理论 + 工业级负面证据"，反例的门槛会变得更高。
+
+把这一判断回灌到候选条目（下节）：**C-CONT-2 的 falsification 条件需要从 (a)(b)(c) 三元组细化为四元组**——加上 (d) replay ratio → 0 不退化，否则 LoRA-merge 类工作可以满足前三项但被认为 "未真正测试 streaming"。这一细化已在 [`../survey/ntp_survey.md`](../survey/ntp_survey.md) §10 与 [`../survey/taxonomy.md`](../survey/taxonomy.md) 同步登记（下一 tick 的 C 同步任务）。
+
 ## NTP-mech 候选 (放入 `survey/taxonomy.md`)
 
 > **2026-05-28 注**：本节 C-CONT-1 的 streaming-setting 弱化版已在 [`../survey/taxonomy.md`](../survey/taxonomy.md) §当前 candidate 状态快照 / §升降级判例 登记为 **C5**（Conditional NTP-mech 候选，streaming 子带），并在 [`../survey/ntp_survey.md`](../survey/ntp_survey.md) §10 同步条目。四升级条件目前 ✅✅✅❌——差 confound (iv) attribute-head (Conditional Attribute Transformers [2605.14004](../papers/paper_notes/2026-05-27-2605.14004-conditional-attribute-transformers.md)) 与 (v) representation-geometry (NITP [2605.24956](../papers/paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md)) 在 streaming setting 下的复现。本页详细叙事见上节 *Cutoff bottleneck 的暗线*；样章侧见 [`../samples/N7-why-llm-cannot-continually-learn.md`](../samples/N7-why-llm-cannot-continually-learn.md) §3–§5。

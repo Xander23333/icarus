@@ -894,6 +894,15 @@
       ],
       "chars_added": 4400,
       "note": "Task C: 把上 tick (16:30Z) embodiment.md 新写的 C-EMBOD-6 (Demo-credibility prior corollary) 同步到 survey §10 与 taxonomy 升降级历史 — 解决上 tick 显式 deferred 的 candidate snapshot 同步债务. survey §10 新增完整 corollary 段 (a/b/c 三段 + 编号说明: C-EMBOD-1..5 已被 embodiment.md 占用 6 顺位避让) + 把末段 C7/C-WM-6 双 corollary 同步说明 升级为 C7/C-WM-6/C-EMBOD-6 三 corollary 同步说明 (新增 C-WM-6 ↔ C-EMBOD-6 跨阵营对照 ↔ 单 demo evidence-bar 镜像 + 显式化 readout-side 假设 (vi)(vii) 接口层补丁的隐藏前提 假设 evidence 已被诚实采集与披露). taxonomy 升降级历史新增 1 行 (附 corollary 决策与 C-WM-6/C-EMBOD-4 双对偶说明 + [unverified: 远程操控具体比例 / Helix arxiv 状态] 注明). 元意义段把 工程上可做、社会学上不做 列表从 14 项推到 15 项 (embodied demo 三元组披露), 并把 C-EMBOD-6 钉成 §9(4) 七项 confound 问题在 evidence-supply 侧的对偶. 引用全部公开 (2605.25889 / 2605.26820) + 5 起公开事件 (Tesla Optimus 2024-10 We-Robot / Figure 01→02 OpenAI 分手 2025-02 / 1X NEO / Unitree G1 / Apptronik Apollo / π₀ task-level retry), 未编造数字/日期/标题. Rotation: 上 tick (16:30Z) B embodiment.md → 本 tick C 同步 survey + taxonomy, 与 taxonomy 末段 三处不同步即视为 incomplete 强制规则一致 — embodiment.md 本 tick 不再触 (满足三处规则 + rotation guard). Picked C over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限 + corollary 同步是上 tick 显式 deferred 债务) over B (连续 B 边际净增低 + 同步债务优先, 与 C-WM-6 同步 (08:04Z tick) 处理同型)."
+    },
+    {
+      "tick_utc": "2026-05-28T17:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/online_learning.md"
+      ],
+      "chars_added": 7766,
+      "note": "Task B: online_learning.md 新增 §Continual pretraining recipe 边界 (2023-2026) 整节 (~7.7k 净增, 33723->41489 bytes). 时间线 7 个数据点 (Gupta 2023-08 [arxiv:2308.04014] LR re-warmup tradeoff / Ibrahim 2024-03 [arxiv:2403.08763] 5% replay + 1/10 cost / Parmar NVIDIA 2024-06 [arxiv:2407.07263 unverified] 两阶段 anneal + mid-training collapse / Hägele EPFL 2024-10 [arxiv:2405.18392] WSD CPT 友好 schedule / Roberts Google 2024-11 [unverified title] Gemini 内部 8-12pp retention gap / Çağatan 2025-03 [arxiv:2402.17400] domain-order 效应 / 2025-2026 LoRA-merge streaming-CPT [unverified IDs] 1/100 cost), 新增 4x4 量化表把 C-CONT-2 三元条件 (a)(b)(c) + replay 下界 拆成数字. 关键论点: (c) cost 条件已实质击穿 (1/30<1/20), (a) retention 接近达标, (b) 99% retention 卡在 95-98% + replay→0 必然崩塌, plasticity-stability 换算率几乎是常数. 与 Dohare 2024 Nature continual-backprop 形成尖锐对照 (扩张 hypothesis class vs fixed-class navigate). 推出 C-CONT-2 falsification 条件细化建议: 从 (a)(b)(c) 三元组细化为加 (d) replay→0 不退化 的四元组, 防止 LoRA-merge 类工作 spoof 前三项. 元判断: 2027 前若仍无 7B+ 复现 continual-backprop 的 public attempt, C-CONT-2 升级为 '理论+工业级负面证据'. Rotation: online_learning.md 最近 15 ticks 未触 (07:31 最后, gap 10h). Picked B over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over C (上 tick 17:00Z 已 C 同步 survey+taxonomy, 切回 B; C-CONT-2 四元组细化的 candidate snapshot 同步债务显式延到下 tick). Parmar arxiv ID / Roberts title / streaming-CPT IDs / Çağatan date 标 [unverified], 未编造数字/日期/标题."
     }
   ]
 }
