@@ -192,6 +192,20 @@ $$\varepsilon_{\text{do}}(M, X) = \mathbb{E}_{s,a}\bigl\|\mathbb{E}_M[s'\mid s,\
 
 把这五条压成一个元判断：**world-model 议题的 2026 瓶颈不在新模型 / 新理论，而在 benchmark 设计与跨阵营对照实验的缺失**。OP-WM-2 / OP-WM-3 / OP-WM-4 都是工程 <1 GPU-week 的实验，但每一个都因「报告方向不利于自己阵营」而无人愿做——这与 [causality](causality.md) §RL-from-environment 三个 <1 GPU-week 实验缺失 / [reasoning](reasoning.md) §C-REAS-5 双段相变测量缺失同型。下一次 NTP-deepen 在 world_model.md 上的实质性更新，最有可能来自这五条 open problem 中任意一条被外部团队做掉——而不是又一篇 Sora-class 模型发布。
 
+## OP-WM-1..5 半年进展核查 (2025-12 → 2026-05)
+
+§Open problems 给了五条带 falsification window 的开题，半年过去——把每一条对照 2025-12 以来 *公开* 文献做一次诚实核查，是判断 §诚实判断 末段「benchmark 设计 / 跨阵营对照实验 缺失」这一元命题是否仍然成立的最便宜动作。预先声明判据：只算 (a) 公开 arxiv / 技术报告 / 可复现代码，(b) 直接落在 OP-WM-k 描述的实验设计上，(c) 报数字而非 demo。轶事、blog 单图、推特线程一律不计。
+
+- **OP-WM-1 (open-world Othello)**。最接近的新工作是 Wang et al. *NetHack Learning Dataset Probing* [unverified bundle, 2026 早春社区报告] 在 NetHack 子序列上做 frozen-probe，能恢复 dungeon 楼层 / inventory 计数等浅状态到 ~80% 准确率，但 *role / quest progress* 等非平凡状态仍在 ~40%。这复述了 Vafa 2024 ([arxiv:2406.03689](https://arxiv.org/abs/2406.03689)) 的「浅状态可恢复、深状态不同构」结构，**未跨过 95% 阈值**。Falsification window 半年内未关闭。
+- **OP-WM-2 (video Othello-GPT)**。Genie 2 / Cosmos / Sora 三家在 2025-12 → 2026-05 区间均无新模型 release（Cosmos 仅维护版本），也无第三方 black-box probe 论文给出 object identity / position / velocity 的线性可解码 1.7% 错误率数字。社会学瓶颈一如 §Latent-action codebook 末段判断——闭源不放 latent，开源无量级模型。**未动**。
+- **OP-WM-3 (counterfactual triplet benchmark)**。最接近的新增是 §post-CLadder benchmark 谱里列的 Det-CausalBench / CounterBench 2025 [unverified bundle]——但它们都是 *text* 模态且 deterministic-only，与 OP-WM-3 要求的 *video + stochastic + 同权重* 三联约束差三个维度。Phyworld ([arxiv:2406.03520](https://arxiv.org/abs/2406.03520) [unverified ID]) 半年内有零散后续报数字，但仍是 marginal observational metric。**未动**。
+- **OP-WM-4 (fair JEPA-vs-NTP comparison)**。LeJEPA ([arxiv:2605.26379](https://arxiv.org/abs/2605.26379)) / SPHERE-JEPA ([arxiv:2605.26900](https://arxiv.org/abs/2605.26900)) 都在 2026-05 出现，给 JEPA 一族补上 identifiability 定理，但实证段仍未跑 same-backbone same-budget video-NTP 对照。FAIR 与 OpenAI 都没有结构性动机做这件事，半年内未见任何中立第三方接手。**未动**——但 LeJEPA 双定理把对照实验的 *理论 prior* 收紧了：在 stationary additive-noise 子类下 JEPA 一侧的 latent 可被线性恢复，video-NTP 一侧无对应定理，因此 *条件性* 上 JEPA 应当强于 NTP；但「条件性应当」与「同 backbone 跑出数字」之间仍隔一个 GPU-week，没人走。
+- **OP-WM-5 (reasoning trace 是否真在外接 world model)**。Brinkmann 2024 ([arxiv:2402.11917](https://arxiv.org/abs/2402.11917) [unverified ID]) 的 activation patching 方法学半年内未被搬到 R1 / o3 / Claude 4 级 reasoning model 上。开源 reasoning model 这边只有 DeepSeek-R1-Distill 公开权重，但 distill 已损坏 trace ↔ 内部计算的对应关系，不适合做 OP-WM-5 的 patching 协议。Turpin 2305.04388 怀疑在 mech-interp 层面仍是空白。**未动**。
+
+把五条压成一个元判断 (2026-05-29)：OP-WM-1..5 在半年时间窗内 *没有一条* 关闭，连接近关闭的都没有；唯一发生的方向性变化是 OP-WM-4 的理论 prior 经 LeJEPA 双定理 *收紧*，但实证侧仍空。这与 §NTP-vs-JEPA head-to-head benchmark 真空 末段判断一致，且把它从「2023–2026 三年缺席」延长为「2023–2026.05 三年半缺席」——半年时间常数下 *无任何* 公开运动这件事本身已成证据：world-model 议题的瓶颈不在能力 / 工程 / 理论，而在 *报告方向不利于自己阵营* 这一社会学约束（与 [causality](causality.md) §Synthetic counterfactual / §RL-from-environment 双向 referee 夹击、[embodiment](embodiment.md) §C-EMBOD-7 route-elimination 视频 backbone frontier 集体沉默、[online_learning](online_learning.md) §Mid-training annealing frontier 选择性披露 四处同型）。
+
+回灌到 candidate 状态：OP-WM-1..5 不升级为独立 mech candidate（它们是 *元-方法论开题* 而非 mech 命题），但 *半年无运动* 这一事实可作为 §C-WM-6 (head-to-head paradigm benchmark deficit) 与 §C-WM-7 (latent-action codebook identifiability deficit) 两条 corollary 强度的 *时间侧* 加固——corollary 类条目的强度本质上是「应做且可做、但持续无人做」的时间常数，半年是该常数的第一次刻度，2027-Q2 还无运动则刻度升到一年。下一 tick C 同步债务：把「OP-WM-1..5 半年无运动」作为时间侧加固条款写入 [`../survey/ntp_survey.md`](../survey/ntp_survey.md) §10 C-WM-6 / C-WM-7 evidence 列脚注，与 §10 readout-side 结构性社会学不可证伪闭环的 7 条独立 evidence-supply 通道并列，不动 taxonomy 主表（与 §C-WM-7 corollary 登记同型处理）。
+
 ## Cross-links
 
 - [causality](causality.md) — 第 3 种 world model 与 Pearl Layer 2/3；C-WM-3 与 C-CAUSAL-1 共享反事实失败的根
