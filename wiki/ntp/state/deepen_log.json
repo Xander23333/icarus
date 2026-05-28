@@ -922,6 +922,16 @@
       ],
       "chars_added": 4766,
       "note": "Task B: formal_limits.md 新增 §Looped × Sparse 复合架构 整节 (~4.8k 净增, 33898->38664 bytes), 显式填补上节 Open-problem 第 2 条 'looped-x-sparse 复合架构仍空白' 挂账. 时间线 5 个数据点 (Dehghani UT 1807.03819 / Giannou looped 2301.13196 / Fan&Yang looped length-gen [unverified IDs] / MoR 2025 [unverified bundle] / MoD 2404.02258 对照). 新增 C-FORM-7 候选 (looped-sparse depth-gating), 形式陈述把 T_max 渐近行为作为唯一打开新表达力类的旋钮: T_max=O(1) 塌回 MoE-only (C-FORM-5), T_max=Ω(log n) 升到 CoT-bound (Merrill-Sabharwal 2310.07923). 关键论点: 工程射程内 MoR 几乎全限 T_max≤8 → 与 MoE 形式等价, 所有声称 MoR>MoE 的经验结果需重审 router-bit/CoT 混淆. 与 C-FORM-1/2/5/6 联合地图: MoR ⊆ MoE+loop, 不破墙除非 loop 那一支自由. Open-problem 第 2 条同步改为 '部分回答' + 收紧为 'selective-SSM × loop 复合的形式陈述' 这一剩余空白. 元判断: 'MoE 不破墙, loop 才破墙, SSM 连墙都摸不到, looped-sparse 复合也不破墙除非 loop 自由' 补成对偶完整态. Rotation: formal_limits.md 最近 14 ticks 未触 (10:00Z 最后, gap 8.5h), 上 tick 18:00Z C survey+taxonomy → 本 tick B formal_limits 切换. Picked B over C (同步债务已落地三次) over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over D (无明显错误待修). Fan/Yang/MoR/MoD 部分 ID 标 [unverified], 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T19:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 3700,
+      "note": "Task C: 把上 tick (18:30Z) formal_limits.md §Looped×Sparse 新登记 C-FORM-7 同步到 survey §10 + taxonomy 升降级历史, 解决 taxonomy 末段 三处不同步即视为 incomplete 强制规则触发的同步债务. survey §10 新增 C-FORM-7 sub-candidate sync 段 (插在 C7/C-WM-6/C-EMBOD-6 三 corollary 同步说明之后, C-CONT-2 falsification 四元组细化之前): 五点证据线 (Dehghani UT 1807.03819 → Giannou 2301.13196 → Fan/Yang [unverified] → MoR [unverified bundle] → MoD 2404.02258 [unverified]) + 与 §10 主 candidate 区关系 (sub-candidate, 不入 snapshot 主表, 决策同 C-SCALE-6/C-WM-6/C-EMBOD-6) + 元意义 (C-FORM-7 与 C-WM-6/C-EMBOD-6 同型属 元-地图补全 而非 新 mech, 剩余 formal-domain 空白只剩 selective-SSM × loop 复合). taxonomy 升降级历史新增 1 行 (插在 C-SCALE-6 后, C-CONT-2 前), 注明决策依据与 C-SCALE-6/C-WM-6/C-EMBOD-6 同型 + 关闭 formal_limits §Open problems 第 2 条挂账的一半. snapshot 主表 (C1-C7 + Reversal Curse) 不动 (C-FORM-7 不入主表, 与 C-SCALE-6 sibling-cap 备查同型). Rotation: 上 tick (18:30Z) B formal_limits.md → 本 tick C survey+taxonomy, formal_limits.md 本 tick 不再触 (满足三处同步规则 + rotation guard). Picked C over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over B (上 tick 已 B + 同步债务优先, 与 17:00Z C-EMBOD-6 / 18:00Z C-CONT-2 / 08:04Z C-WM-6 三次 sync 处理同型). Fan/Yang/MoR/MoD 部分 arxiv ID 标 [unverified], 未编造数字/日期/标题."
     }
   ]
 }
