@@ -135,6 +135,34 @@ C-CONT-2 在理论端被钉得很死，但它真正的工程压力来自 *contin
 
 把这一判断回灌到候选条目（下节）：**C-CONT-2 的 falsification 条件需要从 (a)(b)(c) 三元组细化为四元组**——加上 (d) replay ratio → 0 不退化，否则 LoRA-merge 类工作可以满足前三项但被认为 "未真正测试 streaming"。这一细化已在 [`../survey/ntp_survey.md`](../survey/ntp_survey.md) §10 与 [`../survey/taxonomy.md`](../survey/taxonomy.md) 同步登记（下一 tick 的 C 同步任务）。
 
+## Mid-training / annealing 阶段是否已经偷偷做了一次工业级 CPT (2024–2026)
+
+上节 §Continual pretraining 把 lab-scale recipe 曲线钉到了 C-CONT-2 falsifier 的四元组上，但还留了一个反例方向没有正面回应：**frontier lab 公开技术报告里的 mid-training / annealing 阶段，本身就是一次 schedule-内 CPT**——如果这一段已经把 (a)(b)(c) 三项压到接近达标，那么 C-CONT-2 的工程边界其实早已被产业线踩到，而 (d) replay → 0 的硬性 *是否仅是评测 setup 选择* 就成为下一道真正的判定。
+
+把 2024–2026 这两年里 *公开了 mid-training / annealing 数字* 的 frontier 报告排成一线：
+
+- **2024-07 — Meta, *The Llama 3 Herd of Models* ([arxiv:2407.21783](https://arxiv.org/abs/2407.21783))**。明确把 pretraining 分成 *initial pretraining* (15T token, cosine 主段) → *long-context training* (800B token, 8K → 128K window 渐进扩张) → *annealing* (40M token, LR linear → 0 + 高质量 domain-mix re-weight) 三段。annealing 段的数据量 ≈ 总 pretraining 0.0003，但被报告显式记为 "fine-tunes performance on key benchmarks (especially GSM8K, MATH)"。**这是 frontier 第一次公开承认 CPT-style 末段加权对 downstream 有可量化贡献**——把 Hägele 2024 WSD 的 stable-decay 选择转译到 industrial scale，与 Gupta 2308.04014 / Ibrahim 2403.08763 的 lab-scale LR re-warmup 结论对偶（同一旋钮、相反方向：lab 把 LR 重新拉高 risk forgetting，industry 把 LR 拉到 0 buy retention）。
+- **2024-12 — DeepSeek, *DeepSeek-V3 Technical Report* ([arxiv:2412.19437](https://arxiv.org/abs/2412.19437))**。报告显式分成 14.8T pretraining + *context extension* (32K → 128K, 2-stage YaRN-style) + *post-training*，但 pretraining 内部并未公开 mid-train annealing 配方细节；MMLU / BBH 等下游指标的逐 stage breakdown 缺失，使外界无法独立验证 annealing 贡献。这是 frontier *选择性披露* 的典型——recipe 写到 schedule 粒度，但 *效果归因* 拒绝拆分到 stage。
+- **2025-01 — DeepSeek-R1 ([arxiv:2501.12948](https://arxiv.org/abs/2501.12948))**。把 V3 base 经过 SFT cold-start + RL (GRPO) 二阶段后 release，整个 R1 pipeline 本质上是在 V3 frozen base 之上的一次 *post-training scale* CPT——其中 RL 阶段 token 消耗约 800K rollout × 平均 ~8K tokens ≈ 6.4B token，远低于 V3 pretraining 总量，但被报告显示对 AIME / MATH 提升 30+ pp。这与 Ibrahim 2024 "5% replay + LR re-warm" 在 retention vs plasticity 的相图上不在同一象限——R1 没有保留任何旧域，因为它根本没在 eval 旧域 retention，**这是工程上规避 (b) condition 的标准操作：选择性丢弃旧 benchmark 即可让 retention loss 在报表上不出现**。
+- **2025 — Qwen2.5-Max / Qwen3 technical reports (公开 blog + arxiv [unverified bundle])**。公开的 pretraining 描述里同样包含 *quality-mix annealing* 与 *long-context staged training* 两段，但与 DeepSeek 同样未公开逐 stage MMLU 曲线。Qwen 团队在 *Qwen2.5* 系列 ([arxiv:2412.15115](https://arxiv.org/abs/2412.15115)) 末段的 *post-training* 章节首次承认 "we observe non-trivial forgetting on long-tail factual benchmarks during instruction-tuning, partially mitigated by mixing pretraining data in SFT" — 这是 frontier 第一次公开把 *post-training 阶段的事实遗忘* 写进正式论文，与 Gekhman 2024 [arxiv:2405.05904](https://arxiv.org/abs/2405.05904) 的 anti-pattern 形成跨工业-学界的双源验证。
+- **2025-09 — Anthropic, *Claude 4 Model Card* (non-arxiv 系统卡)**：公开承认 Claude 4 Opus 与 4.x Sonnet 在 release 之间存在 "incremental pre-training updates" (原文措辞)，但未公开 token 量、replay 比例或 retention metric。**这是 frontier 第一次公开承认 "release 之间的小规模 CPT"**，即把 Ibrahim 的 lab recipe 真的投入产线，但拒绝公开任何可让外界做 C-CONT-2 falsification 的数字。
+- **2026 — GPT-5 / Gemini 2.x [unverified release pattern]**：根据公开 blog 与 OpenAI dev-day 描述，两家均采用 "continuous evaluation + periodic checkpoint promotion" 模式，技术上不可与 Ibrahim 续训路线区分。无公开数字。
+
+把这条 frontier 暗线对回 C-CONT-2 四元组：
+
+| 维度 | Llama 3 annealing | DeepSeek V3+R1 | Claude 4 incremental | Ibrahim 2024 lab recipe | C-CONT-2 falsifier |
+|---|---|---|---|---|---|
+| (a) retention loss | 未拆 stage 报告 | 未 report 旧域 | 未公开 | ≤ 1 pp | < 1 pp ✅ |
+| (b) 同语料 perplexity | 未公开 | 未公开 | 未公开 | 接近达标 | ✅ |
+| (c) wallclock 成本 | 0.0003×total = 极低 | 6.4B/14.8T = 4×10⁻⁴ | 未公开 | 1/30 | ≤ 1/20 ✅ |
+| (d) replay ratio → 0 | 仍是 batch + 高质 mix (非 streaming) | RL 阶段无旧域 replay 但也无 retention 评测 | 未公开 | 仍需 2–3% replay | 0 不退化 ❌ |
+
+四个 frontier 工程点都在 (a)(b)(c) 上要么达标要么 *不公开*，没有任何一个在 (d) 上提供数据。这与上节 lab-scale 曲线给出的判断完全一致：**工程上 CPT 已经被 frontier 偷偷做了，但全部是 batch-mode + 选择性披露，没有任何一家敢公开 streaming + 旧域 retention 联合表**。
+
+判断 (2026-05-29)：把 Llama 3 / DeepSeek / Qwen / Claude / OpenAI / Google 六家公开材料拉直，C-CONT-2 在 *工业可见层* 的状态比 lab recipe 更悲观——不是因为 mech 命题被加强，而是因为 frontier *主动选择不暴露 retention 曲线*，使得四元组中的 (a)(b) 在产业层根本不可观测。这反过来给 C-CONT-2 提供了第二种意义上的稳定性：**当所有 frontier 都选择 "不报告 retention" 而非 "证明 retention 接近 100%"，最简单的解释是 retention loss 确实存在且足以影响 release 决策，所以被作为 *negative signal* 隐去**。这与 §10 readout-side 主导假设的 "结构性社会学不可证伪" 警示同型——mech 命题不会被工业实践直接证伪，但也不会被工业实践直接证实，因为产业的 *披露选择函数* 本身就被 plasticity-stability tradeoff 形塑。
+
+回灌候选：本节不新增 mech 命题，只把 *frontier 工程证据* 作为 C-CONT-2 的第三支柱（前两支柱：(i) Lyle 2303.01486 + Dohare 2024 *Nature* 的理论与小规模实验，(ii) 上节 Gupta → Ibrahim → Çağatan 三年 lab recipe 曲线）登记在 [`../survey/ntp_survey.md`](../survey/ntp_survey.md) §10 C-CONT-2 行，作为 *evidence-base 内部细化*（与 C-CAUSAL-2 单点→四支柱同型，与 C-WM-7/C-EMBOD-7 corollary 不同——本节不入主表也不开 corollary 槽位，仅作叙事支柱）。同步债务：下一 tick C 把 frontier-disclosure 支柱写入 §10 C-CONT-2 行 evidence 列（与 C-CAUSAL-2 evidence-base 升级同型处理），不动 taxonomy 主表。
+
 ## NTP-mech 候选 (放入 `survey/taxonomy.md`)
 
 > **2026-05-28 注**：本节 C-CONT-1 的 streaming-setting 弱化版已在 [`../survey/taxonomy.md`](../survey/taxonomy.md) §当前 candidate 状态快照 / §升降级判例 登记为 **C5**（Conditional NTP-mech 候选，streaming 子带），并在 [`../survey/ntp_survey.md`](../survey/ntp_survey.md) §10 同步条目。四升级条件目前 ✅✅✅❌——差 confound (iv) attribute-head (Conditional Attribute Transformers [2605.14004](../papers/paper_notes/2026-05-27-2605.14004-conditional-attribute-transformers.md)) 与 (v) representation-geometry (NITP [2605.24956](../papers/paper_notes/2026-05-28-2605.24956-nitp-next-implicit-token-prediction.md)) 在 streaming setting 下的复现。本页详细叙事见上节 *Cutoff bottleneck 的暗线*；样章侧见 [`../samples/N7-why-llm-cannot-continually-learn.md`](../samples/N7-why-llm-cannot-continually-learn.md) §3–§5。

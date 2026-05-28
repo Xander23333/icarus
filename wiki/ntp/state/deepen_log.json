@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T16:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/online_learning.md"
+      ],
+      "chars_added": 3500,
+      "note": "Deepened online_learning.md: 新增 §Mid-training / annealing 阶段是否已经偷偷做了一次工业级 CPT (2024–2026) 一节, 把 Llama 3 2407.21783 annealing 三段 schedule + DeepSeek V3 2412.19437 + R1 2501.12948 RL 6.4B token + Qwen2.5 2412.15115 SFT forgetting 自承 + Claude 4 incremental updates 系统卡承认 + GPT-5/Gemini 2.x [unverified release pattern] 六条 frontier 暗线钉到 C-CONT-2 falsifier 四元组对照表 (a/b/c 达标或不公开, (d) 全部缺位), 判断: 产业的披露选择函数本身被 plasticity-stability tradeoff 形塑 (与 §10 readout-side 结构性社会学不可证伪警示同型, 与 C-CAUSAL-2 单点→四支柱 evidence-base 细化同型, 与 C-WM-7/C-EMBOD-7 corollary 不同——只作叙事第三支柱, 不入 taxonomy 主表也不开 corollary 槽位). 同步债务: 下一 tick C 把 frontier-disclosure 第三支柱写入 survey §10 C-CONT-2 行 evidence 列. 旋转规则: 上 tick C 同步 (ntp_survey + taxonomy), 本 tick 回 B (topics), 与 online_learning 上次 B touch (2026-05-28T17:30Z CPT recipe 边界) 不连续——formal_limits (05-28 18:30) / scaling_limits (05-28 23:00) / world_model (05-28 23:30) 均更新, 选 online_learning 作为最自然的 C-CONT-2 第三支柱锚点而非再开新 topic."
+    },
+    {
       "tick_utc": "2026-05-29T16:00:00Z",
       "task_type": "C",
       "files": [
