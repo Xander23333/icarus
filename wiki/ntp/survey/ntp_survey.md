@@ -69,9 +69,23 @@
 
 ## 4. 因果
 
-- Pearl 三层 (association / intervention / counterfactual)
-- LLM 在 Layer 1 表现良好；Layer 2/3 系统性失败的证据 vs 反例
-- "causal parrot" 论点
+把 Pearl 三层 (association / intervention / counterfactual) 这条线从 2018 拉到 2026, 骨架不是 "NTP 能不能上 Pearl 第二/第三层", 而是 **"强命题 (NTP 必停在 Layer 1) 已死、弱命题 (leak-checked Layer 3 仍随机) 幸存、且弱命题正被 agentic post-training 的数据 channel 缓慢侵蚀"**——三句话同时为真, 缺一就是错读。下表汇集本仓库 [`../topics/causality.md`](../topics/causality.md) 里筛出来的最强证据, 并标各自当前 NTP 三分法定位:
+
+| 论点 | 状态 (mech / cap / open) | 关键文献 |
+|---|---|---|
+| Pearl 三层划分: 被动观测系统 NTP 在原始论证下被限于 Layer 1 | **mech, philosophical prior** | Pearl 2018 *Seven Sparks* ([1801.04016](https://arxiv.org/abs/1801.04016)) |
+| GPT-4 在 Tübingen pairs / CRASS / actual-causality 上超越 prior SOTA: "实用级 causal assistant" | **cap (乐观侧旗帜), 但 leak-check 不严** | Kıcıman-Ness-Sharma-Tan 2023 ([2305.00050](https://arxiv.org/abs/2305.00050)) |
+| Passive learner of active strategies: 观测主动 demonstrator 的 intervention 轨迹后, imitator 学到 OOD intervention policy | **counter-evidence to strong mech, 把 "passive ≠ associative-only" 形式化** | Lampinen 2023 ([2305.16183](https://arxiv.org/abs/2305.16183)) · Krishnamurthy *Can LLMs Explore In-Context?* 2024 ([2403.15371](https://arxiv.org/abs/2403.15371)) |
+| Causal Parrots: variable-rename 把 SCM 名换成训练外 token 后 GPT-4 系统塌陷 ⇒ 表面 causal reasoning 实为 fact-retrieval | **mech, 但规模 <50 SCM, 仅证 Layer 2** | Zečević-Willig-Singh Dhami-Kersting 2023 ([2308.13067](https://arxiv.org/abs/2308.13067)) |
+| CLadder: Layer 1 ≈ ceiling / Layer 2 ~55% (CausalCoT 推 ~65%) / Layer 3 ~40% (CoT 无 lift), 10k 题 formal SCM 标注 | **mech (boundary), 三年无 Layer-3 反例** | Jin et al. 2023 ([2312.04350](https://arxiv.org/abs/2312.04350)) |
+| CORR2CAUSE: 给 correlation 推 causal graph, GPT-4 ~30% ≈ 随机; fine-tune 后 OOD 崩溃 ⇒ *discovery* 与 *inference* 在 NTP 里解耦 | **mech (discovery 子带)** | Jin et al. 2023 ([2306.05836](https://arxiv.org/abs/2306.05836) [unverified ID]) |
+| Causal Tongue-Tie: anti-commonsense CLadder 上 linear probe 0.97 / yes-no 0.5; ~+0.47 gap 全部来自 verbal readout 失败 | **counter-evidence (削弱 output-only mech 解读, 第三项 confound 在因果上的实例)** | 2026 ([2605.25891](../papers/paper_notes/2026-05-28-2605.25891-causal-tongue-tie.md)) |
+| Semantic-Loss Anti-Collapse: Gemma 270M 因果 fine-tune 73.9% accuracy 由 100% Yes/No collapse 制造; semantic loss 解 collapse 后 accuracy 下移、per-class 健康 | **counter-evidence (削弱 fine-tune 类 mech 论据, 第三项 confound)** | 2026 ([2605.05438](../papers/paper_notes/2026-05-27-2605.05438-semantic-loss-causal-collapse.md)) |
+| Interchange intervention / Boundless DAS 在 Alpaca-7B 上对 price-tagging 找到对齐 causal variable, 给 "LLM 内部是否运行 do-operator" 操作化判据 | **方法学承诺 (非证据), 尚未在 CLadder Layer 2/3 上找到 do-circuit** | Geiger 2021 ([2106.02997](https://arxiv.org/abs/2106.02997)) · Boundless DAS 2023 ([2305.08809](https://arxiv.org/abs/2305.08809)) · ACDC ([2304.14997](https://arxiv.org/abs/2304.14997)) |
+| Agentic / RL-from-environment 把 do(run_code) / do(click) / do(edit_file) 大规模回流; Pearl 形式下合法 do-operation | **open (经验侧削弱 mech, 但无 controlled comparison)** | DeepSeek-R1 2025 ([2501.12948](https://arxiv.org/abs/2501.12948)) · Claude computer-use 2024-10 · OpenAI Operator 2025-01 |
+| Layer 3 复杂性下界: Shpitser-Pearl ID algorithm 在一般 SCM 上是 #P-hard 子集; 远超单 forward pass TC⁰ | **mech (复杂性侧, 仅 worst case)** | Shpitser-Pearl 2006 UAI · Merrill-Sabharwal CoT-rollout ([2310.02309](https://arxiv.org/abs/2310.02309)) · Sanford-Hsu-Telgarsky TC⁰ ([2402.04347](https://arxiv.org/abs/2402.04347)) |
+
+判决: 到 2026-05 这条线最值得记住的不是任何单条论文, 而是 **C-CAUSAL-1/2/3 三候选与 Layer-3 三互补下界形成的双层结构**——上层是 NTP-mech 三候选 (held-out SCM Layer-2/3 floor / Layer-3 inference-time 不可突破 / discovery-inference 解耦), 下层是支撑 Layer-3 候选生存的三条独立下界 (复杂性 #P-hard + 数据 counterfactual 自然密度 <10⁻⁴ [unverified] + 协议 ≥1000-SCM UUID-rename benchmark 不存在)。任何想冲 Layer-3 的工作必须同时回应三条下界, 而绕过 C-CAUSAL-1 的工作必须先做一件 12 个月窗口内没人愿意做的事: **R1-Zero / R1-SFT / R1-final 三档同 base × CLadder Layer-2 controlled comparison + UUID-rename Zečević 协议复刻 + 训练前后 Boundless DAS do-circuit 搜索**——三个 <1 GPU-week 实验, 任意一个做完都会推动 mech/cap 边界, 但三个都因 "正向结果被 mech 派质疑 leak, 负向结果被 cap 派质疑 base 太弱" 的社会学回报为负而搁置。这种 "结构性社会学不可证伪" 与 §2 形式边界 "expressivity vs learnability 内圈先撞" 和 §3 grounding "全局 mech → 三个 conditional mech + 七项 confound" 形成的方法学进步, 共同构成 2024-26 NTP 调研的 mech 层三大主轴。详细叙事见 [`../topics/causality.md`](../topics/causality.md) §Layer-3 硬度的三个互补下界 与 §RL-from-environment 在 Layer-2 上的 controlled comparison; mech-interp 接口见 [`../topics/grounding.md`](../topics/grounding.md) §第三代 probe; 与 N4 sample (*Pearl Ladder and the LLM Ceiling*) §6 尾声直接共享 Layer-3 三墙判断。
 
 ## 5. Embodiment
 

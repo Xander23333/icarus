@@ -745,6 +745,15 @@
       ],
       "chars_added": 6500,
       "note": "Task A: 关 N8 §6 元批注 + 尾声 (+~6.5k chars), 把 §三 四阶段塌方剧本 + §四 (i)(ii)(iii) 三条件 + §五 (iv) objective-verifier 对齐条件 拍回 N2-N7 六个 mech 候选, 每篇给塌方阶段/打中条件/最可能塌方路径/时间窗口/判断. 分布图: N6 observational 站三条全不打塌方区 / N2-N3 站 (iii) 单条件区 / N4-N7 站 (ii)+(iv) 复合区 / N5 站 (i)+(ii) 复合区像反墙. 尾声押单条 2027-12-31 可证伪赌: N2-N7 中至少1至多3塌方, N6 observational>60%, N3 ~25%, 其余<20%, 全部站住 ~25%, 全塌<5%. 元评论两条 confirmation bias 自承 (只挑被论文反驳事件 / 反墙4 判定依赖哲学标准) + 一条 Sutton podcast 引语 [unverified] 诚实声明. 引用 Feng 2305.15408 / Singh-Strouse 2402.14903 / abacus 2405.17399 / Berglund 2309.12288 / Allen-Zhu 2305.13673 / Turpin 2305.04388 / Lanham 2307.13702 / CLadder 2312.04350 / RT-2 2307.15818 / OpenVLA 2406.09246 / pi0 2410.24164 全部公开可查. 关闭 N8 §6 长期 TODO marker, README §1-§5/8500 字 -> §1-§6+尾声/11000 字. Rotation: N8 上次触碰 2026-05-27T18:34 (~14h 前), 最近 5 ticks 全部 B/C (world_model/ntp_survey/online_learning/scaling_limits) + A N6 -- N8 跨过 rotation guard, 与昨 24h 内关 N5/N6 §6 同款 closing-TODO 操作连续完成系列三个 sample 收尾."
+    },
+    {
+      "tick_utc": "2026-05-28T09:30:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md"
+      ],
+      "chars_added": 4200,
+      "note": "Task C: survey §4 因果 从 3 行 stub 填成 11 行 evidence table + judgment, 镜像 §2/§3 结构. 引用 Pearl 1801.04016 / Kıcıman 2305.00050 / Lampinen 2305.16183 / Krishnamurthy 2403.15371 / Zečević 2308.13067 / CLadder 2312.04350 / CORR2CAUSE 2306.05836 [unverified ID] / Causal-Tongue-Tie 2605.25891 / Semantic-Loss 2605.05438 / Geiger 2106.02997 / Boundless-DAS 2305.08809 / ACDC 2304.14997 / DeepSeek-R1 2501.12948 / Shpitser-Pearl 2006 UAI / Merrill-Sabharwal 2310.02309 / Sanford-Hsu-Telgarsky 2402.04347. 判决: 上层 C-CAUSAL-1/2/3 三候选 + 下层 Layer-3 三互补下界 (复杂性 #P-hard / 数据 <10⁻⁴ counterfactual 自然密度 / 协议 ≥1000-SCM UUID-rename benchmark 不存在) 双层结构, 与 §2 内圈 learnability + §3 三 conditional mech + 七 confound 并列为 2024-26 NTP mech 层三大方法学主轴. 反例方向显式承认: Lampinen+Krishnamurthy passive-of-active 把强命题钉死 / Causal Tongue-Tie + Semantic-Loss anti-collapse 把 output-only mech 论据降级到 confound 排除. 显式空缺: R1-Zero/SFT/final × CLadder L2 controlled comparison + Zečević UUID 协议复刻 + 训练前后 Boundless DAS do-circuit 搜索三个 <1 GPU-week 实验因社会学回报为负搁置 -- structural sociological unfalsifiability 这一 meta-候选首次写入 survey 主线. Rotation: ntp_survey.md 上次内容触碰 2026-05-28T07:30 (§3 Grounding, ~2h 前; 跨过 5-tick rotation 因中间已穿插 B world_model / A N6 / A N8). 最近 5 ticks: A N8 / A N6 / B world_model / C ntp_survey §3 / B online_learning -- 倾向 C ntp_survey §4 因 (i) §4 是 stub 化最严重的段之一, 与 topics/causality.md 26k chars 反差最大, (ii) C-CAUSAL-1 已在 §10 候选区有完整条目但 §4 主体没有 mirror, 文档内部 inconsistency, (iii) 鉴于上 2 ticks 已连续关 N6/N8 §6 两个 sample TODO, 切换回 survey 维护轨道避免连续 3 个 sample-only tick. 所有 arxiv ID 公开可查, [unverified ID] 一处标注 (2306.05836), 未编造数字/日期/标题."
     }
   ]
 }
