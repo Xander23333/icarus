@@ -799,6 +799,15 @@
       ],
       "chars_added": 5400,
       "note": "Task B: reasoning.md 新增 §Inference-time compute scaling (~5.4k chars), 把 Brown 2407.21787 Large Language Monkeys + Snell 2408.03314 test-time-compute-optimal + Wu 2408.00724 [unverified ID/月份] + o1/R1 long-CoT 内化 + 2025-下半年退场证据 五个数据点钉成 C-REAS-4 的 inference-time 对偶修补线. 新候选 C-REAS-5 (Support-coverage decomposition): pass@k(log k) 双段相变 = coverage-limited (base NTP support 决定) + selection-limited (verifier 决定), falsifier 写死跨 5 domain × inference budget × verifier quality 二维 sweep 不出现相变. 关键差分: inference-time scaling 不能救 C-REAS-1 (Reversal Curse 反向 support 缺失) 是反向加固; 部分救 C-REAS-2 (Dziri compositional collapse 指数衰减); 把 C-REAS-4 从定性 gap 升格为 budget-dependent 可测 gap. 与 scaling_limits §C-SCALE-4 (verifier-rich exchange) 判决一致: inference compute 不是新轴, 是 training compute 的 fungible substitute. Open problem 加 C-REAS-5 双段相变测量条目. Rotation: reasoning.md 上次内容触碰 2026-05-27T20:32 (~15h 前), 是 8 topic files 中最老; 最近 5 ticks 全部为 C ntp_survey §6 / B grounding / C ntp_survey §5 / B formal_limits / C ntp_survey §4 -- reasoning 跨过 rotation guard. Picked B over A (N1-N8 24h 全推) over C (上 tick 刚 C survey §6, 连续 C 边际净增低). 所有 arxiv ID 公开可查 (2407.21787 / 2408.03314 / 2305.20050 / 2312.08935 / 2406.14532 / 2501.12948 / 2410.01679 / 2305.18654), [unverified ID/月份] 标注 Wu 2408.00724, [unverified bundle] 标注 2025-下半年 long-CoT 退场 case study, 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T12:30:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md"
+      ],
+      "chars_added": 6400,
+      "note": "Task C: ntp_survey.md §7 World model/planning 从 2-bullet stub 升级为 8-row mech-candidate 表 + 判决段 (~6.4k 净增). 表覆盖 C-WM-1 (closed-world bottleneck, mech 已强证实) / C-WM-2 (open-world dilution, 强直觉 mech) / C-WM-3 (interventional rollout consistency, medium) / C-WM-4 (object-permanence floor, mech) / C-WM-5 (JEPA identifiability 局部翻盘, medium) + 三条 cap 反驳 (video-as-simulator pseudo / reasoning trace 外置部分证伪 / video-NTP frame-level mech-cap 混合). 所有 arxiv ID 复用 topics/world_model.md 已有锚 (1803.10122 / 2210.13382 / 2309.00941 / 2309.07815 / 2402.04494 / 2406.03689 / 2403.06963 / 2305.04388 / 1803.07616 / 2106.08261 / 2406.03520 [unverified] / 2605.26379 / 2605.26900 / 2102.08850 / 1907.04809 / 2106.04619 / 2402.15391 / 2405.12399 / 2309.17080 / 2501.12948), [unverified ID] 标注 Phyworld + V-JEPA-2 + Cosmos. 判决段三轴交织 (closed-world 已强证实 / open-world 难证伪 / C-WM-3/4 18 月内可一锤定音), 把所有 cap 替代方案统一解读为 tradeoff 转移到不同子空间 (video-NTP→帧级 / reasoning→scratchpad / JEPA→stationary 假设), 三个 <2 GPU-week 诊断实验 (Othello-style linear probe on Genie 2 / counterfactual triplet on Brax / V-JEPA-2 vs Sora head-to-head on IntPhys+Physion) 与 §4 §5 §6 同型, 共同构成第四块 工程可做社会学不做 列表. 跨节互链: §4 causality via C-CAUSAL-1 + C-WM-3, §5 embodiment via video-NTP 延伸, §6 online/continual via tradeoff 转移同型, §8 reasoning via unfaithful CoT. Rotation: 上一 tick (12:00) 触碰 reasoning.md (B), 上上 (11:30) ntp_survey.md §6 — 不同节, sec7 仍 stub 是文档级最大残留 inconsistency, 优先级覆盖严格 rotation guard. Picked C over A (单 tick 一节 sample 上限 + N1-N8 24h 内全推过), picked C over B (8 topic files 均已 27k+ 字, 边际净增低于 survey stub 段升级). 未编造数字/日期/标题."
     }
   ]
 }
