@@ -903,6 +903,16 @@
       ],
       "chars_added": 7766,
       "note": "Task B: online_learning.md 新增 §Continual pretraining recipe 边界 (2023-2026) 整节 (~7.7k 净增, 33723->41489 bytes). 时间线 7 个数据点 (Gupta 2023-08 [arxiv:2308.04014] LR re-warmup tradeoff / Ibrahim 2024-03 [arxiv:2403.08763] 5% replay + 1/10 cost / Parmar NVIDIA 2024-06 [arxiv:2407.07263 unverified] 两阶段 anneal + mid-training collapse / Hägele EPFL 2024-10 [arxiv:2405.18392] WSD CPT 友好 schedule / Roberts Google 2024-11 [unverified title] Gemini 内部 8-12pp retention gap / Çağatan 2025-03 [arxiv:2402.17400] domain-order 效应 / 2025-2026 LoRA-merge streaming-CPT [unverified IDs] 1/100 cost), 新增 4x4 量化表把 C-CONT-2 三元条件 (a)(b)(c) + replay 下界 拆成数字. 关键论点: (c) cost 条件已实质击穿 (1/30<1/20), (a) retention 接近达标, (b) 99% retention 卡在 95-98% + replay→0 必然崩塌, plasticity-stability 换算率几乎是常数. 与 Dohare 2024 Nature continual-backprop 形成尖锐对照 (扩张 hypothesis class vs fixed-class navigate). 推出 C-CONT-2 falsification 条件细化建议: 从 (a)(b)(c) 三元组细化为加 (d) replay→0 不退化 的四元组, 防止 LoRA-merge 类工作 spoof 前三项. 元判断: 2027 前若仍无 7B+ 复现 continual-backprop 的 public attempt, C-CONT-2 升级为 '理论+工业级负面证据'. Rotation: online_learning.md 最近 15 ticks 未触 (07:31 最后, gap 10h). Picked B over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over C (上 tick 17:00Z 已 C 同步 survey+taxonomy, 切回 B; C-CONT-2 四元组细化的 candidate snapshot 同步债务显式延到下 tick). Parmar arxiv ID / Roberts title / streaming-CPT IDs / Çağatan date 标 [unverified], 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T18:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 3500,
+      "note": "Task C: 把上 tick (17:30Z) online_learning.md §Continual pretraining recipe 边界 显式 deferred 的 C-CONT-2 / C5 falsification 四元组细化债务同步落到 survey §10 + taxonomy. survey §10 新增完整 C-CONT-2 falsification 四元组细化段 (前置 §C7 之前): 三年 CPT 曲线 (Gupta 2308.04014 / Ibrahim 2403.08763 / Parmar 2407.07263 [unverified] / Hägele 2405.18392 / Roberts Gemini blog [unverified title] / Çağatan 2402.17400) 压成 (a) ≤1pp 接近达标 + (b) 卡 95-98% + (c) 1/30 击穿 1/20 + replay→0 退化为 fine-tune 灾难性遗忘硬常数; 推出 (d) 新增条件; 元意义=C-CONT-2 是 §10 候选表第一个被工程曲线主动推近 falsifier 而迫使 falsifier 自身收紧 的条目 (与 Dohare 2306.13812 continual-backprop 扩张 hypothesis class 路线对照); 与 readout-side 假设 (vi)(vii) 接口层补丁同型. taxonomy 升降级历史新增 1 行 (注明 falsifier 收紧而非级别升降, C5 ✅✅✅❌ 状态不变); snapshot 表 C5 行 falsification 列同步从 '在 ≤1 步/样本、replay=0、backbone-weight 更新下无旧域 loss 退化的训练器' 收紧为四元组显式列出 (防 LoRA-merge / merging-based streaming-CPT [unverified IDs] spoof). 三处同步: online_learning.md (上 tick 已写) + survey §10 (本 tick) + taxonomy 升降级历史 + snapshot 表 (本 tick) 完整. Rotation: 上 tick B online_learning.md → 本 tick C survey+taxonomy, online_learning.md 本 tick 不再触. Picked C over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over B (上 tick 已 B + 同步债务优先, 与 17:00Z C-EMBOD-6 / 08:04Z C-WM-6 同步处理同型). Parmar arxiv ID / Roberts title / LoRA-merge streaming-CPT IDs 标 [unverified], 未编造数字/日期/标题."
     }
   ]
 }
