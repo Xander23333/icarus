@@ -101,6 +101,37 @@ text-NTP 的 world-model 证据基本上停在 Othello-GPT 与 chess-Transformer
 
 判断：JEPA-identifiability 这条线值得每月追踪两到三篇，是 N6 §3 \"world-model 三家答卷\" 在 2026 下半年写作时唯一接近 *形式可证* 的子带。但要诚实标注：identifiability 定理给的 \"学到 world model\" 是非常 *狭义* 的——只是 latent 与真实潜变量之间存在 affine/orthogonal 对应，并不蕴含因果结构（这又把球扔回 §C-WM-3 反事实 eval）。把这两条线 *分开* 报告比合起来吹更负责任。
 
+## Latent-action codebook 可辨识性 (2024–2026)
+
+§Video-NTP 暗线 把 Genie / Cosmos / DIAMOND 这一脉作为 video-NTP 的 *行为级* 证据收齐，§JEPA 可辨识性 把 latent identifiability 抽到 SSL 一般层；两条线在 2024–2026 间出现了一个 *具体* 的合流点，但还没在本页系统化——那就是 **unsupervised latent action codebook**：Genie 一族从 unlabeled 视频里 *无监督* 抽出一个离散动作集合 $\mathcal{A}_\text{latent}$，并以它作为下一帧预测的条件。问题随即变成：这个 codebook 与真实环境动作 $\mathcal{A}_\text{true}$ 之间，存在何种程度的可恢复对应？这是 video-NTP 域 *第 1 种* world model（行为规划）能否真正连到 embodied control 的最窄瓶颈。
+
+把现有公开证据按时间收齐：
+
+- **2022-09, Edwards et al., *Imitating Latent Policies from Observation* 后续线** ([arxiv:1805.07914](https://arxiv.org/abs/1805.07914)) 与 **ILPO / LAPO** ([unverified ID])：早于 Genie 的 latent-action 路线，把 inverse dynamics + forward dynamics 联合训练当作 action 抽取手段。结论是：在 Atari / 简单 2D 上 latent action 与 ground-truth action 的 NMI（normalized mutual information）能到 0.4–0.6 区间 [unverified 数字]，但 codebook size 必须 *预先设定* 为接近 true action set 大小才行。
+- **2024-02, DeepMind, Genie** ([arxiv:2402.15391](https://arxiv.org/abs/2402.15391))：把同一思路放大到 2D 平台游戏 11B token，latent action codebook 大小 8。论文 §4.3 报告 latent-to-true action 的 *预测* 精度（用 frozen latent action 训一个 linear classifier 去恢复 true action）能到 ~50% 多 [uncertain 具体数字]，远高于 chance (1/|A| ≈ 17%) 但远低于监督上界。这是工业界第一次把 latent-action 可恢复性当作 first-class metric 报。
+- **2024-12, Genie 2** (blog, 非 arxiv)：扩到 3D，但 *没有* 公开任何 latent-action 可恢复性的数字——只放 demo。这是评测退却的典型案例，与 §JEPA 可辨识性 末段 \"经验论文几乎不触 identifiability\" 同型。
+- **2025-01, NVIDIA, Cosmos** (whitepaper, [unverified arxiv ID])：tokenizer + world-model 双栈，对外公开的 action conditioning 仍以 *显式* low-level control 为主，latent-action discovery 模块（如果存在）未单独 ablate。
+- **2025–2026, latent-action 在 VLA 域的复用**：OpenVLA ([arxiv:2406.09246](https://arxiv.org/abs/2406.09246)) 与 π₀ ([arxiv:2410.24164](https://arxiv.org/abs/2410.24164)) 都把 action 作为 *显式* token 嵌入序列，**没有** Genie 风格的无监督抽取——这意味着 VLA 域把 \"action 是不是可学的 latent\" 这个问题直接绕过去了。§Cross-embodiment（见 [embodiment](embodiment.md) §Cross-embodiment transfer）观察到的 morphology-layer 迁移近零，与 latent-action codebook 在 VLA 侧 *根本没被用过* 这件事，可能是同一根缺口的两面。
+- **2026-Q1（预测，待证伪）**：若 Genie 3 / V-JEPA-2.5 / Cosmos-2 中任一公开模型给出 (a) latent action codebook 大小自适应、(b) 与 ground-truth action 的 NMI ≥ 0.8、(c) 在 *未见* 环境上 zero-shot latent-action 复用成功——则可视为 video-NTP 路线在行为级 world model 上真正出现 identifiability 类证据。截至 2026-05 无此公开数字。
+
+把这条线对齐到本页已有节：
+
+- 与 §JEPA 可辨识性 的关系：JEPA 系定理给的是 *latent state* 的 identifiability，latent-action codebook 给的是 *latent control input* 的 identifiability。前者是 \"$z$ 与真实潜状态 $s$ 是否可线性对应\"，后者是 \"codebook 索引 $c$ 与真实动作 $a$ 是否互信息高\"。两者在数学上 *不蕴含*——一个模型可以 latent state identifiable 而 latent action 不可恢复（反之亦然），LeJEPA / SPHERE-JEPA 两文都只覆盖前者。
+- 与 §object permanence 的关系：object permanence 度量 *被观察变量* 的时间持续性，latent-action 度量 *干预通道* 的语义对齐。N6 §3 之后的两条最自然延伸点其实是这两条，而不是再写一篇 Sora-class 模型综述。
+- 与 §C-WM-3 (interventional consistency) 的关系：latent action codebook 提供了 do-operator 的 *候选实现*——\"do(latent_action = $c_k$) on the same prefix\" 是 video world model 上唯一已实现的 intervention 通道。如果 codebook 不可恢复到 true action，则 §C-WM-3 的 interventional benchmark 即便建起来也无法解释。
+
+反例与待证伪点：
+
+- **codebook size mismatch 是 confound**。Genie 把 codebook 大小固定为 8，恰好接近 2D 平台游戏的 button 数；这个 \"恰好\" 在 open-world 上不再成立，NMI 数字几乎必然回落。LAPO 系工作已展示 codebook size 过大时 latent action 退化为冗余编码。把 2024 数字外推到 open-world 是当前文献的一个潜在过度乐观。
+- **inverse dynamics ≠ latent action**。一些工作（Schmidt 2024 [unverified ID]）指出 Genie 训练的 latent codebook 实质上更接近 *视觉差分* 而非 *因果干预*——同一物理动作在不同视角下会被分配不同 codebook 索引。如果属实，则 latent action 的 \"identifiability\" 是 *视觉同构* 而非 *因果同构*，对 §C-WM-3 帮助有限。
+- **真正可证伪窗口**：把 Genie/Cosmos 在 *同一环境* 上训练，分别用 (a) 真实 action 显式条件、(b) latent action 无监督条件、(c) 无 action 纯像素 NTP 三套，下游统一在 IntPhys violation-of-expectation + counterfactual triplet 上 frozen-probe。如果 (b) 介于 (a) 与 (c) 之间且与 (a) 差距 ≤5pp，则 latent-action codebook 是 video-NTP 通向 embodied world model 的可行桥；如果 (b) 退化到 (c) 水平，则 §C-WM-6 的 paradigm-benchmark deficit 又添一条子带，并直接削弱 Genie 一族对 \"video-NTP 行为级 world model\" 的存在性主张。
+
+新增 corollary（不升主表，与 C-WM-6 同型登记）：
+
+- **C-WM-7 — Latent-action codebook identifiability deficit**：在 unsupervised latent-action world model 上，latent codebook 与真实环境动作的对应关系未在 open-world / cross-environment 设定下被任何公开实验定量化（NMI、purity、或 linear-recovery accuracy 任一即可）。**Falsification**：出现一篇 (a) 在 ≥2 个未见环境上、(b) 用同一 latent codebook、(c) 报告 NMI 或 linear-recovery accuracy ±2pp 置信区间且 ≥0.7 的论文。**当前评估**：与 C-WM-6 同型为 *元-方法论 corollary*，仅在 [`survey/ntp_survey.md`](../survey/ntp_survey.md) §10 corollary 区登记，不进 [`survey/taxonomy.md`](../survey/taxonomy.md) 主表；与 [embodiment](embodiment.md) §C-EMBOD-7 (morphology-layer transfer 近零下界) 互为镜像（前者卡 *latent control 通道*，后者卡 *morphology 通道*），共同把 \"VLA / video-world-model 之间的桥梁是否真实\" 这个元问题拆成两条可独立证伪的子带。同步债务：本节为 corollary 类提案，下一 tick C 同步至 survey §10 + taxonomy 升降级历史（与 C-EMBOD-7 同型处理）。
+
+判断：到 2026-05 为止，latent-action codebook 是 video-NTP 路线 *最接近行为级 identifiability* 的工具，但所有公开数字都停在 closed-domain 玩具上。这条线值得每两月追踪一次，是 N6 §3 之后写 \"video world model 真接到 embodied control 的最窄瓶颈在哪\" 时唯一能落到具体数字的子带。再写一篇 \"world model 三家答卷\" 而不提 latent-action codebook 的可恢复性，是把方法论空洞包装成立场之争。
+
 ## 反事实 / 干预 eval：当前最大的方法论空洞
 
 把上一节末尾那句"没有任何一篇 video world-model 论文做过 do-operator 干预下的预测一致性 eval"翻成 Pearl 的语言：当前所有公开 world-model benchmark 几乎全部停留在 Layer 1（observational）—— 给 prefix 预测续帧或下一动作 —— 而真正能区分"模型有 world model"vs"模型在做高阶 n-gram"的关键证据，是 Layer 2（interventional）的预测一致性。这一空洞不是"还没人想到"，而是工程上比 observational eval 难一个数量级，目前只有零散候选：
@@ -169,4 +200,4 @@ $$\varepsilon_{\text{do}}(M, X) = \mathbb{E}_{s,a}\bigl\|\mathbb{E}_M[s'\mid s,\
 - [reasoning](reasoning.md) — reasoning trace 作为外置 world model；OP-WM-5 是这条桥的 mech-interp 检验
 - [scaling_limits](scaling_limits.md) — §流形扩张 与 §JEPA 可辨识性 在「benchmark confound 控制不足」上同型
 - [online_learning](online_learning.md) — world model 的时间维度更新失败即 §online_learning 的 cutoff bottleneck
-- 候选 mech 入口：`survey/taxonomy.md` C-WM-1, C-WM-2, C-WM-3；C-WM-6 (head-to-head paradigm benchmark deficit) 仅在 `survey/ntp_survey.md` §10 候选列表登记为 corollary，不入 taxonomy 主表
+- 候选 mech 入口：`survey/taxonomy.md` C-WM-1, C-WM-2, C-WM-3；C-WM-6 (head-to-head paradigm benchmark deficit) 与 C-WM-7 (latent-action codebook identifiability deficit) 仅在 `survey/ntp_survey.md` §10 候选列表登记为 corollary，不入 taxonomy 主表
