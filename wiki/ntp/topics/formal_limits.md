@@ -131,9 +131,35 @@ C-FORM-4 与 C-FORM-1/2 互补：前三个候选锁 expressivity 上界，C-FORM
 
 C-FORM-5 是对 C-FORM-1 的常数修正而非升级；它存在的价值是**显式拒绝**"MoE 突破 TC⁰"这一在 2024-2026 多次被非形式化重复的说法。
 
+## SSM / Mamba / 线性循环 / hybrid — "非 attention 主干"是否绕开 TC⁰ 之墙 (2021–2026)
+
+上一节的裂缝清单里漏了一整条路线：**所有以 SSM / 线性 RNN / 卷积长程算子为主干的非 attention 架构**。这条线在 2023 年以 Mamba 为标志冲到 frontier 候选位，2024–2025 进一步出现 Jamba / Mamba-2 / RWKV-v6 / Zamba 等 hybrid 变体，其中相当一部分公开材料显式或隐式宣称 "线性时间 / 常数 KV，且能力不逊于同 size dense transformer"。如果这个宣称在形式上成立，TC⁰ 之墙的故事就完全要重讲——因为 Hahn / Merrill–Sabharwal 系列下界都是针对 *softmax attention* 的 saturated/log-precision 嵌入。但 2024 年这条故事被一篇关键工作钉住了：**SSM 不仅没有突破 TC⁰，它在一个更窄的子类里运行**。
+
+- **2021-10 — Gu, Goel, Ré (S4) ([arxiv:2111.00396](https://arxiv.org/abs/2111.00396))**。把序列建模写成 $h'(t) = A h(t) + B x(t),\; y(t) = C h(t)$，离散化后用 HiPPO 矩阵 + FFT 卷积训练，$O(N \log N)$ 时间、$O(N)$ 内存。形式上这是一个 **线性时不变 (LTI) 长程卷积**——核心算子是固定的多项式卷积核，不存在 input-dependent gating。表达力上界从这一刻起就被严格限定在 *线性算子* 加 *逐点非线性* 的复合类里，远窄于 attention 的 input-dependent 二次型。
+- **2023-12 — Gu & Dao (Mamba) ([arxiv:2312.00752](https://arxiv.org/abs/2312.00752))**。关键改动是把 S4 的固定 $A, B, C$ 变成 **input-dependent**（selective SSM），由此恢复了对 token 内容的条件化能力，在 LM 主线 benchmark 上与同 size dense transformer 持平。这一改动在工程上很重要——它让 SSM 从 "长程信号处理玩具" 升级为 "可上 LM" 的主干；但 **selective 之后的 $A_t, B_t, C_t$ 仍是 input 的固定函数，没有跨 token 的二次型耦合**，这是下一段下界论证的关键。
+- **2024-05 — Dao & Gu (Mamba-2 / SSD) ([arxiv:2405.21060](https://arxiv.org/abs/2405.21060))**。State Space Duality (SSD) 论证显示 Mamba 类 selective SSM 与一类 **structured masked attention** 在数学上等价——这是 SSM 与 attention 阵营的第一座桥。SSD 视角下 SSM 是 attention 的 *特例*（mask 强制为下三角且 rank-1 结构），不是平行物种。
+- **2024-04 — Merrill, Petty, Sabharwal, *The Illusion of State in State-Space Models* ([arxiv:2404.08819](https://arxiv.org/abs/2404.08819))**。这是把 SSM 钉进 TC⁰ 论证地图的关键工作。核心结论用一句话写死：**S4、Mamba 这类 SSM 与 transformer 同属 $\mathsf{TC}^0$ 复杂性类，且它们都不能解决 state-tracking 完备问题（如 $S_5$ 置换组合），而 RNN 的标准类 $\mathsf{NC}^1$ 可以**。换言之 SSM **不仅没有突破 TC⁰，它连 RNN 的真子集都不到**——所谓 "linear recurrence with hidden state" 这个名字带来的 "应该比 transformer 强" 直觉在形式上是错的。这把 C-FORM-1 的有效适用范围一次性扩到 SSM 主干，无需重新证明。
+- **2024-03 — Jamba (AI21) ([arxiv:2403.19887](https://arxiv.org/abs/2403.19887))** + **2024 RWKV-v6 / Zamba / Griffin [unverified bundle]**。Hybrid 架构在 frontier 上的实际策略是 *Mamba block 与 attention block 交错*（典型比例 1:7 或 1:3）。形式后果是直接的：只要任一层包含标准 softmax attention，整体架构的 expressivity 类就由 attention 决定（取并集），SSM 部分只贡献常数项 FLOPs 节省与长程记忆 inductive bias。Hybrid 不打开新表达力类，但也不缩窄——它是 *工程上的常数因子游戏*，不是 *形式上的新墙或新门*。
+- **2024–2025 — Linear attention 复兴 (GLA / RetNet / DeltaNet / Gated DeltaNet)**。这一支与 SSM 形式同源（都可写成 linear-recurrent + outer-product update），Yang et al. *Gated Linear Attention* ([arxiv:2312.06635](https://arxiv.org/abs/2312.06635)) 与 *Parallelizing Linear Transformers with the Delta Rule* ([arxiv:2406.06484](https://arxiv.org/abs/2406.06484)) 是代表。Merrill 2404.08819 的论证机制（state 更新是 input 的固定线性函数复合）几乎全部 carry over：linear attention 与 SSM 共享同一道 TC⁰ 顶棚，且同样卡在 $S_5$ 不可解。
+
+**对 C-FORM-1 / C-FORM-2 / C-FORM-5 的净影响**：把 SSM / Mamba / linear-attention / hybrid 全部纳入 C-FORM-1 的适用域是 2024 年最重要的形式扩张。具体三条修订：
+
+1. C-FORM-1 的 architectural scope 从 "log-precision saturated softmax transformer" **显式扩到 "log-precision selective-SSM、linear attention、以及二者与 softmax attention 的任意 hybrid"**。这一扩张不需要新论证，由 Merrill 2404.08819 直接 carry。
+2. C-FORM-2 (k(n) 等级表) 的 *no-CoT* 部分对 SSM 同样适用——SSM 也不能在常数 forward pass 内做任意 $S_5$ 长度的 state tracking。**关键反方向**：SSM 的 CoT-augmented 上界尚无独立证明，但 Mamba 在 GSM8k 上的 CoT 表现与同 size transformer 接近 [unverified 具体数] 是经验暗示。
+3. C-FORM-5 的 router-bit budget 论证天然适用 Mamba-MoE / Jamba 等架构——SSD 等价把 Mamba block 写成 structured-attention 之后，router 论证不变。
+
+新增候选机制：
+
+| ID | 候选机制 | 形式陈述 | Falsification 条件 |
+|---|---|---|---|
+| C-FORM-6 | SSM-as-TC⁰-subset | 任何 selective-SSM / linear-attention 主干（不含 softmax attention 层）在 log-precision 下严格嵌入 $\mathsf{TC}^0$ 且不能解决 $S_5$ word problem；hybrid 架构 expressivity 由 attention 子集决定 | 在纯 Mamba / 纯 linear-attention 主干（无任何 softmax attention 层）上实现 length-generalizing $S_5$ 解算 (≥100 token 推理输入, ≥80% accuracy)；或形式证明 selective-SSM 在 log-precision 下严格超 $\mathsf{TC}^0$ |
+
+**判断 (2026-05-28)**：2023 年宣称 "Mamba 可能取代 transformer" 的讨论几乎全部默认 SSM **在表达力上至少等价于 attention**——这一假设在 2024-04 之后被形式证伪。SSM 的工程价值（线性内存、长程信号处理 bias）依然真实，但它**绑在 transformer 同一道形式天花板下面**，并且在 state-tracking 子类上严格更弱。这反过来解释了 frontier 全部走向 hybrid 而非纯 SSM 的事实——hybrid 的存在不是 "结合两家之长" 的修辞，而是 *形式必要性*：纯 SSM 主干在某些任务族上的失败 (Merrill 2404.08819 实测 Mamba 在 $S_5$ 长度泛化崩坏) 是结构性的，必须由 attention 层补回来。一句话总结：**MoE 不破墙，loop 才破墙，SSM 连墙都摸不到**——这是上节判断的对偶补充，也把 N8 §四 "反墙四条件" 里第 (ii) 条 "新架构在 capacity 维度上 strictly 超越 transformer" 的可证伪窗口进一步收窄。
+
 ## Open problems
 
 - 把 Deterministic Horizon (2605.23024) 与 summarized CoT expressivity 放在同一坐标系下重新推导联合 bound。
 - TC⁰ 下界的"per-token compute"假设在 MoE / 动态 depth / early-exit 架构下是否仍紧。（部分回答见上节；looped-x-sparse 复合架构仍空白。）
+- selective-SSM / linear-attention 在 CoT-augmented setting 下的形式上界尚无独立证明 — 经验上 Mamba+CoT 与 transformer+CoT 接近，但是否共享同一道 Merrill-Sabharwal 2310.07923 风格上界还是个 open question。
 - 是否存在"width 真的能换 depth"的非 trivial 任务类（Barron 空间外）。
 - Sanford–Hsu–Telgarsky 2306.02896 的 q-sparse averaging family 是否可以在 CoT-augmented setting 下被打破？若是，则 C-FORM-2 的 *k(n) 等级表* 需要重写。
