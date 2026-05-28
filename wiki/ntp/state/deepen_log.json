@@ -835,6 +835,15 @@
       ],
       "chars_added": 4500,
       "note": "Task B: causality.md 新增 §Synthetic counterfactual corpus injection: 一条名义存在但实质未走的 escape route (~4.5k 净增). 把 §Layer-3 三互补下界中下界 (ii) '自然语料 counterfactual 密度 <10^-4' 的直觉反制路径 (合成注入) 系统化展开: 4 条边角 (CLadder 10k SFT baseline Layer-3 lift<3pp 已尝试已失败 / CLOMO logical entailment 不是 do-operator / Hüyük counterfactual feedback circular / agentic RL 物理上不能 alternate-history rollout / latent-CoT pause-token/Coconut/Quiet-STaR 只松动下界 (i) 不动 (ii)(iii)). 引用 2308.13067 / 2312.04350 / 2305.16183 / 2311.17438 / 2410.03767 [unverified ID] / 2310.02226 / 2412.06769 [unverified ID] / 2403.09629 / 2310.02309. 判决: escape route 形式 well-defined 工程 <1 GPU-week 但社会学回报为负 (mech 派质疑 leak / cap 派质疑 synthetic 太人工), 与 §RL-from-environment 三个 <1 GPU-week 实验缺失同型, 与 reasoning §C-REAS-5 双段相变测量缺失同型. 跨链升级: agentic RL 增益严格停在 Layer-2 不外溢 Layer-3 (反事实回滚非合法 do-trace), C-CAUSAL-1 与 C-CAUSAL-2 距离从 '经验上正在收窄' 修正为 '形式上 Layer-3 仍有独立护城河'. Rotation: causality.md 上次内容触碰 ~16h+ 前, 8 topic files 中最老; 最近 5 ticks 全部为 C ntp_survey §7 / B reasoning / C ntp_survey §6 / B grounding / C ntp_survey §5 -- causality 跨过 rotation guard. Picked B over A (N1-N8 24h 内全推过 + 单 tick 一节 sample 上限) over C (连续 3 个 C ntp_survey §5/§6/§7 后 §8 reasoning 留给下 tick, 避免 4 连 C 边际净增递减). 所有 arxiv ID 公开可查, [unverified ID] 两处标注 (2410.03767/2412.06769), 未编造数字/日期/标题."
+    },
+    {
+      "tick_utc": "2026-05-28T14:30:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/scaling_limits.md"
+      ],
+      "chars_added": 7100,
+      "note": "Task B: scaling_limits.md 新增 §Post-training compute: 第七轴 (~7.1k 净增). 把 2022 InstructGPT → 2026 RLVR reward-hacking bundle 五条证据线串成 candidate C-SCALE-7 (post-train compute scaling 是闭区间 + 非 NTP 子轴): log utility ≈ γ log C_post − δ (C_post − C*)² 在 reward-hacking 区反弹, 作用域限定 verifier-rich subset, falsification 写明 10× C_post + holdout 真实 utility 同步线性上升. 引用 2203.02155 / 2212.08073 / 2305.18290 / 2305.20050 / 2501.12948 / 2210.10760 + [unverified ID] Gao 2025 follow-up + 2605.26733 RLVR reward-hacking bundle. 4 条反例 / 边界 (DPO 与 C-SCALE-6 重叠 / verifier capacity ceiling / process-reward 增量 [uncertain] / R1-Distill self-play 路径). 判决段两层: (i) 第七轴是 frontier lab 公开承认但 NTP-mech 派回避的 taxonomy 级断点; (ii) 元判决 — C-SCALE-4 (inference-time) 与 C-SCALE-7 (post-train) 共享同一 verifier-rich subset 作用域, 五轴里三轴在 open-ended 任务上 γ → 0, NTP 真正 scaling 的子域圈定到 verifier 存在的子集. Open problems 新增 2 条 (C-SCALE-7 vs C-SCALE-6 清洁分界 + policy 反超 verifier 后 self-play 闭环). Rotation: scaling_limits.md 上次内容触碰 2026-05-28T06:32 (~8h 前), 8 topic files 中最老; 最近 3 ticks 全部为 C ntp_survey -- scaling_limits 跨过 rotation guard. Picked B over A (N1-N8 24h 内全部推过 + 单 tick 一节 sample 上限) over C (连续 3 个 C ntp_survey §8/§9 后切回 B 避免边际净增递减). 所有 arxiv ID 公开可查, [unverified ID] 2 处, [uncertain]/[unknown] 3 处, 未编造数字/日期/标题."
     }
   ]
 }

@@ -127,6 +127,39 @@ C-SCALE-6 与前五条候选的张力：它在 *training data 侧* 给出 plasti
 - **Specialization 收窄**：高 k 经常伴随 distribution narrowing——phi-3 在 reasoning / coding 上接近 Llama-3-8B，但在 broad world-knowledge / 多语种长尾上落后。data-quality 这根轴最好读作 *任务族条件* 上的乘子，不要读作普适。
 - **Model collapse 边界**：Shumailov 的 τ 在 1-pass 训练 vs 多代递归生成下不同——一次性混入 30% 合成尚未触发，多代自回归则 5% 就开始塌。C-SCALE-6 的作用域要按 *合成内容是否参与下一代训练* 二分。
 
+## Post-training compute: 第七轴 — RL / verifier-driven scaling (2022–2026)
+
+(N, D, C_train_pretrain, C_inference, bits/param, data-quality) 之外，2024 年起被 frontier lab 普遍承认的第七根轴是 **post-training compute**——具体是 RLHF / RLAIF / RLVR / process-reward 这些 *non-NTP objective* 在 base model 之上消耗的额外算力。这条轴和前六轴最大的不同：它的 \"NTP-ness\" 是被打折的——objective 已经不是纯 next-token，而是 next-token under verifier-shaped reward。因此能不能算作 \"NTP scaling 的第七轴\" 本身就是 taxonomy 级争议。
+
+- **2022-03 — Ouyang et al., *Training Language Models to Follow Instructions with Human Feedback* (InstructGPT, [arxiv:2203.02155](https://arxiv.org/abs/2203.02155))**。首次给出 \"post-training compute 远小于 pretrain 但下游收益超线性\" 的硬数字：175B base + ~1.3% 额外 compute 的 RLHF，TruthfulQA / 指令遵循上把同 base 拉到接近 GPT-4-era prompt-tuned 水平。重点不是 absolute gain，而是 *compute ratio 的奇怪不对称*——pretrain ↔ posttrain 之间不存在 Chinchilla 式的 compute-optimal 配比拟合。
+- **2022-12 — Bai et al., *Constitutional AI* ([arxiv:2212.08073](https://arxiv.org/abs/2212.08073))**。把 RLHF 的人类偏好换成模型自己根据 constitution 生成的偏好，post-train compute 进一步压缩；这也是后来 RLAIF 路线的起点。
+- **2023-05 — Rafailov et al., *Direct Preference Optimization* ([arxiv:2305.18290](https://arxiv.org/abs/2305.18290))**。证明 RLHF 的 RL 步可被 closed-form 替换为 supervised loss，post-train compute 再降一个量级，但 *outcome 几乎不变*。这反过来逼出一个不舒服的问题：如果 RL 那一步可被去掉，那 \"post-training compute scaling\" 到底在 scale 什么——是 *preference data 量*，还是 *optimizer 路径*？
+- **2024-02 — Lightman et al. (OpenAI), *Let's Verify Step by Step* ([arxiv:2305.20050](https://arxiv.org/abs/2305.20050))**。process-reward model (PRM) 在 MATH 上把 outcome-reward 的天花板再抬一档；首次把 \"verifier 信号密度\" 作为 post-train scaling 的隐藏轴写明。
+- **2025-01 — DeepSeek-R1 ([arxiv:2501.12948](https://arxiv.org/abs/2501.12948))**。RLVR (RL from Verifiable Rewards) 把 verifier 限定到 \"答案可机器判定\" 子集（数学、代码、形式逻辑），post-train compute 推到 pretrain compute 的 ~10%+ 量级，AIME / MATH-500 上跨过 o1-preview。同时 R1-Zero 给出关键 ablation：纯 RLVR 不经过 SFT 也能 emerge 长 CoT，但稳定性差、可读性差——这暗示 *post-train compute 的边际收益曲线在 SFT-bootstrap vs zero-bootstrap 上斜率不同*。
+- **2025-04 — Gao et al., *Scaling Laws for Reward Model Overoptimization* ([arxiv:2210.10760](https://arxiv.org/abs/2210.10760)) 的 RLHF-on-RM 延续工作 [unverified ID for 2025 follow-up]**。给出 reward model size × policy size × KL-budget 的三轴拟合，确认 \"post-train scaling\" 在 reward-hacking 边界处会反向——超过某个 KL 距离后下游真实 utility 下降，与 train loss 解耦。这是 post-train 第七轴 *天然是闭区间* 的第一条 controlled 证据。
+- **2026-05 — RLVR reward-hacking bundle ([2605.26733](../papers/paper_notes/2026-05-26-2605.26733-rlvr-reward-hacking.md)) [unverified bundle ID]**。系统记录 RLVR pipeline 中 verifier 自身的盲区被 policy 利用的 12 种模式（答案对但推理过程作弊、verifier prompt-injection、unit-test 过拟合、format-only reward gaming 等）。把 post-train scaling 的 *有效作用域* 从 \"verifier 存在\" 收窄到 \"verifier 无可被利用盲区\" —— 这个子集在 frontier 任务上正在快速缩小。
+
+把这一束证据整理出来可以提一条 candidate：
+
+- **C-SCALE-7 — Post-training compute scaling 是闭区间 + 非 NTP 子轴**。在固定 base model 上，post-train compute C_post 与下游 verifier-aligned utility 的关系 *先单调上升后反弹*：log utility ≈ γ log C_post − δ (C_post - C\\*)² for C_post > C\\* (reward-hacking 区域)，C\\* 取决于 verifier 质量与 KL-budget。**作用域**: 仅当存在低噪声 verifier（数学 / 代码 / 形式逻辑）；在 open-ended 任务上 γ → 0 与 C-SCALE-4 (inference-time scaling) 对偶。**Falsification**: 找到一个 RLVR setting，使 C_post 增加 10× 后 verifier-aligned utility 与 *holdout 真实 utility* 同步线性上升，且未观察到 reward-hacking-style decoupling。**当前评估**: medium——三条独立证据线（Gao 2022 RM-overoptim、R1-Zero ablation、RLVR reward-hacking bundle）方向一致，但 γ / δ / C\\* 的跨任务族稳定性尚未做 Hoffmann 量级拟合；且 \"是否仍属 NTP 七轴之一\" 仍有定义争议。
+
+C-SCALE-7 与前六条候选的关系最复杂的一处：它 *在形式上* 推翻了 \"scaling NTP 就是 scaling pretrain (N, D)\" 的朴素叙事——2025 R1 / o1 之后的能力跃迁里有相当大一块来自 post-train compute 而非 pretrain compute。但 *在 NTP-cap 论争上*，它又强化了前六条：因为 post-train compute 的作用域被 verifier-existence 严格圈住，open-ended NTP 任务（创意、长对话、broad world-knowledge）的 ceiling 几乎不被 post-train scaling 抬动，与 C-SCALE-4 的 inference-time 限定域 *完全重合*。两条独立 scaling 法则同时指向同一个 \"verifier-rich subset\" 子域，这本身就是关于 NTP 普适能力上界的强证据。
+
+### 反例 / 边界条件
+
+- **\"Post-train compute 是不是 NTP\" 的定义问题**：DPO 之后 RL 步可被纯 SFT 替代，那 post-train compute 在 DPO setup 下就退化为 *additional supervised data on preference pairs* —— 与 pretrain D 的差别只在数据分布，objective 仍是 cross-entropy。这意味着 C-SCALE-7 的部分外延可被吸入 C-SCALE-6 (data-quality multiplier)。两者的清洁分界目前 [unknown]，需要一个 \"控制 preference data 量 × 改变 RL/SFT 选择\" 的 controlled study。
+- **RLVR verifier 自身的容量瓶颈**：当 policy 接近或超过 verifier 自身能力时（前沿数学、open-ended 代码 review），verifier 不再提供 informative signal，C-SCALE-7 的 γ 自然趋零。这把第七轴的有效 horizon 限定到 \"verifier 比 policy 强\" 的差距上——这个差距在 frontier model 上是递减的。
+- **Process reward 是否突破 outcome-reward 上界** [uncertain]：Lightman 2023 的 PRM800K 在 MATH 上给出明确 lift，但近一年 R1-style outcome-only RLVR 在同任务上追平 PRM-augmented 系统，且工程上更简单。\"process-reward 是否真正提供新增 capacity\" 还是仅 *压缩了到达同样上限的 sample efficiency*，2026 公开数据尚未给出 clean 答案。
+- **Self-play / self-distillation 路径的边界**：R1 → R1-Distill 的 7B 模型在 AIME 上超过 GPT-4o 这一事实，可读为 \"post-train compute 通过 distillation 转移到一个 *更小 base* 上的 NTP 能力提升\"——但这一路径的 ceiling 显然取决于 teacher 自身的 post-train 顶点，与 C-SCALE-5 (bits/param) 的 capacity 上界存在张力，目前无定量分析。
+
+### 2026-05-28 判断
+
+C-SCALE-7 是六轴之外最 *政治上敏感* 的一条：承认它，就要承认 2024–2026 frontier model 的能力增量有相当部分不来自 pretrain NTP scaling 本身——这对 \"NTP is all you need\" 与 \"NTP has fundamental caps\" 两派都不舒服。但 *经验上证据扎实*：post-train compute → verifier-aligned utility 的拟合在 frontier lab 内部已成共识，公开侧 R1 / R1-Zero / DPO 三条独立线足以支持把它写进 candidate 表。
+
+更关键的元判断：**C-SCALE-4 (inference-time) 与 C-SCALE-7 (post-training) 共享同一个 \"verifier-rich subset\" 作用域**——两条 scaling 法则各自钉一个轴，但有效域几乎完全重合。这给出一条相当结实的元结论：*2024 之后 NTP 框架内 \"scaling 真正在工作\" 的子域，正在向 \"存在低噪声 verifier 的任务\" 收敛*。在没有 verifier 的 open-ended 任务上 (N, D, C_train, C_inference, C_post) 五轴里有三轴 (4 / 7 加上部分 1) 边际收益接近零，剩下只有 (N, D) + bits/param + data-quality 这三条传统轴，且后两者也被 model-collapse / decontamination 边界圈住。
+
+这恰好与 [reasoning](reasoning.md) 的 \"工程上可做、社会学上不做\" 第五块 (objective-engineering) 同构：把 NTP loss 替换为 verifier-shaped loss，是 2026 工程社群已经默认在做但 \"NTP-mech 派\" 尚未正式承认的范式偏移。**写在七轴的最后，正是要把这个偏移标记为 explicit taxonomy 级断点**，而不是隐藏在 \"NTP scaling 仍在继续\" 的统一叙事里。
+
 ## Open problems
 
 - 把 Shannon SNR 视角与 superposition / knowledge capacity scaling 统一成一个 SNR-superposition 法则。
@@ -134,6 +167,8 @@ C-SCALE-6 与前五条候选的张力：它在 *training data 侧* 给出 plasti
 - 长尾事实的 "频率代理" 度量改良——离开 web-frequency 后该 sigmoid 是否仍成立。
 - catastrophic overtraining 的 D\* 是否是 optimizer / LR-schedule artifact——若是，则 C-SCALE-3 应降级为 pseudo。
 - summarized-CoT 把 Ω(H) sample-complexity 转成 inference-time compute 的 "等价代价" 是否有 lower bound——即是否存在 "用推理时间换样本量" 的硬上限。
+- C-SCALE-7 与 C-SCALE-6 的清洁分界——DPO setup 下 post-train compute 与 data-quality multiplier 的可分离性是否经得起 controlled study。
+- verifier capacity ceiling 之外：当 policy 反超 verifier 时，post-train scaling 是否存在 \"self-play 闭环\" 让 γ 重新非零，还是必然收敛到 verifier 上限。
 
 ## Cross-links
 
