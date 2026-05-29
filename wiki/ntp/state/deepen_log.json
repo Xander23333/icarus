@@ -1312,6 +1312,16 @@
       ],
       "chars_added": 5800,
       "note": "Task B causality.md +§三个 <1 GPU-week 实验的半年披露差核查 (C-CAUSAL-DISCLOSE corollary, 不入主表, 仅 §10 evidence 脚注 + taxonomy 升降级历史): 把 §RL-from-environment 末段三个 controlled 实验 (i) R1-Zero/SFT/final × CLadder Layer-2 (ii) 单 base × RL-vs-SFT × CLadder + UUID-rename Zečević (iii) Boundless DAS 在 (i)(ii) 前后权重上找 do-circuit 的执行缺席从单段叙述升级到半年时间常数显式刻度方法学债; 与 C-SCALE-D-DISCLOSE / OP-WM-1..5 / C-GROUND-PROTO / C-CONT-2 第三支柱 / C-EMBOD-7 route-elimination 五处同型 corollary 共享四档时间刻度 (半年→一年→两年→任一关闭清零), 构成 §10 第八种几何加密 (时间侧对偶) 在 causality 域第六个落点. 三个独立 referee 反方向 (frontier 内部 ablation 不公开 / 学术沉默偏差 / R1 MMLU 间接证伪) 各自拆解; 与 C-CAUSAL-2 正交不混读; 下一 C tick 同步债务: 把本 corollary 与 C-WM-6/7 / C-GROUND-PROTO / C-CONT-2 第三支柱 / C-EMBOD-7 / C-SCALE-D-DISCLOSE 并列写入 §10 evidence 列脚注 + taxonomy 升降级历史登记, 不开 §10 第八条 evidence-supply 通道, 不动主表 (C1-C7 + Reversal Curse 不变). N4 §7 下次扩写仅脚注引用不开新节. Rotation: prev causality.md tick 2026-05-28T21:00Z 隔 ~10h, 与 prev (C ntp_survey+taxonomy 06:34Z) 不冲突. No fabricated IDs: 2501.12948 / 2305.08809 / 2304.14997 verified-format; R1 MMLU 5-10pp 标 [unverified 具体数字]; 2026-Q1 reasoning-RL 技术报告标 [unverified bundle]; NeurIPS/ICLR desk-reject 标 [unknown]. 字符净增 +5800 estimate."
+    },
+    {
+      "tick_utc": "2026-05-29T07:34:42Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4200,
+      "note": "Task A N2 §八 2026-05 末补遗: 把 §六三道暗门拼成 backbone (attention vs selective-SSM) × scratchpad (loop vs CoT) 2x2 小地图, 四格全部命名 (Giannou 2301.13196 / Merrill-Sabharwal 2310.07923 / C-FORM-8 / C-FORM-8b), 兑现 survey §10 C-FORM-8b sync 段末段 'N2 §7 下次补遗可挂一句 SSM+CoT 共享 Merrill-Sabharwal 上界但 learnability 侧未测脚注' 显式挂账 (实际写成独立 §八 而非脚注, 信息密度需要); 钉两件 §六讲不出的事 (i) latent/pause 与 unbounded rollout 是 scratchpad 维内化/外化两端, frontier 默认走外化 (§9(4) 19a/19b 拆分对应), (ii) worst-case 上界沿 backbone 一维 trivial 继承, 真正未测的是 learnability 缝 (Mamba+CoT S_5 长度泛化 1 GPU-week controlled comparison 无人接), 与 §七 C-FORM-4 内圈墙是同一件事两侧; 与 N8 §四反墙第 (ii) 条 capacity 维度超越 transformer 可证伪窗口收窄对偶. Rotation: prev N2 edit 2026-05-29 05:04Z (B reasoning.md tick 之后 N2 §7 当时已收), 间隔 ~2.5h, 与 prev tick C-EMBOD-7 corollary causality.md (07:01Z) 不冲突. README 状态行 §7 → §7+§8 字数估计 7000→8000. 不动主表 (C1-C7+Reversal Curse), 不开新 sub-candidate/corollary/route-elimination 槽位, 不开新同步债务. 引用 ID 均已 verified-format (2404.08819/2301.13196/2310.07923), 未编造定理/数字/作者. 字符净增 ~4200 estimate."
     }
   ]
 }
