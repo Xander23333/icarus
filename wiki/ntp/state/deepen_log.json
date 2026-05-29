@@ -1416,6 +1416,15 @@
       ],
       "chars_added": 7800,
       "note": "reviewer pass — M1 元-审计同步 (C-CAUSAL-DISCLOSE 候选 m_{10} 归属 + falsifier 三处歧义收紧 + 互引补充 world_model OP-WM-2a/2b · reasoning C-REAS-7 · grounding C-GROUND-PROTO 候选 m_9); 12 天冻结协议下不增条; M1 reviewer-tier 闭环闭合在 5 topic (causality + embodiment + grounding + world_model + scaling_limits)"
+    },
+    {
+      "tick_utc": "2026-05-29T13:03:15Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/formal_limits.md"
+      ],
+      "chars_added": 5400,
+      "note": "formal_limits.md reviewer pass — §Open problems 五条无标号 bullet 顺手补 OP-FORM-1..5 标号 (与 OP-SCALE-1..7 / OP-WM-1..5 同型), 半年进展核查 5/5 未完全关闭 (OP-FORM-2/3 各部分动, OP-FORM-1/4/5 完全未动); 归因二分 (3 理论 / 2 方法学 / 0 披露) — 与 scaling_limits 三分对比给出 C-SCALE-D-DISCLOSE corollary *第二处* 作用域差异 (formal 域 0/5 披露类, 边界外反例); 严守 12 天增条冻结协议不增条; 第七次同型重复登记; rotation: prev D N3 → 本 B formal_limits (不同文件不同 task type, 距上次 edit ~40h)"
     }
   ]
 }
