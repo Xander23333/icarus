@@ -119,8 +119,22 @@ Sora 阵营是从强命题往后撤，Genie 阵营是把弱命题往强加注，
 
 **元判断 (2026-05-30)**：三项查账不动 §六三层押注的*方向*，但把每一层都收紧了一格——Sora 强命题 15% → 10%（轻微）、Genie 单押 L2 40% → 25–30%（实质下调）、Hybrid 路线 ~45% → ~55%（实质上调）。三条收紧合起来不构成新预测，只是把 §六同一句话「单独路线赢不了，Hybrid 会赢」的支持证据从 *一篇章末的诚实判断* 升级到 *半年三条 sub-candidate 形式背书*。同型于 N2 §七 TC⁰ 之墙、N3 §七三 bet 赔率结构、N4 §七 Layer-3 评测谱、N5 §七 Bet-N5 falsifier 网、N7 §七 annealing-as-stealth-CPT——这是本系列样章 §七补遗的第五次重复同一种节奏：*mech 命题方向不变、evidence-base 与 falsifier 精度逐节加密、单押概率被组合方案吃掉*。这条节奏本身可能在 2027 年值得在 N1 §3「NTP 三道天花板」元框架里加一段「赔率重分配 ≠ mech 信号增强」的警示——否则容易把方法学加密误读为科学进步。最后一条诚实警告留给未来 Xander：上述三个下调/上调数字全部带 [uncertain] 标记，意义不在数字精度而在三个数字必须**联动**（Genie 单押下调与 Hybrid 上调必须同方向），这是赔率重分配的内在一致性条件，单看任何一项孤立调整都是错的。
 
+## 八、2026-05 末再补一段：把「Hybrid 路线胜出」与 N5 / N7 的同名判决并排放
+
+§七 第三查账给出 Hybrid 路线胜出概率从 §六隐含 ~45% 上调到 ~55%，落款时间 2026-05-30。同一周 N5 §七 (2026-05-29 03:35 UTC) 与 N7 §七 (2026-05-29 17:09 UTC) 各自落了一个**同名形态**的判决——三处合起来值得用一节单独拎出来，否则三条线分别藏在三章 §七里，未来 Xander 回检时容易当作三件独立的事。
+
+**对位 1：N5 §七 Bet-N5-3（缝合线胜出）**。命题：到 2028-06-30，任何 frontier embodied 模型公开 paper / tech report 会显式包含一个 *非 NTP 训练的* tokenizer 模块（VQ-VAE / RVQ / DCT-BPE / latent JEPA 之一），且 ablation 显示去掉这一层会让长程任务成功率下降 ≥20pp。这是 embodiment 战线上的「Hybrid 胜出」陈述——VLA 阵营与 JEPA 阵营都不独立赢，赢的是 (非 NTP 训练的 tokenizer) ⊕ (NTP 训练的 policy) 这个组合。N6 §七 第三查账给的 video 战线「Hybrid 路线」由 latent action (Genie) + verifier (Dreamer) + representation-space prediction (V-JEPA) + 部分 pixel decoder (Sora) 四块拼出——拆开来读，这恰好是 N5 Bet-N5-3 在 video 模态上的*同构* 实例：tokenizer 由非 NTP loss 训出 (latent action codebook / JEPA energy / VAE-style reconstruction)，policy / generator 头由 NTP loss 跑。两章的判决方向因此不是巧合而是结构对称——都说 *NTP 适合 X 这件事取决于 tokenizer 设计*，X = 身体 / X = 视频 在 2026-05 这个时点给出同一形态的中间判决。
+
+**对位 2：N7 §七 annealing-as-stealth-CPT**。N7 给的判决是 frontier 主流 (Llama 3 / DeepSeek V3 / Qwen2.5) mid-training annealing 本质上就是被改名换姓的 continual-pretraining——把一个理论上"应该不可能"的事 (frontier 持续学习) 拆成"被工程默认在做、但不被命名"的隐性混合范式。这条与 N6 Hybrid 路线胜出的同构点在于：两者**都不是单一路线胜出**，而是**几条路线在没有谁明确认输的情况下被工程默认融合**——video 这边的 Hybrid 没有 OpenAI / DeepMind / Meta 中任何一家公开承认"我们放弃了 single-architecture 押注"，但 §三 Genie 系列已经在用 latent action codebook、§四 V-JEPA 系列在用 latent predictor、§五 Dreamer 系列在用 verifier-loop，三条线在工程层叠加；continual learning 这边的 stealth-CPT 同样没有任何一家公开承认"NTP 不会持续学习这件事是错的"，但 annealing 阶段实际上每六个月就在做该事。**两条都是「Hybrid 胜出但无人宣告」**——这是 2026-05 这个时点 mech 调查的元-形态。
+
+**对位 3：N4 §七 Layer-3 评测谱 + N3 §七 三 bet 赔率结构**。N4 给的是 text 侧 Pearl L3 评测在 2025-12 → 2026-05 协议性缺位 (CRAB / CausalProbe-2024 / Det-CausalBench / CounterBench / τ-Bench 五条全部漏掉至少一项 leak-check)。N6 §七 第一查账给的是 *video* 侧 Pearl L2 评测的完全缺位 (五条 benchmark *没有一条是 video-modal*)。两层缺位合起来意味着 Hybrid 路线胜出这个判决本身**当前无法被独立验证**——它依赖的 L2 / L3 评测在两条模态上都没人做出来。N3 §七的三 bet 赔率结构 (reversal / faith-and-fate / inverse-scaling 三块各自赔率) 给的方法学模板恰好可以套用：N6 §七的三层赔率 (Sora 10% / Genie 25–30% / Hybrid 55%) 与 N3 §七三 bet 同型，都是 *单押 vs 组合* 的概率重分配。N3 给的是 mech 内部三块拼图的赔率，N6 给的是 mech 外部三条路线的赔率，两个赔率结构在数学形式上是同一张 *Dirichlet over routes* 表的两次实例化。
+
+**这一节的元判断**。把四章 §七 (N5 / N6 / N7 + N4) 并排放，2026-05 这个时点 NTP 系列实际上在反复说同一句话：**任何单一 mech 候选路线在 sub-candidate 网逐条加权后胜出概率都会下降，所有质量被推到 Hybrid / 组合 / 多路线叠加方案，但这个组合胜出的判决目前没有任何标准评测能够验证**。这句话比 N1 §尾声"NTP 调研要让 mech 派有一个像样的失败方式"更具体——它把"像样的失败方式"压成了 *一种特定的失败几何*：单押路线赔率均匀塌缩、组合方案赔率上升、组合方案被结构性社会学不可证伪闭环包裹。这是本系列样章 §七 / §八 补遗第六次重复同一种节奏（前五次见 §七元判断段所列 N2/N3/N4/N5/N7），但第一次把这种节奏命名为「赔率塌缩 → Hybrid 上升 → 评测墙包裹」的三段几何。
+
+留给 2027-12 回检的锚：如果到那时 (a) Sora / Genie / V-JEPA 三家中任何一家独立兑现 video L2 评测某一项 (赔率塌缩反向)、或 (b) Hybrid 方案虽兑现但被某家 lab 公开声称 *本质上仍是单一 mech 路线的延伸* (Hybrid 命名失效)、或 (c) video L2 标准评测从无到有出现且被三方任一显著超越 (评测墙倒塌)——三种情形任一发生都意味着本节给的三段几何被部分推翻；若三年继续如 2026-05 现状（赔率塌缩 + Hybrid 上升 + 评测墙包裹三件事同时发生），本节将作为 *本系列样章 §七节奏的最早命名* 被回引。这条命名工作不增 §10 候选条 (严守 2026-05-30 → 2026-06-10 12 天增条冻结协议)，只在 sample 层固化已经被七条 sub-candidate 反复演示过的几何形态，方便未来 Xander 在 N1 §3 框架修订时直接调用。
+
 ---
 
-*相关 topic：[causality](../topics/causality.md)（§Video world model rollback 形式检查给 Genie 路线 escape route 拆成三条耦合债务）、[world_model](../topics/world_model.md)（C-WM-7 latent-action codebook 可辨识性是 §七第二/第三查账核心约束）、[grounding](../topics/grounding.md)（C-GROUND-5 action-execution gap 是 latent action → physical action 迁移桥的 referent 障碍）。*
+*相关 topic：[causality](../topics/causality.md)（§Video world model rollback 形式检查给 Genie 路线 escape route 拆成三条耦合债务）、[world_model](../topics/world_model.md)（C-WM-7 latent-action codebook 可辨识性是 §七第二/第三查账核心约束）、[grounding](../topics/grounding.md)（C-GROUND-5 action-execution gap 是 latent action → physical action 迁移桥的 referent 障碍）。相关 sample：[N5 §七 Bet-N5-3](N5-embodiment-and-vla-bet.md)（缝合线胜出, embodiment 模态同构）、[N7 §七](N7-why-llm-cannot-continually-learn.md)（annealing-as-stealth-CPT, continual learning 模态同构）、[N3 §七](N3-three-puzzle-pieces.md)（三 bet 赔率结构, Dirichlet over routes 数学同型）、[N4 §七](N4-pearl-ladder-and-llm-ceiling.md)（text 侧 Pearl L3 评测谱协议性缺位）。*
 
 ---

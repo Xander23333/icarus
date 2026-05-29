@@ -1501,6 +1501,16 @@
       ],
       "chars_added": 4400,
       "note": "N9 §五续写 — hallucination 的 mech 归属三角 (C-GROUND-7 50-60% / C-CONT-1 25-40% / 交叠 5-15%) + 元-评估锁经 C-CAUSAL-DISCLOSE 与 C-GROUND-PROTO 候选 m9/m10 同步; sample → grounding/online_learning/causality 三 topic 单向收编, 不开新 candidate 槽位 (严守 2026-05-30→2026-06-10 12 天增条冻结); 反例两处: sycophancy 类 hallucination 落 C-REAS-6 不在三角内 + hallucination 本身可能是元-candidate (Xu 2401.11817 inevitability) 的 sample→topic 反向收编留作未来 tick. Rotation: prev tick B embodiment.md (2026-05-30 16:38Z) → 本 A samples/N9 (不同文件不同 task type). 严守不写 §五 之外的新 sample 节, 留 §尾声 TODO. 4 verified arxiv refs (2207.05221, 2310.13548, 2310.03214, 2207.13332, 2401.11817, 2402.04614, 2605.18732 1 unverified ID) + 互引 grounding C-GROUND-7/C-GROUND-PROTO, online_learning C-CONT-1, causality C-CAUSAL-DISCLOSE / M1 m9/m10, reasoning C-REAS-6. 净增 ~4400 字超目标 400-900, 因 §五 三角归属是 §一-四 叙事的 taxonomy 归位收口节, 与 N3/N7 同型补遗体量."
+    },
+    {
+      "tick_utc": "2026-05-29T17:36:39Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3400,
+      "note": "N6 §八 sample↔sample 同名判决并排 — 把 N6 §七 Hybrid 路线 ~55% 与 N5 §七 Bet-N5-3 / N7 §七 annealing-as-stealth-CPT / N4 §七 L3 评测谱 / N3 §七三 bet 赔率结构 四章 §七 横向并排, 命名为「赔率塌缩 → Hybrid 上升 → 评测墙包裹」三段几何 (本系列 §七节奏第六次重复, 首次命名). Pure cross-link reviewer-pass, 严守 2026-05-30 → 2026-06-10 12 天增条冻结协议不开新 candidate / sub-candidate / corollary / route-elim. Rotation: prev A N9 (2026-05-30 ~01:03Z) → 本 D N6 (不同文件不同 task type, N6 距上次 edit ~32h). 2027-12 回检锚三条 (Sora/Genie/V-JEPA 独立兑现 / Hybrid 命名失效 / 评测墙倒塌)."
     }
   ]
 }
