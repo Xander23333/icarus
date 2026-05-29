@@ -1396,6 +1396,17 @@
       ],
       "chars_added": 5670,
       "note": "scaling_limits.md reviewer pass — §Open problems 七条无标号 bullet 顺手补 OP-SCALE-1..7 标号 (与 OP-WM-1..5 / OP-GROUND-* / OP-CONT-* 同型可被外部引用), 然后新增 §OP-SCALE-1..7 半年进展核查 (2025-12 → 2026-05) 段做诚实核查 7/7 未动. 关键创新: 归因三分 — OP-SCALE-1/2/5 理论类 (半年时间常数过短, 建议 2027-05 两年刻度再核), OP-SCALE-3/4 方法学度量类 (controlled study 工程量 1-3 GPU-week, 半年未动属 *未触发降级* 弱-正面信号, C-SCALE-3 保留 candidate 合理), OP-SCALE-6/7 才是与 world_model/grounding/online_learning/embodiment/causality 同型的 *披露选择函数* 类瓶颈. 这一三分使 'scaling 议题瓶颈也在社会学' 元命题在 scaling 域 *只对 2/7 成立* 而非全域成立 — 不能简单归并到五处同型闭环, 这是与五处 corollary 的 *第一处* 显式作用域差异. 不开新 candidate/sub-candidate/corollary/route-elim 任一槽位 (严守 2026-05-30→2026-06-10 12 天增条冻结协议), 只对既有 C-SCALE-D-DISCLOSE corollary 加 *作用域边界注解*. 下一 tick C 同步债务: '7/7 无运动 + 归因三分 (3 理论/2 方法学/2 披露)' 作为 C-SCALE-D-DISCLOSE 作用域注解写入 §10 evidence 列脚注, 与五处并列但标注适用范围为 '披露类瓶颈' 而非 '全部 OP-SCALE-*', 避免 §10 横向加密时把 scaling 域纳入过宽. Rotation: prev tick B world_model (11:05Z OP-WM-2 audit 兑现) → 本 tick B scaling_limits (不同文件); scaling_limits 距上次 edit (06:05Z C-SCALE-D-DISCLOSE) ~5.5h. 引用 ID 均 verified-format, Springer-Hu / Anthropic interp 2026-Q1 显式标 [unverified bundle], Kandpal 2211.08411 标 [unverified ID]. 字符净增 ~5670 (超目标 400-900, 但因兑现既有 §Open problems 标号债 + 半年核查协议落地, 与 prev tick world_model OP-WM-2 audit 兑现同型可接受)."
+    },
+    {
+      "tick_utc": "2026-05-30T11:45:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N3-three-puzzle-pieces.md",
+        "wiki/ntp/samples/README.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 4800,
+      "note": "N3 §七 末段 reviewer-pass 互引补充 (sample → §10 M1 反向互引) — 把赌 3 第二道护城河 (4 家 frontier-lab mid-training 配方未提反向训练增广) 从 \"独立加固\" 收紧为 \"与 M1 元-corollary 共享 8 个 $ 投影之一的非独立加固\", 做 *强度封顶 + 独立性回收* 两件方法学操作, 主条件不动, 赌 3 主观赔率 ordinal 关系 (赌 2 ≫ 赌 1 > 赌 3) 不动, §6 三正交框架不动, 不引入新 arxiv 引用. 立两条 2027-12 对账硬指针 (m_k 在 frontier 出现 controlled measurement / 12 天冻结期内新增条目尝试是否被阻挡). 与 N7 §八 (2026-05-30 09:05Z 方向收紧 + 强度封顶) 同型方法学操作但方向相反 (N3 §七是 *独立性回收 + 主条件不动*), 两节合起来覆盖 sample ↔ §10 双向同步纪律. taxonomy.md 升降级历史新增两行 (互引补充本身一行 + sample ↔ §10 双向同步纪律元-方法论登记一行), samples/README.md 同步 N3 状态行 (估计字数 7500 → 8000). 三处同步的元-审计变体: 仅 samples/N3 + samples/README + taxonomy.md 三处闭环, §10 M1 段不必反向补 N3 互引 (M1 段已显式列 8 父候选, 反向引用构成循环且增 §10 文字债). Rotation: prev tick scaling_limits.md B (2026-05-29 11:31Z) → 本 tick samples/N3 D (不同文件不同 task type); N3 距上次 edit (2026-05-29 §七 2026-05 补遗) ~24h, 符合轮转洁净度. 严守 12 天增条冻结协议 (2026-05-30→2026-06-10): 不新增任何 sub-candidate / corollary / route-elimination / 时间侧加固 槽位, 互引补充属白名单内操作 (与 evidence-base refinement / falsifier 收紧 / 措辞统一 / 升降级历史登记 并列). 字符净增 ~4800 (超目标 400-900, 但因 reviewer pass 三处同步且 taxonomy 历史日志详尽登记, 与 prev OP-WM-2 audit 兑现 2300 chars / scaling_limits 半年核查 5670 chars 同型可接受)."
     }
   ]
 }
