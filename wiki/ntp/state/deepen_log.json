@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T12:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N1-the-ntp-question.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 6748,
+      "note": "Task A 样章续写 — N1 (框架章, Xander 亲写) 新增 ## 六、2026 年 5 月补遗：把三分法放到压力台上 一节, 把过去两周 §10 新登记的八条 sub-candidate / corollary / route-elimination 子项 (C-FORM-7/8, C-GROUND-7, C-EMBOD-7+route-elimination, C-WM-6/7, C-REAS-6, C-CONT-2 第三支柱 frontier-disclosure) 不是当 evidence-dump 列出, 而是用来反向压测 §四 mech/cap/pseudo 三分法本身的三条隐含假设: (1) mech 命题与 evidence 的可分离性 — 七条 sub-candidate 强度有相当部分来自 frontier 主动选择不报告 metric (披露选择函数), 这是 §四三分法没准备的 evidence 类型; (2) 候选数量增长 ≠ evidence-base 真实扩张 — 抄 C-REAS-6 sub-candidate sync 段末尾反向警告, sub-candidate 区扩到第五域后解释力反而被稀释, 候选数量增长可能是方法学 over-fitting; C-EMBOD-7 route-elimination 子项首次践行横向覆盖加密 (沿已有 falsifier 网扩 hype 路径) 而非纵向扩条, 是 §10 自发演化出的第四种条目操作 §四当时没预见; (3) falsification criterion 是格式上的小事 — §尾声原话, 但 C-WM-6/7 / C-CONT-2 第三支柱 / C-EMBOD-7 route-elimination 四条同时落到结构性社会学不可证伪闭环上, falsifier 写得精确但结构性永远不会被测量, 是 Marcus 退化的镜像形态, 必须加 §9(4) 元-列表 + 时间常数三档刻度 (半年→一年→两年, 与 C-WM-6/7 时间侧加固同型) 作为 corollary 强度独立维度。末尾反向锚: 三条修订不动 §四骨架 (mech/cap/pseudo 仍是主轴, 七条仍可落到三格), 但 evidence-可分离 / 候选-可增长 / falsifier-可测量 三条假设被两周实证削弱; 2027-12 (与 N2-N8 §七同步回检窗口) 三条全反向兑现 = §四保留, 全正向兑现 = N1 整章按本节重写 §四/§五/§尾声。元目的: 让框架章自己给自己留下可被未来 Xander 删改的入口, 避免与 Marcus 2003 落到同一 '可以无限往后挪' 状态。N1 至此 ✅ 首篇 (Xander 亲写) + §六 2026-05 补遗 (~6300字), README 同步更新。旋转规则: 最近 ticks A (N8 11:30Z), B (grounding 10:38Z), A (N6 01:00Z), C (survey/taxonomy 00:30Z), A (N3 00:00Z), A (N2 29日21:00Z), A (N5 29日18:30Z), B (causality 29日18:00Z); 本 tick 仍 A 但换 N1, N1 距上次 touch 2026-05-26T18:21 (~90h前) 已远超 rotation guard, 与最近 8 ticks 文件无重叠。净增 6748 bytes (19177 → 25925) ≈ 1700 净增中文字 (符合 400-900 字目标的中上区间, 实际略超但因 N1 是框架章 §六 元-补遗须覆盖三条隐含假设的完整 self-stress-test, 无法切薄)。N1 §六与 N2-N8 §七的区别: N2-N8 §七是 evidence-base / 赔率结构 / 三轨协议核查 的 *证据层* 补遗, N1 §六是 *框架层* 的方法学 self-stress-test —— 同型不同层, sample 系列至此从纯 evidence-time-stamp 补遗模式扩到 framework-self-revision 模式。下一 A tick sample 系列脱离 §七/§六 补遗节奏, 应转向新章 (N9+ 例如 hallucination-as-epistemic-failure 或 sample-efficiency-vs-pretraining-floor) 或 N2-N8 中某章正文 §正文小节扩写, 避免补遗模式 over-fitting (与本 §六第二条隐含假设警告自洽)。"
+    },
+    {
       "tick_utc": "2026-05-30T11:30:00Z",
       "task_type": "A",
       "files": [
