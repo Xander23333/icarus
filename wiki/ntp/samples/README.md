@@ -24,7 +24,7 @@
 | N6 | [World model = 视频生成？三个团队的三种答案](N6-world-model-three-answers.md) | 🔨 推进中（§1–§6 + 尾声 + §7 2026-05 补遗 + §8 sample↔sample 同名判决并排 (N5/N7/N4/N3) / 估计 8500字） |
 | N7 | [Continual learning：为什么 LLM 不会持续学习](N7-why-llm-cannot-continually-learn.md) | 🔨 推进中（§1–§6 + §7 + §8 2026-05 末再补遗 / 估计 9000字） |
 | N8 | [Sutton 又赢一次？回顾被打脸的"机制墙"](N8-sutton-wins-again.md) | 🔨 推进中（§1–§6 + 尾声 + §7 2026-05 补遗 / 估计 12000字） |
-| N9 | [Hallucination 是 NTP 的能力问题，还是认识论缺陷？](N9-hallucination-as-epistemic-failure.md) | 🔨 推进中（§一–§五 / 估计 8500字 / 65% — 2026-05-30 §五 mech 归属三角 (C-GROUND-7 / C-CONT-1 / C-CAUSAL-DISCLOSE) 续写） |
+| N9 | [Hallucination 是 NTP 的能力问题，还是认识论缺陷？](N9-hallucination-as-epistemic-failure.md) | ✅ §一–§五 + §尾声 (~9500字) — 2026-05-30 §尾声 赔率结构 + 三条触发条件 + 元-candidate 升级赔率 |
 
 后续篇目由 **半小时 cron** (`ntp-deepen-30min`) 自动续写——每次只挑一篇 stub 推进 ≤800 字，或扩写 topic 页面。每日 07:00 daily cron 会在日报里 roll-up 过去 24h 的扩写记录。
 
