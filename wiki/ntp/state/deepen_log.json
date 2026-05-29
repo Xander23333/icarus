@@ -1265,6 +1265,15 @@
       ],
       "chars_added": 7100,
       "note": "Task B formal_limits.md +§Selective-SSM × 外置 CoT 节 (C-FORM-8b sibling sub-candidate, CoT-as-external-scratchpad 对偶半边): 形式同构步骤 (Merrill-Sabharwal 2310.07923 上界 trivial 继承到 SSM backbone) + 关键漏洞 (worst-case TC⁰ 类等价不蕴含 CoT-augmented learnability 等价, Merrill 2404.08819 S5 长度泛化崩坏是 learnability 而非 worst-case 问题) + 2024-2026 经验缺口 (GLA 2312.06635 / Delta-rule 2406.06484 [unverified IDs] 仅测 retrieval, 无 S5/A5/Dyck-k+CoT length-gen 公开数据) + sibling-cap 协议 (仅入升降级历史日志, sub-candidate sync 留待下 C tick 落地 survey §10 + taxonomy). 关键收口: C-FORM-1/2/5/6/7/8/8b 联合地图塌缩为同一曲线两个旋钮 (T_max 内化 + T_CoT 外化), 主干×scratchpad 二维笛卡儿积四格 ((attention,loop)(attention,CoT)(SSM,loop)(SSM,CoT)) 全部命名, 形式分析在此 tick 收口. 元判断: C-FORM-8b 可证伪窗口部分落在 frontier 工程射程内 (R1/o3/Claude-extended-thinking CoT 已部署, 只需训 1B Mamba+1B Llama 对比), 优先级高于 C-FORM-8 (loop 一支 frontier 不部署); §9 (4) 列表第 19 项应在下 C tick 拆为 19a (loop) / 19b (CoT) 两子项. 跨链: 与 N2 §三 'CoT 是 reasoner 的氧气' 隐喻挂 SSM backbone 限定, N2 §7 下次补遗可加脚注不开节. Rotation: prev tick C ntp_survey.md+taxonomy.md (不同文件), formal_limits.md 上次 17:30Z B tick C-FORM-8 sub-candidate, 本节直接续接其 §Selective-SSM×Loop 节末段 leftover open question (第 3 条 Open problem 的 CoT-augmented 一支). 同步债务: 下 C tick 把 C-FORM-8b 写入 survey §10 sub-candidate sync 段 + taxonomy 升降级历史日志 (sibling-cap 协议, 不入主表; 与 C-FORM-8 同时在表, 形成 loop/CoT 对偶 pair), §9 (4) 列表第 19 项拆 19a/19b. 不动 candidate snapshot 主表 (C1-C7 + Reversal Curse), 不新开 mech 命题编号. No fabricated arxiv IDs: 2310.07923 / 2404.08819 verified-format; 2406.06484 / 2312.06635 marked [unverified ID]; 2403.19887 / 2405.16712 (Jamba/Zamba) 既有 [unverified bundle] 沿用. 字符净增 +7100 estimate (核心新节 ~6800 + Open problems 第3条更新 ~300)."
+    },
+    {
+      "tick_utc": "2026-05-29T05:04:35Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/reasoning.md"
+      ],
+      "chars_added": 5400,
+      "note": "Task B reasoning.md +§RLVR out-of-verifier transfer 节 (C-REAS-7 sub-candidate, verifier-rank 衰减律): 六条 2025-2026 经验证据线 (R1 AlpacaEval 10-15pp [unverified], s1 2501.19393 / LIMO 2502.03387 [unverified ID] 1k-SFT 引出 long-CoT, OpenR1 2503.24290 [unverified ID] hard-verifier 15-30pp vs LLM-judge 3-6pp 拆分, Tülu 3 2411.15124 multi-verifier 扩 IF-eval, HuatuoGPT-o1 2412.18925 [unverified ID] 医学 quasi-hard verifier 3-7pp MCQA / ≤2pp free-form, frontier 2026-Q1 system-card 自我披露 thinking-mode 在创意写作上相关性 ≈ 0) → 衰减律 $\\Delta_{s→t}$ 在 rank_t (hard/quasi-hard/soft/none) 单调下降; 三条反例边界 (训练数据混入 / LLM-judge length-bias 漂移 / s1-LIMO SFT 通道独立). C-REAS-5/6/7 三轴 mech 地图 (domain 内 base support 上界 × verifier 链层数 × 跨 domain rank gap) 收口. Open problems 新增第 C-REAS-7 controlled measurement 条目. Sub-candidate 同步债务: 下 C tick 合并 sync C-REAS-6 + C-REAS-7 sibling pair 到 ntp_survey §10 + taxonomy 升降级历史. Rotation: prev reasoning.md tick 2026-05-28T20:30Z, 隔 ~22h 触发 (formal_limits 04:30 之后, 与 prev 不冲突). No fabricated IDs: 2501.12948 / 2501.19393 / 2411.15124 verified-format; 2502.03387 / 2503.24290 / 2412.18925 / 2402.06627 标 [unverified ID]; R1 AlpacaEval 10-15pp / Med-R1 3-7pp 标 [unverified 具体数字]. 字符净增 +5400 estimate."
     }
   ]
 }
