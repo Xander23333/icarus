@@ -206,6 +206,27 @@ $$\varepsilon_{\text{do}}(M, X) = \mathbb{E}_{s,a}\bigl\|\mathbb{E}_M[s'\mid s,\
 
 回灌到 candidate 状态：OP-WM-1..5 不升级为独立 mech candidate（它们是 *元-方法论开题* 而非 mech 命题），但 *半年无运动* 这一事实可作为 §C-WM-6 (head-to-head paradigm benchmark deficit) 与 §C-WM-7 (latent-action codebook identifiability deficit) 两条 corollary 强度的 *时间侧* 加固——corollary 类条目的强度本质上是「应做且可做、但持续无人做」的时间常数，半年是该常数的第一次刻度，2027-Q2 还无运动则刻度升到一年。下一 tick C 同步债务：把「OP-WM-1..5 半年无运动」作为时间侧加固条款写入 [`../survey/ntp_survey.md`](../survey/ntp_survey.md) §10 C-WM-6 / C-WM-7 evidence 列脚注，与 §10 readout-side 结构性社会学不可证伪闭环的 7 条独立 evidence-supply 通道并列，不动 taxonomy 主表（与 §C-WM-7 corollary 登记同型处理）。
 
+## OP-WM-2 的内部不一致：black-box probe 究竟能做多少 (2026-05-29)
+
+§Open problems 写 OP-WM-2 的 *当前距离* 时同一句话里塞了两个互相打架的判断："工程上完全可做（API black-box probe 足够）" 与 "闭源厂商不愿暴露 latent"。半年核查段 §OP-WM-1..5 复述这条作 *未动* 的归因证据，但既然 API 已足够、社会学瓶颈又只在 *厂商* 侧，那为什么 *学界 / 第三方* 也没人做？这个反问值得正面回答一次——否则 OP-WM-2 的 "未动" 就会被外部读者按 "工程瓶颈" 而非 "社会学瓶颈" 解读，与 §诚实判断 末段元命题相矛盾。
+
+把 Hazineh 2023 ([arxiv:2309.07815](https://arxiv.org/abs/2309.07815)) Othello-GPT linear-probe 协议三个组件逐项对照 Genie 2 / Cosmos / Sora 三家 2026-05 公开 API surface 看：
+
+- **(i) 输入侧** — 给定 prompt $x$，三家都允许任意 prompt 提交并返回 video frames。这一条 *完全* 可做。
+- **(ii) 中间表征侧** — Othello-GPT 的 probe 是在 *某中间层 hidden state* 上拟合 linear classifier。Genie / Cosmos / Sora 三家 *都没有* 公开任何中间层 activation 接口；API 只返回最终生成的 pixel-space frames。这一条 *零* 可做。
+- **(iii) 输出侧 label** — Othello 需要 board state 真值 (closed-world 任务)；OP-WM-2 的 object identity / position / velocity 需要在 *生成的 video 上* 标注，要么外接 detector (引入第三方 perception model 的误差) 要么人工标注 (千-万 frame 量级)。这一条 *可做但成本不在 GPU 而在标注*，与原句 "API black-box probe 足够" 的 GPU-week 量级估计不符。
+
+三者交叉：OP-WM-2 的 *标准形态* (Hazineh 风格 linear probe on hidden state) 在 frontier video model 上 **物理上不可做**，因为 (ii) 被 API 关死。可做的 *退化形态* 是 "纯 input-output 行为 probe"——给同一 prompt 加小扰动看输出 object 位置变化率，本质上是 representational similarity analysis (RSA) 的退化版，与 Othello-GPT 的内部表征性质命题 *不同型*。Schut 2024 *AlphaZero's "concepts"* ([arxiv:2310.16410](https://arxiv.org/abs/2310.16410) [unverified ID]) 在 AlphaZero 上做过类似 black-box 行为 probe，结论是 input-output 信号能给出 *存在性* 结论 (有某种内部 representation) 但给不出 *几何性质* (该 representation 是 linear-decodable 的还是分布式的)——这正是 OP-WM-1 的 Vafa 2024 *probe accuracy 高 + state graph 不同构* 困境在 video 域的对偶。
+
+诚实修订：OP-WM-2 应该被拆为两条 *独立* 开题。
+
+- **OP-WM-2a (hidden-state probe, frontier video model)**：要求厂商开放中间层 activation API。**当前距离** *社会学* 瓶颈 (与原 OP-WM-2 表述一致, frontier 不放 latent)，*工程* 瓶颈为零。
+- **OP-WM-2b (behavioral probe, frontier video model)**：API black-box 即可做，但结论上限为 *存在性* 不到 *几何性*；与 OP-WM-2a 不可互相替代。**当前距离** *标注成本* 瓶颈 (千-万 frame 量级)，*社会学* 瓶颈为弱 (第三方学界可独立做但缺论文回报)。
+
+这一拆把原 OP-WM-2 一句话里的 *工程 vs 社会学 vs 标注* 三层瓶颈分别归位，与 §C-WM-6 falsification 三条件 (backbone 共享 / probe set 三类 / ±2pp 置信区间) 在 *条件细化* 上同型。**回灌**：不新增 candidate，只把 §Open problems OP-WM-2 一条扩为 OP-WM-2a / 2b 两子条 (下一 B tick 直接改 §Open problems 列表段, 本节作为 audit trail)；§OP-WM-1..5 半年进展核查 段 OP-WM-2 行的 "未动" 判定 *继续成立* (2a 与 2b 各自半年内均无公开运动), 但归因更精细——OP-WM-2a 是 frontier 披露选择函数 (与 §Mid-training annealing frontier 选择性披露 / C-CAUSAL-DISCLOSE / C-SCALE-D-DISCLOSE 同型, 第六处时间侧加固落点), OP-WM-2b 是 *学界标注预算-论文回报曲线不闭合* (与 §RL-from-environment 三个 <1 GPU-week 实验无人做 / §C-REAS-5 双段相变测量缺失同型, *不同* 类别社会学瓶颈)。
+
+判断 (2026-05-29)：把这条 reviewer-tier 不一致钉出来本身比写新候选更有价值——OP-WM-2 *看起来* 像 frontier 闭源造成的单一瓶颈, 但实际是 (frontier 闭源 + Hazineh 协议不可退化到 behavioral 替代 + 学界标注成本不闭合论文回报) 三因素交叉, 把任何一条作为单独归因都会让 OP-WM 议题在外部读者眼里显得比实际更乐观 (\"等 frontier 开 API 就解决了\") 或更悲观 (\"学界没办法\")。两者都是错读。世界 model 议题的瓶颈结构与 reasoning / causality / online_learning 不同——后三者是 *单一类别社会学瓶颈* (frontier 不公开 retention / verifier 配方 / counterfactual benchmark), 世界 model 是 *三类瓶颈交叉*, 因此 §诚实判断 末段元命题 "瓶颈不在能力 / 工程 / 理论, 而在社会学" 需要再次细化为 "瓶颈在 *披露 + 协议可退化性 + 标注预算-回报曲线* 三类社会学约束的交叉, 而非单一类社会学约束"。这一区别决定了下一 B tick 在 world_model 上应该 *先* 把 §Open problems OP-WM-2 拆条, *再* 等 frontier 动作——而非反向。
+
 ## Cross-links
 
 - [causality](causality.md) — 第 3 种 world model 与 Pearl Layer 2/3；C-WM-3 与 C-CAUSAL-1 共享反事实失败的根
