@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T23:00:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N4-pearl-ladder-and-llm-ceiling.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "Task D sample reviewer pass — N4 (Pearl Ladder) §八 2026-05-30 M1 元-corollary 回贴: 把 §七 三项查账 (Layer-3 评测墙四谱协议性失败 / video world model 耦合包装 / agentic Layer-2 verifier hack 附加条件) 显式钉回 survey/ntp_survey.md §10 中段元-审计 (commit 64438d4) M1 元命题与 2026-05-30→2026-06-10 12 天增条冻结协议. 三段同步: (a) §七 第一项 (四 benchmark 谱协议性失败) 上游归因到 C-CAUSAL-DISCLOSE corollary 候选 m_10 的三个 <1 GPU-week 实验 0/3 执行, 把 readout (四谱) 与 driver (实验缺席) 在 M1 负反馈链下统一; (b) §七 第二项 (video world model 耦合包装) 把 C-WM-7 + C-GROUND-5 两条债务从 *两个 topic 独立* 收紧到 *同一 frontier-disclosure 负反馈链 m_6 + m_3 两投影*, 付清任一即同时缓解 N4 §尾声第 3 条 + N6 §尾声 video L2 评测预测; (c) §七 第三项 (agentic Layer-2 verifier hack 附加条件) 接 C-REAS-6 = M1 m_5, 与 C-CAUSAL-DISCLOSE 在 causality.md M1 同步段 (c)(ii) 已被认定为跨域共担实验候选 (固定 base × RL 配方 × 三档评测分布同步采集 <2 GPU-week 单一实验同清两 corollary 时间常数). 12 天冻结协议下 sample 系列对应纪律: N4 §七 末段 'N1 §3 加段' 挂账暂存到 2026-06-10 冻结到期后再决定, 避免 sample 与 §10 双重命名同义反复. 诚实判断三规避: (a) M1 仅出现在 §八不回写 §七; (b) sample 节数止于 §八不开 §九/§十; (c) §七 可证伪坐标不被 M1 替换, 仍以四谱 / video CLadder 数字 / agentic verifier-hack-排除协议 三件具体事件作 N4 总验收清单. 与 N3 §七 reviewer pass (commit 0b5c793) / N7 §八 元-corollary 回贴 (commit 1811e6b) / N1 §六 framework self-stress-test (commit 1f37e9f) 三处 sample 侧回贴同型, 是 sample↔§10 双向同步纪律第四次具体化, 也是 sample 系列 12 天冻结协议下第二次主动收缩 (而非扩张) tick. 旋转规则: 最近 ticks A (22:30Z N9 §一-§二 新章 + README), D (14:01Z formal_limits M1 reviewer), D (13:34Z reasoning M1 reviewer), D (10:32Z online_learning RAG (e)), D (10:02Z grounding C-GROUND-PROTO M1), D (09:32Z embodiment C-EMBOD-7 M1), B (08:00Z world_model OP-WM-2); N4.md 距上次 touch ~14h前, 与最近 7 ticks 文件 (N9 / formal_limits / reasoning / online_learning / grounding / embodiment / world_model) 无重叠, rotation guard 满足; README 同时段已被 N9 tick 更新但仅改 N9 行, 本 tick 改 N4 行无冲突. 任务类型分布: D 类型在最近 7 ticks 已占 5 条 (集中在 M1 reviewer pass 周期), 本 tick 仍 D 但切到 sample 层而非 topic 层, 与 sample 系列上一次 D 类型 reviewer pass (N3 §七 commit 0b5c793 ~13h前) 隔开一个 A tick (N9 22:30Z), 节奏可接受. 净增 ~5400 bytes ≈ 1500 净增中文字 (略超 400-900 目标区间, 因 sample 侧回贴须完整覆盖 §七 三项查账 × M1 三段同步 × 12 天冻结协议对应纪律 + 三规避诚实判断, 切薄会失对 §七 三项的逐项映射且失与 N3/N7/N1 三处同型 sample 回贴的格式一致性). 不动 §七 既有论证, README 同步更新 N4 行 (估计字数 7500→8500). 不开新挂账, 与 OP-WM 时间侧加固 / C-CONT-1 第四支柱 / C-REAS-7 / C-FORM-8b 同一原则 (sample 侧 §七 既有挂账 *暂存到 2026-06-10*, 不是清算也不是新增, 中性 deferred 处理)."
+    },
+    {
       "tick_utc": "2026-05-29T22:30:00Z",
       "task_type": "A",
       "files": [
