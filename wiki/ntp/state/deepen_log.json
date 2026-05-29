@@ -1579,6 +1579,16 @@
       ],
       "chars_added": 4400,
       "note": "world_model.md reviewer pass — M1 元-corollary 反向同步节 (C-WM-6 m_7 paradigm-head-to-head + C-WM-7 m_2 latent-purity 双投影). 本页是 8 大 topic 里唯一同时贡献 2 个 M1 投影的 topic, 必须显式回收双重计数. 四件事: (a) 共享 falsifier 弦 — Genie 3 公开 latent-codebook NMI 或 OP-WM-4 落地任一即整体降级; (b) 强度封顶 — C-WM-6 主条件 + OP-WM-4 时间侧 + M1 第7投影 三层是同一根弦不是三条独立证据 (同理 C-WM-7); (c) 不动的事 — 严守 12 天冻结协议, 不改 falsifier 措辞 / 不引新 arxiv / 不开槽位, world_model 域 三类社会学约束 (披露+协议可退化性+标注预算) 中只有第一类被 M1 吸收, 第二/三类保留独立强度; (d) 2027-12 对账锚分三档 2026-11/2027-05/2027-12. 至此 topic 侧 8/8 M1 反向同步纪律闭环 (formal_limits/reasoning/grounding/embodiment/causality/online_learning 六处直接 + scaling_limits 经 C-SCALE-D-DISCLOSE 间接 + 本 tick world_model), 与 sample 侧 N1-N9 9/9 反向同步形成 17/17 双侧闭环, 与 timeline.md 04:30Z 四行 meta-level 索引层同日兑现. Rotation: prev C timeline.md (04:30Z, 7e7245a) → 本 D world_model.md (不同文件不同 task type). 净增 ~4400 字 (单节). 无新 arxiv ID, M1 八条 m_k 与 commit hash 均沿用 §10 既有 verified 文本."
+    },
+    {
+      "tick_utc": "2026-05-30T06:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4400,
+      "note": "N6 §九 2026-05-30 reviewer pass — M1 元-corollary 编号层回钉. 发现 N6 是 N1-N9 九篇 sample 中唯一一篇正文 grep M1 返回 0 的 sample (其余 N1=7/N2=6/N3=3/N4=8/N5=8/N7=9/N8=9/N9=4), 前一次声称的 sample↔§10 9/9 反向同步闭环 (commit 5faaeee) 实为 *叙事层闭环但 N6 编号引用缺位*, 本节补齐显式编号引用, 闭环升级到 *编号层 9/9*. 四件事: (a) 命名 — N6 §七实际同时依赖 M1 八条 m_k 投影中的 m_2 (latent-purity, 经 C-WM-7) 与 m_7 (paradigm-head-to-head, 经 C-WM-6), N6 是唯一一篇 m_k 双轴交叉 sample; (b) 形式对齐 — N6 §八三段几何末段「评测墙包裹」与 §10 (497 行) M1 形式陈述对照, 三家 (Sora/Genie/V-JEPA) 全部沉默 = 同一负反馈链在 video 模态三处发作; (c) 独立性回收 (与 N5 §八 同型) — 评测墙包裹不算 M1 之外的第 9 条独立证据源, §八「评测墙包裹」+ §七 C-WM-7 引用 + §七 C-WM-6 引用三处合并按 M1 一处计数, 不进 §10 (4) 列表新位置; (d) §七赔率三层 (Sora 10% / Genie 25-30% / Hybrid 55%) 保持原值不动, 理由三 — M1 落地 (08:05 UTC commit 64438d4) 早于 §七撰写故已隐式分配 / M1 协议下只能加固「mech 候选不被反驳」不能直接加固 mech 成立 (N1 §七 (d) 框架章护栏同条) / 命名不是新证据. 两条挂账留 2026-06-10 冻结到期复查 (m_2 × m_7 锁定确认 / 2027-12 回检锚 (c) 与 M1 falsifier 同触发条件联动). 严守 12 天冻结协议, 本节属允许操作中的 *互引补充* 与 *措辞统一*, 无新 sub-candidate/corollary/route-elim/时间侧加固/falsifier 收紧, 无新 arxiv ID 编造. Rotation: prev tick D world_model.md (05:00Z, 7af3bfd) → 本 A N6 §九 (不同文件不同 task type). N6 上次 edit 2026-05-29 17:35Z (4618c05), 距今 ~12.5h. README 8500→9000. 字符净增 ~4400."
     }
   ]
 }

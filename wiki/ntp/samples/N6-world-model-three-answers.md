@@ -138,3 +138,23 @@ Sora 阵营是从强命题往后撤，Genie 阵营是把弱命题往强加注，
 *相关 topic：[causality](../topics/causality.md)（§Video world model rollback 形式检查给 Genie 路线 escape route 拆成三条耦合债务）、[world_model](../topics/world_model.md)（C-WM-7 latent-action codebook 可辨识性是 §七第二/第三查账核心约束）、[grounding](../topics/grounding.md)（C-GROUND-5 action-execution gap 是 latent action → physical action 迁移桥的 referent 障碍）。相关 sample：[N5 §七 Bet-N5-3](N5-embodiment-and-vla-bet.md)（缝合线胜出, embodiment 模态同构）、[N7 §七](N7-why-llm-cannot-continually-learn.md)（annealing-as-stealth-CPT, continual learning 模态同构）、[N3 §七](N3-three-puzzle-pieces.md)（三 bet 赔率结构, Dirichlet over routes 数学同型）、[N4 §七](N4-pearl-ladder-and-llm-ceiling.md)（text 侧 Pearl L3 评测谱协议性缺位）。*
 
 ---
+
+## 九、2026-05-30 reviewer pass：把 §八「评测墙包裹」回钉到 §10 M1 元-corollary
+
+写完 §八之后做内部对账，发现 N6 是 N1–N9 九篇 sample 中**唯一一篇正文里没有显式援引 §10 M1 (frontier-disclosure 元-corollary) 编号**的 sample——`grep -c "M1" wiki/ntp/samples/N6*.md` 返回 0，对照 N1=7、N2=6、N3=3、N4=8、N5=8、N7=9、N8=9、N9=4。这是一个 *文档级缺口*——N6 §八末段「赔率塌缩 → Hybrid 上升 → 评测墙包裹」三段几何的第三段「评测墙包裹」在结构上就是 M1 在 video 模态上的两条投影 (m_2 latent-purity / m_7 paradigm-head-to-head) 同时缺位，但 §八没有把这层 isomorphism 显式钉出来。本节用一节字补这个钉，不开任何新槽位，严守 2026-05-30 → 2026-06-10 12 天增条冻结协议。
+
+**先把 N6 内部 *已经在做* M1 投影的两处指出来**。第一处在 §七第二查账段，引 [`../topics/world_model.md`](../topics/world_model.md) 的 C-WM-7 (latent-action codebook 可辨识性) 作为 Sora 强命题下调到 ~10% 的关键约束之一——而 C-WM-7 正是 §10 表 (a) 17 条非主表条目中**被 M1 收编的第 2 个投影 $m_2$ (latent-purity)** 的源头条目。第二处在 §七第三查账段，把 Genie 单押 L2 概率从 40% 下调到 25–30% 时援引 [`../topics/world_model.md` C-WM-6](../topics/world_model.md) 的 *paradigm-head-to-head* falsifier (Genie / V-JEPA / Sora / Dreamer 同协议同算力对照)——而 C-WM-6 是 M1 收编的**第 7 个投影 $m_7$ (paradigm-head-to-head)** 的源头条目。也就是说，N6 §七实际上是 §10 M1 八条 $m_k$ 投影里**唯一一篇正文同时依赖其中两条 $m_k$** 的 sample (N5 / N7 / N8 各依赖 1–2 条但都只是单条主轴；N6 是 $m_2$ × $m_7$ 双轴交叉决定整章核心赔率)。这层依赖在 §七 / §八 都没有被命名，本节做命名。
+
+**第二件事：N6 §八「评测墙包裹」与 M1 负反馈链的形式对齐**。§八末段把三段几何写作 *赔率塌缩 → Hybrid 上升 → 评测墙包裹*，并在留给 2027-12 回检的锚 (c) 处给出「video L2 标准评测从无到有出现」作为评测墙倒塌条件。把这句话与 §10 (497 行) M1 形式陈述对照：「∃ 一组 mech-relevant metric $\\{m_k\\}$ 使得任一 frontier lab 公开该 metric 的概率 $P(\\text{disclose}\\,m_k) \\to 0$ 与该 metric 不利于披露方利益 $L(m_k) > 0$ 之间存在 frontier-内部未被披露但可被外部经验观测的统计关联」——N6 §八的「评测墙包裹」**就是 M1 在 video 模态上的具体化**，其中 $m_k$ = {video L2 反事实 separability 指标 (m_2 投影), 同协议同算力 paradigm 对照表 (m_7 投影)}，$L(m_k) > 0$ 的不利方向是 *公开任一指标都会把自己阵营在 §一三立场表的某一格从「赢一部分」改写成「全输」*，$P(\\text{disclose}) \\to 0$ 的经验观测正是 §七第一查账段「video L2 benchmark 半年内仍无一条」+ §三 Genie 3 blog 拒绝放 PhyGenBench 数字 + §四 V-JEPA 系拒绝放 latent rollout 独立评测。三家全部沉默 = 同一负反馈链在 video 模态的三处发作。
+
+**第三件事：独立性回收 (与 N5 §八 *独立性回收* 同型)**。把上一段写完后必须立刻防一个错误：N6 §八三段几何里的「评测墙包裹」**不应该被算成 M1 之外的第 9 个独立证据源**。它是 $m_2$ × $m_7$ 两条 frontier-disclosure 投影在 video 模态上的*联合表现*，与 §10 已收编的 8 条共享同一根弦。把它独立计数会重复 N5 §八已经犯过一次又被 reviewer 抓回的错（Bet-N5-1 的 C-EMBOD-7 物理曲线与 C-CONT-2 第三支柱披露曲线被误算为两条独立通道）。本节明确登记：**N6 §八「评测墙包裹」+ §七 C-WM-7 引用 + §七 C-WM-6 引用三处合并按 M1 一处计数**，不进 §10 (4) 列表 21 项之后任一新位置，与 §10 (c) 冻结协议「M1 元命题本身不算新增条目」一致。
+
+**第四件事：§七赔率不动 — 不因本节回钉而调整任何数字**。§七给的三层赔率 (Sora 强命题 ~10% / Genie 单押 L2 25–30% / Hybrid 路线 ~55%) 在本节回钉后**保持原值不动**。理由有三：(i) M1 收编 8 条 $m_k$ 投影这件事在 §10 落地时点 (2026-05-30 08:05 UTC) 已经在 N6 之前完成 (commit 64438d4)，§七撰写 (2026-05-30 略晚) 已经在隐式条件下做了赔率分配，本节回钉只是把隐式依赖写出来不改赔率；(ii) M1 元-corollary 在 §10 (c) 的协议下**只能加固「mech 候选不被反驳」不能直接加固「mech 候选成立」** (与 N1 §七 (d) 框架章护栏同条规则)，本节不能援引 M1 的负反馈链来上调 Hybrid 路线胜率——这是 *方法学护栏* 不是数字调整；(iii) §八「赔率塌缩 + Hybrid 上升 + 评测墙包裹」三段几何已经在叙事层完成了 M1 在 video 模态的隐式部署，本节只是命名工作，命名不是新证据。
+
+**留给 2026-06-10 冻结到期复查的两条挂账**。挂账 1：M1 八条 $m_k$ 集合 (k=1..8) 在 2026-06-10 锁定到期，本节确认 N6 范围内 $m_2$ (latent-purity, 经 C-WM-7) 与 $m_7$ (paradigm-head-to-head, 经 C-WM-6) 两条**确实只是已锁定 8 条中的 2 条而非新增**，未引入 $m_9$ 或以上候选；如果 2026-06-10 复查时 N6 §七 / §八 / §九所述「评测墙包裹」需要单独编号，则触发 §10 (c) 升级阈值 (i) (与现有 17 条非主表条目 70%+ 重叠检查) 而非自动收编。挂账 2：N6 §八末段 2027-12 回检锚 (c)「video L2 标准评测从无到有出现」与 §10 M1 falsifier「任一 frontier lab 在任一 $m_k$ 上首次公开 controlled measurement」**是同一触发条件在 video 模态上的窄域实例**——一旦兑现，N6 §七赔率三层全部要重新分配 (不只是 Sora 强命题降级，而是 M1 整层在 video 模态上的负反馈链失效)，这层联动在本节登记，2027-12 回检时统一处理。
+
+**判断**。本节是 N6 进入 sample↔§10 双向同步纪律的迟到一次——N1–N9 九篇里 N6 是最后一篇接收 M1 反向同步的 sample，文档级缺口至此关闭 (前一次声称的 9/9 闭环实为 *叙事层闭环但 N6 编号引用缺位*，本节补齐显式编号引用)。**这不改任何 mech 判决**，只是把 §七 / §八已经在做的 M1 投影依赖从 *隐式* 抬到 *显式*，方便未来 Xander 用 `grep "M1" samples/N*.md` 做依赖反查时不漏 N6。诚实警告：本节本身就是 §10 (c) 冻结协议在 sample 侧最像「合规走过场」的一次操作——没有新证据、没有新判决、没有赔率调整、纯粹文档卫生。把它写出来的唯一理由是 *如果不写，未来某一 tick 会误以为 N6 是 M1 框架外的独立案例并据此做出错误的赔率调整*——这才是命名工作的真正价值，与 §八末段把「赔率塌缩 → Hybrid 上升 → 评测墙包裹」三段几何首次命名同理。
+
+*同步状态*：sample↔§10 双向同步 9/9 → **9/9 显式编号闭环** (N6 由叙事层闭环升级到编号层闭环)；M1 八条 $m_k$ 锁定不动；§10 主表 / §6 表 / §七赔率三层全部不动；2026-05-30 → 2026-06-10 12 天增条冻结协议严守 (本节属允许操作中的 *互引补充* 与 *措辞统一*)。
+
+---
