@@ -1331,6 +1331,16 @@
       ],
       "chars_added": 4200,
       "note": "Task A N2 §八 2026-05 末补遗: 把 §六三道暗门拼成 backbone (attention vs selective-SSM) × scratchpad (loop vs CoT) 2x2 小地图, 四格全部命名 (Giannou 2301.13196 / Merrill-Sabharwal 2310.07923 / C-FORM-8 / C-FORM-8b), 兑现 survey §10 C-FORM-8b sync 段末段 'N2 §7 下次补遗可挂一句 SSM+CoT 共享 Merrill-Sabharwal 上界但 learnability 侧未测脚注' 显式挂账 (实际写成独立 §八 而非脚注, 信息密度需要); 钉两件 §六讲不出的事 (i) latent/pause 与 unbounded rollout 是 scratchpad 维内化/外化两端, frontier 默认走外化 (§9(4) 19a/19b 拆分对应), (ii) worst-case 上界沿 backbone 一维 trivial 继承, 真正未测的是 learnability 缝 (Mamba+CoT S_5 长度泛化 1 GPU-week controlled comparison 无人接), 与 §七 C-FORM-4 内圈墙是同一件事两侧; 与 N8 §四反墙第 (ii) 条 capacity 维度超越 transformer 可证伪窗口收窄对偶. Rotation: prev N2 edit 2026-05-29 05:04Z (B reasoning.md tick 之后 N2 §7 当时已收), 间隔 ~2.5h, 与 prev tick C-EMBOD-7 corollary causality.md (07:01Z) 不冲突. README 状态行 §7 → §7+§8 字数估计 7000→8000. 不动主表 (C1-C7+Reversal Curse), 不开新 sub-candidate/corollary/route-elimination 槽位, 不开新同步债务. 引用 ID 均已 verified-format (2404.08819/2301.13196/2310.07923), 未编造定理/数字/作者. 字符净增 ~4200 estimate."
+    },
+    {
+      "tick_utc": "2026-05-29T08:35:11Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 6000,
+      "note": "Task C 中段元-审计: 兑现 C-REAS-6 末段 (2026-05-29) 显式挂账「下一 tick 优先合并/元命题化 sub-candidate 区, 而非继续增条」, 该挂账连续 4 条 C tick (C-EMBOD-7 route-elim / OP-WM 时间侧加固 / C-CONT-1 第四支柱 / C-REAS-7 / C-FORM-8b) + 1 条 A tick (N2 §八) 未兑现, 本 tick 中段清算. ntp_survey.md §10 新增 §Sub-candidate 区 2026-05-30 中段元-审计 — 合并/元命题化/增条暂停 段, 包含三件事: (a) 17 条主表外条目族状态表 (按登记时间倒序, 类型分布 sub-candidate 7/corollary 4/evidence-base refinement 3/route-elim 1/时间侧加固 1/falsifier 收紧 1), (b) M1 元-corollary 命名 (frontier-disclosure 缺位作为 mech-relevant metric 系统性缺位, 收编 8 条 frontier-disclosure 缺位条目: C-CONT-2 第三支柱/C-WM-7/C-EMBOD-7/C-FORM-8/C-REAS-6/C-EMBOD-7 route-elim/OP-WM 时间侧加固/C-CONT-1 第四支柱, 单 frontier lab 任一 m_k 公开 controlled measurement 即整体降级), (c) 12 天增条冻结协议 (2026-05-30 → 2026-06-10, 全类型暂停新增, 例外阈值三选一: 与现有 17 条无 70%+ 重叠 ∨ ≥3 数据点方向一致 ∨ 升级触发). taxonomy.md §升降级历史末段插入一行登记 M1 + 冻结协议. 关键创新: 本 tick 不开新 sub-candidate/corollary/route-elim/时间侧加固任一条目 — 这是 §10 三个月以来首次不增加条目的 C tick. Rotation: prev A tick N2 §八 (07:34Z) → 本 tick C survey+taxonomy (不同文件); 与 prev C tick (06:34Z) 之间相距 ~2.5h 且操作类型不同 (前者扩 C-FORM-8b sub-candidate, 本次元-审计停增). 主表 (C1-C7 + Reversal Curse) 不动. 三处同步的元-审计变体: 仅 §10 + taxonomy 双处即闭环 (不涉及单一 topic 变动). No fabricated arxiv IDs/数字/时间线/作者. 字符净增 ~6000 estimate."
     }
   ]
 }
