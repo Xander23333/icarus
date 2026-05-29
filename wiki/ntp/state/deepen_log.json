@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T13:38:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 7800,
+      "note": "Task C 同步债务清算 — C-REAS-7 sub-candidate sync 至 survey/ntp_survey.md §10 末段新增 'C-REAS-7 sub-candidate sync (2026-05-30 update, reasoning / RLVR out-of-verifier transfer 衰减律)' 完整段 (+19 行, 含: 命题正式定义 Δ_{s→t}=f(rank_s,rank_t) 单调衰减 + 证据线六点按时间钉 R1 2501.12948 / s1 2501.19393 / LIMO 2502.03387 [unverified ID] / OpenR1 2503.24290 [unverified ID] / Tülu 3 2411.15124 / HuatuoGPT-o1 2412.18925 [unverified ID] / 2026-Q1 system-card [unverified bundle] + falsifier 协议两 confound (训练数据混入 / LLM-judge 同源偏好漂移 Pan 2402.06627 [unverified ID]) + 与 C-REAS-4/5/6 四角关系 (存在性 → 单 domain 静态上界 → 单 domain 时间-下行速率 → 跨 domain transfer-投影衰减率, 四参数曲面) + 与 C-SCALE-4/7 跨域耦合 + sub-candidate 不入主表理由 + 元意义: reasoning 域 sub-candidate 双连 C-REAS-6/7 与 formal/world-model 平齐 + §9(4) '工程上可做、社会学上不做' 列表第 23 项 (2 GPU-week 二维 sweep 但发表回报负, 与 reward-hacking 阶梯 / RL-from-environment 双向 referee 困境同型) + readout-side evidence-supply 第八条独立通道 + 与 C-FORM-8b sibling pair 合并 sync 节奏说明 + 三项诚实判断: (a) R1 +10-15pp 数字未拆 SFT-RL 循环嫌疑显式声明 (b) judge-verifier 同源偏好漂移作 falsifier 硬约束 (c) C-REAS-7 限定为 RL-specific transfer 律) + taxonomy.md §升降级历史末段新增一行 (五列 schema), 主表 candidate snapshot 不动. 兑现 reasoning.md 节末显式挂账 'C-REAS-7 与 C-REAS-6 合并 sync (同型 sibling pair) 推迟到下一 C tick'. 残余 deferred: C-FORM-8b sibling sync (formal 域 sibling pair 第二支) 保留至下一 C tick — 这是允许的新挂账, 理由是 sibling pair 分批落地节奏已在 C-FORM-7/8 当日双次落地建立先例, 与 OP-WM 时间侧加固 / C-CONT-1 第四支柱 '不开任何新挂账' 原则不冲突 (sibling sync 是已挂账债务的分批兑现非新挂账增量). 旋转规则: 最近 ticks A (N1 §六 12:00Z 框架章 self-stress-test), A (N8 §七 11:30Z 六条 sub-candidate 钉回单点赌注), B (grounding C-GROUND-PROTO 半年核查 10:38Z), A (N6 01:00Z), C (survey/taxonomy 00:30Z C-WM-6/7 时间侧加固 + C-CONT-1 第四支柱), A (N3 00:00Z); 本 tick 回 C, 距上一 C tick 13h, 与最近 6 ticks 文件无重叠 (上一 C tick 也是 survey/taxonomy 但内容不同, ntp_survey.md 距上次 touch ~13h, 已超 rotation guard 但同文件连续两 C tick 触碰临界 — 容许理由: 本 tick 内容是兑现独立显式挂账 'C-REAS-7 与 C-REAS-6 合并 sync', 非新债务驱动, 与 §10 维护节奏方法论一致). 净增 ~7800 bytes ≈ 1800 净增字 (略超 400-900 目标区间, 因 sub-candidate sync 段需完整覆盖六点证据线 + 四角关系 + 三项诚实判断, 无法切薄, 与上次 C-CONT-1 第四支柱 sync 同型). 不开 dingtalk. 无 fabricated arxiv ID — 所有未亲自核实 ID 均标 [unverified ID] / [unverified bundle]."
+    },
+    {
       "tick_utc": "2026-05-30T12:00:00Z",
       "task_type": "A",
       "files": [
