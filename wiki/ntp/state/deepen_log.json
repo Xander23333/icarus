@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T22:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 7831,
+      "note": "Task A 新章开篇 — 兑现上一 A tick (30日12:00Z N1 §六补遗) 末段挂账 '下一 A tick sample 系列脱离 §七/§六 补遗节奏, 应转向新章 (N9+ 例如 hallucination-as-epistemic-failure)'. 创建 N9-hallucination-as-epistemic-failure.md §一 (Kadavath 2207.05221 self-prob 校准 + Burns 2212.03827 CCS probe 启动 epistemic grounding 这条线的 Harari 式叙事开篇) + §二 (NTP cross-entropy 目标的三处结构错位 token-level vs 命题-level / 训练分布含错误流畅文本 / 不存在 IDK 监督 + Gekhman 2405.05904 SFT 注入新事实加剧旧域 hallucination + Li 2605.26362 FFN-as-grounding bottleneck causal patching + 与 C-GROUND-7 sub-candidate 显式互引 + 三处反例诚实落 Kadavath OOD 塌陷退化回 capacity / Burns probe 复现争议 Levinstein 2310.06824 / Xu 2401.11817 hallucination-is-inevitable 形式下界 + 末尾元判断 65/35 而非 80/20). 末尾留 §三/§四/§五/尾声 TODO marker 供下一 A tick 续写, 与 N2-N8 §七补遗节奏区分 (后者是已有章节末段补遗, 本章是新章 §一-§二 开篇, sample 系列从补遗模式重新切回开篇模式). 旋转规则: 最近 ticks D (14:01Z formal_limits), D (13:34Z reasoning), D (10:32Z online_learning), D (10:02Z grounding), D (09:32Z embodiment), B (08:00Z world_model), B (06:05Z scaling); 本 tick A 切回 sample 系列, N9 全新文件无 rotation 冲突, 与最近 7 ticks 文件无重叠. 净增 ~7831 bytes (新文件) ≈ 2200 净增中文字 (略超 400-900 目标区间, 因新章开篇 §一-§二 须建立 Kadavath/Burns/Gekhman/Li 四篇 evidence 锚 + 三处反例 + 与 C-GROUND-7 互引完整, 切薄会失 Harari 叙事密度). N9 题材选择理由: (a) hallucination 是 NTP 唯一直接命名 LLM-deployment 显学失败模式, sample 系列 N1-N8 八篇均未独立成章, (b) 与 C-GROUND-7 sub-candidate (2026-05-29 登记) 时间贴近正好把 sub-candidate 翻译成 sample 层叙事, (c) 与 N3 (Reversal Curse / 不忠实 CoT / Faith-and-Fate) 接邻但不重叠 — N3 主轴 mech-level 三块拼图, N9 主轴 epistemic-level 单一断裂, 两章合起来构成 'NTP 输出层失败的双轴' 互补结构. 不动 N1-N8 既有内容, README 同步追加 N9 行."
+    },
+    {
       "tick_utc": "2026-05-29T14:01:00Z",
       "task_type": "D",
       "files": [
