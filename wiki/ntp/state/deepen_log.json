@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T10:32:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/online_learning.md"
+      ],
+      "chars_added": 5297,
+      "note": "Task D reviewer pass — online_learning.md §RAG 作为 cutoff bypass 节末段后插入 §§RAG 节 (e) ranker-delay 维度的 reviewer pass：与 causality / scaling / world_model 时间侧加固集群对齐 (2026-05-30) 一节. 严守 2026-05-30→2026-06-10 12 天增条冻结协议 (仅允许 falsifier 收紧 / 互引补充 / 时间常数刻度更新 / taxonomy 历史登记 四类操作), 本 pass 落 falsifier 收紧 + 互引补充 两类, 不动 C-CONT-1 主命题、不开新 evidence-supply 通道. 三段同步: (a) (e) ranker-delay 维证据强度归位 — 原 §RAG 五维退化表把 (e) 与 (b)(c)(d) 并列, 措辞未区分正向 controlled 测量 ((b)(c)(d) 各有 Atlas TempLAMA / FreshLLMs / Xie+Longpre 直接数字) 与负向沉默推断 ((e) 仅 frontier production-side 工程沉默无公开 controlled measurement); reviewer 收紧 (e) 维独立强度显著弱于 (b)(c)(d), 必须作 *闭环最后一格* 而非独立支柱使用, 与 C-CAUSAL-DISCLOSE \\\"frontier 内部 ablation 不公开\\\" 反方向论证同型 + C-CONT-2 第三支柱 \\\"frontier-disclosure 方法论非独立\\\" 警示同型; (b) Falsifier 三处歧义收紧 — 原 falsifier ((a)(b)(c)(d)(e) 五维同时跨阈值) 2026-Q1 经验暴露三 confound: (i) (a) cutoff 后事实 recall ≥0.7 须显式指定事实在 cutoff 后 ≤6 个月窗口内首次出现 (规避把 cutoff 后但仍属常见实体的事实当有效测试样本, 与 Atlas TempLAMA 18-24pp gap 是在新实体子集上测得对齐), (ii) (b) retriever 在 cutoff 后窗口 P@5 ≥0.7 须同步报告 retriever embedding 训练 cutoff (避免 frozen retriever + 新 index 混合 case 把 (b) 维误计达标), (iii) (e) ranker 延迟 <24h 公开测量 须由第三方独立测量而非 RAG 厂家自报 (规避 production-side 自我披露的 incentive bias); 三处收紧不改方向不改阈值仅消解 confound, 下 C tick 不需要同步到 §10 evidence 列脚注; (c) 三处互引补充 — causality C-CAUSAL-DISCLOSE 半年核查 (06:01Z commit) 把 \\\"frontier scaling 瓶颈在披露行为\\\" meta-命题在 causality 域钉第六处独立落点, 本节 (e) 维 ranker-delay 沉默是同一 meta-命题在 RAG production-side 的第七处落点 (前六: world_model OP-WM-1..5 / grounding C-GROUND-PROTO / online_learning C-CONT-2 第三支柱 / embodiment C-EMBOD-7 / scaling_limits C-SCALE-D-DISCLOSE / causality C-CAUSAL-DISCLOSE), 但本 (e) 维不升级独立 corollary 也不入 §10 第八条 evidence-supply 通道, 仅作 C-CONT-1 第四支柱闭环最后一格内部审计标记 (按 §10 末段横向覆盖加密非纵向扩条协议处理, 强行升级会触发 sub-candidate 第五域扩张警告). 末段 reviewer 元判断: 本 pass 是 online_learning 域第二次 *只整理不新增* reviewer pass (第一次为 §Mid-training annealing 节末段 C-CONT-2 第三支柱方法论非独立性警示), 与 grounding/embodiment M1 同步同型三处共建 reviewer-tier 内部审计协议. 旋转规则: 最近 ticks D (10:02Z grounding.md), D (09:32Z embodiment.md), B (08:00Z world_model.md), B (06:05Z scaling_limits.md), C (05:30Z survey/taxonomy), A (12:00Z N1 30日), A (11:30Z N8 30日), B (10:38Z grounding.md 30日); 本 tick 仍 D 但换 online_learning.md, online_learning.md 距上次 touch 2026-05-29T02:06Z (~8.5h前) 已超 rotation guard, 与最近 8 ticks 文件无重叠. 净增 ~5297 bytes (58026 → 63323) ≈ 1500 净增中文字 (略超 400-900 目标区间, 内容是 (e) 维证据强度归位 + 三处 falsifier 收紧 + 三处互引补充 + 元判断 四段无法切薄, 与上 ticks (10:02Z grounding, 09:32Z embodiment) D reviewer pass 同型规模). 不开新挂账, 不动 §10 / taxonomy 主表, 仅 topic 内部 alignment."
+    },
+    {
       "tick_utc": "2026-05-29T10:02:00Z",
       "task_type": "D",
       "files": [
