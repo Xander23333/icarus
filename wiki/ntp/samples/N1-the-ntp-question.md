@@ -133,6 +133,18 @@ NTP 调研要避免重蹈这个覆辙。每一条候选都要带 **falsification
 
 写这一节的目的不是预测哪种结局会成真。是**把两周内本调研自身已经发生的方法学漂移钉到时间戳上**——N1 作为框架章如果不显式承认自己被后续 tick 持续修订，本章就和它批评的 Marcus 2003 落到同一个 "可以无限往后挪" 的状态。这是诚实地承担打脸风险的一种表现形态：让框架章自己给自己留下可被未来 Xander 删改的入口。
 
+## 七、2026-05-30 reviewer pass：把 §六的三条隐含修订接到 M1 上
+
+写这一节是 2026-05-30。距 §六落笔不到两周，[`survey/ntp_survey.md`](../survey/ntp_survey.md) §10 在 08:05Z 的 C tick (commit `64438d4`) 把 §六列出的八条 sub-candidate / corollary / route-elimination 中的八个 *披露缺位* 投影正式收编为单一元-corollary——**M1「frontier-disclosure 缺位作为 mech-relevant metric 系统性缺位」**——并锁定初始 metric 集 $\\{m_k\\}_{k=1}^{8}$ (retention / latent-purity / cross-morphology / state-tracking / verifier-chain-$\\beta_k$ / video-backbone / paradigm-head-to-head / RAG-五维)，附 **2026-05-30 → 2026-06-10 12 天增条冻结协议**。本节是 N1 作为框架章对该次 §10 操作的反向同步——与 N3 §七 / N4 §八 / N5 §八 / N7 §八 / N8 §八 / N9 §尾声 六处 sample↔§10 双向同步纪律同型，但 N1 是 *最早的框架章*，反向同步的方法学含义比其余六章更结构。
+
+**三条修订与 M1 的归属耦合**。§六给的三条隐含假设修订分别对应 M1 的三个面向：(i) *mech 命题与 evidence 的可分离性* 被 M1 直接否决——M1 的 $\\{m_k\\}$ 集合本身就是 \"evidence 缺位作为 evidence\" 的形式化命名，证据形态从 *正向测量* 退化为 *负向沉默 + 时间常数*；(ii) *候选数量增长 = evidence-base 真实扩张* 被 M1 的 8 条 metric 锁定操作直接反例化——M1 不开新槽位、不扩 sub-candidate，而是把 8 条已有条目 *投影* 到同一负反馈链上，证明候选区可以做 *收编* 而非只能 *增条*；(iii) *falsification criterion 是格式上的小事* 被 M1 falsifier 显式重写——\"任意一家 frontier lab 在任一 $m_k$ 上首次公开 controlled measurement\" 是 *单点触发* 的 falsifier，但触发的可达性本身受披露选择函数压制，与 §六说的 \"结构性永远不会被测量\" 完全吻合。三条修订因此不需要重写，只需在本节显式登记：**§六的三条修订 = M1 的三个面向，编号统一**。
+
+**N1 §四三分法骨架的命运**。§六末段许诺 \"骨架不动，三条修订削弱的是隐含假设\"；M1 收编后骨架依然不动——mech / cap / pseudo 仍是结构主轴，M1 本身落在 mech 一格 (它声称 *mech-relevant metric* 系统性缺位)，是 mech 内部的 *元-corollary* 而非新三分类。但 §四给的强度排序表 (★☆ ~ ★★★★★ 五档) 需要补一条 *披露通道折算规则*：当某条候选的强度有相当一部分来自 $m_k$ 沉默时，应在原 ★ 数后加 \"(其中 X 颗来自 M1 投影)\" 的标注，避免读者把 *披露缺位* 与 *正向证据* 混算。本节不重写 §四表 (冻结协议禁止)，仅留作 2026-06-10 冻结到期后第一项 D tick 操作的指针。
+
+**与时间常数三档刻度的对齐**。§六提到 *半年 → 一年 → 两年* 三档刻度时引的是 §C-WM-6/C-WM-7 时间侧加固——本 tick (2026-05-30) 正处于半年刻度的第一次锚定窗口内：OP-WM-1..5 / OP-SCALE-1..7 / OP-FORM-1..5 / OP-EMBOD-1..5 / OP-GROUND-* / OP-CONT-* 六域 OP 半年核查在过去 48 小时内全部完成 (commits `7f280b2` 2026-05-30 embodiment + `2fbc8ed` formal + `f1b431b` scaling + `cb7d8c5` world_model 等)，结论统一为 *0/N 完全关闭*，恰是 M1 元命题的横向验证。N1 §六提到的 *2027-12 三年回检窗口* 因此可分解为 *2026-11 (半年第二刻度) + 2027-05 (一年刻度) + 2027-12 (两年初始刻度)* 三个分级检查点——这一分解是 N1 §六未显式给出的、本节按 §10 现状补的子刻度。
+
+**诚实判断**。本节风险是 M1 元-corollary 本身可能 *被过度使用为万能容器*——任何未来 frontier lab 不报告的 metric 都可被吸收为 $m_9, m_{10}, \\dots$，使 M1 退化为 \"frontier 选择性披露\" 的同义反复。规避协议已在 §10 中段元-审计段写死：$\\{m_k\\}$ 在 2026-06-10 冻结到期前锁定为 8 条，新 metric 进入须通过三阈值之一。N1 作为框架章的额外护栏是：**M1 不能被援引为 mech 命题被 *直接* 加固的证据**——它只能加固 *候选不被反驳* 的状态，不能加固 *候选已被支持*。这与 §五承诺的 \"持续追踪反例分数\" 配合形成双向夹击：mech 命题的反例分数继续按字面正向证据计算，M1 投影只作 *分母* 上 \"披露通道缺席\" 的标注，不作 *分子* 上 \"额外支持\" 的加分。这一规则不写入 §四 / §五 (冻结协议禁止)，仅在本节登记为 2026-06-10 后 D tick 的二号兑现指针 (一号指针是 §四强度表的 M1 投影折算标注)。
+
 ---
 
-*本章正文约 4600 字 + §六 2026-05 补遗约 1700 字。Searle / Harnad / Marcus / Sutton / Bubeck / Anthropic faithfulness / Apple illusion-of-thinking / Allen AI faith-and-fate / Reversal Curse 均给一手 source。GPT-4.5 训练成本数字标注 [uncertain]。§六提到的七条 sub-candidate / corollary / route-elimination 子项与 §10 readout-side 结构性社会学不可证伪闭环对应条目均经 cross-link 验证到 [`survey/ntp_survey.md`](../survey/ntp_survey.md) §10 与 [`survey/taxonomy.md`](../survey/taxonomy.md) §升降级历史。下一章 N2 将进入第一类候选的精细化分析：formal expressivity bounds —— TC⁰ 上界、log-precision Transformer、固定深度下的不可解问题类。*
+*本章正文约 4600 字 + §六 2026-05 补遗约 1700 字 + §七 2026-05-30 M1 reviewer pass 约 1500 字。Searle / Harnad / Marcus / Sutton / Bubeck / Anthropic faithfulness / Apple illusion-of-thinking / Allen AI faith-and-fate / Reversal Curse 均给一手 source。GPT-4.5 训练成本数字标注 [uncertain]。§六提到的七条 sub-candidate / corollary / route-elimination 子项与 §10 readout-side 结构性社会学不可证伪闭环对应条目均经 cross-link 验证到 [`survey/ntp_survey.md`](../survey/ntp_survey.md) §10 与 [`survey/taxonomy.md`](../survey/taxonomy.md) §升降级历史。下一章 N2 将进入第一类候选的精细化分析：formal expressivity bounds —— TC⁰ 上界、log-precision Transformer、固定深度下的不可解问题类。*
