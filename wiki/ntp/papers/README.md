@@ -4,6 +4,11 @@
 
 | 日期 | arXiv | 标题 | Topic | NTP 归类 |
 |---|---|---|---|---|
+| 2026-05-30 | [2605.27734](paper_notes/2026-05-30-2605.27734-jepa-sample-complexity.md) | Learn from your own latents and not from tokens: A sample-complexity theory | formal_limits/world_model | NTP-cap (paradigm sample-complexity 分离) |
+| 2026-05-30 | [2605.30346](paper_notes/2026-05-30-2605.30346-yocausal-video-world-model.md) | YoCausal: How Far is Video Generation from World Model? A Causality Perspective | world_model/causality | NTP-mech (C-WM-3 video real-world proxy) |
+| 2026-05-30 | [2605.30100](paper_notes/2026-05-30-2605.30100-chess-world-model-state-tracking.md) | Chess-World-Model: A 10M-Game Benchmark for Exact State Tracking | formal_limits/world_model | NTP-mech (state-tracking 子带) |
+| 2026-05-30 | [2605.29360](paper_notes/2026-05-30-2605.29360-mirabench-action-conditioned-reliability.md) | MiraBench: Evaluating Action-Conditioned Reliability in Robotic World Models | world_model/embodiment | NTP-mech (C-WM-7 evidence-supply weak proxy) |
+| 2026-05-30 | [2605.28860](paper_notes/2026-05-30-2605.28860-rl-vs-sft-circuit-preservation.md) | Mechanistic origins of catastrophic forgetting: why RL preserves circuits better than SFT? | online_learning | counter-evidence (C5 confound (v) 机制化) |
 | 2026-05-26 | [2605.26379](paper_notes/2026-05-29-2605.26379-lejepa-world-model-identifiability.md) | When Does LeJEPA Learn a World Model? | world_model | NTP-mech (paradigm-replacement) |
 | 2026-05-26 | [2605.26362](paper_notes/2026-05-29-2605.26362-llm-hallucinate-structured.md) | Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis | grounding/reasoning | NTP-mech (FFN-grounding layer) |
 | 2026-05-26 | [2605.26733](paper_notes/2026-05-29-2605.26733-stars-looped-stability.md) | Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in LoopLMs | formal_limits/reasoning | counter-evidence |

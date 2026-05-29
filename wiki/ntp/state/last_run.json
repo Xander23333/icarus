@@ -1,11 +1,31 @@
 {
-  "last_run_utc": "2026-05-27T23:30:00Z",
-  "last_run_status": "ok",
-  "date": "2026-05-29",
-  "papers_scanned": 28,
-  "papers_kept": 5,
-  "notes_written": 5,
-  "hard_dropped": 23,
-  "harvester_errors": [],
-  "note": "harvest 经 3 次 cool-down 重试后第 4 次 0 errors / 8 queries 全成功；confound 清单从 5 升 7（FFN-grounding、edit-family × task），C1 参数集添 convergence-mode；§10 +C5 anchor 升级 + C6 获 LeJEPA-identifiability 条件支撑"
+  "schema": "v1",
+  "last_run_utc": "2026-05-30T07:50:00Z",
+  "last_report": "wiki/ntp/daily_reports/2026-05-30.md",
+  "harvest_file": "wiki/ntp/state/harvest_2026-05-29.json",
+  "raw_hits": 80,
+  "kept": 5,
+  "new_paper_notes": 5,
+  "kept_ids": [
+    "2605.27734",
+    "2605.30346",
+    "2605.30100",
+    "2605.29360",
+    "2605.28860"
+  ],
+  "files_changed": [
+    "wiki/ntp/papers/paper_notes/2026-05-30-2605.27734-jepa-sample-complexity.md",
+    "wiki/ntp/papers/paper_notes/2026-05-30-2605.30346-yocausal-video-world-model.md",
+    "wiki/ntp/papers/paper_notes/2026-05-30-2605.30100-chess-world-model-state-tracking.md",
+    "wiki/ntp/papers/paper_notes/2026-05-30-2605.29360-mirabench-action-conditioned-reliability.md",
+    "wiki/ntp/papers/paper_notes/2026-05-30-2605.28860-rl-vs-sft-circuit-preservation.md",
+    "wiki/ntp/papers/README.md",
+    "wiki/ntp/topics/world_model.md",
+    "wiki/ntp/topics/formal_limits.md",
+    "wiki/ntp/topics/online_learning.md",
+    "wiki/ntp/survey/ntp_survey.md",
+    "wiki/ntp/state/read_ids.json",
+    "wiki/ntp/daily_reports/2026-05-30.md"
+  ],
+  "notes": "No new candidate IDs; all 5 papers refine existing evidence base (C-WM-5 / C-WM-3 / C-FORM-6 / C-WM-7 / C-CONT-2)."
 }

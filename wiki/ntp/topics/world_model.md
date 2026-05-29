@@ -42,6 +42,11 @@ NTP 视角下，最值得问的不是 "LLM 有没有 world model"，而是 **"NT
 
 ## Video-NTP 这条暗线 (2024–2026)
 
+> **2026-05-30 update — 真实-世界 evidence-bar 三连**: 同一 tick 出现三条互补 reliability benchmark, 把 video-NTP \"接近 world model\" 的 hype 在 *因果 / state / action* 三维同时拆开:
+> - **YoCausal** ([2605.30346](../papers/paper_notes/2026-05-30-2605.30346-yocausal-video-world-model.md)): 用真实视频时间反转作零成本 counterfactual, 在 13 个 SOTA VDM 上证 \"感知 arrow-of-time ≠ 理解 causality\"; 直接补 §C-WM-3 的 real-world black-box proxy。
+> - **Chess-World-Model** ([2605.30100](../papers/paper_notes/2026-05-30-2605.30100-chess-world-model-state-tracking.md)): 10M 真实棋局 + matched protocol, recurrent / SSM-with-neg-eigenvalue 在 *exact state-tracking* 上显著胜 attention-only Transformer; OOD random-uniform split 持续不饱和提示 shortcut-learning 是 attention-only NTP 的 state-tracking 失败主因。
+> - **MiraBench** ([2605.29360](../papers/paper_notes/2026-05-30-2605.29360-mirabench-action-conditioned-reliability.md)): 三层 (Physics Adherence / Action-Following Fidelity / Optimism Bias) 把 \"action-conditioned reliability\" 与 visual-fidelity 解耦; L3 optimism bias 在 12 model configurations 上普遍显著, 是 §C-WM-7 latent-action codebook identifiability 在 black-box 下的 *weak proxy* 通道。
+
 text-NTP 的 world-model 证据基本上停在 Othello-GPT 与 chess-Transformer 这两个 closed-world 玩具上，开放域的同构性证据极弱（Vafa 2024, [arxiv:2406.03689](https://arxiv.org/abs/2406.03689)）。真正可能改写赌注的，是 2024 年起把 "下一帧 / 下一 latent 帧" 当作 token 的这一脉，下面按时间线收一遍。
 
 - **2023-09, Wayve, GAIA-1** ([arxiv:2309.17080](https://arxiv.org/abs/2309.17080))：9B 参数 video + action + text 的自回归世界模型，在驾驶场景上做未来帧预测。这是工业界第一次把 "video-NTP" 当作 world-model 的训练范式公开发表，但生成长度仍以秒计。

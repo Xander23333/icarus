@@ -315,9 +315,31 @@ Zhu et al. ([2605.26820](../papers/paper_notes/2026-05-29-2605.26820-vla-real-wo
 - (b) 最强反论：(i) **taxonomy 级争议**——post-train objective 已不是纯 next-token (而是 next-token under verifier-shaped reward)，是否仍属于 *NTP* scaling 的一条轴本身是定义问题；DPO setup 下 RL 步可被纯 SFT 替代，C-SCALE-7 部分外延可被吸入 C-SCALE-6 (data-quality multiplier)。(ii) γ / δ / C* 跨任务族稳定性尚未做 Hoffmann 量级拟合，目前只有 3 条独立线指向同方向，未到 C1/C4 的 formal 强度。(iii) verifier capacity ceiling：当 policy 接近或超过 verifier 自身能力（前沿数学、open-ended 代码 review），verifier 不再提供 informative signal，C-SCALE-7 的 γ 自然趋零；这把第七轴有效 horizon 限定到 \"verifier 比 policy 强\" 的差距上，而该差距在 frontier model 上是递减的。
 - (c) 当前结论：**边界 NTP-mech 候选 (verifier-rich subset)**。与 C-SCALE-4 (inference-time scaling) 共享同一 \"verifier-rich subset\" 作用域是 *最稳的元结论*——两条独立 scaling 法则同时指向同一子域，把 \"NTP 框架内 scaling 真正在工作\" 的有效域圈到 \"存在低噪声 verifier 的任务\"。Falsification: 找到一个 RLVR setting 使 10× C_post 后 verifier-aligned utility 与 holdout 真实 utility 同步线性上升且无 reward-hacking decoupling。元意义：C7 是 §10 候选表里第一个 *不是 \"找 NTP 做不到的事\"、而是 \"找 NTP 做得到的事被限制在哪个子域\"* 的候选——这与 §9 (4) \"七项 confound 同时排除后剩多少\" 的问题对偶，从两侧夹击 NTP 普适能力的有效边界。
 
+### C-CONT-2 evidence-base 第四支柱 sync — mechanistic circuit preservation (2026-05-30, online/continual)
+
+[`topics/online_learning.md`](../topics/online_learning.md) §反例与上界突破 末段登记 Rojas Nunez et al. *Mechanistic origins of catastrophic forgetting: why RL preserves circuits better than SFT?* ([2605.28860](../papers/paper_notes/2026-05-30-2605.28860-rl-vs-sft-circuit-preservation.md))。把 C-CONT-2 evidence base 从三支柱 (理论 plasticity-rank / lab-recipe CPT 曲线 / frontier-disclosure 元变量) 扩到 **四支柱**, 第四支柱为 *mechanistic head-level circuit preservation*：differential circuit vulnerability 度量在 RL vs SFT 上分离 (RL preserves circuit 更多, SFT 任务适应更快但 prior circuit 破坏更大), 把 forgetting 从 weight-space 几何描述推到 head-space component 描述。**对 C5 falsifier 的影响**: 第 (d) replay→0 不退化的检测维度可加 \"prior circuit overlap > threshold\" 一项, 比 perplexity 更早期指示符——这是 falsifier *向量化* 而非 *收紧* (与上 tick 2026-05-29 把 (a)(b)(c) → (a)(b)(c)(d) 收紧不同, 本次只为 (d) 加一个独立可测维度)。**与 C-CONT-2 第三支柱的非独立性警示同型**: 第四支柱与第二支柱 (lab recipe) 在因果链上仍依赖同一 \"plasticity-stability tradeoff 在更大规模生效\" prior, 不应作独立证据求乘——只能作 *机制层一致性检查*。最强反驳: 3B + 单任务规模不足以分离 \"RL 学少了 = 忘少了\" 与 \"RL 真保留 circuit\";若把 RL/SFT 拉到同 final accuracy 再比 circuit overlap, 差异可能消失 (该控制实验未做)。判定: C-CONT-2 状态保持 *Conditional NTP-mech (streaming subset)*, C5 candidate 主表行不变, 仅 evidence 列脚注链路加一行 mechanistic 支柱与 caveat。
+
 ---
-*Last revision: 2026-05-26 — populated by daily pipeline from formal_limits + scaling_limits + reasoning topics.*
-*See git log of this file.*
+
+### C-WM-3 (C6) 真实-世界 black-box proxy + C-WM-7 weak proxy 双路 evidence-bar 升级 (2026-05-30, world-model)
+
+[`topics/world_model.md`](../topics/world_model.md) §Video-NTP 这条暗线 同 tick 加 *2026-05-30 update — 真实-世界 evidence-bar 三连* 子节, 把 §10 C6 (C-WM-3 video-NTP interventional rollout consistency) 与 C-WM-7 (latent-action codebook identifiability deficit) 的 evidence-supply 三道补丁联读:
+
+- **YoCausal** ([2605.30346](../papers/paper_notes/2026-05-30-2605.30346-yocausal-video-world-model.md)) — 用真实视频时间反转作零成本 counterfactual, 跨 13 SOTA VDM 一致证 \"感知 arrow-of-time ≠ 理解 causality\"。这是 §10 C6 falsification protocol 之外的 *第二条独立 evidence-supply 通道*: 不要求 Brax/MuJoCo simulator counterfactual triplet, 不要求权重开放, 仅用 denoising loss + VLM-stratification 做 black-box——把 C6 \"frontier video-world-model 权重不公开\" 反论部分绕开。但 *时间反转 ≠ do-operator* (扩散/熵增过程时间不可逆 ≠ causal asymmetry), CCI 用 VLM 做 judge 又与 C-REAS-6 reward-hacking 阶梯 judge-of-judge 同型——本条目作 *弱真实-世界 proxy*, 不替换 simulator-backed counterfactual triplet, 二者互补使用。
+- **MiraBench** ([2605.29360](../papers/paper_notes/2026-05-30-2605.29360-mirabench-action-conditioned-reliability.md)) — 三层 (Physics Adherence / Action-Following Fidelity / Optimism Bias) 分层 16k 人工标注 benchmark。**对 C-WM-7 的影响**: L2 action-following fidelity 是 latent-action codebook ↔ ground-truth action NMI 在 *black-box 设定* 下的弱代理通道——不要求 NMI ≥ 0.7, 仅要求 model 在不同 action 输入下 output 显著区分, 把 C-WM-7 \"frontier 不披露 latent codebook\" 的 evidence-supply 缺口部分绕开。L3 optimism bias 是 \"video diffusion 倾向于预测 plausible 而非 truthful future\" 的可量化版本, 与 §10 C-EMBOD-6 (demo-credibility prior) 形成 \"demo 视频可信度 + 模型自己预测自己 success\" 的双层 evidence-bar。
+- **Chess-World-Model** ([2605.30100](../papers/paper_notes/2026-05-30-2605.30100-chess-world-model-state-tracking.md)) — 10M 真实棋局 + matched protocol, 给 §C-FORM-6 (SSM-as-$\mathsf{TC}^0$-subset) / C-FORM-8 (Looped-SSM 渐近塌缩) sub-candidate *经验对偶 anchor* (见 `topics/formal_limits.md` §SSM 节末尾 2026-05-30 update 段)。Real-game 18M 饱和 vs random-uniform OOD 持续不饱和暗示 *learnability 而非 expressivity* 才是 frontier 瓶颈, 与第二堵墙 / Bordelon 2402.01092 同向; 对 C-FORM-8 falsifier 影响: 需把 \"matched transition-matrix expressivity\" 列为显式控制变量, 否则 \"loop 是唯一旋钮\" 命题被 transition-matrix 选择 confound 假性证伪。
+
+**与 §10 主 candidate 区的关系**: 三条均属 *evidence-base / sub-candidate evidence-supply 通道扩张*, 不新增 candidate snapshot 主表行, 不新增 sub-candidate / corollary 槽位。决策依据与 2026-05-29 C-CAUSAL-2 / C-CONT-2 evidence-base refinement 同型——sub-candidate / corollary 在主表外新增格, evidence-base refinement 只在主表内格扩 evidence 列脚注链路。元意义: world-model 域 sub-candidate (C-WM-6/7) 与 main candidate (C6 / C-WM-3) 同 tick 获 *三条独立 real-world proxy benchmark* 是 §10 主表 6 域中第一次出现 *evidence-supply 三连补丁同 tick* 的事件 (前 tick 一般每 tick 一条)。这与 §10 末段 \"sub-candidate 数量增长本身可能是方法学 over-fitting 而非 evidence-base 真实扩张的征兆\" 警示反向——evidence-supply 三连补丁是 *真实扩张* 而非 over-fitting (三个 benchmark 协议互不重叠), 应当作 §10 candidate 区 evidence-base 质量提升的正面证据登记。
+
+---
+
+### C-FORM-1 sample-complexity 对偶 sync — JEPA-vs-token-SSL 分离 (2026-05-30, formal / world_model)
+
+[`topics/formal_limits.md`](../topics/formal_limits.md) §表达力 vs 可学性 (第二堵墙) 与 [`topics/world_model.md`](../topics/world_model.md) §JEPA 可辨识性 同 tick 联读 Korchinski-Favero-Wyart *Learn from your own latents and not from tokens* ([2605.27734](../papers/paper_notes/2026-05-30-2605.27734-jepa-sample-complexity.md))。在 *depth-L probabilistic CFG* 世界类下证: token-level SSL / supervised sample complexity ≥ exp(Ω(L)); latent-prediction SSL sample complexity ≤ O(1) wrt L。**对 §10 C6 与 C-WM-5 (LeJEPA identifiability) 的影响**: 双轨理论加固——LeJEPA 给 *identifiability* 条件性定理 (stationary additive-noise 世界类), 本文给 *sample complexity* 指数分离 (PCFG 世界类), 两条共同把 paradigm-replacement 路线的 conditional 优势从 \"在什么世界几何下学到 world model\" 扩到 \"在什么世界几何下用多少样本学到\". **不撑起独立 mech 候选**——分离仅在 PCFG 假设强成立时 sharp, 真实文本/视频 (ambiguous CFG + long-range constraint) 上经验侧 token-SSL 7B+ 规模 *没有* 表现出指数样本饥饿 (反而 Chinchilla 量级线性 scaling), 落到 §10 仅作 C-WM-5 evidence-base 第二支柱 (前一支柱: LeJEPA identifiability) 与 N5/N6 LeCun-bet 叙事的形式骨架。本条目作 evidence-base refinement 登记, 不修改 candidate snapshot 主表行。
+
+---
+
+
 
 ### C-CAUSAL-2 evidence-base refinement (2026-05-29 update, causality / four-benchmark spectrum)
 

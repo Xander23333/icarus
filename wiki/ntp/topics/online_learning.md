@@ -58,6 +58,7 @@ NTP-cap 阵营的回击是：(a) **scale 缓解 forgetting**：Ramasesh, Lewkowy
 - **MEMIT 批量编辑 ([arxiv:2210.07229])**：在 GPT-J 6B 上一次编辑 10000 条事实而保持 zsRE / CounterFact 上其余 acc 几乎不降。这是 NTP-cap 阵营在 knowledge edit 子问题上最强的反例之一——但 ripple-effect 不一致（[arxiv:2307.12976]）仍是悬而未决的反反例。
 - **Mem0 / Letta / Zep 等 agent-memory 系统 (2024–2025)**：在 LongMemEval、LoCoMo 等 benchmark 上显示外挂记忆 + 总结写回能让 agent 在数百轮对话中保持人物 / 偏好一致。但所有这些系统都**没有真正改 LLM 权重**——它们是 RAG 的 sophisticated 变种，没有解决 mech 阵营的核心质疑。
 - **Continual-Backprop (Dohare et al. Nature 2024)**：用周期性重初始化低 utility 单元，证明可以**无限期**保持 plasticity——这是对「plasticity 必然 decay」论的直接反例，但实验规模 ≤ 100M 参数。
+- **2026-05-30 — Rojas Nunez et al., *Mechanistic origins of catastrophic forgetting: why RL preserves circuits better than SFT?* ([2605.28860](../papers/paper_notes/2026-05-30-2605.28860-rl-vs-sft-circuit-preservation.md))**：把 Shenfeld 2025 的行为层观察推到 *head-level circuit overlap* 层。在 Qwen2.5-3B-Instruct + scientific-QA adaptation 上引入 differential circuit vulnerability 度量,证 SFT 任务适应更快但 circuit 破坏 *显著* 更大、prior capability forgetting 更严重; RL preserves circuit 多但 task adaptation 慢。**对 §C5 / C-CONT-2 的影响**: forgetting 不是 NTP loss 在均匀几何上的不动点,而是 *优化器选择* 在 head 子空间的差异化压力——这把 N7 §3 \"loss 不动点\" 论证从宏观几何拉到 head-level component, 也使 C5 falsifier 第 (d) replay→0 不退化的检测维度可加 \"prior circuit overlap > threshold\" 一项 (比 perplexity 更早期指示符)。挂 C-CONT-2 evidence-base 第四支柱 (前三支柱: 理论 / lab recipe / frontier-disclosure)。最强反驳: 3B + 单任务不足以分离 \"RL 学少了 = 忘少了\" 与 \"RL 真保留 circuit\";若把 RL/SFT 拉到同 final accuracy 再比 circuit overlap, 差异可能消失——该控制实验未做。
 
 ## 时间天花板的工业测量 (2021–2026)
 
