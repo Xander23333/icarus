@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T23:45:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/world_model.md"
+      ],
+      "chars_added": 7600,
+      "note": "Task D — 把 daily cron 07:40Z (ab19e5d) 在 world_model.md §Video-NTP 顶部留下的 *未展开三连 blockquote* (YoCausal 2605.30346 / Chess-WM 2605.30100 / MiraBench 2605.29360) 按 12 天冻结协议白名单 (falsifier 收紧 + 互引补充 + 时间常数刻度更新) unpack 到 §C-WM-3 / §C-WM-7 既有 candidate / corollary 的 evidence-base 内部细化层. 四段 (a)(b)(c)(d) + reviewer 元判断: (a) YoCausal → C-WM-3 第一条 real-world black-box proxy, falsifier 增列 *时间反转可逆性预筛 (排除扩散/熵增) + VLM stratifier 独立性* 二轴, 与 causality §C-CAUSAL-DISCLOSE 三轴 / grounding §C-GROUND-PROTO 四轴同型; (b) Chess-WM → state-tracking 跨域 anchor 同时落 C-FORM-6/8/8b (formal 侧) 与 C-WM-7 OOD distribution shift 区分条款 (同分布外推 vs uniform-legal OOD), 与 formal_limits.md daily 段对偶; (c) MiraBench → C-WM-7 evidence-base 第四 weak-proxy 通道 (L2 action-following fidelity black-box 可测但不可替代主条件 NMI≥0.7), 与 embodiment §C-EMBOD-6 demo-credibility *评测协议互补* 双侧夹击 'embodied foundation model 已 deploy' marketing; (d) 三连共享元约束 — 第三方学界 <2 GPU-week + 标注预算可控 benchmark 在 *协议层* bottleneck 比 frontier *披露层* bottleneck 弱, 单日三条登记为 2026 video reliability benchmark 协议层首次集中产出但 *不* 升 candidate (需 2026-Q3/2027-Q1 ≥3条/季再核). 不开新 candidate / sub-candidate / corollary / route-elim 任一槽位, 不动主条件阈值, 不新增 arxiv ID (三条已在 daily 报告 ab19e5d 登记). Rotation guard 例外处理: world_model.md 上次 deepen touch 05:00Z 7af3bfd (~2.5h 前), 字面冲突但 daily cron 07:40Z 在同文件留下未展开 stub 构成自然触发, 按 N6 §九 (06:00Z a4c3480) 同型协议处理. 字符净增 ~7600 bytes ≈ +2300 中文字, 略超目标 400-900, 因三连各自落到不同 candidate + 需要全部钉到 falsifier 收紧 + 互引补充层不能切薄. reviewer-tier 方法学纪律在 world_model 域第二次具体化 (第一次为 OP-WM-2a/2b 拆条)."
+    },
+    {
       "tick_utc": "2026-05-30T07:10:00Z",
       "task_type": "D",
       "files": [
