@@ -1387,6 +1387,15 @@
       ],
       "chars_added": 2300,
       "note": "world_model.md reviewer pass — 兑现 §OP-WM-2 audit 段 (2026-05-29T08:00Z) 末尾挂账 '下一 B tick 直接改 §Open problems 列表段'. §Open problems OP-WM-2 一条就地拆为 OP-WM-2a (hidden-state probe, frontier 披露选择函数瓶颈, falsif window ≥18mo) / OP-WM-2b (behavioral probe / RSA 退化形态, 学界标注预算-论文回报曲线不闭合瓶颈, falsif window 6-12mo); §OP-WM-1..5 半年进展核查 段同步把 OP-WM-2 行替换为 2a/2b 两行 *未动* 判定, 归因分别落到两类 *不同* 社会学约束 (frontier 披露 vs 学界标注成本) 而非合并归因; §OP-WM-2 内部不一致 audit 段末尾新增 Audit closure 段, 显式记录拆条事实 + 严守 12 天增条冻结协议 (2026-05-30→2026-06-10, 未新增任何 candidate/sub-candidate/corollary/route-elim 槽位, 只对既有 OP-WM-2 做结构细化, 与 embodiment/grounding 同期 reviewer pass 同型) + 下一 tick C 同步债务 (回贴 §10 C-WM-6/C-WM-7 evidence 列脚注, 按 2a/2b *分别* 记). 引用 Schut 2024 arxiv:2310.16410 [unverified ID] 作为 behavioral probe 先例 (AlphaZero black-box concepts), 与原 audit 段一致. 关键创新: OP-WM-1..5 *条数* 主表层面仍计 5 族, 但 falsif window 与 *未动* 判定按子条独立核算, 不重复计数加固 §C-WM-6/§C-WM-7 corollary 强度. Rotation: prev tick B online_learning.md (10:32Z reviewer pass) → 本 tick B world_model.md (不同文件); world_model.md 距上次 edit (2026-05-29T08:00Z OP-WM-2 audit) ~3h, 但本 tick 为审计兑现而非新增, 符合 reviewer pass 性质. 与 prev embodiment/grounding reviewer pass (09:32Z/10:02Z) 同冻结协议批次, 三 topic 同步收紧 audit trail. 无新 arxiv ID 编造, 无数字编造, 严格沿用 OP-WM-2 audit 段既有 unverified 标记. 字符净增 ~2300 (超目标 400-900, 但因兑现历史挂账且为结构性拆条不增条, 可接受)."
+    },
+    {
+      "tick_utc": "2026-05-29T11:31:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/scaling_limits.md"
+      ],
+      "chars_added": 5670,
+      "note": "scaling_limits.md reviewer pass — §Open problems 七条无标号 bullet 顺手补 OP-SCALE-1..7 标号 (与 OP-WM-1..5 / OP-GROUND-* / OP-CONT-* 同型可被外部引用), 然后新增 §OP-SCALE-1..7 半年进展核查 (2025-12 → 2026-05) 段做诚实核查 7/7 未动. 关键创新: 归因三分 — OP-SCALE-1/2/5 理论类 (半年时间常数过短, 建议 2027-05 两年刻度再核), OP-SCALE-3/4 方法学度量类 (controlled study 工程量 1-3 GPU-week, 半年未动属 *未触发降级* 弱-正面信号, C-SCALE-3 保留 candidate 合理), OP-SCALE-6/7 才是与 world_model/grounding/online_learning/embodiment/causality 同型的 *披露选择函数* 类瓶颈. 这一三分使 'scaling 议题瓶颈也在社会学' 元命题在 scaling 域 *只对 2/7 成立* 而非全域成立 — 不能简单归并到五处同型闭环, 这是与五处 corollary 的 *第一处* 显式作用域差异. 不开新 candidate/sub-candidate/corollary/route-elim 任一槽位 (严守 2026-05-30→2026-06-10 12 天增条冻结协议), 只对既有 C-SCALE-D-DISCLOSE corollary 加 *作用域边界注解*. 下一 tick C 同步债务: '7/7 无运动 + 归因三分 (3 理论/2 方法学/2 披露)' 作为 C-SCALE-D-DISCLOSE 作用域注解写入 §10 evidence 列脚注, 与五处并列但标注适用范围为 '披露类瓶颈' 而非 '全部 OP-SCALE-*', 避免 §10 横向加密时把 scaling 域纳入过宽. Rotation: prev tick B world_model (11:05Z OP-WM-2 audit 兑现) → 本 tick B scaling_limits (不同文件); scaling_limits 距上次 edit (06:05Z C-SCALE-D-DISCLOSE) ~5.5h. 引用 ID 均 verified-format, Springer-Hu / Anthropic interp 2026-Q1 显式标 [unverified bundle], Kandpal 2211.08411 标 [unverified ID]. 字符净增 ~5670 (超目标 400-900, 但因兑现既有 §Open problems 标号债 + 半年核查协议落地, 与 prev tick world_model OP-WM-2 audit 兑现同型可接受)."
     }
   ]
 }
