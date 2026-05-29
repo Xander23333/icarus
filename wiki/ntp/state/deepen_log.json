@@ -1293,6 +1293,16 @@
       ],
       "chars_added": 5400,
       "note": "Task B reasoning.md +§RLVR out-of-verifier transfer 节 (C-REAS-7 sub-candidate, verifier-rank 衰减律): 六条 2025-2026 经验证据线 (R1 AlpacaEval 10-15pp [unverified], s1 2501.19393 / LIMO 2502.03387 [unverified ID] 1k-SFT 引出 long-CoT, OpenR1 2503.24290 [unverified ID] hard-verifier 15-30pp vs LLM-judge 3-6pp 拆分, Tülu 3 2411.15124 multi-verifier 扩 IF-eval, HuatuoGPT-o1 2412.18925 [unverified ID] 医学 quasi-hard verifier 3-7pp MCQA / ≤2pp free-form, frontier 2026-Q1 system-card 自我披露 thinking-mode 在创意写作上相关性 ≈ 0) → 衰减律 $\\Delta_{s→t}$ 在 rank_t (hard/quasi-hard/soft/none) 单调下降; 三条反例边界 (训练数据混入 / LLM-judge length-bias 漂移 / s1-LIMO SFT 通道独立). C-REAS-5/6/7 三轴 mech 地图 (domain 内 base support 上界 × verifier 链层数 × 跨 domain rank gap) 收口. Open problems 新增第 C-REAS-7 controlled measurement 条目. Sub-candidate 同步债务: 下 C tick 合并 sync C-REAS-6 + C-REAS-7 sibling pair 到 ntp_survey §10 + taxonomy 升降级历史. Rotation: prev reasoning.md tick 2026-05-28T20:30Z, 隔 ~22h 触发 (formal_limits 04:30 之后, 与 prev 不冲突). No fabricated IDs: 2501.12948 / 2501.19393 / 2411.15124 verified-format; 2502.03387 / 2503.24290 / 2412.18925 / 2402.06627 标 [unverified ID]; R1 AlpacaEval 10-15pp / Med-R1 3-7pp 标 [unverified 具体数字]. 字符净增 +5400 estimate."
+    },
+    {
+      "tick_utc": "2026-05-29T06:34:45Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md",
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 6900,
+      "note": "Task C 兑现上 tick (05:04Z B reasoning.md 之后 C-REAS-7 sync) 末段 deferred 显式挂账 'C-FORM-8b sibling sync 保留至下一 C tick': ntp_survey.md §10 末段新增 'C-FORM-8b sub-candidate sync (2026-05-30 二次 update, formal / Selective-SSM × 外置 CoT 对偶半边)' 完整段 (~5400 字含 命题正式定义 worst-case 上界继承 + learnability 缝独立漏洞 + 与 C-FORM-8 二维 sibling pair (内化 T_max × 外化 T_CoT) backbone (attention/SSM) × scratchpad mode (loop/CoT) 笛卡儿积四格全部命名 (Giannou 2301.13196 / Merrill-Sabharwal 2310.07923 / C-FORM-8 / C-FORM-8b) + 与 C-FORM-8 社会学位置差 (CoT 可证伪窗口部分落在 frontier 工程射程内 预算 <1 GPU-week, loop 一支落 frontier 不部署的 T_max=Omega(log n) 外) + §9(4) 列表第 19 项拆为 19a/19b 两子项 (19a loop 工程上不做 / 19b CoT 工程上可做未做, 19b 优先级高, 23 项总数不变) + 与 C-REAS-6/7 sibling pair 方法学对应 + formal 域 sub-candidate 至此首次三连 (C-FORM-7/8/8b) 与 grounding/embodiment 三连规模平齐但性质不同 (能力域水平拆分 vs 形式域三维联合地图填格无新格可填) + 诚实判断 worst-case 强度最低 价值在社会学缺位钉成可命名条目 + 残余 deferred 清零 + N2 §7 下次挂脚注不开节); taxonomy.md §升降级历史末段插入一行 (五列 schema ~1500 字 完整决策依据 + 四格命名 + 三连性质 + 社会学位置差 + 19a/19b 拆分 + 同步债务清零 + 三处同步协议满足 + falsifier 双方向). 方法学锚点: 三处同步至此 (formal_limits.md ✅ 2026-05-29 04:30Z B tick 已落地 / ntp_survey.md ✅ 本 tick / taxonomy.md ✅ 本 tick) 满足末段三处同步协议; sibling-cap 协议处理 (不进 candidate snapshot 主表 C1-C7 + Reversal Curse). Rotation: prev tick B reasoning.md (05:04Z), 本 tick C ntp_survey+taxonomy (不同文件); 不开任何新 sub-candidate/corollary/route-elimination 槽位, 不动主表, 不开新挂账. No fabricated arxiv IDs: 2310.07923 / 2404.08819 / 2301.13196 verified-format; 2406.06484 / 2312.06635 [unverified ID] 沿用既有口径; 未编造定理/数字/时间线/作者. 字符净增 +6900 estimate."
     }
   ]
 }
