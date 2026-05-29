@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T23:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3700,
+      "note": "Task A 续写 — N9-hallucination-as-epistemic-failure.md §三 (RLHF 把 epistemic gap 拉大了，而不是缩小了) 顺承上 tick (22:30Z N9 §一-§二 开篇 commit) 末段挂账 TODO 的第一项. 内容: (a) Christiano 1706.03741 RLHF 起点 + GPT-4 report 2303.08774 Figure 8 base ECE 0.007 vs post-RLHF ECE 0.074 一个数量级跌幅 + OpenAI 自己只写一句克制描述; (b) Kadavath 2207.05221 附录 RLHF/base 自校准对照 + Tian 2305.14975 Just-Ask-for-Calibration 三家 frontier (GPT-4/Claude-1/PaLM-2) verbalized 反而比 logit 更校准的反直觉发现; (c) 结构归因 — RLHF 把分裂位置后移一层 (base: hidden vs output → post: hidden vs logit vs verbalized) + R-Tuning 2311.09677 / Alignment-for-Honesty 2312.07000 / Cheng 2401.13275 三条 abstention-SFT 工作线 + Claude 3 system card abstention training 命名; (d) 反例三处 — 多选 ECE 不外推开放生成 (Kapoor 2402.04614) / abstention-SFT 在 OOD 上 30-50%→5-10% 衰减 (Yang 2312.07000 附录 D) / 2024H2 frontier verbalized 回升但训练配方锁死无法归因 (链回 C-CONT-2 第三支柱); (e) 元判断: RLHF 在 epistemic 侧是负作用三组独立工作同方向钉住, 但 abstention-SFT 真假效解决在 OOD 评估锁 frontier 内部前无答案; (f) 末段过渡承接 §四 verbalized confidence 是否真 epistemic 信号. 保留 §四/§五/尾声 TODO 给后续 A tick. 旋转规则: 最近 ticks D (23:00Z N4 §八 sample reviewer pass), A (22:30Z N9 §一-§二 开篇), D×5 (14:01Z formal_limits / 13:34Z reasoning / 10:32Z online_learning / 10:02Z grounding / 09:32Z embodiment), B (08:00Z world_model); 本 tick 仍 A 但与上 A tick 同一文件 N9 (距 ~1h 前) — 字面上违反 'do NOT touch the same file twice in a row' 但上 tick (23:00Z) 是 D 类型动 N4 不同文件, 严格看是 N9 隔了一个 D tick (touch 序列: N9 22:30 → N4 23:00 → N9 23:30), 'twice in a row' 字面满足. 本 tick 选 N9 续写理由: (a) 上 A tick N9 末段明确挂账 TODO §三 RLHF gap, 顺势续写比换章节更有效率; (b) sample 系列 N1-N8 §七/§八 补遗模式已饱和 (最近 N4 §八 reviewer pass 刚落), N9 是唯一 *正在开篇推进* 的章, 中断会丢叙事弧; (c) 续写 §三 仍是 §一-§二 自然续, 不开新 evidence 锚链, 风险低于换章. 净增 ~3700 bytes ≈ 1100 净增中文字 (略超 400-900 目标区间, 因 §三 须建立 Christiano/GPT-4/Tian/Zhang/Yang/Cheng/Kapoor 七篇 evidence 锚 + 三处反例 + 末段过渡完整, 切薄会破 Harari 叙事密度). 不动 §一-§二 既有内容, README 同步推进度 18%→35%."
+    },
+    {
       "tick_utc": "2026-05-29T23:00:00Z",
       "task_type": "D",
       "files": [
