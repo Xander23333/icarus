@@ -1303,6 +1303,15 @@
       ],
       "chars_added": 6900,
       "note": "Task C 兑现上 tick (05:04Z B reasoning.md 之后 C-REAS-7 sync) 末段 deferred 显式挂账 'C-FORM-8b sibling sync 保留至下一 C tick': ntp_survey.md §10 末段新增 'C-FORM-8b sub-candidate sync (2026-05-30 二次 update, formal / Selective-SSM × 外置 CoT 对偶半边)' 完整段 (~5400 字含 命题正式定义 worst-case 上界继承 + learnability 缝独立漏洞 + 与 C-FORM-8 二维 sibling pair (内化 T_max × 外化 T_CoT) backbone (attention/SSM) × scratchpad mode (loop/CoT) 笛卡儿积四格全部命名 (Giannou 2301.13196 / Merrill-Sabharwal 2310.07923 / C-FORM-8 / C-FORM-8b) + 与 C-FORM-8 社会学位置差 (CoT 可证伪窗口部分落在 frontier 工程射程内 预算 <1 GPU-week, loop 一支落 frontier 不部署的 T_max=Omega(log n) 外) + §9(4) 列表第 19 项拆为 19a/19b 两子项 (19a loop 工程上不做 / 19b CoT 工程上可做未做, 19b 优先级高, 23 项总数不变) + 与 C-REAS-6/7 sibling pair 方法学对应 + formal 域 sub-candidate 至此首次三连 (C-FORM-7/8/8b) 与 grounding/embodiment 三连规模平齐但性质不同 (能力域水平拆分 vs 形式域三维联合地图填格无新格可填) + 诚实判断 worst-case 强度最低 价值在社会学缺位钉成可命名条目 + 残余 deferred 清零 + N2 §7 下次挂脚注不开节); taxonomy.md §升降级历史末段插入一行 (五列 schema ~1500 字 完整决策依据 + 四格命名 + 三连性质 + 社会学位置差 + 19a/19b 拆分 + 同步债务清零 + 三处同步协议满足 + falsifier 双方向). 方法学锚点: 三处同步至此 (formal_limits.md ✅ 2026-05-29 04:30Z B tick 已落地 / ntp_survey.md ✅ 本 tick / taxonomy.md ✅ 本 tick) 满足末段三处同步协议; sibling-cap 协议处理 (不进 candidate snapshot 主表 C1-C7 + Reversal Curse). Rotation: prev tick B reasoning.md (05:04Z), 本 tick C ntp_survey+taxonomy (不同文件); 不开任何新 sub-candidate/corollary/route-elimination 槽位, 不动主表, 不开新挂账. No fabricated arxiv IDs: 2310.07923 / 2404.08819 / 2301.13196 verified-format; 2406.06484 / 2312.06635 [unverified ID] 沿用既有口径; 未编造定理/数字/时间线/作者. 字符净增 +6900 estimate."
+    },
+    {
+      "tick_utc": "2026-05-29T07:01:37Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 5800,
+      "note": "Task B causality.md +§三个 <1 GPU-week 实验的半年披露差核查 (C-CAUSAL-DISCLOSE corollary, 不入主表, 仅 §10 evidence 脚注 + taxonomy 升降级历史): 把 §RL-from-environment 末段三个 controlled 实验 (i) R1-Zero/SFT/final × CLadder Layer-2 (ii) 单 base × RL-vs-SFT × CLadder + UUID-rename Zečević (iii) Boundless DAS 在 (i)(ii) 前后权重上找 do-circuit 的执行缺席从单段叙述升级到半年时间常数显式刻度方法学债; 与 C-SCALE-D-DISCLOSE / OP-WM-1..5 / C-GROUND-PROTO / C-CONT-2 第三支柱 / C-EMBOD-7 route-elimination 五处同型 corollary 共享四档时间刻度 (半年→一年→两年→任一关闭清零), 构成 §10 第八种几何加密 (时间侧对偶) 在 causality 域第六个落点. 三个独立 referee 反方向 (frontier 内部 ablation 不公开 / 学术沉默偏差 / R1 MMLU 间接证伪) 各自拆解; 与 C-CAUSAL-2 正交不混读; 下一 C tick 同步债务: 把本 corollary 与 C-WM-6/7 / C-GROUND-PROTO / C-CONT-2 第三支柱 / C-EMBOD-7 / C-SCALE-D-DISCLOSE 并列写入 §10 evidence 列脚注 + taxonomy 升降级历史登记, 不开 §10 第八条 evidence-supply 通道, 不动主表 (C1-C7 + Reversal Curse 不变). N4 §7 下次扩写仅脚注引用不开新节. Rotation: prev causality.md tick 2026-05-28T21:00Z 隔 ~10h, 与 prev (C ntp_survey+taxonomy 06:34Z) 不冲突. No fabricated IDs: 2501.12948 / 2305.08809 / 2304.14997 verified-format; R1 MMLU 5-10pp 标 [unverified 具体数字]; 2026-Q1 reasoning-RL 技术报告标 [unverified bundle]; NeurIPS/ICLR desk-reject 标 [unknown]. 字符净增 +5800 estimate."
     }
   ]
 }
