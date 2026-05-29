@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T16:03:29Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4700,
+      "note": "Task A 续写 — N9 §四 (Verbalized confidence 真的是 epistemic 信号吗) 顺承 §三 末段 TODO 第一项. 内容: (a) 起点 Lin/Hilton/Evans 2205.14334 Teaching Models to Express Uncertainty in Words (GPT-3 + CalibratedMath) 三条限定条件; (b) 两篇正面挑战 — Xiong 2306.13063 跨模板 ρ ≈ 0.3-0.5 + CoT 长度单调 overconfident, Yin 2305.18153 SelfAware F1 < 50% 与 ECE 弱相关; (c) §三 张力解开 — Tian/Xiong/Yin 三组同方向但测度不同 (跨模型一致 / 跨模板分裂 / 独立于 ECE) → verbalized 是 epistemic 投影但投影矩阵依赖 prompt+task, 显式回扣 §二 C-GROUND-7 falsifier ρ ≤ 0.5 实证根据; (d) 反例两处 — Zhou 2401.06730 [unverified ID] 用户解码缺口 + 2024Q4-2025Q1 frontier verbalized ECE 跳跃式下降 calibration-targeted post-training 嫌疑 ([unverified Steyvers PNAS + arxiv ID unknown]) 再次卡死 C-CONT-2 第三支柱; (e) 元判断: verbalized 是独立通道 (三组证据钉住) 但 frontier 可用性被披露选择函数锁死; (f) 末段承接 §五 epistemic 解释路径 vs C-GROUND-7/C-CONT-1/C-CAUSAL-DISCLOSE 三角. 保留 §五/尾声 TODO. Rotation: 最近 ticks C (13:38Z survey/taxonomy), A (12:00Z N1), D (11:45Z N3), A (11:30Z N8), B (10:38Z grounding), A (01:00Z N6), C (00:30Z survey/taxonomy), A (00:00Z N3), A (29 23:30Z N9 §三), D (29 23:00Z N4). N9 距上次 edit ~14h, 符合不连续同文件规则. 严守 12 天增条冻结协议 (2026-05-30→2026-06-10): 不新增 candidate / corollary, 仅 sample 内续写 (白名单). 字符净增 ~4700 (略超目标 400-900, 但 sample chapter §四 一次性写完保持叙事连贯优于切两 tick)."
+    },
+    {
       "tick_utc": "2026-05-29T23:30:00Z",
       "task_type": "A",
       "files": [
