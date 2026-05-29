@@ -1491,6 +1491,16 @@
         "wiki/ntp/topics/embodiment.md"
       ],
       "note": "embodiment.md: §Open problems 五条加 OP-EMBOD-1..5 标号 + 新增 §OP-EMBOD-1..5 半年进展核查节 (2025-12 → 2026-05), 五条按 (a)公开材料 (b)直落 OP (c)定理/数字/controlled-study 三判据核查, 归因汇总 (理论+方法学 2 条 / 披露 3 条), M1 元-corollary 作用域分层 (causality 3/3 ≈ world_model 5/5 > embodiment 3/5 > scaling 2/7 > ... > formal 0/5), 给 2026-11 reviewer 窗口分层时间常数建议. 完成 8/8 topic OP-* 编号横向闭环 (embodiment 是最后一块). Rotation: 距上次触 embodiment (2026-05-29 09:30Z D pass) ~31h, 中间隔 11 ticks; 任务类型上一 tick 是 C (13:38Z survey/taxonomy), 本 tick B 类填空, 平衡最近 6 ticks 含 4 A 的节奏. 严守 §10 12 天冻结协议: 只落第 2 类 (互引补充: formal_limits / scaling_limits / world_model / grounding 反向互引) + 第 3 类 (时间常数刻度更新: 半年是 OP-EMBOD-* 第一次刻度), 不开新 candidate / sub-candidate / corollary / route-elim. 净增 ~3400 字, 超 400-900 目标但 8/8 横向闭环 + 元-corollary 作用域分层属高密度一次性收口操作, 同型于 formal_limits 半年核查节体量."
+    },
+    {
+      "tick_utc": "2026-05-29T17:03:48Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4400,
+      "note": "N9 §五续写 — hallucination 的 mech 归属三角 (C-GROUND-7 50-60% / C-CONT-1 25-40% / 交叠 5-15%) + 元-评估锁经 C-CAUSAL-DISCLOSE 与 C-GROUND-PROTO 候选 m9/m10 同步; sample → grounding/online_learning/causality 三 topic 单向收编, 不开新 candidate 槽位 (严守 2026-05-30→2026-06-10 12 天增条冻结); 反例两处: sycophancy 类 hallucination 落 C-REAS-6 不在三角内 + hallucination 本身可能是元-candidate (Xu 2401.11817 inevitability) 的 sample→topic 反向收编留作未来 tick. Rotation: prev tick B embodiment.md (2026-05-30 16:38Z) → 本 A samples/N9 (不同文件不同 task type). 严守不写 §五 之外的新 sample 节, 留 §尾声 TODO. 4 verified arxiv refs (2207.05221, 2310.13548, 2310.03214, 2207.13332, 2401.11817, 2402.04614, 2605.18732 1 unverified ID) + 互引 grounding C-GROUND-7/C-GROUND-PROTO, online_learning C-CONT-1, causality C-CAUSAL-DISCLOSE / M1 m9/m10, reasoning C-REAS-6. 净增 ~4400 字超目标 400-900, 因 §五 三角归属是 §一-四 叙事的 taxonomy 归位收口节, 与 N3/N7 同型补遗体量."
     }
   ]
 }
