@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T10:02:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/grounding.md"
+      ],
+      "chars_added": 6560,
+      "note": "Task D reviewer pass — grounding.md §C-GROUND-PROTO 半年核查 末段后插入 §C-GROUND-PROTO 半年核查的 M1 元-审计同步 (2026-05-29 reviewer pass) 一节, 严守 2026-05-30→2026-06-10 12 天增条冻结协议 (仅允许 falsifier 收紧 / 互引补充 / 时间常数刻度更新 / taxonomy 历史登记 四类操作). 三段 reviewer-tier 同步: (a) M1 集合内归属定位 — C-GROUND-PROTO 与 M1 初始 8 条 m_1..m_8 (retention/latent-purity/cross-morphology/state-tracking/verifier-chain-β_k/video-backbone/paradigm-head2head/RAG-五维) 任一不重叠 ≥70%, 评估协议三轨耦合维度独立, 但 frontier-不报告 元-机制共享 M1 负反馈链, 按 §10 (c) 冻结协议 (iii) 项处理为 *候选 m_9* (不主动申请扩入, 12 天到期后若 reviewer 重审 (i)(ii)(iii) 三阈值仍满足才考虑扩); 不改本节既有 medium 评估; (b) Falsifier 三处歧义收紧 — 原 *2027-Q2 仍 0/3 完整即整体降一档* 暴露三 confound 全部不改方向不改阈值仅消解: (i) *完整* 须重写为 probe+readout+executor 三轨在 同一 prompt × 同一 forward pass × 同一 model checkpoint 上同步采集且报告两两相关 ρ (规避 *三个独立团队各做一轨然后拼装* 被算作 *完整*), (ii) *部分实施* 判据须明示 ≥2 轨在同一 forward pass 上同步采集且报告相关 ρ (按此收紧 Li 2605.26362 (a)+(c) 与 Causal Tongue-Tie 2605.25891 (a)+(b) 仍各占 1/3 部分, 修订仅澄清判据不重排数字, 2/3 部分刻度一致), (iii) *最小可行 benchmark* 收紧为 SimpleQA contested subset *或* BFCL parallel-call 任一即可 (规避 *等到出现完美 benchmark* 无限后撤); 半年/一年/两年三档时间常数不动, 下一 C tick 不需要同步到 §10 evidence 列脚注 (按 §10 末段 *未来新数据点须检查是否触发 M1 集合扩张* 协议处理); (c) 三处互引补充 — world_model OP-WM-2 拆条 (commit d6956e8) 把 hidden-state probe (2a) 与 behavioral probe (2b) 归到 *披露选择函数 M1 同型* 与 *标注预算-回报曲线不闭合 社会学第二类*, C-GROUND-PROTO 的 (a) probe 轨 = OP-WM-2a 类 / (b) verbalized readout 轨介于两者之间 / (c) executor 轨独立; embodiment commit ad6a873 把 C-EMBOD-7 归 M1 m_3 与 C-CONT-2 第三支柱归 m_7, C-GROUND-PROTO 在 M1 外但同源负反馈链; online_learning C-CONT-1 第四支柱 (frontier mid-training 不公开 cross-cutoff retention) 是 M1 m_1, 与本节首次形成 *同一元命题的 LLM 知识更新通道双侧投影* 命名 (训练面 m_1 retention / 评估面候选 m_9 three-track-coupling); reasoning C-REAS-6 β_k ≥3 层 controlled fit 与本节三轨 ρ 同步采集在 *<2 GPU-week + 发表回报为负* 同型, 横向覆盖加密非纵向扩条 (§10 第八种几何加密方式 *时间侧对偶*). 末段 reviewer 元判断: 本节是 grounding 域第二次 *只整理不新增* reviewer pass, 三处收紧把 0/3 完整 + 2/3 部分 判据精度从 *团队同步采集* (含糊) 提升到 *同一 prompt × 同一 forward pass × 同一 checkpoint × 报告两两 ρ* (可机械判定); 不开新挂账 / 不动 mech 评估 / 不动 candidate snapshot / 不向 §10 申请新增条目, 唯一沉淀是 reviewer pass timestamp 与跨 topic 引用网具体行号化. 末尾 footer 追加 reviewer pass timestamp (不覆盖原 B tick footer). 旋转规则: 最近 tick D (09:32Z embodiment.md M1 收编), B (08:00Z world_model.md OP-WM-2 拆条), B (07:35Z N2 §八), B (07:01Z causality C-CAUSAL-DISCLOSE), C (05:30Z C-FORM-8b sync); 本 tick D 不同文件 (grounding.md), 距上次 grounding touch 2026-05-30T10:38Z (~24h 前) 已超 rotation guard, 与最近 5 ticks 文件无重叠. D 类型选 grounding.md 理由: 上 tick D embodiment.md 已对 C-EMBOD-7 完成 M1 收编 sync, grounding.md C-GROUND-PROTO 是 M1 候选 m_9 (8 条之外最近的同型条目), 按对称性应作 D reviewer pass 同步处理 frontier-disclosure 元-corollary 在 grounding 域的归属定位 + falsifier 精化. 净增 ~6560 字 (56070 → 62630), 略超 400-900 目标区间, 因 reviewer pass 须覆盖 M1 归属 + falsifier 三收紧 + 三互引补充三段无法切薄."
+    },
+    {
       "tick_utc": "2026-05-29T09:32:00Z",
       "task_type": "D",
       "files": [
