@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T10:38:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/grounding.md"
+      ],
+      "chars_added": 6669,
+      "note": "Task B topic 推进 — grounding.md 新增 ## C-GROUND-PROTO 三轨协议的半年实施核查 (2025-12 → 2026-05) 一节, 按 world_model.md §OP-WM-1..5 半年核查同型范式 (只算 a 公开 arxiv/技术报告/可复现代码 + b 直接落在协议描述的实验设计上 + c 报数字而非 demo) 核查 C-GROUND-5/6/7 三条 candidate 在过去半年的三轨实施进度: 三条全部 **未动** (BFCL/τ-Bench/SWE-bench Verified 单轨数字更新无三轨耦合; RAGTruth/ALCE/Wu 2404.10198 仅 c 轨; Burns 2212.03827 + Tian 2305.14975 + SimpleQA 工程齐备但无团队同步采集) + 两件方向性动作 (Li 2605.26362 把 a+c 双轨耦合到 FFN 子电路定位, 但缺 b 轨 verbalized confidence; ProFIL 2605.11467 走通训练面闭环但与评估面未合流). 半年实施刻度从 *0/3 完整 + 1/3 部分 (Causal Tongue-Tie)* 推进到 *0/3 完整 + 2/3 部分 (Causal Tongue-Tie + Li 2605.26362)*. 元判断: 与 world_model OP-WM-4 LeJEPA 理论 prior 收紧但实证空、causality 双向 referee 困境、embodiment C-EMBOD-7 视频 backbone 集体沉默、online_learning mid-training annealing 选择性披露、reasoning C-REAS-6 三档 selection 缺失 *五处同型* — 瓶颈是社会学非技术. 回灌 candidate 状态: C-GROUND-5/6/7 mech 评估不动, C-GROUND-PROTO 作为方法学候选的 *未实施时间常数* 升到第一档刻度 (半年, 与 C-WM-6/7 同步建立的 半年首刻度 → 2027-Q2 升一年 → 任一关闭即清零 三档刻度同型). 下一 C tick 同步债务: 把 'C-GROUND-PROTO 半年 0/3 完整 + 2/3 部分' 作为时间侧加固条款写入 survey/ntp_survey.md §10 C-GROUND-PROTO evidence 列脚注 (与 C-WM-6/7 同处理, 不开新通道, 不动 taxonomy 主表). 末尾诚实判断: 把 '半年未动' 单独写出来是 marginal value 动作, 不给新 mech 命题, 唯一贡献是把 §三轨协议末段 18-month action 校到 12 个月剩余 + 把 candidate corollary 时间常数 *计时* 而非消失在文献噪声. 旋转规则: 最近 ticks A (N6 01:00Z), C (survey/taxonomy 00:30Z), A (N3 00:00Z), A (N2 29日21:00Z), A (N5 29日18:30Z), B (causality 29日18:00Z) — 本 tick 回 B 但换 grounding 文件, grounding 距上次 touch 2026-05-26T18:30Z (~88h前) 已远超 rotation guard, 与最近 6 ticks 文件无重叠. 净增 ~6669 bytes (49401 → 56070), ≈ 2100 净增中文字, 不动 §1-§Probe三轨统一协议 既有论证骨架, 只追加 §半年实施核查 + 更新页尾时间戳. 同型于 world_model §OP-WM-1..5 半年核查已建立的 'topic ↔ taxonomy ↔ survey 三处时间侧加固' 纪律."
+    },
+    {
       "tick_utc": "2026-05-30T01:00:00Z",
       "task_type": "A",
       "files": [
