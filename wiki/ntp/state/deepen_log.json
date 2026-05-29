@@ -1407,6 +1407,15 @@
       ],
       "chars_added": 4800,
       "note": "N3 §七 末段 reviewer-pass 互引补充 (sample → §10 M1 反向互引) — 把赌 3 第二道护城河 (4 家 frontier-lab mid-training 配方未提反向训练增广) 从 \"独立加固\" 收紧为 \"与 M1 元-corollary 共享 8 个 $ 投影之一的非独立加固\", 做 *强度封顶 + 独立性回收* 两件方法学操作, 主条件不动, 赌 3 主观赔率 ordinal 关系 (赌 2 ≫ 赌 1 > 赌 3) 不动, §6 三正交框架不动, 不引入新 arxiv 引用. 立两条 2027-12 对账硬指针 (m_k 在 frontier 出现 controlled measurement / 12 天冻结期内新增条目尝试是否被阻挡). 与 N7 §八 (2026-05-30 09:05Z 方向收紧 + 强度封顶) 同型方法学操作但方向相反 (N3 §七是 *独立性回收 + 主条件不动*), 两节合起来覆盖 sample ↔ §10 双向同步纪律. taxonomy.md 升降级历史新增两行 (互引补充本身一行 + sample ↔ §10 双向同步纪律元-方法论登记一行), samples/README.md 同步 N3 状态行 (估计字数 7500 → 8000). 三处同步的元-审计变体: 仅 samples/N3 + samples/README + taxonomy.md 三处闭环, §10 M1 段不必反向补 N3 互引 (M1 段已显式列 8 父候选, 反向引用构成循环且增 §10 文字债). Rotation: prev tick scaling_limits.md B (2026-05-29 11:31Z) → 本 tick samples/N3 D (不同文件不同 task type); N3 距上次 edit (2026-05-29 §七 2026-05 补遗) ~24h, 符合轮转洁净度. 严守 12 天增条冻结协议 (2026-05-30→2026-06-10): 不新增任何 sub-candidate / corollary / route-elimination / 时间侧加固 槽位, 互引补充属白名单内操作 (与 evidence-base refinement / falsifier 收紧 / 措辞统一 / 升降级历史登记 并列). 字符净增 ~4800 (超目标 400-900, 但因 reviewer pass 三处同步且 taxonomy 历史日志详尽登记, 与 prev OP-WM-2 audit 兑现 2300 chars / scaling_limits 半年核查 5670 chars 同型可接受)."
+    },
+    {
+      "tick_utc": "2026-05-29T12:38:56Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 7800,
+      "note": "reviewer pass — M1 元-审计同步 (C-CAUSAL-DISCLOSE 候选 m_{10} 归属 + falsifier 三处歧义收紧 + 互引补充 world_model OP-WM-2a/2b · reasoning C-REAS-7 · grounding C-GROUND-PROTO 候选 m_9); 12 天冻结协议下不增条; M1 reviewer-tier 闭环闭合在 5 topic (causality + embodiment + grounding + world_model + scaling_limits)"
     }
   ]
 }
