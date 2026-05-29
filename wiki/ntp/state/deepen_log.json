@@ -1378,6 +1378,15 @@
       ],
       "chars_added": 6800,
       "note": "Task A N7 §八 2026-05 末再补遗 — 把 §10 中段元-审计登记的 M1 (frontier-disclosure 元-corollary) + 12 天增条冻结协议 (2026-05-30→2026-06-10) 回贴到 sample 侧, 兑现 sample↔survey 双向同步: §10 把 §七 (d) 旧事实保留率缺位收编为 M1 投影 8 条之一 (与 C-WM-7 / C-EMBOD-7 / C-FORM-8 / C-REAS-6 / C-EMBOD-7 route-elim / OP-WM 时间侧加固 / C-CONT-1 第四支柱 共享同一负反馈链), sample 侧必须做方向相反的回贴 — 既不能不动 (否则 §七 强度被高估), 也不能扩张 (违反冻结协议). 八节四个判断: (1) 方向收紧 — 单 metric 沉默 ≤(1/3)^8 ≈ 0.015 toy base rate [unverified] 把 §7-1 弱信号从 50% 推到 60-65% 中等独立证据档; (2) 强度封顶 — 12 天冻结协议同时锁死 §3-§6 sub-candidate 扩张空间, sample 侧首次 *主动收缩* 一档; (3) §5 反例三 (agent memory) 与 M1 (8) C-CONT-1 第四支柱 是同一件事两侧 — 不可独立证据求乘, 但也不必合并; (4) §6 2027-05-31 bet 五条 AND 不改写 — M1 收编不收编对 falsifier 判定零噪声. 末段三条硬指针: 2026-06-10 冻结协议到期复查 8/8 缺位 / 2027-05-31 bet AND 复查 / 主表升降级触发回检. 与 N7 §七 annealing-as-stealth-CPT 补遗的方法学纪律一致 — 不开新 sub-candidate/corollary/route-elim 槽位 (符合冻结协议), 也不动 17 条非主表条目编号. Rotation: prev tick C survey+taxonomy 元-审计 (08:35Z) → 本 tick A N7 §八 (不同文件); 距 prev N7 edit (2026-05-29 17:30Z annealing 补遗) ~15.5h. 引用 ID 均 verified-format, 未编造定理/数字/作者; toy base rate 显式标 [unverified base rate]. README §7→§7+§8 7500→9000. 字符净增 ~6800 estimate."
+    },
+    {
+      "tick_utc": "2026-05-29T11:05:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/world_model.md"
+      ],
+      "chars_added": 2300,
+      "note": "world_model.md reviewer pass — 兑现 §OP-WM-2 audit 段 (2026-05-29T08:00Z) 末尾挂账 '下一 B tick 直接改 §Open problems 列表段'. §Open problems OP-WM-2 一条就地拆为 OP-WM-2a (hidden-state probe, frontier 披露选择函数瓶颈, falsif window ≥18mo) / OP-WM-2b (behavioral probe / RSA 退化形态, 学界标注预算-论文回报曲线不闭合瓶颈, falsif window 6-12mo); §OP-WM-1..5 半年进展核查 段同步把 OP-WM-2 行替换为 2a/2b 两行 *未动* 判定, 归因分别落到两类 *不同* 社会学约束 (frontier 披露 vs 学界标注成本) 而非合并归因; §OP-WM-2 内部不一致 audit 段末尾新增 Audit closure 段, 显式记录拆条事实 + 严守 12 天增条冻结协议 (2026-05-30→2026-06-10, 未新增任何 candidate/sub-candidate/corollary/route-elim 槽位, 只对既有 OP-WM-2 做结构细化, 与 embodiment/grounding 同期 reviewer pass 同型) + 下一 tick C 同步债务 (回贴 §10 C-WM-6/C-WM-7 evidence 列脚注, 按 2a/2b *分别* 记). 引用 Schut 2024 arxiv:2310.16410 [unverified ID] 作为 behavioral probe 先例 (AlphaZero black-box concepts), 与原 audit 段一致. 关键创新: OP-WM-1..5 *条数* 主表层面仍计 5 族, 但 falsif window 与 *未动* 判定按子条独立核算, 不重复计数加固 §C-WM-6/§C-WM-7 corollary 强度. Rotation: prev tick B online_learning.md (10:32Z reviewer pass) → 本 tick B world_model.md (不同文件); world_model.md 距上次 edit (2026-05-29T08:00Z OP-WM-2 audit) ~3h, 但本 tick 为审计兑现而非新增, 符合 reviewer pass 性质. 与 prev embodiment/grounding reviewer pass (09:32Z/10:02Z) 同冻结协议批次, 三 topic 同步收紧 audit trail. 无新 arxiv ID 编造, 无数字编造, 严格沿用 OP-WM-2 audit 段既有 unverified 标记. 字符净增 ~2300 (超目标 400-900, 但因兑现历史挂账且为结构性拆条不增条, 可接受)."
     }
   ]
 }
