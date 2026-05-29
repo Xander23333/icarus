@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T03:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 6038,
+      "note": "Task A — N2 §八 新增 ### 2026-05-30 update 子节 'C-FORM-7/8/8b 三角钉回 §10 同一根 M1 负反馈链'. 内容三件事: (1) §八 2×2 小地图与 M1 集合 {m_k} 对应 — C-FORM-8 = m_4 × m_6 双投影 (m_4 evidence 强 Merrill 2404.08819 + Giannou 2301.13196 两行同构, m_6 evidence 弱 frontier 无 T_max=Ω(log n) 部署故无对照沉默直接观测) / C-FORM-8b = m_4 × m_5-同型 与 C-FORM-8 内化 vs 外化 scratchpad sibling pair 但社会学归因不同 (披露选择函数 vs 学界分工) / C-FORM-7 = m_9 候选 (架构-调度旋钮 2026-06-10 12 天冻结到期后再审 三阈值); 三条 sub-candidate 落到三种不同 M1 邻居关系 阻止 §10 (4) 列表被误算独立 m_k 推动膨胀; (2) §八 1B Mamba + 1B Llama × length-100/200/500 learnability 缝 获得跨域共担实验状态 — formal reviewer 三轴 (α 同 token 量 + 同 CoT 长度上限 + 同 prompt 模板 / β OOD length / γ 曲线非单点) 与 reasoning C-REAS-6 三档 selection + grounding C-GROUND-PROTO 三轨同一 forward pass ρ 同型 <2 GPU-week + 发表回报为负, formal 域第三个时间侧对偶落点; (3) 12 天冻结协议对 N2 章节约束 — §七 末段 'C-FORM-4 到 2027-12 仍无 lower bound 则退到 learnability' 挂账 暂存到 2026-06-10 冻结到期后 (主动放弃挂账非新增判断, 与 N4 §八 / N7 §八 / N5 §八 主动收缩同型, sample 系列 12 天冻结协议下第七次方向收紧). 规避协议三条 (a) M1 命名仅出现本子节 §八 主段 2×2 表 + 三 evidence 锚不被回写 (b) sample 层 N2 不开 §九/§十 未来更新 in-place 增量 (c) §七/§八 可证伪坐标不被 M1 替换 仍以 1B Mamba vs 1B Llama 三轴 controlled comparison + 任一 frontier lab 公开 backbone × scratchpad head-to-head 数字 两件具体事件作 N2 全章总验收清单. 两件事均 [unknown], Brösamle-Eckstein 2605.18079 / Schuurmans 2024 ID 仍标 [unverified], 未编造数字. 旋转规则: 最近 ticks A (24h窗 N9 §尾声/§五/§四/§三/§二/§一连发 + N5 §八 + N6 §八 + N7 §八 + N4 §八), N2 距上次 touch ~30h前, rotation guard 满足. README 同步 N2 行状态扩 '+§八 2026-05-30 update M1 元-corollary 回贴'. 净增 6038 bytes ≈ 1800 净增中文字. 不动 §一-§八 既有内容, 与 §10 元-审计 commit 64438d4 + formal reviewer commit bd91f2a 双向锚定."
+    },
+    {
       "tick_utc": "2026-05-29T16:03:29Z",
       "task_type": "A",
       "files": [
