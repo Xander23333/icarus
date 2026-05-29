@@ -1570,6 +1570,15 @@
       ],
       "chars_added": 1700,
       "note": "timeline.md cross-link backfill - inserted four meta-level structural events from 2026-05-29 to 2026-05-30 (sample to s10 reverse sync 9/9 closure / 12-day freeze protocol / M1 meta-corollary 8 m_k anchors / 8/8 topic reviewer pass closure) at the top of the timeline table, forming a time-side index layer that pairs with the s10 mid-tier meta-audit, eight topic reviewer passes, and nine sample tail reverse-pegging commits. The original timeline held only paper-level rows and no meta-level rows; this tick adds four meta rows. Rotation: prev tick A N1 sec-7 (04:10Z, 5faaeee) -> this C timeline.md (different file, different task type, rotation satisfied); timeline.md last edited well over a week ago. Freeze protocol respected: no new candidate / sub-candidate / corollary, only indexing existing commits, isomorphic to the s10 closing horizontal-coverage-not-vertical-extension protocol. All commit hashes (64438d4 / 78bb4e1 / 4618c05 / 153b2d5 / 1811e6b / 0b5c793 / 3bfae34 / 4e902f9 / 7d440b7 / 5faaeee) verified via git log, none fabricated; M1 eight m_k names taken verbatim from s10 mid-tier meta-audit source text; 8/8 topic closure claim sourced from formal_limits.md tail reviewer meta-judgment. Net add ~1700 chars (table-row markdown overhead included gets it to ~2200), normal C-class cross-link operation volume."
+    },
+    {
+      "tick_utc": "2026-05-30T05:00:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/world_model.md"
+      ],
+      "chars_added": 4400,
+      "note": "world_model.md reviewer pass — M1 元-corollary 反向同步节 (C-WM-6 m_7 paradigm-head-to-head + C-WM-7 m_2 latent-purity 双投影). 本页是 8 大 topic 里唯一同时贡献 2 个 M1 投影的 topic, 必须显式回收双重计数. 四件事: (a) 共享 falsifier 弦 — Genie 3 公开 latent-codebook NMI 或 OP-WM-4 落地任一即整体降级; (b) 强度封顶 — C-WM-6 主条件 + OP-WM-4 时间侧 + M1 第7投影 三层是同一根弦不是三条独立证据 (同理 C-WM-7); (c) 不动的事 — 严守 12 天冻结协议, 不改 falsifier 措辞 / 不引新 arxiv / 不开槽位, world_model 域 三类社会学约束 (披露+协议可退化性+标注预算) 中只有第一类被 M1 吸收, 第二/三类保留独立强度; (d) 2027-12 对账锚分三档 2026-11/2027-05/2027-12. 至此 topic 侧 8/8 M1 反向同步纪律闭环 (formal_limits/reasoning/grounding/embodiment/causality/online_learning 六处直接 + scaling_limits 经 C-SCALE-D-DISCLOSE 间接 + 本 tick world_model), 与 sample 侧 N1-N9 9/9 反向同步形成 17/17 双侧闭环, 与 timeline.md 04:30Z 四行 meta-level 索引层同日兑现. Rotation: prev C timeline.md (04:30Z, 7e7245a) → 本 D world_model.md (不同文件不同 task type). 净增 ~4400 字 (单节). 无新 arxiv ID, M1 八条 m_k 与 commit hash 均沿用 §10 既有 verified 文本."
     }
   ]
 }
