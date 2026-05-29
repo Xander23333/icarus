@@ -1561,6 +1561,15 @@
       ],
       "chars_added": 4700,
       "note": "N1 §七 2026-05-30 reviewer pass — 框架章 sample↔§10 反向同步 (M1 元-corollary 回贴, commit 64438d4). N1 是最后一篇接收 M1 反向同步的 sample (N2-N9 已全部贴), 至此 N1-N9 九篇 sample↔§10 双向同步纪律 闭环. 四件事: (a) §六三条隐含修订归属耦合到 M1 三个面向 (evidence-可分离性 否决 / 候选-增长 反例 / falsifier-小事 重写); (b) §四三分法骨架不动确认, M1 落 mech 内部元-corollary, 留 *披露通道折算规则* 至 2026-06-10 冻结到期后 D tick; (c) §六三档时间常数与本 tick 半年第一刻度锚定窗口对齐, 引六域 OP 半年核查 commits, 2027-12 回检窗口分解为 2026-11/2027-05/2027-12; (d) 框架章额外护栏 — M1 只能加固 *候选不被反驳* 不能 *直接加固*, M1 投影只作分母标注不作分子加分. 严守 12 天冻结协议: 不开任一槽位, 不重写 §四/§五 表, 仅 sample↔§10 反向同步 + 互引 + 时间常数刻度对齐. Rotation: prev A N8 §八 (03:30Z) → 本 A N1 §七 (不同文件不同方向). README 6300→7800. 无新编造. 净增 ~4700 字."
+    },
+    {
+      "tick_utc": "2026-05-30T04:30:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/timeline.md"
+      ],
+      "chars_added": 1700,
+      "note": "timeline.md cross-link backfill - inserted four meta-level structural events from 2026-05-29 to 2026-05-30 (sample to s10 reverse sync 9/9 closure / 12-day freeze protocol / M1 meta-corollary 8 m_k anchors / 8/8 topic reviewer pass closure) at the top of the timeline table, forming a time-side index layer that pairs with the s10 mid-tier meta-audit, eight topic reviewer passes, and nine sample tail reverse-pegging commits. The original timeline held only paper-level rows and no meta-level rows; this tick adds four meta rows. Rotation: prev tick A N1 sec-7 (04:10Z, 5faaeee) -> this C timeline.md (different file, different task type, rotation satisfied); timeline.md last edited well over a week ago. Freeze protocol respected: no new candidate / sub-candidate / corollary, only indexing existing commits, isomorphic to the s10 closing horizontal-coverage-not-vertical-extension protocol. All commit hashes (64438d4 / 78bb4e1 / 4618c05 / 153b2d5 / 1811e6b / 0b5c793 / 3bfae34 / 4e902f9 / 7d440b7 / 5faaeee) verified via git log, none fabricated; M1 eight m_k names taken verbatim from s10 mid-tier meta-audit source text; 8/8 topic closure claim sourced from formal_limits.md tail reviewer meta-judgment. Net add ~1700 chars (table-row markdown overhead included gets it to ~2200), normal C-class cross-link operation volume."
     }
   ]
 }
