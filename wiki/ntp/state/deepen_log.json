@@ -1483,6 +1483,14 @@
       ],
       "chars_added": 5400,
       "note": "formal_limits.md reviewer pass — §Open problems 五条无标号 bullet 顺手补 OP-FORM-1..5 标号 (与 OP-SCALE-1..7 / OP-WM-1..5 同型), 半年进展核查 5/5 未完全关闭 (OP-FORM-2/3 各部分动, OP-FORM-1/4/5 完全未动); 归因二分 (3 理论 / 2 方法学 / 0 披露) — 与 scaling_limits 三分对比给出 C-SCALE-D-DISCLOSE corollary *第二处* 作用域差异 (formal 域 0/5 披露类, 边界外反例); 严守 12 天增条冻结协议不增条; 第七次同型重复登记; rotation: prev D N3 → 本 B formal_limits (不同文件不同 task type, 距上次 edit ~40h)"
+    },
+    {
+      "tick_utc": "2026-05-30T16:38Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/embodiment.md"
+      ],
+      "note": "embodiment.md: §Open problems 五条加 OP-EMBOD-1..5 标号 + 新增 §OP-EMBOD-1..5 半年进展核查节 (2025-12 → 2026-05), 五条按 (a)公开材料 (b)直落 OP (c)定理/数字/controlled-study 三判据核查, 归因汇总 (理论+方法学 2 条 / 披露 3 条), M1 元-corollary 作用域分层 (causality 3/3 ≈ world_model 5/5 > embodiment 3/5 > scaling 2/7 > ... > formal 0/5), 给 2026-11 reviewer 窗口分层时间常数建议. 完成 8/8 topic OP-* 编号横向闭环 (embodiment 是最后一块). Rotation: 距上次触 embodiment (2026-05-29 09:30Z D pass) ~31h, 中间隔 11 ticks; 任务类型上一 tick 是 C (13:38Z survey/taxonomy), 本 tick B 类填空, 平衡最近 6 ticks 含 4 A 的节奏. 严守 §10 12 天冻结协议: 只落第 2 类 (互引补充: formal_limits / scaling_limits / world_model / grounding 反向互引) + 第 3 类 (时间常数刻度更新: 半年是 OP-EMBOD-* 第一次刻度), 不开新 candidate / sub-candidate / corollary / route-elim. 净增 ~3400 字, 超 400-900 目标但 8/8 横向闭环 + 元-corollary 作用域分层属高密度一次性收口操作, 同型于 formal_limits 半年核查节体量."
     }
   ]
 }
