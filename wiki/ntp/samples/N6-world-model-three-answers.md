@@ -107,7 +107,20 @@ Sora 阵营是从强命题往后撤，Genie 阵营是把弱命题往强加注，
 
 最后一句留给整套 NTP 系列的内部一致性。N6 的判决（video 四路线全部停在 L1，谁先做 L2 评测谁就赢）、N4 的判决（text-NTP 在 Pearl L2 同样近随机）、N5 的判决（VLA 长程闭环未解）、N7 的判决（continual learning ripple-effect 未解）——四条暗线指向同一个非常具体的诊断：**2024–2026 这一波 NTP 范式真正卡住的不是规模、不是数据、不是架构，而是评测**。任何一条暗线只要某家 lab 拿出一份社区认可的 L2 标准评测，整场对峙就会从 \"谁的 demo 更好看\" 切换到 \"谁的模型真的在做反事实\"——这个切换发生的那一天，才是 NTP 范式真正进入或退出下一阶段的那一天。在那之前，本系列所有 \"中间判决\" 都只能用 [uncertain] 这三个字符诚实地结尾。
 
+## 七、2026-05 补遗：三层赔率与「L2 评测墙」的过去半年
+
+§六尾声把整章压到三句结论：(i) 四条路线全部停在 Pearl L1；(ii) 谁先做出 video L2 标准评测谁就赢；(iii) 我个人 2027–2028 的三层押注（Sora 强命题 <15%、Genie L2 ≈40%、Hybrid 大概率赢）。把过去半年 2025-12 → 2026-05 新登记的几条 sub-candidate 与四篇 readout-side 清洗对回这三句，**结论的方向都不变，但赔率与可证伪坐标各被挤了一格**——同型 N2/N3/N5/N7 §七里反复出现的「mech 命题方向不变、evidence-base 与 falsifier 精度逐节加密」节奏。
+
+**第一查账：L2 video benchmark 这半年到底有没有出现。** 答案是仍然没有。[`../topics/causality.md` §2024–2026 post-CLadder counterfactual benchmark 谱](../topics/causality.md) 把过去两年所有声称做 Pearl L2/L3 的新公开 benchmark 拉过一遍——CRAB / CausalProbe-2024 / Det-CausalBench / CounterBench / τ-Bench 社区 fork 五条全部漏掉至少一项 leak-check 必要条件或形式上落回 L1.5。其中**没有一条是 video-modal**——五份全在文本/符号 SCM 上。也就是说 §六尾声「video L2 评测目前还不存在」这个前提到 2026-05 不仅未被推翻，**还被「四 benchmark 谱协议性失败」加固了一格**：连文本侧的 Pearl L2 评测都没人能做干净，video 侧的方法学难度只会更高，不会更低。这把第三层判断从 *缺位* 收紧到 *协议性缺位*——一种更强的「评测墙」假说。
+
+**第二查账：Sora 强命题的 <15% 概率应不应该再压。** [`../topics/world_model.md` §Latent-action codebook 可辨识性](../topics/world_model.md) 2026-05-28 登记的 C-WM-7 sub-candidate（latent-action codebook 与真实动作流形之间的可辨识性下界，falsifier ≥2 env × 同 codebook × NMI/linear-recovery ±2pp ≥0.7）直接吃掉了 §三 Genie 路线的隐含假设之一，但反过来对 Sora 强命题也有不对称影响：pixel-only NTP 连 latent-action codebook 这一层都没有，连 C-WM-7 这种「可辨识性下界」都谈不上——它不在赛道上而非赛道上落后。配合 Kang-You [arxiv:2411.02385](https://arxiv.org/abs/2411.02385) 的 OOD 平坦曲线半年内无反例、PhyGenBench / WorldModelBench 这半年 Sora 2 / Veo 2 / Kling 1.6 新公开数字仍未跨 60% 物理可信度门槛 [unverified bundle, 仅 product page 与若干第三方复测]，§六给 Sora 强命题的 <15% 这一数字基本没有上调理由。**轻微下调到 ~10%** 是诚实的——但下调来源不是「Sora 自己变弱」，而是「半年内 OpenAI 自己又把 mission 改了一次」（§二 2025-09 那次改动到 2026-05 没有逆转）。
+
+**第三查账：Genie L2 ≈40% 与 Hybrid 路线这半年是更亮还是更暗。** 两件事必须分开。亮的一面：[`../topics/causality.md` §Video world model rollback 作为 Layer-3 escape route 的形式检查](../topics/causality.md) 把 Genie / Cosmos / 1X 一脉的 latent-action SCM 在 Pearl §7 *Causal Hierarchy Theorem* 意义下逐条拆解，结论是 latent-action codebook 上的 do(a) rollback **形式上**是 well-defined L2/L3 query——这是 §六尾声对 Genie 那段乐观押注的形式背书。暗的一面：同一节末段把 video world model 的 escape route 拆成三条耦合债务——C-WM-7 latent-action 可辨识性 + [`../topics/grounding.md` C-GROUND-5 action-execution gap](../topics/grounding.md) + 直接在 video world model 上跑 CLadder——三条没付清前，「Genie 兑现 L2 评测」 这个判决不是独立事件而是耦合事件。把这层耦合代回赔率：Genie 单独兑现 L2 评测某一项的概率从 §六的 40% **应该下调到 25–30%**（[uncertain]，主要拖累项是 C-WM-7 与 C-GROUND-5 半年无显著进展），但 **Hybrid 方案胜出概率反而从 §六的隐含 ~45% 上调到 ~55%**——因为耦合债务三条同时被付清的概率非常低，单一路线胜出的尾部被吃掉，所有质量都被推到 Hybrid 那一栏。这条赔率重分配方向与 N5 §六对 VLA 路线、N4 §六对 Pearl 第三层的判决方向一致：**单押路线被 sub-candidate 网逐条加权后概率下降，组合方案概率上升**，这是 mech 调查 2026 年的主导节奏。
+
+**元判断 (2026-05-30)**：三项查账不动 §六三层押注的*方向*，但把每一层都收紧了一格——Sora 强命题 15% → 10%（轻微）、Genie 单押 L2 40% → 25–30%（实质下调）、Hybrid 路线 ~45% → ~55%（实质上调）。三条收紧合起来不构成新预测，只是把 §六同一句话「单独路线赢不了，Hybrid 会赢」的支持证据从 *一篇章末的诚实判断* 升级到 *半年三条 sub-candidate 形式背书*。同型于 N2 §七 TC⁰ 之墙、N3 §七三 bet 赔率结构、N4 §七 Layer-3 评测谱、N5 §七 Bet-N5 falsifier 网、N7 §七 annealing-as-stealth-CPT——这是本系列样章 §七补遗的第五次重复同一种节奏：*mech 命题方向不变、evidence-base 与 falsifier 精度逐节加密、单押概率被组合方案吃掉*。这条节奏本身可能在 2027 年值得在 N1 §3「NTP 三道天花板」元框架里加一段「赔率重分配 ≠ mech 信号增强」的警示——否则容易把方法学加密误读为科学进步。最后一条诚实警告留给未来 Xander：上述三个下调/上调数字全部带 [uncertain] 标记，意义不在数字精度而在三个数字必须**联动**（Genie 单押下调与 Hybrid 上调必须同方向），这是赔率重分配的内在一致性条件，单看任何一项孤立调整都是错的。
+
 ---
 
+*相关 topic：[causality](../topics/causality.md)（§Video world model rollback 形式检查给 Genie 路线 escape route 拆成三条耦合债务）、[world_model](../topics/world_model.md)（C-WM-7 latent-action codebook 可辨识性是 §七第二/第三查账核心约束）、[grounding](../topics/grounding.md)（C-GROUND-5 action-execution gap 是 latent action → physical action 迁移桥的 referent 障碍）。*
 
 ---

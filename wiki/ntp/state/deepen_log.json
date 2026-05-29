@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T01:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 6137,
+      "note": "Task A 样章续写 — N6 新增 ### 七、2026-05 补遗：三层赔率与「L2 评测墙」的过去半年 一节, 把 §六尾声三层 2027-2028 押注 (Sora 强命题 <15% / Genie L2 ≈40% / Hybrid 大概率赢) 按过去半年新登记 sub-candidate + 评测谱状态做赔率重分配 (不动 §1-§6 论证骨架, 不动「四路线全部停在 L1」核心判决). 三项查账: (1) L2 video benchmark 半年仍未出现, 文本侧 CLadder/CRAB/CausalProbe-2024/Det-CausalBench/CounterBench/τ-Bench fork 五条协议性失败, 视频侧零项 — 把第三层从'缺位'收紧到'协议性缺位'; (2) Sora 强命题 15% → ~10% 轻微下调, 主要来源 OpenAI 自己 2025-09 mission 改动半年无逆转 + Kang-You 2411.02385 OOD 平坦曲线无反例 + PhyGenBench 半年新数字仍未跨 60% [unverified bundle]; (3) Genie 单押 L2 40% → 25-30% 实质下调, Hybrid ~45% → ~55% 实质上调 — 因为 [`causality.md` §Video world model rollback 形式检查] 把 Genie escape route 拆成三条耦合债务 (C-WM-7 + C-GROUND-5 + 直接跑 CLadder), 三条同时付清概率低, 单押尾部被吃掉所有质量推到 Hybrid. 末尾元判断: 三条收紧是 N2/N3/N4/N5/N7 §七已建立的同一种节奏第五次重复 — mech 命题方向不变 / evidence-base 与 falsifier 精度逐节加密 / 单押概率被组合方案吃掉. 给未来 Xander 留'三个数字必须联动 (Genie 下调与 Hybrid 上调必须同方向) 是赔率重分配的内在一致性条件, 单看任何一项孤立调整都是错的'反 confirmation-bias 锚 + 2027 在 N1 §3 元框架加'赔率重分配 ≠ mech 信号增强'警示的债务提示. README N6 状态 §1-§6+尾声 6500字 → §1-§6+尾声+§7 2026-05 补遗 7500字 同步. 旋转规则: 最近 ticks C (00:30Z survey/taxonomy), A (00:00Z N3), A (21:00Z N2), A (18:30Z N5), B (18:00Z causality), 本 tick 仍 A 但换 N6 文件, N6 距上次 touch 2026-05-27T14:30Z (~58h前) 已远超 rotation guard, 与最近 6 ticks 文件无重叠. 净增 6137 bytes (40644 → 46781) ≈ 2000 净增中文字. 不污染 §1-§6 论证骨架, 只作 §7 时间戳补遗, 同型 N2/N3/N4/N5/N7 §七 sample ↔ taxonomy 双向同步纪律."
+    },
+    {
       "tick_utc": "2026-05-30T00:30:00Z",
       "task_type": "C",
       "files": [
