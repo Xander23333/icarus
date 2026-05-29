@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T00:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N3-three-puzzle-pieces.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 8159,
+      "note": "Task A 样章续写 — N3 新增 ### 七、2026 年 5 月补遗：三块碎片在过去半年各被推了一下 一节, 把 §尾声三条 2027 bet 的赔率结构按过去半年新证据 *方向性* 修订 (不动 §1-§6 论证骨架): 赌1 (§3 Faith-and-Fate / 逐 token 局部性) 从'倾向不达成'修到约 50-50 — Brösamle-Eckstein 2605.18079 [unverified ID] (fp8/int4 + log-grow depth + summarized CoT Turing-complete) 打开'单 forward pass 表达力受 TC⁰ 限'硬上界 + STARS 2605.26733 [unverified ID] (谱半径正则把 LoopLM test-time depth 崩塌改为单调饱和) 给出 long-CoT RL 之外的第二通道; 同步登记 formal_limits.md C-FORM-8 sub-candidate 联动 (Selective-SSM × Loop). 赌2 (§4 Unfaithful CoT / 过程-结果同构惩罚) 从'倾向降级'修到'几乎确定降级到 NTP-cap' — 同月四篇 readout-side 清洗 (Garcia 2605.10799 / Causal Tongue-Tie 2605.25891 / ProFIL 2605.11467 / Anti-Collapse 2605.05438 + Conditional Attribute 2605.14004) 把 §4 论证从'反例'级伤害升级到'方法学'级伤害, taxonomy.md 2026-05-28 已把'post-commitment CoT theater 是 mech 缺陷'降到 NTP-cap (RL-readout 可修), §4 判决条件改为必须经过 grounding.md 新登记 C-GROUND-PROTO 三轨协议过滤. 赌3 (§5 Reversal Curse / 方向单向性) 不动 — 半年无 vanilla 反向反例 + online_learning.md 2026-05-29 C-CONT-2 第三支柱 frontier-disclosure 给赌3加社会学护城河 (四家 mid-training 配方均未提反向训练增广, Llama3 2407.21783/DeepSeek V3 2412.19437/R1 2501.12948/Qwen2.5 2412.15115), 判决条件保持以公开报告为准、私下配方一律不计. 末尾元判断: 三条修订都不动 §6 三正交切面框架本身 (loss 几何层 vs 工程曲线层应分开演化), 2027-12 对账时三条全按本节方向兑现 → §6 升格为'有预测力的框架'; 三条全反向 → §6 重写; 一两条对一两条错 = confirmation-bias 友好的常见模式, 警惕. README N3 状态 §1-§6+尾声 6500字 → §1-§6+尾声+§7 2026-05 补遗 7500字 同步. 旋转规则: 最近 ticks A (N2 21:00Z) → B (scaling 21:30Z) → 其他, 本 tick 仍 A 但换 N3 文件, N3 距上次 touch 2026-05-28T00:04+0800 (~47h 前) 已远超 rotation guard; 与最近 5 ticks 文件无重叠. 净增 8159 bytes (31518 → 39677) ≈ 2700 净增中文字. 同型于 N2 §7 / N5 §7 / N7 §7 已建立的 sample ↔ taxonomy 双向同步纪律 — 本 tick 是把同月新登记 sub-candidate (C-FORM-8, C-GROUND-PROTO, C-REAS-6, C-CONT-2 第三支柱) 与四篇 readout 清洗钉回 N3 三 bet 的 *赔率结构* 而非 *框架结构*."
+    },
+    {
       "tick_utc": "2026-05-29T21:00:00Z",
       "task_type": "A",
       "files": [
