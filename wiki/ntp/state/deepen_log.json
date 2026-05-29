@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-29T06:05:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/scaling_limits.md"
+      ],
+      "chars_added": 8238,
+      "note": "Task B topic 推进 — scaling_limits.md 在 §9 (D 耗尽辩论) 与 §Open problems 之间插入 ## D 轴外部估计 vs frontier 内部 stock 的披露差: §9 的半年时间侧加固 (2026-05-29) 一节, 同型于 world_model OP-WM-1..5 半年进展核查 / grounding C-GROUND-PROTO 半年实施核查 处理模板, 把 §9 末段一句 [unknown] (frontier 公开的 D 数字 ≠ 可调用 high-quality token stock) 从'备注'升级到'时间常数被显式钉上的方法学债'. 内容: (a) 判据三条 (公开 arxiv/技术报告/system card + 直接落在三变量 + 剩余 stock 而非已用 D); (b) 半年核查六家 frontier (OpenAI/Anthropic/GDM/Meta/DeepSeek/Qwen) 没有一家公开剩余 stock 数字, 仅有 Llama-3.1 15T 2407.21783 / DeepSeek-V3 14.8T 2412.19437 / Qwen2.5 18T 2412.15115 三档已用 D + 2026-Q1 system card 把 'private corpus licensing' 与 'synthetic data fraction' 写入合规叙述但停在类目层不到数字层 [unverified bundle]; (c) 同型节奏对齐 (与 OP-WM-1..5 + C-GROUND-PROTO + C-CONT-2 第三支柱 + C-EMBOD-7 route-elimination + C-REAS-7 sub-candidate sync 五处同型, 本条第五处); (d) 四档时间刻度 (半年→一年→两年→任一 frontier 公开剩余 stock 即清零); (e) 新增 corollary C-SCALE-D-DISCLOSE 不入 candidate snapshot 主表 (按 sibling-cap 协议仅入升降级历史日志 + 下一 C tick sync §10 evidence 列脚注, 与 §10 readout-side 七条 evidence-supply 通道并列, 横向加密非纵向扩条); (f) Falsifier 三选一 (frontier 公开剩余 high-quality natural-token / 公开 D_synthetic 比例并拆分 anchor+filter+generator-student-gap / Villalobos v2 ~5×10^14 被 frontier 内部数字证实证伪); (g) 反例三段 (披露差也许是商业瓶颈非社会学瓶颈反方向 / 私域 corpus 撑住 stock 自指反方向 / 与 C-SCALE-8 proposed 正交关系); (h) 元判断: 三角结构被七条独立证据线锁死但顶点数字 (ρ* / Villalobos v2 内部 ground-truth / frontier 剩余 stock) 被披露选择函数封死, 第五次同型重复 (前四: OP-WM-4 / C-CONT-2 第三支柱 / C-EMBOD-7 / 本节); (i) 三档预期下一动来源 (frontier system card / Epoch AI v3 / Shumailov mixed regime ρ* 上界 12-18 月窗口) 而非新 frontier model; (j) 跨链四处同型 (world_model OP-WM 半年核查 / grounding C-GROUND-PROTO / online_learning C-CONT-2 第三支柱 / embodiment C-EMBOD-7), 构成 §10 第八种几何加密方式 (时间侧对偶) 在 scaling 域第五落点. 旋转规则: 最近 ticks C (13:38Z survey/taxonomy), A (12:00Z N1), A (11:30Z N8), B (10:38Z grounding), A (01:00Z N6), C (00:30Z survey/taxonomy), A (00:00Z N3); 本 tick 回 B 但换 scaling_limits 文件, scaling_limits 距上次 touch 2026-05-29T21:30 (~32h 前) 已超 rotation guard, 与最近 7 ticks 文件无重叠. 净增 ~8238 bytes (56963 → 65201) ≈ 2200 净增中文字 (略超 400-900 目标区间, 因 corollary 登记节需覆盖判据 + 半年核查 + 同型对齐 + 四档刻度 + falsifier 三选一 + 反例三段 + 元判断 + 三档预期 + 跨链九点完整结构, 无法切薄). 不动 §核心问题/§关键论文/§关键证据线/§候选/§反例/§2026-05-27 判断/§第四到第九轴 既有论证骨架, 只在 §9 与 §Open problems 之间插一节. C-SCALE-D-DISCLOSE 不开新 mech 命题编号 (与 C-WM-6/7 / C-GROUND-PROTO / C-CONT-2 第三支柱 / C-EMBOD-7 route-elimination 同处理), 是 corollary 级方法学债时间侧加固而非 NTP-mech 候选. 残余 deferred 债务: 下一 C tick sync 把 C-SCALE-D-DISCLOSE 与 C-FORM-8b sibling sync (前 C tick 13:38Z 已挂账) 一并落地 survey §10 + taxonomy 升降级历史. 同型于 world_model.md §OP-WM-1..5 半年核查已建立的 'topic ↔ taxonomy ↔ survey 三处时间侧加固' 纪律."
+    },
+    {
       "tick_utc": "2026-05-30T13:38:00Z",
       "task_type": "C",
       "files": [
