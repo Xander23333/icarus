@@ -1341,6 +1341,16 @@
       ],
       "chars_added": 6000,
       "note": "Task C 中段元-审计: 兑现 C-REAS-6 末段 (2026-05-29) 显式挂账「下一 tick 优先合并/元命题化 sub-candidate 区, 而非继续增条」, 该挂账连续 4 条 C tick (C-EMBOD-7 route-elim / OP-WM 时间侧加固 / C-CONT-1 第四支柱 / C-REAS-7 / C-FORM-8b) + 1 条 A tick (N2 §八) 未兑现, 本 tick 中段清算. ntp_survey.md §10 新增 §Sub-candidate 区 2026-05-30 中段元-审计 — 合并/元命题化/增条暂停 段, 包含三件事: (a) 17 条主表外条目族状态表 (按登记时间倒序, 类型分布 sub-candidate 7/corollary 4/evidence-base refinement 3/route-elim 1/时间侧加固 1/falsifier 收紧 1), (b) M1 元-corollary 命名 (frontier-disclosure 缺位作为 mech-relevant metric 系统性缺位, 收编 8 条 frontier-disclosure 缺位条目: C-CONT-2 第三支柱/C-WM-7/C-EMBOD-7/C-FORM-8/C-REAS-6/C-EMBOD-7 route-elim/OP-WM 时间侧加固/C-CONT-1 第四支柱, 单 frontier lab 任一 m_k 公开 controlled measurement 即整体降级), (c) 12 天增条冻结协议 (2026-05-30 → 2026-06-10, 全类型暂停新增, 例外阈值三选一: 与现有 17 条无 70%+ 重叠 ∨ ≥3 数据点方向一致 ∨ 升级触发). taxonomy.md §升降级历史末段插入一行登记 M1 + 冻结协议. 关键创新: 本 tick 不开新 sub-candidate/corollary/route-elim/时间侧加固任一条目 — 这是 §10 三个月以来首次不增加条目的 C tick. Rotation: prev A tick N2 §八 (07:34Z) → 本 tick C survey+taxonomy (不同文件); 与 prev C tick (06:34Z) 之间相距 ~2.5h 且操作类型不同 (前者扩 C-FORM-8b sub-candidate, 本次元-审计停增). 主表 (C1-C7 + Reversal Curse) 不动. 三处同步的元-审计变体: 仅 §10 + taxonomy 双处即闭环 (不涉及单一 topic 变动). No fabricated arxiv IDs/数字/时间线/作者. 字符净增 ~6000 estimate."
+    },
+    {
+      "tick_utc": "2026-05-29T09:05:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N7-why-llm-cannot-continually-learn.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 6800,
+      "note": "Task A N7 §八 2026-05 末再补遗 — 把 §10 中段元-审计登记的 M1 (frontier-disclosure 元-corollary) + 12 天增条冻结协议 (2026-05-30→2026-06-10) 回贴到 sample 侧, 兑现 sample↔survey 双向同步: §10 把 §七 (d) 旧事实保留率缺位收编为 M1 投影 8 条之一 (与 C-WM-7 / C-EMBOD-7 / C-FORM-8 / C-REAS-6 / C-EMBOD-7 route-elim / OP-WM 时间侧加固 / C-CONT-1 第四支柱 共享同一负反馈链), sample 侧必须做方向相反的回贴 — 既不能不动 (否则 §七 强度被高估), 也不能扩张 (违反冻结协议). 八节四个判断: (1) 方向收紧 — 单 metric 沉默 ≤(1/3)^8 ≈ 0.015 toy base rate [unverified] 把 §7-1 弱信号从 50% 推到 60-65% 中等独立证据档; (2) 强度封顶 — 12 天冻结协议同时锁死 §3-§6 sub-candidate 扩张空间, sample 侧首次 *主动收缩* 一档; (3) §5 反例三 (agent memory) 与 M1 (8) C-CONT-1 第四支柱 是同一件事两侧 — 不可独立证据求乘, 但也不必合并; (4) §6 2027-05-31 bet 五条 AND 不改写 — M1 收编不收编对 falsifier 判定零噪声. 末段三条硬指针: 2026-06-10 冻结协议到期复查 8/8 缺位 / 2027-05-31 bet AND 复查 / 主表升降级触发回检. 与 N7 §七 annealing-as-stealth-CPT 补遗的方法学纪律一致 — 不开新 sub-candidate/corollary/route-elim 槽位 (符合冻结协议), 也不动 17 条非主表条目编号. Rotation: prev tick C survey+taxonomy 元-审计 (08:35Z) → 本 tick A N7 §八 (不同文件); 距 prev N7 edit (2026-05-29 17:30Z annealing 补遗) ~15.5h. 引用 ID 均 verified-format, 未编造定理/数字/作者; toy base rate 显式标 [unverified base rate]. README §7→§7+§8 7500→9000. 字符净增 ~6800 estimate."
     }
   ]
 }
