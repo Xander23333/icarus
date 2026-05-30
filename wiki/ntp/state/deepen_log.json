@@ -1653,6 +1653,15 @@
       ],
       "chars_added": 2400,
       "note": "embodiment.md §远程操控/demo 节追加 2026-05-30 evidence-base 补丁 — MiraBench L3 Optimism Bias (2605.29360) 作 C-EMBOD-6 *自我预测* 轴第一条 anchor (前三 anchor: Optimus / Figure / 1X 三起 demo-vs-真测试断裂). 关键命题: *外部观察* 失败 (demo 不可独立复现) 与 *自我预测* 失败 (model 对自己 failure 仍报 success) 是评测协议 confound 的两个独立 leak point, 不可互相替代; MiraBench L3 把 demo-credibility prior 第二脆弱攻击线 (社会学/营销现象 ≠ epistemic 命题) 部分转成 epistemic. 互引: 单向引 world_model.md §(c) MiraBench → C-WM-7 第四 weak-proxy 通道, 不反向要求回贴 (与 causality.md 09:00Z one-way reference 协议同型). 不改 C-EMBOD-6 falsification 文字 (外部观察侧 falsifier 不变, 自我预测侧由 C-WM-7 主条件 NMI≥0.7 承担 — 不在 C-EMBOD-6 重复定义). 跨 topic 串联: reasoning §reward hacking verifier-of-verifier + grounding §C-GROUND-PROTO verbalized confidence + embodiment 自我预测 L3 → 三处合成 *generative model 在不可观测 ground-truth 上 self-confirm* 跨 topic 评测协议失效模式 (登记为 2026-Q3 evaluation-protocols 综述若届时新建的 anchor 集合, 不升级为 candidate). 严守 12 天冻结协议 (至 2026-06-10), 白名单 *evidence-base refinement* + *互引补充* 两类操作, 无新 sub-candidate / corollary / route-elim / falsifier 收紧 / candidate 强度升级 (medium-strong 不变). Rotation: prev tick B causality.md (09:00Z, c07ab96) → 本 B embodiment.md (不同文件); embodiment 距上次 edit 2026-05-30T00:41Z (64c8915 OP-EMBOD-1..5 编号 + 半年核查) ~8.8h. 字符净增 ~2400 (4 段 reviewer-tier evidence anchor). 无新 arxiv ID 编造 (2605.29360 verified via paper_notes), 无新数字/日期/标题 fabricated (specifically NOT 转抄 per-config L3 数字, 避免 [unverified] 转录)."
+    },
+    {
+      "tick_utc": "2026-05-30T02:03:23Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/reasoning.md"
+      ],
+      "chars_added": 2200,
+      "note": "reasoning.md §RLVR transfer 节末尾追加 2026-05-30 evidence-base 补丁 — Rojas Nunez 2605.28860 (DCV head-level circuit overlap RL vs SFT) 作为 C-REAS-7 *base support 改写量* 子问题的 mechanistic 旁证 (而非 transfer benchmark 通道证据). 三段: (i) 方向性结论 — DCV RL≫SFT 削弱 \"外溢主要来自 base mode 改写\" 候选解释, 与 OpenR1 LLM-judge 3-6pp 增益归 format 习得方向一致; (ii) 三处强度限定 — 3B 单任务不达 7B+ transfer 强度 / DCV 与 final-acc 同义反复控制实验未做 / 与 online_learning 同 paper 不算两条独立支柱 (单一证据源 × 两投影, 与 M1 m_5 主投影 / 横向 corollary 区分同型); (iii) 互引 — 单向引 online_learning §反例 1b98eab 2026-05-31 00:30Z reviewer pass, 不反向要求 online_learning 回引. 严守 12 天冻结协议 (至 2026-06-10), 白名单 *evidence-base refinement + 互引补充* 两类操作: 不开 C-REAS-7 evidence-base 编号 / 不动 mech 评估 weak-medium / 不入 §10 sub-candidate 区 / 不动 taxonomy 主表 / 不申请新 m_k. 与 online_learning 00:30Z reviewer pass + world_model 23:45Z unpack + formal_limits 08:00Z + causality 09:00Z + embodiment 09:30Z 共同构成 2026-05-30 daily harvest 五颗子弹的跨 topic landing 闭环 (reasoning 是第六处也是最后一处对 RL/SFT circuit paper 的 evidence-base anchor). Rotation: prev tick B embodiment.md (09:30Z c523c61) → 本 B reasoning.md (不同文件); reasoning 上次 edit 2026-05-29 13:34Z (965e9f7) ~22h. 字符净增 ~2200 (四段 evidence-base refinement). 无新 arxiv ID 编造 (2605.28860 verified via paper_notes), 无新数字/日期/作者/标题 fabricated."
     }
   ]
 }
