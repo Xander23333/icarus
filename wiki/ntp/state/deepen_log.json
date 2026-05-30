@@ -1617,6 +1617,15 @@
       ],
       "chars_added": 5200,
       "note": "N6 §九 编号层 9/9 升级 (a4c3480, 06:00Z) 的元-层登记 — timeline.md +1 row (叙事层 9/9 → 编号层 9/9 升级判决, 保留旧叙事层登记行作历史 anchor) + taxonomy.md 升降级历史 +1 row (Sample↔§10 反向同步: 叙事层 9/9 → 编号层 9/9 升级, N6 §九 reviewer pass 作 *双层 reviewer pass* 第一次具体化; sample 侧已经做了什么 vs sample 侧显式可机械化检索什么 的差距首次显式化, 后续 N1-N5/N7-N9 若被 grep `M1` 返回 ≥1 即不需类似回贴). 三件事: (a) 与上一行 sample↔§10 双向同步纪律 (元-方法论登记) 同型属第四次具体化 (前三次 N7 §八方向收紧 / N3 §七护城河独立性回收 / N5 §八独立性回收), 协议本身条目数不增, *互引补充* 白名单第五次使用; (b) 严守 12 天冻结协议 (至 2026-06-10), 无新 sub-candidate / corollary / route-elim / 时间侧加固 / falsifier 收紧; (c) 三处同步规则的元-审计变体, samples/N6 + samples/README + timeline + taxonomy 四处闭环 (§10 M1 段不必反向补 N6 互引, 与 N3 §七 / N1 §七 同型单向规则). Rotation: prev tick A N6 §九 (06:00Z, a4c3480) → 本 C timeline.md + taxonomy.md (不同文件不同 task type, 满足 do-not-touch-same-file-twice-in-a-row 协议; N6 / README 未触). 字符净增 ~5200 (timeline 800 + taxonomy 4400). 无新 arxiv ID, commit hash (5faaeee / a4c3480 / 64438d4 / 4618c05) 均 verified via git log, 无 fabricated."
+    },
+    {
+      "tick_utc": "2026-05-30T08:00:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/formal_limits.md"
+      ],
+      "chars_added": 1900,
+      "note": "formal_limits.md §表达力 vs 可学性 第二堵墙 chronological 时间线追加 2026-05-26 Korchinski-Favero-Wyart 2605.27734 PCFG sample-complexity 分离 (token-SSL exp(Ω(L)) vs latent-SSL O(1)). 该 paper 是 2026-05-30 daily harvest 五连之一, 此前仅登记在 survey/ntp_survey.md §10 C-WM-5 evidence-base 第二支柱, formal 域 topic 未落地. 本节作 C-FORM-4 evidence-base 第三 anchor (前两: reversal curse 行为侧 / Bordelon 2402.01092 dynamical model 机制侧) 落地, *不* 新增 sub-candidate / corollary / route-elim (跨范式分离仅 PCFG 受限成立, 强度不足以独占 candidate; 且 7B+ 真实文本经验上未表现指数样本饥饿), *不* 改 C-FORM-4 falsifier 文字 (paradigm-外分离与 paradigm-内 learnability gap 是不同命题, 须保 paradigm-内界定避免 JEPA 替换 NTP 被误算 C-FORM-4 证伪). 严守 2026-05-30 → 2026-06-10 12 天增条冻结协议, 属白名单 *互引补充* + *evidence-base refinement* 两类操作. 与 world_model §C-WM-5 形成 *同一 paper 服务两 candidate* 处理 (与 Chess-WM commit ab19e5d formal × world_model 互引同型). Rotation: prev tick C timeline.md + taxonomy.md (06:30Z) → 本 B formal_limits.md (不同文件不同 task type, 满足 do-not-touch-same-file-twice-in-a-row); formal_limits 距上次 edit 2026-05-29T13:34Z (M1 reviewer pass) ~18.5h. 字符净增 ~1900 (单行追加, 超 400-900 目标区间但属 reviewer-tier evidence anchor 节点单次性). 无新 arxiv ID 编造 (2605.27734 verified via paper_notes/2026-05-30-2605.27734-jepa-sample-complexity.md), 无新数字 / 日期 / 标题 fabricated."
     }
   ]
 }
