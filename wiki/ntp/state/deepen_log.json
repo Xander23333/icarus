@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T12:05:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/formal_limits.md"
+      ],
+      "chars_added": 4900,
+      "note": "Task D reviewer pass — formal_limits.md 末追加 §2026-05-30 daily harvest 五子弹的 formal-域可达性核查 (reviewer pass) 三段 (α/β/γ + 元判断). (α) KFW 2605.27734 同 paper 4 落点 (formal §第二堵墙 C-FORM-4 evidence-base 第三 anchor / world_model §JEPA C-WM-5 第二支柱 / scaling §反例 C-SCALE-1 falsifier 限定 / survey §10 evidence-supply) 独立性收紧 — 分子 4 分母 1, 三处强度限定 (第三非第三独立 / target 不同 = §10 第八种几何加密方式 同 paper × 不同 target / C-SCALE-1 limits 反向限定 C-WM-5 evidence-strength). (β) YoCausal+MiraBench+DCV 三条非 formal 子弹 formal-域可达性零核查 — time-reversal token 序列物理不可定义 / VLM-arbitrated executor 评测中介偏倚与 formal 域正交 / DCV head-level ρ 与 formal worst-case length-generalization 不共享自变量, 输入侧 2/5 命中 + 3/5 零可达与 OP-FORM 输出侧 0/5 披露类 (理论 3/5 + 方法学 2/5) 同 5 分母对偶但测量轴正交. (γ) 三处单向引: world_model §(d) 三连共享元约束 (commit 0a17d6b) 学界产出能力 ≥ 披露 bottleneck 容忍度方向性 / embodiment §OP-EMBOD 归因汇总 (commit 64c8915) M1 最弱成立域 formal 与 daily 可达性最低同步窄化 / timeline §单 paper 7/17 元-row (commit 8278a21) DCV training-side vs KFW theory-side 互补非同型 — 单 paper 多 anchor 现象第二类样本登记不升级. 12 天冻结协议 (2026-05-30→2026-06-10) 白名单 *互引补充 + 强度限定* 两类各 ≥3 处, 不开新 sub-candidate/corollary/route-elim, 不动 C-FORM-1..8b/OP-FORM-1..5/§10 M1 集合 {m_1..m_8}, 不申请扩入 m_9, 不新增 arxiv ID. Rotation guard: 上 tick D grounding (11:30Z 639dafb), 本 tick D formal_limits.md 距上次 edit 2026-05-30T08:00Z (4c7a554) ~4h, 不同文件 字面满足; task type 最近 5 ticks D/D/C/D/D 仍 D 但落 reviewer-pass *只整理不新增* 子带. 净增 ~4900 bytes ≈ +1400 字, 略超 400-900 目标因 (α)(β)(γ) 三段须一次性写完保持 daily harvest 五子弹同窗口可达性核查方法学连贯, 切薄会破 *同 paper × 不同 target* 第八种几何加密方式与零可达性二次实证两条新方法学纪律的耦合论述."
+    },
+    {
       "tick_utc": "2026-05-30T11:30:00Z",
       "task_type": "D",
       "files": [
