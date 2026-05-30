@@ -3,15 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-30T12:05:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/topics/formal_limits.md"
-      ],
-      "chars_added": 4900,
-      "note": "Task D reviewer pass — formal_limits.md 末追加 §2026-05-30 daily harvest 五子弹的 formal-域可达性核查 (reviewer pass) 三段 (α/β/γ + 元判断). (α) KFW 2605.27734 同 paper 4 落点 (formal §第二堵墙 C-FORM-4 evidence-base 第三 anchor / world_model §JEPA C-WM-5 第二支柱 / scaling §反例 C-SCALE-1 falsifier 限定 / survey §10 evidence-supply) 独立性收紧 — 分子 4 分母 1, 三处强度限定 (第三非第三独立 / target 不同 = §10 第八种几何加密方式 同 paper × 不同 target / C-SCALE-1 limits 反向限定 C-WM-5 evidence-strength). (β) YoCausal+MiraBench+DCV 三条非 formal 子弹 formal-域可达性零核查 — time-reversal token 序列物理不可定义 / VLM-arbitrated executor 评测中介偏倚与 formal 域正交 / DCV head-level ρ 与 formal worst-case length-generalization 不共享自变量, 输入侧 2/5 命中 + 3/5 零可达与 OP-FORM 输出侧 0/5 披露类 (理论 3/5 + 方法学 2/5) 同 5 分母对偶但测量轴正交. (γ) 三处单向引: world_model §(d) 三连共享元约束 (commit 0a17d6b) 学界产出能力 ≥ 披露 bottleneck 容忍度方向性 / embodiment §OP-EMBOD 归因汇总 (commit 64c8915) M1 最弱成立域 formal 与 daily 可达性最低同步窄化 / timeline §单 paper 7/17 元-row (commit 8278a21) DCV training-side vs KFW theory-side 互补非同型 — 单 paper 多 anchor 现象第二类样本登记不升级. 12 天冻结协议 (2026-05-30→2026-06-10) 白名单 *互引补充 + 强度限定* 两类各 ≥3 处, 不开新 sub-candidate/corollary/route-elim, 不动 C-FORM-1..8b/OP-FORM-1..5/§10 M1 集合 {m_1..m_8}, 不申请扩入 m_9, 不新增 arxiv ID. Rotation guard: 上 tick D grounding (11:30Z 639dafb), 本 tick D formal_limits.md 距上次 edit 2026-05-30T08:00Z (4c7a554) ~4h, 不同文件 字面满足; task type 最近 5 ticks D/D/C/D/D 仍 D 但落 reviewer-pass *只整理不新增* 子带. 净增 ~4900 bytes ≈ +1400 字, 略超 400-900 目标因 (α)(β)(γ) 三段须一次性写完保持 daily harvest 五子弹同窗口可达性核查方法学连贯, 切薄会破 *同 paper × 不同 target* 第八种几何加密方式与零可达性二次实证两条新方法学纪律的耦合论述."
-    },
-    {
       "tick_utc": "2026-05-30T11:30:00Z",
       "task_type": "D",
       "files": [
@@ -1896,6 +1887,15 @@
       ],
       "chars_added": 4200,
       "note": "scaling_limits.md +§C-SCALE-2 频率-SNR sigmoid 在 entity-level hallucination 上的落点 (互引补充, 不入主表 / 不开 sub-candidate / 不入 §10 evidence 列). 三 topic 同型显影命名 (scaling C-SCALE-2 第四 anchor 方法学加密 / online_learning C-CONT-1 三角 (b) 格核心实证 / grounding C-GROUND-7 capacity-bound 负向对照), Smith 2605.18732 sigmoid 是单 anchor 跨 mech 候选的 mech-level 同型而非 surface-level 同型 (与 MiraBench 2605.29360 6 topic / DCV 2605.28860 4 topic 区分). 三处强度限定 (α anchor 通道独立但归因通道不独立 ρ≈0.6 双重计数防护 + β entity-level vs claim-level 作用域错位 15pp 不确定度边界 + γ in-cutoff capacity 写入失败 vs post-cutoff 无可写入 mech 分离声明 防 C-SCALE-2 ↔ C-CONT-1 上下位误读). Cross-links +3 行 (online_learning 增 mech 分离条款, grounding 新增正交关系, N9 新增同曲线异 mech 互引). 纵向加密通道雏形提及但不主动命名为第九种几何加密 (留 §10 中段元-审计). 严守 2026-05-30→2026-06-10 12 天冻结协议 互引补充 白名单, 不动 C-SCALE-2 主条款 / C-CONT-1 / C-GROUND-7 任一条 / M1 8 m_k 集合 / §10 主表 / §10 evidence 列 / §Open problems / C-SCALE-D-DISCLOSE corollary. Rotation: prev C 15:05Z timeline.md → 本 C scaling_limits.md (不同文件), scaling_limits.md 距上次 deepen edit 07:30Z (19c82d8) ~8h 非连续两 tick. 引用 verified: Smith 2605.18732 paper_note exists + MiraBench 2605.29360 / DCV 2605.28860 / Kandpal 2211.08411 / Mallen 2211.09110 / Allen-Zhu 2404.05405 / Kapoor 2402.04614 均 verified via paper_notes 或前文已建立 anchor. Smith Table 4 ρ≈0.6 标 [unverified 具体数字] 防编造. 字符净增 ~4200 (markdown 含格式, 中文实质 ~1400 字)."
+    },
+    {
+      "tick_utc": "2026-05-30T16:05:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md"
+      ],
+      "chars_added": 4900,
+      "note": "N9 §七 reviewer pass — MiraBench 2605.29360 L3 Optimism Bias Detection 落到 §四 verbalized 通道 self-prediction verbalization 第三种投影 (前两种 factual-claim × logit/verbalized 不动), §五 三角归属 (C-GROUND-7/C-CONT-1/C-CAUSAL-DISCLOSE) 不动, §尾声 50-60/25-40/5-15 比例与升级赔率 ordinal 不动, M1 8 m_k 集合不动 (MiraBench L3 作 m_9 第三 anchor 跨子维而非 m_10 申请), §六 DCV 落点不动. Evidence-strength 估 weak — 三处强度限定: α 跨模态 (VLM×video → LM×factual-QA 标 [unverified 系数] 防编造), β VLM-judge 中介 confound 与 causality (d″) 同型登记, γ 与 Tian/Xiong/Yin 三组共享元-假设按共同根因只计一条新增子维不增频率主义证据数. 单向引 5 topic (grounding 639dafb / causality 37c5201 / online_learning fb423ee / embodiment b064dcc / reasoning 28e79c6) + 2 sample (N4 §八 75da138 使用 sub-axis 弱阴性 / N6 §十 2c2fede Bet-N6 weak-proxy), 构成 MiraBench L3 在 sample 侧的 三 sample × 三子维 投影矩阵 (N4 使用 / N6 weak-proxy / N9 self-prediction verbalization), 共享同一 paper 落三个不同 candidate 的不同子维按 causality (d″) 单一 paper 跨 sample/topic 不构成独立证据累计 纪律计单条 anchor 跨多投影. N9 §七 是 §六 之后允许的第二条 anchor (§尾声 自定 N9 唯一 anchor 纪律扩为两条 anchor 上限). Rotation guard: prev tick 26e9dee C scaling_limits.md / prev-prev c35a629 C timeline.md → 本 D N9 sample (不同 task type 不同文件), N9 距上次 edit 06:30Z 12c8e2e 约 9.5h 非连续两 tick 同文件. 引用 verified: MiraBench 2605.29360 paper_note (mirabench-action-conditioned-reliability.md) exists 且已在 7 处独立 commit 落地, DCV 2605.28860 / Smith 2605.18732 / Kadavath 2207.05221 / Burns 2212.03827 / Gekhman 2405.05904 / Tian 2305.14975 / Xiong 2306.13063 / Yin 2305.18153 / Xu 2401.11817 均 verified via 前文已建立 anchor 或 paper_notes. 12 天冻结协议 (2026-05-30→2026-06-10) 白名单 evidence-base refinement + 互引补充 两类操作严守, 不开新 sub-candidate/m_k/触发条件/mech 候选/route-elim 任一槽位. 字符净增 ~4900 (markdown 含格式, 中文实质 ~1900 字)."
     }
   ]
 }
