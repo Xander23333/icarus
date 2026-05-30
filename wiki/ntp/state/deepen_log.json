@@ -1681,6 +1681,15 @@
       ],
       "chars_added": 2200,
       "note": "reasoning.md §RLVR transfer 节末尾追加 2026-05-30 evidence-base 补丁 — Rojas Nunez 2605.28860 (DCV head-level circuit overlap RL vs SFT) 作为 C-REAS-7 *base support 改写量* 子问题的 mechanistic 旁证 (而非 transfer benchmark 通道证据). 三段: (i) 方向性结论 — DCV RL≫SFT 削弱 \"外溢主要来自 base mode 改写\" 候选解释, 与 OpenR1 LLM-judge 3-6pp 增益归 format 习得方向一致; (ii) 三处强度限定 — 3B 单任务不达 7B+ transfer 强度 / DCV 与 final-acc 同义反复控制实验未做 / 与 online_learning 同 paper 不算两条独立支柱 (单一证据源 × 两投影, 与 M1 m_5 主投影 / 横向 corollary 区分同型); (iii) 互引 — 单向引 online_learning §反例 1b98eab 2026-05-31 00:30Z reviewer pass, 不反向要求 online_learning 回引. 严守 12 天冻结协议 (至 2026-06-10), 白名单 *evidence-base refinement + 互引补充* 两类操作: 不开 C-REAS-7 evidence-base 编号 / 不动 mech 评估 weak-medium / 不入 §10 sub-candidate 区 / 不动 taxonomy 主表 / 不申请新 m_k. 与 online_learning 00:30Z reviewer pass + world_model 23:45Z unpack + formal_limits 08:00Z + causality 09:00Z + embodiment 09:30Z 共同构成 2026-05-30 daily harvest 五颗子弹的跨 topic landing 闭环 (reasoning 是第六处也是最后一处对 RL/SFT circuit paper 的 evidence-base anchor). Rotation: prev tick B embodiment.md (09:30Z c523c61) → 本 B reasoning.md (不同文件); reasoning 上次 edit 2026-05-29 13:34Z (965e9f7) ~22h. 字符净增 ~2200 (四段 evidence-base refinement). 无新 arxiv ID 编造 (2605.28860 verified via paper_notes), 无新数字/日期/作者/标题 fabricated."
+    },
+    {
+      "tick_utc": "2026-05-30T03:35:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/timeline.md"
+      ],
+      "chars_added": 4800,
+      "note": "timeline.md +5 行 2026-05-30 daily harvest 回登 — 此前 5 篇 paper (2605.27734 JEPA PCFG / 2605.30346 YoCausal / 2605.30100 Chess-WM / 2605.29360 MiraBench / 2605.28860 RL-vs-SFT DCV) 已在 2026-05-30 各 B tick (formal_limits 08:00Z / causality 09:00Z / embodiment 09:30Z / reasoning 02:03Z + daily cron 自动 unpack 至 world_model / online_learning) 各自 evidence-anchor 落地, 但 survey/timeline.md (cron 不自动维护) 落后到 2026-05-29 末行. 本 tick 是 curation 类操作 (C): 把分散在六个 topic 的 evidence-anchor 投影回时间索引层, 每行字段严格按已有 topic 落地决策摘要 (NTP 归类 + sub-band / 强度限定 / 不升候选理由 + 与已有 anchor 的串联). 严守 12 天冻结协议 (至 2026-06-10), 时间索引层登记不蕴含新 sub-candidate / corollary / route-elim / falsifier 收紧 / candidate 强度升级, 仅作 *已发生 deepen 决策的元-层登记*. Rotation guard: prev tick B reasoning.md (02:03Z) → 本 C timeline.md (不同文件不同 task type, 满足 do-not-touch-same-file-twice-in-a-row 协议); timeline.md 距上次 edit ~24h, 无重叠. 不动 taxonomy.md (升降级历史也落后到 2026-05-28, 但更新它需先评估 5 篇是否触发升降级, 违反冻结协议; timeline 是纯时间索引, 添加 paper 行不涉及级别判断). 字符净增 ~4800 (5 行长 markdown row, 超 400-900 目标区间但属一次性回登节点, 单 tick 单类操作). 无新 arxiv ID 编造 (5 个 ID 均 verified via paper_notes/2026-05-30-*.md), 无新数字/日期/作者/标题 fabricated; 仅复用各 B tick 已审定的命题摘要."
     }
   ]
 }
