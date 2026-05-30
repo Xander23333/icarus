@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T10:30:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/reasoning.md"
+      ],
+      "chars_added": 6000,
+      "note": "Task D reviewer pass — reasoning.md 末追加 '2026-05-31 reviewer 加注 — type I/II/III 落点几何对 C-REAS-6/C-REAS-7 evidence 的二次分层' 子节, 作为 type-geometry 同步链第六落点 (taxonomy f61f8c4 → N1 §八 764ecb8 → survey §10 ef1dfe2 → formal_limits 1c22b75 → causality 4707f45 → 本节). 三件操作: (α) C-REAS-6 reward-hacking 阶梯三 anchor (Gao 单 topic 深拟合 不进 type I/II/III / DCV 2605.28860 = type I 在 reasoning 域第二落点 effective 0.25-1 / MiraBench L3 2605.29360 = type III effective 0-0.5) 按 type-aware 重新加总, 与 naive paper-count 差 1.0-2.0 effective anchor, 方向不动 medium 评估但显式登记升档触发条件 (DCV follow-up same-acc controlled 升 type I 切片才推升档, MiraBench 单增不推); (β) C-REAS-7 跨域 transfer 衰减律 *不在 type-geometry 适用域* — 5-6 anchor × 单一作用域 × 多 paper independent fit 是与 type I/II/III 正交的第四类几何, 暂不命名, 触发条件与 taxonomy f61f8c4 末段 anchor 几何升级触发条件正交; (γ) falsifier 反向收紧 — MiraBench L3 在 reasoning 域 §C-REAS-6 + §C-REAS-7 falsifier confound 同时引用是 *单一证据源 × 两投影*, 按 type III 独立计数 ≤ 1 协议总计 1 anchor 而非 2, 与 M1 reviewer pass (a) 段反双重计数同型下放到 anchor 引用次数层. 三处单向互引 (formal_limits 1c22b75 type-aware 加总同型 / causality 4707f45 DCV 正负投影对 / N1 764ecb8 sample 侧 naive→effective 转换同型). 严守 12 天冻结协议 (2026-05-30→2026-06-10) 白名单 互引补充 + 措辞收紧 + 升降级历史登记 三类, 不动 M1 8 m_k / C-REAS-1..5 / C-REAS-6 medium / C-REAS-7 weak-medium / falsifier 阈值 / Open problems 7/8 / reward-hacking 三 anchor 命名 / RLVR transfer anchor 集合 / 28e79c6 cluster 四子轴. reviewer 元判断: type-geometry 链将自然终止于 4-7 个 topic (formal/causality/reasoning/scaling 已落 + grounding/embodiment/world_model 还可落), 不强求 8/8 闭环; online_learning RAG 五维与 C-REAS-7 同属第四类几何, 不适合 type-geometry 重读. Rotation guard: 上一 tick (10:00Z) 为 causality.md, 本 tick reasoning.md 不同文件; reasoning.md 上次 touch 28e79c6 cluster 距今 >9h, 满足. Task type 最近 5 ticks (D/A/A/D/D) 本 tick D 健康. 净增 ~6000 bytes ≈ +1800 字, 略超 400-900 字目标因 type-geometry 同步链第六节点性质决定 (三件操作 α/β/γ + 三处单向互引 + reviewer 元判断 + 冻结约束声明 6 大模块标准 reviewer pass 几何全展开)."
+    },
+    {
       "tick_utc": "2026-05-31T10:00:00Z",
       "task_type": "D",
       "files": [
