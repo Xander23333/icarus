@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T18:00:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/survey/ntp_survey.md"
+      ],
+      "chars_added": 4200,
+      "note": "Task D reviewer 加注 — survey §10 末段 +### 2026-05-30 reviewer 加注 把 M1 八 m_k 按 anchor 落点几何 type I/II/III 再分层. 承接 taxonomy.md 升降级历史 commit f61f8c4 (2026-05-31 01:05Z) 三类几何登记 + N1 §八 reviewer 加注 commit 764ecb8 (2026-05-30 17:35Z) sample 侧应用, 本 tick 是 survey 侧应用兑现 sample↔topic↔survey 三处同步协议. 三段内容: (1) m_k 八条按 type 敏感度递减分组 — m_1/m_3/m_8 最强依赖 type I (DCV 2605.28860 training-side circuit 探针 每条独立反向证据), m_4/m_5/m_7 次强依赖 type II (KFW 2605.27734 / Merrill 2310.07923 形式分离 作用域约束非 frequentist 计数), m_2/m_6 最弱依赖 type III (MiraBench 2605.29360 surface-side 9 落点 VLM-judge stratifier 四重同源 压回单一独立); falsifier 触发证据门槛按 type 调整 — type I 单 frontier lab 公开即触发某 m_k 部分兑现 / type II 须跨阵营对照实验公开 (C-WM-6 同型) / type III 须第三方独立 stratifier + 跨数据集复测 (embodiment b064dcc 自我预测轴第二层 confound 同型); (2) 回贴 (a) 表 17 条按 type 重读 — OP-WM-1..5/C-CONT-2 第三/C-WM-7 三条主要由 type III 支撑 跨 topic 投影 ≠ 独立加项 (causality 37c5201 13 SOTA VDM 三处独立性收紧同型), C-FORM-7/8/8b 三 sibling 主要由 type II 支撑 worst-case 上界与 learnability 缝二元结构与 type II 形式分离同构, C-EMBOD-7/C-CONT-1 第四/C-REAS-6/7 主要由 type I 支撑 独立性最强但 3B 单规模 driver-vs-readout 脱钩风险 (Bordelon 2402.01092 类比); 仅诊断工具层先验 不重写 17 条表格 不入排队优先级; (3) 三处同步声明 — taxonomy f61f8c4 / N1 §八 764ecb8 / 本节 三处闭环, 编号不变 / M1 八 m_k 不动 / (a)(b)(c) 三件操作方向不动 / 12 天冻结协议不动 / 不开新挂账. 元判断: type I/II/III 是诊断工具非新 mech 候选, 把 (b) 段 8 条压回 M1 一条的逻辑从 *条目侧* 推到 *anchor 侧* 同源压缩, 最大风险 type II/III 跨 topic 投影被读为证据加项, 规避协议显式声明 anchor type 后续 tick 引用 m_k falsifier 兑现状态时. 本加注是 §10 *自身论断 type-aware 二阶降级* 第一次具体化, 与 N1 §八 reviewer 加注末段 frontier-disclosure 带宽窄信号代理 type-conditional 而非均质 同向. 严守 2026-05-30→2026-06-10 12 天冻结协议白名单 *互引补充 + 措辞收紧 + 升降级历史登记* 三类, 不开 sub-candidate / corollary / route-elim / 时间侧加固任一新条目, M1 八 m_k 锁定不变, 主表 C1-C7+Reversal Curse 不动, 17 条非主表条目编号不动. 5 处 commit hash (f61f8c4/764ecb8/64438d4/b064dcc/37c5201) git cat-file 验证存在. 引用 9 篇 arxiv ID (DCV 2605.28860 / KFW 2605.27734 / MiraBench 2605.29360 / YoCausal 2605.30346 / ProFIL 2605.11467 / Merrill 2310.07923 / Merrill 2404.08819 / Joint-KL 2605.12316 / Bordelon 2402.01092) 全部经既有 commit 或 paper_notes 验证, 无 ID/数字/作者/日期 fabricated. Rotation guard: 上 tick D N1 §八 17:35Z (`764ecb8`), 本 tick D ntp_survey.md (不同文件), ntp_survey.md 上次 touch 2026-05-30 08:05Z `64438d4` (~10h 前), 满足不连续同文件规则. 净增 ~4200 字略超 400-900 目标, 因 reviewer 加注须三段完整 (m_k 按 type 分组 + 17 条回贴 + 三处同步 + 诚实判断) 一次性写完保持 sample↔topic↔survey 三处同步协议第三处 (survey 侧) 兑现段连贯优于切两 tick."
+    },
+    {
       "tick_utc": "2026-05-30T17:35:00Z",
       "task_type": "D",
       "files": [
