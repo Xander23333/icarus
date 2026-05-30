@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T05:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N5-embodiment-and-vla-bet.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "Task A sample 续写 — N5 §九 新章 '2026-05-31 update: MiraBench 落到 Bet-N5-3 的 weak-proxy 通道'. daily↔deepen 跨 cron 协议 sample 侧第三次具体化 (前两次 N7 §九 DCV commit 3e7db77 + N4 §八 YoCausal commit ~04:30Z). 2026-05-30 daily harvest MiraBench 2605.29360 (Yang Tianzhuo et al., action-conditioned world model 三层 benchmark, 12 model configurations × 16k judgments) 此前已 topic 侧两处落地 (world_model.md §(c) C-WM-7 第四 weak-proxy 通道 + embodiment.md §C-EMBOD-6 *自我预测* 轴 anchor), sample 侧 N5 是 §10 元-审计上 daily 三连里第三颗子弹未承接的缺口. 四段内容: (1) 第四 weak-proxy 通道挂到 Bet-N5-3 evidence-supply, 把 §七 兑现 ladder 从两段 (显式包含 + ablation) 改写为三段 (显式包含 + L2 fidelity + NMI ≥ 0.7), MiraBench 只够攀第二段不构成第三段替代, 防 '表面兑现实质空洞' 在 frontier 公开 L2 但永不公开 NMI 均衡下复活; (2) L3 Optimism Bias 反向加固 Bet-N5-1 硬件 confound — §6 尾声那条反 confirmation-bias 锚扩成两层 (α 硬件 MTBF + β model self-prediction over-confident), 双层正交意味着 Bet-N5-1 反向条件 (≤10 分钟 demo 即判失败) 判定门槛抬高一档 必须外部 (C-EMBOD-6 三元组) + 内部 (MiraBench L3) 同时排除 confound, 与 N4 §八 video L2 评测墙 / N7 §八 frontier 内部 retention 同型 — 评测协议缺口不能算能力缺口证据; (3) 三处诚实反例 — failure-inducing action 人工标注偏差 / world model evidence 迁移到 VLA tokenizer 依赖隐含 latent 共享假设 (§5 已论证未证明, 若 2027-2028 VLA tokenizer 与 world-model latent 彻底解耦相关性掉一档) / L3 普遍显著与 §3 π₀ 长程任务正面表现存在张力 暗示 closed-loop 执行 vs open-loop 预测在 embodied 评测里分离 (§5 缝合论断的评测维度同型表现 训练 loss vs 评测信号 方向一致证据通道独立); (4) 两条 2026-06 后硬指针 — 2027-12-31 Bet-N5-3 兑现 ladder 第一段 (含 MiraBench L2 通过) / 2028-06-30 若 frontier 公开 L2 不公开 NMI 则 'tokenizer 路线在 black-box 下部分兑现 白盒下不可证伪' 成为 §八 披露不足下不可证伪闭环第五点 (前四 N7 §八 / N4 §八 / N3 §七 / N9 §尾声). 元判断: MiraBench 不动 §6 三件中间判决 / 不动 §七 Bet 主条件 / 不动 §八 M1 收编结论, 只 evidence-base 加固 + 反向条件判定门槛微调. 严守 2026-05-30→2026-06-10 12 天冻结协议白名单 evidence-base refinement + 互引补充 两类, 不开新 sub-candidate/corollary/route-elim. Rotation guard: 最近 5 ticks (N4 04:30Z / N7 03:00Z / scaling 02:35Z / online 00:30Z / world_model 23:45Z) 无 N5, N5 距上次 touch 2026-05-29T18:34Z ~34h, 满足不连续同文件规则; task type 最近 5 ticks (A/A/D/D/D) 本 tick A 健康. 净增 ~5400 bytes ≈ +1600 字, 略超 400-900 目标, 因 sample 侧 daily 承接节奏须四段完整 (weak-proxy 通道 + 双层 confound + 三诚实反例 + 两硬指针), 切薄会破跨 cron 协议自洽. README N5 行同步 9500→11500 字 / 状态加 §9 2026-05-31 update MiraBench."
+    },
+    {
       "tick_utc": "2026-05-31T04:30:00Z",
       "task_type": "A",
       "files": [
