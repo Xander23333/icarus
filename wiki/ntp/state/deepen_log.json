@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T02:35:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/scaling_limits.md"
+      ],
+      "chars_added": 4400,
+      "note": "Task D 互引补充 + falsifier 收紧 — scaling_limits.md §反例/上界突破候选 节追加 Korchinski-Favero-Wyart 2605.27734 (PCFG token-SSL exp(Ω(L)) vs latent-SSL O(1) sample-complexity 分离, 2026-05-30 daily harvest 第五颗子弹) 作为 C-SCALE-1 (Horizon-linear estimation floor) falsifier 字面命中的 reviewer 限定. 该 anchor 此前已落到 formal_limits §第二堵墙 (commit 4c7a554 作 C-FORM-4 evidence-base 第三 anchor) + world_model §JEPA 可辨识性 (C-WM-5 evidence-base 第二支柱) + survey §10 C6/C-WM-5 evidence-supply, scaling_limits 是第三个落点完成 *三 topic 共享同一 anchor 各作用域不同* 横向加密. 关键内容: 四处强度限定阻止 KFW 被误读为 C-SCALE-1 falsifier — (i) 自变量错位 (H token horizon vs L grammar depth), (ii) Joint-KL 2605.12316 Ω(H) 下界的 *常数项依赖 KL-radius* 已暗含 PCFG 退化族常数前因子塌缩 ≠ H 线性项消失, (iii) latent-prediction objective 已不在 NTP cross-entropy 作用域 (与 Sorscher / Brösamle-Eckstein 三条 *限定作用域而非穿透命题* 同型), (iv) PCFG → 自然语言 controlled experiment 0/1 (Assran/LeCun JEPA 系列与 LeJEPA 自然语料侧仅给 representation 质量曲线未给 NTP cross-entropy 对照). 落地动作: C-SCALE-1 falsifier 第一句反向收紧为三轴齐平 (token-level NTP cross-entropy + 自变量 H + source KL-radius 未先验塌缩), KFW 类结果归入 *换 objective / 换自变量 / 换世界类先验* 三个 *逃逸通道* 而非 falsifier 触发. 严守 2026-05-30→2026-06-10 12 天冻结协议白名单 *互引补充 + falsifier 收紧* 两类: 不开新 sub-candidate / corollary / route-elim, C-SCALE-1 strong 评估不动, §D 轴 / 第六轴主文不动, taxonomy 主表不动, §10 evidence 通道不动. Rotation guard: scaling_limits.md 上次 touch 2026-05-29T11:31Z (commit f1b431b, ~39h 前), 最近 10 ticks (online_learning 00:30Z / world_model 23:45Z / formal_limits 08:00Z / world_model 05:00Z / N6 §九 06:00Z / N1 §七 04:10Z / N8 §八 03:30Z / N2 §八 03:00Z / N5 §八 18:34Z / grounding 07:10Z) 无 scaling_limits.md 重叠, 满足不连续同文件规则. 任务类型分布: 最近 5 ticks 全 D 类型, 本 tick 仍 D 但切到 scaling_limits.md (此前 D 集中在 online_learning / world_model / formal_limits / grounding / reasoning), scaling 域上一次 reviewer pass 是 11:31Z OP-SCALE-1..7 半年核查 + 归因三分, 本 tick 是 daily harvest evidence 落地 + falsifier 收紧, 性质不同. 字符净增 ~4400 bytes ≈ 1300 净增中文字, 略超目标 400-900 但 (i)(ii)(iii)(iv) 四处强度限定 + 三 topic 横向加密元判断须一次性写完保持 daily↔deepen 跨 cron 协议第二次具体化连贯优于切两 tick (第一次是 1b98eab online_learning C-CONT-2 第四支柱命名独立性核查). 元意义: 这是 daily cron 2026-05-30 (ab19e5d) 五颗子弹中 2605.27734 在 scaling 域的落地, 完成五颗子弹的 5/5 topic 落点覆盖 (causality 30346 / embodiment 29360 / online_learning 28860 / formal_limits+world_model+scaling_limits 27734 三 topic + reasoning 28860 旁证 / world_model 30100+29360+30346 三连)."
+    },
+    {
       "tick_utc": "2026-05-31T00:30:00Z",
       "task_type": "D",
       "files": [
