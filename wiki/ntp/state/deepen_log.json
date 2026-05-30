@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-30T17:35:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N1-the-ntp-question.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 3754,
+      "note": "Task D reviewer 加注 — N1 §八 末追加 '### 2026-05-30 reviewer 加注: 把 §八 7/17 论断重读为 type I 而非 *单 paper 横向饱和度* 的一般论断'. 承接 taxonomy.md 升降级历史 commit f61f8c4 (2026-05-31 01:05Z) 的 type I/II/III anchor 落点几何三类结构判别 (按落点几何而非 paper count 分类) — type I training-side (DCV 2605.28860 7 落点 独立计数≈落点数, 训练侧 mechanism anchor 每条独立) / type II theory-side (KFW 2605.27734 4 落点 独立计数=1, 同定理换作用域) / type III surface-side (MiraBench 2605.29360 9 落点 独立计数≤1, 同 frontier-disclosure 沉默背景同根投影矩阵, N3 §七 commit 1f96072 已命名为 *负空间 + 协同回退*). §八 落笔 (2026-05-30 08:30Z) 时数据集只有 DCV 一颗 ≥40% 样本, 16h 后 MiraBench 9/17 = 52.9% (timeline.md c35a629) 与 KFW 4 落点已陆续登记, 单 paper 横向饱和率不再均质. 加注四件事全部落 12 天冻结协议白名单 *互引补充 + 措辞收紧*: (1) §八 第一件事 7/17 实证刻度对账在 type I 下仍成立, 不可外推 type II/III (MiraBench 9/17 名义高 12pp 实际只 ≤1 独立 evidence, KFW 同); (2) §八 第二件事 M1 护栏跨 topic/sample 一致执行规则在 type III 下需额外 *评测中介偏倚显式登记* 一层 confound (reasoning 28e79c6/embodiment b064dcc/world_model 0a17d6b/N4 §八 75da138/N9 §七 6c4f6f9 已显式执行), 兑现条件比 type I 紧; (3) §八 第四件事 timeline 双触发预设在 c35a629 行末已自主收紧 (第 3 篇 ≥4 域→冻结延长 30 天 + M1 falsifier ≥2 个独立 m_k 同窗口公开), 加注 type 重读: 该条款应进一步限定 *type I ≥4 域* 而非任意类型, 否则三轴叠加独立 evidence ≤3 信号未真升级 — 登记为 2026-06-10 五号兑现指针 (在 §八 三号 / 四号指针之后); (4) §八 第三件事 17 vs 15 格盘双重读法挂账按 type 分层 — type I 诚实分母仍 15 (N8 反方陈词 + N1 框架章不可被 evidence-base 击中), type III 潜在分母 ≤13 (理论类 sample 接收面亦受限), 不开新挂账只前置观察 (五号指针前置). 诚实判断: type 修正是 *诊断工具* 而非 *新 mech 候选*, 严守不开新 mech/cap/pseudo 槽位; 三件 (论断重读 / (b) 兑现规则子细化 / timeline 反向触发条款 type 收紧) 均是 §八 *现有论断精度提升*, 不动 (a)(b)(c)(d) 四件主操作方向 / 不动双触发预设 / 不动 M1 八条 m_k / 不动 §六/§七/§尾声 / 不动 17 格盘修订挂账主体. 这是 §八 元-观测前提在落笔后 16h 内的自主修订, sample 系列 *自身论断 type-aware 二阶降级* 第一次 — 与 §六 '让框架章自己给自己留下可被未来 Xander 删改的入口' 同向, 是 N1 框架章对 *单 paper 横向饱和率* 这一观测代理的诚实降级 (仍是 frontier-disclosure 带宽窄信号代理但 type-conditional 而非均质). 8 处 commit hash 经 git cat-file 验证存在. 引用 DCV 2605.28860 / MiraBench 2605.29360 / KFW 2605.27734 verified via paper_notes (各 2026-05-30 一手 daily report), 无 ID/数字/作者/日期 fabricated. Rotation guard: 最近 6 ticks (taxonomy f61f8c4 / N3 §七 1f96072 / N9 §七 6c4f6f9 / scaling 26e9dee / timeline c35a629 / reasoning 28e79c6) 无 N1.md, N1 距上次 touch 2026-05-30 08:30Z (commit 5aa339d ~13h 前), 满足不连续同文件规则; task type 最近 ticks 多 C/D 混合, 本 tick D 健康. 净增 3754 bytes ≈ +1100 净增中文字, 落 400-900 目标上沿 (单加注三件操作 + 诚实判断段不可切薄)."
+    },
+    {
       "tick_utc": "2026-05-31T11:00:00Z",
       "task_type": "C",
       "files": [
