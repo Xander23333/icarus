@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T05:45:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md"
+      ],
+      "chars_added": 2350,
+      "note": "Task D 互引补充 — N6 §十 末追加 ### 2026-05-31 update 子节 'N6 §九「m_2 × m_7 双投影」与 world_model §reviewer-加注「双投影唯一性」反向锚定'. 登记 N6 §九 sample 侧 (commit a4c3480 2026-05-30 12:30Z) 与 world_model §reviewer 加注 (δ) 段 topic 侧 (commit f261f3e 2026-05-31 04:05Z) 对同一现象的双侧独立命名收敛——前者从 sample 侧命名 'video 模态 evaluation wall 包裹 = m_2 × m_7 联合表现', 后者从 topic 侧命名 '双投影唯一性 = 三层社会学约束横截面更宽 ≠ mech 信号更强'. 严格遵守 timeline 同步链终点收束 meta-row (commit 29107ec 08:30Z) 第 4 条方法学边界 '链终点收束后下篇 ≥4 topic 直接 type 标注不追加新同步链', 本子节 *不* 把 N6 §九命名扩展为同步链第八节点, *不* 给 sample 系列开同型链, 双侧命名收敛只是横向加密非新同步通道. 三件方向性约束 (a)(b)(c): (a) §七赔率三层不动 (Sora ~7-8% / Genie 25-30% / Hybrid ~55%) 双投影唯一性反向加密 §七 m_2×m_7 双轴依赖结构稳定性但不改赔率数字; (b) 按 §10 reviewer 加注 (commit ef1dfe2) type 分层, m_2 ∈ type III 最弱, m_7 ∈ type II 次强, '双投影唯一性' 在 type-geometry 下真实含义 = video 模态同时承载一条 type II + 一条 type III 投影, §九联合表现论断 evidence-strength 受 type III 那端弱化锁限, 不能因 'world_model 唯一双投影 topic' 而上调; (c) §八评测墙包裹判决在 type-geometry 重读后仍成立但机制层级细分为 'frontier 在 type III latent-purity 侧沉默 (m_2) + 在 type II head-to-head 协议侧沉默 (m_7) 两段叠加'——任一解除触发部分降级, 两者同时解除才触发整体降级, 与 world_model f261f3e (ε) 段 cross-type 复合 falsifier 同向但非同条 (前者 cross-投影 复合). 最大方法学风险声明: 防止把双侧命名收敛误读为独立第二证据通道, evidence 计数 = 1 (与 N5 §八 独立性回收 / N6 §九 命名不是新证据 同协议). 严守 12 天冻结协议白名单互引补充 + 措辞收紧, 不动 §三-§九主骨架 / §六-§七赔率 / M1 8 m_k / §八评测墙包裹判决 / 9/9 编号闭环. Rotation guard: N6 上次 touch 2026-05-30 12:30Z (commit a4c3480 §九), 距本 tick ~17h, 最近 12 ticks (N4 §八 04:30Z / N7 §九 03:00Z / scaling 02:35Z / online 00:30Z / world_model 23:45Z 前一日 / 5 个 type-geometry 同步链节点 01:05-04:38Z / N1 §八 17:35Z) 无 N6 重叠. 净增 ~2350 bytes ≈ 700 中文字, 落 400-900 目标内. 引用全沿用 verified commit hash (f261f3e / ef1dfe2 / 29107ec / a4c3480 / 791fec9 / 74d4d31 / d1a7b16 / 3e7db77) 与既有 arxiv IDs (2605.30346 / 2605.30100 / 2605.29360 paper_notes 集合), 无 fabricated."
+    },
+    {
       "tick_utc": "2026-05-31T04:30:00Z",
       "task_type": "A",
       "files": [
