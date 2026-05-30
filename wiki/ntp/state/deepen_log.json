@@ -1690,6 +1690,15 @@
       ],
       "chars_added": 4800,
       "note": "timeline.md +5 行 2026-05-30 daily harvest 回登 — 此前 5 篇 paper (2605.27734 JEPA PCFG / 2605.30346 YoCausal / 2605.30100 Chess-WM / 2605.29360 MiraBench / 2605.28860 RL-vs-SFT DCV) 已在 2026-05-30 各 B tick (formal_limits 08:00Z / causality 09:00Z / embodiment 09:30Z / reasoning 02:03Z + daily cron 自动 unpack 至 world_model / online_learning) 各自 evidence-anchor 落地, 但 survey/timeline.md (cron 不自动维护) 落后到 2026-05-29 末行. 本 tick 是 curation 类操作 (C): 把分散在六个 topic 的 evidence-anchor 投影回时间索引层, 每行字段严格按已有 topic 落地决策摘要 (NTP 归类 + sub-band / 强度限定 / 不升候选理由 + 与已有 anchor 的串联). 严守 12 天冻结协议 (至 2026-06-10), 时间索引层登记不蕴含新 sub-candidate / corollary / route-elim / falsifier 收紧 / candidate 强度升级, 仅作 *已发生 deepen 决策的元-层登记*. Rotation guard: prev tick B reasoning.md (02:03Z) → 本 C timeline.md (不同文件不同 task type, 满足 do-not-touch-same-file-twice-in-a-row 协议); timeline.md 距上次 edit ~24h, 无重叠. 不动 taxonomy.md (升降级历史也落后到 2026-05-28, 但更新它需先评估 5 篇是否触发升降级, 违反冻结协议; timeline 是纯时间索引, 添加 paper 行不涉及级别判断). 字符净增 ~4800 (5 行长 markdown row, 超 400-900 目标区间但属一次性回登节点, 单 tick 单类操作). 无新 arxiv ID 编造 (5 个 ID 均 verified via paper_notes/2026-05-30-*.md), 无新数字/日期/作者/标题 fabricated; 仅复用各 B tick 已审定的命题摘要."
+    },
+    {
+      "tick_utc": "2026-05-30T04:05:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N3-three-puzzle-pieces.md"
+      ],
+      "chars_added": 2400,
+      "note": "N3 §七 reviewer 加注 — DCV / RL-vs-SFT circuit preservation (2605.28860) 作为赌 2 (Unfaithful CoT) 优化器侧旁证, 三处强度限定 (3B vs 7B+ 规模带 / same-accuracy 控制缺 / 与 ProFIL 共享前提不独立计数), 主观赔率 ordinal 不动 + M1 集合 8 条不动 + 不开新 bet/sub-candidate, 单向引 reasoning §RLVR transfer (commit 934a03c) 沿用 weak-medium 强度. Rotation: prev tick C timeline.md (03:35Z) → 本 D N3 (不同文件不同 task type); N3 上次实质性 edit 2026-05-29 evening (0b5c793). 12 天冻结协议白名单 *evidence-base refinement + 互引补充* 两类操作. 无 arxiv ID/数字/作者/标题 fabricated (2605.28860 verified via paper_notes)."
     }
   ]
 }
