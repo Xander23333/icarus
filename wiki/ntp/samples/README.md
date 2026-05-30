@@ -22,7 +22,7 @@
 | N4 | [Pearl 的因果阶梯与 LLM 的天花板](N4-pearl-ladder-and-llm-ceiling.md) | 🔨 推进中（§1–§6 + 尾声 + §7 2026-05 补遗 + §8 M1 元-corollary 回贴 / 估计 8500字） |
 | N5 | [Embodiment 真的不可 tokenize 吗——VLA 路线的隐含赌注](N5-embodiment-and-vla-bet.md) | 🔨 推进中（§1–§6 + §7 + §8 M1 reviewer-pass 回贴 / 估计 9500字） |
 | N6 | [World model = 视频生成？三个团队的三种答案](N6-world-model-three-answers.md) | 🔨 推进中（§1–§6 + 尾声 + §7 2026-05 补遗 + §8 sample↔sample 同名判决并排 (N5/N7/N4/N3) + §9 2026-05-30 M1 元-corollary 编号层回钉 (m_2 × m_7 双轴) / 估计 9000字） |
-| N7 | [Continual learning：为什么 LLM 不会持续学习](N7-why-llm-cannot-continually-learn.md) | 🔨 推进中（§1–§6 + §7 + §8 2026-05 末再补遗 / 估计 9000字） |
+| N7 | [Continual learning：为什么 LLM 不会持续学习](N7-why-llm-cannot-continually-learn.md) | 🔨 推进中（§1–§6 + §7 + §8 + §9 2026-05-30 daily↔deepen 跨 cron 协议 sample 侧首次落地 / 估计 10500字） |
 | N8 | [Sutton 又赢一次？回顾被打脸的"机制墙"](N8-sutton-wins-again.md) | 🔨 推进中（§1–§6 + 尾声 + §7 2026-05 补遗 + §8 2026-05-30 M1 元-corollary 回贴 §三剧本与 §六押注 / 估计 14000字） |
 | N9 | [Hallucination 是 NTP 的能力问题，还是认识论缺陷？](N9-hallucination-as-epistemic-failure.md) | ✅ §一–§五 + §尾声 (~9500字) — 2026-05-30 §尾声 赔率结构 + 三条触发条件 + 元-candidate 升级赔率 |
 

@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T03:00:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N7-why-llm-cannot-continually-learn.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "Task A sample 续写 — N7 §九 新章 '2026-05-30 daily 落条: DCV 不是 C-CONT-2 的第四支柱, 是第三支柱的 mechanistic 对偶'. 把 daily cron commit ab19e5d (2026-05-30 07:40Z) Rojas Nunez 2605.28860 [unverified ID] DCV head-level circuit vacancy probe (RL vs SFT 3B-scale, abstract 自命第四支柱) + 同文件 deepen 反向命名独立性核查 commit 1b98eab (2026-05-31T00:30Z) 翻译到 sample 这一面. 三段论证: (a) 测量层独立但归因层不独立 — DCV ρ ≈ 0.7-0.85 与 final accuracy 在 3B 上同义反复, Shumailov/Dohare-Sutton 小 scale 同图形, 归入 'forgetting 不可观察子空间间接证据' 类而非独立第四支柱; (b) 作用域错位 — DCV 在 attention head 参数层, §6 bet (d) 在 RealTime QA 命题层, 即使 frontier 公开 DCV 也不兑现 (d) falsifier (driver vs readout 在 scale 升级时可能脱钩, Bordelon 2402.01092 类比); (c) 与 reasoning C-REAS-6 same-final-accuracy controlled comparison 三轴协议同型 — RL vs SFT footprint 比较前须 ±1pp 对齐, 作者论文未报 final-accuracy-matched 对照, strength of claim 退到 'controlled 之前差异有相当大一块是 final-accuracy 差的同义重述'. 回贴 §3-§8 结构: §5 三反例分类不动 (DCV 是探针不是反例) / §6 bet 五条 AND 不动 (DCV 不进 (a)-(e) 任一 falsifier) / §七六颗 frontier-disclosure 钉子不动 (DCV 是 probe 不是 disclosure) / §八 M1 收编 8 条不动 (DCV 是第三方学界 *打开* 沉默通道方向反, 不进 M1 第 9 条) / §八 §7-1 置信度 60-65% 回调 1-2pp (DCV 给微弱独立 *正向* 信号但 same-final-accuracy 未对齐前不能算独立证据). 诚实反例三处 (DCV editing vs re-routing 不分离 Wang 2406.13983 [unverified ID] / 3B 单一规模 + math 单一任务族 Dohare 同型规模上界 / DCV 与 §3 几何论断隔两层推理是 §3 最弱环节). 元意义: 建立 daily↔deepen 跨 cron 协议在 sample 侧的第一次具体兑现 — daily 落条 ⇒ deepen 同文件命名独立性核查 ⇒ sample 侧把核查结果回贴成判断方向收紧 + 强度封顶, 与 topic 侧 commit 1b98eab 一一对应. 增量到 §八三条硬指针之后第 (4) 条: 2026-Q3 之前任一团队 7B+ scale 复现 DCV + same-final-accuracy 对齐数据则 §九重审. 严守 2026-05-30→2026-06-10 12 天冻结协议 evidence-base refinement + 互引补充 + falsifier 收紧 三类白名单, 不开新 sub-candidate / corollary / route-elim. Rotation guard: 上 tick (02:35Z) scaling_limits.md, 最近 9 ticks (online 00:30Z / world_model 23:45Z / formal 08:00Z / world_model 05:00Z / N6 06:00Z / N1 04:10Z / N8 03:30Z / N2 03:00Z / N5 18:34Z) 无 N7.md 重叠, N7 距上次 touch 2026-05-29T17:09 (~10h 前), 满足不连续同文件规则. Task type 切换: 最近 6 ticks 全 D, 本 tick 切回 A 健康分布. README N7 行同步 §1-§6+§7+§8 9000字 → §1-§9 10500字. 字符净增 ~5400 bytes ≈ 1700 中文字 略超 400-900 目标但 §九三段论证 + 五处结构回贴 + 三诚实反例 + 元意义 + 第 (4) 硬指针须一次性写完保持 daily↔deepen 协议第一次具体化叙事连贯优于切两 tick."
+    },
+    {
       "tick_utc": "2026-05-30T02:35:00Z",
       "task_type": "D",
       "files": [
