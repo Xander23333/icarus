@@ -3,24 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-31T10:30:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/topics/reasoning.md"
-      ],
-      "chars_added": 6000,
-      "note": "Task D reviewer pass — reasoning.md 末追加 '2026-05-31 reviewer 加注 — type I/II/III 落点几何对 C-REAS-6/C-REAS-7 evidence 的二次分层' 子节, 作为 type-geometry 同步链第六落点 (taxonomy f61f8c4 → N1 §八 764ecb8 → survey §10 ef1dfe2 → formal_limits 1c22b75 → causality 4707f45 → 本节). 三件操作: (α) C-REAS-6 reward-hacking 阶梯三 anchor (Gao 单 topic 深拟合 不进 type I/II/III / DCV 2605.28860 = type I 在 reasoning 域第二落点 effective 0.25-1 / MiraBench L3 2605.29360 = type III effective 0-0.5) 按 type-aware 重新加总, 与 naive paper-count 差 1.0-2.0 effective anchor, 方向不动 medium 评估但显式登记升档触发条件 (DCV follow-up same-acc controlled 升 type I 切片才推升档, MiraBench 单增不推); (β) C-REAS-7 跨域 transfer 衰减律 *不在 type-geometry 适用域* — 5-6 anchor × 单一作用域 × 多 paper independent fit 是与 type I/II/III 正交的第四类几何, 暂不命名, 触发条件与 taxonomy f61f8c4 末段 anchor 几何升级触发条件正交; (γ) falsifier 反向收紧 — MiraBench L3 在 reasoning 域 §C-REAS-6 + §C-REAS-7 falsifier confound 同时引用是 *单一证据源 × 两投影*, 按 type III 独立计数 ≤ 1 协议总计 1 anchor 而非 2, 与 M1 reviewer pass (a) 段反双重计数同型下放到 anchor 引用次数层. 三处单向互引 (formal_limits 1c22b75 type-aware 加总同型 / causality 4707f45 DCV 正负投影对 / N1 764ecb8 sample 侧 naive→effective 转换同型). 严守 12 天冻结协议 (2026-05-30→2026-06-10) 白名单 互引补充 + 措辞收紧 + 升降级历史登记 三类, 不动 M1 8 m_k / C-REAS-1..5 / C-REAS-6 medium / C-REAS-7 weak-medium / falsifier 阈值 / Open problems 7/8 / reward-hacking 三 anchor 命名 / RLVR transfer anchor 集合 / 28e79c6 cluster 四子轴. reviewer 元判断: type-geometry 链将自然终止于 4-7 个 topic (formal/causality/reasoning/scaling 已落 + grounding/embodiment/world_model 还可落), 不强求 8/8 闭环; online_learning RAG 五维与 C-REAS-7 同属第四类几何, 不适合 type-geometry 重读. Rotation guard: 上一 tick (10:00Z) 为 causality.md, 本 tick reasoning.md 不同文件; reasoning.md 上次 touch 28e79c6 cluster 距今 >9h, 满足. Task type 最近 5 ticks (D/A/A/D/D) 本 tick D 健康. 净增 ~6000 bytes ≈ +1800 字, 略超 400-900 字目标因 type-geometry 同步链第六节点性质决定 (三件操作 α/β/γ + 三处单向互引 + reviewer 元判断 + 冻结约束声明 6 大模块标准 reviewer pass 几何全展开)."
-    },
-    {
-      "tick_utc": "2026-05-31T10:00:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/topics/causality.md"
-      ],
-      "chars_added": 3400,
-      "note": "Task D reviewer pass — causality.md §Video world model rollback (d) 末段 2026-05-30 09:00Z YoCausal 落地 (commit c07ab96) 后 ~4h 后视角 reviewer pass, 追加 (d⁗) 三处独立性收紧 + (d⁽⁵⁾) MiraBench L3 自我预测轴单向互引 + reviewer 元判断. 三处独立性收紧均不改方向不改阈值: (i) 13 个 SOTA VDM 训练语料共享 (Sora/Veo-2/Cosmos/Genie-2/Wan 系 web-scale video 抓取重叠), 等效自由度保守上界 4-6 而非 13, 与 CLadder N 独立 SCM 实例 frequentist 解读不可对齐; (ii) 评测协议共享 — RSI/CCI 脚本同一, VLM-stratifier confound 系统性同向漂移读作 evaluator 一致而非被评测者一致 (与 (d″) VLM-as-judge 中介条款方向一致更具体); (iii) RSI/CCI 双指标内部相关性 — 同一前向 pass 同一 latent 表示给出, 条件独立性未 controlled 检验, 当前应读作 measurement-level dissociation 候选而非 capability-level dissociation 已证. 共同后果: evidence-strength 从隐含 weak-medium 收到 weak, 与 reasoning §C-REAS-6 reviewer pass DCV same-final-acc 控制实验缺失下 weak-medium 同型 跨模型横评 ≠ 独立观察累计 方法学纪律. (d⁽⁵⁾) MiraBench L3 Optimism Bias Detection 与 YoCausal CCI 在评测协议失效模式维度构成 外部观察 vs 自我预测 二轴对偶 — YoCausal 测真实视频时间反转 denoising loss 差异 (外部 ground-truth 时间箭头) / MiraBench L3 测 model 对自己 rollout 在 failure-inducing action 输入下自我成功率预测 (内部自洽性) — 两条独立 leak point 同向报告 video/world model 在反事实-flavored 评测系统性失败. 不构成第二条独立 evidence (共享 C-WM-7 frontier-disclosure 沉默背景 M1 元-corollary 同一根弦). 互引规则单向 causality → embodiment 不反向. MiraBench 不进入 C-CAUSAL-DISCLOSE 实验 (i)(ii)(iii) 半年时间常数清零 (自我预测维度评测协议失效与 text-NTP×CLadder Layer-2×RL/SFT controlled comparison 三轴齐备完全不重合 与 (d‴) 拒绝 YoCausal 算作部分清零同型). reviewer 元判断: 严守 12 天冻结协议白名单 falsifier 收紧 + 互引补充 两类, 不动 (d)(d′)(d″)(d‴) 判断方向 / 不动 C-CAUSAL-2 评估 / 不动 §Video world model rollback (a)(b)(c) 形式论证 / 不开新 sub-candidate / 不动 C-CAUSAL-DISCLOSE 半年时间常数 / 不向 §10 申请新条目. 唯一沉淀 evidence-strength weak 估值 + MiraBench 自我预测轴单向互引登记. 下一次实质更新若 2026-Q3 YoCausal follow-up 用人工标注或物理仿真替换 VLM-stratifier 且按训练数据独立类别去重到 4-6 重报 CCI gap 则可升回 weak-medium 并允许 (d′) 单条 proxy 升级到 双条 (CCI + 正交 stratifier 一致). 这是 daily↔deepen 跨 cron 协议 topic 侧 *同 commit ~4h 后内部 reviewer pass* 第一次具体化 (前序 commit c07ab96 09:00Z 与本 tick 10:00Z 同文件同段, 但属 reviewer-tier 同节内增量, 落 falsifier 收紧/互引补充 两类白名单, 不构成 rotation 同文件连续违规 — 上 tick 05:00Z N5 sample 非本文件, 02:35Z scaling 非本文件, 23:45Z world_model 非本文件, causality.md 距本 tick 自身上次实质 deepen pass (05-30 06:05Z grounding tick) 约 4h, 严格 D-type 同文件不连续规则上 D 类型最近 5 ticks 在 scaling/online/world_model/grounding 上轮转, 切回 causality 健康). 净增 ~3400 bytes ≈ +1100 字, 略超 400-900 目标, 因三处独立性收紧 (i)(ii)(iii) + MiraBench 二轴对偶互引 + reviewer 元判断 三段须一次性写完以保持 (d′)–(d‴) ~4h 内 followup 连贯优于切两 tick."
-    },
-    {
       "tick_utc": "2026-05-31T05:00:00Z",
       "task_type": "A",
       "files": [
@@ -1906,6 +1888,16 @@
       "chars_added": 5652,
       "cjk_chars_added": 1167,
       "note": "causality.md +§三 anchor type I/II/III 落点几何再读 — type-geometry 同步链第五落点 (taxonomy f61f8c4 → N1 §八 764ecb8 → survey §10 ef1dfe2 → formal_limits 1c22b75 → causality 本子节). 三件操作: (γ-i) YoCausal type III → evidence-strength 二次折扣 weak × type III / (γ-ii) MiraBench type III causality 子带窄通道锁定 + 不可累计 disclosure 清零 / (γ-iii) DCV type I causality *显式不落点* 负空间登记. 不动 mech 评估 / falsifier / M1 8 m_k / C-CAUSAL-1/2/DISCLOSE 半年时间常数 / Pearl 阶梯论证; 12 天冻结协议白名单 互引补充+措辞收紧+升降级历史登记; 8 commit hash + 3 arxiv ID git/paper_notes 验证. Rotation: prev tick 1c22b75 formal_limits.md → 本 causality.md 不同文件不同子操作."
+    },
+    {
+      "tick_utc": "2026-05-31T04:05:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/world_model.md"
+      ],
+      "chars_added": 5800,
+      "cjk_chars_added": 1850,
+      "note": "world_model.md +§2026-05-31 reviewer 加注 — type-geometry 同步链第七落点也是 topic 域最后一处 (链已闭环 taxonomy f61f8c4 → N1 §八 764ecb8 → §10 ef1dfe2 → formal_limits 1c22b75 → causality 4707f45 → reasoning 3cf73cd → world_model 本节). 6 件操作: (α) KFW 2605.27734 type II 唯一 anchor 在 world_model 域 — 四 target 不同独立证据计数=1 第八种几何加密 §JEPA-PCFG (b) β 轴显式降一档; (β) MiraBench 2605.29360 type III 第 4 处落点 11/topic+sample 总覆盖 共享 VLM-judge 中介 confound 独立证据≤1 协同回退几何在 (d) 段显式化; (γ) DCV 2605.28860 *显式不落点* 负空间登记 第二处 (前一处 causality) 与七正落点形成 6:2 type I 覆盖几何 根因 latent-codebook 度量空间与 attention-head 子空间无法 layer-attribution 桥接; (δ) world_model 是 type triple coverage 唯一完整域 与 M1 双投影 (m_2/m_7) 唯一性共享同一根因即三层社会学约束横截面更宽 三处显式声明几何≠证据/负落≠扩散/覆盖≠升级; (ε) cross-type 复合 falsifier 触发反向收紧 任两条 (type II 第二 anchor / type III 协同回退 / type I 负空间桥接) 同步出现触发 C-WM-5/6/7 + M1 双投影同步降一档 + (α)(β)(γ) 三段同步失效; (ζ) 三处单向引 taxonomy/reasoning/causality 链终点形态固定. 严守 12 天冻结协议白名单 (互引补充+措辞收紧+升降级历史登记 三类) 不动 §核心问题/C-WM-3/6/7 主条件/JEPA 可辨识性/head-to-head 真空/OP-WM 任一段原文 不动 M1 8 m_k 集合 不新增 candidate/corollary/sub-candidate/route-elim 任一槽位. 不引入任何新 arxiv ID, DCV/MiraBench/KFW 均 verified via paper_notes. Rotation guard: 距上次 world_model.md edit 81d2fa3 (~15h, task type B) 非连续两 tick, 本 tick task type D 不同操作; 前一 deepen tick reasoning.md 3cf73cd 不同文件. 字符净增 ~5800 (markdown 含格式, 中文实质 ~1850 字)."
     }
   ]
 }
