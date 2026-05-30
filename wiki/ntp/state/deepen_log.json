@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T00:30:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/online_learning.md"
+      ],
+      "chars_added": 4800,
+      "note": "Task D reviewer pass — online_learning.md §反例与上界突破 节 2026-05-30 daily cron (ab19e5d 07:40Z) 自动追加的 Rojas Nunez 2605.28860 子弹自命 *C-CONT-2 第四支柱* 命名核查. 该命名与 §Mid-training annealing 节末段 (2026-05-29) 已定义 C-CONT-2 三支柱 + 第三支柱方法论非独立性警示直接冲突, 必须先做命名独立性核查. 三段同步: (a) Rojas Nunez 在 *测量层* (head-level DCV vs perplexity/accuracy/disclosure) 方法独立但 *归因* 独立性弱 (DCV 与 final-acc 高度相关, 可能 'RL 学少了→footprint 少→DCV 低' 同义反复); reviewer 收紧为 *第三支柱 mechanistic 对偶通道* 而非独立第四支柱, 第三/四合并 'forgetting 不可观察子空间间接证据集群', 与 (i)(ii) 直接证据共两类支柱 (避免与 C-CAUSAL-2 四支柱并列结构对齐); (b) Falsifier 二处歧义收紧不改方向不改阈值: (i) DCV 作 C5 falsifier (d) 额外检测维度时须 RL/SFT 在同 hold-out task final accuracy ±1pp 对齐后再比 prior circuit overlap, 与 reasoning §C-REAS-6 reviewer (commit 965e9f7) controlled comparison 三轴同型, (ii) 3B 单任务规模显式标注 *尚未跨规模/跨任务* 上限 (与 Dohare 2024 ≤100M 同型); (c) 三处互引: reasoning C-REAS-6/7 same-final-acc 协议同型 + grounding C-GROUND-PROTO 三轨同 forward pass × ρ 协议 DCV 落 (a) probe 轨 + N7 §3 'loss 不动点' macro vs head-level 双层对应 (登记 N7 §3 候选锚点但本 pass 不写入 N7 避免越权). 严守 2026-05-30→2026-06-10 12 天冻结协议白名单 (falsifier 收紧 + 互引补充 两类), 不动 C-CONT-2 主命题 / 不开新 candidate / 不入 §10 evidence 通道 / 不动 taxonomy 主表 / 不动 §反例 节 daily cron 自动追加的子弹原文 (保留 audit trail). 元意义: 这是 daily cron 自动追加 evidence-bullet 第一次被 deepen cron 显式核查命名独立性, 建立 'daily 落条带支柱命名 → 下一 deepen tick 同文件命名独立性核查 + falsifier 收紧 + 互引补充' 跨 cron 协议第一次具体化, 填补 'daily 落条/deepen 不审' 责任真空 + 防 '支柱命名通胀'. Rotation guard: online_learning.md 上次 touch 2026-05-29T10:32Z (~38h 前), 最近 5 ticks (world_model 23:45Z / formal_limits 08:00Z / world_model 05:00Z / N6 §九 06:00Z / N1 §七 04:10Z) 无 online_learning.md, 满足不连续同文件规则. 字符净增 ~4800 bytes ≈ 1400 净增中文字, 略超目标 400-900 但 reviewer pass 三段 + 元意义协议确立须一次性写完保持 daily↔deepen 跨 cron 协议建立段连贯优于切两 tick."
+    },
+    {
       "tick_utc": "2026-05-30T23:45:00Z",
       "task_type": "D",
       "files": [
