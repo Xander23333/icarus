@@ -1738,6 +1738,16 @@
       ],
       "chars_added": 2200,
       "note": "grounding §C-GROUND-PROTO 半年实施核查 新增 *方向性动作 (3)* — DCV 2605.28860 作 *训练面对偶* 在 ProFIL 之外的第二条独立 anchor (训练面 anchor 数 1→2): ProFIL 把 probe → 训练 *闭环* (action), DCV 把 probe ← 训练 *差分* (observation), 两者方向相反但都把 (a) probe 轨训练侧可操作性推前一步. 三处强度限定 (3B 单规模 + scientific-QA 单任务不外推 frontier; same-accuracy 控制缺 paper Reviewer 已自承 RL 学得慢可能解释大部分 circuit preservation; head-level overlap 与 Burns/Marks/Geva residual/MLP probe 共享 layer-attribution 骨架不算独立第三通道). 实施进度刻度 *分子分母均不动* (仍 0/3 完整 + 2/3 部分 Causal Tongue-Tie + Li 2605.26362), DCV 不进 (a)+(b)/(a)+(c) 部分实施计数 — 因不在 grounding benchmark 跑, 不报 (b)(c) 轨, 不报相关 ρ, 只把 training-time 内部表征改动操作化, 非 inference-time 三轨同步采集. 单向引 reasoning §RLVR transfer (commit 934a03c) 与 online_learning C-CONT-2 第三支柱 (commit 1b98eab) — 两者已先把 DCV 收编为优化器侧 mechanistic 旁证, 本 grounding 域引用沿 *训练面对偶* 维度回贴 C-GROUND-PROTO 框架, 不反向回灌, 不开新 sub-candidate. Rotation: prev tick D N2 05:05Z (4245093) → 本 B grounding.md (不同文件不同 task type). 12 天冻结协议 (2026-05-30 → 2026-06-10) 白名单 *evidence-base refinement + 互引补充* 两类操作. 无 arxiv ID/数字/作者/标题 fabricated (2605.28860 verified via paper_notes)."
+    },
+    {
+      "tick_utc": "2026-05-30T06:30:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 2400,
+      "note": "N9 §六 reviewer pass — DCV 2605.28860 接 C-GROUND-PROTO 第二条 training-face anchor (ProFIL probe→训练闭环 ↔ DCV probe←训练差分, 训练面 anchor 1→2 但 evaluation 面仍 0/2). 三处强度限定 (α 3B 单规模/scientific-QA 单任务不外推 frontier hallucination contested subset; β 与 ProFIL 共享 Burns/Marks/Geva head-attribution 骨架不算第三独立通道; γ same-accuracy 控制缺在 epistemic readout 维度同样成立). §五 50-60/25-40/5-15 比例 + mech 三角归属 (C-GROUND-7 + C-CONT-1 + C-CAUSAL-DISCLOSE) 不动, §尾声 ~25%→~50% 元-candidate 升级赔率 ordinal 不动, M1 元-corollary 8 个 m_k 集合不动; m_9 兑现路径从 evaluation 面单点突破扩成 +training-face 两 anchor 联动外推 (后者更弱). 单向引 grounding (commit f611a01) + online_learning (commit 1b98eab), 不反向回引, 不开新 sub-candidate. Rotation: prev tick B grounding.md 06:05Z (f611a01) → 本 D N9 (不同文件不同 task type); N9 距上次 edit 2026-05-30 02:04Z (~4.5h). 与 N3 §七 (reasoning 域) / N5 §九 (MiraBench) / N7 §九 (online_learning 域) / N2 §八 (Chess-WM) 共同构成 2026-05-30 daily harvest 五颗子弹 sample 层第六处也是最后一处 DCV anchor 归位 (reasoning ← N3 / online_learning ← N7 / grounding ← N9 / reasoning training-face 对偶 ← grounding 四点单向收束). 12 天冻结协议 (2026-05-30 → 2026-06-10) 白名单 evidence-base refinement + 互引补充 两类. 无 arxiv ID/数字/日期/作者/标题 fabricated (2605.28860 verified via paper_notes, 2510.18874 ProFIL 已在 grounding 既有 evidence-base 中). 字符净增 ~2400 (一节 +README 表格行更新)."
     }
   ]
 }
