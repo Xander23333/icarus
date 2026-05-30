@@ -1,31 +1,17 @@
 {
   "schema": "v1",
-  "last_run_utc": "2026-05-30T07:50:00Z",
-  "last_report": "wiki/ntp/daily_reports/2026-05-30.md",
-  "harvest_file": "wiki/ntp/state/harvest_2026-05-29.json",
-  "raw_hits": 80,
-  "kept": 5,
-  "new_paper_notes": 5,
-  "kept_ids": [
-    "2605.27734",
-    "2605.30346",
-    "2605.30100",
-    "2605.29360",
-    "2605.28860"
-  ],
+  "last_run_utc": "2026-05-31T07:10:00Z",
+  "last_report": "wiki/ntp/daily_reports/2026-05-31.md",
+  "harvest_file": "wiki/ntp/state/harvest_2026-05-30.json",
+  "raw_hits": 175,
+  "kept": 0,
+  "new_paper_notes": 0,
+  "kept_ids": [],
   "files_changed": [
-    "wiki/ntp/papers/paper_notes/2026-05-30-2605.27734-jepa-sample-complexity.md",
-    "wiki/ntp/papers/paper_notes/2026-05-30-2605.30346-yocausal-video-world-model.md",
-    "wiki/ntp/papers/paper_notes/2026-05-30-2605.30100-chess-world-model-state-tracking.md",
-    "wiki/ntp/papers/paper_notes/2026-05-30-2605.29360-mirabench-action-conditioned-reliability.md",
-    "wiki/ntp/papers/paper_notes/2026-05-30-2605.28860-rl-vs-sft-circuit-preservation.md",
-    "wiki/ntp/papers/README.md",
-    "wiki/ntp/topics/world_model.md",
-    "wiki/ntp/topics/formal_limits.md",
-    "wiki/ntp/topics/online_learning.md",
-    "wiki/ntp/survey/ntp_survey.md",
-    "wiki/ntp/state/read_ids.json",
-    "wiki/ntp/daily_reports/2026-05-30.md"
+    "wiki/ntp/state/harvest_2026-05-30.json",
+    "wiki/ntp/state/harvest_latest.json",
+    "wiki/ntp/state/last_run.json",
+    "wiki/ntp/daily_reports/2026-05-31.md"
   ],
-  "notes": "No new candidate IDs; all 5 papers refine existing evidence base (C-WM-5 / C-WM-3 / C-FORM-6 / C-WM-7 / C-CONT-2)."
+  "notes": "Zero-keep day. 175 raw hits across 7/8 queries (formal_limits hit arxiv 429); after dedup against read_ids.json: 0 candidates. Manual retry of formal_limits returned 25 hits all already in read_ids. read_ids.json untouched (no ranking step run). Substantive evidence-base progress recorded in past-24h NTP-Deepen rollup (47 ticks / +241k chars) — see report §9."
 }
