@@ -1709,6 +1709,16 @@
       ],
       "chars_added": 2400,
       "note": "N3 §七 reviewer 加注 — DCV / RL-vs-SFT circuit preservation (2605.28860) 作为赌 2 (Unfaithful CoT) 优化器侧旁证, 三处强度限定 (3B vs 7B+ 规模带 / same-accuracy 控制缺 / 与 ProFIL 共享前提不独立计数), 主观赔率 ordinal 不动 + M1 集合 8 条不动 + 不开新 bet/sub-candidate, 单向引 reasoning §RLVR transfer (commit 934a03c) 沿用 weak-medium 强度. Rotation: prev tick C timeline.md (03:35Z) → 本 D N3 (不同文件不同 task type); N3 上次实质性 edit 2026-05-29 evening (0b5c793). 12 天冻结协议白名单 *evidence-base refinement + 互引补充* 两类操作. 无 arxiv ID/数字/作者/标题 fabricated (2605.28860 verified via paper_notes)."
+    },
+    {
+      "tick_utc": "2026-05-30T05:05:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4200,
+      "note": "N2 §八 末追加 2026-05-30 update Chess-WM 2605.30100 第四道暗门候选 — paper-note Reviewer 段自我点名 *把 N2 三暗门扩成四暗门* 子弹的 sample 层落地 (此前已落 formal_limits §C-FORM-6 实证 anchor + world_model §(b) 横向, 本 tick 补 N2)。形状: Merrill-Sabharwal 上界证明里隐含 *backbone 单步类的 transition matrix 表达力对 worst-case 阶不重要* 假设, 在 zero-scratchpad + 10M chess + matched-protocol 下被 SSM-with-neg-eig vs attention-only head-to-head 部分破; OOD random-uniform 不饱和归 attention-only NTP shortcut-learning 共同上界 (与 C-FORM-4 内圈墙同源)。三处强度限定 (α deterministic+full-obs 与 partial-obs/stochasticity/causality 正交, 不升 *SSM 更接近 world model* 强结论; β 18M 饱和点不外推 frontier; γ 与 Merrill 2404.08819 共享论证骨架不算独立通道) + 单向引 formal_limits + world_model (不反向). 不改 §三/§六/§八 既有判决, 不进 §六修订表 (候选状态保持到 2026-06-10 冻结到期), 不开 §九. Rotation: prev tick D N3 04:05Z (791fec9) → 本 D N2 (不同文件); N2 距上次实质性 edit 2026-05-30 03:09Z (4e902f9) ~2h. 与 N3 §七 (DCV 2605.28860) + N4 §八 (YoCausal 2605.30346) + N6 §九 (M1 编号层) + N7 §九 (DCV stealth-CPT 第三支柱对偶) 共同构成 2026-05-30 daily harvest 五颗子弹 sample 层第五处也是最后一处落地 (Chess-WM 是五处中唯一 backbone 维度 anchor, 其余四条均 mech 命题维度). 12 天冻结协议 (2026-05-30 → 2026-06-10) 白名单 *evidence-base refinement + 互引补充* 两类. 无 arxiv ID/数字/日期/作者/标题 fabricated (2605.30100 verified via paper_notes). 字符净增 ~4200 (五段子节: 形状 / §八对位 / 三处强度限定 / 互引 / 判断)."
     }
   ]
 }
