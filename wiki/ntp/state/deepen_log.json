@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T11:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/timeline.md"
+      ],
+      "chars_added": 2400,
+      "note": "Task C timeline meta-row — daily↔deepen 跨 cron alignment-pass 协议三次具体化 (1b98eab 同域命名核查 / 37c5201 跨 topic 单向互引 / fb423ee 跨 topic 同型机制命名) 形态学登记, 与 line 7 单 paper 41.2% 饱和度 meta-row 对偶 (证据加工侧 vs 证据供应侧). 12 天冻结协议 *互引补充* 白名单, 不开新 sub-candidate/corollary/m_k/时间侧加固槽位. Rotation: prev D causality.md → 本 C timeline.md (不同文件不同 task type). 无 fabricated arxiv ID/数字/作者/日期."
+    },
+    {
       "tick_utc": "2026-05-31T10:00:00Z",
       "task_type": "D",
       "files": [
