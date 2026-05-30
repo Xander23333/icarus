@@ -1766,6 +1766,16 @@
       ],
       "chars_added": 2900,
       "note": "timeline.md +1 meta row 单论文 7 落点饱和 (DCV 2605.28860) — survey 史上首次单 paper 横向 anchor 密度 ≥ 40% (7/17 surface 覆盖, 超 ProFIL/Causal Tongue-Tie 历史峰值一个量级). 未覆盖 10 格三类结构性理由显式列出 (域不相干 5 / sub-candidate 饱和 3 / 反方陈词体 2) 与覆盖 7 格相加恰 17 全格无悬空格 — 12 天冻结协议下 sub-candidate 区 + M1 8 m_k 双层结构稳态运行横向证据. 方法学判断: 41.2% 单 paper 饱和度*不是*证据强度信号 (DCV 单 Qwen2.5-3B + scientific-QA 单规模单任务 7 落点均被三处强度限定圈起, 与 ProFIL/Causal Tongue-Tie 多落点同型属 *形式化框架填格* 非 *经验证据加密*), 而是 frontier-disclosure 缺位条目饱和后 *外部第三方论文* 取代 *frontier 公开材料* 作 mechanism-side 旁证主供应通道带宽窄结构性表现, 与 M1 钉的 frontier 选择性沉默同源. 兑现 2026-06-10 冻结到期审计三条预设触发条件之一 (任一 sub-candidate 收紧依赖单 paper 跨 ≥4 域 已触发, 但 7 处均落 M1 8 m_k 集合 m_5/m_1/m_6 三投影内不开新 m_k 也不破协议); 反向: 若冻结到期前再出现第二条单 paper ≥4 域落点, 须把 M1 falsifier 从 *单触发* 收紧为 *双触发* (单 m_k 公开 + 单 paper 跨域饱和率回落 <25%). Rotation: prev tick B scaling_limits.md 07:30Z (19c82d8) -> 本 C timeline.md (不同文件不同 task type); timeline.md 距上次 edit 03:35Z (c84ba8f) ~4.5h. 单向引 9 处 commit hash (4 topics + 3 samples + 2 history peaks ProFIL/Causal Tongue-Tie). 12 天冻结协议白名单 *互引补充* 操作, 不开新 sub-candidate/corollary/route-elim/时间侧加固槽位, M1 8 m_k 集合不动, sub-candidate 区 17 条非主表条目不动. 无 arxiv ID/数字/作者/日期 fabricated (2605.28860/2605.11467/2605.25891 均 verified via paper_notes; 7/17 落点统计经 grep 验证)."
+    },
+    {
+      "tick_utc": "2026-05-30T08:30:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N1-the-ntp-question.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 2400,
+      "note": "N1 §八 reviewer pass — 框架章对 timeline.md 08:00Z DCV 2605.28860 单 paper 7/17 ≈41.2% 横向饱和度元-row 的二次同步 (与 §七 M1 反向同步形成方法学姊妹节). 四件操作: (a) §六三条隐含假设修订与本 tick 横向饱和现象做实证刻度对账 — 假设 (i) 双向加固 (mech 命题与 evidence 仍可分离 + Xu 分类学网络几何接收面变大), 假设 (ii) 反向警告兑现 (7 落点零增条 完全沿横向覆盖加密 路径), 假设 (iii) 与 M1 内核同源 (frontier 沉默 → 外部 evidence-supply 通道带宽窄); (b) §七 M1 护栏从叙事层升级到跨 topic/sample 一致执行的工程层兑现 — 显式登记单 paper 单通道折算 + 内部最强限定封顶 两条现行规则, 4 topic commits (934a03c/1b98eab/f611a01/19c82d8) + 3 sample commits (791fec9/3e7db77/bbf0e9d) 均执行三处强度限定; (c) 17 格盘诚实分母规则修订挂账 — 7/17 ≈41.2% vs 7/15 ≈46.7% 双重读法 (反方陈词体 N8 + 框架章 N1 是结构上不可被 evidence 击中的 2 格) 作 2026-06-10 冻结到期后 D tick 三号兑现指针; (d) timeline.md 双触发预设反向同步 — frontier 公开 m_k 且单 paper 饱和率 <25% 同时兑现 / 任一背离则 M1 内核需形态重写 / 该预设给 §尾声 Popper 可证伪性论断补工程化辅则 (框架自身 evidence-supply 几何层可证伪入口) 作四号兑现指针. 不动 §四 / §五 / §六 / §七 任一节, 不动 M1 8 个 m_k 集合, 不动 timeline.md 元-row, 不开新 sub-candidate/corollary/route-elim/时间侧加固 (12 天冻结协议白名单 *evidence-base refinement + 互引补充* 两类). Rotation: prev tick C timeline.md 08:00Z (8278a21) → 本 D N1 (不同文件不同 task type); N1 距上次 edit 2026-05-30 04:07Z (~4.5h). N1 是 N1-N9 九篇 sample 里第一个具有 §七 (M1 sample-side 反向同步) + §八 (M1 framework-side 二次同步) 双 reviewer pass 节的章, 这一双层结构本身是 framework 章对 mech 候选章的方法学差异点. 无 arxiv ID/数字/作者/日期/标题 fabricated (DCV 2605.28860 / ProFIL 2605.11467 / Causal Tongue-Tie 2605.25891 三处 verified via paper_notes, 7 处 commit hash 经 git log 验证). 字符净增 ~2400."
     }
   ]
 }
