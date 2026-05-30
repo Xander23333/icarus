@@ -1841,6 +1841,15 @@
       ],
       "chars_added": 7800,
       "note": "N6 +§十 2026-05-30 daily 三连回贴 (YoCausal 2605.30346 / Chess-WM 2605.30100 / MiraBench 2605.29360) 到 §六三条 falsification 协议 (i)(ii)(iii) — daily↔deepen 跨 cron 协议在 sample 侧第 5 次具体化 (前 4 次 N3 791fec9 / N4 74d4d31 / N5 d1a7b16 / N7 3e7db77). 三颗子弹分别落点: (α) YoCausal → §六 (ii) 上界 proxy (时间反转 do-operator 一阶 surrogate + VLM judge-of-judge confound 两层降级, 必要不充分上界, 不触发升级阈值); (β) Chess-WM → 不进 N6 §六任一协议, 仅 §五 Dreamer 姊妹证据 + 真正落点是 N2 §六 第四暗门候选 transition-matrix expressivity (N2 §八 update 4245093 已落, N6 不重复算); (γ) MiraBench → §六 (i) 弱代理 (L2 action-following + L3 optimism bias = 负侧测量, 三层降级: 第四 weak-proxy 通道不独立 / 16k 人工标注 robustness 未验证 / L3 与 C-REAS-6 judge-of-judge 同源). 三颗合并独立性核查: 上游瓶颈共享 (第三方在 frontier 不公开 controlled evaluation 真空里自建 cheap proxy, 与 N7 §九 DCV 同型), 不新增 M1 m_k 投影 (仍锁 8 条). §七赔率微调 Sora 强命题 ~10% → ~7-8% (1-3pp, 落 [uncertain] 区间). 严守 12 天冻结协议: 不开 §十一/§十二, §六原文不被回写, §八 evaluation wall 包裹 / §九 9/9 编号闭环 / §10 主表 / M1 八条 m_k / §6 表 全部不动. 引用沿用 paper_notes verified IDs. Rotation: prev D online_learning.md 10:35Z (fb423ee) → 本 D N6 (不同 sample), N6 距上次 edit 06:30Z (e084d26) ~6h. 无 ID/数字/作者/日期 fabricated. 字符净增 ~7800."
+    },
+    {
+      "tick_utc": "2026-05-30T13:05:00Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/world_model.md"
+      ],
+      "chars_added": 5300,
+      "note": "world_model.md +§JEPA-PCFG 回贴 (Korchinski-Favero-Wyart 2605.27734) — daily harvest 五子弹中 world_model 域第 4/4 也即最后一颗回贴, 修补 sample 侧 N5 §九 / N6 §十 已完成而 topic 侧零回贴的 daily↔topic 空缺. 6 件操作: (a) PCFG depth-L 下 token-NTP exp(Ω(L)) vs latent-SSL O(1) 三定理压一句; (b) 三轴正交框架 (α LeJEPA infinite-sample identifiability / β KFW finite-sample complexity / γ C-WM-6 经验对照 controlled comparison 缺位) 显式登记为 §JEPA 可辨识性 + §head-to-head 真空 双节联读骨架, 三轴互不替代; (c) C-WM-6 falsifier 加第四 confound 轴 *世界几何谱* 须 ≥3 档分别报数字 (合成 PCFG / 自然语言 / 自然视频), 避免 PCFG-上分离 = paradigm-通用分离 过度外推 (与 formal_limits Chess-WM matched-protocol transition-matrix expressivity 同型); (d) OP-WM-4 半年未动判定不变, 归因细化加层 *世界几何选择本身是结果决定因子* (与 §OP-WM-2 audit reviewer-tier 内部不一致钉清同型); (e) M1 元-corollary 不动声明 — 理论类条目不入 M1 仅作 evidence-base 支柱, 与 embodiment C-EMBOD-7-corollary frontier-disclosure 类入 M1 *方向相反*; (f) 三处单向互引 (formal_limits §C-FORM-4 第三 anchor / N5 §九 / ntp_survey §10 C-WM-5 第二支柱). 严守 12 天冻结协议: 不开新 candidate / sub-candidate / corollary / route-elim, 不动 §JEPA 可辨识性 / §head-to-head 真空 / §Open problems 任一段原文, 不动主表行号, 不动 §10 8 m_k 集合. 引用沿用 verified IDs (2605.27734 daily commit ab19e5d 已 verify / 2605.26379 LeJEPA paper_note exists / 2605.26900 SPHERE-JEPA / 2203.15556 Chinchilla). Rotation: prev tick D N6 §十 12:35Z (2c2fede) → 本 B world_model.md (不同范畴 sample→topic), world_model.md 距上次 deepen edit 2026-05-30 07:52Z (7af3bfd) ~5h 非连续两 tick 同文件. 无 arxiv ID/数字/作者/日期 fabricated. 字符净增 ~5300 (markdown 含格式, 中文实质 ~1700 字)。"
     }
   ]
 }
