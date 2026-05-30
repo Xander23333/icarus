@@ -3,6 +3,15 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T10:00:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 3400,
+      "note": "Task D reviewer pass — causality.md §Video world model rollback (d) 末段 2026-05-30 09:00Z YoCausal 落地 (commit c07ab96) 后 ~4h 后视角 reviewer pass, 追加 (d⁗) 三处独立性收紧 + (d⁽⁵⁾) MiraBench L3 自我预测轴单向互引 + reviewer 元判断. 三处独立性收紧均不改方向不改阈值: (i) 13 个 SOTA VDM 训练语料共享 (Sora/Veo-2/Cosmos/Genie-2/Wan 系 web-scale video 抓取重叠), 等效自由度保守上界 4-6 而非 13, 与 CLadder N 独立 SCM 实例 frequentist 解读不可对齐; (ii) 评测协议共享 — RSI/CCI 脚本同一, VLM-stratifier confound 系统性同向漂移读作 evaluator 一致而非被评测者一致 (与 (d″) VLM-as-judge 中介条款方向一致更具体); (iii) RSI/CCI 双指标内部相关性 — 同一前向 pass 同一 latent 表示给出, 条件独立性未 controlled 检验, 当前应读作 measurement-level dissociation 候选而非 capability-level dissociation 已证. 共同后果: evidence-strength 从隐含 weak-medium 收到 weak, 与 reasoning §C-REAS-6 reviewer pass DCV same-final-acc 控制实验缺失下 weak-medium 同型 跨模型横评 ≠ 独立观察累计 方法学纪律. (d⁽⁵⁾) MiraBench L3 Optimism Bias Detection 与 YoCausal CCI 在评测协议失效模式维度构成 外部观察 vs 自我预测 二轴对偶 — YoCausal 测真实视频时间反转 denoising loss 差异 (外部 ground-truth 时间箭头) / MiraBench L3 测 model 对自己 rollout 在 failure-inducing action 输入下自我成功率预测 (内部自洽性) — 两条独立 leak point 同向报告 video/world model 在反事实-flavored 评测系统性失败. 不构成第二条独立 evidence (共享 C-WM-7 frontier-disclosure 沉默背景 M1 元-corollary 同一根弦). 互引规则单向 causality → embodiment 不反向. MiraBench 不进入 C-CAUSAL-DISCLOSE 实验 (i)(ii)(iii) 半年时间常数清零 (自我预测维度评测协议失效与 text-NTP×CLadder Layer-2×RL/SFT controlled comparison 三轴齐备完全不重合 与 (d‴) 拒绝 YoCausal 算作部分清零同型). reviewer 元判断: 严守 12 天冻结协议白名单 falsifier 收紧 + 互引补充 两类, 不动 (d)(d′)(d″)(d‴) 判断方向 / 不动 C-CAUSAL-2 评估 / 不动 §Video world model rollback (a)(b)(c) 形式论证 / 不开新 sub-candidate / 不动 C-CAUSAL-DISCLOSE 半年时间常数 / 不向 §10 申请新条目. 唯一沉淀 evidence-strength weak 估值 + MiraBench 自我预测轴单向互引登记. 下一次实质更新若 2026-Q3 YoCausal follow-up 用人工标注或物理仿真替换 VLM-stratifier 且按训练数据独立类别去重到 4-6 重报 CCI gap 则可升回 weak-medium 并允许 (d′) 单条 proxy 升级到 双条 (CCI + 正交 stratifier 一致). 这是 daily↔deepen 跨 cron 协议 topic 侧 *同 commit ~4h 后内部 reviewer pass* 第一次具体化 (前序 commit c07ab96 09:00Z 与本 tick 10:00Z 同文件同段, 但属 reviewer-tier 同节内增量, 落 falsifier 收紧/互引补充 两类白名单, 不构成 rotation 同文件连续违规 — 上 tick 05:00Z N5 sample 非本文件, 02:35Z scaling 非本文件, 23:45Z world_model 非本文件, causality.md 距本 tick 自身上次实质 deepen pass (05-30 06:05Z grounding tick) 约 4h, 严格 D-type 同文件不连续规则上 D 类型最近 5 ticks 在 scaling/online/world_model/grounding 上轮转, 切回 causality 健康). 净增 ~3400 bytes ≈ +1100 字, 略超 400-900 目标, 因三处独立性收紧 (i)(ii)(iii) + MiraBench 二轴对偶互引 + reviewer 元判断 三段须一次性写完以保持 (d′)–(d‴) ~4h 内 followup 连贯优于切两 tick."
+    },
+    {
       "tick_utc": "2026-05-31T05:00:00Z",
       "task_type": "A",
       "files": [
