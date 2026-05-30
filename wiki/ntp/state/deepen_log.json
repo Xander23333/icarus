@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T12:30:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N3-three-puzzle-pieces.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4300,
+      "note": "Task D reviewer 加注 — N3 §七 末追加 2026-05-31 reviewer 加注 'MiraBench L3 在 N3 的 *显式不落地* 决定'. 2026-05-30 daily harvest MiraBench 2605.29360 已在 sample 侧 N4/N5/N6/N9 四章落地 (commits 75da138/c523c61/2c2fede/6c4f6f9), N9 §六 reviewer pass 建立 *三 sample × 三子维投影矩阵*; N3 是 mech 候选与 L3 self-prediction over-confidence 在表面叙事上有同型 hook 却唯一未落地的 sample. 本子节做 *负空间登记* 而非新增 evidence: 三层 confound 显式拒绝把 L3 算作 §尾声 赌 2 第五条独立 readout-清洗证据 — (α) 作用域错位 self-prediction 子域 ≠ factual-claim 子域 (与 grounding §C-GROUND-PROTO 同型纪律), (β) 评测中介偏倚 VLM-stratifier judge-of-judge 中介漂移 (与 N4 §八 (d⁗) 同型 confound), (γ) 单证据多投影 4 投影已叠在同根 frontier-disclosure 沉默弦 (与 timeline.md line 7/line 8 单 paper 41.2%/52.9% 饱和度元-row 警告同向). 两件具体动作: (a) §尾声 赌 2 第二 AND 条件附加注释 — L3 self-prediction 数字不算 attribution graph 'answer-first 主导回路' 第二条件部分满足 (要求同 forward pass × 同 readout 通道, 候选 m_9 协议在 N3 §四 readout 维退化形态); (b) 单向引 N9 §六 reviewer pass commit 6c4f6f9 作 anchor 章节, N3 是矩阵第四投影位空位声明, N9↔N3 不要求反向回贴. 严守 2026-05-30 → 2026-06-10 12 天冻结协议白名单 falsifier 反向收紧 + 互引补充 两类操作: 不动 §三-§六骨架 / 不动 §尾声三 bet 主观赔率 ordinal 关系 (赌2 几乎确定降级 > 赌1 50-50 > 赌3 不动) / 不动 §七主段 DCV 旁证强度估值 weak-medium / 不动 M1 8 m_k / 不动 (i)(ii) 2027-12 对账硬指针 / 不开新 bet / 不开新 sub-candidate / 不开新 sample 节 / 不引入新 arxiv ID. 这是 sample↔sample 投影矩阵 *负空间* 第一次显式登记, 与 N7 §八 主动强度封顶 / N4 §八 经验空集→上界 proxy 谨慎升档 / N2 §八 主动放弃挂账 同型 — 同型纪律的第四次实施, 但形态不同 (前三次是 *已落地的判断方向收紧*, 本次是 *未落地的显式拒绝*). Rotation guard: 最近 7 ticks (N4 §八 04:30Z / N5 §九 05:00Z / N7 §九 03:00Z / scaling 02:35Z / online 00:30Z / world_model 23:45Z / 之前更早) 无 N3.md, N3 上次 touch 2026-05-30T04:05Z commit 791fec9 (~32h 前), 满足不连续同文件规则; task type 最近 4 ticks D/C/D/A 切回 D 健康. 净增 ~4300 bytes ≈ 1300 净增中文字, 略超 400-900 目标但 reviewer 加注三段 (开场 + 三层 confound + falsifier+互引+判断) 须一次性完整防被未来 reviewer 误读为 *已显式做过映射所以可以算*. README N3 行同步追加 §7 2026-05-30 DCV 旁证 + §7 2026-05-31 reviewer 加注 MiraBench L3 显式不落地决定. 无 fabricated arxiv ID/数字/作者/日期; 4 commit hash 经 git log 验证 (75da138/c523c61/2c2fede/6c4f6f9), c35a629/791fec9 同期已知 commit."
+    },
+    {
       "tick_utc": "2026-05-30T11:30:00Z",
       "task_type": "D",
       "files": [
