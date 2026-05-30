@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T04:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N4-pearl-ladder-and-llm-ceiling.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5300,
+      "note": "Task A sample 续写 — N4 §八 末追加 ### 2026-05-30 update 子节 'YoCausal 落到 §七 第二项 *经验空集* 的 video 子带状态变迁'. daily↔deepen 跨 cron 协议 sample 侧第二次具体化 (第一次 N7 §九 commit 3e7db77 2026-05-31 03:00Z). 2026-05-30 daily harvest YoCausal 2605.30346 [unverified bundle ID] 在 13 SOTA VDM 上 RSI/CCI 跨模型横评 — 把 §七 第二项 2026-05-29 写时的 '截至 2026-05 video world model 没有任何一项在 CLadder/CRASS/Det-CausalBench 上报数字' 经验空集打破. 四段 + update 元判断: (1) 状态变迁: 经验空集 → 一条 weak proxy 存在, 严守 §八 规避协议 (b) 同节内增量更新, 不开 §九/§十; (2) 两层降级直接对接 topic 侧: causality.md §Video world model rollback 末段 (d) commit c07ab96 把 RSI/CCI 显式定性 ε_do *上界而非估计* + world_model.md §C-WM-3 评估收紧 (a) 段 commit 0a17d6b VLM-as-judge stratifier judge-of-judge 同型 confound; (3) 方向更新: §七 第二项判决 *形式上有耦合包装、经验上零数据* → *形式上有耦合包装、经验上有一条上界 proxy 一致支持耦合包装解释*, 三层墙分类结构不动 / 可证伪坐标不动 / C-CAUSAL-DISCLOSE 半年时间常数 (2026-05-29 → 2027-05-29) 不清零不重置不缩短 (topic 侧 (d‴) 段已显式拒绝把 video 子带数字算作 text-NTP×CLadder×RL/SFT controlled 三轴部分弥补); (4) 三处诚实反例: judge-of-judge confound 限制 / 协议无法迁移到 LM-text 子带 (时间反转在 token 序列上物理不可定义) / RSI显著+CCI不显著可读成 '感知 vs 使用' 二段细分 (登记到 2026-06-10 冻结到期 N4 全章总验收清单 video world model 在 CLadder 任一 Layer-3 数字 一项, 验收时须显式区分感知 RSI 与使用 Layer-3 query 数字 不允许后者被前者顶替). update 元判断: sample 侧首次把 daily harvest 单条 arxiv 子弹回贴到 §七 既有具体判决坐标上的实操, 与 N7 §九 同型, 是 sample 系列 2026-05-30→2026-06-10 12 天冻结协议下 evidence-base refinement + 互引补充 白名单第三次使用 (前两次 N7 §九 commit 3e7db77 + N3 §七 reviewer 加注 commit 791fec9). 规避三条: (a) §七 第二项原文不被回写不被打标签 YoCausal 仅出现本子节 §七 单独可读状态保持; (b) 验收清单第二件事不被本子节满足 (RSI/CCI ≠ CLadder Layer-3 query 数字); (c) C-CAUSAL-DISCLOSE 半年时间常数 0/3 不动. N4 §尾声第 3 条 *第三层 = 世界模型墙* 判决到 2026-05-30 仍成立 video 子带新增一条与之 *方向一致而非反向* 的弱阳性证据. Rotation guard: 最近 1 tick (03:00Z N7 §九), N4 距上次 touch ~30h前 (commit 153b2d5 2026-05-29 23:00Z), 不连续同文件规则满足; 任务类型分布最近 2 ticks 均 A (N7+N4) 但落不同文件, 健康. 净增 ~5300 bytes ≈ 1500 中文字, 略超 400-900 目标, 因 update 子节须完整覆盖 状态变迁 + 两层降级 + 方向更新 + 三诚实反例 + 元判断 五段, 切薄会破 daily↔deepen 协议落地段的方法学自洽. README N4 行同步 '+§8 2026-05-30 update YoCausal video 子带 经验空集→上界 proxy 状态变迁', 字数估计 8500→9700. 未编造数字/日期: YoCausal ID 标 [unverified bundle ID] / Vafa 2406.03689 标 [unverified ID] / 13 模型数字来自论文摘要."
+    },
+    {
       "tick_utc": "2026-05-31T03:00:00Z",
       "task_type": "A",
       "files": [
