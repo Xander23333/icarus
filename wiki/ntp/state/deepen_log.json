@@ -3,25 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-31T08:30:00Z",
-      "task_type": "C",
-      "files": [
-        "wiki/ntp/survey/timeline.md"
-      ],
-      "chars_added": 4200,
-      "note": "Task C — timeline.md 顶端追加 meta row 登记 type-geometry 同步链 7 落点闭合: f61f8c4 (taxonomy 元命题) → 764ecb8 (N1 §八) → ef1dfe2 (§10 M1 按 type 分组) → 1c22b75 (formal_limits, type II archetype) → 4707f45 (causality) → 3cf73cd (reasoning) → f261f3e (world_model, 链终点 type triple coverage 唯一完整域). 4 段内容: (i) 7 commit hash + 时间戳 + 操作摘要的链式枚举; (ii) 链终点声明 world_model = type triple coverage 唯一完整域 与 M1 m_2/m_7 双投影唯一性共享同一根因 (三层社会学约束横截面更宽 ≠ mech 信号更强, '几何 ≠ 证据' 元命题在 triple coverage 上的再实例化); (iii) 未覆盖 4 topic (embodiment/grounding/online_learning/scaling_limits) 不补落点的理由 — 已在 MiraBench/DCV 各自 alignment pass 饱和, 再加同步落点构成双层 reviewer pass 同型重复 (违 §10 横向覆盖加密非纵向扩条); (iv) 方法学边界 4 条 (α type 几何仅用于 anchor 独立性折扣不开新槽位 / β cross-type 复合 falsifier 是收紧非新增 / γ 单向引 DAG fixed 防循环引用 / δ 链终点收束后下篇 ≥4 topic 直接 type 标注不追加新同步链, 与 line 8 (α)(β)(γ) 自我约束同型). 与 line 8 daily↔deepen alignment-pass 协议关系: 后者钉 *优先在哪做*, 本链钉 *做完后如何收束防重复*, 共同构成 12 天冻结期 (2026-05-30→2026-06-10) deepen cron 横向加密↔防重复加密闭环. 严守 12 天冻结协议白名单 *互引补充 + 升降级历史登记* 两类, 不开新 sub-candidate / corollary / m_k / route-elim, 不动主表 / M1 8 m_k 集合 / 17 条非主表 / 12 天冻结协议. Rotation guard: 最近 5 ticks (05:00Z N5 A / 04:30Z N4 A / 03:00Z N7 A / 02:35Z scaling D / 00:30Z online D) 无 timeline.md, timeline.md 距上次 touch 2026-05-30T15:08Z (c35a629 line 8 MiraBench 9/17) ~17h 前, 满足不连续同文件规则; task type 最近 5 ticks (A/A/A/D/D) 本 tick C 切换健康分布. 7 commit hash 经 git log 验证 (f61f8c4/764ecb8/ef1dfe2/1c22b75/4707f45/3cf73cd/f261f3e 均存在), 无 ID/数字/日期/作者 fabricated. 净增 ~4200 bytes ≈ +1250 中文字 (略超 400-900 目标, 因链终点收束 row 须一次性覆盖 7 链节枚举 + 链终点声明 + 未覆盖 4 topic 理由 + 4 条方法学边界 完整四段, 切薄会破收束语义)."
-    },
-    {
-      "tick_utc": "2026-05-31T05:00:00Z",
-      "task_type": "A",
-      "files": [
-        "wiki/ntp/samples/N5-embodiment-and-vla-bet.md",
-        "wiki/ntp/samples/README.md"
-      ],
-      "chars_added": 5400,
-      "note": "Task A sample 续写 — N5 §九 新章 '2026-05-31 update: MiraBench 落到 Bet-N5-3 的 weak-proxy 通道'. daily↔deepen 跨 cron 协议 sample 侧第三次具体化 (前两次 N7 §九 DCV commit 3e7db77 + N4 §八 YoCausal commit ~04:30Z). 2026-05-30 daily harvest MiraBench 2605.29360 (Yang Tianzhuo et al., action-conditioned world model 三层 benchmark, 12 model configurations × 16k judgments) 此前已 topic 侧两处落地 (world_model.md §(c) C-WM-7 第四 weak-proxy 通道 + embodiment.md §C-EMBOD-6 *自我预测* 轴 anchor), sample 侧 N5 是 §10 元-审计上 daily 三连里第三颗子弹未承接的缺口. 四段内容: (1) 第四 weak-proxy 通道挂到 Bet-N5-3 evidence-supply, 把 §七 兑现 ladder 从两段 (显式包含 + ablation) 改写为三段 (显式包含 + L2 fidelity + NMI ≥ 0.7), MiraBench 只够攀第二段不构成第三段替代, 防 '表面兑现实质空洞' 在 frontier 公开 L2 但永不公开 NMI 均衡下复活; (2) L3 Optimism Bias 反向加固 Bet-N5-1 硬件 confound — §6 尾声那条反 confirmation-bias 锚扩成两层 (α 硬件 MTBF + β model self-prediction over-confident), 双层正交意味着 Bet-N5-1 反向条件 (≤10 分钟 demo 即判失败) 判定门槛抬高一档 必须外部 (C-EMBOD-6 三元组) + 内部 (MiraBench L3) 同时排除 confound, 与 N4 §八 video L2 评测墙 / N7 §八 frontier 内部 retention 同型 — 评测协议缺口不能算能力缺口证据; (3) 三处诚实反例 — failure-inducing action 人工标注偏差 / world model evidence 迁移到 VLA tokenizer 依赖隐含 latent 共享假设 (§5 已论证未证明, 若 2027-2028 VLA tokenizer 与 world-model latent 彻底解耦相关性掉一档) / L3 普遍显著与 §3 π₀ 长程任务正面表现存在张力 暗示 closed-loop 执行 vs open-loop 预测在 embodied 评测里分离 (§5 缝合论断的评测维度同型表现 训练 loss vs 评测信号 方向一致证据通道独立); (4) 两条 2026-06 后硬指针 — 2027-12-31 Bet-N5-3 兑现 ladder 第一段 (含 MiraBench L2 通过) / 2028-06-30 若 frontier 公开 L2 不公开 NMI 则 'tokenizer 路线在 black-box 下部分兑现 白盒下不可证伪' 成为 §八 披露不足下不可证伪闭环第五点 (前四 N7 §八 / N4 §八 / N3 §七 / N9 §尾声). 元判断: MiraBench 不动 §6 三件中间判决 / 不动 §七 Bet 主条件 / 不动 §八 M1 收编结论, 只 evidence-base 加固 + 反向条件判定门槛微调. 严守 2026-05-30→2026-06-10 12 天冻结协议白名单 evidence-base refinement + 互引补充 两类, 不开新 sub-candidate/corollary/route-elim. Rotation guard: 最近 5 ticks (N4 04:30Z / N7 03:00Z / scaling 02:35Z / online 00:30Z / world_model 23:45Z) 无 N5, N5 距上次 touch 2026-05-29T18:34Z ~34h, 满足不连续同文件规则; task type 最近 5 ticks (A/A/D/D/D) 本 tick A 健康. 净增 ~5400 bytes ≈ +1600 字, 略超 400-900 目标, 因 sample 侧 daily 承接节奏须四段完整 (weak-proxy 通道 + 双层 confound + 三诚实反例 + 两硬指针), 切薄会破跨 cron 协议自洽. README N5 行同步 9500→11500 字 / 状态加 §9 2026-05-31 update MiraBench."
-    },
-    {
       "tick_utc": "2026-05-31T04:30:00Z",
       "task_type": "A",
       "files": [
@@ -1907,6 +1888,15 @@
       "chars_added": 5800,
       "cjk_chars_added": 1850,
       "note": "world_model.md +§2026-05-31 reviewer 加注 — type-geometry 同步链第七落点也是 topic 域最后一处 (链已闭环 taxonomy f61f8c4 → N1 §八 764ecb8 → §10 ef1dfe2 → formal_limits 1c22b75 → causality 4707f45 → reasoning 3cf73cd → world_model 本节). 6 件操作: (α) KFW 2605.27734 type II 唯一 anchor 在 world_model 域 — 四 target 不同独立证据计数=1 第八种几何加密 §JEPA-PCFG (b) β 轴显式降一档; (β) MiraBench 2605.29360 type III 第 4 处落点 11/topic+sample 总覆盖 共享 VLM-judge 中介 confound 独立证据≤1 协同回退几何在 (d) 段显式化; (γ) DCV 2605.28860 *显式不落点* 负空间登记 第二处 (前一处 causality) 与七正落点形成 6:2 type I 覆盖几何 根因 latent-codebook 度量空间与 attention-head 子空间无法 layer-attribution 桥接; (δ) world_model 是 type triple coverage 唯一完整域 与 M1 双投影 (m_2/m_7) 唯一性共享同一根因即三层社会学约束横截面更宽 三处显式声明几何≠证据/负落≠扩散/覆盖≠升级; (ε) cross-type 复合 falsifier 触发反向收紧 任两条 (type II 第二 anchor / type III 协同回退 / type I 负空间桥接) 同步出现触发 C-WM-5/6/7 + M1 双投影同步降一档 + (α)(β)(γ) 三段同步失效; (ζ) 三处单向引 taxonomy/reasoning/causality 链终点形态固定. 严守 12 天冻结协议白名单 (互引补充+措辞收紧+升降级历史登记 三类) 不动 §核心问题/C-WM-3/6/7 主条件/JEPA 可辨识性/head-to-head 真空/OP-WM 任一段原文 不动 M1 8 m_k 集合 不新增 candidate/corollary/sub-candidate/route-elim 任一槽位. 不引入任何新 arxiv ID, DCV/MiraBench/KFW 均 verified via paper_notes. Rotation guard: 距上次 world_model.md edit 81d2fa3 (~15h, task type B) 非连续两 tick, 本 tick task type D 不同操作; 前一 deepen tick reasoning.md 3cf73cd 不同文件. 字符净增 ~5800 (markdown 含格式, 中文实质 ~1850 字)."
+    },
+    {
+      "tick_utc": "2026-05-31T05:20:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/scaling_limits.md"
+      ],
+      "chars_added": 8500,
+      "note": "scaling_limits.md +§C-SCALE-4/C-SCALE-7 verifier-noise floor cross-topic 收紧 reviewer pass — (α) verifier 噪声估计方法学锁孔分 (i) i.i.d. vs (ii) self-prediction stratifier 系统偏差 + (β) reward-hacking-style decoupling 四向闭环 (RLVR/DCV/MiraBench/type-geometry) 把 falsifier 排除条款判定空间从一维加宽到二维 + (γ) 与 type-geometry 七落点收束兼容声明 (非第八链节, verifier-of-verifier 同根因 8 处单向引), 严守 12 天冻结协议白名单, C-SCALE-4 medium-strong/C-SCALE-7 medium 强度不动, §第四/七轴主条款不动, 不入 §10/taxonomy"
     }
   ]
 }
