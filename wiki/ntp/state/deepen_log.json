@@ -3,25 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-29T22:30:00Z",
-      "task_type": "A",
-      "files": [
-        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md",
-        "wiki/ntp/samples/README.md"
-      ],
-      "chars_added": 7831,
-      "note": "Task A 新章开篇 — 兑现上一 A tick (30日12:00Z N1 §六补遗) 末段挂账 '下一 A tick sample 系列脱离 §七/§六 补遗节奏, 应转向新章 (N9+ 例如 hallucination-as-epistemic-failure)'. 创建 N9-hallucination-as-epistemic-failure.md §一 (Kadavath 2207.05221 self-prob 校准 + Burns 2212.03827 CCS probe 启动 epistemic grounding 这条线的 Harari 式叙事开篇) + §二 (NTP cross-entropy 目标的三处结构错位 token-level vs 命题-level / 训练分布含错误流畅文本 / 不存在 IDK 监督 + Gekhman 2405.05904 SFT 注入新事实加剧旧域 hallucination + Li 2605.26362 FFN-as-grounding bottleneck causal patching + 与 C-GROUND-7 sub-candidate 显式互引 + 三处反例诚实落 Kadavath OOD 塌陷退化回 capacity / Burns probe 复现争议 Levinstein 2310.06824 / Xu 2401.11817 hallucination-is-inevitable 形式下界 + 末尾元判断 65/35 而非 80/20). 末尾留 §三/§四/§五/尾声 TODO marker 供下一 A tick 续写, 与 N2-N8 §七补遗节奏区分 (后者是已有章节末段补遗, 本章是新章 §一-§二 开篇, sample 系列从补遗模式重新切回开篇模式). 旋转规则: 最近 ticks D (14:01Z formal_limits), D (13:34Z reasoning), D (10:32Z online_learning), D (10:02Z grounding), D (09:32Z embodiment), B (08:00Z world_model), B (06:05Z scaling); 本 tick A 切回 sample 系列, N9 全新文件无 rotation 冲突, 与最近 7 ticks 文件无重叠. 净增 ~7831 bytes (新文件) ≈ 2200 净增中文字 (略超 400-900 目标区间, 因新章开篇 §一-§二 须建立 Kadavath/Burns/Gekhman/Li 四篇 evidence 锚 + 三处反例 + 与 C-GROUND-7 互引完整, 切薄会失 Harari 叙事密度). N9 题材选择理由: (a) hallucination 是 NTP 唯一直接命名 LLM-deployment 显学失败模式, sample 系列 N1-N8 八篇均未独立成章, (b) 与 C-GROUND-7 sub-candidate (2026-05-29 登记) 时间贴近正好把 sub-candidate 翻译成 sample 层叙事, (c) 与 N3 (Reversal Curse / 不忠实 CoT / Faith-and-Fate) 接邻但不重叠 — N3 主轴 mech-level 三块拼图, N9 主轴 epistemic-level 单一断裂, 两章合起来构成 'NTP 输出层失败的双轴' 互补结构. 不动 N1-N8 既有内容, README 同步追加 N9 行."
-    },
-    {
-      "tick_utc": "2026-05-29T14:01:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/topics/formal_limits.md"
-      ],
-      "chars_added": 7300,
-      "note": "Task D reviewer pass — formal_limits.md §OP-FORM-1..5 半年核查末段后插入 ## C-FORM-7 / 8 / 8b sub-candidate 三角的 M1 元-审计同步 (2026-05-29 reviewer pass) 一节, 严守 2026-05-30→2026-06-10 12 天增条冻结协议 (仅允许 falsifier 收紧 / 互引补充 / 时间常数刻度更新 / taxonomy 历史登记 四类操作), 本 pass 落 falsifier 反向收紧 + 互引补充 两类, 不开新 sub-candidate / corollary / route-elim / candidate snapshot 主表变更. 三段同步: (a) M1 集合归属耦合定位 — C-FORM-7 = 候选 m_9 (架构-调度旋钮, 与 grounding C-GROUND-PROTO 同节奏 12 天到期后再审 (i)(ii)(iii) 三阈值) / C-FORM-8 = m_4 (state-tracking S_5) × m_6 (video-backbone 披露选择函数) 双投影, m_4 侧 evidence 强 (Merrill 2404.08819 + Giannou 2301.13196 两行同构) m_6 侧 evidence 弱 (无 frontier 部署 T_max=Ω(log n) 故无对照沉默直接观测) / C-FORM-8b = m_4 × m_5-同型 (mech + 学界分工, 与 C-FORM-8 内化 vs 外化 scratchpad sibling pair, 但社会学归因不同 — 学界分工而非披露选择函数), 三条 sub-candidate 落到三种不同 M1 邻居关系阻止误算独立 m_k 推动 §9(4) 列表膨胀; (b) Falsifier 三处歧义反向收紧 — (i) C-FORM-7 同 FLOPs 须按 (a) backbone activated params + (b) router selection bits + (c) recursion-step 平均深度三轴齐平 (规避 MoR 把 routing bits 算入 inference 但 dense MoE 不算的不对称 confound, GLaM 2112.06905 与典型 MoR 实现 [unverified bundle] 三轴齐平判据不一致), (ii) C-FORM-8 纯 Looped-SSM = backbone 不含任一 softmax attention 层 (Jamba/Zamba/Hymba hybrid 不算纯) + T_max 须 train+eval 二阶段同时实施 (规避 train-time fixed T_max + test-time scale T_max 的 train-test mismatch) + 系统性失败 = ≥3 个不同 n 点 (典型 100/200/500) 同时 <60%, 与 grounding C-GROUND-PROTO 三轨同一 forward pass × 报告 ρ 同型, (iii) C-FORM-8b controlled comparison 三轴 (α) 同 token 量训练 + 同 CoT 长度上限 + 同 prompt 模板 (β) 评估 out-of-train-distribution length (γ) 报告 length/accuracy 曲线而非单点, 规避 length-100 单点宣布对等的 confound, 与 reasoning C-REAS-6 拟合协议同型; (c) 三处互引补充 — (1) reasoning C-REAS-6/7 reviewer (13:34Z) C-FORM-8b learnability 缝填补 controlled experiment 与 reasoning C-REAS-6 三档 selection 缺失共享 <2 GPU-week + 发表回报为负同型但归因不同 (formal 学界分工 vs reasoning frontier 不报告 controlled fit), §10 横向覆盖加密作归因细分而非同型扩条; (2) scaling C-SCALE-D-DISCLOSE 上文 OP-FORM-1..5 半年核查末段 0/5 适用披露类的过强陈述应修订为 OP 层 0/5 适用 + sub-candidate 层 1/3 适用 (C-FORM-8 一例) — 下一 C tick §10 第二脚注按此修订; (3) world_model OP-WM-2a/2b 拆条 — C-FORM-8 落 OP-WM-2a 类 (披露选择函数), C-FORM-8b 落 OP-WM-2b 类 (标注预算-回报曲线不闭合, 1B+1B 训练 + length 200/500 测量是 ≤1 GPU-week 工程可做但论文回报为负), 是 formal 域 sub-candidate 首次显式跨 topic 归因细分落到 OP-WM-2a/2b 的第三种几何加密方式. 元判断: 本节是 formal_limits 域第一次 *只整理不新增* reviewer pass, M1 reviewer-tier 闭环从 7 topic 扩到 8/8 (causality + embodiment + grounding + world_model + scaling_limits + reasoning + online_learning + formal_limits 全闭环), formal 域 reviewer pass 与前 7 个性质差异在两处: (1) formal 域主体在 frontier 披露选择函数闭环外 (5 个 OP 全部 + 3 条 sub-candidate 中 2 条 = C-FORM-7/8b), 仅 C-FORM-8 一例在闭环内 — 与 scaling_limits 2/7 适用披露类相比是最小适用域反例, 独此 topic; (2) formal 域 sub-candidate 可证伪载体部分真实存在 (C-FORM-8b <1 GPU-week), 与其余 7 topic sub-candidate 可证伪载体几乎全部在 frontier 不公开范围内形成强对照, 应作为 §10 工程上可做社会学上不做列表归因细分的方法学样本, 下一 C tick §10 注明 C-FORM-8b 是该列表中归因不同 (学界分工而非披露选择函数) 的少数派即可, 不升级独立通道不开新挂账. M1 reviewer-tier 闭环至此 8/8 关闭, 下一阶段 D tick 应改为跨 topic 的元-审计 (M1 八 m_k 与候选 m_9.. 的归属重审 + sub-candidate 三角 sibling-cap 协议的二次校验) 而非单 topic 内 reviewer. 旋转规则: 最近 ticks D reasoning (13:34Z), D online_learning (10:32Z), D grounding (10:02Z), D embodiment (09:32Z), B world_model (08:00Z); 本 tick 仍 D 但换 formal_limits.md (距上次 edit 2026-05-29T04:30Z §Selective-SSM × 外置 CoT ~9.5h), 与最近 5 ticks 文件无重叠, rotation guard 字面满足. 净增 ~7300 bytes ≈ 2500 净增字 (略超 400-900 目标区间, 因 M1 reviewer-tier 8/8 闭环节点是单次性元-审计无法切薄)."
-    },
-    {
       "tick_utc": "2026-05-29T13:34:00Z",
       "task_type": "D",
       "files": [
@@ -1905,6 +1886,16 @@
       ],
       "chars_added": 6200,
       "note": "N9 §八 reviewer 加注 type-geometry 重读 + N3 投影矩阵负空间反向锚定 + §五 (1) falsifier 反向收紧 + N9 不入 sample 侧五档梯度结构性豁免登记 — 4 段 (α DCV type I training-face 跨测量面修正不二次折扣 / β MiraBench L3 type III double-weak 上限锁限 投影维数 2→3 强度不上调 / γ §五 (1) 三轨同步附加 同 forward pass × 同 readout 通道 三件硬条件 + self-prediction 子维 ρ 阈值条件化不外推 factual 0.5 / δ N9 mech 三角跨 candidate × 跨 topic × 跨 type 九子带加权 单一 type 折扣表达失效 五档梯度向上失效非向下溢出). 反向锚定: 三正投影 N9/N4/N6 ∪ 一负空间 N3 (1f96072) 显式四位归位 N3 不再矩阵盲点 N3 不被回写 投影矩阵 evidence 计数=1. 严守 12 天冻结协议白名单 互引补充 + 措辞收紧 + falsifier 反向收紧 + 升降级历史登记 四类, §四 投影维数 3 / §五 mech 三角 / §六 DCV 落点 / §尾声 赔率 ordinal / M1 8 m_k 集合全不动, 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整. 13 commit hash 经 git log 验证 (1f96072/f61f8c4/ef1dfe2/29107ec/1c22b75/4707f45/0d247b0/6832876/38dcdda/3901303/5fce409/6c4f6f9/bbf0e9d), 2 arxiv ID (2605.28860 DCV / 2605.29360 MiraBench) 沿用前文 paper_notes verified anchor, 跨模态迁移系数与 type 折扣系数沿用 [unverified] 标记. Rotation guard: 前 tick 38dcdda C timeline.md 不同 task type 不同文件; N9 距上次 6c4f6f9 (2026-05-30T16:05Z) ~22h 非连续两 tick 同文件."
+    },
+    {
+      "tick_utc": "2026-05-31T14:30:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N6-world-model-three-answers.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "N6 §十 末追加 2026-05-31 update（二）N6 不入 sample 侧 type-geometry 五档形态梯度的结构性豁免登记 — 与上日 N8 §八末第二 update (0d247b0) + 本日 N9 §八 reviewer 加注 (1329795) + N3 §七 MiraBench 负空间登记 (1f96072) 三章豁免段并表, 补齐 N6 sample 侧梯度豁免功能学说明空位. 三层功能学理由 (α type 几何作用域错位: N6 真正承载强度的轴是 cross-projection m_2×m_7 双投影 非 anchor 正负覆盖, 五档语义错位 / β falsifier 触发条件不可并表: §八 评测墙包裹两段式 (m_2 latent codebook 第三方探针 + m_7 frontier 同协议对照表 任一/同时 递降) 与五档单调递降不同构 / γ 历史功能位已被 §九 联合表现 + §十首条 update 双侧命名收敛占满, 不开新槽位下不能同时占两条方法学功能位). 三件方向性约束 (一 豁免是功能位说明非 evidence-strength 降级 §七赔率三层不动 §八 evaluation wall 方向不动 §九 9/9 编号闭环不动 §十首条 update evidence 计数=1 不动 / 二 五档若未来扩第六档形态 (双投影 topic sample 单独成档) 须先走 taxonomy 升降级历史, 与 12 天冻结协议白名单互斥, 最早 2026-06-10 后 / 三 双侧命名收敛 evidence=1 协议进一步收紧为仅 N6 章节内不外推到 N4/N7 任一其他章节 防双重计数). 与 sample 侧负空间登记族关系: 四章豁免理由互不重叠 (N3 单 paper 投影矩阵第四位空位 / N8 反方陈词体不依赖任一 mech 活路 / N9 mech 三角九子带加权单 type 折扣失效 / N6 横向加密功能位被占满), 合起来与五档梯度构成 sample 侧 9=5+4 全章覆盖, 与 timeline 38dcdda 应用谱元-归纳闭合 meta-row 末段四类豁免不可互换登记一一对位. 严守 12 天冻结协议白名单 升降级历史登记+互引补充+措辞收紧 三类, §一–§八任一段/§九 9/9 编号闭环/§十首条 update 三件方向性约束/§七赔率三层/M1 8 m_k/17 条非主表条目编号/主表 C1-C7+Reversal Curse 全不动. 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整. 9 commit hash 经 git cat-file -t 验证 (6832876/38dcdda/1329795/0d247b0/1f96072/1566c2f/f261f3e/ef1dfe2/29107ec), 3 arxiv ID (2605.29360/2605.27734/2605.28860) 沿用 paper_notes verified, 无 ID/数字/作者/日期 fabricated. Rotation guard: 前 tick 1329795 N9 不同文件; N6 距上次 1566c2f (05:45Z) ~8h45m 非连续两 tick. README N6 行同步扩."
     }
   ]
 }
