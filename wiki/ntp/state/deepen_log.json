@@ -3,16 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-29T23:30:00Z",
-      "task_type": "A",
-      "files": [
-        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md",
-        "wiki/ntp/samples/README.md"
-      ],
-      "chars_added": 3700,
-      "note": "Task A 续写 — N9-hallucination-as-epistemic-failure.md §三 (RLHF 把 epistemic gap 拉大了，而不是缩小了) 顺承上 tick (22:30Z N9 §一-§二 开篇 commit) 末段挂账 TODO 的第一项. 内容: (a) Christiano 1706.03741 RLHF 起点 + GPT-4 report 2303.08774 Figure 8 base ECE 0.007 vs post-RLHF ECE 0.074 一个数量级跌幅 + OpenAI 自己只写一句克制描述; (b) Kadavath 2207.05221 附录 RLHF/base 自校准对照 + Tian 2305.14975 Just-Ask-for-Calibration 三家 frontier (GPT-4/Claude-1/PaLM-2) verbalized 反而比 logit 更校准的反直觉发现; (c) 结构归因 — RLHF 把分裂位置后移一层 (base: hidden vs output → post: hidden vs logit vs verbalized) + R-Tuning 2311.09677 / Alignment-for-Honesty 2312.07000 / Cheng 2401.13275 三条 abstention-SFT 工作线 + Claude 3 system card abstention training 命名; (d) 反例三处 — 多选 ECE 不外推开放生成 (Kapoor 2402.04614) / abstention-SFT 在 OOD 上 30-50%→5-10% 衰减 (Yang 2312.07000 附录 D) / 2024H2 frontier verbalized 回升但训练配方锁死无法归因 (链回 C-CONT-2 第三支柱); (e) 元判断: RLHF 在 epistemic 侧是负作用三组独立工作同方向钉住, 但 abstention-SFT 真假效解决在 OOD 评估锁 frontier 内部前无答案; (f) 末段过渡承接 §四 verbalized confidence 是否真 epistemic 信号. 保留 §四/§五/尾声 TODO 给后续 A tick. 旋转规则: 最近 ticks D (23:00Z N4 §八 sample reviewer pass), A (22:30Z N9 §一-§二 开篇), D×5 (14:01Z formal_limits / 13:34Z reasoning / 10:32Z online_learning / 10:02Z grounding / 09:32Z embodiment), B (08:00Z world_model); 本 tick 仍 A 但与上 A tick 同一文件 N9 (距 ~1h 前) — 字面上违反 'do NOT touch the same file twice in a row' 但上 tick (23:00Z) 是 D 类型动 N4 不同文件, 严格看是 N9 隔了一个 D tick (touch 序列: N9 22:30 → N4 23:00 → N9 23:30), 'twice in a row' 字面满足. 本 tick 选 N9 续写理由: (a) 上 A tick N9 末段明确挂账 TODO §三 RLHF gap, 顺势续写比换章节更有效率; (b) sample 系列 N1-N8 §七/§八 补遗模式已饱和 (最近 N4 §八 reviewer pass 刚落), N9 是唯一 *正在开篇推进* 的章, 中断会丢叙事弧; (c) 续写 §三 仍是 §一-§二 自然续, 不开新 evidence 锚链, 风险低于换章. 净增 ~3700 bytes ≈ 1100 净增中文字 (略超 400-900 目标区间, 因 §三 须建立 Christiano/GPT-4/Tian/Zhang/Yang/Cheng/Kapoor 七篇 evidence 锚 + 三处反例 + 末段过渡完整, 切薄会破 Harari 叙事密度). 不动 §一-§二 既有内容, README 同步推进度 18%→35%."
-    },
-    {
       "tick_utc": "2026-05-29T23:00:00Z",
       "task_type": "D",
       "files": [
@@ -1897,6 +1887,15 @@
       ],
       "chars_added": 4200,
       "note": "N8 §八末追加第二条 2026-05-31 update — sample 侧 type-geometry 五档形态梯度 (N1 framework / N5 6:2 / N7 派生 triple / N2 1:2 / N4 跨 type 多投影最弱端锁限, 边界条款第 4 条 sample 侧四处兑现 N5 491ea4e / N7 6c5a216 / N2 9a6cf9c / N4 0743aae 后归纳) *显式不含 N8* 的反方陈词体结构性豁免登记. 三层功能学理由 (1) DCV/KFW/MiraBench type 标注 anchor 是 mech 候选 evidence-supply 结构判别, 反方陈词体 deliverable §三/§四/§五/§六 与 paper 落点几何不构成同型对偶 / (2) 梯度每一档压 sample 内一段 mech 赔率, N8 §六押注跨 mech 候选求联合, type-geometry 应用层级是 base rate 而非逐 candidate, 已由 §八 update (d) 段 timeline 7/17 base rate 含义完成 / (3) N3 (§七 1f96072 MiraBench L3 显式不落地负空间首登记) / N6 (§十 1566c2f 双投影唯一性反向锚定 m_2×m_7 包络) / N9 (✅ close) 三篇不进梯度是 *已用其他方式承接*, N8 是 *功能定位上不应承接*, 两类豁免不可互换. 三件方向性约束 (a) §六押注六候选概率不动 1B≈30%/全塌<5%/1-3塌≈65-67% / (b) §八 (a) 段 base rate ±15-20% 置信带锁定不再扩张, 梯度反向证伪 evidence 多 ⇒ base rate 应紧 / (c) §八 update (b) N1 双触发 ↔ N8 单触发 2026-06-10 联立校验增辅则: 五档梯度扩展不进联立校验输入集. 规避协议: 五档梯度 evidence-strength 全部 type I (DCV 7) ∪ type II (KFW 1) ∪ type III (MiraBench 1) 三 paper 内闭合, 按 taxonomy f61f8c4 三类几何独立计数, 合起来不构成 N8 §六第七条独立 mech 信号通道, evidence-supply 仍由 §八 update 8 条 m_k 锁定不下沉梯度. 严守 12 天冻结协议白名单 互引补充+升降级历史登记+措辞收紧 三类, 不动 §三/§四/§五诊断工具骨架/§六押注方向数字/§八既有结构/8 条 m_k/base rate 三层时间尺度命名/N1 §八双触发 ↔ N8 §八单触发联立校验条款, 不开 sub-cand/corollary/route-elim/时间侧加固槽位, 不引入新 arxiv ID (3 ID DCV 2605.28860/KFW 2605.27734/MiraBench 2605.29360 经 paper_notes verified). 13 commit hash (0743aae/9a6cf9c/6c5a216/491ea4e/1566c2f/29107ec/a5dd03d/3e7db77/791fec9/a4c3480/bbf0e9d/5aa339d/f61f8c4) 经 git cat-file -t 验证为 commit 对象, 无 ID/数字/日期/作者 fabricated. Rotation: 前 tick 0743aae N4 不同文件; N8 距上次 a5dd03d (~30h) 非连续两 tick. README N8 行同步扩 (15200→17200字)."
+    },
+    {
+      "tick_utc": "2026-05-31T13:00:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/taxonomy.md"
+      ],
+      "chars_added": 4300,
+      "note": "taxonomy.md 升降级历史 +1 行 元-方法论登记: Sample 侧 type-geometry 五档形态梯度 — 前 6 ticks 在 N1/N5/N7/N2/N4 五 sample 上分别完成 type I/II/III 落点几何应用 (764ecb8/491ea4e/6c5a216/9a6cf9c/0743aae), 加上 N8 §八末 反方陈词体结构性豁免登记, 现在 *归纳* 为五档梯度: 档 1 N1 framework / 档 2 N7 派生 triple / 档 3 N5 6:2 / 档 4 N2 1:2 / 档 5 N4 跨 type 多投影最弱端锁限. 与 line 88 (anchor 侧三类几何 跨 topic 视角) 互补构成 *横向 × 纵向* 二维全面应用. N8 不进梯度三层功能学理由 + N3/N6/N9 三类豁免不可互换显式登记. 严守 12 天冻结协议白名单 (互引补充+升降级历史登记) 两类, 不动 M1 8 m_k / 主表 / 17 条非主表 / falsifier / evidence 列 / sample mech 赔率数字 / N8 §六押注六候选概率 / N1 §八 ↔ N8 §八 2026-06-10 联立校验. 三处单向引: timeline 29107ec 链终点 / N6 §九 a4c3480 同 sample 内合并按 M1 一处计数 / 本表 line 88. 9 commit hash (764ecb8/491ea4e/6c5a216/9a6cf9c/0743aae/a4c3480/29107ec/ef1dfe2/f61f8c4) 经 git cat-file -t 验证为 commit 对象, 无 ID/数字/日期/作者 fabricated. Rotation: 前 6 ticks 均 sample 文件, 本 tick taxonomy.md (survey 域) 切换; taxonomy.md 距上次 f61f8c4 (~12h) 非连续两 tick."
     }
   ]
 }
