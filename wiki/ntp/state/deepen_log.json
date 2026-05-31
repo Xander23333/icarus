@@ -3,15 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-31T00:30:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/topics/online_learning.md"
-      ],
-      "chars_added": 4800,
-      "note": "Task D reviewer pass — online_learning.md §反例与上界突破 节 2026-05-30 daily cron (ab19e5d 07:40Z) 自动追加的 Rojas Nunez 2605.28860 子弹自命 *C-CONT-2 第四支柱* 命名核查. 该命名与 §Mid-training annealing 节末段 (2026-05-29) 已定义 C-CONT-2 三支柱 + 第三支柱方法论非独立性警示直接冲突, 必须先做命名独立性核查. 三段同步: (a) Rojas Nunez 在 *测量层* (head-level DCV vs perplexity/accuracy/disclosure) 方法独立但 *归因* 独立性弱 (DCV 与 final-acc 高度相关, 可能 'RL 学少了→footprint 少→DCV 低' 同义反复); reviewer 收紧为 *第三支柱 mechanistic 对偶通道* 而非独立第四支柱, 第三/四合并 'forgetting 不可观察子空间间接证据集群', 与 (i)(ii) 直接证据共两类支柱 (避免与 C-CAUSAL-2 四支柱并列结构对齐); (b) Falsifier 二处歧义收紧不改方向不改阈值: (i) DCV 作 C5 falsifier (d) 额外检测维度时须 RL/SFT 在同 hold-out task final accuracy ±1pp 对齐后再比 prior circuit overlap, 与 reasoning §C-REAS-6 reviewer (commit 965e9f7) controlled comparison 三轴同型, (ii) 3B 单任务规模显式标注 *尚未跨规模/跨任务* 上限 (与 Dohare 2024 ≤100M 同型); (c) 三处互引: reasoning C-REAS-6/7 same-final-acc 协议同型 + grounding C-GROUND-PROTO 三轨同 forward pass × ρ 协议 DCV 落 (a) probe 轨 + N7 §3 'loss 不动点' macro vs head-level 双层对应 (登记 N7 §3 候选锚点但本 pass 不写入 N7 避免越权). 严守 2026-05-30→2026-06-10 12 天冻结协议白名单 (falsifier 收紧 + 互引补充 两类), 不动 C-CONT-2 主命题 / 不开新 candidate / 不入 §10 evidence 通道 / 不动 taxonomy 主表 / 不动 §反例 节 daily cron 自动追加的子弹原文 (保留 audit trail). 元意义: 这是 daily cron 自动追加 evidence-bullet 第一次被 deepen cron 显式核查命名独立性, 建立 'daily 落条带支柱命名 → 下一 deepen tick 同文件命名独立性核查 + falsifier 收紧 + 互引补充' 跨 cron 协议第一次具体化, 填补 'daily 落条/deepen 不审' 责任真空 + 防 '支柱命名通胀'. Rotation guard: online_learning.md 上次 touch 2026-05-29T10:32Z (~38h 前), 最近 5 ticks (world_model 23:45Z / formal_limits 08:00Z / world_model 05:00Z / N6 §九 06:00Z / N1 §七 04:10Z) 无 online_learning.md, 满足不连续同文件规则. 字符净增 ~4800 bytes ≈ 1400 净增中文字, 略超目标 400-900 但 reviewer pass 三段 + 元意义协议确立须一次性写完保持 daily↔deepen 跨 cron 协议建立段连贯优于切两 tick."
-    },
-    {
       "tick_utc": "2026-05-30T23:45:00Z",
       "task_type": "D",
       "files": [
@@ -1895,6 +1886,15 @@
       ],
       "chars_added": 5400,
       "note": "grounding.md +§2026-05-31 type-geometry 链终点收束后 grounding 域直接 type 标注 (无新同步链) — 兑现 timeline 29107ec 方法学边界条款第 4 条 在 ≥4 未覆盖 topic 上的第二处 (embodiment dbf27f3 第一处后, 剩 scaling_limits / online_learning). 6 件操作 (α) MiraBench type III 已落点 grounding 是 type III 主场 topic + 协同回退几何第 4 处投影 (5 处投影排序 world/embod/causal/grounding/online) / (β) DCV type I 已落点 与 ProFIL 共构训练面对偶双 anchor (medium 强度不动, 三层可达性 layer-attribution 骨架共享 + factual claim 子域重叠 + RL-preserves-circuit 同向先决假设) / (γ) KFW type II 显式不落点 负空间三连第三处 (world_model 唯一正落点 vs embodiment 第一负 vs grounding 第二负) 三层根因 referent ≠ grammar latent + Mollo-Millière 五分类复杂度参数维度不可类比 PCFG depth + 章鱼论形式封闭性 (text-only N→∞ 在 deictic 子集 ≤ chance+ε) 与 KFW infinite-sample 渐近可达性论证方向直接对立 / (δ) grounding 双覆盖 (type I+III 正 / type II 负空间) 是中段样本 与 embodiment 单覆盖 / world_model 三覆盖 形成上中下三档 + 把 C-GROUND-PROTO 破解路径从三选一收窄到二选一 (排除 type II 理论捷径) 给半年/一年/两年时间常数刻度的未触发即降级协议在 grounding 域比 world_model 域更可靠的本体论论证 / (ε) cross-type 复合 falsifier 协同动作链 任两条触发 §C-GROUND-PROTO 进度刻度从 0/3 完整+2/3 部分升到 1/3 完整 + C-GROUND-5/6/7 双向升降一档 (ρ≥0.5 升 / ρ≤0.2 降) + M1 m_9 升档 / (ζ) 三处单向引 timeline 29107ec 链终点 + embodiment dbf27f3 同条款前序兑现 + world_model f261f3e 理论可达对偶 三角不形成新链. 严守 12 天冻结协议白名单 互引补充 + 措辞收紧 + 升降级历史登记 三类, 不动 §核心问题 / C-GROUND-1..7 / C-GROUND-PROTO 主条件 / M1 8 m_k / OP-* 归因分布, 不新增 candidate/sub-candidate/corollary/falsifier 收紧条款, 不引入新 arxiv ID (3 ID MiraBench 2605.29360 / DCV 2605.28860 / KFW 2605.27734 均沿用 paper_notes 已 verified). Rotation: 前 tick dbf27f3 embodiment.md 不同文件; grounding.md 距上次 639dafb (~24h) 非连续两 tick. 11 commit hash (29107ec/f261f3e/4707f45/3cf73cd/1c22b75/ef1dfe2/764ecb8/f61f8c4/dbf27f3/639dafb/f611a01) 经 git cat-file 验证, 无 ID/数字/作者/日期 fabricated."
+    },
+    {
+      "tick_utc": "2026-05-31T08:00:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/scaling_limits.md"
+      ],
+      "chars_added": 5500,
+      "note": "scaling_limits.md +§2026-05-31 type-geometry 链终点收束后 scaling 域直接 type 标注 (无新同步链) — 兑现 timeline 29107ec 方法学边界条款第 4 条 在 ≥4 未覆盖 topic 上的第四处也是末处 (embodiment dbf27f3 第一处 / grounding 3901303 第二处 / online_learning 5fce409 第三处之后), 四处合起来完成边界条款覆盖, 链终点收束协议自此形式闭合. 6 件操作 (α) MiraBench type III 派生落点 (非 6 topic surface 直接覆盖之一, 经 abb448e verifier-noise stratifier 二档派生进入, double-weak 折扣, 不入 9/17 计数) / (β) DCV type I 已落点 与 abb448e (β) C-SCALE-7 四向闭环第 2 通道一致, medium 不动 / (γ) KFW type II 已落点 4 target 之一 与 §第二/五轴三件理论侧条款全对位, medium 不动, 与 world_model (α) 同 paper 在该 type 下功能不对称 / (δ) scaling 是 type 三覆盖派生形态完整域 与 world_model surface-direct triple coverage 唯一完整域形成对偶, 把后者 claim 收窄为 surface-direct triple coverage 唯一完整域 第一处经验确认 + 5 档形态梯度细分登记 / (ε) cross-type 复合 falsifier 协同动作链 同步反向收紧 §C-SCALE-4 二维判定空间 + C-SCALE-7 四向闭环第 5 通道补全 + C-SCALE-D-DISCLOSE 增一档监测 + M1 m_5/m_3 双投影同步降档 / (ζ) 三处单向引 timeline 29107ec 链终点 + 同条款三前序 (dbf27f3/3901303/5fce409) + world_model f261f3e 完整域对偶 三角不形成新链. 严守 12 天冻结协议白名单 互引补充+措辞收紧+升降级历史登记 三类, 不动 §核心问题/C-SCALE-1..8/C-SCALE-D-DISCLOSE/OP-SCALE-1..7/M1 8 m_k/主表/§10, 不新增 candidate/sub-candidate/corollary/falsifier 收紧条款, 不引入新 arxiv ID (MiraBench 2605.29360 / DCV 2605.28860 / KFW 2605.27734 经 paper_notes verified). Rotation: 前 tick 3901303 grounding.md 不同文件; scaling_limits.md 距上次 abb448e (~2.5h, 角度不同: abb448e 是 verifier-noise floor stratifier, 本节是 type-geometry 全貌直接标注, 中间隔 N6/embodiment/grounding/daily 四 tick 非连续两 tick). 8 commit hash (29107ec/f261f3e/dbf27f3/3901303/5fce409/abb448e/f61f8c4/ef1dfe2) 经 git log --format=%H 验证, 无 ID/数字/作者/日期 fabricated."
     }
   ]
 }
