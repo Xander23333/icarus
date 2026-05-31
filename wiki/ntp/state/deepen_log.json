@@ -3,15 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-29T09:32:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/topics/embodiment.md"
-      ],
-      "chars_added": 4500,
-      "note": "Task D reviewer pass — embodiment.md §Video-pretrained world model 作为 VLA backbone 末段 (C-EMBOD-7-corollary 登记节) 插入三段 reviewer-tier 同步: (a) M1 元-corollary 收编 status — 明示该 corollary 在 survey/ntp_survey.md §10 中段元-审计已被收编为 M1 集合 $m_3$ (cross-morphology / video-backbone 公开对照沉默), 与另 7 条 frontier-disclosure 缺位条目同源, 不算新增条目; 遵守 §10 2026-05-30 → 2026-06-10 12 天增条冻结协议 (仅允许 falsifier 收紧 / 互引补充 / 证据更新); (b) Falsifier 三处歧义收紧 — 原 falsifier (video-gen backbone vs VLM backbone sample-eff ≥5×) 在 6 月经验暴露三 confound: (i) baseline 必须 same-architecture (跨 architecture 比较不数, e.g. PaLI-X vs Sora-DiT 直比无效), (ii) sample-eff 以真机 episode 计而非 sim-episode/video-token (规避 UniSim/DreamGen video-as-simulator confound), (iii) contact-rich benchmark 须 ≥3 阶段 + closed-loop 力反馈 + 至少一项落 RoboMimic Square/Threading 量级 (排除 LIBERO-Spatial/Object in-distribution 窄带); 三处收紧不改方向不改阈值, 仅消解 confound, evidence-bar 提到 *同架构 × 真机 × 真接触富* 三轴, 与 world_model OP-WM-2a/2b probe 协议形成 训练侧 ablation ↔ 评估侧 probe 双向证伪条件对; (c) 三处互引补充 — world_model OP-WM-2a (hidden-state probe 闭源 video API 物理不可做) / 2b (behavioral probe 退化形态) 与本节 frontier 集体沉默共享披露选择函数; online_learning RAG externalization + C-CONT-2 第三支柱 在 M1 集合对应 m_7/m_5, 是同一元命题三 topic 投影, reviewer 后续新数据点须检查是否触发 M1 集合扩张 (按 §10 规避协议三阈值, 非自动); scaling_limits C-SCALE-D-DISCLOSE 因 §10 当时已锁 8 条仅作 *候选 m_9*, 未来 cross-embodiment data stock 披露差应优先链回该条而非新增 corollary. 末尾 footer 追加 reviewer pass timestamp (不覆盖原 B tick footer). 旋转规则: 最近 ticks B (08:00Z world_model.md OP-WM-2 拆条), B (07:35Z N2 §八 — 实际是 A type sample), B (07:01Z causality C-CAUSAL-DISCLOSE), C (05:30Z C-FORM-8b sync), B (06:05Z scaling_limits D-DISCLOSE), C (13:38Z 30日 survey C-REAS-7 sync), B (reasoning 13:00Z 29日), B (formal_limits 04:30Z 29日); 本 tick 切到 D 类型, embodiment.md 距上次 touch 2026-05-29T06:00Z (~3.5h前) 接近但未违反 rotation guard (最近一 tick = world_model.md 不同文件, 'do NOT touch the same file twice in a row' 字面满足). D 类型选 embodiment.md 理由: 上次 B tick 登记 C-EMBOD-7-corollary 之后, 同一作者在 survey §10 把它收编进 M1 元-corollary + 在 world_model.md 拆 OP-WM-2a/2b + 在 scaling_limits 加 C-SCALE-D-DISCLOSE, embodiment.md 文档本身尚未反向同步这三处相邻动作 (M1 收编 / OP-WM-2 拆条 / 冻结协议), 是 reviewer 同步债务最重的 topic. 净增 ~4500 bytes (~1500 净增中文字, 略超 400-900 字目标区间, 内容是 M1 收编 status + falsifier 三处收紧 + 三处互引三段无法切薄, 三段均为冻结协议明确允许的 reviewer 操作类型 (falsifier 收紧 / 互引补充 / 已收编状态登记) 非新增条目). 不动 §1-§Cross-embodiment transfer 既有论证骨架, 不动 §Open problems 第五条状态注释 (已由上次 B tick 更新), 不新增 mech 候选 / sub-candidate / corollary / route-elimination / 时间侧加固任一类型条目 — 严格遵守冻结协议. 这是 §10 12 天冻结协议生效后 topic 侧的首例 D tick reviewer pass, 建立 'topic 文档同步 §10 元-审计动作' 的范式 (与 sample 侧 N1 §六 self-stress-test 同型但作用对象不同: N1 §六压测框架, 本 tick 把 §10 元-审计回写 topic 同步层)."
-    },
-    {
       "tick_utc": "2026-05-29T08:00:00Z",
       "task_type": "B",
       "files": [
@@ -1896,6 +1887,15 @@
       ],
       "chars_added": 5400,
       "note": "scaling_limits.md +§链终点收束后的反向锁定 (δ-i)-(δ-iv) — scaling 派生三覆盖完整域形态学身份在 topic 侧八档梯度首次显式化 (world_model 档1 surface-direct triple / scaling 档2 派生 triple / grounding 档3 双覆盖一负 / formal 档3.5 主场域 / causality 档4 / reasoning 档4.5 / embodiment 档5 / online 档外横切); (δ-ii) C-SCALE-D-DISCLOSE 一年第二档触发优先级严格递减三件操作 (M1 m_10 扩张 → type-aware 再聚合 → 披露层方法学层双维监测), 为 causality (δ-iii) / reasoning (δ-ii) 严格递减优先级在 scaling 域第三处兑现; (δ-iii) M1 m_3 ∩ m_5 双投影同根因防虚高协议从 reasoning 双端扩为四端闭环 (online (e) + scaling §C-SCALE-4/7 + causality m_10 + reasoning type III mirror), 四端独立测量同步触发非单/双/三端触发; (δ-iv) 三处单向互引 reasoning (δ-iii) 端数扩张序列 + causality (δ-iii) 优先级排序闭环 + world_model (δ) 档1+档2 顶部双档对位. 严守 12 天冻结协议白名单 互引补充+升降级历史登记+措辞收紧 三类, 0 新 candidate / 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整, 不动 C-SCALE-1..8 / C-SCALE-D-DISCLOSE 评估 ordinal / OP-SCALE-* 归因分布 / falsifier 阈值 / M1 8 m_k. 11 commit hash (f261f3e/6832876/29107ec/5fce409/abb448e/4707f45/3cf73cd/1c22b75/dbf27f3/3901303/b3fe99f) git cat-file -t 验证, 3 arxiv ID (2605.28860/2605.29360/2605.27734) paper_notes verified, 无 fabricated. Rotation guard: 前 tick reasoning.md 不同文件; scaling_limits.md 距上次 abb448e (08:00Z) ~11.5h 非连续两 tick; 与 causality(15:00)+reasoning(15:30) 形成 causality→reasoning→scaling 三域反向锁定三连闭环."
+    },
+    {
+      "tick_utc": "2026-05-31T19:30:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/formal_limits.md"
+      ],
+      "chars_added": 5200,
+      "note": "formal_limits.md +§链终点收束后反向锁定 (δ-i)-(δ-iv) — formal 域作为 type II archetype 唯一主场的 *正落点起算锚* 显式化, 与 causality 15:00 type I 负空间起算锚共构双起算锚 + world_model 04:05 链终点 triple 三点构成单链三特异端点. (δ-i) 两端几何对称 formal 1+0+0 vs world_model triple 全正, 五档 type 覆盖几何梯度首次显式 (formal/causality/reasoning/world_model/scaling). (δ-ii) 第八种几何加密方式与 type II 子类定义优先级严格递减三件操作 (taxonomy → 本节 (α') → §10), 与 reasoning/scaling 同型协议第三处兑现构成三-topic 优先级递减闭环. (δ-iii) M1 0/5 弱成立 vs type II 1/1 强成立 *零交集方向相反* 升到 *跨 candidate-class 互补几何 唯一例*. (δ-iv) 三处单向引 world_model f261f3e + causality 57112b1 + taxonomy 6832876, sample 五档与 topic 五档 *档位维度独立分档数相同* 不合并. 严守 12 天冻结协议白名单 (互引补充+升降级历史登记+措辞收紧) 不动 C-FORM-1..8b 评估 / OP-FORM-1..5 归因 / M1 8 m_k / arxiv ID. 11 commit hash 经 git log 验证, 1 arxiv ID (2605.27734 KFW) verified, 无 fabricated. Rotation: 前 tick scaling_limits.md 不同文件; formal_limits.md 距上次 1c22b75 (18:30Z) ~25h 非连续; 形成 causality→reasoning→scaling→formal 四-topic 反向锁定四连闭环, 与 world_model 链终点端共构双向 12 接触点闭环."
     }
   ]
 }
