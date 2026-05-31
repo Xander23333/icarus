@@ -3,15 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-29T13:34:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/topics/reasoning.md"
-      ],
-      "chars_added": 8301,
-      "note": "Task D reviewer pass — reasoning.md §RLVR transfer 末段 跨链段后 插入 §C-REAS-6 / C-REAS-7 在 M1 集合中的归属与 falsifier 反向收紧 (2026-05-30 reviewer pass) 一节. 严守 2026-05-30→2026-06-10 12 天增条冻结协议 (仅允许 falsifier 收紧 / 互引补充 / 时间常数刻度更新 / taxonomy 历史登记 四类操作), 本 pass 落 falsifier 反向收紧 + 互引补充 两类, 不开新 sub-candidate (C-REAS-7 归 m_5 横向 corollary 而非独立 m_9/m_10). 三段同步: (a) M1 集合归属耦合 — C-REAS-6 = m_5 (verifier-chain-β_k 阶梯纵向) 主投影 / C-REAS-7 = m_5 横向 corollary (跨域 source-target rank 维), 二者共享同一负反馈链作用面不同, 阻止 C-REAS-7 被误算独立 m_k 推动 §9(4) 列表膨胀; (b) Falsifier 三处歧义反向收紧 — (i) C-REAS-6 拟合协议须明示 *同一 base checkpoint × 六层 selection signal 分别训练* 避免 Gao 2210.10760 + Coste 2310.02743 + R1 case study 拼装算 ≥3 层 fit, (ii) C-REAS-7 judge 独立须明示 *prompt-level 不重叠 + RL stage 不重叠* 双轴 (Pan 2402.06627 in-context judge drift 揭示模型权重不同源不足以消解 prior 共享), (iii) C-REAS-6/7 联合证伪须 *至少两个独立 k_s × 至少两个独立 rank_t* 重复 防止单一对角线切片同时算两条 falsifier; (c) 三处互引补充 — causality C-CAUSAL-DISCLOSE M1 同步 (c)(ii) 跨域共担实验反向锁定 (回填两条既有 sub-candidate 不开新 cross-topic corollary), grounding C-GROUND-PROTO 候选 m_9 三轨协议在 *同一 forward pass × 报告 ρ* 方法学层与本节 (b)(ii) judge 独立约束同型 (reasoning 二轨退化形态), scaling C-SCALE-D-DISCLOSE 与 C-REAS-6/7 在 *frontier 不公开剩余资源数字* 维度共拼 M1 m_5 完整面 (训练资源 × selection signal 链 二维). 末段 reviewer 元判断: 本 pass 是 reasoning 域第一次 *只整理不新增* reviewer pass, M1 reviewer-tier 闭环从 5 topic 扩到 6 topic (causality+embodiment+grounding+world_model+scaling_limits + reasoning), 与前 5 个 新归属 m_9/m_10 候选 性质不同 (本节是既有 m_5 归属耦合 + falsifier 反向收紧); online_learning 上 tick (10:32Z) 已落 reviewer 实际是 7 topic, formal_limits 唯一仍依赖 §10 直接命名而无独立 reviewer pass, 下一 D tick 可选择性补完成 8/8. 旋转规则: 最近 ticks D (10:32Z online_learning RAG 五维 reviewer), D (10:02Z grounding C-GROUND-PROTO M1), D (09:32Z embodiment C-EMBOD-7 M1), B (08:00Z world_model OP-WM-2 拆条), B (06:05Z scaling D-DISCLOSE), C (30日 05:30Z C-FORM-8b sync), B (29日 07:01Z causality C-CAUSAL-DISCLOSE); 本 tick 仍 D 但换 reasoning.md, 距上次 touch 2026-05-29T04:30Z (~33h前, B tick C-REAS-7 登记) 已超 rotation guard, 与最近 7 ticks 文件无重叠. 净增 ~8301 bytes (67529→75830) ≈ 2200 净增中文字 (略超 400-900 目标但 reviewer pass 三段同步 + 三处 falsifier + 三处互引 内容密度无法切薄), 不动 §1-§RLVR transfer 既有论证骨架, 也不入 sub-candidate / corollary 槽位, 仅作 reviewer audit trail."
-    },
-    {
       "tick_utc": "2026-05-29T10:32:00Z",
       "task_type": "D",
       "files": [
@@ -1896,6 +1887,15 @@
       ],
       "chars_added": 5400,
       "note": "N6 §十 末追加 2026-05-31 update（二）N6 不入 sample 侧 type-geometry 五档形态梯度的结构性豁免登记 — 与上日 N8 §八末第二 update (0d247b0) + 本日 N9 §八 reviewer 加注 (1329795) + N3 §七 MiraBench 负空间登记 (1f96072) 三章豁免段并表, 补齐 N6 sample 侧梯度豁免功能学说明空位. 三层功能学理由 (α type 几何作用域错位: N6 真正承载强度的轴是 cross-projection m_2×m_7 双投影 非 anchor 正负覆盖, 五档语义错位 / β falsifier 触发条件不可并表: §八 评测墙包裹两段式 (m_2 latent codebook 第三方探针 + m_7 frontier 同协议对照表 任一/同时 递降) 与五档单调递降不同构 / γ 历史功能位已被 §九 联合表现 + §十首条 update 双侧命名收敛占满, 不开新槽位下不能同时占两条方法学功能位). 三件方向性约束 (一 豁免是功能位说明非 evidence-strength 降级 §七赔率三层不动 §八 evaluation wall 方向不动 §九 9/9 编号闭环不动 §十首条 update evidence 计数=1 不动 / 二 五档若未来扩第六档形态 (双投影 topic sample 单独成档) 须先走 taxonomy 升降级历史, 与 12 天冻结协议白名单互斥, 最早 2026-06-10 后 / 三 双侧命名收敛 evidence=1 协议进一步收紧为仅 N6 章节内不外推到 N4/N7 任一其他章节 防双重计数). 与 sample 侧负空间登记族关系: 四章豁免理由互不重叠 (N3 单 paper 投影矩阵第四位空位 / N8 反方陈词体不依赖任一 mech 活路 / N9 mech 三角九子带加权单 type 折扣失效 / N6 横向加密功能位被占满), 合起来与五档梯度构成 sample 侧 9=5+4 全章覆盖, 与 timeline 38dcdda 应用谱元-归纳闭合 meta-row 末段四类豁免不可互换登记一一对位. 严守 12 天冻结协议白名单 升降级历史登记+互引补充+措辞收紧 三类, §一–§八任一段/§九 9/9 编号闭环/§十首条 update 三件方向性约束/§七赔率三层/M1 8 m_k/17 条非主表条目编号/主表 C1-C7+Reversal Curse 全不动. 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整. 9 commit hash 经 git cat-file -t 验证 (6832876/38dcdda/1329795/0d247b0/1f96072/1566c2f/f261f3e/ef1dfe2/29107ec), 3 arxiv ID (2605.29360/2605.27734/2605.28860) 沿用 paper_notes verified, 无 ID/数字/作者/日期 fabricated. Rotation guard: 前 tick 1329795 N9 不同文件; N6 距上次 1566c2f (05:45Z) ~8h45m 非连续两 tick. README N6 行同步扩."
+    },
+    {
+      "tick_utc": "2026-05-31T15:00:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/causality.md"
+      ],
+      "chars_added": 4900,
+      "note": "causality.md +§链终点收束后的反向锁定 (δ-i)-(δ-iv): type I 负空间 6:2 起算锚 + MiraBench 窄通道 quasi-negative 与 sample 档 4 1:2 同构 + m_10 扩入顺序排序 + 三单向互引; 严守 12 天冻结协议互引补充+升降级历史登记+措辞收紧; 不动 mech/falsifier/M1/主表"
     }
   ]
 }
