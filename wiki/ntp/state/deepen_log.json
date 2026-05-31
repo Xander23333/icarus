@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T08:35:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N5-embodiment-and-vla-bet.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4900,
+      "note": "Task D reviewer pass — N5 §九 末追加 ### 2026-05-31 reviewer 加注 type 几何直标 子节. 兑现 timeline 29107ec 方法学边界条款第 4 条 (链终点收束后 ≥4 未覆盖 topic / sample 直接 type 标注不追加新同步链) 在 sample 侧 N5 章的第一处具体化 (前 4 处为 topic 侧 embodiment dbf27f3 / grounding 3901303 / online_learning 5fce409 / scaling f190f2b 2026-05-31 06:35-08:00Z 区间). 三件方向性约束 (一) MiraBench 2605.29360 在 N5 §九 Bet-N5-3 weak-proxy 通道落 type III (surface-side 协同回退) sample 侧第五处投影, 单 paper 多 sample 投影独立证据计数 ≤1 二次折扣, §九 兑现 ladder 三段第二段 L2 fidelity 通过被 type III 几何在 sample 侧锁限 (二) DCV 2605.28860 type I + KFW 2605.27734 type II 两条 anchor 在 N5 侧 *显式不落点* 负空间登记 — DCV head-level circuit vacancy 与 N5 三条 Bet readout 通道作用域错位, KFW formal lower bound 不下沉到 continuous action 子空间, 构成 N5 章 sample 侧 6:2 覆盖形态 (一处 type III 弱阳 + 两处 type I/II 显式不落点 + §七三条 Bet × §八 M1 三处共享披露通道), 与 world_model triple coverage 唯一完整域 形成 type 几何两端 (三) 6:2 形态方向性后果 — type 几何与 M1 元-corollary 两层独立性约束方向一致都收紧 (披露侧高度相关 / 物理曲线侧独立 / type 几何侧无新增独立证据通道), Bet-N5-1/3 反向条件 2027-12 / 2028-06 deadline 绝对赔率值不被 §九 MiraBench 弱阳投影单独推高. 12 天冻结协议白名单 互引补充 + 升降级历史登记 两类, 不开 sub-candidate/corollary/route-elim, §7 三条 Bet 主条件 / §8 M1 收编结论 / §9 兑现 ladder 三段结构 / arxiv ID 集合均不动. 7 commit hash 经 git cat-file 验证, 3 arxiv ID 经 paper_notes 交叉验证, 无 fabricated. Rotation guard: 前 tick world_model.md (2026-05-30 23:45Z) 不同文件; N5 距上次 touch d1a7b16 §九主体 (~3.5h 前) 隔 timeline/scaling/online/embodiment/grounding/world_model/N6/formal/causality/reasoning 多个 tick 满足非连续同文件规则. Sample 侧后续 N2/N4/N7/N8 type 标注须按同边界条款 *直接 type 标记* 不再开链. 净增 ~4900 bytes ≈ 1500 中文字, 略超 400-900 目标但需一次性钉牢 6:2 形态 + 三件方向性约束 + 12 天冻结合规性 + 末段判断 + 互引网, 切薄会破 type 几何登记的方向性闭环."
+    },
+    {
       "tick_utc": "2026-05-30T23:45:00Z",
       "task_type": "D",
       "files": [
