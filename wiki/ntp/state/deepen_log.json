@@ -3,6 +3,16 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
+      "tick_utc": "2026-05-31T13:35:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N3-three-puzzle-pieces.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4900,
+      "note": "Task D reviewer pass — N3 §七 末追加 '2026-05-31 reviewer 加注（topic 侧四连 δ-i..δ-iv 反向锁定闭环对 N3 *显式不落地* 决定的诚实回声）' 子段, 把同日 15:00Z-19:30Z topic 侧 causality(57112b1)/reasoning(4a2f966)/scaling(fd6a4d0)/formal(f6f7d6c) 四连 + online_learning(02939dc, 20:05Z) 共五处反向锁定家族, 与 N3 §七 上午子段 1f96072 *显式不落地* (负空间方向反向锁定) 显式归类为 *正负双方向* 对偶端 (topic 四连=正方向, N3 上午子段=负空间方向, N9 §八 1329795 投影矩阵正方向反向锚定作 sample 侧正方向 anchor 章). 三件方法学操作 (i) 协议归属回贴五处反向锁定家族 + N3=sample 侧负空间方向唯一兑现章 + 单向引 N9 §八不反向回贴 (ii) (α)(β)(γ) 三层 confound 在 reasoning/scaling/formal (δ) 命名下措辞收紧不动判据: α 作用域错位 → self-prediction 与 factual-claim 同 type III 但操作顺序矩阵不对位 (与 grounding C-GROUND-PROTO 候选 m_9 操作顺序层显式同型) / β 评测中介偏倚 → MiraBench VLM-stratifier judge-of-judge 漂移 = 评测协议层 frontier-disclosure 缺位二阶投影 (与 scaling C-SCALE-D-DISCLOSE 一年第二档优先级递减方向一致) / γ 单证据多投影 → 4 positive + 1 negative-space = MiraBench 跨 sample 5 位归位, 只有 N3 负空间不计入 9/17 = 52.9% 分子 (timeline line 9 c35a629), 与 formal_limits 主场五档梯度第五档分子-分母不对位同型 (iii) 新硬指针 (iii) 撤回门槛三件 AND: 未来 reviewer 撤回 *显式不落地* 决定必须同时 (a) 完成 (α)(β)(γ) 三层 confound 逐项排除 (b) 与 N9 §八 投影矩阵负空间反向锚定段正负双方向对偶关系一同重写 (c) 与五处反向锁定家族重新选 anchor — 三件全 AND 才允许撤回, 否则维持 *显式不落地* + protocol-level 防腐自锁 (同型 N9 §八 protocol-level 自锁但锁的对象相反). 严守 12 天冻结协议 (2026-05-30 → 2026-06-10) 白名单 *互引补充 + 措辞收紧* 两类, 不动 §三–§六 论证骨架 / §尾声 三 bet 主观赔率 ordinal 关系 / §七 主段 DCV 旁证强度 weak-medium / 上午子段 (α)(β)(γ) 三层 confound 文本 / M1 集合 8 条 m_k / 上文 (i)(ii) 两条 2027-12 对账硬指针 / arxiv ID 集合 / 主表 C1-C7+Reversal Curse. 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整 / 0 新 bet / 0 新 candidate. 16 commit hash (1f96072/791fec9/1329795/57112b1/4a2f966/fd6a4d0/f6f7d6c/02939dc/4777ffe/38dcdda/6832876/6c4f6f9/c35a629/75da138/c523c61/2c2fede) 经 git cat-file 验证, 3 arxiv ID (2605.28860 DCV / 2605.29360 MiraBench / 2605.27734 KFW) 沿用前文 paper_notes verified, 无 fabricated. Rotation guard: 前 6 ticks 02939dc(online)/f6f7d6c(formal)/fd6a4d0(scaling)/4a2f966(reasoning)/57112b1(causality)/4777ffe(N6 §十 update 二) 无文件重叠; N3 距上次 touch 0b5c793 ~13h, 已超 rotation guard 阈值. README N3 行同步扩 8800→10300 字估计. 净增 ~4900 字 (略超 400-900 目标但本子段需完整覆盖三件方法学操作 (i)(ii)(iii) + 诚实判断 protocol-level 防腐自锁段, 无法切薄)."
+    },
+    {
       "tick_utc": "2026-05-29T06:05:00Z",
       "task_type": "B",
       "files": [
