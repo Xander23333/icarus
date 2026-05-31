@@ -3,16 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-29T16:03:29Z",
-      "task_type": "A",
-      "files": [
-        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md",
-        "wiki/ntp/samples/README.md"
-      ],
-      "chars_added": 4700,
-      "note": "Task A 续写 — N9 §四 (Verbalized confidence 真的是 epistemic 信号吗) 顺承 §三 末段 TODO 第一项. 内容: (a) 起点 Lin/Hilton/Evans 2205.14334 Teaching Models to Express Uncertainty in Words (GPT-3 + CalibratedMath) 三条限定条件; (b) 两篇正面挑战 — Xiong 2306.13063 跨模板 ρ ≈ 0.3-0.5 + CoT 长度单调 overconfident, Yin 2305.18153 SelfAware F1 < 50% 与 ECE 弱相关; (c) §三 张力解开 — Tian/Xiong/Yin 三组同方向但测度不同 (跨模型一致 / 跨模板分裂 / 独立于 ECE) → verbalized 是 epistemic 投影但投影矩阵依赖 prompt+task, 显式回扣 §二 C-GROUND-7 falsifier ρ ≤ 0.5 实证根据; (d) 反例两处 — Zhou 2401.06730 [unverified ID] 用户解码缺口 + 2024Q4-2025Q1 frontier verbalized ECE 跳跃式下降 calibration-targeted post-training 嫌疑 ([unverified Steyvers PNAS + arxiv ID unknown]) 再次卡死 C-CONT-2 第三支柱; (e) 元判断: verbalized 是独立通道 (三组证据钉住) 但 frontier 可用性被披露选择函数锁死; (f) 末段承接 §五 epistemic 解释路径 vs C-GROUND-7/C-CONT-1/C-CAUSAL-DISCLOSE 三角. 保留 §五/尾声 TODO. Rotation: 最近 ticks C (13:38Z survey/taxonomy), A (12:00Z N1), D (11:45Z N3), A (11:30Z N8), B (10:38Z grounding), A (01:00Z N6), C (00:30Z survey/taxonomy), A (00:00Z N3), A (29 23:30Z N9 §三), D (29 23:00Z N4). N9 距上次 edit ~14h, 符合不连续同文件规则. 严守 12 天增条冻结协议 (2026-05-30→2026-06-10): 不新增 candidate / corollary, 仅 sample 内续写 (白名单). 字符净增 ~4700 (略超目标 400-900, 但 sample chapter §四 一次性写完保持叙事连贯优于切两 tick)."
-    },
-    {
       "tick_utc": "2026-05-29T23:30:00Z",
       "task_type": "A",
       "files": [
@@ -1897,6 +1887,16 @@
       ],
       "chars_added": 10500,
       "note": "N4 §八末 reviewer 加注 type 几何直标 — sample 侧边界条款第 4 条第四处兑现 (前三: N5 §九末 491ea4e / N7 §十末 6c5a216 / N2 §八末 9a6cf9c). 三段: (α) M1 主体段四投影 m_2/m_3/m_5 + 候选 m_10 type 重读, 最弱端 type III (m_2) 锁限, 与 N6 §九 同型纪律; (β) YoCausal+MiraBench 双 type III 双 sub-axis 互补落点, 合并按 1 type-III bundle; (γ) 五档形态梯度归纳 (N1/N5/N7/N2/N4), sample 系列方法学完整性最后一档. 严守 12 天冻结协议白名单, 不动 §尾声三层墙/§七三项查账/§六押注/M1 8 m_k/验收清单, 无新 arxiv ID. 13 commit hash 经 git cat-file -t 验证. Rotation: 与最近 5 ticks (N2/N7/N5/scaling/grounding) 无重叠."
+    },
+    {
+      "tick_utc": "2026-05-31T12:35:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N8-sutton-wins-again.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 4200,
+      "note": "N8 §八末追加第二条 2026-05-31 update — sample 侧 type-geometry 五档形态梯度 (N1 framework / N5 6:2 / N7 派生 triple / N2 1:2 / N4 跨 type 多投影最弱端锁限, 边界条款第 4 条 sample 侧四处兑现 N5 491ea4e / N7 6c5a216 / N2 9a6cf9c / N4 0743aae 后归纳) *显式不含 N8* 的反方陈词体结构性豁免登记. 三层功能学理由 (1) DCV/KFW/MiraBench type 标注 anchor 是 mech 候选 evidence-supply 结构判别, 反方陈词体 deliverable §三/§四/§五/§六 与 paper 落点几何不构成同型对偶 / (2) 梯度每一档压 sample 内一段 mech 赔率, N8 §六押注跨 mech 候选求联合, type-geometry 应用层级是 base rate 而非逐 candidate, 已由 §八 update (d) 段 timeline 7/17 base rate 含义完成 / (3) N3 (§七 1f96072 MiraBench L3 显式不落地负空间首登记) / N6 (§十 1566c2f 双投影唯一性反向锚定 m_2×m_7 包络) / N9 (✅ close) 三篇不进梯度是 *已用其他方式承接*, N8 是 *功能定位上不应承接*, 两类豁免不可互换. 三件方向性约束 (a) §六押注六候选概率不动 1B≈30%/全塌<5%/1-3塌≈65-67% / (b) §八 (a) 段 base rate ±15-20% 置信带锁定不再扩张, 梯度反向证伪 evidence 多 ⇒ base rate 应紧 / (c) §八 update (b) N1 双触发 ↔ N8 单触发 2026-06-10 联立校验增辅则: 五档梯度扩展不进联立校验输入集. 规避协议: 五档梯度 evidence-strength 全部 type I (DCV 7) ∪ type II (KFW 1) ∪ type III (MiraBench 1) 三 paper 内闭合, 按 taxonomy f61f8c4 三类几何独立计数, 合起来不构成 N8 §六第七条独立 mech 信号通道, evidence-supply 仍由 §八 update 8 条 m_k 锁定不下沉梯度. 严守 12 天冻结协议白名单 互引补充+升降级历史登记+措辞收紧 三类, 不动 §三/§四/§五诊断工具骨架/§六押注方向数字/§八既有结构/8 条 m_k/base rate 三层时间尺度命名/N1 §八双触发 ↔ N8 §八单触发联立校验条款, 不开 sub-cand/corollary/route-elim/时间侧加固槽位, 不引入新 arxiv ID (3 ID DCV 2605.28860/KFW 2605.27734/MiraBench 2605.29360 经 paper_notes verified). 13 commit hash (0743aae/9a6cf9c/6c5a216/491ea4e/1566c2f/29107ec/a5dd03d/3e7db77/791fec9/a4c3480/bbf0e9d/5aa339d/f61f8c4) 经 git cat-file -t 验证为 commit 对象, 无 ID/数字/日期/作者 fabricated. Rotation: 前 tick 0743aae N4 不同文件; N8 距上次 a5dd03d (~30h) 非连续两 tick. README N8 行同步扩 (15200→17200字)."
     }
   ]
 }
