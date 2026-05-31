@@ -1896,6 +1896,15 @@
       ],
       "chars_added": 7400,
       "note": "ntp_survey.md §10 末追加 2026-05-31 reviewer 加注 (链终点收束后 topic 侧四连 δ-i..δ-iv 反向锁定闭环对 M1 (b)(c) 的回贴) — 把 2026-05-31 15:00Z-20:05Z topic 侧五处 (causality 57112b1 / reasoning 4a2f966 / scaling fd6a4d0 / formal f6f7d6c / online 02939dc) + sample 侧四章豁免 (N9 1329795 / N6 4777ffe / N3 c2fc6e2 / N8 0d247b0) 共 8 处分散操作压回 §10 一段统一回贴, 三件兑现: (α) 四 topic δ 链对 (c) 12 天冻结协议白名单首次跨四域同步合规 (8/8 100% 重估为备注不入正文不延期) / (β) sample 侧 9=5+4 全章覆盖 ↔ §10 (b) M1 1+8 拆分结构同源对偶 两组独立投影维 (章节 vs metric) 不合并不互相加权 / (γ) C-CONT-1/2/3 半年实施核查作 OP-WM 时间侧加固第六处同型扩展, 不升级 M1 任一 m_k 仅刻度化 evidence-supply 通道. 严守 12 天冻结协议白名单 互引补充+升降级历史登记+措辞收紧 三类, 不动 M1 8 m_k 集合 (m_9 grounding 3901303 / m_10 causality 57112b1 仍单向引候选状态不扩入) / 17 条非主表条目编号 / 主表 C1-C7+Reversal Curse / (a)(b)(c) 三件主操作方向 / arxiv ID. 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整. 13 commit hash 经 git cat-file -t 验证, 3 arxiv ID (2605.28860/2605.27734/2605.29360) paper_notes verified, 无 fabricated. Rotation: ntp_survey.md 距上次 ef1dfe2 (2026-05-30T18:00Z) ~28h 非连续两 tick; 最近 13 ticks (timeline 13:30 / N9 14:00 / N6 14:30 / causality 15:00 / reasoning 15:30 / scaling 16:00 / formal 19:30 / online 20:05 / N3 21:35 等) 无 ntp_survey.md 重叠, 跳出 topic / sample 节奏回 survey 侧 *统一回贴* 子带."
+    },
+    {
+      "tick_utc": "2026-05-31T22:35:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N1-the-ntp-question.md"
+      ],
+      "chars_added": 6325,
+      "note": "N1 §八 末追加 2026-05-31 reviewer 加注 — §10 统一回贴 (commit 8570ad2) 对 N1 §八 三号 / 四号 / 五号挂账指针的预期接管. 三件方法学操作: (1) 三号指针 17 格→13 格诚实分母接管路径 (sample 侧 5+4 拆分中四章结构性豁免 N3/N6/N8/N9 → 不可击中一类合流, 与 §10 (β) 9=5+4 ↔ M1 1+8 同源对偶) / (2) 四号指针 双触发预设 12 天窗口 (2026-05-30→06-10) 第一次区间结算预期 (跨四域 8/8 100% 零延期作 §10 (α) 首次区间样本) / (3) 五号指针 type I 限定的 sample 侧 5 档形态梯度对照样本登记 (DCV training-side type I 唯一独立计数 ≈ 落点数, KFW type II / MiraBench type III 不入此对照). 严守 12 天冻结协议白名单 互引补充+升降级历史登记 两类, 不动 §八 (a)(b)(c)(d) 四件主操作 / 17 格盘双重读法挂账 / 双触发预设 / M1 八条 m_k / §六 / §七 / §尾声. 15 commit hash 经 git cat-file -t 验证 (8570ad2/c2fc6e2/4777ffe/0d247b0/1329795/57112b1/4a2f966/fd6a4d0/f6f7d6c/02939dc/38dcdda/6832876/f61f8c4/29107ec/c35a629) 无 fabricated; 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整. Rotation: 前 tick 8570ad2 ntp_survey 不同文件; N1 距上次 reviewer pass (~2026-05-30T17:37Z) 约 29h, 距 N1 任一 tick 间隔满足 >=8h. samples/README.md N1 行字数估计同步扩 12500→13100字 并列入新加注节标题."
     }
   ]
 }
