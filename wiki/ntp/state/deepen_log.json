@@ -1895,6 +1895,16 @@
       ],
       "chars_added": 4500,
       "note": "timeline.md +1 meta row (插入 line 7 链终点 row 之前) 登记 type-geometry 应用谱 *元-归纳* 闭合 — sample 侧五档形态梯度 (taxonomy 6832876 升降级历史归纳, 13:00Z) 与 line 7 链节闭合 (f261f3e world_model 04:05Z) 构成 *DAG 链节闭合 (横向) × sample 数轴归纳闭合 (纵向)* 二维封闭. 五档枚举: 档1 N1 framework / 档2 N7 派生 triple / 档3 N5 6:2 / 档4 N2 1:2 / 档5 N4 跨 type 最弱端锁限; N3/N6/N9/N8 四篇不进梯度功能学理由 (前三 *已用其他方式承接*, N8 *功能定位上不应承接*, 不可互换) 显式登记. 与 line 9 daily↔deepen alignment-pass 协议构成三段协议骨架 (任务分工 → 链节闭合 → 应用谱归纳). 三未来兑现路径预设 (第六类形态须先开 taxonomy 档 / topic 侧未覆盖按 line 7 第4条本地化 / 2026-06-10 D tick 审计五档 evidence-strength type 折扣). 三方法学边界 (α 五档不构成任何新槽位申请仅做归纳+防发散+指针登记 / β type-internal 闭合独立 evidence ≤3 不按 5 求乘 / γ 豁免登记是功能学非数量学). 严守 12 天冻结协议白名单 升降级历史登记+互引补充, 不动 M1 8 m_k / 主表 / 17 条非主表 / line 7 链终点协议 / line 8-9 daily↔deepen 协议 / line 11 12 天冻结协议. 12 commit hash (6832876/0d247b0/0743aae/9a6cf9c/6c5a216/491ea4e/764ecb8/ef1dfe2/29107ec/f61f8c4/a4c3480/1566c2f) 经 git cat-file -t 验证为 commit 对象, 3 arxiv ID (DCV 2605.28860 / KFW 2605.27734 / MiraBench 2605.29360) 经 paper_notes 交叉验证, 无 ID/数字/日期/作者 fabricated. Rotation: 前 tick 6832876 taxonomy.md (survey 域) 不同文件; timeline.md 距上次 29107ec (08:30Z, ~5h) 非连续两 tick, 且 29107ec 钉 *链节闭合* 与本 row 钉 *应用谱归纳闭合* 内容正交 (line 7 vs new row)."
+    },
+    {
+      "tick_utc": "2026-05-31T14:00:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N9-hallucination-as-epistemic-failure.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 6200,
+      "note": "N9 §八 reviewer 加注 type-geometry 重读 + N3 投影矩阵负空间反向锚定 + §五 (1) falsifier 反向收紧 + N9 不入 sample 侧五档梯度结构性豁免登记 — 4 段 (α DCV type I training-face 跨测量面修正不二次折扣 / β MiraBench L3 type III double-weak 上限锁限 投影维数 2→3 强度不上调 / γ §五 (1) 三轨同步附加 同 forward pass × 同 readout 通道 三件硬条件 + self-prediction 子维 ρ 阈值条件化不外推 factual 0.5 / δ N9 mech 三角跨 candidate × 跨 topic × 跨 type 九子带加权 单一 type 折扣表达失效 五档梯度向上失效非向下溢出). 反向锚定: 三正投影 N9/N4/N6 ∪ 一负空间 N3 (1f96072) 显式四位归位 N3 不再矩阵盲点 N3 不被回写 投影矩阵 evidence 计数=1. 严守 12 天冻结协议白名单 互引补充 + 措辞收紧 + falsifier 反向收紧 + 升降级历史登记 四类, §四 投影维数 3 / §五 mech 三角 / §六 DCV 落点 / §尾声 赔率 ordinal / M1 8 m_k 集合全不动, 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整. 13 commit hash 经 git log 验证 (1f96072/f61f8c4/ef1dfe2/29107ec/1c22b75/4707f45/0d247b0/6832876/38dcdda/3901303/5fce409/6c4f6f9/bbf0e9d), 2 arxiv ID (2605.28860 DCV / 2605.29360 MiraBench) 沿用前文 paper_notes verified anchor, 跨模态迁移系数与 type 折扣系数沿用 [unverified] 标记. Rotation guard: 前 tick 38dcdda C timeline.md 不同 task type 不同文件; N9 距上次 6c4f6f9 (2026-05-30T16:05Z) ~22h 非连续两 tick 同文件."
     }
   ]
 }
