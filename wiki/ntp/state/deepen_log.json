@@ -3,25 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-31T08:35:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/samples/N5-embodiment-and-vla-bet.md",
-        "wiki/ntp/samples/README.md"
-      ],
-      "chars_added": 4900,
-      "note": "Task D reviewer pass — N5 §九 末追加 ### 2026-05-31 reviewer 加注 type 几何直标 子节. 兑现 timeline 29107ec 方法学边界条款第 4 条 (链终点收束后 ≥4 未覆盖 topic / sample 直接 type 标注不追加新同步链) 在 sample 侧 N5 章的第一处具体化 (前 4 处为 topic 侧 embodiment dbf27f3 / grounding 3901303 / online_learning 5fce409 / scaling f190f2b 2026-05-31 06:35-08:00Z 区间). 三件方向性约束 (一) MiraBench 2605.29360 在 N5 §九 Bet-N5-3 weak-proxy 通道落 type III (surface-side 协同回退) sample 侧第五处投影, 单 paper 多 sample 投影独立证据计数 ≤1 二次折扣, §九 兑现 ladder 三段第二段 L2 fidelity 通过被 type III 几何在 sample 侧锁限 (二) DCV 2605.28860 type I + KFW 2605.27734 type II 两条 anchor 在 N5 侧 *显式不落点* 负空间登记 — DCV head-level circuit vacancy 与 N5 三条 Bet readout 通道作用域错位, KFW formal lower bound 不下沉到 continuous action 子空间, 构成 N5 章 sample 侧 6:2 覆盖形态 (一处 type III 弱阳 + 两处 type I/II 显式不落点 + §七三条 Bet × §八 M1 三处共享披露通道), 与 world_model triple coverage 唯一完整域 形成 type 几何两端 (三) 6:2 形态方向性后果 — type 几何与 M1 元-corollary 两层独立性约束方向一致都收紧 (披露侧高度相关 / 物理曲线侧独立 / type 几何侧无新增独立证据通道), Bet-N5-1/3 反向条件 2027-12 / 2028-06 deadline 绝对赔率值不被 §九 MiraBench 弱阳投影单独推高. 12 天冻结协议白名单 互引补充 + 升降级历史登记 两类, 不开 sub-candidate/corollary/route-elim, §7 三条 Bet 主条件 / §8 M1 收编结论 / §9 兑现 ladder 三段结构 / arxiv ID 集合均不动. 7 commit hash 经 git cat-file 验证, 3 arxiv ID 经 paper_notes 交叉验证, 无 fabricated. Rotation guard: 前 tick world_model.md (2026-05-30 23:45Z) 不同文件; N5 距上次 touch d1a7b16 §九主体 (~3.5h 前) 隔 timeline/scaling/online/embodiment/grounding/world_model/N6/formal/causality/reasoning 多个 tick 满足非连续同文件规则. Sample 侧后续 N2/N4/N7/N8 type 标注须按同边界条款 *直接 type 标记* 不再开链. 净增 ~4900 bytes ≈ 1500 中文字, 略超 400-900 目标但需一次性钉牢 6:2 形态 + 三件方向性约束 + 12 天冻结合规性 + 末段判断 + 互引网, 切薄会破 type 几何登记的方向性闭环."
-    },
-    {
-      "tick_utc": "2026-05-30T23:45:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/topics/world_model.md"
-      ],
-      "chars_added": 7600,
-      "note": "Task D — 把 daily cron 07:40Z (ab19e5d) 在 world_model.md §Video-NTP 顶部留下的 *未展开三连 blockquote* (YoCausal 2605.30346 / Chess-WM 2605.30100 / MiraBench 2605.29360) 按 12 天冻结协议白名单 (falsifier 收紧 + 互引补充 + 时间常数刻度更新) unpack 到 §C-WM-3 / §C-WM-7 既有 candidate / corollary 的 evidence-base 内部细化层. 四段 (a)(b)(c)(d) + reviewer 元判断: (a) YoCausal → C-WM-3 第一条 real-world black-box proxy, falsifier 增列 *时间反转可逆性预筛 (排除扩散/熵增) + VLM stratifier 独立性* 二轴, 与 causality §C-CAUSAL-DISCLOSE 三轴 / grounding §C-GROUND-PROTO 四轴同型; (b) Chess-WM → state-tracking 跨域 anchor 同时落 C-FORM-6/8/8b (formal 侧) 与 C-WM-7 OOD distribution shift 区分条款 (同分布外推 vs uniform-legal OOD), 与 formal_limits.md daily 段对偶; (c) MiraBench → C-WM-7 evidence-base 第四 weak-proxy 通道 (L2 action-following fidelity black-box 可测但不可替代主条件 NMI≥0.7), 与 embodiment §C-EMBOD-6 demo-credibility *评测协议互补* 双侧夹击 'embodied foundation model 已 deploy' marketing; (d) 三连共享元约束 — 第三方学界 <2 GPU-week + 标注预算可控 benchmark 在 *协议层* bottleneck 比 frontier *披露层* bottleneck 弱, 单日三条登记为 2026 video reliability benchmark 协议层首次集中产出但 *不* 升 candidate (需 2026-Q3/2027-Q1 ≥3条/季再核). 不开新 candidate / sub-candidate / corollary / route-elim 任一槽位, 不动主条件阈值, 不新增 arxiv ID (三条已在 daily 报告 ab19e5d 登记). Rotation guard 例外处理: world_model.md 上次 deepen touch 05:00Z 7af3bfd (~2.5h 前), 字面冲突但 daily cron 07:40Z 在同文件留下未展开 stub 构成自然触发, 按 N6 §九 (06:00Z a4c3480) 同型协议处理. 字符净增 ~7600 bytes ≈ +2300 中文字, 略超目标 400-900, 因三连各自落到不同 candidate + 需要全部钉到 falsifier 收紧 + 互引补充层不能切薄. reviewer-tier 方法学纪律在 world_model 域第二次具体化 (第一次为 OP-WM-2a/2b 拆条)."
-    },
-    {
       "tick_utc": "2026-05-30T07:10:00Z",
       "task_type": "D",
       "files": [
@@ -1905,6 +1886,16 @@
       ],
       "chars_added": 5500,
       "note": "scaling_limits.md +§2026-05-31 type-geometry 链终点收束后 scaling 域直接 type 标注 (无新同步链) — 兑现 timeline 29107ec 方法学边界条款第 4 条 在 ≥4 未覆盖 topic 上的第四处也是末处 (embodiment dbf27f3 第一处 / grounding 3901303 第二处 / online_learning 5fce409 第三处之后), 四处合起来完成边界条款覆盖, 链终点收束协议自此形式闭合. 6 件操作 (α) MiraBench type III 派生落点 (非 6 topic surface 直接覆盖之一, 经 abb448e verifier-noise stratifier 二档派生进入, double-weak 折扣, 不入 9/17 计数) / (β) DCV type I 已落点 与 abb448e (β) C-SCALE-7 四向闭环第 2 通道一致, medium 不动 / (γ) KFW type II 已落点 4 target 之一 与 §第二/五轴三件理论侧条款全对位, medium 不动, 与 world_model (α) 同 paper 在该 type 下功能不对称 / (δ) scaling 是 type 三覆盖派生形态完整域 与 world_model surface-direct triple coverage 唯一完整域形成对偶, 把后者 claim 收窄为 surface-direct triple coverage 唯一完整域 第一处经验确认 + 5 档形态梯度细分登记 / (ε) cross-type 复合 falsifier 协同动作链 同步反向收紧 §C-SCALE-4 二维判定空间 + C-SCALE-7 四向闭环第 5 通道补全 + C-SCALE-D-DISCLOSE 增一档监测 + M1 m_5/m_3 双投影同步降档 / (ζ) 三处单向引 timeline 29107ec 链终点 + 同条款三前序 (dbf27f3/3901303/5fce409) + world_model f261f3e 完整域对偶 三角不形成新链. 严守 12 天冻结协议白名单 互引补充+措辞收紧+升降级历史登记 三类, 不动 §核心问题/C-SCALE-1..8/C-SCALE-D-DISCLOSE/OP-SCALE-1..7/M1 8 m_k/主表/§10, 不新增 candidate/sub-candidate/corollary/falsifier 收紧条款, 不引入新 arxiv ID (MiraBench 2605.29360 / DCV 2605.28860 / KFW 2605.27734 经 paper_notes verified). Rotation: 前 tick 3901303 grounding.md 不同文件; scaling_limits.md 距上次 abb448e (~2.5h, 角度不同: abb448e 是 verifier-noise floor stratifier, 本节是 type-geometry 全貌直接标注, 中间隔 N6/embodiment/grounding/daily 四 tick 非连续两 tick). 8 commit hash (29107ec/f261f3e/dbf27f3/3901303/5fce409/abb448e/f61f8c4/ef1dfe2) 经 git log --format=%H 验证, 无 ID/数字/作者/日期 fabricated."
+    },
+    {
+      "tick_utc": "2026-05-31T09:30:00Z",
+      "task_type": "A",
+      "files": [
+        "wiki/ntp/samples/N7-why-llm-cannot-continually-learn.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "N7 +§十 2026-05-31 reviewer 加注 type 几何直标 (链终点收束后, 非新同步链) — 兑现 timeline 29107ec 边界条款第 4 条在 sample 域第二处直接 type 标注 (第一处 N5 §九末 491ea4e 6:2 单一覆盖+双负空间, 本处 N7 §十 派生 triple coverage). 三件方向性约束: (1) DCV type I 直接落点 主场 anchor 与 §九 C-CONT-2 第三支柱 mechanistic 对偶通道一致 medium 不动 (与 grounding 3901303 / scaling f190f2b / causality 4707f45 三处 type I 落点共享 layer-attribution + factual claim + RL-preserves-circuit 三层根因) / (2) KFW type II 显式不落点 sample 域负空间三连第三处 (N3 §七 type III 第一 + N5 §九末 type I+II 双 + N7 §十 type II 单) 三层作用域错位 (PCFG depth N→∞ 渐近不接 streaming 单样本 + infinite-sample 不可达 + formal lower bound 不下沉) / (3) MiraBench type III 经 §八 M1 收编通道派生进入 N7 (非直接 anchor, 不入 9/17 计数, 不能乘到 base-rate (1/3)^8). N7 = 派生 triple coverage (sample 域第一例) 与 world_model f261f3e direct triple (唯一直接完整域) + scaling f190f2b 派生 triple (topic 域第一例) 共同构成 sample/topic 4 档形态梯度 (单/双/派生 triple/直接 triple). 对 §6 bet 五条 AND 字面命中条件不动 (type 几何不下沉 driver/readout 脱钩), 对 §八置信度 60-65% 锁住不再上推 (timeline 边界条款第 2 条 cross-type 复合 falsifier 是收紧非新增). 建立 sample 系列第二条 *方向收紧+强度封顶* 方法学纪律 (第一条 §八 M1). 严守 12 天冻结协议 互引补充+升降级历史登记+措辞收紧 三类白名单, 不开 sub-candidate/corollary/route-elim, 不动 §3-§9 骨架/§6 bet 五条 AND/§8 M1 收编 8 条/§9 DCV 收编三段/arxiv ID 集合 (DCV 2605.28860 / KFW 2605.27734 / MiraBench 2605.29360 已 verified). 13 commit hash (29107ec/f261f3e/f61f8c4/764ecb8/ef1dfe2/1c22b75/4707f45/3cf73cd/dbf27f3/3901303/5fce409/f190f2b/491ea4e) 经 git cat-file -t 验证, 3 arxiv ID 经 paper_notes 交叉验证, 无 ID/数字/日期/作者 fabricated. Rotation: 前 tick 491ea4e N5 不同文件; N7 距上次 3e7db77 (~32h) 隔 ≥9 ticks 非连续两 tick. README N7 行同步扩."
     }
   ]
 }
