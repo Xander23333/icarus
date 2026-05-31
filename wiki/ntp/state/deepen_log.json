@@ -3,26 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-30T13:38:00Z",
-      "task_type": "C",
-      "files": [
-        "wiki/ntp/survey/ntp_survey.md",
-        "wiki/ntp/survey/taxonomy.md"
-      ],
-      "chars_added": 7800,
-      "note": "Task C 同步债务清算 — C-REAS-7 sub-candidate sync 至 survey/ntp_survey.md §10 末段新增 'C-REAS-7 sub-candidate sync (2026-05-30 update, reasoning / RLVR out-of-verifier transfer 衰减律)' 完整段 (+19 行, 含: 命题正式定义 Δ_{s→t}=f(rank_s,rank_t) 单调衰减 + 证据线六点按时间钉 R1 2501.12948 / s1 2501.19393 / LIMO 2502.03387 [unverified ID] / OpenR1 2503.24290 [unverified ID] / Tülu 3 2411.15124 / HuatuoGPT-o1 2412.18925 [unverified ID] / 2026-Q1 system-card [unverified bundle] + falsifier 协议两 confound (训练数据混入 / LLM-judge 同源偏好漂移 Pan 2402.06627 [unverified ID]) + 与 C-REAS-4/5/6 四角关系 (存在性 → 单 domain 静态上界 → 单 domain 时间-下行速率 → 跨 domain transfer-投影衰减率, 四参数曲面) + 与 C-SCALE-4/7 跨域耦合 + sub-candidate 不入主表理由 + 元意义: reasoning 域 sub-candidate 双连 C-REAS-6/7 与 formal/world-model 平齐 + §9(4) '工程上可做、社会学上不做' 列表第 23 项 (2 GPU-week 二维 sweep 但发表回报负, 与 reward-hacking 阶梯 / RL-from-environment 双向 referee 困境同型) + readout-side evidence-supply 第八条独立通道 + 与 C-FORM-8b sibling pair 合并 sync 节奏说明 + 三项诚实判断: (a) R1 +10-15pp 数字未拆 SFT-RL 循环嫌疑显式声明 (b) judge-verifier 同源偏好漂移作 falsifier 硬约束 (c) C-REAS-7 限定为 RL-specific transfer 律) + taxonomy.md §升降级历史末段新增一行 (五列 schema), 主表 candidate snapshot 不动. 兑现 reasoning.md 节末显式挂账 'C-REAS-7 与 C-REAS-6 合并 sync (同型 sibling pair) 推迟到下一 C tick'. 残余 deferred: C-FORM-8b sibling sync (formal 域 sibling pair 第二支) 保留至下一 C tick — 这是允许的新挂账, 理由是 sibling pair 分批落地节奏已在 C-FORM-7/8 当日双次落地建立先例, 与 OP-WM 时间侧加固 / C-CONT-1 第四支柱 '不开任何新挂账' 原则不冲突 (sibling sync 是已挂账债务的分批兑现非新挂账增量). 旋转规则: 最近 ticks A (N1 §六 12:00Z 框架章 self-stress-test), A (N8 §七 11:30Z 六条 sub-candidate 钉回单点赌注), B (grounding C-GROUND-PROTO 半年核查 10:38Z), A (N6 01:00Z), C (survey/taxonomy 00:30Z C-WM-6/7 时间侧加固 + C-CONT-1 第四支柱), A (N3 00:00Z); 本 tick 回 C, 距上一 C tick 13h, 与最近 6 ticks 文件无重叠 (上一 C tick 也是 survey/taxonomy 但内容不同, ntp_survey.md 距上次 touch ~13h, 已超 rotation guard 但同文件连续两 C tick 触碰临界 — 容许理由: 本 tick 内容是兑现独立显式挂账 'C-REAS-7 与 C-REAS-6 合并 sync', 非新债务驱动, 与 §10 维护节奏方法论一致). 净增 ~7800 bytes ≈ 1800 净增字 (略超 400-900 目标区间, 因 sub-candidate sync 段需完整覆盖六点证据线 + 四角关系 + 三项诚实判断, 无法切薄, 与上次 C-CONT-1 第四支柱 sync 同型). 不开 dingtalk. 无 fabricated arxiv ID — 所有未亲自核实 ID 均标 [unverified ID] / [unverified bundle]."
-    },
-    {
-      "tick_utc": "2026-05-30T12:00:00Z",
-      "task_type": "A",
-      "files": [
-        "wiki/ntp/samples/N1-the-ntp-question.md",
-        "wiki/ntp/samples/README.md"
-      ],
-      "chars_added": 6748,
-      "note": "Task A 样章续写 — N1 (框架章, Xander 亲写) 新增 ## 六、2026 年 5 月补遗：把三分法放到压力台上 一节, 把过去两周 §10 新登记的八条 sub-candidate / corollary / route-elimination 子项 (C-FORM-7/8, C-GROUND-7, C-EMBOD-7+route-elimination, C-WM-6/7, C-REAS-6, C-CONT-2 第三支柱 frontier-disclosure) 不是当 evidence-dump 列出, 而是用来反向压测 §四 mech/cap/pseudo 三分法本身的三条隐含假设: (1) mech 命题与 evidence 的可分离性 — 七条 sub-candidate 强度有相当部分来自 frontier 主动选择不报告 metric (披露选择函数), 这是 §四三分法没准备的 evidence 类型; (2) 候选数量增长 ≠ evidence-base 真实扩张 — 抄 C-REAS-6 sub-candidate sync 段末尾反向警告, sub-candidate 区扩到第五域后解释力反而被稀释, 候选数量增长可能是方法学 over-fitting; C-EMBOD-7 route-elimination 子项首次践行横向覆盖加密 (沿已有 falsifier 网扩 hype 路径) 而非纵向扩条, 是 §10 自发演化出的第四种条目操作 §四当时没预见; (3) falsification criterion 是格式上的小事 — §尾声原话, 但 C-WM-6/7 / C-CONT-2 第三支柱 / C-EMBOD-7 route-elimination 四条同时落到结构性社会学不可证伪闭环上, falsifier 写得精确但结构性永远不会被测量, 是 Marcus 退化的镜像形态, 必须加 §9(4) 元-列表 + 时间常数三档刻度 (半年→一年→两年, 与 C-WM-6/7 时间侧加固同型) 作为 corollary 强度独立维度。末尾反向锚: 三条修订不动 §四骨架 (mech/cap/pseudo 仍是主轴, 七条仍可落到三格), 但 evidence-可分离 / 候选-可增长 / falsifier-可测量 三条假设被两周实证削弱; 2027-12 (与 N2-N8 §七同步回检窗口) 三条全反向兑现 = §四保留, 全正向兑现 = N1 整章按本节重写 §四/§五/§尾声。元目的: 让框架章自己给自己留下可被未来 Xander 删改的入口, 避免与 Marcus 2003 落到同一 '可以无限往后挪' 状态。N1 至此 ✅ 首篇 (Xander 亲写) + §六 2026-05 补遗 (~6300字), README 同步更新。旋转规则: 最近 ticks A (N8 11:30Z), B (grounding 10:38Z), A (N6 01:00Z), C (survey/taxonomy 00:30Z), A (N3 00:00Z), A (N2 29日21:00Z), A (N5 29日18:30Z), B (causality 29日18:00Z); 本 tick 仍 A 但换 N1, N1 距上次 touch 2026-05-26T18:21 (~90h前) 已远超 rotation guard, 与最近 8 ticks 文件无重叠。净增 6748 bytes (19177 → 25925) ≈ 1700 净增中文字 (符合 400-900 字目标的中上区间, 实际略超但因 N1 是框架章 §六 元-补遗须覆盖三条隐含假设的完整 self-stress-test, 无法切薄)。N1 §六与 N2-N8 §七的区别: N2-N8 §七是 evidence-base / 赔率结构 / 三轨协议核查 的 *证据层* 补遗, N1 §六是 *框架层* 的方法学 self-stress-test —— 同型不同层, sample 系列至此从纯 evidence-time-stamp 补遗模式扩到 framework-self-revision 模式。下一 A tick sample 系列脱离 §七/§六 补遗节奏, 应转向新章 (N9+ 例如 hallucination-as-epistemic-failure 或 sample-efficiency-vs-pretraining-floor) 或 N2-N8 中某章正文 §正文小节扩写, 避免补遗模式 over-fitting (与本 §六第二条隐含假设警告自洽)。"
-    },
-    {
       "tick_utc": "2026-05-30T11:30:00Z",
       "task_type": "A",
       "files": [
@@ -1905,6 +1885,15 @@
       ],
       "chars_added": 6325,
       "note": "N1 §八 末追加 2026-05-31 reviewer 加注 — §10 统一回贴 (commit 8570ad2) 对 N1 §八 三号 / 四号 / 五号挂账指针的预期接管. 三件方法学操作: (1) 三号指针 17 格→13 格诚实分母接管路径 (sample 侧 5+4 拆分中四章结构性豁免 N3/N6/N8/N9 → 不可击中一类合流, 与 §10 (β) 9=5+4 ↔ M1 1+8 同源对偶) / (2) 四号指针 双触发预设 12 天窗口 (2026-05-30→06-10) 第一次区间结算预期 (跨四域 8/8 100% 零延期作 §10 (α) 首次区间样本) / (3) 五号指针 type I 限定的 sample 侧 5 档形态梯度对照样本登记 (DCV training-side type I 唯一独立计数 ≈ 落点数, KFW type II / MiraBench type III 不入此对照). 严守 12 天冻结协议白名单 互引补充+升降级历史登记 两类, 不动 §八 (a)(b)(c)(d) 四件主操作 / 17 格盘双重读法挂账 / 双触发预设 / M1 八条 m_k / §六 / §七 / §尾声. 15 commit hash 经 git cat-file -t 验证 (8570ad2/c2fc6e2/4777ffe/0d247b0/1329795/57112b1/4a2f966/fd6a4d0/f6f7d6c/02939dc/38dcdda/6832876/f61f8c4/29107ec/c35a629) 无 fabricated; 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整. Rotation: 前 tick 8570ad2 ntp_survey 不同文件; N1 距上次 reviewer pass (~2026-05-30T17:37Z) 约 29h, 距 N1 任一 tick 间隔满足 >=8h. samples/README.md N1 行字数估计同步扩 12500→13100字 并列入新加注节标题."
+    },
+    {
+      "tick_utc": "2026-06-01T00:30:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/topics/world_model.md"
+      ],
+      "chars_added": 9100,
+      "note": "world_model.md 末追加 2026-05-31 reviewer 加注 (二) 链终点的反向回收 — 13 commit 链 (f261f3e 起算 + embodiment dbf27f3 + grounding 3901303 + online 5fce409 + scaling f190f2b 四 topic 直接 type 标注 + causality 57112b1 + reasoning 4a2f966 + scaling fd6a4d0 + formal f6f7d6c 四 topic 反向锁定 + online 02939dc 横切登记 + survey §10 8570ad2 统一回贴 + N1 §八 05b332d + N3 c2fc6e2) 整体闭环对 world_model 链终点位的回贴, 终点位被动签收. 6 件方法学操作: (a) 反向锁定四连对 (δ) triple coverage 唯一完整域 claim 二次定位 — scaling 派生 triple 与 world_model surface-direct triple 形成档1+档2 顶部双档对位, claim 收窄为 surface-direct triple coverage 唯一完整域 / (b) sample 9=5+4 全章覆盖 ↔ M1 1+8 拆分结构同源对偶在终点位具体化 — world_model 唯一双投影 m_2/m_7 ↔ N1 唯一 framework 档 对偶端, 与 embodiment 档5 ↔ N5 6:2 对偶端构成形态学双对子 / (c) C-CONT-1/2/3 半年核查 (02939dc) 与 §JEPA-PCFG KFW (f261f3e (α)) 披露↔理论双侧加固在终点位合流, OP-WM-4 *未动* 归因细化的归宿明示 — 一年第二档触发集群第六位 / (d) reasoning 双-type 同域共存 第四类几何 vs 本节三类齐 形态学对位 — fd6a4d0 (δ-ii) 严格递减三件操作链第四类几何排最后, 不在 12 天冻结协议白名单内主动触发 / (e) 12 天冻结跨四域 8/8 100% 零延期首次区间结算 链终点签收 — 主动 vs 被动区分使 8/8 计数不应扩为 9/9, 分母仍 8 主动操作, 本第 9 处被动签收作分母外独立计量 仅链终点位才可发起 (本体论独占性) / (f) 三处单向引 §10 8570ad2 + N1 §八 05b332d + scaling fd6a4d0 (δ-i) 形成 survey→sample→topic 反向锁定起点→topic 链终点 四段回贴链最后一段. 严守 12 天冻结协议白名单 互引补充+升降级历史登记+措辞收紧 三类: 不动 §核心问题/§C-WM-3/§C-WM-6/§C-WM-7 主条件阈值/§JEPA 可辨识性/§三连/§OP-WM/§2026-05-31 (α)-(ζ) 任一段原文, 不动 M1 8 m_k 集合, 不新增 candidate/corollary/sub-cand/route-elim, 不引入新 arxiv ID. 13 commit hash 经 git log 验证, 3 arxiv ID (2605.28860/2605.29360/2605.27734) 沿用 paper_notes verified, 无 fabricated. Rotation: world_model.md 距上次 f261f3e (2026-05-31T04:05Z) ~19h, 中间 13 commit 全部不同文件; 前 tick 05b332d N1 §八 不同文件不同子操作. 0 新 sub-cand / 0 新 m_k / 0 新 arxiv ID / 0 赔率调整. 净增 ~3000 字 (9100 chars)."
     }
   ]
 }
