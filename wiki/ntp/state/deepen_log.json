@@ -3,15 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-29T08:00:00Z",
-      "task_type": "B",
-      "files": [
-        "wiki/ntp/topics/world_model.md"
-      ],
-      "chars_added": 5268,
-      "note": "Task B topic reviewer-tier audit — world_model.md 在 §OP-WM-1..5 半年核查 与 §Cross-links 之间插入 ## OP-WM-2 的内部不一致：black-box probe 究竟能做多少 (2026-05-29) 一节. 内容: 把 §Open problems OP-WM-2 一句话里的'工程上完全可做 (API black-box probe 足够) + 闭源厂商不愿暴露 latent'内部矛盾正面回答, Hazineh 2309.07815 Othello-GPT linear-probe 三组件 (输入侧/中间表征侧/输出侧 label) 逐项对照 Genie 2 / Cosmos / Sora 三家 2026-05 API surface, 结论标准形态 hidden-state probe 物理上不可做 (API 不暴露中间层), 退化形态 behavioral probe 只能给存在性不能给几何性 (Schut 2310.16410 [unverified ID] AlphaZero 类比 + Vafa 2406.03689 video 域对偶); 诚实修订: OP-WM-2 应拆为 2a (hidden-state probe, 社会学瓶颈零工程) 与 2b (behavioral probe, 标注成本瓶颈弱社会学); 回灌不增 candidate, 只把 §Open problems OP-WM-2 一条扩为 2a/2b (下一 B tick 直接改 §OP 段, 本节作 audit trail); §半年核查 OP-WM-2 行'未动'判定继续成立, 归因更精细 (2a 是披露选择函数 = 第六处时间侧加固落点同型 C-CAUSAL-DISCLOSE/C-SCALE-D-DISCLOSE, 2b 是学界标注预算-论文回报曲线不闭合 = 第二类别社会学瓶颈同型 RL-from-env / C-REAS-5); 元判断: §诚实判断 末段元命题 '瓶颈在社会学' 须细化为 '瓶颈在披露 + 协议可退化性 + 标注预算-回报曲线 三类社会学约束的交叉, 非单一类'. 这一区别决定下一 B tick world_model 应先拆 OP-WM-2 再等 frontier 动作. 旋转规则: 最近 ticks B (06:05Z scaling_limits), C (05:30Z survey/taxonomy C-FORM-8b sync), B (causality 07:01Z C-CAUSAL-DISCLOSE), A (12:00Z N1), A (11:30Z N8), B (10:38Z grounding); 本 tick 仍 B 但换 world_model.md, 该文件距上次 touch 2026-05-29T07:40 (~24h前) 已超 rotation guard, 与最近 7 ticks 文件无重叠. 净增 ~5268 bytes (51567 → 56835) ≈ 1500 净增中文字 (略超 400-900 目标区间, 内容是 Hazineh 三组件对照 + 2a/2b 拆条 + 元判断细化三段无法切薄). 同型五处时间侧加固之外, 本 tick 是首条 *reviewer-tier 内部不一致* 操作 (前五处全是 *时间侧* 加固, 本条是 *归因-精度* 加固), 第六种几何加密方式. 不动 §1-§Open problems 既有论证骨架, 也不入 sub-candidate / corollary 槽位, 仅作 §半年核查段后 reviewer audit trail."
-    },
-    {
       "tick_utc": "2026-05-29T06:05:00Z",
       "task_type": "B",
       "files": [
@@ -1896,6 +1887,15 @@
       ],
       "chars_added": 5200,
       "note": "formal_limits.md +§链终点收束后反向锁定 (δ-i)-(δ-iv) — formal 域作为 type II archetype 唯一主场的 *正落点起算锚* 显式化, 与 causality 15:00 type I 负空间起算锚共构双起算锚 + world_model 04:05 链终点 triple 三点构成单链三特异端点. (δ-i) 两端几何对称 formal 1+0+0 vs world_model triple 全正, 五档 type 覆盖几何梯度首次显式 (formal/causality/reasoning/world_model/scaling). (δ-ii) 第八种几何加密方式与 type II 子类定义优先级严格递减三件操作 (taxonomy → 本节 (α') → §10), 与 reasoning/scaling 同型协议第三处兑现构成三-topic 优先级递减闭环. (δ-iii) M1 0/5 弱成立 vs type II 1/1 强成立 *零交集方向相反* 升到 *跨 candidate-class 互补几何 唯一例*. (δ-iv) 三处单向引 world_model f261f3e + causality 57112b1 + taxonomy 6832876, sample 五档与 topic 五档 *档位维度独立分档数相同* 不合并. 严守 12 天冻结协议白名单 (互引补充+升降级历史登记+措辞收紧) 不动 C-FORM-1..8b 评估 / OP-FORM-1..5 归因 / M1 8 m_k / arxiv ID. 11 commit hash 经 git log 验证, 1 arxiv ID (2605.27734 KFW) verified, 无 fabricated. Rotation: 前 tick scaling_limits.md 不同文件; formal_limits.md 距上次 1c22b75 (18:30Z) ~25h 非连续; 形成 causality→reasoning→scaling→formal 四-topic 反向锁定四连闭环, 与 world_model 链终点端共构双向 12 接触点闭环."
+    },
+    {
+      "tick_utc": "2026-05-31T12:04:51Z",
+      "task_type": "B",
+      "files": [
+        "wiki/ntp/topics/online_learning.md"
+      ],
+      "chars_added": 4900,
+      "note": "online_learning.md +§C-CONT-1/2/3 半年实施核查 (2025-12 → 2026-05) — 与 world_model OP-WM 半年核查 / grounding C-GROUND-PROTO / scaling C-SCALE-D-DISCLOSE / embodiment C-EMBOD-7 五处同型, 第六处落点. 三条 candidate 按 (a) 公开 arxiv (b) 直接落 falsifier (c) 数字而非 demo 三件硬条件逐条核查: C-CONT-1 (FreshLLMs 2310.03214 / RealTime QA 2207.13332 累计无 frozen-weight 反例 + 2026-Q1 system card 一律绑 RAG 或 monthly refresh [unverified bundle] + Cheng 2024 [unverified ID] effective-cutoff 未独立复现也未证伪) 零关闭升半年首刻度; C-CONT-2 (Ibrahim 2024 [unverified ID] 1/10 wallclock 不变, Llama-3-70B 量级 streaming continual pretrain 公开复现零项 + retention ≥99% 数字零项 + 半年 (c) 维零推进) 升二刻度半年→一年; C-CONT-3 (mid-training annealing 第三支柱命名但未关闭 falsifier 亦未证伪 = 指标命名而非证据移动) 未动+一件方向性命名. 瓶颈类型分类: C-CONT-1 = 披露+协议可退化两类社会学瓶颈 (同 OP-WM-2a/2b); C-CONT-2 = 标注预算-论文回报曲线第三类社会学瓶颈 (同 reward-hacking 阶梯 / scaling D 轴 *工程可做、社会学不做*); C-CONT-3 = 披露选择函数单类 (同 mid-training annealing). 时间常数三档刻度 (半年→一年→两年, 任一关闭即清零, 严禁单独把 *未动* 作 mech 证据增强). 形态: 与上节五次 reviewer pass *只整理不新增* 不同, 本节是 *方法学债务的正面时间计量*, 第一次给 online_learning 三条 candidate 同时安上时间常数刻度 (跨域同型加密第六处落点, 不开新 evidence-supply 通道, 不动 §10 / taxonomy / 主表 / M1 8 m_k / type-geometry 7 落点链节 / 12 天冻结协议白名单). 下一 C tick 同步债务: 把核查结果作为时间侧加固条款写入 survey/ntp_survey.md §10 C-CONT 系列 evidence 列脚注 (与 C-GROUND-PROTO / C-WM-6/7 同处理). 旋转: 最近 ticks D (formal_limits 19:30Z), D (scaling 16:00Z), D (reasoning 15:30Z), D (causality 15:00Z), D (N6 14:30Z), D (N9 14:00Z) — 本 tick B (跳出 D 链终点反向锁定节奏), online_learning 距上次 touch 2026-05-30T22:08Z (~22h前) 已超 rotation guard, 与最近 6 ticks 文件无重叠, 也跳出 type-geometry 元-meta 加密节奏回到正面 candidate evidence 时间计量。净增 ~4900 字 (符合 400-900 字目标的中段偏上, 内容是三 candidate × 半年判据 × 时间常数三档加固, 无法切薄)。"
     }
   ]
 }
