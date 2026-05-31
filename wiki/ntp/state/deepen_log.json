@@ -3,16 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-29T23:00:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/samples/N4-pearl-ladder-and-llm-ceiling.md",
-        "wiki/ntp/samples/README.md"
-      ],
-      "chars_added": 5400,
-      "note": "Task D sample reviewer pass — N4 (Pearl Ladder) §八 2026-05-30 M1 元-corollary 回贴: 把 §七 三项查账 (Layer-3 评测墙四谱协议性失败 / video world model 耦合包装 / agentic Layer-2 verifier hack 附加条件) 显式钉回 survey/ntp_survey.md §10 中段元-审计 (commit 64438d4) M1 元命题与 2026-05-30→2026-06-10 12 天增条冻结协议. 三段同步: (a) §七 第一项 (四 benchmark 谱协议性失败) 上游归因到 C-CAUSAL-DISCLOSE corollary 候选 m_10 的三个 <1 GPU-week 实验 0/3 执行, 把 readout (四谱) 与 driver (实验缺席) 在 M1 负反馈链下统一; (b) §七 第二项 (video world model 耦合包装) 把 C-WM-7 + C-GROUND-5 两条债务从 *两个 topic 独立* 收紧到 *同一 frontier-disclosure 负反馈链 m_6 + m_3 两投影*, 付清任一即同时缓解 N4 §尾声第 3 条 + N6 §尾声 video L2 评测预测; (c) §七 第三项 (agentic Layer-2 verifier hack 附加条件) 接 C-REAS-6 = M1 m_5, 与 C-CAUSAL-DISCLOSE 在 causality.md M1 同步段 (c)(ii) 已被认定为跨域共担实验候选 (固定 base × RL 配方 × 三档评测分布同步采集 <2 GPU-week 单一实验同清两 corollary 时间常数). 12 天冻结协议下 sample 系列对应纪律: N4 §七 末段 'N1 §3 加段' 挂账暂存到 2026-06-10 冻结到期后再决定, 避免 sample 与 §10 双重命名同义反复. 诚实判断三规避: (a) M1 仅出现在 §八不回写 §七; (b) sample 节数止于 §八不开 §九/§十; (c) §七 可证伪坐标不被 M1 替换, 仍以四谱 / video CLadder 数字 / agentic verifier-hack-排除协议 三件具体事件作 N4 总验收清单. 与 N3 §七 reviewer pass (commit 0b5c793) / N7 §八 元-corollary 回贴 (commit 1811e6b) / N1 §六 framework self-stress-test (commit 1f37e9f) 三处 sample 侧回贴同型, 是 sample↔§10 双向同步纪律第四次具体化, 也是 sample 系列 12 天冻结协议下第二次主动收缩 (而非扩张) tick. 旋转规则: 最近 ticks A (22:30Z N9 §一-§二 新章 + README), D (14:01Z formal_limits M1 reviewer), D (13:34Z reasoning M1 reviewer), D (10:32Z online_learning RAG (e)), D (10:02Z grounding C-GROUND-PROTO M1), D (09:32Z embodiment C-EMBOD-7 M1), B (08:00Z world_model OP-WM-2); N4.md 距上次 touch ~14h前, 与最近 7 ticks 文件 (N9 / formal_limits / reasoning / online_learning / grounding / embodiment / world_model) 无重叠, rotation guard 满足; README 同时段已被 N9 tick 更新但仅改 N9 行, 本 tick 改 N4 行无冲突. 任务类型分布: D 类型在最近 7 ticks 已占 5 条 (集中在 M1 reviewer pass 周期), 本 tick 仍 D 但切到 sample 层而非 topic 层, 与 sample 系列上一次 D 类型 reviewer pass (N3 §七 commit 0b5c793 ~13h前) 隔开一个 A tick (N9 22:30Z), 节奏可接受. 净增 ~5400 bytes ≈ 1500 净增中文字 (略超 400-900 目标区间, 因 sample 侧回贴须完整覆盖 §七 三项查账 × M1 三段同步 × 12 天冻结协议对应纪律 + 三规避诚实判断, 切薄会失对 §七 三项的逐项映射且失与 N3/N7/N1 三处同型 sample 回贴的格式一致性). 不动 §七 既有论证, README 同步更新 N4 行 (估计字数 7500→8500). 不开新挂账, 与 OP-WM 时间侧加固 / C-CONT-1 第四支柱 / C-REAS-7 / C-FORM-8b 同一原则 (sample 侧 §七 既有挂账 *暂存到 2026-06-10*, 不是清算也不是新增, 中性 deferred 处理)."
-    },
-    {
       "tick_utc": "2026-05-29T22:30:00Z",
       "task_type": "A",
       "files": [
@@ -1896,6 +1886,15 @@
       ],
       "chars_added": 4300,
       "note": "taxonomy.md 升降级历史 +1 行 元-方法论登记: Sample 侧 type-geometry 五档形态梯度 — 前 6 ticks 在 N1/N5/N7/N2/N4 五 sample 上分别完成 type I/II/III 落点几何应用 (764ecb8/491ea4e/6c5a216/9a6cf9c/0743aae), 加上 N8 §八末 反方陈词体结构性豁免登记, 现在 *归纳* 为五档梯度: 档 1 N1 framework / 档 2 N7 派生 triple / 档 3 N5 6:2 / 档 4 N2 1:2 / 档 5 N4 跨 type 多投影最弱端锁限. 与 line 88 (anchor 侧三类几何 跨 topic 视角) 互补构成 *横向 × 纵向* 二维全面应用. N8 不进梯度三层功能学理由 + N3/N6/N9 三类豁免不可互换显式登记. 严守 12 天冻结协议白名单 (互引补充+升降级历史登记) 两类, 不动 M1 8 m_k / 主表 / 17 条非主表 / falsifier / evidence 列 / sample mech 赔率数字 / N8 §六押注六候选概率 / N1 §八 ↔ N8 §八 2026-06-10 联立校验. 三处单向引: timeline 29107ec 链终点 / N6 §九 a4c3480 同 sample 内合并按 M1 一处计数 / 本表 line 88. 9 commit hash (764ecb8/491ea4e/6c5a216/9a6cf9c/0743aae/a4c3480/29107ec/ef1dfe2/f61f8c4) 经 git cat-file -t 验证为 commit 对象, 无 ID/数字/日期/作者 fabricated. Rotation: 前 6 ticks 均 sample 文件, 本 tick taxonomy.md (survey 域) 切换; taxonomy.md 距上次 f61f8c4 (~12h) 非连续两 tick."
+    },
+    {
+      "tick_utc": "2026-05-31T13:30:00Z",
+      "task_type": "C",
+      "files": [
+        "wiki/ntp/survey/timeline.md"
+      ],
+      "chars_added": 4500,
+      "note": "timeline.md +1 meta row (插入 line 7 链终点 row 之前) 登记 type-geometry 应用谱 *元-归纳* 闭合 — sample 侧五档形态梯度 (taxonomy 6832876 升降级历史归纳, 13:00Z) 与 line 7 链节闭合 (f261f3e world_model 04:05Z) 构成 *DAG 链节闭合 (横向) × sample 数轴归纳闭合 (纵向)* 二维封闭. 五档枚举: 档1 N1 framework / 档2 N7 派生 triple / 档3 N5 6:2 / 档4 N2 1:2 / 档5 N4 跨 type 最弱端锁限; N3/N6/N9/N8 四篇不进梯度功能学理由 (前三 *已用其他方式承接*, N8 *功能定位上不应承接*, 不可互换) 显式登记. 与 line 9 daily↔deepen alignment-pass 协议构成三段协议骨架 (任务分工 → 链节闭合 → 应用谱归纳). 三未来兑现路径预设 (第六类形态须先开 taxonomy 档 / topic 侧未覆盖按 line 7 第4条本地化 / 2026-06-10 D tick 审计五档 evidence-strength type 折扣). 三方法学边界 (α 五档不构成任何新槽位申请仅做归纳+防发散+指针登记 / β type-internal 闭合独立 evidence ≤3 不按 5 求乘 / γ 豁免登记是功能学非数量学). 严守 12 天冻结协议白名单 升降级历史登记+互引补充, 不动 M1 8 m_k / 主表 / 17 条非主表 / line 7 链终点协议 / line 8-9 daily↔deepen 协议 / line 11 12 天冻结协议. 12 commit hash (6832876/0d247b0/0743aae/9a6cf9c/6c5a216/491ea4e/764ecb8/ef1dfe2/29107ec/f61f8c4/a4c3480/1566c2f) 经 git cat-file -t 验证为 commit 对象, 3 arxiv ID (DCV 2605.28860 / KFW 2605.27734 / MiraBench 2605.29360) 经 paper_notes 交叉验证, 无 ID/数字/日期/作者 fabricated. Rotation: 前 tick 6832876 taxonomy.md (survey 域) 不同文件; timeline.md 距上次 29107ec (08:30Z, ~5h) 非连续两 tick, 且 29107ec 钉 *链节闭合* 与本 row 钉 *应用谱归纳闭合* 内容正交 (line 7 vs new row)."
     }
   ]
 }
