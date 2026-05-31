@@ -17,7 +17,7 @@
 | 编号 | 标题 | 状态 |
 |---|---|---|
 | N1 | [这个问题为什么突然变重要了](N1-the-ntp-question.md) | ✅ 首篇 (Xander 亲写) + §六 2026-05 补遗 + §七 2026-05-30 M1 reviewer pass + §八 2026-05-30 单 paper 7/17 横向饱和度二次冲击 reviewer pass + §八 2026-05-30 reviewer 加注 type I/II/III 落点几何 (DCV/KFW/MiraBench 三类不可外推) (~12500字) |
-| N2 | [Transformer 的形式表达力——TC⁰ 之墙到底有多硬](N2-the-tc0-wall.md) | 🔨 推进中（§1–§6 + 尾声 + §7 + §8 2026-05 末补遗 + §8 2026-05-30 update M1 元-corollary 回贴 + §8 2026-05-30 update Chess-WM 第四道暗门候选 / 估计 9300字） |
+| N2 | [Transformer 的形式表达力——TC⁰ 之墙到底有多硬](N2-the-tc0-wall.md) | 🔨 推进中（§1–§6 + 尾声 + §7 + §8 2026-05 末补遗 + §8 2026-05-30 update M1 元-corollary 回贴 + §8 2026-05-30 update Chess-WM 第四道暗门候选 + §8 2026-05-31 update reviewer 加注 type 几何直标 (KFW type II 主场 + DCV/MiraBench type I/III 双负空间 = 1:2 单正双负 sample 形态首例, 边界条款第 4 条 sample 侧第三处兑现) / 估计 10100字） |
 | N3 | [Reversal Curse / 不忠实 CoT / Faith-and-Fate——三块拼图](N3-three-puzzle-pieces.md) | 🔨 推进中（§1–§6 + 尾声 + §7 2026-05 补遗 + §7 M1 reviewer-pass 回贴 + §7 2026-05-30 DCV 旁证 + §7 2026-05-31 reviewer 加注 MiraBench L3 *显式不落地* 决定 (sample↔sample 投影矩阵负空间首登记) / 估计 8800字） |
 | N4 | [Pearl 的因果阶梯与 LLM 的天花板](N4-pearl-ladder-and-llm-ceiling.md) | 🔨 推进中（§1–§6 + 尾声 + §7 2026-05 补遗 + §8 M1 元-corollary 回贴 + §8 2026-05-30 update YoCausal video 子带 *经验空集→上界 proxy* 状态变迁 + §8 2026-05-30 update MiraBench L3 *使用* sub-axis 弱阴性 (与 YoCausal *感知* sub-axis 互补, 同 daily tick 双子弹双 sub-axis) / 估计 10500字） |
 | N5 | [Embodiment 真的不可 tokenize 吗——VLA 路线的隐含赌注](N5-embodiment-and-vla-bet.md) | 🔨 推进中（§1–§6 + §7 + §8 M1 reviewer-pass 回贴 + §9 2026-05-31 update MiraBench 2605.29360 → Bet-N5-3 weak-proxy 通道 + §9 末 2026-05-31 reviewer 加注 type 几何直标 (MiraBench type III 二次折扣 + DCV/KFW 显式不落点负空间 6:2 形态, 边界条款第 4 条 sample 侧首例) / 估计 12700字） |

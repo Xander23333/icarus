@@ -3,15 +3,6 @@
   "description": "NTP-Deepen 30min cron tick log. Trim to last 200 entries.",
   "ticks": [
     {
-      "tick_utc": "2026-05-30T07:10:00Z",
-      "task_type": "D",
-      "files": [
-        "wiki/ntp/topics/grounding.md"
-      ],
-      "chars_added": 6300,
-      "note": "Task D reviewer pass — grounding.md 新增 §C-GROUND-7 / C-GROUND-PROTO 的 sample 侧落点段 (2026-05-30 reviewer pass), 三 bullet (a)(b)(c) 把 N9 §五 mech 归属三角 (50–60% C-GROUND-7 / 25–40% C-CONT-1 / 5–15% 交叠 / 5–10% C-REAS-6) + N9 §尾声 三触发条件 (probe-belief vs verbalized-confidence ρ / hallucination 四象限拆分 / epistemic-aleatoric 解耦) 反向钉回 C-GROUND-7 候选 + C-GROUND-PROTO 三轨协议 + 半年实施核查 三段 candidate 落点, 完成 N9 §尾声 close (commit 78bb4e1 today 02:04Z) 之后 *sample → topic 反向 互引补充* 协议第一次 topic 侧主动具体化. 与 N1 §七 (5faaeee) / N3 §七 (0b5c793) / N6 §九 (a4c3480) 三处 sample 侧反向回贴构成 *topic ↔ sample 互引网* 第四个落点. 严守 2026-05-30→2026-06-10 12 天增条冻结协议白名单 *互引补充* 第六次使用 — 不开新 candidate / corollary, 不改 C-GROUND-7 medium-strong mech 评估, 不改 C-GROUND-PROTO *0/3 完整 + 2/3 部分实施* 刻度, 仅 sample 层证据落点显式化 + 三触发条件三轨映射. footer 同型更新. rotation guard: 最近 9 ticks 无 grounding.md (上次 touch 2026-05-29 18:06+0800 ~13h 前), 满足不连续同文件规则. 字符净增 ~6300 bytes ≈ +1900 中文字, 略超目标 400-900 但 reviewer pass 三 bullet + 元判断段一次性写完保持 N9 close 同窗口同步纪律连贯优于切两 tick. 不动 §Epistemic grounding / §三轨协议 / §半年实施核查 三段落主文."
-    },
-    {
       "tick_utc": "2026-05-30T03:00:00Z",
       "task_type": "A",
       "files": [
@@ -1896,6 +1887,16 @@
       ],
       "chars_added": 5400,
       "note": "N7 +§十 2026-05-31 reviewer 加注 type 几何直标 (链终点收束后, 非新同步链) — 兑现 timeline 29107ec 边界条款第 4 条在 sample 域第二处直接 type 标注 (第一处 N5 §九末 491ea4e 6:2 单一覆盖+双负空间, 本处 N7 §十 派生 triple coverage). 三件方向性约束: (1) DCV type I 直接落点 主场 anchor 与 §九 C-CONT-2 第三支柱 mechanistic 对偶通道一致 medium 不动 (与 grounding 3901303 / scaling f190f2b / causality 4707f45 三处 type I 落点共享 layer-attribution + factual claim + RL-preserves-circuit 三层根因) / (2) KFW type II 显式不落点 sample 域负空间三连第三处 (N3 §七 type III 第一 + N5 §九末 type I+II 双 + N7 §十 type II 单) 三层作用域错位 (PCFG depth N→∞ 渐近不接 streaming 单样本 + infinite-sample 不可达 + formal lower bound 不下沉) / (3) MiraBench type III 经 §八 M1 收编通道派生进入 N7 (非直接 anchor, 不入 9/17 计数, 不能乘到 base-rate (1/3)^8). N7 = 派生 triple coverage (sample 域第一例) 与 world_model f261f3e direct triple (唯一直接完整域) + scaling f190f2b 派生 triple (topic 域第一例) 共同构成 sample/topic 4 档形态梯度 (单/双/派生 triple/直接 triple). 对 §6 bet 五条 AND 字面命中条件不动 (type 几何不下沉 driver/readout 脱钩), 对 §八置信度 60-65% 锁住不再上推 (timeline 边界条款第 2 条 cross-type 复合 falsifier 是收紧非新增). 建立 sample 系列第二条 *方向收紧+强度封顶* 方法学纪律 (第一条 §八 M1). 严守 12 天冻结协议 互引补充+升降级历史登记+措辞收紧 三类白名单, 不开 sub-candidate/corollary/route-elim, 不动 §3-§9 骨架/§6 bet 五条 AND/§8 M1 收编 8 条/§9 DCV 收编三段/arxiv ID 集合 (DCV 2605.28860 / KFW 2605.27734 / MiraBench 2605.29360 已 verified). 13 commit hash (29107ec/f261f3e/f61f8c4/764ecb8/ef1dfe2/1c22b75/4707f45/3cf73cd/dbf27f3/3901303/5fce409/f190f2b/491ea4e) 经 git cat-file -t 验证, 3 arxiv ID 经 paper_notes 交叉验证, 无 ID/数字/日期/作者 fabricated. Rotation: 前 tick 491ea4e N5 不同文件; N7 距上次 3e7db77 (~32h) 隔 ≥9 ticks 非连续两 tick. README N7 行同步扩."
+    },
+    {
+      "tick_utc": "2026-05-31T11:00:00Z",
+      "task_type": "D",
+      "files": [
+        "wiki/ntp/samples/N2-the-tc0-wall.md",
+        "wiki/ntp/samples/README.md"
+      ],
+      "chars_added": 5400,
+      "note": "N2 §八 末追加 2026-05-31 reviewer 加注 type 几何直标 — 兑现 timeline 29107ec 边界条款第 4 条 sample 侧第三处 (N5 §九末 491ea4e 第一 / N7 §十 6c5a216 第二 / N2 本节 第三). 六件操作 (一) KFW 2605.27734 type II 直接落点 N2 = type II archetype 主场对位 第五 target sample 侧叙事层投影 independent measurements 仍 = 1 medium 不动 / (二) DCV 2605.28860 type I 显式不落点 N2 = sample 侧 type I 第二负投影位 与 N3 §七 1f96072 MiraBench type III 负空间 姐妹组构成 sample 侧 type I/III 双负 anchor 三层根因 layer-attribution 因变量错位 + factual-claim 子域不重叠 + RL-preserves-circuit 正交 / (三) MiraBench 2605.29360 type III 显式不落点 N2 sample 侧 type III 第二负空间 (N3 第一) 与 N5 6:2 / N7 派生 triple 共构 sample 侧 1:2 单正双负 首例形态 / (四) sample 侧 4 档形态梯度 (N1 framework / N5 6:2 / N7 派生 triple / N2 1:2 单正双负) 互补不重叠 不算独立 type 几何证据 / (五) cross-type 复合 falsifier 协同动作链 任两类对 Chess-WM zero-scratchpad SSM 胜场二次实证才升 §六修订表第四暗门候选 + §八 1B Mamba vs 1B Llama 三轴总验收清单标注为 type I 子通道 / (六) 三处单向引 timeline 29107ec 链终点 + formal_limits 1c22b75 type II 主场 + N5 491ea4e + N7 6c5a216 sample 侧前序兑现 不形成新链. 严守 12 天冻结协议白名单 互引补充+升降级历史登记+措辞收紧, 不动 §三 Merrill-Sabharwal / §六三道暗门 / §八 2×2 / Chess-WM 第四暗门候选状态 / §七 内圈墙挂账方向, 不新增 sub-candidate/corollary/route-elim, 不引入新 arxiv ID (3 ID KFW 2605.27734 / DCV 2605.28860 / MiraBench 2605.29360 均沿用 paper_notes verified). 13 commit hash (29107ec/f261f3e/1c22b75/764ecb8/ef1dfe2/f61f8c4/491ea4e/6c5a216/dbf27f3/3901303/f190f2b/4707f45/3cf73cd) 经 git cat-file -t 验证为 commit 对象. Rotation: 前 tick 6c5a216 N7 不同文件; N2 距上次 ~22h (Chess-WM 子节) 非连续两 tick. README N2 行同步扩."
     }
   ]
 }
